@@ -55,7 +55,7 @@ html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abb
 /* General
 -------------------------------------------------------------- */
 html, body{
-	/* scroll-behavior: smooth; */
+	scroll-behavior: smooth;
 }
 body,
 button,
@@ -1536,7 +1536,7 @@ body.page #main-content { padding-top: 0; padding-bottom: 0; }
 	.comment-list article .gravatar { width: 50px; float: none; margin: 0 0 17px; }
 	.comment-list .children > li { padding-left: 35px; }
 	.name-wrap, .email-wrap { width: 100%; float: none; }
-	.name-wrap input, .email-wrap input, .message-wrap textarea { margin-bottom: 20px; resize: none; }
+	.name-wrap input, .email-wrap input, .message-wrap textarea { margin-bottom: 20px; }
 	.woocommerce-page .content-woocommerce .woocommerce-result-count { display: none; }
 	.woocommerce-page .content-woocommerce .products { padding-top: 20px; }
 	.woocommerce-page.shop-col-3 .content-woocommerce .products li,
