@@ -1,0 +1,121 @@
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  height: 100vh;
+}
+.hero-logo {
+  /* margin-right: 10px; */
+  width: calc(100% - 560px);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  z-index: 1;
+  /* background-image: url("../img/hero-bg.jpg"); */
+  width: 100%;
+  height: 100%;
+}
+ul {
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+ul li::before {
+  content: '';
+  position: relative;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: 1px solid snow;
+  cursor: pointer;
+  display: block;
+  /* -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  -webkit-transition: all 0.35s ease;
+  -o-transition: all 0.35s ease;
+  transition: all 0.35s ease; */
+  font-size: 14px;
+  z-index: 2;
+  animation: animate 1s linear infinite;
+}
+ul li:hover {
+  background-color: #86ff3b;
+}
+
+li {
+  max-width: 100%;
+}
+li:nth-child(1) {
+  margin-left: -844px;
+  margin-top: 66px;
+}
+li:nth-child(2) {
+  margin-left: 124px;
+  margin-top: 132px;
+}
+li:nth-child(3) {
+  margin-left: 355px;
+  margin-top: 111px;
+}
+li:nth-child(4) {
+  margin-left: 142px;
+  margin-top: 145px;
+}
+
+ul li .content {
+  position: absolute;
+  width: 200px;
+  background: #fff;
+  padding: 4px;
+  visibility: hidden;
+  opacity: 0;
+  transition: 0.5s;
+  box-sizing: border-box;
+}
+::marker {
+  color: transparent;
+}
+
+ul li:hover .content {
+  visibility: visible;
+  opacity: 1;
+}
+
+/* li {
+  animation: blink 2s linear infinite;
+  animation-play-state: running;
+}
+
+li:hover {
+  opacity: 1 !important;
+  animation-play-state: paused;
+}
+
+@keyframes blink {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.7;
+  }
+  100% {
+    opacity: 1;
+  }
+} */
+@keyframes animate {
+  0% {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1.5);
+    opacity: 1;
+  }
+}
