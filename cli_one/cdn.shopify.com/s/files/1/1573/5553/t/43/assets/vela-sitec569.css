@@ -7658,6 +7658,8 @@ ul.lower-alpha {
 }
 .menuMobileContainer .memoNav {
   margin: 15px 0;
+  display: flex;
+  flex-direction: column;
 }
 .menuMobileContainer .memoNav li {
   position: relative;
@@ -13435,6 +13437,7 @@ button:active:focus,
 @media (max-width: 768px) {
   .velaHeader .headerWrap {
     padding: 10px 0;
+    position: -webkit-sticky;
   }
 }
 @media (min-width: 992px) {
