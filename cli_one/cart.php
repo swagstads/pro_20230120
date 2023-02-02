@@ -1,6 +1,3 @@
-<?php
-session_start();
-?>
 <!DOCTYPE html>
 <!--[if IE 9]> <html class="ie9 no-js" lang="en"> <![endif]-->
 <!--[if (gt IE 9)|!(IE)]><!-->
@@ -30,154 +27,6 @@ session_start();
             <header id="velaHeader" class="velaHeader">
                 <?php include('header.php') ?>
             </header>
-            <div id="velaMenuMobile" class="menuMobileContainer hidden-md hidden-lg">
-                <div class="menuMobileWrapper">
-                    <div class="memoHeader">
-                        <span>Menu Mobile</span>
-                        <div class="btnMenuClose">&nbsp;</div>
-                    </div>
-                    <ul class="nav memoNav">
-                        <li class="hasMemoDropdown active">
-                            <a class="collapsed" href="#/" title="" data-toggle="collapse"
-                                data-target="#memoDropdown11">Home</a>
-                            <span class="memoBtnDropdown collapsed" data-toggle="collapse"
-                                data-target="#memoDropdown11"><i class="fa fa-angle-down"></i></span>
-                        </li>
-                        <li class="hasMemoDropdown">
-                            <a class="collapsed" href="#/collections/all" title="" data-toggle="collapse"
-                                data-target="#memoDropdown12">Shop</a>
-                            <span class="memoBtnDropdown collapsed" data-toggle="collapse"
-                                data-target="#memoDropdown12"><i class="fa fa-angle-down"></i></span>
-                            <ul id="memoDropdown12" class="memoDropdown collapse">
-                                <li class="hasMemoDropdown">
-                                    <a class="collapsed" href="#/collections" title="" data-toggle="collapse"
-                                        data-target="#memoDropdown221">Catalog</a>
-                                    <span class="memoBtnDropdown collapsed" data-toggle="collapse"
-                                        data-target="#memoDropdown221"><i class="fa fa-angle-down"></i></span>
-                                    <ul id="memoDropdown221" class="memoDropdown collapse">
-                                        <li class="">
-                                            <a href="collections/furniture.php" title="">Furniture</a>
-                                        </li>
-                                        <li class="">
-                                            <a href="collections/decor-art.php" title="">Decor Art</a>
-                                        </li>
-                                        <li class="">
-                                            <a href="collections/illumination.php" title="">Illumination</a>
-                                        </li>
-                                        <li class="">
-                                            <a href="collections/kitchen-things.php" title="">Kitchen Things</a>
-                                        </li>
-                                        <li class="">
-                                            <a href="collections/best-sellter.php" title="">Best Sellter</a>
-                                        </li>
-                                        <li class="">
-                                            <a href="collections/new-products.php" title="">New products</a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li class="hasMemoDropdown">
-                                    <a class="collapsed" href="#/collections/best-sellter" title=""
-                                        data-toggle="collapse" data-target="#memoDropdown222">Shop pages</a>
-                                    <span class="memoBtnDropdown collapsed" data-toggle="collapse"
-                                        data-target="#memoDropdown222"><i class="fa fa-angle-down"></i></span>
-                                    <ul id="memoDropdown222" class="memoDropdown collapse">
-                                        <li class="">
-                                            <a href="collections/sale-off.php" title="">Left Sidebar</a>
-                                        </li>
-                                        <li class="">
-                                            <a href="collections/best-sellter.php" title="">Right Sidebar</a>
-                                        </li>
-                                        <li class="">
-                                            <a href="collections/furniture.php" title="">Collection List</a>
-                                        </li>
-                                        <li class="">
-                                            <a href="collections/all.php" title="">Collection Grid</a>
-                                        </li>
-                                        <li class="">
-                                            <a href="collections/kitchen-things.php" title="">Full Width</a>
-                                        </li>
-                                        <li class="">
-                                            <a href="collections/illumination.php" title="">Full Width V1</a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li class="hasMemoDropdown">
-                                    <a class="collapsed" href="#/products/sacrificial-chair-design-12" title=""
-                                        data-toggle="collapse" data-target="#memoDropdown223">Product Pages</a>
-                                    <span class="memoBtnDropdown collapsed" data-toggle="collapse"
-                                        data-target="#memoDropdown223"><i class="fa fa-angle-down"></i></span>
-                                    <ul id="memoDropdown223" class="memoDropdown collapse">
-                                        <li class="">
-                                            <a href="products/sacrificial-chair-design-12.php" title="">Product Page
-                                                V1</a>
-                                        </li>
-                                        <li class="">
-                                            <a href="products/sacrificial-chair-design-5.php" title="">Product Page
-                                                V2</a>
-                                        </li>
-                                        <li class="">
-                                            <a href="products/sacrificial-chair-design-6.php" title="">Product Page
-                                                V3</a>
-                                        </li>
-                                        <li class="">
-                                            <a href="products/sacrificial-chair-design-10.php" title="">Product Page
-                                                V4</a>
-                                        </li>
-                                        <li class="">
-                                            <a href="products/sacrificial-chair-design-11.php" title="">Product Page
-                                                V5</a>
-                                        </li>
-                                        <li class="">
-                                            <a href="products/sacrificial-chair-design-2.php" title="">Variable
-                                                Product</a>
-                                        </li>
-                                        <li class="">
-                                            <a href="products/sacrificial-chair-design-8.php" title="">External
-                                                Product</a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li class="hasMemoDropdown">
-                                    <a class="collapsed" href="#/pages/home-pages" title="" data-toggle="collapse"
-                                        data-target="#memoDropdown224">Other Pages</a>
-                                    <span class="memoBtnDropdown collapsed" data-toggle="collapse"
-                                        data-target="#memoDropdown224"><i class="fa fa-angle-down"></i></span>
-                                    <ul id="memoDropdown224" class="memoDropdown collapse">
-                                        <li class="">
-                                            <a href="about-us.php" title="">About Page</a>
-                                        </li>
-                                        <li class="">
-                                            <a href="contact-us.php" title="">Contact Page</a>
-                                        </li>
-                                        <li class="">
-                                            <a href="faqs.php" title="">FAQs Page</a>
-                                        </li>
-                                        <li class="">
-                                            <a href="404.php" title="">404 Page</a>
-                                        </li>
-                                        <li class="">
-                                            <a href="password.php" title="">Coming Soon Page</a>
-                                        </li>
-                                        <li class="">
-                                            <a href="cart.php" title="">Cart Page</a>
-                                        </li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="">
-                            <a href="collections.php" title="">Collections</a>
-                        </li>
-                        <li class="">
-                            <a href="blogs/news.php" title="">Blog</a>
-                        </li>
-                        <li class="">
-                            <a href="pages/contact-us.php" title="">Contact</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            <div class="menuMobileOverlay hidden-md hidden-lg"></div>
         </div>
         <div id="shopify-section-vela-breacrumb-image" class="shopify-section">
             <section class="velaBreadcrumbs hasBackgroundImage floaHeader">
@@ -215,19 +64,94 @@ session_start();
                         <div class="cartContainer">
                             <h1 class="cartTitle hidden">Shopping cart</h1>
                             <div class="cartContent">
-                                <div class="cartEmptyContent">
-                                    <p class="cartEmpty">Your cart is currently empty.</p>
-                                    <p>
-                                        Before proceed to checkout you must add some products to
-                                        your shopping cart.<br />
-                                        You will find a lot of interesting products on our
-                                        Website.
-                                    </p>
-                                    <p>
-                                        <a class="btn btnVelaOne" href="collections/all.html" title="Go to Shopping">Go
-                                            to Shopping</a>
-                                    </p>
-                                </div>
+                              <table id='cart-product-table' width="100%">
+                                <tr>
+                                    <th>Product</th>
+                                    <th>Price</th>
+                                    <th>Quantity</th>
+                                    <th>Total</th>
+                                    <th>Action</th>
+                                </tr>
+                                <tr> 
+                                    <td>
+                                        <div>
+                                            <img src='' alt=''>
+                                        </div>
+                                        <div class='cart-product-info'>
+                                            <div class='cart-prodct-title'>
+                                                Title
+                                            </div>
+                                            <div class='cart-product-description'>
+                                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae illum qui voluptatibus, expedita inventore, eos error harum voluptates reprehenderit officia odit porro pariatur? Officiis quod quas, tempore ipsam assumenda eveniet!
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        &#8377; 1600
+                                    </td>
+                                    <td>
+                                        <span class='input-number-decrement'>–</span><input class='input-number' type='text' value='1' min='0' max='10'><span class='input-number-increment'>+</span>
+                                    </td>
+                                    <td>
+                                        &#8377;1600
+                                    </td>
+                                    <td>
+                                        <a href=""><i class="fa fa-trash"></i></a>
+                                    </td>
+                                </tr>
+
+<?php
+    if(isset($_SESSION['username'])){ // If logged in
+        $userid = $_SESSION['user_id'];
+        $sql = "SELECT * FROM cart WHERE user_id= '$userid' ";
+        $result = $dbh->query($sql);
+
+        if ($result->rowCount() > 0){
+            while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
+                // Do stuff
+                // echo "id: " . $row["id"]."<br>";
+            }
+            
+            ?>
+        </table>
+        
+<?php
+    }
+        else {
+            echo "<div class='cartEmptyContent'>
+                    <p class='cartEmpty'>Your cart is currently empty.</p>
+                    <p>
+                        Before proceed to checkout you must add some products to
+                        your shopping cart.<br />
+                        You will find a lot of interesting products on our
+                        Website.
+                    </p>
+                    <p>
+                        <a class='btn btnVelaOne' href='collections/all.html' title='Go to Shopping'>Go
+                            to Shopping</a>
+                    </p>
+                </div>";
+}
+?>
+<?php
+    } // If logged in
+    else{ // If not logged in
+?>
+                                        <div class="cartEmptyContent">
+                                            <p class="cartEmpty">You haven't logged in yet.</p>
+                                            <p>
+                                                Please Login to continue.
+                                            </p>
+                                            <p>
+                                                <a class="btn btnVelaOne" href="./logg_in.php" title="Go to Shopping">
+                                                    Login
+                                                </a>
+                                            </p>
+                                        </div>
+<?php
+    // If not logged in
+    }
+?>
                             </div>
                         </div>
                     </div>

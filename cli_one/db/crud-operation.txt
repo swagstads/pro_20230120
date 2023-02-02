@@ -1,0 +1,68 @@
+Users
+    Insert:
+        INSERT INTO User (name, email, password, phone, address, role, added_on, modified_on, deleted_on, status) 
+        VALUES ('John Doe', 'johndoe@example.com', 'hashed_password', '1234567890', '123 Main St', 'customer', NOW(), NOW(), NULL, 'active');
+    Read:
+        SELECT * FROM User;
+    Update:
+        UPDATE User 
+        SET name='Jane Doe', email='janedoe@example.com', phone='0987654321' 
+        WHERE id=1;
+    Delete:
+        DELETE FROM User 
+        WHERE id=1;
+
+Product
+    Insert:
+        INSERT INTO Product (title, description, price, delivery_date, location, status, img_location) 
+        VALUES ('Product 1', 'Description of Product 1', 100.00, '2022-12-31', 'USA', 'pending', 'img/product1.jpg');
+    Read:
+        SELECT * FROM Product;
+    Update:
+        UPDATE Product 
+        SET title='Product 1 Updated', price=120.00 
+        WHERE id=1;
+    Delete:
+        DELETE FROM Product 
+        WHERE id=1;
+
+Payment:
+    Insert:
+        INSERT INTO Payment (amount, product_id, sender, timestamp) 
+        VALUES (100.00, 1, 1, NOW());
+    Read:
+        SELECT * FROM Payment;
+    Update:
+        UPDATE Payment 
+        SET amount=120.00 
+        WHERE id=1;
+    Delete:
+        DELETE FROM Payment 
+        WHERE id=1;
+
+Cart:
+    Insert:
+        INSERT INTO Cart (amount, quantity, message, product, status) 
+        VALUES (100.00, 1, 'Message for Cart 1', 1, 'pending');
+    Read:
+        SELECT * FROM Cart;
+    Update:
+        UPDATE Cart 
+        SET amount=120.00, quantity=2 
+        WHERE id=1;
+    Delete:
+        DELETE FROM Cart 
+        WHERE id=1;
+
+Contact_us:
+    Insert:
+        INSERT INTO Contact_us (name, email, subject, message, added_on) 
+        VALUES ('John Doe', 'johndoe@example.com', 'Subject for Contact 1', 'Message for Contact 1', NOW());
+    Read:
+        SELECT * FROM Contact_us;
+    Update:
+        UPDATE Contact_us 
+        SET name='Jane Doe', email='janedoe@example.com' 
+        WHERE id=1;
+    Delete:
+        DELETE FROM contact_us WHERE id = :id;

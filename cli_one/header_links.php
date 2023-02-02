@@ -1,3 +1,4 @@
+<?php session_start()  ?>
 <meta charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
@@ -288,6 +289,15 @@
 <link rel="apple-touch-icon-precomposed" href="../cdn.shopify.com/s/files/1/1573/5553/files/icon_48x48e751.png?v=1613719979" type="image/png" />
 <link rel="nokia-touch-icon" href="../cdn.shopify.com/s/files/1/1573/5553/files/icon_48x48e751.png?v=1613719979" type="image/png" />
 
+<!-- For icons - font awesome -->
+<link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+
+<!-- Jquery SLider lib - swiper -->
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"
+/>
+
 <title>Collections &ndash; Outstock</title>
 
 <meta name="description" content="Fashion, Apparel, Electronics, Tools, Lingeri, Glasses, Furniture, Jewelry, Bikes, Cosmetics, Gifts, Handmade store. Try new premium multipurpose Shopify theme from Elite Author velatheme. velatheme Shopify theme is new approach to ecommerce web development." />
@@ -391,3 +401,6 @@
         }
     })();
 </script>
+
+
+<?php include('./api/config.php') ?>

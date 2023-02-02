@@ -27,6 +27,155 @@
             <header id="velaHeader" class="velaHeader">
                 <?php include('header.php'); ?>
             </header>
+            <div id="velaMenuMobile" class="menuMobileContainer hidden-md hidden-lg">
+                <div class="menuMobileWrapper">
+                    <div class="memoHeader">
+                        <span>Menu Mobile</span>
+                        <div class="btnMenuClose">&nbsp;</div>
+                    </div>
+                    <ul class="nav memoNav">
+                        <li class="hasMemoDropdown">
+                            <a class="collapsed" href="#/" title="" data-toggle="collapse"
+                                data-target="#memoDropdown11">Home</a>
+                        </li>
+                        <li class="hasMemoDropdown">
+                            <a class="collapsed" href="#/collections/all" title="" data-toggle="collapse"
+                                data-target="#memoDropdown12">Shop</a>
+                            <span class="memoBtnDropdown collapsed" data-toggle="collapse"
+                                data-target="#memoDropdown12"><i class="fa fa-angle-down"></i></span>
+                            <ul id="memoDropdown12" class="memoDropdown collapse">
+                                <li class="hasMemoDropdown">
+                                    <a class="collapsed" href="#/collections" title="" data-toggle="collapse"
+                                        data-target="#memoDropdown221">Catalog</a>
+                                    <span class="memoBtnDropdown collapsed" data-toggle="collapse"
+                                        data-target="#memoDropdown221"><i class="fa fa-angle-down"></i></span>
+                                    <ul id="memoDropdown221" class="memoDropdown collapse">
+                                        <li class="active">
+                                            <a href="furniture.html" title="">Furniture</a>
+                                        </li>
+                                        <li class="">
+                                            <a href="decor-art.html" title="">Decor Art</a>
+                                        </li>
+                                        <li class="">
+                                            <a href="illumination.html" title="">Illumination</a>
+                                        </li>
+                                        <li class="">
+                                            <a href="kitchen-things.html" title="">Kitchen Things</a>
+                                        </li>
+                                        <li class="">
+                                            <a href="best-sellter.html" title="">Best Sellter</a>
+                                        </li>
+                                        <li class="">
+                                            <a href="new-products.html" title="">New products</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="hasMemoDropdown">
+                                    <a class="collapsed" href="#/collections/best-sellter" title=""
+                                        data-toggle="collapse" data-target="#memoDropdown222">Shop pages</a>
+                                    <span class="memoBtnDropdown collapsed" data-toggle="collapse"
+                                        data-target="#memoDropdown222"><i class="fa fa-angle-down"></i></span>
+                                    <ul id="memoDropdown222" class="memoDropdown collapse">
+                                        <li class="">
+                                            <a href="sale-off.html" title="">Left Sidebar</a>
+                                        </li>
+                                        <li class="">
+                                            <a href="best-sellter.html" title="">Right Sidebar</a>
+                                        </li>
+                                        <li class="active">
+                                            <a href="furniture.html" title="">Collection List</a>
+                                        </li>
+                                        <li class="">
+                                            <a href="all.html" title="">Collection Grid</a>
+                                        </li>
+                                        <li class="">
+                                            <a href="kitchen-things.html" title="">Full Width</a>
+                                        </li>
+                                        <li class="">
+                                            <a href="illumination.html" title="">Full Width V1</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="hasMemoDropdown">
+                                    <a class="collapsed" href="#/products/sacrificial-chair-design-12" title=""
+                                        data-toggle="collapse" data-target="#memoDropdown223">Product Pages</a>
+                                    <span class="memoBtnDropdown collapsed" data-toggle="collapse"
+                                        data-target="#memoDropdown223"><i class="fa fa-angle-down"></i></span>
+                                    <ul id="memoDropdown223" class="memoDropdown collapse">
+                                        <li class="">
+                                            <a href="../products/sacrificial-chair-design-12.html" title="">Product Page
+                                                V1</a>
+                                        </li>
+                                        <li class="">
+                                            <a href="../products/sacrificial-chair-design-5.html" title="">Product Page
+                                                V2</a>
+                                        </li>
+                                        <li class="">
+                                            <a href="../products/sacrificial-chair-design-6.html" title="">Product Page
+                                                V3</a>
+                                        </li>
+                                        <li class="">
+                                            <a href="../products/sacrificial-chair-design-10.html" title="">Product Page
+                                                V4</a>
+                                        </li>
+                                        <li class="">
+                                            <a href="../products/sacrificial-chair-design-11.html" title="">Product Page
+                                                V5</a>
+                                        </li>
+                                        <li class="">
+                                            <a href="../products/sacrificial-chair-design-2.html" title="">Variable
+                                                Product</a>
+                                        </li>
+                                        <li class="">
+                                            <a href="../products/sacrificial-chair-design-8.html" title="">External
+                                                Product</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="hasMemoDropdown">
+                                    <a class="collapsed" href="#/pages/home-pages" title="" data-toggle="collapse"
+                                        data-target="#memoDropdown224">Other Pages</a>
+                                    <span class="memoBtnDropdown collapsed" data-toggle="collapse"
+                                        data-target="#memoDropdown224"><i class="fa fa-angle-down"></i></span>
+                                    <ul id="memoDropdown224" class="memoDropdown collapse">
+                                        <li class="">
+                                            <a href="../pages/about-us.html" title="">About Page</a>
+                                        </li>
+                                        <li class="">
+                                            <a href="../pages/contact-us.html" title="">Contact Page</a>
+                                        </li>
+                                        <li class="">
+                                            <a href="../pages/faqs.html" title="">FAQs Page</a>
+                                        </li>
+                                        <li class="">
+                                            <a href="../search.html" title="">Search Page</a>
+                                        </li>
+                                        <li class="">
+                                            <a href="../pages/404.html" title="">404 Page</a>
+                                        </li>
+                                        <li class="">
+                                            <a href="../pages/password.html" title="">Coming Soon Page</a>
+                                        </li>
+                                        <li class="">
+                                            <a href="../cart.html" title="">Cart Page</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="">
+                            <a href="../collections.html" title="">Collections</a>
+                        </li>
+                        <li class="">
+                            <a href="../blogs/news.html" title="">Blog</a>
+                        </li>
+                        <li class="">
+                            <a href="../pages/contact-us.html" title="">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="menuMobileOverlay hidden-md hidden-lg"></div>
         </div>
         <div id="shopify-section-vela-breacrumb-image" class="shopify-section">
             <section class="velaBreadcrumbs hasBackgroundImage floaHeader">
@@ -39,7 +188,7 @@
                             <h1 class="breadcrumbHeading">Rugs</h1>
                             <ol class="breadcrumb" itemscope itemtype="http://schema.org/BreadcrumbList">
                                 <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
-                                    <a href="../index.html" title="Back to the frontpage" itemprop="item">
+                                    <a href="/" title="Back to the frontpage" itemprop="item">
                                         <span itemprop="name">Home</span>
                                     </a>
                                     <meta itemprop="position" content="1" />

@@ -1,6 +1,3 @@
-<?php
-session_start();
-?>
 <!DOCTYPE html>
 <html class="no-js" lang="en">
 
@@ -13,7 +10,7 @@ session_start();
         <div class="hero-container">
             <div data-aos="fade-in">
                 <h2 style="margin-top:230px;color:#201f1f">
-                    We provide
+                    We provide<br>
                     <span class="typed"
                         data-typed-items="Vishnu style sitting sofa, fanciful rugs, finest bedsheets, plushy carpet"></span>
                 </h2>
@@ -317,11 +314,6 @@ session_start();
                                     </div>
 
                                 </div>
-                                <div class="clearfix text-center" style="margin-top: 30px;">
-                                    <a class="btnLoadMore" href="index4658.php?page=2" title="LOAD MORE">
-                                        LOAD MORE
-                                    </a>
-                                </div>
                                 <div class="proLoadMoreBottom"></div>
                             </div>
                         </div>
@@ -434,7 +426,24 @@ session_start();
                                     class="portfolio-lightbox preview-link" title="Web 3"><i class="bi bi-plus"></i></a>
                             </div>
                         </div>
-
+                        <div class="col-lg-4 col-md-6 portfolio-item filter-web">
+                            <img src="assets/img/portfolio/portfolio-2.jpg" class="img-fluid" alt="">
+                            <div class="portfolio-info">
+                                <h4>Web 3</h4>
+                                <p>Web</p>
+                                <a href="assets/img/portfolio/portfolio-2.jpg" data-gallery="portfolioGallery"
+                                    class="portfolio-lightbox preview-link" title="Web 3"><i class="bi bi-plus"></i></a>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6 portfolio-item filter-web">
+                            <img src="assets/img/portfolio/portfolio-2.jpg" class="img-fluid" alt="">
+                            <div class="portfolio-info">
+                                <h4>Web 3</h4>
+                                <p>Web</p>
+                                <a href="assets/img/portfolio/portfolio-2.jpg" data-gallery="portfolioGallery"
+                                    class="portfolio-lightbox preview-link" title="Web 3"><i class="bi bi-plus"></i></a>
+                            </div>
+                        </div>
                         <div class="col-lg-4 col-md-6 portfolio-item filter-app">
                             <img src="assets/img/portfolio/portfolio-3.jpg" class="img-fluid" alt="">
                             <div class="portfolio-info">
@@ -525,7 +534,7 @@ session_start();
                                             <div class="velaProBlockInner">
                                                 <div class="proHImage d-flex flexJustifyCenter">
                                                     <a class="proFeaturedImage"
-                                                        href="products/sacrificial-chair-design-12.php">
+                                                        href="productpage.php">
                                                         <div class="wrap">
                                                             <div class="p-relative">
                                                                 <div class="product-card__image"
@@ -559,28 +568,10 @@ session_start();
                                                     <div class="productLable">
                                                         <span class="labelSale">Sale</span>
                                                     </div>
-                                                    <div class="productQuickView">
-                                                        <a class="btn btnProduct btnProductQuickview"
-                                                            href="#velaQuickView"
-                                                            data-handle="sacrificial-chair-design-12"
-                                                            title="Quick view">
-                                                            <span class="icons">
-                                                                <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
-                                                                    xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
-                                                                    y="0px" viewBox="0 0 512 512"
-                                                                    style="enable-background: new 0 0 512 512"
-                                                                    xml:space="preserve">
-                                                                    <path
-                                                                        d="M344.5,298c15-23.6,23.8-51.6,23.8-81.7c0-84.1-68.1-152.3-152.1-152.3C132.1,64,64,132.2,64,216.3c0,84.1,68.1,152.3,152.1,152.3c30.5,0,58.9-9,82.7-24.4l6.9-4.8L414.3,448l33.7-34.3L339.5,305.1L344.5,298z M301.4,131.2c22.7,22.7,35.2,52.9,35.2,85c0,32.1-12.5,62.3-35.2,85c-22.7,22.7-52.9,35.2-85,35.2c-32.1,0-62.3-12.5-85-35.2c-22.7-22.7-35.2-52.9-35.2-85c0-32.1,12.5-62.3,35.2-85c22.7-22.7,52.9-35.2,85-35.2C248.5,96,278.7,108.5,301.4,131.2z" />
-                                                                </svg>
-                                                            </span>
-                                                            <span class="text">Quick view</span>
-                                                        </a>
-                                                    </div>
                                                 </div>
                                                 <div class="proContent">
                                                     <h5 class="proName">
-                                                        <a href="products/sacrificial-chair-design-12.php">Sacrificial
+                                                        <a href="productpage.php">Sacrificial
                                                             Chair Design</a>
                                                     </h5>
                                                     <div class="proGroup">
@@ -628,7 +619,7 @@ session_start();
                                             <div class="velaProBlockInner">
                                                 <div class="proHImage d-flex flexJustifyCenter">
                                                     <a class="proFeaturedImage"
-                                                        href="products/sacrificial-chair-design-11.php">
+                                                        href="productpage.php">
                                                         <div class="wrap">
                                                             <div class="p-relative">
                                                                 <div class="product-card__image"
@@ -660,28 +651,10 @@ session_start();
                                                         </div>
                                                     </a>
                                                     <div class="productLable"></div>
-                                                    <div class="productQuickView">
-                                                        <a class="btn btnProduct btnProductQuickview"
-                                                            href="#velaQuickView"
-                                                            data-handle="sacrificial-chair-design-11"
-                                                            title="Quick view">
-                                                            <span class="icons">
-                                                                <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
-                                                                    xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
-                                                                    y="0px" viewBox="0 0 512 512"
-                                                                    style="enable-background: new 0 0 512 512"
-                                                                    xml:space="preserve">
-                                                                    <path
-                                                                        d="M344.5,298c15-23.6,23.8-51.6,23.8-81.7c0-84.1-68.1-152.3-152.1-152.3C132.1,64,64,132.2,64,216.3c0,84.1,68.1,152.3,152.1,152.3c30.5,0,58.9-9,82.7-24.4l6.9-4.8L414.3,448l33.7-34.3L339.5,305.1L344.5,298z M301.4,131.2c22.7,22.7,35.2,52.9,35.2,85c0,32.1-12.5,62.3-35.2,85c-22.7,22.7-52.9,35.2-85,35.2c-32.1,0-62.3-12.5-85-35.2c-22.7-22.7-35.2-52.9-35.2-85c0-32.1,12.5-62.3,35.2-85c22.7-22.7,52.9-35.2,85-35.2C248.5,96,278.7,108.5,301.4,131.2z" />
-                                                                </svg>
-                                                            </span>
-                                                            <span class="text">Quick view</span>
-                                                        </a>
-                                                    </div>
                                                 </div>
                                                 <div class="proContent">
                                                     <h5 class="proName">
-                                                        <a href="products/sacrificial-chair-design-11.php">Sacrificial
+                                                        <a href="productpage.php">Sacrificial
                                                             Chair Design</a>
                                                     </h5>
                                                     <div class="proGroup">
@@ -725,7 +698,7 @@ session_start();
                                             <div class="velaProBlockInner">
                                                 <div class="proHImage d-flex flexJustifyCenter">
                                                     <a class="proFeaturedImage"
-                                                        href="products/sacrificial-chair-design-9.php">
+                                                        href="productpage.php">
                                                         <div class="wrap">
                                                             <div class="p-relative">
                                                                 <div class="product-card__image"
@@ -761,27 +734,10 @@ session_start();
                                                     <div class="productLable">
                                                         <span class="labelSale">Sale</span>
                                                     </div>
-                                                    <div class="productQuickView">
-                                                        <a class="btn btnProduct btnProductQuickview"
-                                                            href="#velaQuickView"
-                                                            data-handle="sacrificial-chair-design-9" title="Quick view">
-                                                            <span class="icons">
-                                                                <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
-                                                                    xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
-                                                                    y="0px" viewBox="0 0 512 512"
-                                                                    style="enable-background: new 0 0 512 512"
-                                                                    xml:space="preserve">
-                                                                    <path
-                                                                        d="M344.5,298c15-23.6,23.8-51.6,23.8-81.7c0-84.1-68.1-152.3-152.1-152.3C132.1,64,64,132.2,64,216.3c0,84.1,68.1,152.3,152.1,152.3c30.5,0,58.9-9,82.7-24.4l6.9-4.8L414.3,448l33.7-34.3L339.5,305.1L344.5,298z M301.4,131.2c22.7,22.7,35.2,52.9,35.2,85c0,32.1-12.5,62.3-35.2,85c-22.7,22.7-52.9,35.2-85,35.2c-32.1,0-62.3-12.5-85-35.2c-22.7-22.7-35.2-52.9-35.2-85c0-32.1,12.5-62.3,35.2-85c22.7-22.7,52.9-35.2,85-35.2C248.5,96,278.7,108.5,301.4,131.2z" />
-                                                                </svg>
-                                                            </span>
-                                                            <span class="text">Quick view</span>
-                                                        </a>
-                                                    </div>
                                                 </div>
                                                 <div class="proContent">
                                                     <h5 class="proName">
-                                                        <a href="products/sacrificial-chair-design-9.php">Sacrificial
+                                                        <a href="productpage.php">Sacrificial
                                                             Chair Design</a>
                                                     </h5>
                                                     <div class="proGroup">
@@ -829,7 +785,7 @@ session_start();
                                             <div class="velaProBlockInner">
                                                 <div class="proHImage d-flex flexJustifyCenter">
                                                     <a class="proFeaturedImage"
-                                                        href="products/sacrificial-chair-design-8.php">
+                                                        href="productpage.php">
                                                         <div class="wrap">
                                                             <div class="p-relative">
                                                                 <div class="product-card__image"
@@ -865,27 +821,10 @@ session_start();
                                                     <div class="productLable">
                                                         <span class="labelSale">Sale</span>
                                                     </div>
-                                                    <div class="productQuickView">
-                                                        <a class="btn btnProduct btnProductQuickview"
-                                                            href="#velaQuickView"
-                                                            data-handle="sacrificial-chair-design-8" title="Quick view">
-                                                            <span class="icons">
-                                                                <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
-                                                                    xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
-                                                                    y="0px" viewBox="0 0 512 512"
-                                                                    style="enable-background: new 0 0 512 512"
-                                                                    xml:space="preserve">
-                                                                    <path
-                                                                        d="M344.5,298c15-23.6,23.8-51.6,23.8-81.7c0-84.1-68.1-152.3-152.1-152.3C132.1,64,64,132.2,64,216.3c0,84.1,68.1,152.3,152.1,152.3c30.5,0,58.9-9,82.7-24.4l6.9-4.8L414.3,448l33.7-34.3L339.5,305.1L344.5,298z M301.4,131.2c22.7,22.7,35.2,52.9,35.2,85c0,32.1-12.5,62.3-35.2,85c-22.7,22.7-52.9,35.2-85,35.2c-32.1,0-62.3-12.5-85-35.2c-22.7-22.7-35.2-52.9-35.2-85c0-32.1,12.5-62.3,35.2-85c22.7-22.7,52.9-35.2,85-35.2C248.5,96,278.7,108.5,301.4,131.2z" />
-                                                                </svg>
-                                                            </span>
-                                                            <span class="text">Quick view</span>
-                                                        </a>
-                                                    </div>
                                                 </div>
                                                 <div class="proContent">
                                                     <h5 class="proName">
-                                                        <a href="products/sacrificial-chair-design-8.php">Sacrificial
+                                                        <a href="productpage.php">Sacrificial
                                                             Chair Design</a>
                                                     </h5>
                                                     <div class="proGroup">
@@ -933,7 +872,7 @@ session_start();
                                             <div class="velaProBlockInner">
                                                 <div class="proHImage d-flex flexJustifyCenter">
                                                     <a class="proFeaturedImage"
-                                                        href="products/sacrificial-chair-design-7.php">
+                                                        href="productpage.php">
                                                         <div class="wrap">
                                                             <div class="p-relative">
                                                                 <div class="product-card__image"
@@ -969,27 +908,10 @@ session_start();
                                                     <div class="productLable">
                                                         <span class="labelSale">Sale</span>
                                                     </div>
-                                                    <div class="productQuickView">
-                                                        <a class="btn btnProduct btnProductQuickview"
-                                                            href="#velaQuickView"
-                                                            data-handle="sacrificial-chair-design-7" title="Quick view">
-                                                            <span class="icons">
-                                                                <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
-                                                                    xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
-                                                                    y="0px" viewBox="0 0 512 512"
-                                                                    style="enable-background: new 0 0 512 512"
-                                                                    xml:space="preserve">
-                                                                    <path
-                                                                        d="M344.5,298c15-23.6,23.8-51.6,23.8-81.7c0-84.1-68.1-152.3-152.1-152.3C132.1,64,64,132.2,64,216.3c0,84.1,68.1,152.3,152.1,152.3c30.5,0,58.9-9,82.7-24.4l6.9-4.8L414.3,448l33.7-34.3L339.5,305.1L344.5,298z M301.4,131.2c22.7,22.7,35.2,52.9,35.2,85c0,32.1-12.5,62.3-35.2,85c-22.7,22.7-52.9,35.2-85,35.2c-32.1,0-62.3-12.5-85-35.2c-22.7-22.7-35.2-52.9-35.2-85c0-32.1,12.5-62.3,35.2-85c22.7-22.7,52.9-35.2,85-35.2C248.5,96,278.7,108.5,301.4,131.2z" />
-                                                                </svg>
-                                                            </span>
-                                                            <span class="text">Quick view</span>
-                                                        </a>
-                                                    </div>
                                                 </div>
                                                 <div class="proContent">
                                                     <h5 class="proName">
-                                                        <a href="products/sacrificial-chair-design-7.php">Sacrificial
+                                                        <a href="productpage.php">Sacrificial
                                                             Chair Design</a>
                                                     </h5>
                                                     <div class="proGroup">
@@ -1037,7 +959,7 @@ session_start();
                                             <div class="velaProBlockInner">
                                                 <div class="proHImage d-flex flexJustifyCenter">
                                                     <a class="proFeaturedImage"
-                                                        href="products/sacrificial-chair-design-3.php">
+                                                        href="productpage.php">
                                                         <div class="wrap">
                                                             <div class="p-relative">
                                                                 <div class="product-card__image"
@@ -1071,27 +993,10 @@ session_start();
                                                         </div>
                                                     </a>
                                                     <div class="productLable"></div>
-                                                    <div class="productQuickView">
-                                                        <a class="btn btnProduct btnProductQuickview"
-                                                            href="#velaQuickView"
-                                                            data-handle="sacrificial-chair-design-3" title="Quick view">
-                                                            <span class="icons">
-                                                                <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
-                                                                    xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
-                                                                    y="0px" viewBox="0 0 512 512"
-                                                                    style="enable-background: new 0 0 512 512"
-                                                                    xml:space="preserve">
-                                                                    <path
-                                                                        d="M344.5,298c15-23.6,23.8-51.6,23.8-81.7c0-84.1-68.1-152.3-152.1-152.3C132.1,64,64,132.2,64,216.3c0,84.1,68.1,152.3,152.1,152.3c30.5,0,58.9-9,82.7-24.4l6.9-4.8L414.3,448l33.7-34.3L339.5,305.1L344.5,298z M301.4,131.2c22.7,22.7,35.2,52.9,35.2,85c0,32.1-12.5,62.3-35.2,85c-22.7,22.7-52.9,35.2-85,35.2c-32.1,0-62.3-12.5-85-35.2c-22.7-22.7-35.2-52.9-35.2-85c0-32.1,12.5-62.3,35.2-85c22.7-22.7,52.9-35.2,85-35.2C248.5,96,278.7,108.5,301.4,131.2z" />
-                                                                </svg>
-                                                            </span>
-                                                            <span class="text">Quick view</span>
-                                                        </a>
-                                                    </div>
                                                 </div>
                                                 <div class="proContent">
                                                     <h5 class="proName">
-                                                        <a href="products/sacrificial-chair-design-3.php">Sacrificial
+                                                        <a href="productpage.php">Sacrificial
                                                             Chair Design</a>
                                                     </h5>
                                                     <div class="proGroup">
@@ -1135,7 +1040,7 @@ session_start();
                                             <div class="velaProBlockInner">
                                                 <div class="proHImage d-flex flexJustifyCenter">
                                                     <a class="proFeaturedImage"
-                                                        href="products/sacrificial-chair-design.php">
+                                                        href="productpage.php">
                                                         <div class="wrap">
                                                             <div class="p-relative">
                                                                 <div class="product-card__image"
@@ -1169,27 +1074,10 @@ session_start();
                                                         </div>
                                                     </a>
                                                     <div class="productLable"></div>
-                                                    <div class="productQuickView">
-                                                        <a class="btn btnProduct btnProductQuickview"
-                                                            href="#velaQuickView" data-handle="sacrificial-chair-design"
-                                                            title="Quick view">
-                                                            <span class="icons">
-                                                                <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
-                                                                    xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
-                                                                    y="0px" viewBox="0 0 512 512"
-                                                                    style="enable-background: new 0 0 512 512"
-                                                                    xml:space="preserve">
-                                                                    <path
-                                                                        d="M344.5,298c15-23.6,23.8-51.6,23.8-81.7c0-84.1-68.1-152.3-152.1-152.3C132.1,64,64,132.2,64,216.3c0,84.1,68.1,152.3,152.1,152.3c30.5,0,58.9-9,82.7-24.4l6.9-4.8L414.3,448l33.7-34.3L339.5,305.1L344.5,298z M301.4,131.2c22.7,22.7,35.2,52.9,35.2,85c0,32.1-12.5,62.3-35.2,85c-22.7,22.7-52.9,35.2-85,35.2c-32.1,0-62.3-12.5-85-35.2c-22.7-22.7-35.2-52.9-35.2-85c0-32.1,12.5-62.3,35.2-85c22.7-22.7,52.9-35.2,85-35.2C248.5,96,278.7,108.5,301.4,131.2z" />
-                                                                </svg>
-                                                            </span>
-                                                            <span class="text">Quick view</span>
-                                                        </a>
-                                                    </div>
                                                 </div>
                                                 <div class="proContent">
                                                     <h5 class="proName">
-                                                        <a href="products/sacrificial-chair-design.php">Sacrificial
+                                                        <a href="productpage.php">Sacrificial
                                                             Chair Design</a>
                                                     </h5>
                                                     <div class="proGroup">
@@ -1205,7 +1093,7 @@ session_start();
                                                             <input type="hidden" name="id" value="158485676048" />
 
                                                             <a class="btn btnAddToCart"
-                                                                href="products/sacrificial-chair-design.php"
+                                                                href="productpage.php"
                                                                 title="Select options">
                                                                 <i class="icons">
                                                                     <svg version="1.1"
@@ -1234,7 +1122,7 @@ session_start();
                                             <div class="velaProBlockInner">
                                                 <div class="proHImage d-flex flexJustifyCenter">
                                                     <a class="proFeaturedImage"
-                                                        href="products/sacrificial-chair-design-1.php">
+                                                        href="productpage.php">
                                                         <div class="wrap">
                                                             <div class="p-relative">
                                                                 <div class="product-card__image"
@@ -1252,27 +1140,10 @@ session_start();
                                                         </div>
                                                     </a>
                                                     <div class="productLable"></div>
-                                                    <div class="productQuickView">
-                                                        <a class="btn btnProduct btnProductQuickview"
-                                                            href="#velaQuickView"
-                                                            data-handle="sacrificial-chair-design-1" title="Quick view">
-                                                            <span class="icons">
-                                                                <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
-                                                                    xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
-                                                                    y="0px" viewBox="0 0 512 512"
-                                                                    style="enable-background: new 0 0 512 512"
-                                                                    xml:space="preserve">
-                                                                    <path
-                                                                        d="M344.5,298c15-23.6,23.8-51.6,23.8-81.7c0-84.1-68.1-152.3-152.1-152.3C132.1,64,64,132.2,64,216.3c0,84.1,68.1,152.3,152.1,152.3c30.5,0,58.9-9,82.7-24.4l6.9-4.8L414.3,448l33.7-34.3L339.5,305.1L344.5,298z M301.4,131.2c22.7,22.7,35.2,52.9,35.2,85c0,32.1-12.5,62.3-35.2,85c-22.7,22.7-52.9,35.2-85,35.2c-32.1,0-62.3-12.5-85-35.2c-22.7-22.7-35.2-52.9-35.2-85c0-32.1,12.5-62.3,35.2-85c22.7-22.7,52.9-35.2,85-35.2C248.5,96,278.7,108.5,301.4,131.2z" />
-                                                                </svg>
-                                                            </span>
-                                                            <span class="text">Quick view</span>
-                                                        </a>
-                                                    </div>
                                                 </div>
                                                 <div class="proContent">
                                                     <h5 class="proName">
-                                                        <a href="products/sacrificial-chair-design-1.php">Sacrificial
+                                                        <a href="productpage.php">Sacrificial
                                                             Chair Design</a>
                                                     </h5>
                                                     <div class="proGroup">

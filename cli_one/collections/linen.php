@@ -37,58 +37,6 @@
                         <li class="hasMemoDropdown">
                             <a class="collapsed" href="#/" title="" data-toggle="collapse"
                                 data-target="#memoDropdown11">Home</a>
-                            <span class="memoBtnDropdown collapsed" data-toggle="collapse"
-                                data-target="#memoDropdown11"><i class="fa fa-angle-down"></i></span>
-                            <ul id="memoDropdown11" class="memoDropdown collapse">
-                                <li class="">
-                                    <a href="../index17f0.html?_ab=0&amp;_fd=0&amp;_sc=1&amp;preview_theme_id=120192106561"
-                                        title="">Home 01</a>
-                                </li>
-                                <li class="">
-                                    <a href="../indexec95.html?_ab=0&amp;_fd=0&amp;_sc=1&amp;preview_theme_id=120197840961"
-                                        title="">Home 02</a>
-                                </li>
-                                <li class="">
-                                    <a href="../index80b3.html?_ab=0&amp;_fd=0&amp;_sc=1&amp;preview_theme_id=120198004801"
-                                        title="">Home 03</a>
-                                </li>
-                                <li class="">
-                                    <a href="../index8677.html?_ab=0&amp;_fd=0&amp;_sc=1&amp;preview_theme_id=120198037569"
-                                        title="">Home 04</a>
-                                </li>
-                                <li class="">
-                                    <a href="../index9f89.html?_ab=0&amp;_fd=0&amp;_sc=1&amp;preview_theme_id=120200921153"
-                                        title="">Home 05</a>
-                                </li>
-                                <li class="">
-                                    <a href="../indexa914.html?_ab=0&amp;_fd=0&amp;_sc=1&amp;preview_theme_id=81539792961"
-                                        title="">Home 06</a>
-                                </li>
-                                <li class="">
-                                    <a href="../index3b50.html?_ab=0&amp;_fd=0&amp;_sc=1&amp;preview_theme_id=81540186177"
-                                        title="">Home 07</a>
-                                </li>
-                                <li class="">
-                                    <a href="../index2acd.html?_ab=0&amp;_fd=0&amp;_sc=1&amp;preview_theme_id=81540251713"
-                                        title="">Home 08</a>
-                                </li>
-                                <li class="">
-                                    <a href="../indexfb76.html?_ab=0&amp;_fd=0&amp;_sc=1&amp;preview_theme_id=81541038145"
-                                        title="">Home 09</a>
-                                </li>
-                                <li class="">
-                                    <a href="../indexd0a5.html?_ab=0&amp;_fd=0&amp;_sc=1&amp;preview_theme_id=120208064577"
-                                        title="">Home 10</a>
-                                </li>
-                                <li class="">
-                                    <a href="../index6709.html?_ab=0&amp;_fd=0&amp;_sc=1&amp;preview_theme_id=81802592321"
-                                        title="">Home 11<sup>new</sup></a>
-                                </li>
-                                <li class="">
-                                    <a href="../index6099.html?_ab=0&amp;_fd=0&amp;_sc=1&amp;preview_theme_id=81805770817"
-                                        title="">Home 12<sup>new</sup></a>
-                                </li>
-                            </ul>
                         </li>
                         <li class="hasMemoDropdown">
                             <a class="collapsed" href="#/collections/all" title="" data-toggle="collapse"
@@ -240,7 +188,7 @@
                             <h1 class="breadcrumbHeading">Bed & bath Linen</h1>
                             <ol class="breadcrumb" itemscope itemtype="http://schema.org/BreadcrumbList">
                                 <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
-                                    <a href="../index.html" title="Back to the frontpage" itemprop="item">
+                                    <a href="/" title="Back to the frontpage" itemprop="item">
                                         <span itemprop="name">Home</span>
                                     </a>
                                     <meta itemprop="position" content="1" />

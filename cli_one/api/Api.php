@@ -41,26 +41,26 @@ if (isset($_POST['user_login'])) {
     echo json_encode($response);
 }
 
-if (isset($_POST['category']) && ($_POST['category'] == "get_cat")) {
+// if (isset($_POST['category']) && ($_POST['category'] == "get_cat")) {
 
-    $stmt = $dbh->prepare("SELECT * FROM category"); //where status ='A'
-    $stmt->execute();
-    $count = $stmt->rowCount();
-    if ($count > 0) {
+//     $stmt = $dbh->prepare("SELECT * FROM category"); //where status ='A'
+//     $stmt->execute();
+//     $count = $stmt->rowCount();
+//     if ($count > 0) {
 
-        $fetch_array = $stmt->fetchAll(PDO::FETCH_ASSOC);
-        for ($i = 0; $i < $count; $i++) {
-            $data["name"] = $fetch_array[$i]['name'];
-            $data["image"] = $fetch_array[$i]['image'];
-            $data["description"] = $fetch_array[$i]['description'];
-            $data["status"] = 'success';
+//         $fetch_array = $stmt->fetchAll(PDO::FETCH_ASSOC);
+//         for ($i = 0; $i < $count; $i++) {
+//             $data["name"] = $fetch_array[$i]['name'];
+//             $data["image"] = $fetch_array[$i]['image'];
+//             $data["description"] = $fetch_array[$i]['description'];
+//             $data["status"] = 'success';
 
-            array_push($response["response"], $data);
-        }
-    } else {
-        $data["reason"] = "not_found";
-        $data["status"] = "failed";
-        array_push($response["response"], $data);
-    }
-    echo json_encode($response);
-}
+//             array_push($response["response"], $data);
+//         }
+//     } else {
+//         $data["reason"] = "not_found";
+//         $data["status"] = "failed";
+//         array_push($response["response"], $data);
+//     }
+//     echo json_encode($response);
+// }

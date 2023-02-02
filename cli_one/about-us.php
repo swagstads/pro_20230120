@@ -27,154 +27,6 @@
             <header id="velaHeader" class="velaHeader">
                 <?php include('header.php'); ?>
             </header>
-            <div id="velaMenuMobile" class="menuMobileContainer hidden-md hidden-lg">
-                <div class="menuMobileWrapper">
-                    <div class="memoHeader">
-                        <span>Menu Mobile</span>
-                        <div class="btnMenuClose">&nbsp;</div>
-                    </div>
-                    <ul class="nav memoNav">
-                        <li class="hasMemoDropdown active">
-                            <a class="collapsed" href="#/" title="" data-toggle="collapse"
-                                data-target="#memoDropdown11">Home</a>
-                            <span class="memoBtnDropdown collapsed" data-toggle="collapse"
-                                data-target="#memoDropdown11"><i class="fa fa-angle-down"></i></span>
-                        </li>
-                        <li class="hasMemoDropdown">
-                            <a class="collapsed" href="#/collections/all" title="" data-toggle="collapse"
-                                data-target="#memoDropdown12">Shop</a>
-                            <span class="memoBtnDropdown collapsed" data-toggle="collapse"
-                                data-target="#memoDropdown12"><i class="fa fa-angle-down"></i></span>
-                            <ul id="memoDropdown12" class="memoDropdown collapse">
-                                <li class="hasMemoDropdown">
-                                    <a class="collapsed" href="#/collections" title="" data-toggle="collapse"
-                                        data-target="#memoDropdown221">Catalog</a>
-                                    <span class="memoBtnDropdown collapsed" data-toggle="collapse"
-                                        data-target="#memoDropdown221"><i class="fa fa-angle-down"></i></span>
-                                    <ul id="memoDropdown221" class="memoDropdown collapse">
-                                        <li class="">
-                                            <a href="collections/furniture.php" title="">Furniture</a>
-                                        </li>
-                                        <li class="">
-                                            <a href="collections/decor-art.php" title="">Decor Art</a>
-                                        </li>
-                                        <li class="">
-                                            <a href="collections/illumination.php" title="">Illumination</a>
-                                        </li>
-                                        <li class="">
-                                            <a href="collections/kitchen-things.php" title="">Kitchen Things</a>
-                                        </li>
-                                        <li class="">
-                                            <a href="collections/best-sellter.php" title="">Best Sellter</a>
-                                        </li>
-                                        <li class="">
-                                            <a href="collections/new-products.php" title="">New products</a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li class="hasMemoDropdown">
-                                    <a class="collapsed" href="#/collections/best-sellter" title=""
-                                        data-toggle="collapse" data-target="#memoDropdown222">Shop pages</a>
-                                    <span class="memoBtnDropdown collapsed" data-toggle="collapse"
-                                        data-target="#memoDropdown222"><i class="fa fa-angle-down"></i></span>
-                                    <ul id="memoDropdown222" class="memoDropdown collapse">
-                                        <li class="">
-                                            <a href="collections/sale-off.php" title="">Left Sidebar</a>
-                                        </li>
-                                        <li class="">
-                                            <a href="collections/best-sellter.php" title="">Right Sidebar</a>
-                                        </li>
-                                        <li class="">
-                                            <a href="collections/furniture.php" title="">Collection List</a>
-                                        </li>
-                                        <li class="">
-                                            <a href="collections/all.php" title="">Collection Grid</a>
-                                        </li>
-                                        <li class="">
-                                            <a href="collections/kitchen-things.php" title="">Full Width</a>
-                                        </li>
-                                        <li class="">
-                                            <a href="collections/illumination.php" title="">Full Width V1</a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li class="hasMemoDropdown">
-                                    <a class="collapsed" href="#/products/sacrificial-chair-design-12" title=""
-                                        data-toggle="collapse" data-target="#memoDropdown223">Product Pages</a>
-                                    <span class="memoBtnDropdown collapsed" data-toggle="collapse"
-                                        data-target="#memoDropdown223"><i class="fa fa-angle-down"></i></span>
-                                    <ul id="memoDropdown223" class="memoDropdown collapse">
-                                        <li class="">
-                                            <a href="products/sacrificial-chair-design-12.php" title="">Product Page
-                                                V1</a>
-                                        </li>
-                                        <li class="">
-                                            <a href="products/sacrificial-chair-design-5.php" title="">Product Page
-                                                V2</a>
-                                        </li>
-                                        <li class="">
-                                            <a href="products/sacrificial-chair-design-6.php" title="">Product Page
-                                                V3</a>
-                                        </li>
-                                        <li class="">
-                                            <a href="products/sacrificial-chair-design-10.php" title="">Product Page
-                                                V4</a>
-                                        </li>
-                                        <li class="">
-                                            <a href="products/sacrificial-chair-design-11.php" title="">Product Page
-                                                V5</a>
-                                        </li>
-                                        <li class="">
-                                            <a href="products/sacrificial-chair-design-2.php" title="">Variable
-                                                Product</a>
-                                        </li>
-                                        <li class="">
-                                            <a href="products/sacrificial-chair-design-8.php" title="">External
-                                                Product</a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li class="hasMemoDropdown">
-                                    <a class="collapsed" href="#/pages/home-pages" title="" data-toggle="collapse"
-                                        data-target="#memoDropdown224">Other Pages</a>
-                                    <span class="memoBtnDropdown collapsed" data-toggle="collapse"
-                                        data-target="#memoDropdown224"><i class="fa fa-angle-down"></i></span>
-                                    <ul id="memoDropdown224" class="memoDropdown collapse">
-                                        <li class="">
-                                            <a href="about-us.php" title="">About Page</a>
-                                        </li>
-                                        <li class="">
-                                            <a href="contact-us.php" title="">Contact Page</a>
-                                        </li>
-                                        <li class="">
-                                            <a href="faqs.php" title="">FAQs Page</a>
-                                        </li>
-                                        <li class="">
-                                            <a href="404.php" title="">404 Page</a>
-                                        </li>
-                                        <li class="">
-                                            <a href="password.php" title="">Coming Soon Page</a>
-                                        </li>
-                                        <li class="">
-                                            <a href="cart.php" title="">Cart Page</a>
-                                        </li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="">
-                            <a href="collections.php" title="">Collections</a>
-                        </li>
-                        <li class="">
-                            <a href="blogs/news.php" title="">Blog</a>
-                        </li>
-                        <li class="">
-                            <a href="pages/contact-us.php" title="">Contact</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            <div class="menuMobileOverlay hidden-md hidden-lg"></div>
         </div>
         <div id="shopify-section-vela-breacrumb-image" class="shopify-section">
 
@@ -273,10 +125,10 @@
                                                     <div class="product-card__image"
                                                         style="padding-top:61.24523506988564%;">
                                                         <img class="product-card__img lazyload imgFlyCart "
-                                                            data-src="cdn.shopify.com/s/files/1/1573/5553/files/about-gallery-1_%7bwidth%7dxfb93.html?v=1614321993"
+                                                            data-src="./assets/images/about/about-cushion-covers.jpg"
                                                             data-widths="[360,540,720,900,1080,1296,1728,1944,2808,4320]"
                                                             data-aspectratio="1.6327800829875518"
-                                                            data-ratio="1.6327800829875518" data-sizes="auto" alt="" />
+                                                            data-ratio="1.6327800829875518" data-sizes="auto" alt="Image 1" />
                                                     </div>
                                                     <div class="placeholder-background placeholder-background--animation"
                                                         data-image-placeholder></div>
@@ -297,7 +149,7 @@
                                                             <div class="product-card__image"
                                                                 style="padding-top:53.33333333333333%;">
                                                                 <img class="product-card__img lazyload imgFlyCart "
-                                                                    data-src="cdn.shopify.com/s/files/1/1573/5553/files/about-gallery-2_%7bwidth%7dxfb93.html?v=1614321993"
+                                                                    data-src="./assets/images/about/about-bedsheets.jpg"
                                                                     data-widths="[360,540,720,900,1080,1296,1728,1944,2808,4320]"
                                                                     data-aspectratio="1.875" data-ratio="1.875"
                                                                     data-sizes="auto" alt="" />
@@ -321,7 +173,7 @@
                                                             <div class="product-card__image"
                                                                 style="padding-top:53.33333333333333%;">
                                                                 <img class="product-card__img lazyload imgFlyCart "
-                                                                    data-src="cdn.shopify.com/s/files/1/1573/5553/files/about-gallery-3_%7bwidth%7dx7231.html?v=1614321992"
+                                                                    data-src="./assets/images/about/about-rugs.jpg"
                                                                     data-widths="[360,540,720,900,1080,1296,1728,1944,2808,4320]"
                                                                     data-aspectratio="1.875" data-ratio="1.875"
                                                                     data-sizes="auto" alt="" />
@@ -347,7 +199,7 @@
                                                     <div class="product-card__image"
                                                         style="padding-top:58.33333333333334%;">
                                                         <img class="product-card__img lazyload imgFlyCart "
-                                                            data-src="cdn.shopify.com/s/files/1/1573/5553/files/about-gallery-4_%7bwidth%7dx7231.html?v=1614321992"
+                                                            data-src="./assets/images/about/about-robe.jpg"
                                                             data-widths="[360,540,720,900,1080,1296,1728,1944,2808,4320]"
                                                             data-aspectratio="1.7142857142857142"
                                                             data-ratio="1.7142857142857142" data-sizes="auto" alt="" />
@@ -369,7 +221,7 @@
                                                     <div class="product-card__image"
                                                         style="padding-top:120.83333333333333%;">
                                                         <img class="product-card__img lazyload imgFlyCart "
-                                                            data-src="cdn.shopify.com/s/files/1/1573/5553/files/about-gallery-5_%7bwidth%7dxfb93.html?v=1614321993"
+                                                            data-src="./assets/images/about/about-floor.jpg"
                                                             data-widths="[360,540,720,900,1080,1296,1728,1944,2808,4320]"
                                                             data-aspectratio="0.8275862068965517"
                                                             data-ratio="0.8275862068965517" data-sizes="auto" alt="" />
@@ -404,8 +256,8 @@
                                             <div class="p-relative">
                                                 <div class="product-card__image"
                                                     style="padding-top:86.66666666666669%;">
-                                                    <img class="product-card__img lazyload imgFlyCart "
-                                                        data-src="cdn.shopify.com/s/files/1/1573/5553/files/about-icon-1_%7bwidth%7dx7231.html?v=1614321992"
+                                                    <img class="product-card__img-icon lazyload imgFlyCart "
+                                                        data-src="./assets/icons/trust.svg"
                                                         data-widths="[360,540,720,900,1080,1296,1728,1944,2808,4320]"
                                                         data-aspectratio="1.1538461538461537"
                                                         data-ratio="1.1538461538461537" data-sizes="auto" alt="" />
@@ -432,11 +284,11 @@
                                     <div class="boxService">
                                         <div class="boxServiceImage" style="width: 75px;height: 65px">
 
-                                            <div class="p-relative">
+                                        <div class="p-relative">
                                                 <div class="product-card__image"
                                                     style="padding-top:86.66666666666669%;">
-                                                    <img class="product-card__img lazyload imgFlyCart "
-                                                        data-src="cdn.shopify.com/s/files/1/1573/5553/files/about-icon-2_%7bwidth%7dx7231.html?v=1614321992"
+                                                    <img class="product-card__img-icon lazyload imgFlyCart "
+                                                        data-src="./assets/icons/happy-customer.svg"
                                                         data-widths="[360,540,720,900,1080,1296,1728,1944,2808,4320]"
                                                         data-aspectratio="1.1538461538461537"
                                                         data-ratio="1.1538461538461537" data-sizes="auto" alt="" />
@@ -466,8 +318,8 @@
                                             <div class="p-relative">
                                                 <div class="product-card__image"
                                                     style="padding-top:86.66666666666669%;">
-                                                    <img class="product-card__img lazyload imgFlyCart "
-                                                        data-src="cdn.shopify.com/s/files/1/1573/5553/files/about-icon-3_%7bwidth%7dx7231.html?v=1614321992"
+                                                    <img class="product-card__img-icon lazyload imgFlyCart "
+                                                        data-src="./assets/icons/awesome-performance.svg"
                                                         data-widths="[360,540,720,900,1080,1296,1728,1944,2808,4320]"
                                                         data-aspectratio="1.1538461538461537"
                                                         data-ratio="1.1538461538461537" data-sizes="auto" alt="" />
@@ -497,8 +349,8 @@
                                             <div class="p-relative">
                                                 <div class="product-card__image"
                                                     style="padding-top:86.66666666666669%;">
-                                                    <img class="product-card__img lazyload imgFlyCart "
-                                                        data-src="cdn.shopify.com/s/files/1/1573/5553/files/about-icon-4_%7bwidth%7dx7231.html?v=1614321992"
+                                                    <img class="product-card__img-icon lazyload imgFlyCart "
+                                                        data-src="./assets/icons/design.svg"
                                                         data-widths="[360,540,720,900,1080,1296,1728,1944,2808,4320]"
                                                         data-aspectratio="1.1538461538461537"
                                                         data-ratio="1.1538461538461537" data-sizes="auto" alt="" />
