@@ -8,6 +8,7 @@ session_start();
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="assets/css/login_style.css">
     <style>
+
     .hero-logo {
         margin-right: 10px;
         background-image: url("assets/img/test.jpg");
@@ -87,7 +88,19 @@ session_start();
         visibility: visible;
         opacity: 1;
     }
-
+    #login_alert_message,
+    #signup_alert_message{
+        color: red;
+    }
+    
+    #login_success_message,
+    #signup_success_message{
+        color: green;
+    }
+    #add:disabled{
+        opacity: 0.5;
+        cursor: not-allowed;
+    }
     @keyframes animate {
         0% {
             transform: scale(0.5);
@@ -123,15 +136,18 @@ session_start();
     <!-- signup page -->
     <div class="container" id="container">
         <div class="form-container sign-up-container">
-            <form action="api/signup.php" method="post" id="signup_form" name="addemp">
+            <form onsubmit="signup_verify_user()" method="post" id="signup_form" name="addemp">
                 <h1>Create Account</h1>
-                <input type="text" name="name" placeholder="Full Name" required />
-                <input type="number" name="contact" placeholder="Contact" pattern=".{9,}" required
-                    title="10 characters minimum" />
-                <input type="email" name="email" placeholder="Email" required />
-                <input type="password" name="password" placeholder="Password" pattern=".{8,}" required
+
+                <div id="signup_alert_message"></div>
+                <div id="signup_success_message"></div>
+
+                <input type="text" id="signup_name" name="name" placeholder="Full Name" required value="Rishabh Nahar" />
+                <input type="number" id="signup_contact" name="mobile" minlength="10" maxlength="10" placeholder="Contact" pattern=".{9,}" required title="10 characters minimum" />
+                <input type="email" id="signup_email" name="email" placeholder="Email" required value="rishabhn@gmail.com" />
+                <input type="password" id="signup_password" name="password" placeholder="Password" pattern=".{8,}" value="signup_123" required
                     title="8 characters minimum" />
-                <input type="password" name="confirmpassword" placeholder="Confirm Password" required />
+                <input type="password" name="confirmpassword" placeholder="Confirm Password" value="signup_123" required />
                 <button type="submit" name="add" onclick="return valid();" id="add">Sign Up</button>
                 <div>
                     <p>Already Have an account?
@@ -147,10 +163,14 @@ session_start();
         </div>
         <!-- Login page -->
         <div class="form-container sign-in-container">
-            <form action="api/login.php" method="post" id="signup_form">
+            <form onsubmit="login_verify_user()" method="post" >
                 <h1>Login to continue shopping!</h1>
-                <input type="email" name="email" placeholder="Email" required />
-                <input type="password" name="password" placeholder="Password" required />
+                
+                <div id="login_alert_message">Here</div>
+                <div id="login_success_message">Here</div>
+
+                <input type="email" id="login_email" name="email" placeholder="Email" required />
+                <input type="password" id="login_password" name="password" placeholder="Password" required />
                 <a href="#">Forgot your password?</a>
                 <button type="submit" name="user_login">Login</button>
                 <p>Don't Have an account?
@@ -158,7 +178,7 @@ session_start();
                 </p>
                 <div class="">
                     <span>
-                        &copy; Swagsta 2022
+                        &copy; Swagsta 2022 
                     </span>
                 </div>
             </form>
@@ -174,6 +194,103 @@ session_start();
             </div>
         </div>
     </div>
+
+
+
+    <script>
+        function signup_verify_user(){
+
+            event.preventDefault()
+
+            // Signup submit button
+            let submit_bttn = document.getElementById("add");
+
+            var api_url = '/api/signup.php';
+
+            // form data values
+            let name = document.getElementById("signup_name").value;
+            let email = document.getElementById("signup_email").value;
+            let password = document.getElementById("signup_password").value;
+            let contact = document.getElementById("signup_contact").value;
+
+            if(contact.length === 10){
+
+                // signup button disable
+                submit_bttn.disabled = 'true'
+                submit_bttn.textContent = 'Signing up...'
+
+                // form data values in one variable
+                var form_data = { "add": "register","name":name,"email":email,"password":password,"contact":contact};
+                console.log("Form data",form_data);
+                $.ajax({
+                    url: api_url,
+                    type: 'POST',
+                    data: form_data,
+                    success: function (returned_data) {
+                        console.log(returned_data);
+                        var jsonData = JSON.parse(returned_data);
+                        var return_data = jsonData.response;
+                        // console.log(jsonData);
+                        if(jsonData.response[0].status === "ok"){
+                            submit_bttn.textContent = 'Submit'
+                            // submit_bttn.disabled = false
+                        }
+                        else{
+                            submit_bttn.textContent = 'Submit'
+                            submit_bttn.disabled = false
+                        }
+                        $("#signup_success_message").html( jsonData.response[0].success_message);
+                        $("#signup_alert_message").html( jsonData.response[0].alert_message);
+                    }
+                })
+            }
+            else{
+                document.getElementById("signup_alert_message").innerHTML = "Please provide valid phone number";
+            }
+
+        }
+   
+        function login_verify_user(){
+            console.log("Login attempt");
+
+            event.preventDefault()
+
+            var api_url = '/api/login.php';
+
+            let email = document.getElementById("login_email").value;
+            let password = document.getElementById("login_password").value;
+
+            var form_data = { "user_login": "login","email":email,"password":password};
+            console.log(form_data);
+            $.ajax({
+                    url: api_url,
+                    type: 'POST',
+                    data: form_data,
+                    success: function (returned_data) {
+                        console.log(returned_data);
+                        var jsonData = JSON.parse(returned_data);
+                        var return_data = jsonData.response;
+                        // console.log(jsonData.response);
+                        console.log("response",jsonData.response[0]);
+                        console.log("status",jsonData.response[0].alert_message);
+
+                        $("#login_success_message").html( jsonData.response[0].success_message);
+                        $("#login_alert_message").html( jsonData.response[0].alert_message);
+
+                        if(jsonData.response[0].status === "ok"){
+                            document.location = "/";
+                        }
+                        // else{
+                        //     submit_bttn.textContent = 'Submit'
+                        //     // submit_bttn.disabled = false
+                        // }
+                      
+
+                    }
+                })
+        }
+   </script>
+
     <script type="text/javascript" src="js/script.js"></script>
     <script src="assets\js\login.js"></script>
     <script src="assets\js\signup.js"></script>

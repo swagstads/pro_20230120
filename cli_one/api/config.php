@@ -11,6 +11,6 @@ try
 }
 catch (PDOException $e)
 {
-exit("Error: " . $e->getMessage());
+    exit("Error: " . $e->getMessage());
 }
 ?>

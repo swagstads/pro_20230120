@@ -16,8 +16,8 @@ if (isset($_POST['show_products'])) {
     $data = array();
     // $user_id=$_POST['user_id'];
     $searched_query = $_POST['show_products'];
-    $stmt = $dbh->prepare(' SELECT * FROM products WHERE title LIKE :searched_query ');
-    
+    $stmt = $dbh->prepare(' SELECT * FROM products WHERE title LIKE :searched_query OR category LIKE :searched_query ');
+        
     $stmt->bindParam(':searched_query', $searched_query, PDO::PARAM_STR);
     $stmt->execute();
 

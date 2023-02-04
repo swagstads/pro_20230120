@@ -27,8 +27,6 @@ function send_mail($email)
 		else{
 			return "MailSent"; //mail sent 
 		}
-		     
-
 }
 
 ?>

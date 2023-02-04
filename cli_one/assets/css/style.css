@@ -112,7 +112,9 @@
 .nav-icons:hover svg path.stroke-change{
   stroke: var(--col2) !important;
 }
-
+.disp-none{
+  display: none;
+}
 /*--------------------------------------------------------------
 # Portfolio
 --------------------------------------------------------------*/
@@ -204,7 +206,9 @@
 .row1 {
   display: grid;
   grid-template-columns: repeat(3, auto);
-  grid-gap: 20px;
+  grid-gap: 10px;
+  align-items: center;
+  justify-content: space-around;
 }
 @media (max-width: 720px) {
   .row1 {

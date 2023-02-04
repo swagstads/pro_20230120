@@ -1,50 +1,57 @@
 <?php
+
 session_start();
-include('config.php');
+
+require('config.php');
+
+$data = array();
+$response["response"] = array();
+
+$data['alert_message'] = "";
+$data['success_message'] = "";
+
 if (isset($_POST['user_login'])) {
+
   $email = $_POST['email'];
   $password = $_POST['password'];
-  $sql = "SELECT email,password,role,id FROM users WHERE email=:email and password=:password";
+
+  $sql = "SELECT email,password,role,id FROM users WHERE email=:email ";
   $query = $dbh->prepare($sql);
   $query->bindParam(':email', $email, PDO::PARAM_STR);
-  $query->bindParam(':password', $password, PDO::PARAM_STR);
   $query->execute();
-  $results = $query->fetchAll(PDO::FETCH_OBJ);
   
+  $result = $query->fetch(PDO::FETCH_OBJ);
 
-  if ($query->rowCount() > 0) {
-    foreach ($results as $result) {
-            echo "Logged In successfully, Redirecting to homepage";
-            $_SESSION['username'] = $_POST['email'];
-            $_SESSION['user_id'] = $result->id;
+  if(isset($result->email)){
+        $verify_res = password_verify($password,$result->password);
+        if($verify_res == 1){
+
+          $_SESSION['username'] = $_POST['email'];
+          $_SESSION['user_id'] = $result->id;
+
+          $data['status'] = "ok";
+          $data['success_message'] = "Logged in";
+
+          // echo "<script type='text/javascript'>document.location = '/'</script>";
         }
-      echo "<script type='text/javascript'>document.location = '/'</script>";
-  } else {
-    echo "<script>alert('Invalid Details');</script>";
-    echo "<script type='text/javascript'>document.location = '../logg_in.php';</script>";
+        else if($verify_res != 1){
+          $data['status'] = "fail";
+          $data['success_message'] = "Invalid password";
+        }
+        else{
+          
+          $data['status'] = "fail";
+          $data['alert_message'] = "Something went wrong!, please try again later";
+        }
+        
+  } else{
+    $data['status'] = "fail";
+    $data['alert_message'] = "Invalid email or password";
   }
 
+array_push($response["response"], $data);
+echo json_encode($response);
 
-
-  // if ($query->rowCount() > 0) {
-  //   foreach ($results as $result) {
-  //     $status = $result->Status;
-  //     $_SESSION['eid'] = $result->id;
-  //   }
-  //   if ($status == 0) {
-  //     $msg = "Your account is Inactive. Please contact admin";
-  //   } else {
-  //     $_SESSION['emplogin'] = $_POST['name'];
-  //     echo "<script type='text/javascript'>
-  //       document.location = '../myprofile.php';
-  //     </script>";
-  //   }
-  // } else {
-  //   echo "<script>
-  // alert('Invalid Details');
-  // </script>";
-  //   echo "<script type='text/javascript'>
-  // document.location = '../logg_in.php';
-  // </script>";
-  // }
 }
+
+?>

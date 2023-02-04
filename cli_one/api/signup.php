@@ -1,33 +1,130 @@
 <?php
-session_start();
 
+session_start();
 // error_reporting(0);
-include('config.php');
+require('config.php');
+
+$data = array();
+$response["response"] = array();
+
+$data['alert_message'] = "";
+$data['success_message'] = "";
+
 if (isset($_POST['add'])) {
     $name = $_POST['name'];
     $contact = $_POST['contact'];
     $email = $_POST['email'];
     $password = $_POST['password'];
+    $hashed_password = password_hash($password,PASSWORD_BCRYPT);
     $timestamp = date("Y-m-d H:i:s");
-    $sql = "INSERT INTO users (name, email, password, phone, address, role, added_on, modified_on, status) 
-                        VALUES(:name,:email,:password,:contact,'address','customer',:timestamp,:timestamp,'dormant')";
-    $query = $dbh->prepare($sql);
-    $query->bindParam(':name', $name, PDO::PARAM_STR);
-    $query->bindParam(':contact', $contact, PDO::PARAM_STR);
-    $query->bindParam(':email', $email, PDO::PARAM_STR);
-    $query->bindParam(':password', $password, PDO::PARAM_STR);
-    $query->bindParam(':timestamp', $timestamp, PDO::PARAM_STR);
-    $query->execute();
-    
-    $_SESSION['username'] = $_POST['email'];
- 
 
-    $lastInsertId = $dbh->lastInsertId();
-    if ($lastInsertId) {
-        echo '<script>alert("Thank you for Joining us")</script>';
-        echo '<script>document.location = "/"</script>';
-    } else {
-        echo "Something went wrong. Please try again";
+    // Check if mail exist
+    $sql = "SELECT email,phone FROM users WHERE email=:email OR phone=:contact";
+    $query = $dbh->prepare($sql);
+    $query->bindParam(':email', $email, PDO::PARAM_STR);
+    $query->bindParam(':contact', $contact, PDO::PARAM_STR);
+    $query->execute();
+    $result = $query->fetch(PDO::FETCH_OBJ);
+
+    if(isset($result->email)){
+
+        if( $email === $result->email ){
+            $data['status'] = "fail";
+            $data['alert_message'] = "Email already exist";
+        }
+        else if($contact === $result->phone){
+             $data['status'] = "fail";
+             $data['alert_message'] = "Contact/Phone already exist";
+         }
+         else{
+            $data['status'] = "fail";
+            $data['alert_message'] = "Something went wrong, try again later";
+         }
     }
+    else{
+
+        // Insert if new user
+        $sql = "INSERT INTO users (name, email, password, phone, address, role, added_on, modified_on, status) 
+                            VALUES(:name,:email,:password,:contact,'address','customer',:timestamp,:timestamp,'dormant')";
+        $query = $dbh->prepare($sql);
+        $query->bindParam(':name', $name, PDO::PARAM_STR);
+        $query->bindParam(':contact', $contact, PDO::PARAM_STR);
+        $query->bindParam(':email', $email, PDO::PARAM_STR);
+        $query->bindParam(':password', $hashed_password, PDO::PARAM_STR);
+        $query->bindParam(':timestamp', $timestamp, PDO::PARAM_STR);
+        $query->execute();
+        
+    
+        $lastInsertId = $dbh->lastInsertId();
+        if ($lastInsertId) {
+    
+            $verification_code = bin2hex(openssl_random_pseudo_bytes(20));
+            try {
+                $sql = "INSERT INTO user_verification (user_id, verify, verification_code) VALUES ('$lastInsertId', 0, '$verification_code')";
+                $query = $dbh->prepare($sql);
+                $query->execute();
+                mail_verification_link($email,$verification_code,$lastInsertId);
+                // echo '<script>alert("inserted verification code")</script>';
+            } catch (\Throwable $th) {
+                // echo 'Error: '.$th;
+                // echo '<script>alert("Something went wrong, try again laters")</script>';
+                $data['status'] = "fail";
+                $data['alert_message'] = "Something went wrong, try again laters";
+        }
+            // echo '<script>alert("Verification link has been sent to your registered mail address")</script>';
+            // echo '<script>document.location = "/"</script>';
+            $data['status'] = "ok";
+            $data['success_message'] = "Verification Link has been sent to your registered mail address";
+            
+        } else {
+            // echo "Something went wrong. Please try again";
+        }   
+        
+        
+
+    }
+
 }
+
+function mail_verification_link($email,$verification_code,$user_id){
+    // echo $email."-".$verification_code;
+
+    $url_host = $_SERVER['HTTP_HOST'];
+
+    // php mailer code -start
+    require ('./phpmailer/PHPMailerAutoload.php');
+    $mail= new PHPMailer;
+    $mail->isSMTP();
+    $mail->Host='smtp.gmail.com';
+    $mail->Port=587;
+    $mail->SMTPAuth=true;
+    $mail->SMTPSecure='tls';
+    $message='  Hello <br> 
+                Welcome to Atoz <br> 
+                Kindly Verify your Email ID to activate your account <br> 
+                click on the link below to verify account<br> 
+                <a href="http://'.$url_host.'/verify_user.php?code='.$verification_code.'&uid='.$user_id.'&mail='.$email.' ">Verification Link</a>';
+
+    $mail->Username='rishabhpnahar@gmail.com';
+    $mail->Password='rwjpbwkljifrwrji';
+    $mail->setFrom('team@atoz.com');
+    $mail->addAddress($email);
+    $mail->Subject="E-Mail Verification for Atoz"; 
+    $mail->MsgHTML($message);
+    //$mail->Body=
+    if(!$mail->send()){
+        return "-MailNotSent"; //mail not sent 
+    }
+    else{
+        return "-MailSent"; //mail sent 
+    }
+    // php mailer code - end
+
+}
+
+array_push($response["response"], $data);
+
+echo json_encode($response);
+
+
 ?>

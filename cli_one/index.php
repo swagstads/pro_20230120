@@ -6,38 +6,28 @@
 </head>
 
 <body>
-    <section id="hero">
-        <div class="hero-container">
-            <div data-aos="fade-in">
-                <h2 style="margin-top:230px;color:#201f1f">
-                    We provide<br>
-                    <span class="typed"
-                        data-typed-items="Vishnu style sitting sofa, fanciful rugs, finest bedsheets, plushy carpet"></span>
-                </h2>
-                <div class="actions">
-                    <!-- <a href="#about" class="btn-get-started">Get Strated</a> -->
-                    <!-- <a href="#services" class="btn-services">Our Services</a> -->
-                </div>
+<div id="shopify-section-vela-header" class="shopify-section">
+    <header id="header" class="velaHeader">
+        <?php include('header.php'); ?>
+    </header>
+</div>
+
+<section id="hero">
+    <div class="hero-container">
+        <div data-aos="fade-in">
+            <h2 style="margin-top:230px;color:#201f1f">
+                We provide<br>
+                <span class="typed"
+                    data-typed-items="Vishnu style sitting sofa, fanciful rugs, finest bedsheets, plushy carpet"></span>
+            </h2>
+            <div class="actions">
+                <!-- <a href="#about" class="btn-get-started">Get Strated</a> -->
+                <!-- <a href="#services" class="btn-services">Our Services</a> -->
             </div>
         </div>
-    </section>
-    <div id="cartDrawer" class="drawer drawerRight">
-        <div class="drawerClose">
-            <span class="jsDrawerClose"></span>
-        </div>
-        <div class="drawerCartTitle">
-            <span>Shopping cart</span>
-        </div>
-        <div id="cartContainer"></div>
     </div>
+</section>
     <div id="pageContainer" class="isMoved">
-        <div id="shopify-section-vela-header" class="shopify-section">
-            <header id="header" class="velaHeader">
-                <?php include('header.php'); ?>
-            </header>
-            
-        
-        </div>
 
         <main class="mainContent" role="main">
             <!-- BEGIN content_for_index -->
@@ -312,7 +302,6 @@
                                         <img src="https://cdn.shopify.com/s/files/1/1573/5553/products/14-1_360x.jpg" />
                                         <img src="https://cdn.shopify.com/s/files/1/1573/5553/products/14-1_360x.jpg" />
                                     </div>
-
                                 </div>
                                 <div class="proLoadMoreBottom"></div>
                             </div>

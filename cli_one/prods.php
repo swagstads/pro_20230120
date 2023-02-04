@@ -129,6 +129,7 @@
 
                     if (return_data[0].status == "failed") {
                         console.log('failed to fetched product data');
+                        $("#product_container").append('<div style="text-align:center;width:100%;font-size:20px">Sorry, no results found</div>')
                     }
                     else if (return_data[0].status == "success") {
                         console.log('Fetched products Data');
