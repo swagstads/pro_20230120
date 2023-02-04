@@ -166,8 +166,8 @@ session_start();
             <form onsubmit="login_verify_user()" method="post" >
                 <h1>Login to continue shopping!</h1>
                 
-                <div id="login_alert_message">Here</div>
-                <div id="login_success_message">Here</div>
+                <div id="login_alert_message"></div>
+                <div id="login_success_message"></div>
 
                 <input type="email" id="login_email" name="email" placeholder="Email" required />
                 <input type="password" id="login_password" name="password" placeholder="Password" required />
