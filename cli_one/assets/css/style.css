@@ -491,11 +491,18 @@
 }
 
 /* Product Price */
-.product-price {
+.product-price,
+.product-mrp {
   display: flex;
   align-items: center;
 }
-
+/* #product_our_price, #product_price{
+  color: var(--col2);
+} */
+.product-mrp{
+  text-decoration: line-through;
+  color: var(--col1);
+}
 .product-price span {
   font-size: 26px;
   font-weight: 300;

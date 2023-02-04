@@ -135,13 +135,13 @@
                         console.log('Fetched products Data');
                         // console.log(jsonData.response);
                         for (var i = 0; i < jsonData.response.length; i++) {
-                            console.log("Data "+i+":"+return_data[i].title);
+                            console.log("Data "+i+":"+return_data[i].id);
                             $("#product_container").append('<div class="velaProBlock list col-xs-12  col-sm-12 col-md-12 col-12" data-price="260.00">'+
                                 '<div class="velaProBlockInner mb20">'+
                                 ' <div class="rowFlex rowFlexMargin">'+
                                         '<div class="col-xs-12 col-sm-3 col-md-3 mbItemGutter">'+
                                         ' <div class="proHImage">'+
-                                            ' <a class="proFeaturedImage" href="./productpage.php">' +
+                                            ' <a class="proFeaturedImage" href="./productpage.php?productid='+return_data[i].id+'">' +
                                                 ' <div class="wrap ">'+
                                                         '<div class="p-relative">'+
                                                             '<div class="product-card__image" style="padding-top:126.90355329949239%;">'+
@@ -162,7 +162,7 @@
                                         '</div>'+
                                         '<div class="col-xs-12 col-sm-9 col-md-9 col-lg-7 mbItemGutter">'+
                                             '<div class="proContent">'+
-                                                '<h4 class="proName"> <a href="./productpage.php?prodid="'+return_data[i].id+'>'+return_data[i].title+'</a> </h4>'+
+                                                '<h4 class="proName"> <a href="./productpage.php?productid='+return_data[i].id+'">'+return_data[i].title+'</a> </h4>'+
                                                 '<div class="proReviews hidden-xs hidden-sm">'+
                                                 ' <span class="shopify-product-reviews-badge" data-id="23393796112"></span>'+
                                                 '</div>'+

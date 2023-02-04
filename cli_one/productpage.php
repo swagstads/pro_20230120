@@ -23,7 +23,7 @@
                             <!-- Product Color -->
                             <div class="img-choose">
                                 <img class="small-view-image" onclick="changeActiveImg(this.src)" src="../../cdn.shopify.com/s/files/1/1573/5553/products/1-10ea2.jpg?v=1601694960" alt="">
-                                    <img class="small-view-image" onclick="changeActiveImg(this.src)" src="../../cdn.shopify.com/s/files/1/1573/5553/products/1_c14253f1-8cb5-4a88-921b-d3dbaffaaafa0ea2.jpg?v=1601694960" alt="">
+                                <img class="small-view-image" onclick="changeActiveImg(this.src)" src="../../cdn.shopify.com/s/files/1/1573/5553/products/1_c14253f1-8cb5-4a88-921b-d3dbaffaaafa0ea2.jpg?v=1601694960" alt="">
                             </div>
                         </div>
                     </div>
@@ -41,18 +41,22 @@
     
                     <!-- Product Description -->
                     <div class="product-description">
-                        <span>Rugs</span>
-                        <h1>Title</h1>
-                        <p>
-                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugiat voluptate laborum quia error vitae, sunt ea, magnam accusantium atque consectetur officia ex recusandae praesentium nesciunt laboriosam voluptates placeat porro? Accusamus.
+                        <span id="product_category"></span>
+                        <h1 id="product_title"></h1>
+                        <p id="product_description">
                         </p>
                     </div>
     
                     <!-- Product Pricing -->
                     <div class="product-price">
-                        <span>&#8377; 15000</span>
+                        <span id="product_our_price">&#8377; <span id="product_price"></span></span>
                         <a href="#" class="cart-btn">Add to cart</a>
                     </div>
+                        
+                    <div class="product-mrp">
+                            <span>&#8377; <span id="product_mrp"></span></span>
+                    </div>
+
                 </div>
             </div>
             <div id="shopify-section-1600942005808" class="shopify-section velaFramework">
@@ -732,6 +736,38 @@
                 </div>
             </div>
         </main>
+
+        <script>
+            function fetch_product(){
+                console.log(" fetching product...");
+                var product_id = <?php echo $_GET['productid'] ?>;
+
+                var api_url = '/api/fetch_single_product.php?product_id';
+                var form_data = { "fetch_products": "fetch","productid":product_id};
+                console.log(form_data);
+                $.ajax({
+                        url: api_url,
+                        type: 'GET',
+                        data: form_data,
+                        success: function (returned_data) {
+                            console.log(returned_data);
+                            var jsonData = JSON.parse(returned_data);
+                            var return_data = jsonData.response;
+
+                            $("#product_category").html(jsonData.response[0].category)
+                            $("#product_price").html(jsonData.response[0].price)
+                            $("#product_mrp").html(jsonData.response[0].mrp)
+                            $("#product_title").html(jsonData.response[0].title)
+                            $("#product_description").html(jsonData.response[0].description)
+
+                            // console.log(jsonData.response);
+                            // console.log("response",jsonData.response[0]);
+                        }
+                    })
+            }
+            fetch_product()
+        </script>
+
     </div>
     <div id="shopify-section-vela-footer" class="shopify-section">
         <footer id="velaFooter">
