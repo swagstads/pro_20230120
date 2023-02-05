@@ -38,11 +38,12 @@
         function fetchProduct(){
             const queryString = window.location.search;
             const urlParams = new URLSearchParams(queryString);
-            var searched_product = urlParams.get('category') || "rugs"
+            var searched_product = urlParams.get('category') || "all"
 
-            console.log("SP: ",searched_product);
+            console.log("SP: ",searched_product);   
 
-            var api_url = './api/fetch_products.php?prod='+searched_product;
+            var api_url = './api/fetch_products.php';
+            console.log(api_url);
             var form_data = { "show_products": searched_product, "user_id": localStorage.getItem('user_id') };
             $.ajax({
                 url: api_url,
@@ -103,7 +104,7 @@
         function productSliderScrollRight(){
             $('.scrolling-products').scrollLeft( $('.scrolling-products').scrollLeft() + 270 )
         }
-        
+
         function addToCart(product_id){
                 var quantity = 1;
                 api_url = "/api/add_to_cart.php";

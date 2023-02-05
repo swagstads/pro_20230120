@@ -31,7 +31,7 @@ try {
             if($query->rowCount() !== 0 and $row->status === "in cart"){
                 if($quantity == $row->quantity){
                     $data["status"] = "ok";
-                    $data["message"] = "Already in cart";
+                    $data["message"] = "Item is already in cart";
                 }
                 else if($quantity >= 1){
                    $sql = "    UPDATE Cart SET quantity=:quantity  WHERE  user_id=:user_id AND product_id=:product_id  ";

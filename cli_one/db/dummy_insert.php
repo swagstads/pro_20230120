@@ -4,18 +4,18 @@ include('../api/config.php');
 
 
 // Insert dummy data into the "Product" table
-// $sql = "INSERT INTO Products (title, category, description,mrp, price, img_location)
-// VALUES
-// ('Cushion Cover', 'Home Decor', 'Blue and Green Floral Cushion Cover',100, 15.99, 'img/cushion_cover.jpg'),
-// ('Rug', 'Home Decor', 'Beige and Black Area Rug',100, 99.99, 'img/rug.jpg'),
-// ('Robe', 'Apparel', 'Soft and Cozy Plush Robe',100, 39.99, 'img/robe.jpg'),
-// ('Curtains', 'Home Decor', 'Light Filtering White Curtains',100, 24.99, 'img/curtains.jpg')";
+$sql = "INSERT INTO Products (title, category,quantity, description,mrp, price, img_location)
+VALUES
+('Cushion Cover', 'Home Decor', 10, 'Blue and Green Floral Cushion Cover',100, 15.99, 'img/cushion_cover.jpg'),
+('Rug', 'Home Decor',10, 'Beige and Black Area Rug',100, 99.99, 'img/rug.jpg'),
+('Robe', 'Apparel',10, 'Soft and Cozy Plush Robe',100, 39.99, 'img/robe.jpg'),
+('Curtains', 'Home Decor',10, 'Light Filtering White Curtains',100, 24.99, 'img/curtains.jpg')";
 
-// if ($dbh->query($sql) === TRUE) {
-//     echo "Dummy data inserted into Product successfully";
-// } else {
-//     echo "Error inserting data: " . $dbh->error;
-// }
+if ($dbh->query($sql) === TRUE) {
+    echo "Dummy data inserted into Product successfully";
+} else {
+    echo "Error inserting data: " . $dbh->error;
+}
 
 
 
