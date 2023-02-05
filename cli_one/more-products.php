@@ -38,10 +38,10 @@
         function fetchProduct(){
             const queryString = window.location.search;
             const urlParams = new URLSearchParams(queryString);
-            var searched_product = urlParams.get('category')
-            if(searched_product.length === 0){
-                searched_product = "Rugs"
-            }
+            var searched_product = urlParams.get('category') || "rugs"
+
+            console.log("SP: ",searched_product);
+
             var api_url = './api/fetch_products.php?prod='+searched_product;
             var form_data = { "show_products": searched_product, "user_id": localStorage.getItem('user_id') };
             $.ajax({
@@ -63,27 +63,29 @@
                             console.log("Data "+i+":"+return_data[i].title);
                             $('.scrolling-products').append(
                                 '<div class="product-slider">'+
+                                    '<a href="/productpage.php?productid='+return_data[i].id+'">'+
                                         '<div class="product-image">'+
                                             '<img class="image1 active lazyload" data-src="https://cdn.shopify.com/s/files/1/1573/5553/products/14_360x.jpg?v=1601694510" alt="">'+
-                                            '<img class="image2 disp-none lazyload" data-src="https://cdn.shopify.com/s/files/1/1573/5553/products/14_360x.jpg?v=1601694510" alt="">'+
                                         '</div>'+
                                         '<div class="product-title">'+
                                             '<span>'+return_data[i].title+'</span>'+
                                         '</div>'+
+                                    '</a>'+
+
                                         '<div class="product-price">'+
                                             '<div class="price-container">'+
                                                 '<div class="our-price">'+
-                                                    +return_data[i].price+' &nbsp;'+
+                                                    '&#8377; '+return_data[i].price+' &nbsp;'+
                                                 '</div>'+
                                                 '<div class="product-mrp">'+
-                                                    '<small>'+return_data[i].mrp+'</small>'+
+                                                    '<small>&#8377; '+return_data[i].mrp+'</small>'+
                                                ' </div>'+
                                            '</div>'+
                                            ' <div class="add-to-cart-slide-button">'+
-                                                '<button>&plus; Add to cart</button>'+
+                                                '<button onclick="addToCart('+return_data[i].id+')">&plus; Add to cart</button>'+
                                             '</div>'+
                                         '</div>'+
-                                    '</div>'
+                                '</div>'
                             )
                         }
                     }
@@ -101,5 +103,24 @@
         function productSliderScrollRight(){
             $('.scrolling-products').scrollLeft( $('.scrolling-products').scrollLeft() + 270 )
         }
+        
+        function addToCart(product_id){
+                var quantity = 1;
+                api_url = "/api/add_to_cart.php";
+                console.log("adding to cart: pro id,", product_id);
+                var form_data = { "add_to_cart": "add or update" , "productid": product_id,'quantity': quantity};
+                $.ajax({
+                        url: api_url,
+                        type: 'POST',
+                        data: form_data,
+                        success: function (returned_data) {
+                            var jsonData = JSON.parse(returned_data);
+                            var return_data = jsonData.response;
+                            console.log(return_data);
+                            alert(return_data[0].message)
+                        }
+                })
+                console.log("Ended");
+            }
 
 </script>

@@ -600,3 +600,117 @@
   border-left: none;
   border-radius: 0 4px 4px 0;
 }
+
+
+
+/* More products */
+
+.product-slider-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.product-slider-container .scrolling-products {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  overflow: hidden;
+  
+}
+.product-slider-container .left-arrow{
+  left: -2%;
+}
+.product-slider-container .right-arrow{
+  right: -2%;
+}
+.product-slider-container .scrolling-arrow span{
+  position: relative;
+  padding: 10px;
+  background-color: rgba(0, 0, 0, 0.419);
+  color: white;
+  border-radius: 100%;
+  visibility: hidden;
+}
+.product-slider-container:hover .left-arrow{
+  animation: arrow-slide-in-right 0.3s  forwards;
+}
+.product-slider-container:hover .right-arrow{
+  animation: arrow-slide-in-left 0.3s  forwards;
+}
+.product-slider-container:hover .scrolling-arrow span{
+  visibility: visible;
+}
+.product-slider-container .scrolling-arrow{
+  /* border: 1px solid black; */
+  position: absolute;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  font-size: 40px;
+  z-index: 100;
+  cursor: pointer;
+}
+.product-slider-container .product-slider{
+  position: relative;
+  width: 250px;
+}
+.product-slider-container .product-slider .product-title{
+  font-weight: 500;
+  font-size: 2rem;
+  padding: 5px 0;
+}
+.product-slider-container .product-slider .product-image img{
+  width: 250px;
+  border-top-left-radius: 10% 10%;
+  border-bottom-right-radius: 10% 10%;
+}
+.product-slider-container .product-slider .add-to-cart-slide-button{
+  visibility: hidden;
+  position: relative;
+  right: 0%;   
+}
+.product-slider-container .product-slider .add-to-cart-slide-button button{
+  font-weight: 500;
+  background: none;
+  border: none;
+  border-bottom: 1px solid black;    
+}
+.product-slider-container .product-slider .product-price{
+  display: flex;
+  justify-content: space-between;
+  height: 40px;
+  width: 250px;
+  /* border: 1px solid; */
+}
+.product-slider-container .product-slider:hover .price-container{
+  display: none;
+}
+.product-slider-container .product-slider:hover .add-to-cart-slide-button{
+  /* left: 0; */
+  visibility: visible;
+  animation:  0.3s slide-in-right ease-out forwards;
+}
+@keyframes slide-in-right{
+  0%{
+      left: 30%;
+  }
+  100%{
+      left: 0%;
+  }
+}
+@keyframes arrow-slide-in-right{
+  0%{
+      left: 30px;
+  }
+  100%{
+      left: 0%;
+  }
+}
+@keyframes arrow-slide-in-left{
+  0%{
+      right: 30px;
+  }
+  100%{
+      right: 0%;
+  }
+}

@@ -43,6 +43,7 @@ else{
 //     title VARCHAR(80),
 //     category VARCHAR(255),
 //     description VARCHAR(255),
+//     quantity UNSIGNED INT,
 //     MRP FLOAT,
 //     our_price FLOAT,
 //     img_location VARCHAR(255)
@@ -61,6 +62,8 @@ else{
 // quantity INT,
 // message VARCHAR(255),
 // product_id INT,
+// user_id INT unsigned NOT NULL,
+// FOREIGN KEY (user_id) REFERENCES users(id),
 // FOREIGN KEY (product_id) REFERENCES Products(id)
 // )";
 

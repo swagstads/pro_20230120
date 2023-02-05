@@ -1,6 +1,3 @@
-<div class="header-height">
-
-</div>
 <section class="headerWrap">
     <div class="velaHeaderMain headerMenu">
         <div class="container">

@@ -11,7 +11,7 @@ session_start();
 
     .hero-logo {
         margin-right: 10px;
-        background-image: url("assets/img/test.jpg");
+        /* background-image: url("assets/img/test.jpg"); */
     }
 
     .animation {
@@ -101,6 +101,10 @@ session_start();
         opacity: 0.5;
         cursor: not-allowed;
     }
+    #signup_contact::-webkit-inner-spin-button {
+        display: none
+    }
+
     @keyframes animate {
         0% {
             transform: scale(0.5);
@@ -119,16 +123,6 @@ session_start();
     <link rel="stylesheet" type="text/css" href="assets/css/main.css">
     <?php include('header_links.php'); ?>
 
-    <script type="text/javascript">
-    function valid() {
-        if (document.addemp.password.value != document.addemp.confirmpassword.value) {
-            alert("New Password and Confirm Password Field do not match !!");
-            document.addemp.confirmpassword.focus();
-            return false;
-        }
-        return true;
-    }
-    </script>
 
 </head>
 
@@ -145,10 +139,10 @@ session_start();
                 <input type="text" id="signup_name" name="name" placeholder="Full Name" required value="Rishabh Nahar" />
                 <input type="number" id="signup_contact" name="mobile" minlength="10" maxlength="10" placeholder="Contact" pattern=".{9,}" required title="10 characters minimum" />
                 <input type="email" id="signup_email" name="email" placeholder="Email" required value="rishabhn@gmail.com" />
-                <input type="password" id="signup_password" name="password" placeholder="Password" pattern=".{8,}" value="signup_123" required
+                <input type="password" id="signup_password" name="password" placeholder="Password" value="signup_123" required
                     title="8 characters minimum" />
                 <input type="password" name="confirmpassword" placeholder="Confirm Password" value="signup_123" required />
-                <button type="submit" name="add" onclick="return valid();" id="add">Sign Up</button>
+                <button type="submit" name="add"  id="add">Sign Up</button>
                 <div>
                     <p>Already Have an account?
                         <a href="#" class="ghost" id="signIn">Sign In</a>
@@ -213,12 +207,23 @@ session_start();
             let password = document.getElementById("signup_password").value;
             let contact = document.getElementById("signup_contact").value;
 
-            if(contact.length === 10){
 
+            if(contact.length !== 10){
+                document.getElementById("signup_alert_message").innerHTML = "Please provide valid mobile number";
+            }
+            else if (document.addemp.password.value.length < 8) {
+                document.getElementById("signup_alert_message").innerHTML = "Password must be of 8 characters";
+                document.addemp.password.focus();
+            }
+            else if (document.addemp.password.value != document.addemp.confirmpassword.value) {
+                document.getElementById("signup_alert_message").innerHTML = "Password doesn't match";
+                document.addemp.confirmpassword.focus();
+            }
+            else{
                 // signup button disable
                 submit_bttn.disabled = 'true'
                 submit_bttn.textContent = 'Signing up...'
-
+    
                 // form data values in one variable
                 var form_data = { "add": "register","name":name,"email":email,"password":password,"contact":contact};
                 console.log("Form data",form_data);
@@ -243,9 +248,6 @@ session_start();
                         $("#signup_alert_message").html( jsonData.response[0].alert_message);
                     }
                 })
-            }
-            else{
-                document.getElementById("signup_alert_message").innerHTML = "Please provide valid phone number";
             }
 
         }

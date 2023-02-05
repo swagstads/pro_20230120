@@ -505,7 +505,7 @@
             </section>
             <!-- ======= Portfolio Section End======= -->
 
-            <div id="shopify-section-1600942005808" class="shopify-section velaFramework">
+            <!-- <div id="shopify-section-1600942005808" class="shopify-section velaFramework">
                 <div class="productListHome velaProducts mbBlockGutter"
                     style="background-color: rgba(0, 0, 0, 0); padding: 40px 0 45px">
                     <div class="container">
@@ -1180,7 +1180,13 @@
                         </div>
                     </div>
                 </div>
+            </div> -->
+
+            <div class="more-products">
+                <?php include('./more-products.php') ?>
             </div>
+                                                            
+                                                            
             <div id="shopify-section-1600942022910" class="shopify-section velaFramework">
                 <div class="velaLogoList mbGutter" style="background-color: rgba(0, 0, 0, 0); padding: 40px 0 90px">
                     <div class="container">
