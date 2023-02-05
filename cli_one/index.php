@@ -86,12 +86,12 @@
                                                             </div>
                                                             <div>
                                                                 <a class="btn btnVelaSlider leftright-5"
-                                                                    href="collections/all.php" style="
-                                      border-color: #201f1f;
-                                      background-color: rgba(0, 0, 0, 0);
-                                      color: #201f1f;
-                                      padding: 16px 40px;
-                                    ">
+                                                                    href="products.php?category=cushion covers" style="
+                                                                        border-color: #201f1f;
+                                                                        background-color: rgba(0, 0, 0, 0);
+                                                                        color: #201f1f;
+                                                                        padding: 16px 40px;
+                                                                        ">
                                                                     discover now
                                                                 </a>
                                                             </div>
@@ -137,7 +137,7 @@
                                                             </div>
                                                             <div>
                                                                 <a class="btn btnVelaSlider leftright-5"
-                                                                    href="collections/all.php" style="
+                                                                    href="/products.php?category=cushion%20covers" style="
                                       border-color: #201f1f;
                                       background-color: rgba(0, 0, 0, 0);
                                       color: #201f1f;
@@ -187,7 +187,7 @@
                                                             </div>
                                                             <div>
                                                                 <a class="btn btnVelaSlider leftright-5"
-                                                                    href="collections/decor-art.php" style="
+                                                                    href="/products.php?category=cushion%20covers" style="
                                       border-color: #201f1f;
                                       background-color: rgba(0, 0, 0, 0);
                                       color: #201f1f;
@@ -215,7 +215,7 @@
                             <div class="row">
                                 <div class="col-sp-12 col-xs-4 col-sm-4">
                                     <div class="mbItemGutter effectOne">
-                                        <a href="collections/furniture.php" title="AtoZ">
+                                        <a href="/products.php?category=rugs" title="AtoZ">
                                             <div class="p-relative">
                                                 <div class="product-card__image"
                                                     style="padding-top: 61.43617021276596%">
@@ -233,7 +233,7 @@
                                 </div>
                                 <div class="col-sp-12 col-xs-4 col-sm-4">
                                     <div class="mbItemGutter effectOne">
-                                        <a href="collections/kitchen-things.php" title="AtoZ">
+                                        <a href="/products.php?category=rugs" title="AtoZ">
                                             <div class="p-relative">
                                                 <div class="product-card__image"
                                                     style="padding-top: 61.43617021276596%">
@@ -251,7 +251,7 @@
                                 </div>
                                 <div class="col-sp-12 col-xs-4 col-sm-4">
                                     <div class="mbItemGutter effectOne">
-                                        <a href="collections/illumination.php" title="AtoZ">
+                                        <a href="/products.php?category=rugs" title="AtoZ">
                                             <div class="p-relative">
                                                 <div class="product-card__image"
                                                     style="padding-top: 61.43617021276596%">
@@ -415,6 +415,7 @@
                                     class="portfolio-lightbox preview-link" title="Web 3"><i class="bi bi-plus"></i></a>
                             </div>
                         </div>
+
                         <div class="col-lg-4 col-md-6 portfolio-item filter-web">
                             <img src="assets/img/portfolio/portfolio-2.jpg" class="img-fluid" alt="">
                             <div class="portfolio-info">
@@ -424,6 +425,7 @@
                                     class="portfolio-lightbox preview-link" title="Web 3"><i class="bi bi-plus"></i></a>
                             </div>
                         </div>
+
                         <div class="col-lg-4 col-md-6 portfolio-item filter-web">
                             <img src="assets/img/portfolio/portfolio-2.jpg" class="img-fluid" alt="">
                             <div class="portfolio-info">
@@ -433,6 +435,7 @@
                                     class="portfolio-lightbox preview-link" title="Web 3"><i class="bi bi-plus"></i></a>
                             </div>
                         </div>
+
                         <div class="col-lg-4 col-md-6 portfolio-item filter-app">
                             <img src="assets/img/portfolio/portfolio-3.jpg" class="img-fluid" alt="">
                             <div class="portfolio-info">
@@ -523,7 +526,7 @@
                                             <div class="velaProBlockInner">
                                                 <div class="proHImage d-flex flexJustifyCenter">
                                                     <a class="proFeaturedImage"
-                                                        href="productpage.php">
+                                                        href="productpage.php?productid=17">
                                                         <div class="wrap">
                                                             <div class="p-relative">
                                                                 <div class="product-card__image"
@@ -560,7 +563,7 @@
                                                 </div>
                                                 <div class="proContent">
                                                     <h5 class="proName">
-                                                        <a href="productpage.php">Sacrificial
+                                                        <a href="productpage.php?productid=17">Sacrificial
                                                             Chair Design</a>
                                                     </h5>
                                                     <div class="proGroup">
@@ -608,7 +611,7 @@
                                             <div class="velaProBlockInner">
                                                 <div class="proHImage d-flex flexJustifyCenter">
                                                     <a class="proFeaturedImage"
-                                                        href="productpage.php">
+                                                        href="productpage.php?productid=17">
                                                         <div class="wrap">
                                                             <div class="p-relative">
                                                                 <div class="product-card__image"
@@ -643,7 +646,7 @@
                                                 </div>
                                                 <div class="proContent">
                                                     <h5 class="proName">
-                                                        <a href="productpage.php">Sacrificial
+                                                        <a href="productpage.php?productid=17">Sacrificial
                                                             Chair Design</a>
                                                     </h5>
                                                     <div class="proGroup">
@@ -687,7 +690,7 @@
                                             <div class="velaProBlockInner">
                                                 <div class="proHImage d-flex flexJustifyCenter">
                                                     <a class="proFeaturedImage"
-                                                        href="productpage.php">
+                                                        href="productpage.php?productid=17">
                                                         <div class="wrap">
                                                             <div class="p-relative">
                                                                 <div class="product-card__image"
@@ -726,7 +729,7 @@
                                                 </div>
                                                 <div class="proContent">
                                                     <h5 class="proName">
-                                                        <a href="productpage.php">Sacrificial
+                                                        <a href="productpage.php?productid=17">Sacrificial
                                                             Chair Design</a>
                                                     </h5>
                                                     <div class="proGroup">
@@ -774,7 +777,7 @@
                                             <div class="velaProBlockInner">
                                                 <div class="proHImage d-flex flexJustifyCenter">
                                                     <a class="proFeaturedImage"
-                                                        href="productpage.php">
+                                                        href="productpage.php?productid=17">
                                                         <div class="wrap">
                                                             <div class="p-relative">
                                                                 <div class="product-card__image"
@@ -813,7 +816,7 @@
                                                 </div>
                                                 <div class="proContent">
                                                     <h5 class="proName">
-                                                        <a href="productpage.php">Sacrificial
+                                                        <a href="productpage.php?productid=17">Sacrificial
                                                             Chair Design</a>
                                                     </h5>
                                                     <div class="proGroup">
@@ -861,7 +864,7 @@
                                             <div class="velaProBlockInner">
                                                 <div class="proHImage d-flex flexJustifyCenter">
                                                     <a class="proFeaturedImage"
-                                                        href="productpage.php">
+                                                        href="productpage.php?productid=17">
                                                         <div class="wrap">
                                                             <div class="p-relative">
                                                                 <div class="product-card__image"
@@ -900,7 +903,7 @@
                                                 </div>
                                                 <div class="proContent">
                                                     <h5 class="proName">
-                                                        <a href="productpage.php">Sacrificial
+                                                        <a href="productpage.php?productid=17">Sacrificial
                                                             Chair Design</a>
                                                     </h5>
                                                     <div class="proGroup">
@@ -948,7 +951,7 @@
                                             <div class="velaProBlockInner">
                                                 <div class="proHImage d-flex flexJustifyCenter">
                                                     <a class="proFeaturedImage"
-                                                        href="productpage.php">
+                                                        href="productpage.php?productid=17">
                                                         <div class="wrap">
                                                             <div class="p-relative">
                                                                 <div class="product-card__image"
@@ -985,7 +988,7 @@
                                                 </div>
                                                 <div class="proContent">
                                                     <h5 class="proName">
-                                                        <a href="productpage.php">Sacrificial
+                                                        <a href="productpage.php?productid=17">Sacrificial
                                                             Chair Design</a>
                                                     </h5>
                                                     <div class="proGroup">
@@ -1029,7 +1032,7 @@
                                             <div class="velaProBlockInner">
                                                 <div class="proHImage d-flex flexJustifyCenter">
                                                     <a class="proFeaturedImage"
-                                                        href="productpage.php">
+                                                        href="productpage.php?productid=17">
                                                         <div class="wrap">
                                                             <div class="p-relative">
                                                                 <div class="product-card__image"
@@ -1066,7 +1069,7 @@
                                                 </div>
                                                 <div class="proContent">
                                                     <h5 class="proName">
-                                                        <a href="productpage.php">Sacrificial
+                                                        <a href="productpage.php?productid=17">Sacrificial
                                                             Chair Design</a>
                                                     </h5>
                                                     <div class="proGroup">
@@ -1082,7 +1085,7 @@
                                                             <input type="hidden" name="id" value="158485676048" />
 
                                                             <a class="btn btnAddToCart"
-                                                                href="productpage.php"
+                                                                href="productpage.php?productid=17"
                                                                 title="Select options">
                                                                 <i class="icons">
                                                                     <svg version="1.1"
@@ -1111,7 +1114,7 @@
                                             <div class="velaProBlockInner">
                                                 <div class="proHImage d-flex flexJustifyCenter">
                                                     <a class="proFeaturedImage"
-                                                        href="productpage.php">
+                                                        href="productpage.php?productid=17">
                                                         <div class="wrap">
                                                             <div class="p-relative">
                                                                 <div class="product-card__image"
@@ -1132,7 +1135,7 @@
                                                 </div>
                                                 <div class="proContent">
                                                     <h5 class="proName">
-                                                        <a href="productpage.php">Sacrificial
+                                                        <a href="productpage.php?productid=17">Sacrificial
                                                             Chair Design</a>
                                                     </h5>
                                                     <div class="proGroup">
@@ -1235,7 +1238,10 @@
                     </div>
                 </div>
             </div>
-            <div id="shopify-section-1600942034460" class="shopify-section velaFramework">
+
+
+            <!-- Blogs -->
+            <!-- <div id="shopify-section-1600942034460" class="shopify-section velaFramework">
                 <div class="velaHomeBlogs mbGutter style1"
                     style="background-color: rgba(0, 0, 0, 0); padding: 0 0 40px">
                     <div class="container">
@@ -1617,7 +1623,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> -->
             <!-- END content_for_index -->
 
             <div id="shopify-section-vela-footer" class="shopify-section">

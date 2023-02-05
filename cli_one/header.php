@@ -658,7 +658,6 @@
             <div class="close-bttn" onclick="closeSearchModal()">
                 <i class="fa fa-close"></i>
             </div>
-
             <div class="search-box">
                 <span>
                     <input type="search" onsearch="searchProd()"  name="" id="search_query" placeholder="Search...">
