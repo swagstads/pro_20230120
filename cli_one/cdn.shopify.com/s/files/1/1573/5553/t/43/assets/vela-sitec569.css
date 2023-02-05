@@ -7827,9 +7827,9 @@ ul.lower-alpha {
   position: absolute;
 }
 .btnAddToCart {
-  background-color: var(--addtocart_bgcolor);
+  /* background-color: var(--addtocart_bgcolor); */
   border-color: var(--addtocart_bordercolor);
-  color: var(--addtocart_txtcolor);
+  /* color: var(--addtocart_txtcolor); */
   -webkit-transition: all 0.1s ease;
   -o-transition: all 0.1s ease;
   transition: all 0.1s ease;

@@ -110,7 +110,7 @@
     </div>
 
     <script>
-        function ongoing_orders() {
+        function fetch_products() {
             const queryString = window.location.search;
             const urlParams = new URLSearchParams(queryString);
             const searched_product = urlParams.get('category')
@@ -174,21 +174,9 @@
                                                     '<div class="priceProduct priceSale"><span class="money">&#x20B9;'+return_data[i].price+'</span></div>'+
                                                     '<div class="priceProduct priceCompare"><span class="money">&#x20B9;'+return_data[i].mrp+'</span></div>'+
                                                 '</div>'+
-                                                '<form action="https://vela-kazan.myshopify.com/cart/add" method="post" enctype="multipart/form-data" class="formAddToCart">'+
-                                                    '<input type="hidden" name="id"  value="39397249056833" />'+
-                                                    '<button class="btn btnAddToCart" type="submit" value="Submit">'+
-                                                        '<i class="icons">'+
-                                                            '<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve">'+
-                                                                '<g>'+
-                                                                    '<g>'+
-                                                                    ' <path d="M416,277.333H277.333V416h-42.666V277.333H96v-42.666h138.667V96h42.666v138.667H416V277.333z" />'+
-                                                                    '</g>'+
-                                                                '</g>'+
-                                                            '</svg>'+
-                                                        '</i>'+
-                                                        '<span>Add to Cart</span>'+
-                                                    '</button>'+
-                                                '</form>'+
+                                                '<button  onclick="addToCart('+return_data[i].id+')" class="btn btnAddToCart">'+
+                                                    '<span>&plus; Add to Cart</span>'+
+                                                '</button>'+
                                             '</div>'+
                                         '</div>'+
                                     '</div>'+
@@ -203,7 +191,28 @@
                 }
             })
         }
-        ongoing_orders()
+        fetch_products();
+
+
+        function addToCart(product_id){
+                var quantity = 1;
+                api_url = "/api/add_to_cart.php";
+                console.log("adding to cart: pro id,", product_id);
+                var form_data = { "add_to_cart": "add or update" , "productid": product_id,'quantity': quantity};
+                $.ajax({
+                        url: api_url,
+                        type: 'POST',
+                        data: form_data,
+                        success: function (returned_data) {
+                            var jsonData = JSON.parse(returned_data);
+                            var return_data = jsonData.response;
+                            console.log(return_data);
+                            alert(return_data[0].message)
+                        }
+                })
+                console.log("Ended");
+            }
+
     </script>
 
     <script
