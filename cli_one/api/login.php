@@ -15,7 +15,7 @@ if (isset($_POST['user_login'])) {
   $email = $_POST['email'];
   $password = $_POST['password'];
 
-  $sql = "SELECT email,password,role,id FROM users WHERE email=:email ";
+  $sql = "SELECT email,password,role,id,status FROM users WHERE email=:email";
   $query = $dbh->prepare($sql);
   $query->bindParam(':email', $email, PDO::PARAM_STR);
   $query->execute();
@@ -23,27 +23,28 @@ if (isset($_POST['user_login'])) {
   $result = $query->fetch(PDO::FETCH_OBJ);
 
   if(isset($result->email)){
-        $verify_res = password_verify($password,$result->password);
-        if($verify_res == 1){
+    if($result->status === 'active'){
+          $verify_res = password_verify($password,$result->password);
+          if($verify_res == 1){
+              $_SESSION['username'] = $_POST['email'];
+              $_SESSION['user_id'] = $result->id;
+              $data['status'] = "ok";
+              $data['success_message'] = "Logged in";
+          } 
+          else if($verify_res != 1){
+              $data['status'] = "fail";
+              $data['alert_message'] = "Invalid password";
+          }
+          else{
+              $data['status'] = "fail";
+              $data['alert_message'] = "Something went wrong!, please try again later";
+          }
+      }
+      else{
+        $data['status'] = "fail";
+        $data['alert_message'] = "Please verify your email first";
+      }
 
-          $_SESSION['username'] = $_POST['email'];
-          $_SESSION['user_id'] = $result->id;
-
-          $data['status'] = "ok";
-          $data['success_message'] = "Logged in";
-
-          // echo "<script type='text/javascript'>document.location = '/'</script>";
-        }
-        else if($verify_res != 1){
-          $data['status'] = "fail";
-          $data['success_message'] = "Invalid password";
-        }
-        else{
-          
-          $data['status'] = "fail";
-          $data['alert_message'] = "Something went wrong!, please try again later";
-        }
-        
   } else{
     $data['status'] = "fail";
     $data['alert_message'] = "Invalid email or password";
