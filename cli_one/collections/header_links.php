@@ -3,7 +3,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1" />
 <meta name="theme-color" content="#bd8448" />
 <link rel="canonical" href="index.php" />
-<link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon" />
+<link href="assets/images/apple-touch-icon.png" rel="apple-touch-icon" />
 <link href="assets/css/style.css" rel="stylesheet" />
 <link href="assets/vendor/aos/aos.css" rel="stylesheet">
 <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">

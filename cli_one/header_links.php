@@ -38,7 +38,7 @@
         display: table;
         width: 100%;
         height: 100vh;
-        background: url(assets/img/hero-bg.jpg) top center;
+        background: url(assets/images/hero-bg.jpg) top center;
         background-size: cover;
     }
 

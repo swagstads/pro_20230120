@@ -8,7 +8,7 @@
                             <div class="contactinfo-logo clearfix">
                                 <div itemscope itemtype="http://schema.org/Organization">
                                     <a href="../index.php" itemprop="url" class="velaLogoLink" style="width: 50px"><img
-                                            class="img-responsive" src="../assets/img/logo1.jpg" alt="AtoZ" /></a>
+                                            class="img-responsive" src="../assets/images/logo1.jpg" alt="AtoZ" /></a>
                                 </div>
                             </div>
 

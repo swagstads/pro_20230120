@@ -1,14 +1,13 @@
 <?php
 ?>
 <!doctype html>
-<!--[if IE 9]> <html class="ie9 no-js" lang="en"> <![endif]-->
-<!--[if (gt IE 9)|!(IE)]><!-->
+ 
 <html class="no-js" lang="en">
-<!--<![endif]-->
+ 
 
-<!-- Mirrored from vela-kazan.myshopify.com/pages/contact-us by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 07 Oct 2022 04:26:58 GMT -->
-<!-- Added by HTTrack -->
-<meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<!--  /contact-us  :58 GMT -->
+ 
+<meta http-equiv="content-type" content="text/html;charset=utf-8" /> 
 
 <head>
     <?php include('header_links.php'); ?>
@@ -717,6 +716,6 @@
 
 </body>
 
-<!-- Mirrored from vela-kazan.myshopify.com/pages/contact-us by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 07 Oct 2022 04:26:58 GMT -->
+<!--  /contact-us  :58 GMT -->
 
 </html>

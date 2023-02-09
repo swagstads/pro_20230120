@@ -1,12 +1,11 @@
 <!doctype html>
-<!--[if IE 9]> <html class="ie9 no-js" lang="en"> <![endif]-->
-<!--[if (gt IE 9)|!(IE)]><!-->
+ 
 <html class="no-js" lang="en">
-<!--<![endif]-->
+ 
 
-<!-- Mirrored from vela-kazan.myshopify.com/collections/furniture by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 07 Oct 2022 04:24:30 GMT -->
-<!-- Added by HTTrack -->
-<meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<!--  collections/furniture  24:30 GMT -->
+ 
+<meta http-equiv="content-type" content="text/html;charset=utf-8" /> 
 
 <head>
     <?php include('header_links.php'); ?>
@@ -1957,6 +1956,6 @@
 
 </body>
 
-<!-- Mirrored from vela-kazan.myshopify.com/collections/furniture by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 07 Oct 2022 04:24:42 GMT -->
+<!--  collections/furniture  24:42 GMT -->
 
 </html>

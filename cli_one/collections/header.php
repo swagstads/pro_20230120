@@ -15,7 +15,7 @@
                         <a href="../index.php" class="velaLogoLink" style="width: 100px"><span
                                 class="text-hide">AtoZ</span>
                             <img class="img-responsive"
-                                src="../assets/img/logo1.jpg"
+                                src="../assets/images/logo1.jpg"
                                 alt="AtoZ" style="max-width: 65px" /></a>
                     </h1>
                 </div>

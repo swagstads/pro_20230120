@@ -11,7 +11,7 @@ session_start();
 
     .hero-logo {
         margin-right: 10px;
-        /* background-image: url("assets/img/test.jpg"); */
+        /* background-image: url("assets/images/test.jpg"); */
     }
 
     .animation {
@@ -180,10 +180,10 @@ session_start();
         <div class="overlay-container">
             <div class="overlay">
                 <div class="overlay-panel overlay-left">
-                    <!-- <img src="assets/img/hero-bg.jpg" style="width:100%; height:100%"> -->
+                    <!-- <img src="assets/images/hero-bg.jpg" style="width:100%; height:100%"> -->
                 </div>
                 <div class="overlay-panel overlay-right">
-                    <!-- <img src="assets/img/hero-bg.jpg" style="width:100%; height:100%"> -->
+                    <!-- <img src="assets/images/hero-bg.jpg" style="width:100%; height:100%"> -->
                 </div>
             </div>
         </div>

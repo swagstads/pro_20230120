@@ -17,7 +17,7 @@
     <div class="limiter">
         <div class="container-login100">
             <div class="wrap-login100">
-                <div class="login100-more" style="background-image: url('assets/img/hero-bg.jpg'); ">
+                <div class="login100-more" style="background-image: url('assets/images/hero-bg.jpg'); ">
                 </div>
                 <form class="login100-form validate-form" action="api/login.php" method="post" id="login_form">
                     <span class="login100-form-title p-b-43">

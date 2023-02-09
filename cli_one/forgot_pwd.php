@@ -20,7 +20,7 @@ session_start();
 
     .hero-logo {
         margin-right: 10px;
-        background-image: url("assets/img/test.jpg");
+        background-image: url("assets/images/test.jpg");
     }
 
     .animation {
@@ -149,7 +149,7 @@ session_start();
                         </span>
                     </div>
                 </form>
-                <div class="login100-more" style="background-image: url('assets/img/hero-bg.jpg'); ">
+                <div class="login100-more" style="background-image: url('assets/images/hero-bg.jpg'); ">
                 </div>
             </div>
         </div>
