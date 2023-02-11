@@ -584,7 +584,7 @@
             </div>
             <div class="search-box">
                 <span>
-                    <input type="search" onsearch="searchProd()"  name="" id="search_query" placeholder="Search...">
+                    <input type="search" onsearch="searchProd()" tabindex="1" name="" id="search_query" placeholder="Search...">
                 </span>
                 <span class="search-icon" onclick="searchProd()" >
                     <svg width="20px" height="20px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -612,7 +612,9 @@
 
     <script>
         document.onkeydown=function(){
-            if (window.event.keyCode >= 65 & window.event.keyCode <= 90) {
+            let all_contact_inp = document.querySelectorAll(".contact-form");
+            console.log();
+            if (window.event.keyCode >= 65 & window.event.keyCode <= 90 & all_contact_inp.length <= 0 ) {
                 openSearchModal()
                 document.getElementById("search_query").focus();
             }

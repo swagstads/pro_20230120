@@ -143,18 +143,15 @@
                                     <div class="pageContactRight">
                                         <h2 class="velaContactTitle">Contact us</h2>
                                         <div class="formContactUs">
-                                            <form method="post"
-                                                action="https://vela-kazan.myshopify.com/contact#contact_form"
-                                                id="contact_form" accept-charset="UTF-8" class="contact-form"><input
-                                                    type="hidden" name="form_type" value="contact" /><input
-                                                    type="hidden" name="utf8" value="✓" />
+                                            <form method="post" onsubmit="contact_us_form()" id="contact_form" accept-charset="UTF-8" class="contact-form">
+                                                <input type="hidden" name="form_type" value="contact" />
+                                                    <input type="hidden" name="utf8" value="✓" />
                                                 <div class="formContent">
 
 
                                                     <div class="row">
                                                         <div class="col-xs-6">
                                                             <div class="form-group">
-
                                                                 <label for="ContactFormName">Name <sup>*</sup></label>
                                                                 <input type="text" id="ContactFormName"
                                                                     class="form-control" placeholder="Name"
@@ -167,6 +164,15 @@
                                                                 <label for="ContactFormEmail">Email <sup>*</sup></label>
                                                                 <input type="email" id="ContactFormEmail"
                                                                     class="form-control" placeholder="Email"
+                                                                    name="contact[email]" autocorrect="off"
+                                                                    autocapitalize="off" value="">
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-xs-12">
+                                                            <div class="form-group">
+                                                                <label for="ContactFormSubject">Subject <sup>*</sup></label>
+                                                                <input type="text" id="ContactFormSubject"
+                                                                    class="form-control" placeholder="Subject"
                                                                     name="contact[email]" autocorrect="off"
                                                                     autocapitalize="off" value="">
                                                             </div>
@@ -256,6 +262,9 @@
     <div id="shopify-section-vela-template-notification" class="shopify-section">
     </div>
     <script type="text/javascript">
+
+
+
     $(window).on("load", function() {
         var dateCookie = new Date();
         var minutes = 60;
@@ -376,6 +385,43 @@
 
         }, 0);
     });
+
+
+    function contact_us_form(){
+        console.log("Login attempt");
+
+        event.preventDefault()
+
+        var api_url = '/api/contact-us.php';
+
+        let name = document.getElementById("ContactFormName").value;
+        let email = document.getElementById("ContactFormEmail").value;
+        let subject = document.getElementById("ContactFormSubject").value;
+        let message = document.getElementById("ContactFormMessage").value;
+
+        var form_data = { "contactus_form": "filled","name":name,"email":email,"subject":subject,"message":message};
+        console.log(form_data);
+        $.ajax({
+                url: api_url,
+                type: 'POST',
+                data: form_data,
+                success: function (returned_data) {
+                    console.log(returned_data);
+                    var jsonData = JSON.parse(returned_data);
+                    var return_data = jsonData.response;
+                    // console.log(jsonData.response);
+                    console.log("response",jsonData.response[0]);
+                    console.log("status",jsonData.response[0].alert_message);
+
+                    alert("Feedback sent!")
+
+                    if(jsonData.response[0].status === "ok"){
+                        document.location = "/";
+                    }
+                }
+            })
+    }
+
     </script>
 
     </div>
