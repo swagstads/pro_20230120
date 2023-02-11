@@ -135,7 +135,7 @@
                         // console.log(jsonData.response);
                         for (var i = 0; i < jsonData.response.length; i++) {
                             console.log("Data "+i+":"+return_data[i].id);
-                            $("#product_container").append('<div class="velaProBlock list col-xs-12  col-sm-12 col-md-12 col-12" data-price="260.00">'+
+                            $("#product_container").append('<div class="velaProBlock list col-xs-6  col-sm-12 col-md-12 col-12" data-price="260.00">'+
                                 '<div class="velaProBlockInner mb20">'+
                                 ' <div class="rowFlex rowFlexMargin">'+
                                         '<div class="col-xs-12 col-sm-3 col-md-3 mbItemGutter">'+

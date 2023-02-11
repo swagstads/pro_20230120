@@ -7,7 +7,9 @@
   <title>AToZ</title>
   <link rel="stylesheet" href="./assets/css/style.css">
   <link rel="stylesheet" href="./assets/css/login.css">
-  <?php include('header_links.php'); ?>
+  <?php 
+    include('header_links.php');
+  ?>
 
 </head>
 <body>
@@ -19,11 +21,11 @@
         <img src="./assets/images/logo1.jpg" alt="logo">
     </a>
 
-      <div class="burger-btn">
+      <!-- <div class="burger-btn">
         <span></span>
         <span></span>
         <span></span>
-      </div>
+      </div> -->
 
     </div>
     
@@ -96,6 +98,7 @@
             })
     }
 </script>
+
 
 </body>
 </html>

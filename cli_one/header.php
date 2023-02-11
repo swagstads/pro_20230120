@@ -171,82 +171,6 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                                <div class="col-sm-3">
-                                                    <div id="header_cushion_covers_image_container" class="velaMenuBanner mb10">
-                                                        <a href="collections/blind.php">
-                                                            <div class="p-relative">
-                                                                <div class="product-card__image" style="padding-top: 100%;">
-                                                                    <img class="product-card__img lazyload imgFlyCart"
-                                                                        data-src="./assets/images/our-bank/sofa-material.jpg"
-                                                                        data-widths="[360,540,720,900,1080,1296,1728,1944,2808,4320]"
-                                                                        data-aspectratio="0.9565217391304348"
-                                                                        data-ratio="0.9565217391304348" data-sizes="auto"
-                                                                        alt="" />
-                                                                </div>
-                                                                <div class="placeholder-background placeholder-background--animation"
-                                                                    data-image-placeholder></div>
-                                                            </div>
-                                                        </a>
-                                                    </div>
-
-                                                    <div id="header_rugs_image_container" class=" disp-none">
-                                                        <div class="velaMenuBanner mb10">
-                                                            <a href="collections/blind.php">
-                                                                <div class="p-relative">
-                                                                    <div class="product-card__image" style="padding-top: 100%;">
-                                                                        <img class="product-card__img lazyload imgFlyCart"
-                                                                            data-src="./assets/images/our-bank/carpet.jpg"
-                                                                            data-widths="[360,540,720,900,1080,1296,1728,1944,2808,4320]"
-                                                                            data-aspectratio="0.9565217391304348"
-                                                                            data-ratio="0.9565217391304348" data-sizes="auto"
-                                                                            alt="" />
-                                                                    </div>
-                                                                    <div class="placeholder-background placeholder-background--animation"
-                                                                        data-image-placeholder></div>
-                                                                </div>
-                                                            </a>
-                                                        </div>
-                                                    </div>                                
-        
-                                                    <div id="header_bath_and_bed_image_container" class="disp-none">
-                                                        <div class="velaMenuBanner mb10">
-                                                            <a href="collections/blind.php">
-                                                                <div class="p-relative">
-                                                                    <div class="product-card__image" style="padding-top: 100%;">
-                                                                        <img class="product-card__img lazyload imgFlyCart"
-                                                                            data-src="./assets/images/our-bank/robe.jpg"
-                                                                            data-widths="[360,540,720,900,1080,1296,1728,1944,2808,4320]"
-                                                                            data-aspectratio="0.9565217391304348"
-                                                                            data-ratio="0.9565217391304348" data-sizes="auto"
-                                                                            alt="" />
-                                                                    </div>
-                                                                    <div class="placeholder-background placeholder-background--animation"
-                                                                        data-image-placeholder></div>
-                                                                </div>
-                                                            </a>
-                                                        </div>
-                                                    </div>                                
-                            
-                                                    <div id="header_curtains_image_container" class="disp-none">
-                                                        <div class="velaMenuBanner mb10">
-                                                            <a href="collections/blind.php">
-                                                                <div class="p-relative">
-                                                                    <div class="product-card__image" style="padding-top: 100%;">
-                                                                        <img class="product-card__img lazyload imgFlyCart"
-                                                                            data-src="./assets/images/our-bank/blinds.jpg"
-                                                                            data-widths="[360,540,720,900,1080,1296,1728,1944,2808,4320]"
-                                                                            data-aspectratio="0.9565217391304348"
-                                                                            data-ratio="0.9565217391304348" data-sizes="auto"
-                                                                            alt="" />
-                                                                    </div>
-                                                                    <div class="placeholder-background placeholder-background--animation"
-                                                                        data-image-placeholder></div>
-                                                                </div>
-                                                            </a>
-                                                        </div>
-                                                    </div>   
-                                                </div>
-    
 
                                                 <script>
                                                     var prev_img_id = "header_cushion_covers_image_container";
@@ -263,7 +187,7 @@
                                     </div>
                                 </li>
 
-                                <li class="hasMenuDropdown hasMegaMenu">
+                                <!-- <li class="hasMenuDropdown hasMegaMenu">
                                     <a href="./" title="">
                                         <span>Collections</span></a>
                                     <a class="btnCaret hidden-xl hidden-lg hidden-md" data-toggle="collapse"
@@ -404,7 +328,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                </li>
+                                </li> -->
 
                                 <li class="">
                                     <a href="about-us.php" title="">
@@ -634,15 +558,18 @@
                     </li>
                 </ul>
             </li>
-            <li class="">
+            <!-- <li class="">
                 <a href="collections.php" title="">Collections</a>
 
-            </li>
+            </li> -->
             <!-- <li class="">
                 <a href="blogs/news.php" title="">Blog</a>
             </li> -->
             <li class="">
-                <a href="pages/contact-us.php" title="">Contact</a>
+                <a href="/about-us.php" title="">About us</a>
+            </li>
+            <li class="">
+                <a href="/contact-us.php" title="">Contact</a>
             </li>
         </ul>
     </div>

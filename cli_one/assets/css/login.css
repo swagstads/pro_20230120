@@ -56,7 +56,7 @@ img {
 .bg-illustration {
   position: relative;
   height: 100vh;
-  width: 1194px;
+  max-width: 1194px;
   background: url("https://i.ibb.co/RhMZprS/jony-Image2-1.png") no-repeat center center scroll;
   background-size: cover;
   float: left;
@@ -107,7 +107,7 @@ img {
   width: calc(100% - 1194px);
 }
 .login .container {
-  width: 505px;
+  max-width: 505px;
   margin: 0 auto;
   position: relative;
 }
@@ -117,7 +117,7 @@ img {
   font-weight: bolder;
 }
 .login .container .login-form {
-  margin-top: 112px;
+  /* margin-top: 112px; */
 }
 .login .container .login-form form {
   display: -ms-grid;
@@ -129,6 +129,7 @@ img {
   background: rgba(57, 57, 57, 0.07);
   margin: 12.5px 0;
   height: 68px;
+  width: 100%;
   border: none;
   padding: 0 30px;
   border-radius: 10px;
@@ -173,7 +174,6 @@ img {
 }
 .login .container .remember-form {
   position: relative;
-  margin-top: -30px;
 }
 .login .container .remember-form input[type=checkbox] {
   margin-top: 9px;
@@ -308,7 +308,7 @@ img {
   }
   .login .container {
     -webkit-animation: slideIn 0.8s ease-in-out forwards;
-            animation: slideIn 0.8s ease-in-out forwards;
+    animation: slideIn 0.8s ease-in-out forwards;
     width: 85%;
     float: none;
   }

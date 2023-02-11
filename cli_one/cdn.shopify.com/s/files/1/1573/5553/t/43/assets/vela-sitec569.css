@@ -7901,6 +7901,11 @@ ul.lower-alpha {
   position: relative;
   /* border: 1px solid; */
 }
+@media (max-width: 750px) {
+  .velaProBlock {
+    margin-top: 10px;
+  }
+}
 .velaProBlock .proHImage {
   position: relative;
   overflow: hidden;
@@ -14115,6 +14120,7 @@ button:active:focus,
   }
 }
 .velaListProlist .velaProBlock {
+  width: 90%;
   margin: 0;
   padding: 15px 0;
 }

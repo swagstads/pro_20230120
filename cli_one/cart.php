@@ -142,7 +142,7 @@
                                                 Please Login to continue.
                                             </p>
                                             <p>
-                                                <a class="btn btnVelaOne" href="./logg_in.php" title="Go to Shopping">
+                                                <a class="btn btnVelaOne" href="./login-page.php" title="Go to Shopping">
                                                     Login
                                                 </a>
                                             </p>
