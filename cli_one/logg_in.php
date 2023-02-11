@@ -139,8 +139,7 @@ session_start();
                 <input type="text" id="signup_name" name="name" placeholder="Full Name" required value="Rishabh Nahar" />
                 <input type="number" id="signup_contact" name="mobile" minlength="10" maxlength="10" placeholder="Contact" pattern=".{9,}" required title="10 characters minimum" />
                 <input type="email" id="signup_email" name="email" placeholder="Email" required value="rishabhn@gmail.com" />
-                <input type="password" id="signup_password" name="password" placeholder="Password" value="signup_123" required
-                    title="8 characters minimum" />
+                <input type="password" id="signup_password" name="password" placeholder="Password" value="signup_123" required title="8 characters minimum" />
                 <input type="password" name="confirmpassword" placeholder="Confirm Password" value="signup_123" required />
                 <button type="submit" name="add"  id="add">Sign Up</button>
                 <div>
@@ -191,107 +190,107 @@ session_start();
 
 
 
-    <script>
-        function signup_verify_user(){
+<script>
+    function signup_verify_user(){
 
-            event.preventDefault()
+        event.preventDefault()
 
-            // Signup submit button
-            let submit_bttn = document.getElementById("add");
+        // Signup submit button
+        let submit_bttn = document.getElementById("add");
 
-            var api_url = '/api/signup.php';
+        var api_url = '/api/signup.php';
 
-            // form data values
-            let name = document.getElementById("signup_name").value;
-            let email = document.getElementById("signup_email").value;
-            let password = document.getElementById("signup_password").value;
-            let contact = document.getElementById("signup_contact").value;
+        // form data values
+        let name = document.getElementById("signup_name").value;
+        let email = document.getElementById("signup_email").value;
+        let password = document.getElementById("signup_password").value;
+        let contact = document.getElementById("signup_contact").value;
 
 
-            if(contact.length !== 10){
-                document.getElementById("signup_alert_message").innerHTML = "Please provide valid mobile number";
-            }
-            else if (document.addemp.password.value.length < 8) {
-                document.getElementById("signup_alert_message").innerHTML = "Password must be of 8 characters";
-                document.addemp.password.focus();
-            }
-            else if (document.addemp.password.value != document.addemp.confirmpassword.value) {
-                document.getElementById("signup_alert_message").innerHTML = "Password doesn't match";
-                document.addemp.confirmpassword.focus();
-            }
-            else{
-                // signup button disable
-                submit_bttn.disabled = 'true'
-                submit_bttn.textContent = 'Signing up...'
-    
-                // form data values in one variable
-                var form_data = { "add": "register","name":name,"email":email,"password":password,"contact":contact};
-                console.log("Form data",form_data);
-                $.ajax({
-                    url: api_url,
-                    type: 'POST',
-                    data: form_data,
-                    success: function (returned_data) {
-                        console.log(returned_data);
-                        var jsonData = JSON.parse(returned_data);
-                        var return_data = jsonData.response;
-                        // console.log(jsonData);
-                        if(jsonData.response[0].status === "ok"){
-                            submit_bttn.textContent = 'Submit'
-                            // submit_bttn.disabled = false
-                        }
-                        else{
-                            submit_bttn.textContent = 'Submit'
-                            submit_bttn.disabled = false
-                        }
-                        $("#signup_success_message").html( jsonData.response[0].success_message);
-                        $("#signup_alert_message").html( jsonData.response[0].alert_message);
-                    }
-                })
-            }
-
+        if(contact.length !== 10){
+            document.getElementById("signup_alert_message").innerHTML = "Please provide valid mobile number";
         }
-   
-        function login_verify_user(){
-            console.log("Login attempt");
+        else if (document.addemp.password.value.length < 8) {
+            document.getElementById("signup_alert_message").innerHTML = "Password must be of 8 characters";
+            document.addemp.password.focus();
+        }
+        else if (document.addemp.password.value != document.addemp.confirmpassword.value) {
+            document.getElementById("signup_alert_message").innerHTML = "Password doesn't match";
+            document.addemp.confirmpassword.focus();
+        }
+        else{
+            // signup button disable
+            submit_bttn.disabled = 'true'
+            submit_bttn.textContent = 'Signing up...'
 
-            event.preventDefault()
-
-            var api_url = '/api/login.php';
-
-            let email = document.getElementById("login_email").value;
-            let password = document.getElementById("login_password").value;
-
-            var form_data = { "user_login": "login","email":email,"password":password};
-            console.log(form_data);
+            // form data values in one variable
+            var form_data = { "add": "register","name":name,"email":email,"password":password,"contact":contact};
+            console.log("Form data",form_data);
             $.ajax({
-                    url: api_url,
-                    type: 'POST',
-                    data: form_data,
-                    success: function (returned_data) {
-                        console.log(returned_data);
-                        var jsonData = JSON.parse(returned_data);
-                        var return_data = jsonData.response;
-                        // console.log(jsonData.response);
-                        console.log("response",jsonData.response[0]);
-                        console.log("status",jsonData.response[0].alert_message);
-
-                        $("#login_success_message").html( jsonData.response[0].success_message);
-                        $("#login_alert_message").html( jsonData.response[0].alert_message);
-
-                        if(jsonData.response[0].status === "ok"){
-                            document.location = "/";
-                        }
-                        // else{
-                        //     submit_bttn.textContent = 'Submit'
-                        //     // submit_bttn.disabled = false
-                        // }
-                      
-
+                url: api_url,
+                type: 'POST',
+                data: form_data,
+                success: function (returned_data) {
+                    console.log(returned_data);
+                    var jsonData = JSON.parse(returned_data);
+                    var return_data = jsonData.response;
+                    // console.log(jsonData);
+                    if(jsonData.response[0].status === "ok"){
+                        submit_bttn.textContent = 'Submit'
+                        // submit_bttn.disabled = false
                     }
-                })
+                    else{
+                        submit_bttn.textContent = 'Submit'
+                        submit_bttn.disabled = false
+                    }
+                    $("#signup_success_message").html( jsonData.response[0].success_message);
+                    $("#signup_alert_message").html( jsonData.response[0].alert_message);
+                }
+            })
         }
-   </script>
+
+    }
+
+    function login_verify_user(){
+        console.log("Login attempt");
+
+        event.preventDefault()
+
+        var api_url = '/api/login.php';
+
+        let email = document.getElementById("login_email").value;
+        let password = document.getElementById("login_password").value;
+
+        var form_data = { "user_login": "login","email":email,"password":password};
+        console.log(form_data);
+        $.ajax({
+                url: api_url,
+                type: 'POST',
+                data: form_data,
+                success: function (returned_data) {
+                    console.log(returned_data);
+                    var jsonData = JSON.parse(returned_data);
+                    var return_data = jsonData.response;
+                    // console.log(jsonData.response);
+                    console.log("response",jsonData.response[0]);
+                    console.log("status",jsonData.response[0].alert_message);
+
+                    $("#login_success_message").html( jsonData.response[0].success_message);
+                    $("#login_alert_message").html( jsonData.response[0].alert_message);
+
+                    if(jsonData.response[0].status === "ok"){
+                        document.location = "/";
+                    }
+                    // else{
+                    //     submit_bttn.textContent = 'Submit'
+                    //     // submit_bttn.disabled = false
+                    // }
+                    
+
+                }
+            })
+    }
+</script>
 
     <script type="text/javascript" src="js/script.js"></script>
     <script src="assets\js\login.js"></script>

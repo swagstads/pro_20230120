@@ -376,7 +376,7 @@
                             </ul>
                         </div>
                     </div>
-                    <!-- 
+<!--                     
                     <div class="image-gal">
                         <div class="box">
                             <div class="dream">
@@ -402,10 +402,10 @@
                                 <span> PAGE BREAK </span>
                             </h3>
                         </div>
-                    </div>-->
+                    </div> -->
                     <div class="row portfolio-container" id="category">
 
-
+                        <a href=""></a>
                         <div class="col-lg-4 col-md-6 portfolio-item filter-web">
                             <img src="assets/images/portfolio/portfolio-2.jpg" class="img-fluid" alt="">
                             <div class="portfolio-info">
@@ -416,7 +416,7 @@
                             </div>
                         </div>
 
-                        <div class="col-lg-4 col-md-6 portfolio-item filter-web">
+                        <div class="col-lg-4 col-md-6 portfolio-item filter-card">
                             <img src="assets/images/portfolio/portfolio-2.jpg" class="img-fluid" alt="">
                             <div class="portfolio-info">
                                 <h4>Web 3</h4>

@@ -462,7 +462,7 @@
                     else{
                     ?>
                             <div class="box">
-                                <a href="logg_in.php" id="customer_login_link">
+                                <a href="login-page.php" id="customer_login_link">
                                     <i class="icons nav-icons">
                                         <svg fill="#000000" width="25px" height="25px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                                             <g id="Login">
