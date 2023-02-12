@@ -329,7 +329,13 @@
                                         </div>
                                     </div>
                                 </li> -->
-
+                                <?php
+                                    if(isset($_SESSION['username'])){
+                                    echo " <li class=''>
+                                            <a href='/profile.php' ><span>Profile</span></a>
+                                        </li>";
+                                    }
+                                ?>
                                 <li class="">
                                     <a href="about-us.php" title="">
                                         <span>About Us</span></a>
@@ -565,6 +571,13 @@
             <!-- <li class="">
                 <a href="blogs/news.php" title="">Blog</a>
             </li> -->
+            <?php
+                if(isset($_SESSION['username'])){
+                   echo " <li class=''>
+                        <a href='/profile.php' >Profile</a>
+                    </li>";
+                }
+            ?>
             <li class="">
                 <a href="/about-us.php" title="">About us</a>
             </li>
@@ -613,8 +626,9 @@
     <script>
         document.onkeydown=function(){
             let all_contact_inp = document.querySelectorAll(".contact-form");
+            let all_inp = document.querySelectorAll(".info");
             console.log();
-            if (window.event.keyCode >= 65 & window.event.keyCode <= 90 & all_contact_inp.length <= 0 ) {
+            if (window.event.keyCode >= 65 & window.event.keyCode <= 90 & all_contact_inp.length <= 0 & all_inp.length <= 0 ) {
                 openSearchModal()
                 document.getElementById("search_query").focus();
             }

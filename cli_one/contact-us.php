@@ -14,15 +14,6 @@
 </head>
 
 <body id="contact-us" class="template-page  velaFloatHeader ">
-    <div id="cartDrawer" class="drawer drawerRight">
-        <div class="drawerClose">
-            <span class="jsDrawerClose"></span>
-        </div>
-        <div class="drawerCartTitle">
-            <span>Shopping cart</span>
-        </div>
-        <div id="cartContainer"></div>
-    </div>
     <div id="pageContainer" class="isMoved">
         <div id="shopify-section-vela-header" class="shopify-section">
             <header id="velaHeader" class="velaHeader">
@@ -154,7 +145,7 @@
                                                             <div class="form-group">
                                                                 <label for="ContactFormName">Name <sup>*</sup></label>
                                                                 <input type="text" id="ContactFormName"
-                                                                    class="form-control" placeholder="Name"
+                                                                    class="form-control contact-form" placeholder="Name"
                                                                     name="contact[name]" autocapitalize="words"
                                                                     value="">
                                                             </div>
@@ -163,7 +154,7 @@
                                                             <div class="form-group">
                                                                 <label for="ContactFormEmail">Email <sup>*</sup></label>
                                                                 <input type="email" id="ContactFormEmail"
-                                                                    class="form-control" placeholder="Email"
+                                                                    class="form-control contact-form" placeholder="Email"
                                                                     name="contact[email]" autocorrect="off"
                                                                     autocapitalize="off" value="">
                                                             </div>
@@ -172,7 +163,7 @@
                                                             <div class="form-group">
                                                                 <label for="ContactFormSubject">Subject <sup>*</sup></label>
                                                                 <input type="text" id="ContactFormSubject"
-                                                                    class="form-control" placeholder="Subject"
+                                                                    class="form-control contact-form" placeholder="Subject"
                                                                     name="contact[email]" autocorrect="off"
                                                                     autocapitalize="off" value="">
                                                             </div>
@@ -182,7 +173,7 @@
                                                                 <label
                                                                     for="ContactFormMessage">Message<sup>*</sup></label>
                                                                 <textarea rows="6" id="ContactFormMessage"
-                                                                    class="form-control" placeholder="Message"
+                                                                    class="form-control contact-form" placeholder="Message"
                                                                     name="contact[body]"></textarea>
                                                             </div>
                                                         </div>
