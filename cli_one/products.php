@@ -28,8 +28,8 @@
                         <div class="velaBreadcrumbsInnerWrap">
                             <h1 class="breadcrumbHeading">
                                 <?php
-                                    if( isset($_GET['category'])){
-                                        echo $_GET['category'];
+                                    if( isset($_GET['product'])){
+                                        echo $_GET['product'];
                                     } 
                                     else{
                                         echo "Products";
@@ -48,8 +48,14 @@
                                     itemtype="http://schema.org/ListItem">
                                     <span itemprop="name">
                                         <?php
-                                            if( isset($_GET['category'])){
-                                                echo $_GET['category'];
+                                            if( isset($_GET['product'])){
+                                                
+                                                if( isset($_GET['category'])){
+                                                    echo $_GET['product']." - ".$_GET['category'];
+                                                }
+                                                else{
+                                                    echo $_GET['product'];
+                                                }
                                             } 
                                             else{
                                                 echo "Products";
@@ -112,9 +118,16 @@
         function fetch_products() {
             const queryString = window.location.search;
             const urlParams = new URLSearchParams(queryString);
-            const searched_product = urlParams.get('category')
-            var api_url = './api/fetch_products.php?prod='+searched_product;
-            var form_data = { "show_products": searched_product, "user_id": localStorage.getItem('user_id') };
+            const searched_product = urlParams.get('product')
+            const product_category = urlParams.get('category')
+            console.log(searched_product,product_category);
+            var api_url = './api/fetch_products.php';
+            var form_data = { 
+                "show_products": "yes", 
+                "product_name":searched_product,
+                "product_category":product_category, 
+                "user_id": localStorage.getItem('user_id') 
+            };
             $.ajax({
                 url: api_url,
                 type: 'POST',
@@ -124,17 +137,19 @@
 
                     var jsonData = JSON.parse(returned_data);
                     var return_data = jsonData.response;
-                    // console.log(jsonData);
+                    console.log(jsonData);
 
                     if (return_data[0].status == "failed") {
                         console.log('failed to fetched product data');
+
                         $("#product_container").append('<div style="text-align:center;width:100%;font-size:20px">Sorry, no results found</div>')
                     }
                     else if (return_data[0].status == "success") {
                         console.log('Fetched products Data');
-                        // console.log(jsonData.response);
+                        console.log(jsonData.response);
                         for (var i = 0; i < jsonData.response.length; i++) {
-                            console.log("Data "+i+":"+return_data[i].id);
+                            // console.log("Data "+i+":"+return_data[i].id);
+
                             $("#product_container").append('<div class="velaProBlock list col-xs-6  col-sm-12 col-md-12 col-12" data-price="260.00">'+
                                 '<div class="velaProBlockInner mb20">'+
                                 ' <div class="rowFlex rowFlexMargin">'+
@@ -161,7 +176,7 @@
                                         '</div>'+
                                         '<div class="col-xs-12 col-sm-9 col-md-9 col-lg-7 mbItemGutter">'+
                                             '<div class="proContent">'+
-                                                '<h4 class="proName"> <a href="./productpage.php?productid='+return_data[i].id+'">'+return_data[i].title+'</a> </h4>'+
+                                                '<h4 class="proName"> <a href="./productpage.php?productid='+return_data[i].id+'">'+return_data[i].title+' - '+return_data[i].category+'</a> </h4>'+
                                                 '<div class="proReviews hidden-xs hidden-sm">'+
                                                 ' <span class="shopify-product-reviews-badge" data-id="23393796112"></span>'+
                                                 '</div>'+

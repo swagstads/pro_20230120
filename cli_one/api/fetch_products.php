@@ -15,18 +15,29 @@ if (isset($_POST['show_products'])) {
     $response["response"] = array();
     $data = array();
     // $user_id=$_POST['user_id'];
-    $searched_query = $_POST['show_products'];
+    $searched_product = $_POST['product_name'];
 
-    if( $searched_query == "all" ){
-        $stmt = $dbh->prepare(' SELECT * FROM products  ');
+    if( strlen($_POST['product_category']) >= 1 ){
+            $searched_category = $_POST['product_category'];
+        
+            $stmt = $dbh->prepare(' SELECT * FROM products 
+                                    WHERE  
+                                    title LIKE :searched_product 
+                                    AND
+                                    category LIKE :searched_category ');
+        
+            $stmt->bindParam(':searched_product', $searched_product, PDO::PARAM_STR);
+            $stmt->bindParam(':searched_category', $searched_category, PDO::PARAM_STR);
     }
     else{
-        $stmt = $dbh->prepare(' SELECT * FROM products WHERE title LIKE :searched_query OR category LIKE :searched_query ');
-        $stmt->bindParam(':searched_query', $searched_query, PDO::PARAM_STR);
-    }
         
+        $stmt = $dbh->prepare(' SELECT * FROM products 
+                                WHERE  
+                                title LIKE :searched_product ');
+    
+        $stmt->bindParam(':searched_product', $searched_product, PDO::PARAM_STR);
+    }
     $stmt->execute();
-
     $count = $stmt->rowCount();
 
     if ($count > 0) {
@@ -34,6 +45,7 @@ if (isset($_POST['show_products'])) {
         for ($i = 0; $i < $count; $i++) {
             $data["id"] = $fetch_data[$i]['id'];
             $data["title"] = $fetch_data[$i]['title'];
+            $data["category"] = $fetch_data[$i]['category'];
             $data["description"] = $fetch_data[$i]['description'];
             $data["mrp"] = $fetch_data[$i]['mrp'];
             $data["price"] = $fetch_data[$i]['price'];
@@ -46,8 +58,9 @@ if (isset($_POST['show_products'])) {
     } 
     else {
         $data["status"] = "failed";
-        $data["reason"] = "failed_to_fetch_orders";
+        $data["reason"] = "No results";
         array_push($response["response"], $data);
+
     }
     echo json_encode($response);
 }

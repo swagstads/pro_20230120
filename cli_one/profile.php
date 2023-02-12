@@ -20,8 +20,8 @@
       }
       .left-section img {
         border-radius: 50%;
-        width: 150px;
-        height: 150px;
+        width: 200px;
+        height: 200px;
         object-fit: cover;
       }
       .right-section {
@@ -102,7 +102,7 @@ input[type="tel"]:disabled{
     <?php include('header.php') ?>
     <div class="profile-page-container">
         <div class="left-section">
-            <img src="https://via.placeholder.com/150x150" alt="profile image">
+            <img src="https://uxwing.com/wp-content/themes/uxwing/download/peoples-avatars/no-profile-picture-icon.png" alt="profile image">
         </div>
         <div class="right-section">
                 <form onsubmit="update_user_details()" action="">
