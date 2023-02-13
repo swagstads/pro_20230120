@@ -33,10 +33,8 @@
             <section class="velaBreadcrumbs hasBackgroundImage floaHeader">
                 <div class="velaBreadcrumbsInner" style="background-color: #ffffff">
                     <div class="velaBreadcrumbImage">
-
-
                         <img alt="Outstock"
-                            src="../cdn.shopify.com/s/files/1/1573/5553/files/bread-blog8c8c.jpg?v=1614329640" />
+                            src="./cdn.shopify.com/s/files/1/1573/5553/files/bread-blog8c8c.jpg?v=1614329640" />
                     </div>
                     <nav class="velaBreadcrumbWrap container">
                         <div class="velaBreadcrumbsInnerWrap">
