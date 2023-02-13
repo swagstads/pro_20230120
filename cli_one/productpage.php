@@ -50,7 +50,7 @@
                     <!-- Product Pricing -->
                     <div class="product-price">
                         <span id="product_our_price">&#8377; <span id="product_price"></span></span>
-                        <button  onclick="addToCart()" class="cart-btn">Add to cart</button>
+                        <button  onclick="addToCart( <?php echo $_GET['productid'] ?> )" class="cart-btn">Add to cart</button>
                     </div>
                         
                     <div class="product-mrp">
@@ -92,24 +92,6 @@
                     })
             }
             fetch_product()
-
-            function addToCart(){
-                var product_id = <?php echo $_GET['productid'] ?>;
-                var quantity = 1;
-                api_url = "/api/add_to_cart.php";
-                var form_data = { "add_to_cart": "add or update","productid":product_id,'quantity':quantity};
-                $.ajax({
-                        url: api_url,
-                        type: 'POST',
-                        data: form_data,
-                        success: function (returned_data) {
-                            var jsonData = JSON.parse(returned_data);
-                            var return_data = jsonData.response;
-                            console.log(return_data);
-                            alert(return_data[0].message)
-                        }
-                })
-            }
 
         </script>
 

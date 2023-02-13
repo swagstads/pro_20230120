@@ -54,14 +54,14 @@
                     var return_data = jsonData.response;
                     // console.log(jsonData);
                     if (return_data[0].status == "failed") {
-                        console.log('failed to fetched product data');
+                        // console.log('failed to fetched product data');
                         $("#product_container").append('<div style="text-align:center;width:100%;font-size:20px">Sorry, no results found</div>')
                     }
                     else if (return_data[0].status == "success") {
-                        console.log('Fetched products Data');
+                        // console.log('Fetched products Data');
                         // console.log(jsonData.response);
                         for (var i = 0; i < jsonData.response.length; i++) {
-                            console.log("Data "+i+":"+return_data[i].title);
+                            // console.log("Data "+i+":"+return_data[i].title);
                             $('.scrolling-products').append(
                                 '<div class="product-slider">'+
                                     '<a href="/productpage.php?productid='+return_data[i].id+'">'+
@@ -91,7 +91,7 @@
                         }
                     }
                     else{
-                        console.log("Nothing");
+                        // console.log("Nothing");
                     }
                 }
             })
@@ -110,6 +110,7 @@
                 api_url = "/api/add_to_cart.php";
                 console.log("adding to cart: pro id,", product_id);
                 var form_data = { "add_to_cart": "add or update" , "productid": product_id,'quantity': quantity};
+                console.log(form_data);
                 $.ajax({
                         url: api_url,
                         type: 'POST',

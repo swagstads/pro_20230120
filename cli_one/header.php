@@ -38,6 +38,7 @@
                                         <div class="menuGroup rowFlex rowFlexMargin">
                                             <div class="col-sm-9">
                                                 <div class="rowFlex rowFlexMargin velaMenuListLink">
+
                                                     <div class="col-xs-12 col-sm-3">
                                                         <ul onmouseover="headerShopTextHover('header_cushion_covers_image_container')" class="velaMenuLinks">
                                                             <li class="menuTitle">
@@ -140,7 +141,7 @@
                                                     <div class="col-xs-12 col-sm-3">
                                                         <ul onmouseover="headerShopTextHover('header_curtains_image_container')" class="velaMenuLinks">
                                                             <li class="menuTitle">
-                                                                <a href="products.php?product=ready made curtains" title="">Ready Made
+                                                                <a href="products.php?product=curtains" title="">Ready Made
                                                                     Curtains</a>
                                                             </li>
                                                             <li>
@@ -171,6 +172,83 @@
                                                     </div>
                                                 </div>
                                             </div>
+
+                                            <div class="col-sm-3">
+                                                <div id="header_cushion_covers_image_container" class="velaMenuBanner mb10">
+                                                    <a href="collections/blind.php">
+                                                        <div class="p-relative">
+                                                            <div class="product-card__image" style="padding-top: 100%;">
+                                                                <img class="product-card__img lazyload imgFlyCart"
+                                                                    data-src="./assets/images/our-bank/sofa-material.jpg"
+                                                                    data-widths="[360,540,720,900,1080,1296,1728,1944,2808,4320]"
+                                                                    data-aspectratio="0.9565217391304348"
+                                                                    data-ratio="0.9565217391304348" data-sizes="auto"
+                                                                    alt="" />
+                                                            </div>
+                                                            <div class="placeholder-background placeholder-background--animation"
+                                                                data-image-placeholder></div>
+                                                        </div>
+                                                    </a>
+                                                </div>
+
+                                                <div id="header_rugs_image_container" class=" disp-none">
+                                                    <div class="velaMenuBanner mb10">
+                                                        <a href="collections/blind.php">
+                                                            <div class="p-relative">
+                                                                <div class="product-card__image" style="padding-top: 100%;">
+                                                                    <img class="product-card__img lazyload imgFlyCart"
+                                                                        data-src="./assets/images/our-bank/carpet.jpg"
+                                                                        data-widths="[360,540,720,900,1080,1296,1728,1944,2808,4320]"
+                                                                        data-aspectratio="0.9565217391304348"
+                                                                        data-ratio="0.9565217391304348" data-sizes="auto"
+                                                                        alt="" />
+                                                                </div>
+                                                                <div class="placeholder-background placeholder-background--animation"
+                                                                    data-image-placeholder></div>
+                                                            </div>
+                                                        </a>
+                                                    </div>
+                                                </div>                                
+
+                                                <div id="header_bath_and_bed_image_container" class="disp-none">
+                                                    <div class="velaMenuBanner mb10">
+                                                        <a href="collections/blind.php">
+                                                            <div class="p-relative">
+                                                                <div class="product-card__image" style="padding-top: 100%;">
+                                                                    <img class="product-card__img lazyload imgFlyCart"
+                                                                        data-src="./assets/images/our-bank/robe.jpg"
+                                                                        data-widths="[360,540,720,900,1080,1296,1728,1944,2808,4320]"
+                                                                        data-aspectratio="0.9565217391304348"
+                                                                        data-ratio="0.9565217391304348" data-sizes="auto"
+                                                                        alt="" />
+                                                                </div>
+                                                                <div class="placeholder-background placeholder-background--animation"
+                                                                    data-image-placeholder></div>
+                                                            </div>
+                                                        </a>
+                                                    </div>
+                                                </div> 
+                                                <div id="header_curtains_image_container" class="disp-none">
+                                                    <div class="velaMenuBanner mb10">
+                                                        <a href="collections/blind.php">
+                                                            <div class="p-relative">
+                                                                <div class="product-card__image" style="padding-top: 100%;">
+                                                                    <img class="product-card__img lazyload imgFlyCart"
+                                                                        data-src="./assets/images/our-bank/blinds.jpg"
+                                                                        data-widths="[360,540,720,900,1080,1296,1728,1944,2808,4320]"
+                                                                        data-aspectratio="0.9565217391304348"
+                                                                        data-ratio="0.9565217391304348" data-sizes="auto"
+                                                                        alt="" />
+                                                                </div>
+                                                                <div class="placeholder-background placeholder-background--animation"
+                                                                    data-image-placeholder></div>
+                                                            </div>
+                                                        </a>
+                                                    </div>
+
+
+                                                </div>
+                                            </div> 
 
                                                 <script>
                                                     var prev_img_id = "header_cushion_covers_image_container";
@@ -535,30 +613,30 @@
                             </ul>
                     </li>
                     <li class="">
-                        <a href="products.php?product=Ready made curtains" title="">Ready made curtains</a>
+                        <a href="products.php?product=curtains" title="">curtains</a>
                         <span class="memoBtnDropdown collapsed" data-toggle="collapse"
                             data-target="#memoDropdown2214"><i class="fa fa-angle-down"></i></span>
                             <ul id="memoDropdown2214" class="memoDropdown collapse">
                                 <li class="">
-                                    <a href="products.php?product=Ready made curtains&category=Botanical" title="">Botanical</a>
+                                    <a href="products.php?product=curtains&category=Botanical" title="">Botanical</a>
                                 </li>
                                 <li class="">
-                                    <a href="products.php?product=Ready made curtains&category=Leaves" title="">Leaves</a>
+                                    <a href="products.php?product=curtains&category=Leaves" title="">Leaves</a>
                                 </li>
                                 <li class="">
-                                    <a href="products.php?product=Ready made curtains&category=Shiny texture" title="">Shiny texture</a>
+                                    <a href="products.php?product=curtains&category=Shiny texture" title="">Shiny texture</a>
                                 </li>
                                 <li class="">
-                                    <a href="products.php?product=Ready made curtains&category=Plain" title="">Plain</a>
+                                    <a href="products.php?product=curtains&category=Plain" title="">Plain</a>
                                 </li>
                                 <li class="">
-                                    <a href="products.php?product=Ready made curtains&category=Floral" title="">Floral</a>
+                                    <a href="products.php?product=curtains&category=Floral" title="">Floral</a>
                                 </li>
                                 <li class="">
-                                    <a href="products.php?product=Ready made curtains&category=Strips and Check" title="">Strips and Check</a>
+                                    <a href="products.php?product=curtains&category=Strips and Check" title="">Strips and Check</a>
                                 </li>
                                 <li class="">
-                                    <a href="products.php?product=Ready made curtains&category=For kids" title="">For kids</a>
+                                    <a href="products.php?product=curtains&category=For kids" title="">For kids</a>
                                 </li>
                             </ul>
                     </li>
@@ -589,45 +667,45 @@
 </div>
 <div class="menuMobileOverlay hidden-md hidden-lg"></div>
 
-<div id="pageOverlay" class="page-overlay"></div>
+<div onclick="closeSearchModal()" id="pageOverlay" class="page-overlay"></div>
 <div id="SearchModal" class="search-modal">
-        <div class="search-box-container">
-            <div class="close-bttn" onclick="closeSearchModal()">
-                <i class="fa fa-close"></i>
-            </div>
-            <div class="search-box">
-                <span>
-                    <input type="search" onsearch="searchProd()" tabindex="1" name="" id="search_query" placeholder="Search...">
-                </span>
-                <span class="search-icon" onclick="searchProd()" >
-                    <svg width="20px" height="20px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                        <g id="icomoon-ignore">
-                        </g>
-                        <path d="M28.591 27.273l-7.263-7.264c1.46-1.756 2.339-4.010 2.339-6.471 0-5.595-4.535-10.129-10.129-10.129-5.594 0-10.129 4.535-10.129 10.129 0 5.594 4.536 10.129 10.129 10.129 2.462 0 4.716-0.879 6.471-2.339l7.263 7.264 1.319-1.319zM4.475 13.538c0-4.997 4.065-9.063 9.063-9.063 4.997 0 9.063 4.066 9.063 9.063s-4.066 9.063-9.063 9.063c-4.998 0-9.063-4.066-9.063-9.063z" fill="#000000">
-                        
-                        </path>
-                    </svg>
-                </span>
-            </div>
+    <div class="search-box-container">
+        <div class="close-bttn" onclick="closeSearchModal()">
+            <i class="fa fa-close"></i>
+        </div>
+        <div class="search-box">
+            <span>
+                <input type="search" onsearch="searchProd()" tabindex="1" name="" id="search_query" placeholder="Search...">
+            </span>
+            <span class="search-icon" onclick="searchProd()" >
+                <svg width="20px" height="20px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                    <g id="icomoon-ignore">
+                    </g>
+                    <path d="M28.591 27.273l-7.263-7.264c1.46-1.756 2.339-4.010 2.339-6.471 0-5.595-4.535-10.129-10.129-10.129-5.594 0-10.129 4.535-10.129 10.129 0 5.594 4.536 10.129 10.129 10.129 2.462 0 4.716-0.879 6.471-2.339l7.263 7.264 1.319-1.319zM4.475 13.538c0-4.997 4.065-9.063 9.063-9.063 4.997 0 9.063 4.066 9.063 9.063s-4.066 9.063-9.063 9.063c-4.998 0-9.063-4.066-9.063-9.063z" fill="#000000">
+                    
+                    </path>
+                </svg>
+            </span>
+        </div>
 
-            <div class="search-shortcuts">
-                <span id="search_shortcuts" data-shortcut-value="Cushion Covers" onclick="shortcutSearch(this)">Cushion Covers</span>
-                <span id="search_shortcuts" data-shortcut-value="Bed Sheets" onclick="shortcutSearch(this)">Bed Sheets</span>
-                <span id="search_shortcuts" data-shortcut-value="Towels" onclick="shortcutSearch(this)">Towels</span>
-                <span id="search_shortcuts" data-shortcut-value="Bath Robe" onclick="shortcutSearch(this)">Bath Robe</span>
-                <span id="search_shortcuts" data-shortcut-value="Plain and texture" onclick="shortcutSearch(this)">Plain and texture</span>
-                <span id="search_shortcuts" data-shortcut-value="Curtains" onclick="shortcutSearch(this)">Curtains</span>
-                <span id="search_shortcuts" data-shortcut-value="Comforter" onclick="shortcutSearch(this)">Comforter</span>
-                <span id="search_shortcuts" data-shortcut-value="Rugs" onclick="shortcutSearch(this)">Rugs</span>
-            </div>
+        <div class="search-shortcuts">
+            <span id="search_shortcuts" data-shortcut-value="Cushion Covers" onclick="shortcutSearch(this)">Cushion Covers</span>
+            <span id="search_shortcuts" data-shortcut-value="Bed Sheets" onclick="shortcutSearch(this)">Bed Sheets</span>
+            <span id="search_shortcuts" data-shortcut-value="Towels" onclick="shortcutSearch(this)">Towels</span>
+            <span id="search_shortcuts" data-shortcut-value="Bath Robe" onclick="shortcutSearch(this)">Bath Robe</span>
+            <span id="search_shortcuts" data-shortcut-value="Plain and texture" onclick="shortcutSearch(this)">Plain and texture</span>
+            <span id="search_shortcuts" data-shortcut-value="Curtains" onclick="shortcutSearch(this)">Curtains</span>
+            <span id="search_shortcuts" data-shortcut-value="Comforter" onclick="shortcutSearch(this)">Comforter</span>
+            <span id="search_shortcuts" data-shortcut-value="Rugs" onclick="shortcutSearch(this)">Rugs</span>
         </div>
     </div>
+</div>
 
     <script>
         document.onkeydown=function(){
             let all_contact_inp = document.querySelectorAll(".contact-form");
             let all_inp = document.querySelectorAll(".info");
-            console.log();
+
             if (window.event.keyCode >= 65 & window.event.keyCode <= 90 & all_contact_inp.length <= 0 & all_inp.length <= 0 ) {
                 openSearchModal()
                 document.getElementById("search_query").focus();
@@ -636,6 +714,14 @@
                     closeSearchModal()
             }
         }
+
+        $(document).click(function() {
+            var container = $(".search-box-container");
+            if (!container.is(event.target) && !container.has(event.target).length) {
+                closeSearchModal();
+            }
+        });
+
         function openSearchModal(){
             document.body.classList.add("modal-open")
             document.getElementById("SearchModal").style.display = "flex"
@@ -653,12 +739,11 @@
             document.getElementById("pageOverlay").style.display = "none"
             document.getElementById("SearchModal").style.display = "none"
 
-
             scrollTop = window.pageYOffset || document.documentElement.scrollTop;
             scrollLeft = window.pageXOffset || document.documentElement.scrollLeft,
             
-                // if any scroll is attempted, set this to the previous value
-                window.onscroll = function() {};
+            // if any scroll is attempted, set this to the previous value
+            window.onscroll = "";
         }
         function shortcutSearch(query){
             // alert(query.getAttribute("data-shortcut-value"))

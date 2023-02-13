@@ -212,7 +212,6 @@
         }
         fetch_products();
 
-
         function addToCart(product_id,stockQuantity){
                 if(stockQuantity === 0){
                     alert("Item not in stock")
