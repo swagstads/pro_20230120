@@ -1,6 +1,3 @@
-<div class="header-height">
-    
-</div>
 <section class="headerWrap">
     <div class="velaHeaderMain headerMenu">
         <div class="container">
@@ -717,7 +714,8 @@
         $(document).click(function() {
             var container = $(".search-box-container");
             var search_icon = $(".header-search-icon");
-            if (!container.is(event.target) && !container.has(event.target).length && !search_icon.is(event.target) && !search_icon.has(event.target).length) {
+            var search_bttn = $(".search-bttn");
+            if (!container.is(event.target) && !container.has(event.target).length && !search_icon.is(event.target) && !search_icon.has(event.target).length && !search_bttn.is(event.target) && !search_bttn.has(event.target).length) {
                 closeSearchModal();
             }
         });

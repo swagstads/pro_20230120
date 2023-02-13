@@ -77,19 +77,19 @@
                                 </li> -->
 
                                 <li class="">
-                                    <a href="#" onclick="openSearchModal()" title="">Search</a>
+                                    <a class="search-bttn" onclick="openSearchModal()" title="">Search</a>
                                 </li>
 
                                 <li class="">
-                                    <a href="#" title="">Delivery Inforamtion</a>
+                                    <a href="./shipping_policy.php" title="">Shipping Policy</a>
                                 </li>
 
                                 <li class="">
-                                    <a href="#" title="">Privacy Policy</a>
+                                    <a href="./privacy.php" title="">Privacy Policy</a>
                                 </li>
 
                                 <li class="">
-                                    <a href="#p" title="">Terms & Condition</a>
+                                    <a href="./tandc.php" title="">Terms & Condition</a>
                                 </li>
                             </ul>
                         </div>
@@ -103,19 +103,18 @@
                         <div class="velaContent">
                             <ul class="velaFooterLinks list-unstyled">
                                 <li class="">
-                                    <a href="#" title="">Shipping Policy</a>
+                                    <a href="./cart.php" title="">Delivery Inforamtion</a>
                                 </li>
-
                                 <li class="">
                                     <a href="./contact-us.php" title="">Help & Contact Us</a>
                                 </li>
 
                                 <li class="">
-                                    <a href="#" title="">Returns & Refunds</a>
+                                    <a href="./return_and_refund.php" title="">Returns & Refunds</a>
                                 </li>
 
                                 <li class="">
-                                    <a href="#" title="">Terms & Conditions</a>
+                                    <a href="./tandc.php" title="">Terms & Conditions</a>
                                 </li>
                             </ul>
                         </div>
