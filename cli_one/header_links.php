@@ -4,18 +4,8 @@
 <meta name="viewport" content="width=device-width,initial-scale=1" />
 <meta name="theme-color" content="#bd8448" />
 <link rel="canonical" href="index.php" />
-<link href="assets/css/style.css" rel="stylesheet" />
+<link href="/assets/css/style.css" rel="stylesheet" />
 <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-<!-- <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-<link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-<link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-<link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
-<link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet"> -->
-<!-- 
-<link rel="shortcut icon" href="cdn.shopify.com/s/files/1/1573/5553/files/icon_32x32e751.png" type="image/png" />
-<link rel="apple-touch-icon-precomposed" href="cdn.shopify.com/s/files/1/1573/5553/files/icon_48x48e751.png"
-    type="image/png" />
-<link rel="nokia-touch-icon" href="cdn.shopify.com/s/files/1/1573/5553/files/icon_48x48e751.png" type="image/png" /> -->
 
 <title>A to Z Furnishings</title>
 
@@ -34,90 +24,7 @@
 <meta name="twitter:description" content="Fashion, Apparel, Electronics, Tools, Lingeri, Glasses, Furniture, Jewelry, Bikes, Cosmetics, Gifts, Handmade store. Try new premium multipurpose Shopify theme from Elite Author velatheme. velatheme Shopify theme is new approach to ecommerce web development." />
 
 <style>
-    #hero {
-        display: table;
-        width: 100%;
-        height: 100vh;
-        background: url(assets/images/hero-bg.jpg) top center;
-        background-size: cover;
-    }
-
-    #hero .hero-logo {
-        margin: 20px;
-    }
-
-    #hero .hero-logo img {
-        max-width: 100%;
-    }
-
-    #hero .hero-container {
-        /* background: rgba(0, 0, 0, 0.8); */
-        display: table-cell;
-        margin: 0;
-        padding: 0;
-        text-align: center;
-        vertical-align: middle;
-    }
-
-    #hero h1 {
-        margin: 30px 0 10px 0;
-        font-weight: 700;
-        line-height: 48px;
-        text-transform: uppercase;
-        color: #fff;
-    }
-
-    #hero h2 {
-        color: #ccc;
-        margin-bottom: 50px;
-    }
-
-    #hero h2 span {
-        color: #fff;
-        transition: 0.3s;
-        border-bottom: 2px solid #03c4eb;
-    }
-
-    #hero .rotating>.animated {
-        display: inline-block;
-    }
-
-    #hero .actions a {
-        font-family: "Raleway", sans-serif;
-        text-transform: uppercase;
-        font-weight: 500;
-        font-size: 16px;
-        letter-spacing: 1px;
-        display: inline-block;
-        padding: 8px 20px;
-        border-radius: 2px;
-        transition: 0.5s;
-        margin: 10px;
-    }
-
-    #hero .btn-get-started {
-        background: #03c4eb;
-        border: 2px solid #03c4eb;
-        color: #fff;
-    }
-
-    #hero .btn-get-started:hover {
-        background: none;
-        border: 2px solid #fff;
-        color: #fff;
-    }
-
-    #hero .btn-services {
-        border: 2px solid #fff;
-        color: #fff;
-    }
-
-    #hero .btn-services:hover {
-        background: #03c4eb;
-        border: 2px solid #03c4eb;
-    }
-
-    /*--------------------------------------------------------------
+ /*--------------------------------------------------------------
   # Portfolio
   --------------------------------------------------------------*/
     #portfolio {

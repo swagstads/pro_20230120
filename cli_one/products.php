@@ -149,7 +149,12 @@
                         console.log(jsonData.response);
                         for (var i = 0; i < jsonData.response.length; i++) {
                             // console.log("Data "+i+":"+return_data[i].id);
-
+                            let outOfStockMessage = "";
+                            let addToCartDisabled = false;
+                            if(return_data[i].quantity === 0){
+                                outOfStockMessage = "Out of Stock";
+                                addToCartDisabled = true;
+                            }
                             $("#product_container").append('<div class="velaProBlock list col-xs-6  col-sm-12 col-md-12 col-12" data-price="260.00">'+
                                 '<div class="velaProBlockInner mb20">'+
                                 ' <div class="rowFlex rowFlexMargin">'+
@@ -182,13 +187,13 @@
                                                 '</div>'+
                                                 '<div class="proDescription">'+
                                                     '<p>'+return_data[i].description+'</p>'+
-                                                    '<p>'+
+                                                    '<p class="out-of-stock-message">'+outOfStockMessage+'</p>'+
                                                 '</div>'+
                                                 '<div class="proPrice">'+
                                                     '<div class="priceProduct priceSale"><span class="money">&#x20B9;'+return_data[i].price+'</span></div>'+
                                                     '<div class="priceProduct priceCompare"><span class="money">&#x20B9;'+return_data[i].mrp+'</span></div>'+
                                                 '</div>'+
-                                                '<button  onclick="addToCart('+return_data[i].id+')" class="btn btnAddToCart">'+
+                                                '<button  onclick="addToCart('+return_data[i].id+','+return_data[i].quantity+')" class="btn btnAddToCart">'+
                                                     '<span>&plus; Add to Cart</span>'+
                                                 '</button>'+
                                             '</div>'+
@@ -208,23 +213,27 @@
         fetch_products();
 
 
-        function addToCart(product_id){
-                var quantity = 1;
-                api_url = "/api/add_to_cart.php";
-                console.log("adding to cart: pro id,", product_id);
-                var form_data = { "add_to_cart": "add or update" , "productid": product_id,'quantity': quantity};
-                $.ajax({
-                        url: api_url,
-                        type: 'POST',
-                        data: form_data,
-                        success: function (returned_data) {
-                            var jsonData = JSON.parse(returned_data);
-                            var return_data = jsonData.response;
-                            console.log(return_data);
-                            alert(return_data[0].message)
-                        }
-                })
-                console.log("Ended");
+        function addToCart(product_id,stockQuantity){
+                if(stockQuantity === 0){
+                    alert("Item not in stock")
+                }
+                else{
+                    var quantity = 1;
+                    api_url = "/api/add_to_cart.php";
+                    console.log("adding to cart: pro id,", product_id);
+                    var form_data = { "add_to_cart": "add or update" , "productid": product_id,'quantity': quantity};
+                    $.ajax({
+                            url: api_url,
+                            type: 'POST',
+                            data: form_data,
+                            success: function (returned_data) {
+                                var jsonData = JSON.parse(returned_data);
+                                var return_data = jsonData.response;
+                                console.log(return_data);
+                                alert(return_data[0].message)
+                            }
+                    })
+                }
             }
 
     </script>

@@ -13,7 +13,7 @@
                             </div>
                             <div class="product-slider-container">
 
-                                <div onclick="productSliderScrollLeft()" class="left-arrow scrolling-arrow"> <span><</span> </div>
+                                <div  class="left-arrow scrolling-arrow"> <span onclick="productSliderScrollLeft()" ><</span> </div>
 
                                 <div class="scrolling-products">
                                     
@@ -23,7 +23,7 @@
                                 </div>
 
 
-                                <div onclick="productSliderScrollRight()" class="right-arrow scrolling-arrow"> <span>></span> </div>
+                                <div class="right-arrow scrolling-arrow"> <span  onclick="productSliderScrollRight()" >></span> </div>
 
                             </div>
 
@@ -42,7 +42,7 @@
 
             console.log("SP: ",searched_product);   
 
-            var api_url = './api/fetch_products.php';
+            var api_url = './api/more-products.php';
             console.log(api_url);
             var form_data = { "show_products": searched_product, "user_id": localStorage.getItem('user_id') };
             $.ajax({

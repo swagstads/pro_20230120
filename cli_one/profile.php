@@ -119,7 +119,14 @@ input[type="tel"]:disabled{
     </div>
 
 
+    <div id="shopify-section-vela-footer" class="shopify-section">
+                <footer id="velaFooter">
+                    <?php include('footer.php'); ?>
+                </footer>
+            </div>
+
     <?php include('footer_links.php'); ?>
+
     <script src="js/main.js?key=<?= date('is') ?>" type="text/javascript"></script>
     <script>
         let api_url = "./api/get_user_details.php";

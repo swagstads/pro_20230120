@@ -72,24 +72,24 @@
 
                         <div class="velaContent">
                             <ul class="velaFooterLinks list-unstyled">
+                                <!-- <li class="">
+                                    <a href="#" title="">Careers</a>
+                                </li> -->
+
                                 <li class="">
-                                    <a href="pages/home-pages.php" title="">Careers</a>
+                                    <a href="#" onclick="openSearchModal()" title="">Search</a>
                                 </li>
 
                                 <li class="">
-                                    <a href="search.php" title="">Search</a>
+                                    <a href="#" title="">Delivery Inforamtion</a>
                                 </li>
 
                                 <li class="">
-                                    <a href="policies/privacy-policy.php" title="">Delivery Inforamtion</a>
+                                    <a href="#" title="">Privacy Policy</a>
                                 </li>
 
                                 <li class="">
-                                    <a href="policies/privacy-policy.php" title="">Privacy Policy</a>
-                                </li>
-
-                                <li class="">
-                                    <a href="policies/terms-of-service.php" title="">Terms & Condition</a>
+                                    <a href="#p" title="">Terms & Condition</a>
                                 </li>
                             </ul>
                         </div>
@@ -103,23 +103,19 @@
                         <div class="velaContent">
                             <ul class="velaFooterLinks list-unstyled">
                                 <li class="">
-                                    <a href="policies/shipping-policy.php" title="">Shipping Policy</a>
+                                    <a href="#" title="">Shipping Policy</a>
                                 </li>
 
                                 <li class="">
-                                    <a href="pages/contact-us.php" title="">Help & Contact Us</a>
+                                    <a href="/contact-us.php" title="">Help & Contact Us</a>
                                 </li>
 
                                 <li class="">
-                                    <a href="policies/refund-policy.php" title="">Returns & Refunds</a>
+                                    <a href="#" title="">Returns & Refunds</a>
                                 </li>
 
                                 <li class="">
-                                    <a href="pages/home-pages.php" title="">Online Stores</a>
-                                </li>
-
-                                <li class="">
-                                    <a href="policies/terms-of-service.php" title="">Terms & Conditions</a>
+                                    <a href="#" title="">Terms & Conditions</a>
                                 </li>
                             </ul>
                         </div>

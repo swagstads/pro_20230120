@@ -12,8 +12,6 @@ $response["response"] = array();
 $data = array();
 
 if (isset($_POST['show_products'])) {
-    $response["response"] = array();
-    $data = array();
     // $user_id=$_POST['user_id'];
     $searched_product = $_POST['product_name'];
 
@@ -50,6 +48,7 @@ if (isset($_POST['show_products'])) {
             $data["mrp"] = $fetch_data[$i]['mrp'];
             $data["price"] = $fetch_data[$i]['price'];
             $data["img_location"] = $fetch_data[$i]['img_location'];
+            $data["quantity"] = $fetch_data[$i]['quantity'];
 
             $data["status"] = "success";
             $data["reason"] = "orders_fetched";
