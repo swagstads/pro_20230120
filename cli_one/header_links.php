@@ -4,8 +4,8 @@
 <meta name="viewport" content="width=device-width,initial-scale=1" />
 <meta name="theme-color" content="#bd8448" />
 <link rel="canonical" href="index.php" />
-<link href="/assets/css/style.css" rel="stylesheet" />
-<link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<link href="./assets/css/style.css" rel="stylesheet" />
+<link href="./assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
 <title>A to Z Furnishings</title>
 
@@ -164,11 +164,11 @@
     }
 </style>
 
-<link href="cdn.shopify.com/s/files/1/1573/5553/t/43/assets/vela-fontseb87.css" rel="stylesheet" type="text/css" media="all" />
-<link href="cdn.shopify.com/s/files/1/1573/5553/t/43/assets/plugind6e7.css" rel="stylesheet" type="text/css" media="all" />
-<link href="cdn.shopify.com/s/files/1/1573/5553/t/43/assets/vela-sitec569.css" rel="stylesheet" type="text/css" media="all" />
+<link href="./cdn.shopify.com/s/files/1/1573/5553/t/43/assets/vela-fontseb87.css" rel="stylesheet" type="text/css" media="all" />
+<link href="./cdn.shopify.com/s/files/1/1573/5553/t/43/assets/plugind6e7.css" rel="stylesheet" type="text/css" media="all" />
+<link href="./cdn.shopify.com/s/files/1/1573/5553/t/43/assets/vela-sitec569.css" rel="stylesheet" type="text/css" media="all" />
 
-<script src="cdn.shopify.com/s/files/1/1573/5553/t/43/assets/jquery-3.5.0.min2a91.js" type="text/javascript"></script>
+<script src="./cdn.shopify.com/s/files/1/1573/5553/t/43/assets/jquery-3.5.0.min2a91.js" type="text/javascript"></script>
 
 <link href="https://monorail-edge.shopifysvc.com/" rel="dns-prefetch" />
 <script>
@@ -191,10 +191,10 @@
 <meta name="theme-color" content="#bd8448" />
 <link rel="canonical" href="collections.php" />
 
-<link rel="shortcut icon" href="../cdn.shopify.com/s/files/1/1573/5553/files/icon_32x32e751.png?v=1613719979" type="image/png" />
+<link rel="shortcut icon" href="./cdn.shopify.com/s/files/1/1573/5553/files/icon_32x32e751.png?v=1613719979" type="image/png" />
 <!-- iPad icons -->
-<link rel="apple-touch-icon-precomposed" href="../cdn.shopify.com/s/files/1/1573/5553/files/icon_48x48e751.png?v=1613719979" type="image/png" />
-<link rel="nokia-touch-icon" href="../cdn.shopify.com/s/files/1/1573/5553/files/icon_48x48e751.png?v=1613719979" type="image/png" />
+<link rel="apple-touch-icon-precomposed" href="./cdn.shopify.com/s/files/1/1573/5553/files/icon_48x48e751.png?v=1613719979" type="image/png" />
+<link rel="nokia-touch-icon" href="./cdn.shopify.com/s/files/1/1573/5553/files/icon_48x48e751.png?v=1613719979" type="image/png" />
 
 <!-- For icons - font awesome -->
 <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">

@@ -1,3 +1,6 @@
+<div class="header-height">
+    
+</div>
 <section class="headerWrap">
     <div class="velaHeaderMain headerMenu">
         <div class="container">
@@ -42,29 +45,29 @@
                                                     <div class="col-xs-12 col-sm-3">
                                                         <ul onmouseover="headerShopTextHover('header_cushion_covers_image_container')" class="velaMenuLinks">
                                                             <li class="menuTitle">
-                                                                <a href="products.php?product=cushion covers" title="">Cushion
+                                                                <a href="./products.php?product=cushion covers" title="">Cushion
                                                                     Covers</a>
                                                             </li>
                                                             <li>
-                                                                <a href="products.php?product=cushion covers&category=levaes" title="">Leaves</a>
+                                                                <a href="./products.php?product=cushion covers&category=levaes" title="">Leaves</a>
                                                             </li>
                                                             <li>
-                                                                <a href="products.php?product=cushion covers&category=small motifs" title="">Small
+                                                                <a href="./products.php?product=cushion covers&category=small motifs" title="">Small
                                                                     motifs</a>
                                                             </li>
                                                             <li>
-                                                                <a href="products.php?product=cushion covers&category=plain and textures" title="">Plain
+                                                                <a href="./products.php?product=cushion covers&category=plain and textures" title="">Plain
                                                                     and textures</a>
                                                             </li>
                                                             <li>
-                                                                <a href="products.php?product=cushion covers&category=atrips and checks" title="">Stripes and
+                                                                <a href="./products.php?product=cushion covers&category=atrips and checks" title="">Stripes and
                                                                     checks</a>
                                                             </li>
                                                             <li>
-                                                                <a href="products.php?product=cushion covers&category=abstract" title="">Abstract</a>
+                                                                <a href="./products.php?product=cushion covers&category=abstract" title="">Abstract</a>
                                                             </li>
                                                             <li>
-                                                                <a href="products.php?product=cushion covers&category=geometric" title="">Geometric</a>
+                                                                <a href="./products.php?product=cushion covers&category=geometric" title="">Geometric</a>
                                                             </li>
                                                         </ul>
                                                     </div>
@@ -72,27 +75,27 @@
                                                     <div class="col-xs-12 col-sm-3">
                                                         <ul onmouseover="headerShopTextHover('header_rugs_image_container')" class="velaMenuLinks">
                                                             <li class="menuTitle">
-                                                                <a href="products.php?product=rugs" title="">Rugs</a>
+                                                                <a href="./products.php?product=rugs" title="">Rugs</a>
                                                             </li>
                                                             <li>
-                                                                <a href="products.php?product=rugs&category=plain and textures" title="">Plain and
+                                                                <a href="./products.php?product=rugs&category=plain and textures" title="">Plain and
                                                                     Textures</a>
                                                             </li>
                                                             <li>
-                                                                <a href="products.php?product=rugs&category=classical" title="">Classical</a>
+                                                                <a href="./products.php?product=rugs&category=classical" title="">Classical</a>
                                                             </li>
                                                             <li>
-                                                                <a href="products.php?product=rugs&category=abstract" title="">Abstract</a>
+                                                                <a href="./products.php?product=rugs&category=abstract" title="">Abstract</a>
                                                             </li>
                                                             <li>
-                                                                <a href="products.php?product=rugs&category=ethnic" title="">Ethnic</a>
+                                                                <a href="./products.php?product=rugs&category=ethnic" title="">Ethnic</a>
                                                             </li>
                                                             <li>
-                                                                <a href="products.php?product=rugs&category=stripes and checks" title="">Stripes And
+                                                                <a href="./products.php?product=rugs&category=stripes and checks" title="">Stripes And
                                                                     Checks</a>
                                                             </li>
                                                             <li>
-                                                                <a href="products.php?product=rugs&category=damask" title="">Damask</a>
+                                                                <a href="./products.php?product=rugs&category=damask" title="">Damask</a>
                                                             </li>
                                                         </ul>
                                                     </div>
@@ -100,39 +103,39 @@
                                                     <div class="col-xs-12 col-sm-3">
                                                         <ul onmouseover="headerShopTextHover('header_bath_and_bed_image_container')" class="velaMenuLinks">
                                                             <li class="menuTitle">
-                                                                <a href="products.php?product=bed and bath" title="">Bed &
+                                                                <a href="./products.php?product=bed and bath" title="">Bed &
                                                                     Bath</a>
                                                             </li>
                                                             <li>
-                                                                <a href="products.php?product=bed and bath&category=bed sheets" title="">Bed
+                                                                <a href="./products.php?product=bed and bath&category=bed sheets" title="">Bed
                                                                     Sheets</a>
                                                             </li>
                                                             <li>
-                                                                <a href="products.php?product=bed and bath&category=comforter" title="">Comforter</a>
+                                                                <a href="./products.php?product=bed and bath&category=comforter" title="">Comforter</a>
                                                             </li>
                                                             <li>
-                                                                <a href="products.php?product=bed and bath&category=quilts" title="">Quilts</a>
+                                                                <a href="./products.php?product=bed and bath&category=quilts" title="">Quilts</a>
                                                             </li>
                                                             <li>
-                                                                <a href="products.php?product=bed and bath&category=dohar" title="">Dohar</a>
+                                                                <a href="./products.php?product=bed and bath&category=dohar" title="">Dohar</a>
                                                             </li>
                                                             <li>
-                                                                <a href="products.php?product=bed and bath&category=bedding set" title="">Bedding Set</a>
+                                                                <a href="./products.php?product=bed and bath&category=bedding set" title="">Bedding Set</a>
                                                             </li>
                                                             <li>
-                                                                <a href="products.php?product=bed and bath&category=bed in bag" title="">Bed in
+                                                                <a href="./products.php?product=bed and bath&category=bed in bag" title="">Bed in
                                                                     Bag</a>
                                                             </li>
                                                             <li>
-                                                                <a href="products.php?product=bed and bath&category=hand towels" title="">Hand
+                                                                <a href="./products.php?product=bed and bath&category=hand towels" title="">Hand
                                                                     towles</a>
                                                             </li>
                                                             <li>
-                                                                <a href="products.php?product=bed and bath&category=face towels" title="">Face
+                                                                <a href="./products.php?product=bed and bath&category=face towels" title="">Face
                                                                     towles</a>
                                                             </li>
                                                             <li>
-                                                                <a href="products.php?product=bed and bath&category=bath robe" title="">Bath
+                                                                <a href="./products.php?product=bed and bath&category=bath robe" title="">Bath
                                                                     Robe</a>
                                                             </li>
                                                         </ul>
@@ -141,31 +144,31 @@
                                                     <div class="col-xs-12 col-sm-3">
                                                         <ul onmouseover="headerShopTextHover('header_curtains_image_container')" class="velaMenuLinks">
                                                             <li class="menuTitle">
-                                                                <a href="products.php?product=curtains" title="">Ready Made
+                                                                <a href="./products.php?product=curtains" title="">Ready Made
                                                                     Curtains</a>
                                                             </li>
                                                             <li>
-                                                                <a href="products.php?product=curtains&category=botanical" title="">Botanical</a>
+                                                                <a href="./products.php?product=curtains&category=botanical" title="">Botanical</a>
                                                             </li>
                                                             <li>
-                                                                <a href="products.php?product=curtains&category=leaves" title="">Leaves</a>
+                                                                <a href="./products.php?product=curtains&category=leaves" title="">Leaves</a>
                                                             </li>
                                                             <li>
-                                                                <a href="products.php?product=curtains&category=shiny" title="">Shiny
+                                                                <a href="./products.php?product=curtains&category=shiny" title="">Shiny
                                                                     textures</a>
                                                             </li>
                                                             <li>
-                                                                <a href="products.php?product=curtains&category=plain" title="">Plain</a>
+                                                                <a href="./products.php?product=curtains&category=plain" title="">Plain</a>
                                                             </li>
                                                             <li>
-                                                                <a href="products.php?product=curtains&category=floral" title="">Floral</a>
+                                                                <a href="./products.php?product=curtains&category=floral" title="">Floral</a>
                                                             </li>
                                                             <li>
-                                                                <a href="products.php?product=curtains&category=strips and checks" title="">Stripes and
+                                                                <a href="./products.php?product=curtains&category=strips and checks" title="">Stripes and
                                                                     Checks</a>
                                                             </li>
                                                             <li>
-                                                                <a href="products.php?product=curtains&category=" title="">For
+                                                                <a href="./products.php?product=curtains&category=" title="">For
                                                                     Kids</a>
                                                             </li>
                                                         </ul>
@@ -286,7 +289,7 @@
                                                     <div class="velaMenuListContent rowFlex">
                                                         <div class="coll-item" style="width: 20%">
                                                             <div class="collImage">
-                                                                <a href="products.php?product=rugs">
+                                                                <a href="./products.php?product=rugs">
                                                                     <div class="p-relative">
                                                                         <div class="product-card__image"
                                                                             style="padding-top: 100%">
@@ -302,14 +305,14 @@
                                                                 </a>
                                                             </div>
                                                             <h5 class="collTitle">
-                                                                <a href="products.php?product=rugs" title="Decor Art">
+                                                                <a href="./products.php?product=rugs" title="Decor Art">
                                                                     Rugs</a>
                                                             </h5>
                                                         </div>
 
                                                         <div class="coll-item" style="width: 20%">
                                                             <div class="collImage">
-                                                                <a href="products.php?product=">
+                                                                <a href="./products.php?product=">
                                                                     <div class="p-relative">
                                                                         <div class="product-card__image"
                                                                             style="padding-top: 100%">
@@ -325,14 +328,14 @@
                                                                 </a>
                                                             </div>
                                                             <h5 class="collTitle">
-                                                                <a href="products.php?product=" title="Furniture">
+                                                                <a href="./products.php?product=" title="Furniture">
                                                                     Curtain</a>
                                                             </h5>
                                                         </div>
 
                                                         <div class="coll-item" style="width: 20%">
                                                             <div class="collImage">
-                                                                <a href="products.php?product=">
+                                                                <a href="./products.php?product=">
                                                                     <div class="p-relative">
                                                                         <div class="product-card__image"
                                                                             style="padding-top: 100%">
@@ -349,7 +352,7 @@
                                                                 </a>
                                                             </div>
                                                             <h5 class="collTitle">
-                                                                <a href="products.php?product="
+                                                                <a href="./products.php?product="
                                                                     title="Kitchen Things">
                                                                     Cushion</a>
                                                             </h5>
@@ -357,7 +360,7 @@
 
                                                         <div class="coll-item" style="width: 20%">
                                                             <div class="collImage">
-                                                                <a href="products.php?product=">
+                                                                <a href="./products.php?product=">
                                                                     <div class="p-relative">
                                                                         <div class="product-card__image"
                                                                             style="padding-top: 100%">
@@ -373,7 +376,7 @@
                                                                 </a>
                                                             </div>
                                                             <h5 class="collTitle">
-                                                                <a href="products.php?product=" title="Illumination">
+                                                                <a href="./products.php?product=" title="Illumination">
                                                                     Bed & bath linen</a>
                                                             </h5>
                                                         </div>
@@ -410,7 +413,7 @@
                                 <?php
                                     if(isset($_SESSION['username'])){
                                     echo " <li class=''>
-                                            <a href='/profile.php' ><span>Profile</span></a>
+                                            <a href='./profile.php' ><span>Profile</span></a>
                                         </li>";
                                     }
                                 ?>
@@ -529,114 +532,114 @@
                     data-target="#memoDropdown221"><i class="fa fa-angle-down"></i></span>
                 <ul id="memoDropdown221" class="memoDropdown collapse">
                     <li class="">
-                        <a href="products.php?product=Cushion Covers" title="">Cushion Covers</a>
+                        <a href="./products.php?product=Cushion Covers" title="">Cushion Covers</a>
                         <span class="memoBtnDropdown collapsed" data-toggle="collapse"
                             data-target="#memoDropdown2211"><i class="fa fa-angle-down"></i></span>
                         <ul id="memoDropdown2211" class="memoDropdown collapse">
                             <li class="">
-                                <a href="products.php?product=Cushion Covers&category=leaves" title="">Leaves</a>
+                                <a href="./products.php?product=Cushion Covers&category=leaves" title="">Leaves</a>
                             </li>
                             <li class="">
-                                <a href="products.php?product=Cushion Covers&category=Small Motifs" title="">Small Motifs</a>
+                                <a href="./products.php?product=Cushion Covers&category=Small Motifs" title="">Small Motifs</a>
                             </li>
                             <li class="">
-                                <a href="products.php?product=Cushion Covers&category=Plains and Textures" title="">Plains and Textures</a>
+                                <a href="./products.php?product=Cushion Covers&category=Plains and Textures" title="">Plains and Textures</a>
                             </li>
                             <li class="">
-                                <a href="products.php?product=Cushion Covers&category=Strips and check" title="">Strips and check</a>
+                                <a href="./products.php?product=Cushion Covers&category=Strips and check" title="">Strips and check</a>
                             </li>
                             <li class="">
-                                <a href="products.php?product=Cushion Covers&category=Abstract" title="">Abstract</a>
+                                <a href="./products.php?product=Cushion Covers&category=Abstract" title="">Abstract</a>
                             </li>
                             <li class="">
-                                <a href="products.php?product=Cushion Covers&category=Geometric" title="">Geometric</a>
+                                <a href="./products.php?product=Cushion Covers&category=Geometric" title="">Geometric</a>
                             </li>
                         </ul>
                     </li>
                     <li class="">
-                        <a href="products.php?product=Bed and Bath" title="">Bed and Bath</a>
+                        <a href="./products.php?product=Bed and Bath" title="">Bed and Bath</a>
                         <span class="memoBtnDropdown collapsed" data-toggle="collapse"
                             data-target="#memoDropdown2212"><i class="fa fa-angle-down"></i></span>
                             <ul id="memoDropdown2212" class="memoDropdown collapse">
                                 <li class="">
-                                    <a href="products.php?product=Bed and bath&category=Bed Sheets" title="">Bed Sheets</a>
+                                    <a href="./products.php?product=Bed and bath&category=Bed Sheets" title="">Bed Sheets</a>
                                 </li>
                                 <li class="">
-                                    <a href="products.php?product=Bed and bath&category=Comforter" title="">Comforter</a>
+                                    <a href="./products.php?product=Bed and bath&category=Comforter" title="">Comforter</a>
                                 </li>
                                 <li class="">
-                                    <a href="products.php?product=Bed and bath&category=Quilts" title="">Quilts</a>
+                                    <a href="./products.php?product=Bed and bath&category=Quilts" title="">Quilts</a>
                                 </li>
                                 <li class="">
-                                    <a href="products.php?product=Bed and bath&category=Dohar" title="">Dohar</a>
+                                    <a href="./products.php?product=Bed and bath&category=Dohar" title="">Dohar</a>
                                 </li>
                                 <li class="">
-                                    <a href="products.php?product=Bed and bath&category=Bedding Set" title="">Bedding Set</a>
+                                    <a href="./products.php?product=Bed and bath&category=Bedding Set" title="">Bedding Set</a>
                                 </li>
                                 <li class="">
-                                    <a href="products.php?product=Bed and bath&category=Bed in Bag" title="">Bed in Bag</a>
+                                    <a href="./products.php?product=Bed and bath&category=Bed in Bag" title="">Bed in Bag</a>
                                 </li>
                                 <li class="">
-                                    <a href="products.php?product=Bed and bath&category=Hand Towels" title="">Hand Towels</a>
+                                    <a href="./products.php?product=Bed and bath&category=Hand Towels" title="">Hand Towels</a>
                                 </li>
                                 <li class="">
-                                    <a href="products.php?product=Bed and bath&category=Face Towels" title="">Face Towels</a>
+                                    <a href="./products.php?product=Bed and bath&category=Face Towels" title="">Face Towels</a>
                                 </li>
                                 <li class="">
-                                    <a href="products.php?product=Bed and bath&category=Bath Robe" title="">Bath Robe</a>
+                                    <a href="./products.php?product=Bed and bath&category=Bath Robe" title="">Bath Robe</a>
                                 </li>
                             </ul>
                     </li>
                     <li class="">
-                        <a href="products.php?product=Rugs" title="">Rugs</a>
+                        <a href="./products.php?product=Rugs" title="">Rugs</a>
                         <span class="memoBtnDropdown collapsed" data-toggle="collapse"
                             data-target="#memoDropdown2213"><i class="fa fa-angle-down"></i></span>
                             <ul id="memoDropdown2213" class="memoDropdown collapse">
                                 <li class="">
-                                    <a href="products.php?product=Rugs&category=Plain and Textures" title="">Plain and Textures</a>
+                                    <a href="./products.php?product=Rugs&category=Plain and Textures" title="">Plain and Textures</a>
                                 </li>
                                 <li class="">
-                                    <a href="products.php?product=Rugs&category=Classical" title="">Classical</a>
+                                    <a href="./products.php?product=Rugs&category=Classical" title="">Classical</a>
                                 </li>
                                 <li class="">
-                                    <a href="products.php?product=Rugs&category=Ethnic" title="">Ethnic</a>
+                                    <a href="./products.php?product=Rugs&category=Ethnic" title="">Ethnic</a>
                                 </li>
                                 <li class="">
-                                    <a href="products.php?product=Rugs&category=Abstract" title="">Abstract</a>
+                                    <a href="./products.php?product=Rugs&category=Abstract" title="">Abstract</a>
                                 </li>
                                 <li class="">
-                                    <a href="products.php?product=Rugs&category=Strips and Check" title="">Strips and Check</a>
+                                    <a href="./products.php?product=Rugs&category=Strips and Check" title="">Strips and Check</a>
                                 </li>
                                 <li class="">
-                                    <a href="products.php?product=Rugs&category=Damask" title="">Damask</a>
+                                    <a href="./products.php?product=Rugs&category=Damask" title="">Damask</a>
                                 </li>
                             </ul>
                     </li>
                     <li class="">
-                        <a href="products.php?product=curtains" title="">curtains</a>
+                        <a href="./products.php?product=curtains" title="">curtains</a>
                         <span class="memoBtnDropdown collapsed" data-toggle="collapse"
                             data-target="#memoDropdown2214"><i class="fa fa-angle-down"></i></span>
                             <ul id="memoDropdown2214" class="memoDropdown collapse">
                                 <li class="">
-                                    <a href="products.php?product=curtains&category=Botanical" title="">Botanical</a>
+                                    <a href="./products.php?product=curtains&category=Botanical" title="">Botanical</a>
                                 </li>
                                 <li class="">
-                                    <a href="products.php?product=curtains&category=Leaves" title="">Leaves</a>
+                                    <a href="./products.php?product=curtains&category=Leaves" title="">Leaves</a>
                                 </li>
                                 <li class="">
-                                    <a href="products.php?product=curtains&category=Shiny texture" title="">Shiny texture</a>
+                                    <a href="./products.php?product=curtains&category=Shiny texture" title="">Shiny texture</a>
                                 </li>
                                 <li class="">
-                                    <a href="products.php?product=curtains&category=Plain" title="">Plain</a>
+                                    <a href="./products.php?product=curtains&category=Plain" title="">Plain</a>
                                 </li>
                                 <li class="">
-                                    <a href="products.php?product=curtains&category=Floral" title="">Floral</a>
+                                    <a href="./products.php?product=curtains&category=Floral" title="">Floral</a>
                                 </li>
                                 <li class="">
-                                    <a href="products.php?product=curtains&category=Strips and Check" title="">Strips and Check</a>
+                                    <a href="./products.php?product=curtains&category=Strips and Check" title="">Strips and Check</a>
                                 </li>
                                 <li class="">
-                                    <a href="products.php?product=curtains&category=For kids" title="">For kids</a>
+                                    <a href="./products.php?product=curtains&category=For kids" title="">For kids</a>
                                 </li>
                             </ul>
                     </li>
@@ -652,7 +655,7 @@
             <?php
                 if(isset($_SESSION['username'])){
                    echo " <li class=''>
-                        <a href='/profile.php' >Profile</a>
+                        <a href='./profile.php' >Profile</a>
                     </li>";
                 }
             ?>
