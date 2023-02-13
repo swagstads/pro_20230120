@@ -716,7 +716,8 @@
 
         $(document).click(function() {
             var container = $(".search-box-container");
-            if (!container.is(event.target) && !container.has(event.target).length) {
+            var search_icon = $(".header-search-icon");
+            if (!container.is(event.target) && !container.has(event.target).length && !search_icon.is(event.target) && !search_icon.has(event.target).length) {
                 closeSearchModal();
             }
         });
