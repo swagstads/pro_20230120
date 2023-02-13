@@ -70,7 +70,7 @@
                 console.log(" fetching product...");
                 var product_id = <?php echo $_GET['productid'] ?>;
 
-                var api_url = '/api/fetch_single_product.php?product_id';
+                var api_url = './api/fetch_single_product.php?product_id';
                 var form_data = { "fetch_products": "fetch","productid":product_id};
                 // console.log(form_data);
                 $.ajax({

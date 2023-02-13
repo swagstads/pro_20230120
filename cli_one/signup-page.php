@@ -14,15 +14,15 @@
 
 <div class="parent clearfix">
     <div class="bg-illustration">
-        <a href="/index.php">
+        <a href="./index.php">
             <img src="./assets/images/logo1.jpg" alt="logo">
         </a>
 
-      <div class="burger-btn">
+      <!-- <div class="burger-btn">
         <span></span>
         <span></span>
         <span></span>
-      </div>
+      </div> -->
 
     </div>
     
@@ -31,8 +31,6 @@
         <h1>Login to access to<br />your account</h1>
         
         <div class="login-form">
-
-         
 
         <div id="signup_alert_message"></div>
         <div id="signup_success_message"></div>
@@ -46,7 +44,7 @@
 
             <div class="remember-form">
               <span>
-                Already have an account? <a href="#">Login</a>
+                Already have an account? <a href="./login-page.php">Login</a>
               </span>
               <!-- <input type="checkbox"> -->
               <!-- <span>Remember me</span> -->
@@ -69,7 +67,7 @@ event.preventDefault()
 // Signup submit button
 let submit_bttn = document.getElementById("signup_bttn");
 
-var api_url = '/api/signup.php';
+var api_url = './api/signup.php';
 
 // form data values
 let name = document.getElementById("signup_name").value;

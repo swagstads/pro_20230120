@@ -37,15 +37,14 @@
                                 ?>
                             </h1>
 
-                            <ol class="breadcrumb" itemscope itemtype="http://schema.org/BreadcrumbList">
-                                <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
-                                    <a href="/" title="Back to the frontpage" itemprop="item">
+                            <ol class="breadcrumb" itemscope >
+                                <li itemprop="itemListElement">
+                                    <a href="./" title="Back to the frontpage" itemprop="item">
                                         <span itemprop="name">Home</span>
                                     </a>
                                     <meta itemprop="position" content="1" />
                                 </li>
-                                <li class="active" itemprop="itemListElement" itemscope
-                                    itemtype="http://schema.org/ListItem">
+                                <li class="active" >
                                     <span itemprop="name">
                                         <?php
                                             if( isset($_GET['product'])){
@@ -218,7 +217,7 @@
                 }
                 else{
                     var quantity = 1;
-                    api_url = "/api/add_to_cart.php";
+                    api_url = "./api/add_to_cart.php";
                     console.log("adding to cart: pro id,", product_id);
                     var form_data = { "add_to_cart": "add or update" , "productid": product_id,'quantity': quantity};
                     $.ajax({

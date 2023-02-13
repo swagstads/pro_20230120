@@ -149,7 +149,7 @@
                                                             </div>
                                                             <div>
                                                                 <a class="btn btnVelaSlider leftright-5"
-                                                                    href="/products.php?category=cushion%20covers" style="
+                                                                    href="./products.php?category=cushion%20covers" style="
                                       border-color: #201f1f;
                                       background-color: rgba(0, 0, 0, 0);
                                       color: #201f1f;
@@ -199,7 +199,7 @@
                                                             </div>
                                                             <div>
                                                                 <a class="btn btnVelaSlider leftright-5"
-                                                                    href="/products.php?category=cushion%20covers" style="
+                                                                    href="./products.php?category=cushion%20covers" style="
                                       border-color: #201f1f;
                                       background-color: rgba(0, 0, 0, 0);
                                       color: #201f1f;
@@ -227,7 +227,7 @@
                             <div class="row">
                                 <div class="col-sp-12 col-xs-4 col-sm-4">
                                     <div class="mbItemGutter effectOne">
-                                        <a href="/products.php?category=rugs" title="AtoZ">
+                                        <a href="./products.php?category=rugs" title="AtoZ">
                                             <div class="p-relative">
                                                 <div class="product-card__image"
                                                     style="padding-top: 61.43617021276596%">
@@ -245,7 +245,7 @@
                                 </div>
                                 <div class="col-sp-12 col-xs-4 col-sm-4">
                                     <div class="mbItemGutter effectOne">
-                                        <a href="/products.php?category=rugs" title="AtoZ">
+                                        <a href="./products.php?category=rugs" title="AtoZ">
                                             <div class="p-relative">
                                                 <div class="product-card__image"
                                                     style="padding-top: 61.43617021276596%">
@@ -263,7 +263,7 @@
                                 </div>
                                 <div class="col-sp-12 col-xs-4 col-sm-4">
                                     <div class="mbItemGutter effectOne">
-                                        <a href="/products.php?category=rugs" title="AtoZ">
+                                        <a href="./products.php?category=rugs" title="AtoZ">
                                             <div class="p-relative">
                                                 <div class="product-card__image"
                                                     style="padding-top: 61.43617021276596%">

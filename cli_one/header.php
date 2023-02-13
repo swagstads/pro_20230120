@@ -439,7 +439,7 @@
                         <!-- <i class="fa fa-search icons"></i> -->
                         <i class="icons nav-icons">
                         <svg width="25px" height="25px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path class="stroke-change" d="M14.5776 14.5419C15.5805 13.53 16.2 12.1373 16.2 10.6C16.2 7.50721 13.6928 5 10.6 5C7.50721 5 5 7.50721 5 10.6C5 13.6928 7.50721 16.2 10.6 16.2C12.1555 16.2 13.5628 15.5658 14.5776 14.5419ZM14.5776 14.5419L19 19" stroke="#464455" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path class="stroke-change" d="M14.5776 14.5419C15.5805 13.53 16.2 12.1373 16.2 10.6C16.2 7.50721 13.6928 5 10.6 5C7.50721 5 5 7.50721 5 10.6C5 13.6928 7.50721 16.2 10.6 16.2C12.1555 16.2 13.5628 15.5658 14.5776 14.5419ZM14.5776 14.5419L19 19" stroke="#464455" stroke-linecap="round" stroke-linejoin="r.ound"/>
                         </svg>
                         </i>
                     </div>
@@ -457,12 +457,12 @@
                         </a>
                     </div>
                     <?php if(isset($_SESSION['username'])){  ?> <!-- when user is logged in --> 
-                        <!-- <form action="/api/logout.php">
+                        <!-- <form action=."/api/logout.php">
                             <button type="submit">&nbsp; <i class="fa fa-sign-out"></i></button>
                         </form> -->
-                        <a href="/api/logout.php">
+                        <a href="./api/logout.php">
                         <svg fill="#000000" width="25" height="25" viewBox="0 0 256 256" id="Flat" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M218.82861,130.82812l-41.98877,42a4.00009,4.00009,0,1,1-5.65771-5.65624L206.34473,132H104a4,4,0,0,1,0-8H206.34473l-35.1626-35.17188a4.00009,4.00009,0,1,1,5.65771-5.65624l41.98877,42A3.99942,3.99942,0,0,1,218.82861,130.82812ZM104,212H48a4.00427,4.00427,0,0,1-4-4V48a4.00427,4.00427,0,0,1,4-4h56a4,4,0,0,0,0-8H48A12.01343,12.01343,0,0,0,36,48V208a12.01343,12.01343,0,0,0,12,12h56a4,4,0,0,0,0-8Z"/>
+                            <path d="M218.82861,130.82812l-41.98877,42a4.00009,4.00009,0,1,1-5.65771-5.65624L206.34473,132H104a4,4,0,0,1,0-8H206.34473l-35.1626-35.17188a4.00009,4.00009,0,1,1,5.65771-5.65624l41.98877,42A3.99942,3.99942,0,0,1,218.82861,130.82812ZM104,212H48a4.00427,4.00427,0,0,1-4-4V48a4.00427,4.00427,0,0,1,4-4h56a4,4,0,0,0,0-8H48A12.01343,12.01343,0,0,0,36,48V208a12.01343,12.01343,0,0,0,12,12h56a4,4,0,0,0,0-8.Z"/>
                         </svg>
                         </a>
                     <?php
@@ -475,8 +475,8 @@
                                         <svg fill="#000000" width="25px" height="25px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                                             <g id="Login">
                                                 <g>
-                                                    <path class="fill-change"  d="M20.944,18.432a2.577,2.577,0,0,1-2.729,2.5c-2.153.012-4.307,0-6.46,0a.5.5,0,0,1,0-1c2.2,0,4.4.032,6.6,0,1.107-.016,1.589-.848,1.589-1.838V5.63a1.545,1.545,0,0,0-.969-1.471,3.027,3.027,0,0,0-1.061-.095H11.755a.5.5,0,0,1,0-1c2.225,0,4.465-.085,6.688,0a2.566,2.566,0,0,1,2.5,2.67Z"/>
-                                                    <path class="fill-change"  d="M15.794,12.354a.459.459,0,0,0,.138-.312A.3.3,0,0,0,15.938,12a.29.29,0,0,0-.006-.041.455.455,0,0,0-.138-.313L12.125,7.978a.5.5,0,0,0-.707.707L14.234,11.5H3.492a.5.5,0,0,0,0,1H14.234l-2.816,2.815a.5.5,0,0,0,.707.707Z"/>
+                                                    <path class="fill-change"  d="M20.944,18.432a2.577,2.577,0,0,1-2.729,2.5c-2.153.012-4.307,0-6.46,0a.5.5,0,0,1,0-1c2.2,0,4.4.032,6.6,0,1.107-.016,1.589-.848,1.589-1.838V5.63a1.545,1.545,0,0,0-.969-1.471,3.027,3.027,0,0,0-1.061-.095H11.755a.5.5,0,0,1,0-1c2.225,0,4.465-.085,6.688,0a2.566,2.566,0,0,1,2.5,2.6.7Z"/>
+                                                    <path class="fill-change"  d="M15.794,12.354a.459.459,0,0,0,.138-.312A.3.3,0,0,0,15.938,12a.29.29,0,0,0-.006-.041.455.455,0,0,0-.138-.313L12.125,7.978a.5.5,0,0,0-.707.707L14.234,11.5H3.492a.5.5,0,0,0,0,1H14.234l-2.816,2.815a.5.5,0,0,0,.707.7.07Z"/>
                                                 </g>
                                             </g>
                                         </svg>
@@ -519,7 +519,7 @@
         </div>
         <ul class="nav memoNav">
             <li class="active">
-                <a class="collapsed" href="/" title="" data-toggle="collapse"
+                <a class="collapsed" href="./" title="" data-toggle="collapse"
                     data-target="#memoDropdown11">Home</a>
             </li>
             <li class="hasMemoDropdown">
@@ -657,10 +657,10 @@
                 }
             ?>
             <li class="">
-                <a href="/about-us.php" title="">About us</a>
+                <a href="./about-us.php" title="">About us</a>
             </li>
             <li class="">
-                <a href="/contact-us.php" title="">Contact</a>
+                <a href="./contact-us.php" title="">Contact</a>
             </li>
         </ul>
     </div>
@@ -755,7 +755,7 @@
         function searchProd(){
             let searchQuery = document.getElementById("search_query").value;
             if(searchQuery.length >= 1){
-                window.location.href = "/products.php?product="+searchQuery
+                window.location.href = "./products.php?product="+searchQuery
             }
         }
 </script>

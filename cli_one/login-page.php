@@ -17,7 +17,7 @@
 <div class="parent clearfix">
     <div class="bg-illustration">
      
-      <a href="/index.php">
+      <a href="./index.php">
         <img src="./assets/images/logo1.jpg" alt="logo">
     </a>
 
@@ -69,7 +69,7 @@
 
         event.preventDefault()
 
-        var api_url = '/api/login.php';
+        var api_url = './api/login.php';
 
         let email = document.getElementById("login_email").value;
         let password = document.getElementById("login_password").value;
@@ -92,7 +92,7 @@
                     $("#login_alert_message").html( jsonData.response[0].alert_message);
 
                     if(jsonData.response[0].status === "ok"){
-                        document.location = "/";
+                        document.location = "./index.php";
                     }
                 }
             })

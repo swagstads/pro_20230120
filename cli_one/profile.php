@@ -145,7 +145,7 @@ input[type="tel"]:disabled{
                     $(".phone input").val( return_data.phone )
                 }
                 else{
-                    window.location.href = "/login-page.php"
+                    window.location.href = "./login-page.php"
                 }
             }
         })
@@ -177,6 +177,7 @@ input[type="tel"]:disabled{
         }
 
     </script>
+  
 
 
   </body>

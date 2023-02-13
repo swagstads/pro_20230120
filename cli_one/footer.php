@@ -107,7 +107,7 @@
                                 </li>
 
                                 <li class="">
-                                    <a href="/contact-us.php" title="">Help & Contact Us</a>
+                                    <a href="./contact-us.php" title="">Help & Contact Us</a>
                                 </li>
 
                                 <li class="">
