@@ -15,7 +15,7 @@ SET time_zone = "+00:00";
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
+/*!40101 SET NAMES utf8  */;
 
 --
 -- Database: `atozecommerce`
@@ -34,9 +34,9 @@ CREATE TABLE `cart` (
   `quantity` int DEFAULT NULL,
   `message` varchar(255) DEFAULT NULL,
   `product_id` int DEFAULT NULL,
-  `status` enum('ordered','in cart') CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+  `status` enum('ordered','in cart') CHARACTER SET utf8  COLLATE utf8_general_ci NOT NULL,
   `timestamp` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8  COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `cart`
@@ -68,7 +68,7 @@ CREATE TABLE `contact_us` (
   `subject` varchar(100) NOT NULL,
   `message` varchar(255) NOT NULL,
   `added_on` timestamp NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8  COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `contact_us`
@@ -91,7 +91,7 @@ CREATE TABLE `orders` (
   `delivery_date` timestamp NULL DEFAULT NULL,
   `location` varchar(255) DEFAULT NULL,
   `status` enum('pending','in progress','delivered','canceled') DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8  COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `orders`
@@ -112,7 +112,7 @@ CREATE TABLE `payment` (
   `product_id` int NOT NULL,
   `sender` int UNSIGNED NOT NULL,
   `timestamp` timestamp NULL DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8  COLLATE=utf8_general_ci;
 
 -- --------------------------------------------------------
 
@@ -122,14 +122,14 @@ CREATE TABLE `payment` (
 
 CREATE TABLE `products` (
   `id` int NOT NULL,
-  `title` varchar(80) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
+  `title` varchar(80) CHARACTER SET utf8  COLLATE utf8_general_ci DEFAULT NULL,
   `category` varchar(255) DEFAULT NULL,
   `quantity` int NOT NULL,
   `description` varchar(255) DEFAULT NULL,
   `mrp` float NOT NULL,
   `price` float DEFAULT NULL,
   `img_location` varchar(255) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8  COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `products`
@@ -173,13 +173,13 @@ CREATE TABLE `users` (
   `email` varchar(50) NOT NULL,
   `password` varchar(255) NOT NULL,
   `phone` varchar(20) NOT NULL,
-  `address` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
+  `address` varchar(100) CHARACTER SET utf8  COLLATE utf8_general_ci DEFAULT NULL,
   `role` enum('customer','admin') NOT NULL,
   `added_on` timestamp NOT NULL,
   `modified_on` timestamp NOT NULL,
   `deleted_on` timestamp NULL DEFAULT NULL,
   `status` enum('active','dormant','deleted','removed') NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8  COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `users`
@@ -208,7 +208,7 @@ CREATE TABLE `user_verification` (
   `user_id` int UNSIGNED NOT NULL,
   `verify` tinyint(1) NOT NULL,
   `verification_code` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8  COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `user_verification`
