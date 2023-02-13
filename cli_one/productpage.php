@@ -17,13 +17,13 @@
                     <!-- Left Column / Headphones Image -->
                     <div class="left-column">
                         <img class="product-img-active" id="activeImage" data-image="" 
-                        src="../../cdn.shopify.com/s/files/1/1573/5553/products/1-10ea2.jpg?v=1601694960"
+                        src="./cdn.shopify.com/s/files/1/1573/5553/products/1-10ea2.jpg?v=1601694960"
                         alt="">
                         <div class="product-configuration">
                             <!-- Product Color -->
                             <div class="img-choose">
-                                <img class="small-view-image" onclick="changeActiveImg(this.src)" src="../../cdn.shopify.com/s/files/1/1573/5553/products/1-10ea2.jpg?v=1601694960" alt="">
-                                <img class="small-view-image" onclick="changeActiveImg(this.src)" src="../../cdn.shopify.com/s/files/1/1573/5553/products/1_c14253f1-8cb5-4a88-921b-d3dbaffaaafa0ea2.jpg?v=1601694960" alt="">
+                                <img class="small-view-image" onclick="changeActiveImg(this.src)" src="./cdn.shopify.com/s/files/1/1573/5553/products/1-10ea2.jpg?v=1601694960" alt="">
+                                <img class="small-view-image" onclick="changeActiveImg(this.src)" src="./cdn.shopify.com/s/files/1/1573/5553/products/1_c14253f1-8cb5-4a88-921b-d3dbaffaaafa0ea2.jpg?v=1601694960" alt="">
                             </div>
                         </div>
                     </div>
