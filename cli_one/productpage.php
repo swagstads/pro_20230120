@@ -81,7 +81,6 @@
                             console.log(returned_data);
                             var jsonData = JSON.parse(returned_data);
                             var return_data = jsonData.response;
-
                             $("#product_category").html(jsonData.response[0].category)
                             $("#product_price").html(jsonData.response[0].price)
                             $("#product_mrp").html(jsonData.response[0].mrp)

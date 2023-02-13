@@ -148,11 +148,17 @@
                         console.log(jsonData.response);
                         for (var i = 0; i < jsonData.response.length; i++) {
                             // console.log("Data "+i+":"+return_data[i].id);
-                            let outOfStockMessage = "";
+                            let outOfStockMessage = "", inStockMessage="";
                             let addToCartDisabled = false;
                             if(return_data[i].quantity === 0){
                                 outOfStockMessage = "Out of Stock";
                                 addToCartDisabled = true;
+                            }
+                            else if(return_data[i].quantity <= 5){
+                                inStockMessage = "only " + return_data[i].quantity + " left" 
+                            }
+                            else{
+                                inStockMessage = "In Stock"
                             }
                             $("#product_container").append('<div class="velaProBlock list col-xs-6  col-sm-12 col-md-12 col-12" data-price="260.00">'+
                                 '<div class="velaProBlockInner mb20">'+
@@ -187,6 +193,7 @@
                                                 '<div class="proDescription">'+
                                                     '<p>'+return_data[i].description+'</p>'+
                                                     '<p class="out-of-stock-message">'+outOfStockMessage+'</p>'+
+                                                    '<p class="in-stock-message">'+inStockMessage+'</p>'+
                                                 '</div>'+
                                                 '<div class="proPrice">'+
                                                     '<div class="priceProduct priceSale"><span class="money">&#x20B9;'+return_data[i].price+'</span></div>'+

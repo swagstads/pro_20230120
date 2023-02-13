@@ -591,6 +591,9 @@
 .out-of-stock-message{
   color: red;
 }
+.in-stock-message{
+  color: green;
+}
 .input-number {
   width: 80px;
   padding: 0 12px;

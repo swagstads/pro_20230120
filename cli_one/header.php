@@ -410,6 +410,8 @@
                                         </div>
                                     </div>
                                 </li> -->
+
+
                                 <?php
                                     if(isset($_SESSION['username'])){
                                     echo " <li class=''>
@@ -428,12 +430,6 @@
                             </ul>
                         </nav>
                     </section>
-                    <!-- <div class="search-container">
-                        <div class="search-box">
-                            <input type="text" name="" id="">
-                            <i class="fa fa-search"></i>
-                        </div>
-                    </div> -->
                 </div>
 
 
