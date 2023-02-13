@@ -54,7 +54,7 @@
                     </nav>
                 </div>
             </section>
-        </div>
+        </div> 
         <main class="mainContent" role="main">
             <section id="pageContent">
                 <div class="container">
@@ -62,41 +62,45 @@
                         <div class="cartContainer">
                             <h1 class="cartTitle hidden">Shopping cart</h1>
                             <div class="cartContent">
-                              <table id='cart-product-table' width="100%">
-                                <tr>
-                                    <th width="60%">Product</th>
-                                    <th width="10%">Price</th>
-                                    <th width="15%">Quantity</th>
-                                    <th width="10%">Total</th>
-                                    <th width="5%">Action</th>
-                                </tr>
-                                <tr> 
-                                    <td>
-                                        <div>
-                                            <img src='' alt=''>
-                                        </div>
-                                        <div class='cart-product-info'>
-                                            <div class='cart-prodct-title'>
-                                                Title
-                                            </div>
-                                            <div class='cart-product-description'>
-                                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae illum qui voluptatibus, expedita inventore, eos error harum voluptates reprehenderit officia odit porro pariatur? Officiis quod quas, tempore ipsam assumenda eveniet!
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td>
-                                        &#8377; 1600
-                                    </td>
-                                    <td>
-                                        <span class='input-number-decrement'>–</span><input class='input-number' type='text' value='1' min='0' max='10'><span class='input-number-increment'>+</span>
-                                    </td>
-                                    <td>
-                                        &#8377;1600
-                                    </td>
-                                    <td>
-                                        <a href=""><i class="fa fa-trash"></i></a>
-                                    </td>
-                                </tr>
+
+<table id='cart-product-table' width="100%">
+  <tr>
+      <th width="60%">Product</th>
+      <th width="10%">Price</th>
+      <th width="15%">Quantity</th>
+      <th width="10%">Total</th>
+      <th width="5%">Action</th>
+  </tr>
+  <tr> 
+      <td>
+          <div>
+              <img src='' alt=''>
+          </div>
+          <div class='cart-product-info'>
+              <div class='cart-prodct-title'>
+                  Title
+              </div>
+              <div class='cart-product-description'>
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae illum qui voluptatibus, expedita inventore, eos error harum voluptates reprehenderit officia odit porro pariatur? Officiis quod quas, tempore ipsam assumenda eveniet!
+              </div>
+          </div>
+      </td>
+      <td>
+          &#8377; 1600
+      </td>
+      <td>
+          <span class='input-number-decrement'>–</span><input class='input-number' type='text' value='1' min='0' max='10'><span class='input-number-increment'>+</span>
+      </td>
+      <td>
+          &#8377;1600
+      </td>
+      <td>
+          <a href=""><i class="fa fa-trash"></i></a>
+      </td>
+  </tr>
+</table>
+
+
 
 <?php
     if(isset($_SESSION['username'])){ // If logged in
@@ -106,46 +110,44 @@
 
         if ($result->rowCount() > 0){
             while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
-                // Do stuff
-                // echo "id: " . $row["id"]."<br>";
+               
             }
-            
             ?>
         </table>
         
 <?php
-    }
-        else {
-            echo "<div class='cartEmptyContent'>
-                    <p class='cartEmpty'>Your cart is currently empty.</p>
-                    <p>
-                        Before proceed to checkout you must add some products to
-                        your shopping cart.<br />
-                        You will find a lot of interesting products on our
-                        Website.
-                    </p>
-                    <p>
-                        <a class='btn btnVelaOne' href='collections/all.html' title='Go to Shopping'>Go
-                            to Shopping</a>
-                    </p>
-                </div>";
+}
+else {
+echo "<div class='cartEmptyContent'>
+        <p class='cartEmpty'>Your cart is currently empty.</p>
+        <p>
+            Before proceed to checkout you must add some products to
+            your shopping cart.<br />
+            You will find a lot of interesting products on our
+            Website.
+        </p>
+        <p>
+            <a class='btn btnVelaOne' href='collections/all.html' title='Go to Shopping'>Go
+                to Shopping</a>
+        </p>
+    </div>";
 }
 ?>
 <?php
     } // If logged in
     else{ // If not logged in
 ?>
-                                        <div class="cartEmptyContent">
-                                            <p class="cartEmpty">You haven't logged in yet.</p>
-                                            <p>
-                                                Please Login to continue.
-                                            </p>
-                                            <p>
-                                                <a class="btn btnVelaOne" href="./login-page.php" title="Go to Shopping">
-                                                    Login
-                                                </a>
-                                            </p>
-                                        </div>
+                    <div class="cartEmptyContent">
+                        <p class="cartEmpty">You haven't logged in yet.</p>
+                        <p>
+                            Please Login to continue.
+                        </p>
+                        <p>
+                            <a class="btn btnVelaOne" href="./login-page.php" title="Go to Shopping">
+                                Login
+                            </a>
+                        </p>
+                    </div>
 <?php
     // If not logged in
     }

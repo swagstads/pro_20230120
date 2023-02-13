@@ -49,9 +49,11 @@
         text-align: center;
         text-decoration: none;
         display: inline-block;
+        transition: 0.3s;
       }
       .submit-button:hover {
-        color: white    
+        color: white;
+        background: var(--vela-color-secondary); 
     }
 
 input[type="text"],
@@ -59,7 +61,7 @@ input[type="email"],
 input[type="password"],
 input[type="tel"] {
   border: none;
-  border-bottom: 1px solid #0d6efd;
+  border-bottom: 1px solid var(--vela-color-primary);
   background-color: transparent;
   font-size: 1.5rem;
   padding: 10px 5px;
@@ -71,7 +73,7 @@ input[type="text"]:focus,
 input[type="email"]:focus,
 input[type="password"]:focus,
 input[type="tel"]:focus {
-  border-bottom: 1px solid #bd8448;
+  border-bottom: 1px solid var(--vela-color-secondary);
   /* outline: none; */
 }
 input[type="text"]:disabled,
@@ -83,19 +85,19 @@ input[type="tel"]:disabled{
     background: lightgrey
 }
 
-      @media (max-width: 768px) {
-        .profile-page-container {
-          width: 90%;
-          flex-direction: row;
-        }
-        .left-section {
-          width: 100%;
-          margin-bottom: 20px;
-        }
-        .right-section {
-          width: 100%;
-        }
-      }
+@media (max-width: 768px) {
+  .profile-page-container {
+    width: 90%;
+    flex-direction: row;
+  }
+  .left-section {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  .right-section {
+    width: 100%;
+  }
+}
     </style>
   </head>
   <body>

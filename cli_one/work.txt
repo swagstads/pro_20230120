@@ -1,0 +1,6 @@
+Remove Color
+Cart
+order.php ->  mail for pending, shipped, delivered, cancelled ; Invoice generation
+
+
+payment int. -> paytm - GST, business details - pan, Bank details linked to pan card.
