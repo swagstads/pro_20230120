@@ -161,7 +161,7 @@
   /**
    * Preloader
    */
-  let preloader = select('#preloader');
+  let preloader = select('#velaPreloading');
   if (preloader) {
     window.addEventListener('load', () => {
       setTimeout(() => {

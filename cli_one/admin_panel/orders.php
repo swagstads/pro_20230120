@@ -14,11 +14,11 @@ if (isset($_SESSION['them'])) {
 
 include 'db.php';
 
-$result = mysqli_query($conn, "select * from `users`");
+$result = mysqli_query($conn, "select orders.order_id, orders.location, users.name, users.email, users.phone, users.address, orders.status, product.title from `orders` JOIN `users` ON `orders`.`user_id` = `users`.`id` JOIN `product` ON `product`.`id` = `orders`.`product_id`");
 $no = 1;
 ?>
 
-<input type="hidden" id="page_name" value="users">
+<input type="hidden" id="page_name" value="orders">
 <div id="content-wrapper">
 
     <div class="container-fluid">
@@ -27,9 +27,7 @@ $no = 1;
         <ol class="breadcrumb">
             <li class="breadcrumb-item">
                 <a href="#">
-                    <?php
-                        echo $lang['app_users'];
-                    ?>
+                    Orders
                 </a>
             </li>
         </ol>
@@ -37,7 +35,7 @@ $no = 1;
         <div class="card mb-3">
             <div class="card-header">
                 <i class="fas fa-table"></i>
-                <?php echo $lang['app_users']; ?>
+                Orders
             </div>
             <div class="card-body">
                 <div class="table-responsive">
@@ -49,7 +47,7 @@ $no = 1;
                             <th>E-mail</th>
                             <th>Phone</th>
                             <th>Address</th>
-                            <th>Reset Passsword</th>
+                            <th>Products</th>
                             <th>Status</th>
                         </tr>
                         </thead>
@@ -57,10 +55,11 @@ $no = 1;
                         <?php
                         while ($row = $result->fetch_assoc()) {
                             $id = $row['id'];
+                            $oid = $row['order_id'];
+                            $location = $row['address'];
                             $name = $row['name'];
                             $email = $row['email'];
                             $phone = $row['phone'];
-                            $address = $row['address'];
                             $status = $row['status'];
                             ?>
                             <tr>
@@ -68,9 +67,14 @@ $no = 1;
                                 <td><?php echo $name; ?></td>
                                 <td><?php echo $email; ?></td>
                                 <td><?php echo $phone; ?></td>
-                                <td><?php echo $address; ?></td>
-                                <td><a href="reset_password.php?uid=<?php echo $id; ?>" style="color:red;">Send Reset E-mail</a></td>
-                                <td><a href="user_status.php?eid=<?php echo $id;?>" style="color: <?php if($status == 'Active'){echo 'green';}elseif($status == 'Dormant'){echo 'orange';}else{echo 'red';} ?>;"><?php echo $status; ?></a></td>
+                                <td><?php echo $location; ?></td>
+                                <td><?php echo $oid; ?></td>
+                                <td><?php echo $status; ?></td>
+                                <!--
+                                <td><a href="order.php?eid=<?php echo $id; ?>" style="color: <?php if($status == 'delivered'){echo 'green';}elseif($status == 'in progress'){echo 'orange';}else{echo 'red';} ?>;"><?php echo $status; ?></p></td>
+                                
+                                <td><a href="mailto:<?php echo $email; ?>" style="color:green;"><i class="fas fa-fw fa-envelope" style="color: green; width: 10; height: 10; align: center;"></i></a></td>
+                                -->
                             </tr>
 
                             <?php
