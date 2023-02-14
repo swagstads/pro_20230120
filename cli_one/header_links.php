@@ -20,6 +20,7 @@
         });      
     });
 </script>
+<script src="./assets/js/main.js"></script>
 <script src="./assets/js/modernizr.js"></script> <!-- Modernizr -->
 <script src="./assets/js/cart.js"></script> <!-- Cart -->
 
