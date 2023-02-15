@@ -10,7 +10,6 @@
   <?php 
     include('header_links.php');
   ?>
-
 </head>
 <body>
 

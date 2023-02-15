@@ -130,6 +130,28 @@ else{
 //         echo "Error creating table: " . $conn->error;
 //     }
 
+
+$sql = "CREATE TABLE addresses (
+    id INT NOT NULL PRIMARY KEY,
+    user_id  INT UNSIGNED NOT NULL,
+    addressline1 VARCHAR(255) NOT NULL,
+    addressline2 VARCHAR(255),
+    city VARCHAR(255) NOT NULL,
+    state VARCHAR(255) NOT NULL,
+    zip VARCHAR(10) NOT NULL,
+    timestamp TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    modified_on TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    status ENUM('primary', 'secondary', 'deleted') NOT NULL,
+    deleted_on TIMESTAMP NULL DEFAULT NULL,
+    FOREIGN KEY (user_id) REFERENCES users(id)
+  )";
+
+    if ($conn->query($sql) === TRUE) {
+        echo "Table orders created successfully <br>";
+    } else {
+        echo "Error creating table: " . $conn->error;
+    }
+
 $conn->close();
 
 ?>

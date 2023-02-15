@@ -60,7 +60,20 @@
                     else if (return_data[0].status == "success") {
                         // console.log('Fetched products Data');
                         // console.log(jsonData.response);
+                        
                         for (var i = 0; i < jsonData.response.length; i++) {
+                            
+                            let outOfStockMessage = "";
+                            let inStockMessage="";
+                            if(return_data[i].product_quantity === 0){
+                                outOfStockMessage = "Out of Stock";
+                            }
+                            else if(return_data[i].product_quantity <= 5){
+                                inStockMessage = "only " + return_data[i].product_quantity + " left" 
+                            }
+                            else{
+                                inStockMessage = "In Stock"
+                            }
                             // console.log("Data "+i+":"+return_data[i].title);
                             $('.scrolling-products').append(
                                 '<div class="product-slider">'+
@@ -69,10 +82,15 @@
                                             '<img class="image1 active lazyload" data-src="https://cdn.shopify.com/s/files/1/1573/5553/products/14_360x.jpg?v=1601694510" alt="">'+
                                         '</div>'+
                                         '<div class="product-title">'+
-                                            '<span>'+return_data[i].title+'</span>'+
+                                            '<span>'+return_data[i].title+'</span><br>'+
                                         '</div>'+
                                     '</a>'+
 
+                                        '<div class="quantity">'+
+                                            '<span class="out-of-stock-message"><small>'+outOfStockMessage+'</small></span>'+
+                                            '<span class="in-stock-message"><small>'+inStockMessage+'</small></span>'+
+                                        '</div>'+
+                                        
                                         '<div class="product-price">'+
                                             '<div class="price-container">'+
                                                 '<div class="our-price">'+
@@ -119,7 +137,7 @@
                             var jsonData = JSON.parse(returned_data);
                             var return_data = jsonData.response;
                             console.log(return_data);
-                            alert(return_data[0].message)
+                            show_msg(return_data[0].message)
                         }
                 })
                 console.log(product_id,"Added to cart");

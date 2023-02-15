@@ -274,8 +274,8 @@
         --addtocart_txtcolor: #ffffff;
         --addtocart_bgcolor: #111111;
         --addtocart_bordercolor: #111111;
-        /* --addtocart_txtcolor_hover: #ffffff; */
-        --addtocart_txtcolor_hover: #e30d7c;
+        --addtocart_txtcolor_hover: #ffffff;
+        /* --addtocart_txtcolor_hover: #e30d7c; */
         /* --addtocart_bgcolor_hover: #bd8448; */
         --addtocart_bgcolor_hover: #0087c7;
         /* --addtocart_bordercolor_hover: #bd8448; */
@@ -314,6 +314,17 @@
             window.addEventListener("load", asyncLoad, false);
         }
     })();
+
+    function show_msg(msg) {
+        var x = document.getElementById("snackbar");
+        document.getElementById("msg_text").textContent = msg;
+        x.className = ("show");
+        setTimeout(function() {
+            x.className = x.className.replace("show", "");
+        }, 3000);
+    }
+
+
 </script>
 
 

@@ -1,29 +1,31 @@
 <?php
-session_start();
-require('./config.php');
-// $response["response"] = array();
-// $data = array();
-// $user_id = $_SESSION['user_id'];
-// $stmt = $dbh->prepare(' SELECT cart.*,product.* FROM cart INNER JOIN ON cart.product_id = products.id ');
-// $stmt->bindParam(':user_id', $user_id, PDO::PARAM_STR);
-// $stmt->execute();
-// $count = $stmt->rowCount();
 
-$response = array();
+
+require('./config.php'); 
+
+session_start();
+date_default_timezone_set('Asia/Kolkata');
+ 
+$response["response"] = array();
+$data = array();
 
 try {
-    
-    $sql = "SELECT c.*, c.quantity AS cart_quantity, p.*, p.quantity AS product_quantity FROM cart c INNER JOIN products p ON c.product_id = p.id";
+
+    $user_id = $_SESSION['user_id'];
+
+    $sql = "SELECT c.*, c.quantity AS cart_quantity, c.id AS cart_id, p.*, p.quantity AS product_quantity FROM cart c INNER JOIN products p ON c.product_id = p.id WHERE user_id=:user_id";
     $stmt = $dbh->prepare($sql);
+    $stmt->bindParam(':user_id', $user_id, PDO::PARAM_STR);
     $stmt->execute();
 
     $count = $stmt->rowCount();
 
     if($count > 0){
+        $data['status'] = 'ok';
+        $data['message'] = 'Got some cart data';
+
         while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
-            print_r($row);
-            echo "<br/>";
-            $data['cart_id'] = $row['id'];
+            $data['cart_id'] = $row['cart_id'];
             $data['required_quantity'] = $row['cart_quantity'];
             $data['product_name'] = $row['title'];
             $data['product_category'] = $row['category'];
@@ -31,17 +33,14 @@ try {
             $data['product_mrp'] = $row['mrp'];
             $data['product_price'] = $row['price'];
             $data['product_quantity'] = $row['product_quantity'];
-            $response[] = $row;
+            array_push($response["response"], $data);
         }
     }
 
 } catch (PDOException $e) {
     echo "Error: " . $e->getMessage();
 }
-$dbh = null;
-// print_r($response);
 
-
-
+echo json_encode($response);
 
 ?>

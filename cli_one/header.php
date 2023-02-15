@@ -29,7 +29,7 @@
                                     </a>
                                 </li>
                                 <li class="hasMenuDropdown hasMegaMenu">
-                                    <a href="products.php" title="Shop">
+                                    <a title="Shop">
                                         <span>Shop</span></a>
                                     <a class="btnCaret hidden-xl hidden-lg hidden-md" data-toggle="collapse"
                                         href="#megaDropdown21"></a>
@@ -408,14 +408,6 @@
                                     </div>
                                 </li> -->
 
-
-                                <?php
-                                    if(isset($_SESSION['username'])){
-                                    echo " <li class=''>
-                                            <a href='./profile.php' ><span>Profile</span></a>
-                                        </li>";
-                                    }
-                                ?>
                                 <li class="">
                                     <a href="about-us.php" title="">
                                         <span>About Us</span></a>
@@ -453,18 +445,48 @@
                         </a>
                     </div>
                     <?php if(isset($_SESSION['username'])){  ?> <!-- when user is logged in --> 
-                        <!-- <form action=."/api/logout.php">
-                            <button type="submit">&nbsp; <i class="fa fa-sign-out"></i></button>
-                        </form> -->
-                        <a href="./api/logout.php">
-                        <svg fill="#000000" width="25" height="25" viewBox="0 0 256 256" id="Flat" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M218.82861,130.82812l-41.98877,42a4.00009,4.00009,0,1,1-5.65771-5.65624L206.34473,132H104a4,4,0,0,1,0-8H206.34473l-35.1626-35.17188a4.00009,4.00009,0,1,1,5.65771-5.65624l41.98877,42A3.99942,3.99942,0,0,1,218.82861,130.82812ZM104,212H48a4.00427,4.00427,0,0,1-4-4V48a4.00427,4.00427,0,0,1,4-4h56a4,4,0,0,0,0-8H48A12.01343,12.01343,0,0,0,36,48V208a12.01343,12.01343,0,0,0,12,12h56a4,4,0,0,0,0-8.Z"/>
-                        </svg>
-                        </a>
-                    <?php
-                    } 
-                    else{
-                    ?>
+
+                    <div class="dropdown">
+                        <button class="dropbtn">
+                        <svg width="25px" height="25px" viewBox="0 0 1024 1024" class="icon"  version="1.1" xmlns="http://www.w3.org/2000/svg"><path d="M903.232 256l56.768 50.432L512 768 64 306.432 120.768 256 512 659.072z" fill="currentcolor" /></svg>
+                        </button>
+                        <div class="dropdown-content">
+                            <a href="./profile.php">
+                            <svg width="25px" height="25px" viewBox="-0.5 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M12.0001 13.09C14.4909 13.09 16.5101 11.0708 16.5101 8.58C16.5101 6.08919 14.4909 4.07 12.0001 4.07C9.5093 4.07 7.49011 6.08919 7.49011 8.58C7.49011 11.0708 9.5093 13.09 12.0001 13.09Z" stroke="#0F0F0F" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M8.98008 11.91C8.97008 11.91 8.97008 11.91 8.96008 11.92" stroke="#0F0F0F" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M16.9701 12.82C19.5601 14.4 21.3201 17.19 21.5001 20.4C21.5101 20.69 21.2801 20.93 20.9901 20.93H3.01007C2.72007 20.93 2.49007 20.69 2.50007 20.4C2.68007 17.21 4.43007 14.43 6.99007 12.85" stroke="#0F0F0F" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+                                Profile
+                            </a>
+                            <a href="./order_history.php">
+                            <svg fill="#000000" width="25px" height="25px" viewBox="0 0 96 96" xmlns="http://www.w3.org/2000/svg">
+                                    <g id="Cart">
+                                        <path d="M35,64a6,6,0,1,0,6,6A6,6,0,0,0,35,64Zm0,11a5,5,0,1,1,5-5A5,5,0,0,1,35,75Z"/>
+                                        <path d="M63,64a6,6,0,1,0,6,6A6,6,0,0,0,63,64Zm0,11a5,5,0,1,1,5-5A5,5,0,0,1,63,75Z"/>
+                                        <path d="M67.79,55a.49.49,0,0,0,.46-.31l11.6-29a.5.5,0,0,0-.46-.69H23.92L23,21.39h0v0a.55.55,0,0,0-.08-.15l0-.05-.08-.07-.07,0-.09,0H16.5a.5.5,0,0,0-.5.5v4a.5.5,0,0,0,.5.5h6.64l8,31.14A3,3,0,0,0,32,63H68.5a.5.5,0,0,0,.5-.5v-5a.5.5,0,0,0-.5-.5H32.15l-.52-2ZM78.65,26,67.45,54H31.62L24.39,26ZM17,25V22h5.11l.75,3ZM68,62H32a2,2,0,0,1,0-4H68Z"/>
+                                        <path d="M41.5,50A2.5,2.5,0,0,0,44,47.5v-15a2.5,2.5,0,0,0-5,0v15A2.5,2.5,0,0,0,41.5,50ZM40,32.5a1.5,1.5,0,0,1,3,0v15a1.5,1.5,0,0,1-3,0Z"/>
+                                        <path d="M50.5,50A2.5,2.5,0,0,0,53,47.5v-15a2.5,2.5,0,0,0-5,0v15A2.5,2.5,0,0,0,50.5,50ZM49,32.5a1.5,1.5,0,0,1,3,0v15a1.5,1.5,0,0,1-3,0Z"/>
+                                        <path d="M59.5,50A2.5,2.5,0,0,0,62,47.5v-15a2.5,2.5,0,0,0-5,0v15A2.5,2.5,0,0,0,59.5,50ZM58,32.5a1.5,1.5,0,0,1,3,0v15a1.5,1.5,0,0,1-3,0Z"/>
+                                    </g>
+
+                                    </svg>
+                                Orders
+                            </a>
+                            <a href="./api/logout.php">
+                                <svg fill="currentcolor" width="25px" height="25px" viewBox="0 0 256 256" id="Flat" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M218.82861,130.82812l-41.98877,42a4.00009,4.00009,0,1,1-5.65771-5.65624L206.34473,132H104a4,4,0,0,1,0-8H206.34473l-35.1626-35.17188a4.00009,4.00009,0,1,1,5.65771-5.65624l41.98877,42A3.99942,3.99942,0,0,1,218.82861,130.82812ZM104,212H48a4.00427,4.00427,0,0,1-4-4V48a4.00427,4.00427,0,0,1,4-4h56a4,4,0,0,0,0-8H48A12.01343,12.01343,0,0,0,36,48V208a12.01343,12.01343,0,0,0,12,12h56a4,4,0,0,0,0-8Z"/>
+                                </svg>
+                                Logout
+                            </a>
+                        </div>
+                    </div>
+
+
+        <?php
+        } // when use is logged in end
+        else{ /// when use is not logged in
+        ?>
                             <div class="box">
                                 <a href="login-page.php" id="customer_login_link">
                                     <i class="icons nav-icons">
@@ -519,7 +541,7 @@
                     data-target="#memoDropdown11">Home</a>
             </li>
             <li class="hasMemoDropdown">
-                <a class="collapsed" href="#/collections" title="" data-toggle="collapse"
+                <a class="collapsed"  title="" data-toggle="collapse"
                     data-target="#memoDropdown221">Shop</a>
                 <span class="memoBtnDropdown collapsed" data-toggle="collapse"
                     data-target="#memoDropdown221"><i class="fa fa-angle-down"></i></span>
@@ -658,6 +680,15 @@
             <li class="">
                 <a href="./contact-us.php" title="">Contact</a>
             </li>
+            <li class="">
+                <a href="./profile.php" title="">Profile</a>
+            </li>
+            <li class="">
+                <a href="./order_history.php" title="">Previous orders</a>
+            </li>
+            <li class="">
+                <a href="./api/logout.php" title="">Logout</a>
+            </li>
         </ul>
     </div>
 </div>
@@ -698,63 +729,64 @@
     </div>
 </div>
 
-    <script>
-        document.onkeydown=function(){
-            let all_contact_inp = document.querySelectorAll(".contact-form");
-            let all_inp = document.querySelectorAll(".info");
+<div id="snackbar"><span id="msg_text"></span></div>
 
-            if (window.event.keyCode >= 65 & window.event.keyCode <= 90 & all_contact_inp.length <= 0 & all_inp.length <= 0 ) {
-                openSearchModal()
-                document.getElementById("search_query").focus();
-            }
-            if(window.event.keyCode === 27 ){
-                    closeSearchModal()
-            }
+<script>
+    document.onkeydown=function(){
+        let all_contact_inp = document.querySelectorAll(".contact-form");
+        let all_inp = document.querySelectorAll(".info");
+
+        if (window.event.keyCode >= 65 & window.event.keyCode <= 90 & all_contact_inp.length <= 0 & all_inp.length <= 0 ) {
+            openSearchModal()
+            document.getElementById("search_query").focus();
         }
-
-        $(document).click(function() {
-            var container = $(".search-box-container");
-            var search_icon = $(".header-search-icon");
-            var search_bttn = $(".search-bttn");
-            if (!container.is(event.target) && !container.has(event.target).length && !search_icon.is(event.target) && !search_icon.has(event.target).length && !search_bttn.is(event.target) && !search_bttn.has(event.target).length) {
-                closeSearchModal();
-            }
-        });
-
-        function openSearchModal(){
-            document.body.classList.add("modal-open")
-            document.getElementById("SearchModal").style.display = "flex"
-            document.getElementById("pageOverlay").style.display = "block"
-            // Get the current page scroll position
-            scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-            scrollLeft = window.pageXOffset || document.documentElement.scrollLeft,
-        
-                // if any scroll is attempted, set this to the previous value
-                window.onscroll = function() {
-                    window.scrollTo(scrollLeft, scrollTop);
-                };
+        if(window.event.keyCode === 27 ){
+                closeSearchModal()
         }
-        function closeSearchModal(){
-            document.getElementById("pageOverlay").style.display = "none"
-            document.getElementById("SearchModal").style.display = "none"
+    }
+    $(document).click(function() {
+        var container = $(".search-box-container");
+        var search_icon = $(".header-search-icon");
+        var search_bttn = $(".search-bttn");
+        if (!container.is(event.target) && !container.has(event.target).length && !search_icon.is(event.target) && !search_icon.has(event.target).length && !search_bttn.is(event.target) && !search_bttn.has(event.target).length) {
+            closeSearchModal();
+        }
+    });
 
-            scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-            scrollLeft = window.pageXOffset || document.documentElement.scrollLeft,
-            
+    function openSearchModal(){
+        document.body.classList.add("modal-open")
+        document.getElementById("SearchModal").style.display = "flex"
+        document.getElementById("pageOverlay").style.display = "block"
+        // Get the current page scroll position
+        scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        scrollLeft = window.pageXOffset || document.documentElement.scrollLeft,
+    
             // if any scroll is attempted, set this to the previous value
-            window.onscroll = "";
-        }
-        function shortcutSearch(query){
-            // alert(query.getAttribute("data-shortcut-value"))
-            let searchQuery = document.getElementById("search_query");
-            searchQuery.value = query.getAttribute("data-shortcut-value")
-            searchProd()
+            window.onscroll = function() {
+                window.scrollTo(scrollLeft, scrollTop);
+            };
+    }
+    function closeSearchModal(){
+        document.getElementById("pageOverlay").style.display = "none"
+        document.getElementById("SearchModal").style.display = "none"
 
+        scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        scrollLeft = window.pageXOffset || document.documentElement.scrollLeft,
+        
+        // if any scroll is attempted, set this to the previous value
+        window.onscroll = "";
+    }
+    function shortcutSearch(query){
+        // alert(query.getAttribute("data-shortcut-value"))
+        let searchQuery = document.getElementById("search_query");
+        searchQuery.value = query.getAttribute("data-shortcut-value")
+        searchProd()
+
+    }
+    function searchProd(){
+        let searchQuery = document.getElementById("search_query").value;
+        if(searchQuery.length >= 1){
+            window.location.href = "./products.php?product="+searchQuery
         }
-        function searchProd(){
-            let searchQuery = document.getElementById("search_query").value;
-            if(searchQuery.length >= 1){
-                window.location.href = "./products.php?product="+searchQuery
-            }
-        }
+    }
 </script>

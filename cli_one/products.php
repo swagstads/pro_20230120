@@ -221,7 +221,7 @@
 
         function addToCart(product_id,stockQuantity){
                 if(stockQuantity === 0){
-                    alert("Item not in stock")
+                    show_msg("Item not in stock")
                 }
                 else{
                     var quantity = 1;
@@ -236,7 +236,7 @@
                                 var jsonData = JSON.parse(returned_data);
                                 var return_data = jsonData.response;
                                 console.log(return_data);
-                                alert(return_data[0].message)
+                                show_msg(return_data[0].message)
                             }
                     })
                 }

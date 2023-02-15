@@ -25,6 +25,7 @@ if (isset($_POST['show_products'])) {
             $data["title"] = $fetch_data[$i]['title'];
             $data["category"] = $fetch_data[$i]['category'];
             $data["description"] = $fetch_data[$i]['description'];
+            $data["product_quantity"] = $fetch_data[$i]['quantity'];
             $data["mrp"] = $fetch_data[$i]['mrp'];
             $data["price"] = $fetch_data[$i]['price'];
             $data["img_location"] = $fetch_data[$i]['img_location'];

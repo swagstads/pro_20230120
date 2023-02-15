@@ -44,8 +44,8 @@ if (isset($_POST['add'])) {
     else{
 
         // Insert if new user
-        $sql = "INSERT INTO users (name, email, password, phone, address, role, added_on, modified_on, status) 
-                            VALUES(:name,:email,:password,:contact,'address','customer',:timestamp,:timestamp,'dormant')";
+        $sql = "INSERT INTO users (name, email, password, phone, role, added_on, modified_on, status) 
+                            VALUES(:name,:email,:password,:contact,'customer',:timestamp,:timestamp,'dormant')";
         $query = $dbh->prepare($sql);
         $query->bindParam(':name', $name, PDO::PARAM_STR);
         $query->bindParam(':contact', $contact, PDO::PARAM_STR);

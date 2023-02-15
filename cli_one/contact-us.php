@@ -366,7 +366,7 @@
                     console.log("response",jsonData.response[0]);
                     console.log("status",jsonData.response[0].alert_message);
 
-                    alert("Feedback sent!")
+                    show_msg("Feedback sent!")
 
                     if(jsonData.response[0].status === "ok"){
                         document.location = "./";
