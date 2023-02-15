@@ -135,9 +135,7 @@ img {
   border-radius: 10px;
 }
 .login .container .login-form form button[type=submit] {
-  background: -webkit-linear-gradient(110deg, #f794a4 0%, #fdd6bd 100%);
-  background: -o-linear-gradient(110deg, #f794a4 0%, #fdd6bd 100%);
-  background: linear-gradient(-20deg, #f794a4 0%, #fdd6bd 100%);
+  background: var(--vela-color-primary);
   border: none;
   margin-top: 124px;
   margin-bottom: 20px;
@@ -151,26 +149,8 @@ img {
   font-weight: bold;
   font-size: 20px;
 }
-.login .container .login-form form button[type=submit]:hover::after {
-  opacity: 1;
-}
-.login .container .login-form form button[type=submit]::after {
-  content: "";
-  position: absolute;
-  z-index: -1;
-  border-radius: 10px;
-  opacity: 0;
-  top: 0;
-  left: 0;
-  -webkit-transition: 0.3s ease-in-out;
-  -o-transition: 0.3s ease-in-out;
-  transition: 0.3s ease-in-out;
-  right: 0;
-  bottom: 0;
-  background: -webkit-gradient(linear, left bottom, left top, from(#09203f), to(#537895));
-  background: -webkit-linear-gradient(bottom, #09203f 0%, #537895 100%);
-  background: -o-linear-gradient(bottom, #09203f 0%, #537895 100%);
-  background: linear-gradient(to top, #09203f 0%, #537895 100%);
+.login .container .login-form form button[type=submit]:hover {
+  background: var(--vela-color-secondary);
 }
 .login .container .remember-form {
   position: relative;

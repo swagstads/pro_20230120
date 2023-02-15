@@ -20,7 +20,6 @@
                       <input type="number" step="1" min="1" max="100" name="quantity" value="1" title="Qty" class="input-text qty text" size="4" pattern="" inputmode="">
                       <input type="button" value="+" class="plus" style="padding: 7px 10px 8px; height: 41px; background-color: #ffffff; border: 1px solid #efefef; cursor:pointer;">
                     </div>
-
                   </div>
             </div>
             

@@ -134,7 +134,7 @@
     </footer>
 </div>
 
- 
+
 <?php include('footer_links.php'); ?>
 <script src="js/main.js?key=<?= date('is') ?>" type="text/javascript"></script>
 

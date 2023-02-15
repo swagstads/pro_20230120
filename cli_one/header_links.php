@@ -230,8 +230,10 @@
 
 <style data-shopify>
     :root {
-        --vela-color-primary: #bd8448;
-        --vela-color-secondary: #bd8448;
+        /* --vela-color-primary: #bd8448; */
+        /* --vela-color-secondary: #bd8448; */
+        --vela-color-primary: #0087c7;
+        --vela-color-secondary: #e30d7c ;
         --vela-border-color: #e1e1e1;
         --vela-body-bg: #ffffff;
 
@@ -271,10 +273,12 @@
         --button_one_txtcolor: #201f1f;
         --button_one_bgcolor: rgba(0, 0, 0, 0);
         --button_one_bordercolor: #201f1f;
-        --button_one_bgcolor_hover: #bd8448;
-        --button_one_bordercolor_hover: #bd8448;
+        /* --button_one_bgcolor_hover: #bd8448; */
+        /* --button_one_bordercolor_hover: #bd8448; */
         --button_one_txtcolor_hover: #ffffff;
 
+        --button_one_bgcolor_hover: #0087c7;
+        --button_one_bordercolor_hover: #0087c7;
 
         --btnpro_txtcolor: #969696;
         --btnpro_bgcolor: #ffffff;
@@ -287,9 +291,12 @@
         --addtocart_txtcolor: #ffffff;
         --addtocart_bgcolor: #111111;
         --addtocart_bordercolor: #111111;
-        --addtocart_txtcolor_hover: #ffffff;
-        --addtocart_bgcolor_hover: #bd8448;
-        --addtocart_bordercolor_hover: #bd8448;
+        /* --addtocart_txtcolor_hover: #ffffff; */
+        --addtocart_txtcolor_hover: #e30d7c;
+        /* --addtocart_bgcolor_hover: #bd8448; */
+        --addtocart_bgcolor_hover: #0087c7;
+        /* --addtocart_bordercolor_hover: #bd8448; */
+        --addtocart_bordercolor_hover: #0087c7;
 
 
         --velamenu-bgcolor: #ffffff;
