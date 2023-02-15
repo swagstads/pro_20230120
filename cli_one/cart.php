@@ -152,7 +152,7 @@
 
                             <ol class="breadcrumb" itemscope itemtype="http://schema.org/BreadcrumbList">
                                 <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
-                                    <a href="index.html" title="Back to the frontpage" itemprop="item">
+                                    <a href="./index.php" title="Back to the frontpage" itemprop="item">
                                         <span itemprop="name">Home</span>
                                     </a>
                                     <meta itemprop="position" content="1" />
@@ -390,7 +390,14 @@
                     var return_data = jsonData.response[0];
                     console.log(return_data);
                     if(return_data.status === "ok"){
-                        address_field.text(return_data.address)
+                        console.log("Address",return_data.status);
+                        if(return_data.status === "ok" ){
+                            address_field.text(return_data.address)
+                        }
+                        else{
+                            alert("Working")
+                            address_field.text("Please provide valid address to checkout")
+                        }
                         $.ajax({    
                             url: api_url_cart_data,
                             type: 'GET',
