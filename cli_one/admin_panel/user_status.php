@@ -12,7 +12,7 @@ include_once 'GCM.php';
 
 if (isset($_GET['eid'])) {
     $id = $_GET['eid'];
-    $query ="select * from user where id='$id';";
+    $query ="select * from users where id='$id';";
     $user_result =  mysqli_query($conn,$query);
     if (mysqli_num_rows($user_result) > 0) {
         $users = $user_result->fetch_assoc();
@@ -32,9 +32,9 @@ if ($_SESSION['role']!='Admin'){
 }
 
 if (isset($_POST['btnedit'])) {
-    $id = $_POST['id'];
+    $id = $_GET['eid'];
     $status = $_POST['status'];
-    $query = "UPDATE `user` SET `status`='$status', `modified_on`='now()' WHERE id = '$id';";
+    $query = "UPDATE `users` SET `status`='$status', `modified_on`= now() WHERE id = '$id';";
     $result =  mysqli_query($conn,$query);
     header("Location: users.php");
 }
