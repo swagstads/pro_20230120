@@ -44,7 +44,7 @@
 
             <div class="remember-form">
               <span>
-                Already have an account? <a href="./login-page.php">Login</a>
+                Already have an account? <a class="col-primary" href="./login-page.php">Login</a>
               </span>
               <!-- <input type="checkbox"> -->
               <!-- <span>Remember me</span> -->

@@ -98,7 +98,7 @@
                                                             </div>
                                                             <div>
                                                                 <a class="btn btnVelaSlider leftright-5"
-                                                                    href="products.php?category=cushion covers" style="
+                                                                    href="products.php?product=cushion covers" style="
                                                                         border-color: #201f1f;
                                                                         background-color: rgba(0, 0, 0, 0);
                                                                         color: #201f1f;
@@ -149,7 +149,7 @@
                                                             </div>
                                                             <div>
                                                                 <a class="btn btnVelaSlider leftright-5"
-                                                                    href="./products.php?category=cushion%20covers" style="
+                                                                    href="./products.php?product=cushion%20covers" style="
                                       border-color: #201f1f;
                                       background-color: rgba(0, 0, 0, 0);
                                       color: #201f1f;
@@ -199,7 +199,7 @@
                                                             </div>
                                                             <div>
                                                                 <a class="btn btnVelaSlider leftright-5"
-                                                                    href="./products.php?category=cushion%20covers" style="
+                                                                    href="./products.php?product=cushion%20covers" style="
                                       border-color: #201f1f;
                                       background-color: rgba(0, 0, 0, 0);
                                       color: #201f1f;
@@ -510,11 +510,11 @@
 
             <!-- END content_for_index -->
 
-            <div id="shopify-section-vela-footer" class="shopify-section">
-                <footer id="velaFooter">
-                    <?php include('footer.php'); ?>
-                </footer>
-            </div>
+    <div id="shopify-section-vela-footer" class="shopify-section">
+        <footer id="velaFooter">
+            <?php include('footer.php'); ?>
+        </footer>
+    </div>
     </div>
 
     <?php include('footer_links.php'); ?>

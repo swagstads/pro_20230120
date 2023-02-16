@@ -113,38 +113,41 @@
                 console.log(returned_data);
                 var jsonData = JSON.parse(returned_data);
                 var return_data = jsonData.response;
-
-                for (var i = 0; i < jsonData.response.length; i++) {
-
-                    $(".order-history-container").append('<div class="order-history-container-row">'+
-                        '<div class="left">'+
-                            '<div class="image">'+
-                                '<img src="https://cdn.shopify.com/s/files/1/1573/5553/products/14-1_360x.jpg" alt="" srcset="">'+
-                            '</div>'+
-                        '</div>'+
-                        '<div class="right">'+
-                            '<div class="ordered-product-details">'+
-                                '<div class="title">'+
-                                    '<h2>'+return_data[i].title+'</h2>'+
-                                '</div>'+
-                                '<div class="description truncate-overflow ">'+
-                                    return_data[i].description+
+                if(jsonData.response.length > 0){
+                    for (var i = 0; i < jsonData.response.length; i++) {
+                        $(".order-history-container").append('<div class="order-history-container-row">'+
+                            '<div class="left">'+
+                                '<div class="image">'+
+                                    '<img src="https://cdn.shopify.com/s/files/1/1573/5553/products/14-1_360x.jpg" alt="" srcset="">'+
                                 '</div>'+
                             '</div>'+
-                            '<div class="ordered-quantity">'+
-                                    'Qnty: &nbsp;<h4>'+return_data[i].order_quantity+'</h4>'+
+                            '<div class="right">'+
+                                '<div class="ordered-product-details">'+
+                                    '<div class="title">'+
+                                        '<h2>'+return_data[i].title+'</h2>'+
+                                    '</div>'+
+                                    '<div class="description truncate-overflow ">'+
+                                        return_data[i].description+
+                                    '</div>'+
+                                '</div>'+
+                                '<div class="ordered-quantity">'+
+                                        'Qnty: &nbsp;<h4>'+return_data[i].order_quantity+'</h4>'+
+                                '</div>'+
+                                '<div class="dilevery-date">'+
+                                    'Dilevery on: &nbsp;<h4>'+return_data[i].delivery_date+'</h4>'+
+                                '</div>'+
+                                '<div class="price">'+
+                                    'Amount: &nbsp;<h4>Rs.'+return_data[i].amount+'</h4>'+
+                                '</div>'+
+                                '<div class="status_pending">'+
+                                    'Status: &nbsp;<h4>'+return_data[i].order_status+'</h4>'+
+                                '</div>'+
                             '</div>'+
-                            '<div class="dilevery-date">'+
-                                'Dilevery on: &nbsp;<h4>'+return_data[i].delivery_date+'</h4>'+
-                            '</div>'+
-                            '<div class="price">'+
-                                'Amount: &nbsp;<h4>Rs.'+return_data[i].amount+'</h4>'+
-                            '</div>'+
-                            '<div class="status_pending">'+
-                                'Status: &nbsp;<h4>'+return_data[i].order_status+'</h4>'+
-                            '</div>'+
-                        '</div>'+
-                    '</div>')
+                        '</div>')
+                    }
+                }
+                else{
+                    $(".order-history-container").html("<h3 style='text-align:center'>No order history found</h3>")
                 }
             }
         })

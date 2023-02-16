@@ -418,7 +418,7 @@
                                                     <div class="p-relative">
                                                         <div class="product-card__image" style="padding-top:100.0%;">
                                                             <img class="product-card__img lazyload imgFlyCart "
-                                                                data-src="cdn.shopify.com/s/files/1/1573/5553/files/team1_%7bwidth%7dx7231.html?v=1614321992"
+                                                                data-src="https://uxwing.com/wp-content/themes/uxwing/download/peoples-avatars/no-profile-picture-icon.png"
                                                                 data-widths="[360,540,720,900,1080,1296,1728,1944,2808,4320]"
                                                                 data-aspectratio="1.0" data-ratio="1.0"
                                                                 data-sizes="auto" alt="" />
@@ -433,36 +433,7 @@
                                             <div class="aboutContent text-center">
                                                 <div class="aboutMemberName">John Doe</div>
                                                 <div class="aboutMemberPosition">CEO & Founder</div>
-                                                <div class="velaAboutSocial text-center">
-                                                    <ul class="velaSocial list-unstyled list-inline">
-                                                        <li class="facebook">
-                                                            <a target="_blank"
-                                                                href="https://www.linkedin.com/in/theme-vela-343a5b123/"
-                                                                class="btn-social btn-social--facebook">
-                                                                <i class="fa fa-facebook"></i>
-                                                            </a>
-                                                        </li>
-                                                        <li class="twitter">
-                                                            <a target="_blank" href="https://twitter.com/VelaTheme"
-                                                                class="btn-social btn-social--twitter">
-                                                                <i class="fa fa-twitter"></i>
-                                                            </a>
-                                                        </li>
-                                                        <li class="youtube">
-                                                            <a target="_blank"
-                                                                href="https://www.linkedin.com/in/theme-vela-343a5b123/"
-                                                                class="btn-social btn-social--youtube">
-                                                                <i class="fa fa-youtube"></i>
-                                                            </a>
-                                                        </li>
-                                                        <li class="instagram">
-                                                            <a target="_blank" href="#"
-                                                                class="btn-social btn-social--instagram">
-                                                                <i class="fa fa-instagram"></i>
-                                                            </a>
-                                                        </li>
-                                                    </ul>
-                                                </div>
+                                                    
                                                 <div class="aboutMemberDesc">Sed ut perspiciatis unde omnis iste
                                                     natus error sitaccusantium doloremque laudan
                                                     totam rem aperiam.</div>
@@ -478,7 +449,7 @@
                                                     <div class="p-relative">
                                                         <div class="product-card__image" style="padding-top:100.0%;">
                                                             <img class="product-card__img lazyload imgFlyCart "
-                                                                data-src="cdn.shopify.com/s/files/1/1573/5553/files/team2_%7bwidth%7dxfb93.html?v=1614321993"
+                                                                data-src="https://uxwing.com/wp-content/themes/uxwing/download/peoples-avatars/no-profile-picture-icon.png"
                                                                 data-widths="[360,540,720,900,1080,1296,1728,1944,2808,4320]"
                                                                 data-aspectratio="1.0" data-ratio="1.0"
                                                                 data-sizes="auto" alt="" />
@@ -493,34 +464,6 @@
                                             <div class="aboutContent text-center">
                                                 <div class="aboutMemberName">Robin Jordan</div>
                                                 <div class="aboutMemberPosition">CEO & Founder</div>
-                                                <div class="velaAboutSocial text-center">
-                                                    <ul class="velaSocial list-unstyled list-inline">
-                                                        <li class="facebook">
-                                                            <a target="_blank" href="https://www.facebook.com/velatheme"
-                                                                class="btn-social btn-social--facebook">
-                                                                <i class="fa fa-facebook"></i>
-                                                            </a>
-                                                        </li>
-                                                        <li class="twitter">
-                                                            <a target="_blank" href="https://www.facebook.com/velatheme"
-                                                                class="btn-social btn-social--twitter">
-                                                                <i class="fa fa-twitter"></i>
-                                                            </a>
-                                                        </li>
-                                                        <li class="youtube">
-                                                            <a target="_blank" href="https://www.facebook.com/velatheme"
-                                                                class="btn-social btn-social--youtube">
-                                                                <i class="fa fa-youtube"></i>
-                                                            </a>
-                                                        </li>
-                                                        <li class="instagram">
-                                                            <a target="_blank" href="#"
-                                                                class="btn-social btn-social--instagram">
-                                                                <i class="fa fa-instagram"></i>
-                                                            </a>
-                                                        </li>
-                                                    </ul>
-                                                </div>
                                                 <div class="aboutMemberDesc">Sed ut perspiciatis unde omnis iste natus
                                                     error sitaccusantium doloremque laudan totam rem aperiam.</div>
                                             </div>
@@ -535,7 +478,7 @@
                                                     <div class="p-relative">
                                                         <div class="product-card__image" style="padding-top:100.0%;">
                                                             <img class="product-card__img lazyload imgFlyCart "
-                                                                data-src="cdn.shopify.com/s/files/1/1573/5553/files/team3_%7bwidth%7dx7231.html?v=1614321992"
+                                                                data-src="https://uxwing.com/wp-content/themes/uxwing/download/peoples-avatars/no-profile-picture-icon.png"
                                                                 data-widths="[360,540,720,900,1080,1296,1728,1944,2808,4320]"
                                                                 data-aspectratio="1.0" data-ratio="1.0"
                                                                 data-sizes="auto" alt="" />
@@ -550,34 +493,6 @@
                                             <div class="aboutContent text-center">
                                                 <div class="aboutMemberName">Hannah Gibson</div>
                                                 <div class="aboutMemberPosition">CEO & Founder</div>
-                                                <div class="velaAboutSocial text-center">
-                                                    <ul class="velaSocial list-unstyled list-inline">
-                                                        <li class="facebook">
-                                                            <a target="_blank" href="https://www.facebook.com/velatheme"
-                                                                class="btn-social btn-social--facebook">
-                                                                <i class="fa fa-facebook"></i>
-                                                            </a>
-                                                        </li>
-                                                        <li class="twitter">
-                                                            <a target="_blank" href="https://www.facebook.com/velatheme"
-                                                                class="btn-social btn-social--twitter">
-                                                                <i class="fa fa-twitter"></i>
-                                                            </a>
-                                                        </li>
-                                                        <li class="youtube">
-                                                            <a target="_blank" href="https://www.facebook.com/velatheme"
-                                                                class="btn-social btn-social--youtube">
-                                                                <i class="fa fa-youtube"></i>
-                                                            </a>
-                                                        </li>
-                                                        <li class="instagram">
-                                                            <a target="_blank" href="#"
-                                                                class="btn-social btn-social--instagram">
-                                                                <i class="fa fa-instagram"></i>
-                                                            </a>
-                                                        </li>
-                                                    </ul>
-                                                </div>
                                                 <div class="aboutMemberDesc">Sed ut perspiciatis unde omnis iste natus
                                                     error sitaccusantium doloremque laudan totam rem aperiam.</div>
                                             </div>

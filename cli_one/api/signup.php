@@ -88,7 +88,6 @@ if (isset($_POST['add'])) {
 
 function mail_verification_link($email,$verification_code,$user_id){
     // echo $email."-".$verification_code;
-
     $url_host = $_SERVER['HTTP_HOST'];
 
     // php mailer code -start
@@ -106,7 +105,7 @@ function mail_verification_link($email,$verification_code,$user_id){
                 <a href="http://'.$url_host.'/verify_user.php?code='.$verification_code.'&uid='.$user_id.'&mail='.$email.' ">Verification Link</a>';
 
     $mail->Username='rishabhpnahar@gmail.com';
-    $mail->Password='rwjpbwkljifrwrji';
+    $mail->Password= 'crigdqwxmxunttbz' ;
     $mail->setFrom('team@atoz.com');
     $mail->addAddress($email);
     $mail->Subject="E-Mail Verification for Atoz"; 

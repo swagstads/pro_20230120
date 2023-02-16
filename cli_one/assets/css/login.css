@@ -191,7 +191,12 @@ img {
 .login .container .forget-pass a:hover::after {
   opacity: 1;
 }
-
+.col-primary{
+  color: var(--vela-color-primary);
+}
+.col-primary:hover{
+  color: var(--vela-color-secondary);
+}
 @media only screen and (min-width: 1024px) {
   .bg-illustration {
     width: 50%;
