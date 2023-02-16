@@ -17,7 +17,7 @@ if (isset($_SESSION['them'])) {
 }
 include 'db.php';
 
-$user_count = mysqli_num_rows(mysqli_query($conn,"select * from users"));
+$user_count = mysqli_num_rows(mysqli_query($conn,"select * from user"));
 $sales = mysqli_query($conn,"select SUM(amount) from payment");
 while ($row = $sales->fetch_assoc()) {
     $sales_amt = $row['SUM(amount)'];
@@ -25,10 +25,10 @@ while ($row = $sales->fetch_assoc()) {
 $sales_count = mysqli_num_rows(mysqli_query($conn,"select * from orders"));
 $product_count = mysqli_num_rows(mysqli_query($conn,"select * from product"));
 
-$order_result = mysqli_query($conn, "select * from orders join users on users.id = orders.user_id join product on product.id = orders.product_id ORDER BY delivery_date DESC;");
+$order_result = mysqli_query($conn, "select * from orders join user on user.id = orders.user_id join product on product.id = orders.product_id ORDER BY order_date DESC;");
 $order_no = 1;
 
-$message_result = mysqli_query($conn, "select * from contact_us ORDER BY added_on DESC LIMIT 10;");
+$message_result = mysqli_query($conn, "select * from contact ORDER BY added_on DESC LIMIT 10;");
 $message_no = 1;
 
 ?>

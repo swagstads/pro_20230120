@@ -1,10 +1,6 @@
 <?php
 
-
-//$conn = mysqli_connect('localhost', 'garvjhan_azfurnishing', 'htbvx11573', 'garvjhan_azfurnish');
-
 $conn = mysqli_connect('localhost', 'root','', 'atozecommerce');
-
 
 //$conn = mysqli_connect('localhost', 'techshot_pawnestc_cio', 'd=ocNSnLxV9#', 'techshot_pawnestc_cio');
 

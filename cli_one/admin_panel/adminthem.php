@@ -155,22 +155,10 @@ include 'language_setting.php';
                 <span>Products</span>
             </a>
         </li>
-        <li class="nav-item" id="categories">
-            <a class="nav-link" href="categories.php">
-                <i class="fas fa-fw fa-chair"></i>
-                <span>Categories</span>
-            </a>
-        </li>
         <li class="nav-item" id="payments">
             <a class="nav-link" href="payments.php">
                 <i class="fas fa-fw fa-money-bill-transfer"></i>
                 <span>Payments</span>
-            </a>
-        </li>
-        <li class="nav-item" id="orders">
-            <a class="nav-link" href="orders.php">
-                <i class="fas fa-fw fa-truck"></i>
-                <span>Orders</span>
             </a>
         </li>
         <li class="nav-item" id="carts">

@@ -1,5 +1,4 @@
 <?php session_start()  ?>
-
 <meta charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
@@ -7,22 +6,6 @@
 <link rel="canonical" href="index.php" />
 <link href="./assets/css/style.css" rel="stylesheet" />
 <link href="./assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-
-<link rel="stylesheet" href="./assets/css/reset.css"> <!-- CSS reset -->
-<link rel="stylesheet" href="./assets/css/style.css"> <!-- Gem style -->
-<link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700' rel='stylesheet' type='text/css'>
-
-<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-<script>
-    $(document).ready(function(){
-        $("button").click(function(){
-            alert("jQuery is working perfectly.");
-        });      
-    });
-</script>
-<script src="./assets/js/main.js"></script>
-<script src="./assets/js/modernizr.js"></script> <!-- Modernizr -->
-<script src="./assets/js/cart.js"></script> <!-- Cart -->
 
 <title>A to Z Furnishings</title>
 

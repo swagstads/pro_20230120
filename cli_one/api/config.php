@@ -1,16 +1,9 @@
 <?php 
 // DB credentials.
-/*
 define('DB_HOST','localhost');
 define('DB_USER','root');
 define('DB_PASS','');
 define('DB_NAME','atozecommerce');
-*/
-define('DB_HOST','localhost');
-define('DB_USER','garvjhan_atoz');
-define('DB_PASS','htbvx11573');
-define('DB_NAME','garvjhan_atoz');
-
 // Establish database connection.
 try
 {

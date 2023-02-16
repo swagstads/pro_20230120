@@ -14,7 +14,8 @@ if (isset($_SESSION['them'])) {
 
 include 'db.php';
 
-$result = mysqli_query($conn, "SELECT cart.user_id, users.name, users.status, users.email, users.phone, SUM(cart.quantity), SUM(product.price) FROM `cart` JOIN users on users.id = cart.user_id JOIN product on product.id = cart.product_id WHERE 1 group by cart.user_id");
+$result = mysqli_query($conn, "SELECT cart.user_id, user.name, user.status, user.email, user.phone, SUM(cart.quantity), SUM(product.price) FROM `cart` JOIN user on user.id = cart.user_id JOIN product on product.id = cart.product_id WHERE 1 group by cart.user_id
+");
 $no = 1;
 ?>
 
