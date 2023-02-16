@@ -1013,7 +1013,7 @@
       right: 0%;
   }
 }
-<<<<<<< HEAD
+
 /* ======== Order History ======== */
 .truncate-overflow {
   --lh: 1.4rem;
@@ -1156,7 +1156,7 @@
   from {bottom: 30px; opacity: 1;}
   to {bottom: 0; opacity: 0;}
 }
-=======
+
 
 
 /* Cart Style */
@@ -1656,5 +1656,3 @@ Quantity Button
  .cd-quantity.buttons_added .plus:focus {
   outline: none; }
  
- 
->>>>>>> 3e6165869e5550edc3aff9527cb2b5132c9e6787
