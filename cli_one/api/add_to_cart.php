@@ -18,7 +18,6 @@ try {
             $product_id = $_POST['productid'];
             $quantity = $_POST['quantity'];
             // $amount = $_POST['amount'];
-            
             // get the stock quantity
             $sql = " SELECT id,quantity FROM products WHERE id=:product_id" ;
             $query = $dbh->prepare($sql);
@@ -93,6 +92,7 @@ try {
 } catch (\Throwable $th) {
     $data["status"] = "Fail";
     $data["message"] = "Something went wrong, please try again later.";
+    $data["error"] = $th;
 }
 
 

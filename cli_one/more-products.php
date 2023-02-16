@@ -77,7 +77,7 @@
                             // console.log("Data "+i+":"+return_data[i].title);
                             $('.scrolling-products').append(
                                 '<div class="product-slider">'+
-                                    '<a href="./productpage.php?productid='+return_data[i].id+'">'+
+                                    '<a onclick="increase_click_count('+return_data[i].id+')"  href="./productpage.php?productid='+return_data[i].id+'" >'+
                                         '<div class="product-image">'+
                                             '<img class="image1 active lazyload" data-src="https://cdn.shopify.com/s/files/1/1573/5553/products/14_360x.jpg?v=1601694510" alt="">'+
                                         '</div>'+

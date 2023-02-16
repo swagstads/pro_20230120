@@ -6,7 +6,7 @@
     $user_id = $_GET['uid'];
     $email = $_GET['mail'];
     
-    // echo "User: ".$user_id."<br>Code: ".$verification_code."<br>";
+    echo "User verified";
 
     try {
         $query = "SELECT * FROM user_verification WHERE verification_code = :verification_code";
@@ -29,15 +29,14 @@
             if ($stmt->rowCount() > 0) {
 
                 $_SESSION['username'] = $email;
-
                 // echo "Email verified successfully";
-                echo '<script>document.location = "/"</script>';
+                echo '<script>document.location = "./index.php"</script>';
             } else{
-                // echo "Invalid verification code";
+                echo "Invalid verification code";
             }
 
         } else {
-            // echo "Invalid verification code";
+            echo "Invalid verification code";
         }
     } catch (PDOException $e) {
         // echo "Error: " . $e->getMessage();

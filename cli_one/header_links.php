@@ -324,6 +324,26 @@
         }, 3000);
     }
 
+    function increase_click_count(product_id){
+        // event.preventDefault()
+        let api_url = "./api/increase_click_count.php";
+        // form data values
+        var form_data = {"click_count":"increase","product_id":product_id};
+        $.ajax({
+        url: api_url,
+        type: 'POST',
+        // type: 'GET',
+        data: form_data,
+        success: function (returned_data) {
+            console.log(returned_data);
+            var jsonData = JSON.parse(returned_data);
+            var return_data = jsonData.response[0];
+            // console.log(return_data);
+            // show_msg(return_data.message)
+            }
+        })
+    }
+
 
 </script>
 

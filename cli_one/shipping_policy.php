@@ -56,7 +56,7 @@
                             <h2 class="breadcrumbHeading">Shipping Policy</h2>
                             <ol class="breadcrumb" itemscope itemtype="http://schema.org/BreadcrumbList">
                                 <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
-                                    <a href="../index.html" title="Back to the frontpage" itemprop="item">
+                                    <a href="./index.php" title="Back to the frontpage" itemprop="item">
                                         <span itemprop="name">Home</span>
                                     </a>
                                     <meta itemprop="position" content="1" />

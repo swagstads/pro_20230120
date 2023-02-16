@@ -452,14 +452,11 @@
                         </button>
                         <div class="dropdown-content">
                             <a href="./profile.php">
-                            <svg width="25" height="25" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-  <!-- Pen body -->
-  <rect x="50" y="50" width="25" height="25" rx="20" fill="#ffffff" stroke="#000000" stroke-width="10"/>
-  <!-- Pen clip -->
-  <circle cx="80" cy="70" r="12" fill="#000000" />
-  <!-- Pen tip -->
-  <line x1="120" y1="120" x2="180" y2="120" stroke="#000000" stroke-width="20" stroke-linecap="round" />
-</svg>
+                            <svg width="25" height="25" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="50" cy="50" r="40" fill="#ffffff" stroke="#000000" stroke-width="10"/>
+                                <path d="M 50 25 C 35 25 25 35 25 50 C 25 65 35 75 50 75 C 65 75 75 65 75 50 C 75 35 65 25 50 25 Z" fill="#000000"/>
+                            </svg>
+
 
 
                                 Profile
@@ -502,7 +499,7 @@
                                                     <path class="fill-change"  d="M15.794,12.354a.459.459,0,0,0,.138-.312A.3.3,0,0,0,15.938,12a.29.29,0,0,0-.006-.041.455.455,0,0,0-.138-.313L12.125,7.978a.5.5,0,0,0-.707.707L14.234,11.5H3.492a.5.5,0,0,0,0,1H14.234l-2.816,2.815a.5.5,0,0,0,.707.7.07Z"/>
                                                 </g>
                                             </g>
-                                        </svg>
+                                        </svg>&nbsp; Login
                                     </i>
                                 </a>
                             </div>

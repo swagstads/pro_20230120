@@ -49,9 +49,9 @@
               <!-- <input type="checkbox"> -->
               <!-- <span>Remember me</span> -->
             </div>
-            <div class="forget-pass">
+            <!-- <div class="forget-pass">
               <a href="#">Forgot Password ?</a>
-            </div>
+            </div> -->
 
             <button type="submit">LOG-IN</button>
 

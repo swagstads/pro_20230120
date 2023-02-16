@@ -245,7 +245,7 @@ img {
   }
   .bg-illustration {
     float: none;
-    background: url("https://i.ibb.co/rwncw7s/bg-mobile.png") center center;
+    background: url("../../assets/images/index/signin.jpg") center center;
     background-size: cover;
     -webkit-animation: slideIn 0.8s ease-in-out forwards;
             animation: slideIn 0.8s ease-in-out forwards;

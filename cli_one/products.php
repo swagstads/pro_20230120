@@ -165,7 +165,7 @@
                                 ' <div class="rowFlex rowFlexMargin">'+
                                         '<div class="col-xs-12 col-sm-3 col-md-3 mbItemGutter">'+
                                         ' <div class="proHImage">'+
-                                            ' <a class="proFeaturedImage" href="./productpage.php?productid='+return_data[i].id+'">' +
+                                            ' <a class="proFeaturedImage" onclick="increase_click_count('+return_data[i].id+')"  href="./productpage.php?productid='+return_data[i].id+'">' +
                                                 ' <div class="wrap ">'+
                                                         '<div class="p-relative">'+
                                                             '<div class="product-card__image" style="padding-top:126.90355329949239%;">'+

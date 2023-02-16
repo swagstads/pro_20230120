@@ -316,6 +316,25 @@
                                     </div>
                                 </div>
                                 <div class="proLoadMoreBottom"></div>
+
+                                <script>
+                                    let api_url = "./api/trending_products.php";
+                                    // form data values
+                                    var form_data = {"trending_prods":"fetch"};
+                                    $.ajax({
+                                    url: api_url,
+                                    type: 'POST',
+                                    // type: 'GET',
+                                    data: form_data,
+                                    success: function (returned_data) {
+                                            console.log(returned_data);
+                                            var jsonData = JSON.parse(returned_data);
+                                            var return_data = jsonData.response[0];
+
+                                        }
+                                    })
+                                </script>
+
                             </div>
                         </div>
                     </div>

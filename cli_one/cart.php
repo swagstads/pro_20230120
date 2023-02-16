@@ -118,6 +118,11 @@
             flex-wrap: wrap ;
         }
     }
+    .Total-amount-container{
+        display: flex;
+        width: 100%;
+        justify-content: right;
+    }
 </style>
 
 <head>
@@ -176,43 +181,212 @@
                             <h1 class="cartTitle hidden">Shopping cart</h1>
                             <div class="cartContent">
 
-<table id='cart-product-table' width="100%">
-  <tr>
-      <th width="60%">Product</th>
-      <th width="10%">Price</th>
-      <th width="15%">Quantity</th>
-      <th width="10%">Total</th>
-      <th width="5%">Action</th>
-  </tr>
-  <tr> 
-      <td>
-          <div>
-              <img src='' alt=''>
-          </div>
-          <div class='cart-product-info'>
-              <div class='cart-prodct-title'>
-                  Title
-              </div>
-              <div class='cart-product-description'>
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae illum qui voluptatibus, expedita inventore, eos error harum voluptates reprehenderit officia odit porro pariatur? Officiis quod quas, tempore ipsam assumenda eveniet!
-              </div>
-          </div>
-      </td>
-      <td>
-          &#8377; 1600
-      </td>
-      <td>
-          <span class='input-number-decrement'>–</span><input class='input-number' type='text' value='1' min='0' max='10'><span class='input-number-increment'>+</span>
-      </td>
-      <td>
-          &#8377;1600
-      </td>
-      <td>
-          <a href=""><i class="fa fa-trash"></i></a>
-      </td>
-  </tr>
-</table>
+<div class="cart-product-wrapper">
+    <div class="cart-product-container">
+    </div>
+</div>
+<script>
 
+    function display_cart_data(){
+        var api_url_for_cart_data = './api/fetch_cart_details.php';
+        var order_history_table = document.querySelector(".cart-product-table");
+
+        var form_data = { "orders": "previous"};
+        
+        $.ajax({
+            url: api_url_for_cart_data,
+            type: 'POST',
+            data: form_data,
+            success: function (returned_data) {
+                console.log(returned_data);
+                var jsonData = JSON.parse(returned_data);
+                var return_data = jsonData.response;
+                let amount_arr = [], total_amount = "";
+                $(".cart-product-container").empty()
+
+                for (var i = 0; i < jsonData.response.length; i++) {
+                    let input_id = "product_"+return_data[i].product_id;
+                    let exact_amount = return_data[i].product_price * return_data[i].required_quantity;
+                    
+                    let amount = Math.round(exact_amount * 100) / 100;
+
+                    amount_arr.push(amount)
+
+                    $(".cart-product-container").append('<div class="cart-product-container-row">'+
+                        '<div class="left">'+
+                            '<div class="image">'+
+                                '<img src="https://cdn.shopify.com/s/files/1/1573/5553/products/14-1_360x.jpg" alt="" srcset="">'+
+                            '</div>'+
+                        '</div>'+
+                        '<div class="right">'+
+                            '<div class="ordered-product-details">'+
+                                '<div class="title">'+
+                                    '<h2>'+return_data[i].product_name+'</h2>'+
+                                '</div>'+
+                                '<div class="description truncate-overflow ">'+
+                                    return_data[i].product_description+
+                                '</div>'+
+                            '</div>'+
+                            '<div class="quantity-container">Quantity'+
+                                '<div class="ordered-quantity">'+
+                                    '<span class="input-number-decrement"'+
+                                        'onclick="decrease_quantity('+return_data[i].product_id+','+return_data[i].required_quantity+','+return_data[i].product_quantity+')" >-</span>'+
+                                    '<input class="input-number"'+
+                                        'id="'+input_id+'" type="" value="'+return_data[i].required_quantity+'" min="1" max="'+return_data[i].product_quantity+'">'+
+                                    '<span class="input-number-increment"'+
+                                        'onclick="increase_quantity('+return_data[i].product_id+','+return_data[i].required_quantity+','+return_data[i].product_quantity+')" >+</span>'+
+                                '</div>'+
+                            '</div>'+
+                            '<div class="price">'+
+                                'Amount: &nbsp;<h4>&#8377;.<span id="total_product_amount"">'+(amount)+'<span></h4>'+
+                            '</div>'+
+                            '<div class="action">'+
+                                '<a onclick="remove_from_cart('+return_data[i].product_id+')" >'+
+                                    '<svg width="20px" height="20px" viewBox="0 0 1024 1024" fill="currentcolor" class="icon"  version="1.1" xmlns="http://www.w3.org/2000/svg"><path d="M32 241.6c-11.2 0-20-8.8-20-20s8.8-20 20-20l940 1.6c11.2 0 20 8.8 20 20s-8.8 20-20 20L32 241.6zM186.4 282.4c0-11.2 8.8-20 20-20s20 8.8 20 20v688.8l585.6-6.4V289.6c0-11.2 8.8-20 20-20s20 8.8 20 20v716.8l-666.4 7.2V282.4z" fill="" /><path d="M682.4 867.2c-11.2 0-20-8.8-20-20V372c0-11.2 8.8-20 20-20s20 8.8 20 20v475.2c0.8 11.2-8.8 20-20 20zM367.2 867.2c-11.2 0-20-8.8-20-20V372c0-11.2 8.8-20 20-20s20 8.8 20 20v475.2c0.8 11.2-8.8 20-20 20zM524.8 867.2c-11.2 0-20-8.8-20-20V372c0-11.2 8.8-20 20-20s20 8.8 20 20v475.2c0.8 11.2-8.8 20-20 20zM655.2 213.6v-48.8c0-17.6-14.4-32-32-32H418.4c-18.4 0-32 14.4-32 32.8V208h-40v-42.4c0-40 32.8-72.8 72.8-72.8H624c40 0 72.8 32.8 72.8 72.8v48.8h-41.6z" fill="" /></svg>&nbsp; Remove'+
+                                '</a>'+
+                            '</div>'+
+                        '</div>'+
+                    '</div>')
+                }
+                total_amount = Math.round(amount_arr.reduce((accumulator, currentValue) => accumulator + currentValue,0) * 100) / 100
+                console.log(...amount_arr,"=>",total_amount);
+                $("#total_amount").text(total_amount)
+                $("#total_amount_inp").val(total_amount)
+            }
+        })
+
+    }
+
+
+    display_cart_data()
+    function decrease_quantity(product_id,order_qnty,product_qnty){
+        let decreased_qnty = order_qnty-1;
+        if(decreased_qnty < product_qnty && decreased_qnty!== 0 ){
+            let api_url = "./api/increase_qnty.php";
+            // form data values
+            var form_data = {"quantity_action":"increase" ,"product_id": product_id, "quantity": decreased_qnty};
+            $.ajax({
+            url: api_url,
+            type: 'POST',
+            // type: 'GET',
+            data: form_data,
+            success: function (returned_data) {
+                console.log(returned_data);
+                var jsonData = JSON.parse(returned_data);
+                var return_data = jsonData.response[0];
+                show_msg("Quantity Updated")
+                console.log(return_data);
+                $("#product_"+product_id).val(decreased_qnty)
+                display_cart_data()
+                }
+            })
+        }
+        else{
+            show_msg("Quantity cannot be 0")
+        }
+    }   
+    function increase_quantity(product_id,order_qnty,product_qnty){
+        let increased_qnty =  order_qnty+1;;
+        if(increased_qnty <= product_qnty){
+            event.preventDefault()
+            let api_url = "./api/increase_qnty.php";
+            // form data values
+            var form_data = {"quantity_action":"increase" ,"product_id": product_id, "quantity": increased_qnty};
+            $.ajax({
+            url: api_url,
+            type: 'POST',
+            // type: 'GET',
+            data: form_data,
+            success: function (returned_data) {
+                    console.log(returned_data);
+                    var jsonData = JSON.parse(returned_data);
+                    var return_data = jsonData.response[0];
+                    show_msg("Quantity Updated")
+                    console.log(return_data);
+                    display_cart_data()
+                }
+            })
+        }
+        else{
+            show_msg("Stock not available")
+        }
+    }   
+    function remove_from_cart(product_id){
+            event.preventDefault()
+            let api_url_delete_from_cart = "./api/delete_cart_product.php";
+            var form_data = {"remove":"yes" ,"product_id": product_id};
+            $.ajax({
+                url: api_url_delete_from_cart,
+                type: 'POST',
+                data: form_data,
+                success: function (returned_data) {
+                    console.log("yeah");
+                    var jsonData = JSON.parse(returned_data);
+                    console.log("yeah",returned_data);
+                    var return_data = jsonData.response;
+                    show_msg("Product removed from cart")
+                    display_cart_data()
+                }
+            })
+    }  
+    // ====== fetch address ======
+    let api_url_fetch_address = "./api/fetch_address.php";
+    // let cart_ids = [];
+    var form_data = {"fetch_address":"fetch"};
+
+    let address_field = $(".address-div")
+
+    $.ajax({    
+    url: api_url_fetch_address,
+    type: 'GET',
+    data: form_data,
+
+    success: function (returned_data) {
+            var jsonData = JSON.parse(returned_data);
+            var return_data = jsonData.response[0];
+            console.log(return_data);
+            if(return_data.status === "ok"){
+                console.log("Address",return_data.status);
+                $("#address_div").text(return_data.address)
+            }
+            else{
+                show_msg("Please provide your address to checkout")
+            }
+        }
+
+
+    })
+
+    //  ======= checkout button function - verify address and proceed for payment =======
+    function checkout(){
+        event.preventDefault()
+        let api_url = "./api/checkout.php";
+        // form data values
+        var form_data = {"checkout":"yes"};
+        $.ajax({
+        url: api_url,
+        type: 'GET',
+        data: form_data,
+
+        success: function (returned_data) {
+                console.log(returned_data);
+                var jsonData = JSON.parse(returned_data);
+                var return_data = jsonData.response[0];
+                console.log(return_data);
+                if(return_data.status === "ok"){
+                    $("#rzp-button1").click()
+                }
+                else{
+                    show_msg(return_data.message)
+                }
+            }
+        })
+    }
+</script>
+<div class="Total-amount-container">
+   <h3>Total: &#8377;<span class="total-amount" id="total_amount"></span></h3>
+   <input type="hidden" id="total_amount_inp" >
+</div>
 
 
 <?php
@@ -226,10 +400,12 @@
                
             }
 ?>
-        </table>
         <br>
         <div class="show-address">
             <div class="text"> <h5>Your delivery Address:</h5> </div>
+            <div class="address-div" id="address_div">
+
+            </div>
 
             <!-- New address modal -->
             <div id="new_address_modal" class="new-address-modal disp-none">
@@ -241,20 +417,21 @@
                             </svg>
                         </div>
                     </div>
-                    <div class="address-inputs">
-                        <div class="address-field-row">
-                        <input type="hidden" class="profile_address_id" name="" id="address_id">
-                        <p class="info address"><input type="text" placeholder="Address Line 1" name="" id="address_line_1" required></p>
-                        <p class="info address"><input type="text" placeholder="Address Line 2" name="" id="address_line_2" required></p>
-                        </div>
-                        <div class="address-field-row">
-                        <p class="info address"><input type="text" placeholder="City" name="" id="address_city" required></p>
-                        <p class="info address"><input type="text" placeholder="State" name="" id="address_state" required></p>
-                        <p class="info address"><input type="tel" pattern="[0-9]+"  placeholder="Zip" name="" id="address_zip" required></p>
-                        </div>
-                        <div class="submit-bttn">
-                            <button type="submit" onclick="insert_new_address()" class="submit-button">Save</button>
-                        </div>
+                </div>
+
+                <div class="address-inputs">
+                    <div class="address-field-row">
+                    <input type="hidden" class="profile_address_id" name="" id="address_id">
+                    <p class="info address"><input type="text" placeholder="Address Line 1" name="" id="address_line_1" required></p>
+                    <p class="info address"><input type="text" placeholder="Address Line 2" name="" id="address_line_2" required></p>
+                    </div>
+                    <div class="address-field-row">
+                    <p class="info address"><input type="text" placeholder="City" name="" id="address_city" required></p>
+                    <p class="info address"><input type="text" placeholder="State" name="" id="address_state" required></p>
+                    <p class="info address"><input type="tel" pattern="[0-9]+"  placeholder="Zip" name="" id="address_zip" required></p>
+                    </div>
+                    <div class="submit-bttn">
+                        <button type="submit" onclick="insert_new_address()" class="submit-button">Save</button>
                     </div>
                 </div>
                 <script>
@@ -295,7 +472,7 @@
                                 "address_city": address_city,
                                 "address_state" : address_state,
                                 "address_zip" : address_zip,
-                                "cart_ids": cart_ids
+                                // "cart_ids": cart_ids
                             };
                             $.ajax({
                             url: api_url_,
@@ -306,17 +483,15 @@
                                     var jsonData = JSON.parse(returned_data);
                                     var return_data = jsonData.response[0];
                                     console.log(return_data);
-                                    $(".address-div").text(return_data.updated_address)
-                                    show_msg(return_data.message)
+                                    if(return_data.status === "ok"){
+                                        $("#address_div").text(return_data.updated_address)
+                                        removeModalVisibility();
+                                        show_msg(return_data.message)
+                                    }
                                 }
                             })
                     }
                 </script>
-            </div>
-
-
-            <div class="address-div">
-
             </div>
             <!-- <textarea name="address" id="user_address" class="info" placeholder="Please provide your dilevery address" cols="30" rows="2"></textarea>
             <div onclick="save_address()" class="save-bttn"><button>Save Address</button></div> -->
@@ -333,7 +508,7 @@
         <script>
         var options = {
             "key": "rzp_test_vMCLbtwM7n8HDj", // Enter the Key ID generated from the Dashboard
-            "amount": "100", // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
+            "amount": parseInt(parseFloat($("#total_amount_inp").val()) * 100), // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
             "currency": "INR",
             "name": "AToZ Furnishing",
             "description": "Test Transaction",
@@ -370,88 +545,7 @@
             e.preventDefault();
         }
         </script>
-
-        <!-- payment gateway code end -->
-        <script>
-            let api_url = "./api/fetch_address.php";
-            let api_url_cart_data = "./api/fetch_cart_details.php";
-            let cart_ids = [];
-            var form_data = {"fetch_address":"fetch"};
-
-            let address_field = $(".address-div")
-
-            $.ajax({    
-            url: api_url,
-            type: 'GET',
-            data: form_data,
-
-            success: function (returned_data) {
-                    var jsonData = JSON.parse(returned_data);
-                    var return_data = jsonData.response[0];
-                    console.log(return_data);
-                    if(return_data.status === "ok"){
-                        console.log("Address",return_data.status);
-                        if(return_data.status === "ok" ){
-                            address_field.text(return_data.address)
-                        }
-                        else{
-                            alert("Working")
-                            address_field.text("Please provide valid address to checkout")
-                        }
-                        $.ajax({    
-                            url: api_url_cart_data,
-                            type: 'GET',
-                            data: form_data,
-
-                            success: function (returned_data) {
-                                    var jsonData = JSON.parse(returned_data);
-                                    // for (var i = 0; i < jsonData.response.length; i++) {
-                                    var jsonData = JSON.parse(returned_data);
-                                    var return_data = jsonData.response[0];
-                                    cart_ids.push(return_data.cart_id)
-                                    // }
-                                    // console.log(cart_ids);
-                                }
-                            })
-
-
-                    }
-                    else{
-                        // show_msg("Please provide your address to checkout")
-                    }
-                }
-
-
-            })
-
-            function checkout(){
-                event.preventDefault()
-                let api_url = "./api/checkout.php";
-                // form data values
-                var form_data = {"checkout":"yes"};
-                $.ajax({
-                url: api_url,
-                type: 'GET',
-                data: form_data,
-
-                success: function (returned_data) {
-                        console.log(returned_data);
-                        var jsonData = JSON.parse(returned_data);
-                        var return_data = jsonData.response[0];
-                        console.log(return_data);
-                        if(return_data.status === "ok"){
-                            $("#rzp-button1").click()
-                        }
-                        else{
-                            show_msg(return_data.message)
-                        }
-                    }
-                })
-            }
-        </script>
-
-
-        
+        <!-- payment gateway code end -->        
 <?php
 }
 else {
@@ -464,7 +558,7 @@ echo "<div class='cartEmptyContent'>
             Website.
         </p>
         <p>
-            <a class='btn btnVelaOne' href='collections/all.html' title='Go to Shopping'>Go
+            <a class='btn btnVelaOne' href='./index.php' title='Go to Shopping'>Go
                 to Shopping</a>
         </p>
     </div>";

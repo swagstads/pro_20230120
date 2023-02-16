@@ -36,11 +36,11 @@
         <div id="signup_success_message"></div>
 
           <form  onsubmit="signup_verify_user()" method="post" >          
-            <input type="text" id="signup_name" name="name" placeholder="Full Name" required value="Rishabh Nahar" />   
+            <input type="text" id="signup_name" name="name" placeholder="Full Name" required />   
             <input type="number" id="signup_contact" name="mobile" minlength="10" maxlength="10" placeholder="Contact" pattern=".{9,}" required title="10 characters minimum" />
-            <input type="email" id="signup_email" name="email" placeholder="Email" required value="rishabhn@gmail.com" />
-            <input type="password" id="signup_password" name="password" placeholder="Password" value="signup_123" required title="8 characters minimum" />
-            <input type="password" id="signup_confirm_password" name="confirmpassword" placeholder="Confirm Password" value="signup_123" required />
+            <input type="email" id="signup_email" name="email" placeholder="Email" required />
+            <input type="password" id="signup_password" name="password" placeholder="Password" required title="8 characters minimum" />
+            <input type="password" id="signup_confirm_password" name="confirmpassword" placeholder="Confirm Password" required />
 
             <div class="remember-form">
               <span>

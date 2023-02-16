@@ -147,7 +147,7 @@
                                                                 <input type="text" id="ContactFormName"
                                                                     class="form-control contact-form" placeholder="Name"
                                                                     name="contact[name]" autocapitalize="words"
-                                                                    value="">
+                                                                    value="" required>
                                                             </div>
                                                         </div>
                                                         <div class="col-xs-6">
@@ -156,7 +156,7 @@
                                                                 <input type="email" id="ContactFormEmail"
                                                                     class="form-control contact-form" placeholder="Email"
                                                                     name="contact[email]" autocorrect="off"
-                                                                    autocapitalize="off" value="">
+                                                                    autocapitalize="off" value="" required>
                                                             </div>
                                                         </div>
                                                         <div class="col-xs-12">
@@ -165,7 +165,7 @@
                                                                 <input type="text" id="ContactFormSubject"
                                                                     class="form-control contact-form" placeholder="Subject"
                                                                     name="contact[email]" autocorrect="off"
-                                                                    autocapitalize="off" value="">
+                                                                    autocapitalize="off" value="" required>
                                                             </div>
                                                         </div>
                                                         <div class="col-xs-12">
@@ -174,7 +174,7 @@
                                                                     for="ContactFormMessage">Message<sup>*</sup></label>
                                                                 <textarea rows="6" id="ContactFormMessage"
                                                                     class="form-control contact-form" placeholder="Message"
-                                                                    name="contact[body]"></textarea>
+                                                                    name="contact[body]" required></textarea>
                                                             </div>
                                                         </div>
                                                     </div>

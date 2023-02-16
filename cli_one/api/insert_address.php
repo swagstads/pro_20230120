@@ -12,9 +12,6 @@ if(isset($_POST['edit_address'])){
 
     $user_id = $_SESSION['user_id'];
 
-    $sanitized_ids = array_map('intval', $_POST['cart_ids']);
-    $cart_ids = implode(",",$sanitized_ids);
-
     $address_line_1 = $_POST['address_line_1'];
     $address_line_2 = $_POST['address_line_2'];
     $address_city = $_POST['address_city'];
@@ -47,18 +44,18 @@ if(isset($_POST['edit_address'])){
 
         if($query->execute()){
             $data['status'] = "ok";
-            $data['message'] = "address updated";
+            $data['message'] = "Address updated";
             $data['updated_address'] = $address;
             // $data['cart_ids'] = $cart_ids;
         }else{
             $data['status'] = "fail";
-            $data['message'] = "address not updated";        
+            $data['message'] = "Address not updated";        
         }
 
     }
     else{
         $data['status'] = "fail";
-        $data['message'] = "address not updated";
+        $data['message'] = "Something went wrong";
     }
 }
 
