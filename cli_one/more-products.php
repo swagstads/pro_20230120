@@ -126,7 +126,7 @@
         function addToCart(product_id){
                 var quantity = 1;
                 api_url = "./api/add_to_cart.php";
-                console.log("adding to cart: pro id,", product_id);
+                // console.log("adding to cart: pro id,", product_id);
                 var form_data = { "add_to_cart": "add or update" , "productid": product_id,'quantity': quantity};
                 console.log(form_data);
                 $.ajax({
@@ -141,6 +141,7 @@
                         }
                 })
                 console.log(product_id,"Added to cart");
+                cart_count()
             }
 
 </script>

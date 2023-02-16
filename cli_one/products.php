@@ -240,6 +240,7 @@
                             }
                     })
                 }
+                cart_count()
             }
 
     </script>

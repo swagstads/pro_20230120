@@ -227,7 +227,7 @@
                             <div class="row">
                                 <div class="col-sp-12 col-xs-4 col-sm-4">
                                     <div class="mbItemGutter effectOne">
-                                        <a href="./products.php?category=rugs" title="AtoZ">
+                                        <a href="./products.php?products=rugs" title="AtoZ">
                                             <div class="p-relative">
                                                 <div class="product-card__image"
                                                     style="padding-top: 61.43617021276596%">
@@ -245,7 +245,7 @@
                                 </div>
                                 <div class="col-sp-12 col-xs-4 col-sm-4">
                                     <div class="mbItemGutter effectOne">
-                                        <a href="./products.php?category=rugs" title="AtoZ">
+                                        <a href="./products.php?products=rugs" title="AtoZ">
                                             <div class="p-relative">
                                                 <div class="product-card__image"
                                                     style="padding-top: 61.43617021276596%">
@@ -263,7 +263,7 @@
                                 </div>
                                 <div class="col-sp-12 col-xs-4 col-sm-4">
                                     <div class="mbItemGutter effectOne">
-                                        <a href="./products.php?category=rugs" title="AtoZ">
+                                        <a href="./products.php?products=rugs" title="AtoZ">
                                             <div class="p-relative">
                                                 <div class="product-card__image"
                                                     style="padding-top: 61.43617021276596%">
@@ -298,7 +298,14 @@
                                         products available.
                                     </span>
                                 </div>
-                                <div class="row1">
+                                <div class="row1 trending-products ">
+                                    <!-- <a href="">
+                                        <div class="container10 col-md-3">
+                                            <img src="https://cdn.shopify.com/s/files/1/1573/5553/products/14_360x.jpg" />
+                                            <img src="https://cdn.shopify.com/s/files/1/1573/5553/products/14-1_360x.jpg" />
+                                            <img src="https://cdn.shopify.com/s/files/1/1573/5553/products/14-1_360x.jpg" />
+                                        </div>
+                                    </a>
                                     <div class="container10 col-md-3">
                                         <img src="https://cdn.shopify.com/s/files/1/1573/5553/products/14_360x.jpg" />
                                         <img src="https://cdn.shopify.com/s/files/1/1573/5553/products/14-1_360x.jpg" />
@@ -308,12 +315,7 @@
                                         <img src="https://cdn.shopify.com/s/files/1/1573/5553/products/14_360x.jpg" />
                                         <img src="https://cdn.shopify.com/s/files/1/1573/5553/products/14-1_360x.jpg" />
                                         <img src="https://cdn.shopify.com/s/files/1/1573/5553/products/14-1_360x.jpg" />
-                                    </div>
-                                    <div class="container10 col-md-3">
-                                        <img src="https://cdn.shopify.com/s/files/1/1573/5553/products/14_360x.jpg" />
-                                        <img src="https://cdn.shopify.com/s/files/1/1573/5553/products/14-1_360x.jpg" />
-                                        <img src="https://cdn.shopify.com/s/files/1/1573/5553/products/14-1_360x.jpg" />
-                                    </div>
+                                    </div> -->
                                 </div>
                                 <div class="proLoadMoreBottom"></div>
 
@@ -329,8 +331,19 @@
                                     success: function (returned_data) {
                                             console.log(returned_data);
                                             var jsonData = JSON.parse(returned_data);
-                                            var return_data = jsonData.response[0];
-
+                                            var return_data = jsonData.response;
+                                            for (i=0;i<= 3; i++){
+                                                $(".trending-products").append(
+                                                    '<a href="productpage.php?productid='+return_data[i].product_id+'">'+
+                                                        '<div class="container10 col-md-3">'+
+                                                            '<img src="https://cdn.shopify.com/s/files/1/1573/5553/products/14_360x.jpg" />'+
+                                                            '<img src="https://cdn.shopify.com/s/files/1/1573/5553/products/14-1_360x.jpg" />'+
+                                                            '<img src="https://cdn.shopify.com/s/files/1/1573/5553/products/14-1_360x.jpg" />'+
+                                                        '</div>'+
+                                                        // '<br/><div style="text-align:center">'+return_data[i].product_title+' - '+return_data[i].product_category+'</div>'+
+                                                    '</a>'
+                                                )
+                                            }
                                         }
                                     })
                                 </script>
@@ -340,44 +353,6 @@
                     </div>
                 </div>
             </div>
-            <!-- <div id="shopify-section-1600941984523" class="shopify-section velaFramework">
-        <div class="velaMultiBanner mbBlockGutter" style="background-color: rgba(0, 0, 0, 0)">
-          <div class="container-full">
-            <div class="velaMultiBannerInner">
-              <div class="velaContent">
-                <div class="rowFlex rowFlexMargin">
-                  <div class="col-xs-12 col-sm-6">
-                    <div class="mbItemGutter velaBanner effectOne">
-                      <a href="collections/decor-art.php" title="AtoZ">
-                        <div class="p-relative">
-                          <div class="product-card__image" style="padding-top: 48.10526315789473%">
-                            <img class="product-card__img lazyload imgFlyCart" data-src="https://cdn.shopify.com/s/files/1/1573/5553/files/banner4_360x.jpg?v=1613719087" data-widths="[360,540,720,900,1080,1296,1728,1944,2808,4320]" data-aspectratio="2.078774617067834" data-ratio="2.078774617067834" data-sizes="auto" alt="" />
-                          </div>
-                          <div class="placeholder-background placeholder-background--animation" data-image-placeholder></div>
-                        </div>
-                      </a>
-                    </div>
-                  </div>
-
-                  <div class="col-xs-12 col-sm-6">
-                    <div class="mbItemGutter velaBanner effectOne">
-                      <a href="collections/furniture.php" title="AtoZ">
-                        <div class="p-relative">
-                          <div class="product-card__image" style="padding-top: 48.10526315789473%">
-                            <img class="product-card__img lazyload imgFlyCart" data-src="https://cdn.shopify.com/s/files/1/1573/5553/files/banner5_360x.jpg?v=1613719087" data-widths="[360,540,720,900,1080,1296,1728,1944,2808,4320]" data-aspectratio="2.078774617067834" data-ratio="2.078774617067834" data-sizes="auto" alt="" />
-                          </div>
-                          <div class="placeholder-background placeholder-background--animation" data-image-placeholder></div>
-                        </div>
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div> -->
-
             <!-- ======= Portfolio Section Start======= -->
             <section id="portfolio">
                 <div class="container" data-aos="fade-up">
@@ -401,880 +376,137 @@
                         <div class="col-lg-12 d-flex justify-content-center">
                             <ul id="portfolio-flters">
                                 <li data-filter="*" class="filter-active">All</li>
-                                <li data-filter=".filter-app">Bedsheets</li>
-                                <li data-filter=".filter-card">Cushion Covers</li>
-                                <li data-filter=".filter-web">Curtains</li>
+                                <li data-filter=".filter-bedsheets">Bedsheets</li>
+                                <li data-filter=".filter-cushion-covers">Cushion Covers</li>
+                                <li data-filter=".filter-curtains">Curtains</li>
                             </ul>
                         </div>
                     </div>
-<!--                     
-                    <div class="image-gal">
-                        <div class="box">
-                            <div class="dream">
-                                <img src="assets/images/portfolio/portfolio-1.jpg" class="img-fluid" alt="">
-                                <img src="https://cdn.shopify.com/s/files/1/1573/5553/products/11_360x.jpg?v=1617528878"
-                                    class="img-fluid" alt="">
-                            </div>
-                            <div class="dream">
-                                <img src="https://cdn.shopify.com/s/files/1/1573/5553/products/11_360x.jpg?v=1617528878"
-                                    class="img-fluid" alt="">
-                                <img src="assets/images/portfolio/portfolio-1.jpg" class="img-fluid" alt="">
-                            </div>
-                            <div class="dream">
-                                <img src="assets/images/portfolio/portfolio-1.jpg" class="img-fluid" alt="">
-                                <img src="assets/images/portfolio/portfolio-1.jpg" class="img-fluid" alt="">
-                            </div>
-                        </div>
-                    </div> 
-
-                    <div class="row">
-                        <div class="headingGroup pb20">
-                            <h3 class="velaHomeTitle">
-                                <span> PAGE BREAK </span>
-                            </h3>
-                        </div>
-                    </div> -->
+   
                     <div class="row portfolio-container" id="category">
 
-                        <a href=""></a>
-                        <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-                            <img src="assets/images/portfolio/portfolio-2.jpg" class="img-fluid" alt="">
-                            <div class="portfolio-info">
-                                <h4>Web 3</h4>
-                                <p>Web</p>
-                                <a href="assets/images/portfolio/portfolio-2.jpg" data-gallery="portfolioGallery"
-                                    class="portfolio-lightbox preview-link" title="Web 3"><i class="bi bi-plus"></i></a>
+                        <a href="./productpage.php?productid=18">
+                            <div class="col-lg-4 col-md-6 portfolio-item filter-bedsheets">
+                                <img src="assets/images/portfolio/portfolio-2.jpg" class="img-fluid" alt="">
+                                <div class="portfolio-info">
+                                    <h4>Bedsheets</h4>
+                                    <p>abstract</p>
+                                    <a href="assets/images/portfolio/portfolio-2.jpg" data-gallery="portfolioGallery"
+                                        class="portfolio-lightbox preview-link" title="Web 3"><i class="bi bi-plus"></i></a>
+                                </div>
                             </div>
-                        </div>
+                        </a>
 
-                        <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-                            <img src="assets/images/portfolio/portfolio-2.jpg" class="img-fluid" alt="">
-                            <div class="portfolio-info">
-                                <h4>Web 3</h4>
-                                <p>Web</p>
-                                <a href="assets/images/portfolio/portfolio-2.jpg" data-gallery="portfolioGallery"
-                                    class="portfolio-lightbox preview-link" title="Web 3"><i class="bi bi-plus"></i></a>
+                        <a href="./productpage.php?productid=17">
+                            <div class="col-lg-4 col-md-6 portfolio-item filter-bedsheets">
+                                <img src="assets/images/portfolio/portfolio-2.jpg" class="img-fluid" alt="">
+                                <div class="portfolio-info">
+                                    <h4>Bedsheets</h4>
+                                    <p>Leaves</p>
+                                    <a href="assets/images/portfolio/portfolio-2.jpg" data-gallery="portfolioGallery"
+                                        class="portfolio-lightbox preview-link" title="Web 3"><i class="bi bi-plus"></i></a>
+                                </div>
                             </div>
-                        </div>
+                        </a>
 
-                        <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-                            <img src="assets/images/portfolio/portfolio-2.jpg" class="img-fluid" alt="">
-                            <div class="portfolio-info">
-                                <h4>Web 3</h4>
-                                <p>Web</p>
-                                <a href="assets/images/portfolio/portfolio-2.jpg" data-gallery="portfolioGallery"
-                                    class="portfolio-lightbox preview-link" title="Web 3"><i class="bi bi-plus"></i></a>
+                        <a href="./productpage.php?productid=17">
+                            <div class="col-lg-4 col-md-6 portfolio-item filter-bedsheets">
+                                <img src="assets/images/portfolio/portfolio-2.jpg" class="img-fluid" alt="">
+                                <div class="portfolio-info">
+                                    <h4>Bedsheets</h4>
+                                    <p>Ethnic</p>
+                                    <a href="assets/images/portfolio/portfolio-2.jpg" data-gallery="portfolioGallery"
+                                        class="portfolio-lightbox preview-link" title="Web 3"><i class="bi bi-plus"></i></a>
+                                </div>
                             </div>
-                        </div>
+                        </a>
 
-                        <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-                            <img src="assets/images/portfolio/portfolio-3.jpg" class="img-fluid" alt="">
-                            <div class="portfolio-info">
-                                <h4>App 2</h4>
-                                <p>App</p>
-                                <a href="assets/images/portfolio/portfolio-3.jpg" data-gallery="portfolioGallery"
-                                    class="portfolio-lightbox preview-link" title="App 2"><i class="bi bi-plus"></i></a>
+                        <a href="./productpage.php?productid=18">
+                            <div class="col-lg-4 col-md-6 portfolio-item filter-cushion-covers">
+                                <img src="assets/images/portfolio/portfolio-2.jpg" class="img-fluid" alt="">
+                                <div class="portfolio-info">
+                                    <h4>Cushion covers</h4>
+                                    <p>abstract</p>
+                                    <a href="assets/images/portfolio/portfolio-2.jpg" data-gallery="portfolioGallery"
+                                        class="portfolio-lightbox preview-link" title="Web 3"><i class="bi bi-plus"></i></a>
+                                </div>
                             </div>
-                        </div>
-                        <!--
-            <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-              <img src="assets/images/portfolio/portfolio-4.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Card 2</h4>
-                <p>Card</p>
-                <a href="assets/images/portfolio/portfolio-4.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Card 2"><i class="bi bi-plus"></i></a>
-              </div>
-            </div>
+                        </a>
 
-            <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-              <img src="assets/images/portfolio/portfolio-5.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Web 2</h4>
-                <p>Web</p>
-                <a href="assets/images/portfolio/portfolio-5.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Web 2"><i class="bi bi-plus"></i></a>
-              </div>
-            </div>
+                        <a href="./productpage.php?productid=17">
+                            <div class="col-lg-4 col-md-6 portfolio-item filter-cushion-covers">
+                                <img src="assets/images/portfolio/portfolio-2.jpg" class="img-fluid" alt="">
+                                <div class="portfolio-info">
+                                    <h4>Cushion covers</h4>
+                                    <p>abstract</p>
+                                    <a href="assets/images/portfolio/portfolio-2.jpg" data-gallery="portfolioGallery"
+                                        class="portfolio-lightbox preview-link" title="Web 3"><i class="bi bi-plus"></i></a>
+                                </div>
+                            </div>
+                        </a>
 
-            <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-              <img src="assets/images/portfolio/portfolio-6.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>App 3</h4>
-                <p>App</p>
-                <a href="assets/images/portfolio/portfolio-6.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="App 3"><i class="bi bi-plus"></i></a>
-              </div>
-            </div>
+                        <a href="./productpage.php?productid=17">
+                            <div class="col-lg-4 col-md-6 portfolio-item filter-cushion-covers">
+                                <img src="assets/images/portfolio/portfolio-2.jpg" class="img-fluid" alt="">
+                                <div class="portfolio-info">
+                                    <h4>Cushion covers</h4>
+                                    <p>ethnic</p>
+                                    <a href="assets/images/portfolio/portfolio-2.jpg" data-gallery="portfolioGallery"
+                                        class="portfolio-lightbox preview-link" title="Web 3"><i class="bi bi-plus"></i></a>
+                                </div>
+                            </div>
+                        </a>
+                        
+                        <a href="./productpage.php?productid=18">
+                            <div class="col-lg-4 col-md-6 portfolio-item filter-curtains">
+                                <img src="assets/images/portfolio/portfolio-2.jpg" class="img-fluid" alt="">
+                                <div class="portfolio-info">
+                                    <h4>Curtains</h4>
+                                    <p>abstract</p>
+                                    <a href="assets/images/portfolio/portfolio-2.jpg" data-gallery="portfolioGallery"
+                                        class="portfolio-lightbox preview-link" title="Web 3"><i class="bi bi-plus"></i></a>
+                                </div>
+                            </div>
+                        </a>
 
-            <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-              <img src="assets/images/portfolio/portfolio-7.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Card 1</h4>
-                <p>Card</p>
-                <a href="assets/images/portfolio/portfolio-7.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Card 1"><i class="bi bi-plus"></i></a>
-              </div>
-            </div>
+                        <a href="./productpage.php?productid=17">
+                            <div class="col-lg-4 col-md-6 portfolio-item filter-curtains">
+                                <img src="assets/images/portfolio/portfolio-2.jpg" class="img-fluid" alt="">
+                                <div class="portfolio-info">
+                                    <h4>Curtains</h4>
+                                    <p>leaves</p>
+                                    <a href="assets/images/portfolio/portfolio-2.jpg" data-gallery="portfolioGallery"
+                                        class="portfolio-lightbox preview-link" title="Web 3"><i class="bi bi-plus"></i></a>
+                                </div>
+                            </div>
+                        </a>
 
-            <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-              <img src="assets/images/portfolio/portfolio-8.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Card 3</h4>
-                <p>Card</p>
-                <a href="assets/images/portfolio/portfolio-8.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Card 3"><i class="bi bi-plus"></i></a>
-              </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-              <img src="assets/images/portfolio/portfolio-9.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Web 3</h4>
-                <p>Web</p>
-                <a href="assets/images/portfolio/portfolio-9.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Web 3"><i class="bi bi-plus"></i></a>
-              </div>
-            </div> -->
+                        <a href="./productpage.php?productid=17">
+                            <div class="col-lg-4 col-md-6 portfolio-item filter-curtains">
+                                <img src="assets/images/portfolio/portfolio-2.jpg" class="img-fluid" alt="">
+                                <div class="portfolio-info">
+                                    <h4>Curtains</h4>
+                                    <p>Ethnic</p>
+                                    <a href="assets/images/portfolio/portfolio-2.jpg" data-gallery="portfolioGallery"
+                                        class="portfolio-lightbox preview-link" title="Web 3"><i class="bi bi-plus"></i></a>
+                                </div>
+                            </div>
+                        </a>
+              
                     </div>
 
                 </div>
             </section>
             <!-- ======= Portfolio Section End======= -->
 
-            <!-- <div id="shopify-section-1600942005808" class="shopify-section velaFramework">
-                <div class="productListHome velaProducts mbBlockGutter"
-                    style="background-color: rgba(0, 0, 0, 0); padding: 40px 0 45px">
-                    <div class="container">
-                        <div class="sectionInner">
-                            <div class="headingGroup pb20">
-                                <h3 class="velaHomeTitle text-center">
-                                    <span>Sale Off</span>
-                                </h3>
-                                <span class="subTitle">Mirum est notare quam littera gothica quam nunc putamus
-                                    parum claram!</span>
-                            </div>
-                            <div class="velaContent">
-                                <div class="proOwlCarousel velaOwlRow owlCarouselPlay">
-                                    <div class="owl-carousel" data-nav="true" data-autoplay="false"
-                                        data-autoplaytimeout="10000" data-columnone="4" data-columntwo="4"
-                                        data-columnthree="3" data-columnfour="2" data-columnfive="2">
-                                        <div class="velaProBlock grid" data-price="260.00">
-                                            <div class="velaProBlockInner">
-                                                <div class="proHImage d-flex flexJustifyCenter">
-                                                    <a class="proFeaturedImage"
-                                                        href="productpage.php?productid=17">
-                                                        <div class="wrap">
-                                                            <div class="p-relative">
-                                                                <div class="product-card__image"
-                                                                    style="padding-top: 126.90355329949239%">
-                                                                    <img class="product-card__img lazyload imgFlyCart"
-                                                                        data-src="https://cdn.shopify.com/s/files/1/1573/5553/products/14_360x.jpg?v=1601694510"
-                                                                        data-widths="[360,540,720,900,1080,1296,1728,1944,2808,4320]"
-                                                                        data-aspectratio="0.788" data-ratio="0.788"
-                                                                        data-sizes="auto" alt="" />
-                                                                </div>
-                                                                <div class="placeholder-background placeholder-background--animation"
-                                                                    data-image-placeholder></div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="hidden-sm hidden-xs proSwatch proImageSecond">
-                                                            <div class="p-relative">
-                                                                <div class="product-card__image"
-                                                                    style="padding-top: 126.90355329949239%">
-                                                                    <img class="product-card__img lazyload imgFlyCart"
-                                                                        data-src="https://cdn.shopify.com/s/files/1/1573/5553/products/14-1_360x.jpg?v=1601694510"
-                                                                        data-widths="[360,540,720,900,1080,1296,1728,1944,2808,4320]"
-                                                                        data-aspectratio="0.788" data-ratio="0.788"
-                                                                        data-sizes="auto"
-                                                                        alt="Sacrificial Chair Design" />
-                                                                </div>
-                                                                <div class="placeholder-background placeholder-background--animation"
-                                                                    data-image-placeholder></div>
-                                                            </div>
-                                                        </div>
-                                                    </a>
-                                                    <div class="productLable">
-                                                        <span class="labelSale">Sale</span>
-                                                    </div>
-                                                </div>
-                                                <div class="proContent">
-                                                    <h5 class="proName">
-                                                        <a href="productpage.php?productid=17">Sacrificial
-                                                            Chair Design</a>
-                                                    </h5>
-                                                    <div class="proGroup">
-                                                        <div class="proPrice">
-                                                            <div class="priceProduct priceSale">
-                                                                <span class="money">$260.00</span>
-                                                            </div>
-
-                                                            <div class="priceProduct priceCompare">
-                                                                <span class="money">$280.00</span>
-                                                            </div>
-                                                        </div>
-
-                                                        <form action="https://vela-kazan.myshopify.com/cart/add"
-                                                            method="post" enctype="multipart/form-data"
-                                                            class="formAddToCart">
-                                                            <input type="hidden" name="id" value="39397249056833" />
-
-                                                            <button class="btn btnAddToCart" type="submit"
-                                                                value="Submit">
-                                                                <i class="icons">
-                                                                    <svg version="1.1"
-                                                                        xmlns="http://www.w3.org/2000/svg"
-                                                                        xmlns:xlink="http://www.w3.org/1999/xlink"
-                                                                        x="0px" y="0px" viewBox="0 0 512 512"
-                                                                        enable-background="new 0 0 512 512"
-                                                                        xml:space="preserve">
-                                                                        <g>
-                                                                            <g>
-                                                                                <path
-                                                                                    d="M416,277.333H277.333V416h-42.666V277.333H96v-42.666h138.667V96h42.666v138.667H416V277.333z" />
-                                                                            </g>
-                                                                        </g>
-                                                                    </svg>
-                                                                </i>
-                                                                <span>Add to Cart</span>
-                                                            </button>
-                                                        </form>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div class="velaProBlock grid" data-price="170.00">
-                                            <div class="velaProBlockInner">
-                                                <div class="proHImage d-flex flexJustifyCenter">
-                                                    <a class="proFeaturedImage"
-                                                        href="productpage.php?productid=17">
-                                                        <div class="wrap">
-                                                            <div class="p-relative">
-                                                                <div class="product-card__image"
-                                                                    style="padding-top: 126.90355329949239%">
-                                                                    <img class="product-card__img lazyload imgFlyCart"
-                                                                        data-src="https://cdn.shopify.com/s/files/1/1573/5553/products/1_c14253f1-8cb5-4a88-921b-d3dbaffaaafa_360x.jpg?v=1601694960"
-                                                                        data-widths="[360,540,720,900,1080,1296,1728,1944,2808,4320]"
-                                                                        data-aspectratio="0.788" data-ratio="0.788"
-                                                                        data-sizes="auto" alt="" />
-                                                                </div>
-                                                                <div class="placeholder-background placeholder-background--animation"
-                                                                    data-image-placeholder></div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="hidden-sm hidden-xs proSwatch proImageSecond">
-                                                            <div class="p-relative">
-                                                                <div class="product-card__image"
-                                                                    style="padding-top: 126.90355329949239%">
-                                                                    <img class="product-card__img lazyload imgFlyCart"
-                                                                        data-src="https://cdn.shopify.com/s/files/1/1573/5553/products/1-1_360x.jpg?v=1601694960"
-                                                                        data-widths="[360,540,720,900,1080,1296,1728,1944,2808,4320]"
-                                                                        data-aspectratio="0.788" data-ratio="0.788"
-                                                                        data-sizes="auto"
-                                                                        alt="Sacrificial Chair Design" />
-                                                                </div>
-                                                                <div class="placeholder-background placeholder-background--animation"
-                                                                    data-image-placeholder></div>
-                                                            </div>
-                                                        </div>
-                                                    </a>
-                                                    <div class="productLable"></div>
-                                                </div>
-                                                <div class="proContent">
-                                                    <h5 class="proName">
-                                                        <a href="productpage.php?productid=17">Sacrificial
-                                                            Chair Design</a>
-                                                    </h5>
-                                                    <div class="proGroup">
-                                                        <div class="proPrice">
-                                                            <div class="priceProduct">
-                                                                <span class="money">$170.00</span>
-                                                            </div>
-                                                        </div>
-
-                                                        <form action="https://vela-kazan.myshopify.com/cart/add"
-                                                            method="post" enctype="multipart/form-data"
-                                                            class="formAddToCart">
-                                                            <input type="hidden" name="id" value="158484398096" />
-
-                                                            <button class="btn btnAddToCart" type="submit"
-                                                                value="Submit">
-                                                                <i class="icons">
-                                                                    <svg version="1.1"
-                                                                        xmlns="http://www.w3.org/2000/svg"
-                                                                        xmlns:xlink="http://www.w3.org/1999/xlink"
-                                                                        x="0px" y="0px" viewBox="0 0 512 512"
-                                                                        enable-background="new 0 0 512 512"
-                                                                        xml:space="preserve">
-                                                                        <g>
-                                                                            <g>
-                                                                                <path
-                                                                                    d="M416,277.333H277.333V416h-42.666V277.333H96v-42.666h138.667V96h42.666v138.667H416V277.333z" />
-                                                                            </g>
-                                                                        </g>
-                                                                    </svg>
-                                                                </i>
-                                                                <span>Add to Cart</span>
-                                                            </button>
-                                                        </form>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div class="velaProBlock grid" data-price="150.00">
-                                            <div class="velaProBlockInner">
-                                                <div class="proHImage d-flex flexJustifyCenter">
-                                                    <a class="proFeaturedImage"
-                                                        href="productpage.php?productid=17">
-                                                        <div class="wrap">
-                                                            <div class="p-relative">
-                                                                <div class="product-card__image"
-                                                                    style="padding-top: 127.42857142857142%">
-                                                                    <img class="product-card__img lazyload imgFlyCart"
-                                                                        data-src="https://cdn.shopify.com/s/files/1/1573/5553/products/16_360x.jpg?v=1509980861"
-                                                                        data-widths="[360,540,720,900,1080,1296,1728,1944,2808,4320]"
-                                                                        data-aspectratio="0.7847533632286996"
-                                                                        data-ratio="0.7847533632286996"
-                                                                        data-sizes="auto" alt="" />
-                                                                </div>
-                                                                <div class="placeholder-background placeholder-background--animation"
-                                                                    data-image-placeholder></div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="hidden-sm hidden-xs proSwatch proImageSecond">
-                                                            <div class="p-relative">
-                                                                <div class="product-card__image"
-                                                                    style="padding-top: 128.57142857142858%">
-                                                                    <img class="product-card__img lazyload imgFlyCart"
-                                                                        data-src="https://cdn.shopify.com/s/files/1/1573/5553/products/12_360x.jpg?v=1509980861"
-                                                                        data-widths="[360,540,720,900,1080,1296,1728,1944,2808,4320]"
-                                                                        data-aspectratio="0.7777777777777778"
-                                                                        data-ratio="0.7777777777777778"
-                                                                        data-sizes="auto"
-                                                                        alt="Sacrificial Chair Design" />
-                                                                </div>
-                                                                <div class="placeholder-background placeholder-background--animation"
-                                                                    data-image-placeholder></div>
-                                                            </div>
-                                                        </div>
-                                                    </a>
-                                                    <div class="productLable">
-                                                        <span class="labelSale">Sale</span>
-                                                    </div>
-                                                </div>
-                                                <div class="proContent">
-                                                    <h5 class="proName">
-                                                        <a href="productpage.php?productid=17">Sacrificial
-                                                            Chair Design</a>
-                                                    </h5>
-                                                    <div class="proGroup">
-                                                        <div class="proPrice">
-                                                            <div class="priceProduct priceSale">
-                                                                <span class="money">$150.00</span>
-                                                            </div>
-
-                                                            <div class="priceProduct priceCompare">
-                                                                <span class="money">$180.00</span>
-                                                            </div>
-                                                        </div>
-
-                                                        <form action="https://vela-kazan.myshopify.com/cart/add"
-                                                            method="post" enctype="multipart/form-data"
-                                                            class="formAddToCart">
-                                                            <input type="hidden" name="id" value="158484758544" />
-
-                                                            <button class="btn btnAddToCart" type="submit"
-                                                                value="Submit">
-                                                                <i class="icons">
-                                                                    <svg version="1.1"
-                                                                        xmlns="http://www.w3.org/2000/svg"
-                                                                        xmlns:xlink="http://www.w3.org/1999/xlink"
-                                                                        x="0px" y="0px" viewBox="0 0 512 512"
-                                                                        enable-background="new 0 0 512 512"
-                                                                        xml:space="preserve">
-                                                                        <g>
-                                                                            <g>
-                                                                                <path
-                                                                                    d="M416,277.333H277.333V416h-42.666V277.333H96v-42.666h138.667V96h42.666v138.667H416V277.333z" />
-                                                                            </g>
-                                                                        </g>
-                                                                    </svg>
-                                                                </i>
-                                                                <span>Add to Cart</span>
-                                                            </button>
-                                                        </form>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div class="velaProBlock grid" data-price="170.00">
-                                            <div class="velaProBlockInner">
-                                                <div class="proHImage d-flex flexJustifyCenter">
-                                                    <a class="proFeaturedImage"
-                                                        href="productpage.php?productid=17">
-                                                        <div class="wrap">
-                                                            <div class="p-relative">
-                                                                <div class="product-card__image"
-                                                                    style="padding-top: 128.57142857142858%">
-                                                                    <img class="product-card__img lazyload imgFlyCart"
-                                                                        data-src="https://cdn.shopify.com/s/files/1/1573/5553/products/11_360x.jpg?v=1617528878"
-                                                                        data-widths="[360,540,720,900,1080,1296,1728,1944,2808,4320]"
-                                                                        data-aspectratio="0.7777777777777778"
-                                                                        data-ratio="0.7777777777777778"
-                                                                        data-sizes="auto" alt="" />
-                                                                </div>
-                                                                <div class="placeholder-background placeholder-background--animation"
-                                                                    data-image-placeholder></div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="hidden-sm hidden-xs proSwatch proImageSecond">
-                                                            <div class="p-relative">
-                                                                <div class="product-card__image"
-                                                                    style="padding-top: 127.42857142857142%">
-                                                                    <img class="product-card__img lazyload imgFlyCart"
-                                                                        data-src="https://cdn.shopify.com/s/files/1/1573/5553/products/25_14925dcf-253e-4ad6-bece-ba55411af4e1_360x.jpg?v=1617528878"
-                                                                        data-widths="[360,540,720,900,1080,1296,1728,1944,2808,4320]"
-                                                                        data-aspectratio="0.7847533632286996"
-                                                                        data-ratio="0.7847533632286996"
-                                                                        data-sizes="auto"
-                                                                        alt="Sacrificial Chair Design" />
-                                                                </div>
-                                                                <div class="placeholder-background placeholder-background--animation"
-                                                                    data-image-placeholder></div>
-                                                            </div>
-                                                        </div>
-                                                    </a>
-                                                    <div class="productLable">
-                                                        <span class="labelSale">Sale</span>
-                                                    </div>
-                                                </div>
-                                                <div class="proContent">
-                                                    <h5 class="proName">
-                                                        <a href="productpage.php?productid=17">Sacrificial
-                                                            Chair Design</a>
-                                                    </h5>
-                                                    <div class="proGroup">
-                                                        <div class="proPrice">
-                                                            <div class="priceProduct priceSale">
-                                                                <span class="money">$170.00</span>
-                                                            </div>
-
-                                                            <div class="priceProduct priceCompare">
-                                                                <span class="money">$200.00</span>
-                                                            </div>
-                                                        </div>
-
-                                                        <form action="https://vela-kazan.myshopify.com/cart/add"
-                                                            method="post" enctype="multipart/form-data"
-                                                            class="formAddToCart">
-                                                            <input type="hidden" name="id" value="158484791312" />
-
-                                                            <button class="btn btnAddToCart" type="submit"
-                                                                value="Submit">
-                                                                <i class="icons">
-                                                                    <svg version="1.1"
-                                                                        xmlns="http://www.w3.org/2000/svg"
-                                                                        xmlns:xlink="http://www.w3.org/1999/xlink"
-                                                                        x="0px" y="0px" viewBox="0 0 512 512"
-                                                                        enable-background="new 0 0 512 512"
-                                                                        xml:space="preserve">
-                                                                        <g>
-                                                                            <g>
-                                                                                <path
-                                                                                    d="M416,277.333H277.333V416h-42.666V277.333H96v-42.666h138.667V96h42.666v138.667H416V277.333z" />
-                                                                            </g>
-                                                                        </g>
-                                                                    </svg>
-                                                                </i>
-                                                                <span>Add to Cart</span>
-                                                            </button>
-                                                        </form>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div class="velaProBlock grid" data-price="100.00">
-                                            <div class="velaProBlockInner">
-                                                <div class="proHImage d-flex flexJustifyCenter">
-                                                    <a class="proFeaturedImage"
-                                                        href="productpage.php?productid=17">
-                                                        <div class="wrap">
-                                                            <div class="p-relative">
-                                                                <div class="product-card__image"
-                                                                    style="padding-top: 128.57142857142858%">
-                                                                    <img class="product-card__img lazyload imgFlyCart"
-                                                                        data-src="https://cdn.shopify.com/s/files/1/1573/5553/products/9_360x.jpg?v=1509980323"
-                                                                        data-widths="[360,540,720,900,1080,1296,1728,1944,2808,4320]"
-                                                                        data-aspectratio="0.7777777777777778"
-                                                                        data-ratio="0.7777777777777778"
-                                                                        data-sizes="auto" alt="" />
-                                                                </div>
-                                                                <div class="placeholder-background placeholder-background--animation"
-                                                                    data-image-placeholder></div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="hidden-sm hidden-xs proSwatch proImageSecond">
-                                                            <div class="p-relative">
-                                                                <div class="product-card__image"
-                                                                    style="padding-top: 127.42857142857142%">
-                                                                    <img class="product-card__img lazyload imgFlyCart"
-                                                                        data-src="https://cdn.shopify.com/s/files/1/1573/5553/products/25_42a243f5-01de-4f8e-9314-0c2ab068ed20_360x.jpg?v=1509981003"
-                                                                        data-widths="[360,540,720,900,1080,1296,1728,1944,2808,4320]"
-                                                                        data-aspectratio="0.7847533632286996"
-                                                                        data-ratio="0.7847533632286996"
-                                                                        data-sizes="auto"
-                                                                        alt="Sacrificial Chair Design" />
-                                                                </div>
-                                                                <div class="placeholder-background placeholder-background--animation"
-                                                                    data-image-placeholder></div>
-                                                            </div>
-                                                        </div>
-                                                    </a>
-                                                    <div class="productLable">
-                                                        <span class="labelSale">Sale</span>
-                                                    </div>
-                                                </div>
-                                                <div class="proContent">
-                                                    <h5 class="proName">
-                                                        <a href="productpage.php?productid=17">Sacrificial
-                                                            Chair Design</a>
-                                                    </h5>
-                                                    <div class="proGroup">
-                                                        <div class="proPrice">
-                                                            <div class="priceProduct priceSale">
-                                                                <span class="money">$100.00</span>
-                                                            </div>
-
-                                                            <div class="priceProduct priceCompare">
-                                                                <span class="money">$180.00</span>
-                                                            </div>
-                                                        </div>
-
-                                                        <form action="https://vela-kazan.myshopify.com/cart/add"
-                                                            method="post" enctype="multipart/form-data"
-                                                            class="formAddToCart">
-                                                            <input type="hidden" name="id" value="158484824080" />
-
-                                                            <button class="btn btnAddToCart" type="submit"
-                                                                value="Submit">
-                                                                <i class="icons">
-                                                                    <svg version="1.1"
-                                                                        xmlns="http://www.w3.org/2000/svg"
-                                                                        xmlns:xlink="http://www.w3.org/1999/xlink"
-                                                                        x="0px" y="0px" viewBox="0 0 512 512"
-                                                                        enable-background="new 0 0 512 512"
-                                                                        xml:space="preserve">
-                                                                        <g>
-                                                                            <g>
-                                                                                <path
-                                                                                    d="M416,277.333H277.333V416h-42.666V277.333H96v-42.666h138.667V96h42.666v138.667H416V277.333z" />
-                                                                            </g>
-                                                                        </g>
-                                                                    </svg>
-                                                                </i>
-                                                                <span>Add to Cart</span>
-                                                            </button>
-                                                        </form>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div class="velaProBlock grid" data-price="140.00">
-                                            <div class="velaProBlockInner">
-                                                <div class="proHImage d-flex flexJustifyCenter">
-                                                    <a class="proFeaturedImage"
-                                                        href="productpage.php?productid=17">
-                                                        <div class="wrap">
-                                                            <div class="p-relative">
-                                                                <div class="product-card__image"
-                                                                    style="padding-top: 128.57142857142858%">
-                                                                    <img class="product-card__img lazyload imgFlyCart"
-                                                                        data-src="https://cdn.shopify.com/s/files/1/1573/5553/products/4_360x.jpg?v=1509980328"
-                                                                        data-widths="[360,540,720,900,1080,1296,1728,1944,2808,4320]"
-                                                                        data-aspectratio="0.7777777777777778"
-                                                                        data-ratio="0.7777777777777778"
-                                                                        data-sizes="auto" alt="" />
-                                                                </div>
-                                                                <div class="placeholder-background placeholder-background--animation"
-                                                                    data-image-placeholder></div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="hidden-sm hidden-xs proSwatch proImageSecond">
-                                                            <div class="p-relative">
-                                                                <div class="product-card__image"
-                                                                    style="padding-top: 127.42857142857142%">
-                                                                    <img class="product-card__img lazyload imgFlyCart"
-                                                                        data-src="https://cdn.shopify.com/s/files/1/1573/5553/products/9_d9a89bd5-61ac-4547-b397-bcea7a9b4917_360x.jpg?v=1509981236"
-                                                                        data-widths="[360,540,720,900,1080,1296,1728,1944,2808,4320]"
-                                                                        data-aspectratio="0.7847533632286996"
-                                                                        data-ratio="0.7847533632286996"
-                                                                        data-sizes="auto"
-                                                                        alt="Sacrificial Chair Design" />
-                                                                </div>
-                                                                <div class="placeholder-background placeholder-background--animation"
-                                                                    data-image-placeholder></div>
-                                                            </div>
-                                                        </div>
-                                                    </a>
-                                                    <div class="productLable"></div>
-                                                </div>
-                                                <div class="proContent">
-                                                    <h5 class="proName">
-                                                        <a href="productpage.php?productid=17">Sacrificial
-                                                            Chair Design</a>
-                                                    </h5>
-                                                    <div class="proGroup">
-                                                        <div class="proPrice">
-                                                            <div class="priceProduct">
-                                                                <span class="money">$140.00</span>
-                                                            </div>
-                                                        </div>
-
-                                                        <form action="https://vela-kazan.myshopify.com/cart/add"
-                                                            method="post" enctype="multipart/form-data"
-                                                            class="formAddToCart">
-                                                            <input type="hidden" name="id" value="158484987920" />
-
-                                                            <button class="btn btnAddToCart" type="submit"
-                                                                value="Submit">
-                                                                <i class="icons">
-                                                                    <svg version="1.1"
-                                                                        xmlns="http://www.w3.org/2000/svg"
-                                                                        xmlns:xlink="http://www.w3.org/1999/xlink"
-                                                                        x="0px" y="0px" viewBox="0 0 512 512"
-                                                                        enable-background="new 0 0 512 512"
-                                                                        xml:space="preserve">
-                                                                        <g>
-                                                                            <g>
-                                                                                <path
-                                                                                    d="M416,277.333H277.333V416h-42.666V277.333H96v-42.666h138.667V96h42.666v138.667H416V277.333z" />
-                                                                            </g>
-                                                                        </g>
-                                                                    </svg>
-                                                                </i>
-                                                                <span>Add to Cart</span>
-                                                            </button>
-                                                        </form>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div class="velaProBlock grid" data-price="130.00">
-                                            <div class="velaProBlockInner">
-                                                <div class="proHImage d-flex flexJustifyCenter">
-                                                    <a class="proFeaturedImage"
-                                                        href="productpage.php?productid=17">
-                                                        <div class="wrap">
-                                                            <div class="p-relative">
-                                                                <div class="product-card__image"
-                                                                    style="padding-top: 128.57142857142858%">
-                                                                    <img class="product-card__img lazyload imgFlyCart"
-                                                                        data-src="https://cdn.shopify.com/s/files/1/1573/5553/products/1_360x.jpg?v=1509980332"
-                                                                        data-widths="[360,540,720,900,1080,1296,1728,1944,2808,4320]"
-                                                                        data-aspectratio="0.7777777777777778"
-                                                                        data-ratio="0.7777777777777778"
-                                                                        data-sizes="auto" alt="" />
-                                                                </div>
-                                                                <div class="placeholder-background placeholder-background--animation"
-                                                                    data-image-placeholder></div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="hidden-sm hidden-xs proSwatch proImageSecond">
-                                                            <div class="p-relative">
-                                                                <div class="product-card__image"
-                                                                    style="padding-top: 128.57142857142858%">
-                                                                    <img class="product-card__img lazyload imgFlyCart"
-                                                                        data-src="https://cdn.shopify.com/s/files/1/1573/5553/products/3_360x.jpg?v=1509980332"
-                                                                        data-widths="[360,540,720,900,1080,1296,1728,1944,2808,4320]"
-                                                                        data-aspectratio="0.7777777777777778"
-                                                                        data-ratio="0.7777777777777778"
-                                                                        data-sizes="auto"
-                                                                        alt="Sacrificial Chair Design" />
-                                                                </div>
-                                                                <div class="placeholder-background placeholder-background--animation"
-                                                                    data-image-placeholder></div>
-                                                            </div>
-                                                        </div>
-                                                    </a>
-                                                    <div class="productLable"></div>
-                                                </div>
-                                                <div class="proContent">
-                                                    <h5 class="proName">
-                                                        <a href="productpage.php?productid=17">Sacrificial
-                                                            Chair Design</a>
-                                                    </h5>
-                                                    <div class="proGroup">
-                                                        <div class="proPrice">
-                                                            <div class="priceProduct">
-                                                                <span class="money">$130.00</span>
-                                                            </div>
-                                                        </div>
-
-                                                        <form action="https://vela-kazan.myshopify.com/cart/add"
-                                                            method="post" enctype="multipart/form-data"
-                                                            class="formAddToCart">
-                                                            <input type="hidden" name="id" value="158485676048" />
-
-                                                            <a class="btn btnAddToCart"
-                                                                href="productpage.php?productid=17"
-                                                                title="Select options">
-                                                                <i class="icons">
-                                                                    <svg version="1.1"
-                                                                        xmlns="http://www.w3.org/2000/svg"
-                                                                        xmlns:xlink="http://www.w3.org/1999/xlink"
-                                                                        x="0px" y="0px" viewBox="0 0 512 512"
-                                                                        enable-background="new 0 0 512 512"
-                                                                        xml:space="preserve">
-                                                                        <g>
-                                                                            <g>
-                                                                                <path
-                                                                                    d="M416,277.333H277.333V416h-42.666V277.333H96v-42.666h138.667V96h42.666v138.667H416V277.333z" />
-                                                                            </g>
-                                                                        </g>
-                                                                    </svg>
-                                                                </i>
-                                                                <span class="select_options">Select options</span>
-                                                            </a>
-                                                        </form>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div class="velaProBlock grid" data-price="132.00">
-                                            <div class="velaProBlockInner">
-                                                <div class="proHImage d-flex flexJustifyCenter">
-                                                    <a class="proFeaturedImage"
-                                                        href="productpage.php?productid=17">
-                                                        <div class="wrap">
-                                                            <div class="p-relative">
-                                                                <div class="product-card__image"
-                                                                    style="padding-top: 128.57142857142858%">
-                                                                    <img class="product-card__img lazyload imgFlyCart"
-                                                                        data-src="https://cdn.shopify.com/s/files/1/1573/5553/products/13_1c04d432-a1ba-4e9b-88a1-b9c3aecbab9d_360x.jpg?v=1591760416"
-                                                                        data-widths="[360,540,720,900,1080,1296,1728,1944,2808,4320]"
-                                                                        data-aspectratio="0.7777777777777778"
-                                                                        data-ratio="0.7777777777777778"
-                                                                        data-sizes="auto" alt="" />
-                                                                </div>
-                                                                <div class="placeholder-background placeholder-background--animation"
-                                                                    data-image-placeholder></div>
-                                                            </div>
-                                                        </div>
-                                                    </a>
-                                                    <div class="productLable"></div>
-                                                </div>
-                                                <div class="proContent">
-                                                    <h5 class="proName">
-                                                        <a href="productpage.php?productid=17">Sacrificial
-                                                            Chair Design</a>
-                                                    </h5>
-                                                    <div class="proGroup">
-                                                        <div class="proPrice">
-                                                            <div class="priceProduct">
-                                                                <span class="money">$132.00</span>
-                                                            </div>
-                                                        </div>
-
-                                                        <form action="https://vela-kazan.myshopify.com/cart/add"
-                                                            method="post" enctype="multipart/form-data"
-                                                            class="formAddToCart">
-                                                            <input type="hidden" name="id" value="158485250064" />
-
-                                                            <button class="btn btnAddToCart" type="submit"
-                                                                value="Submit">
-                                                                <i class="icons">
-                                                                    <svg version="1.1"
-                                                                        xmlns="http://www.w3.org/2000/svg"
-                                                                        xmlns:xlink="http://www.w3.org/1999/xlink"
-                                                                        x="0px" y="0px" viewBox="0 0 512 512"
-                                                                        enable-background="new 0 0 512 512"
-                                                                        xml:space="preserve">
-                                                                        <g>
-                                                                            <g>
-                                                                                <path
-                                                                                    d="M416,277.333H277.333V416h-42.666V277.333H96v-42.666h138.667V96h42.666v138.667H416V277.333z" />
-                                                                            </g>
-                                                                        </g>
-                                                                    </svg>
-                                                                </i>
-                                                                <span>Add to Cart</span>
-                                                            </button>
-                                                        </form>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div> -->
+            
 
             <div class="more-products">
                 <?php include('./more-products.php') ?>
             </div>
                                                             
                                                             
-            <!-- <div id="shopify-section-1600942022910" class="shopify-section velaFramework">
-                <div class="velaLogoList mbGutter" style="background-color: rgba(0, 0, 0, 0); padding: 40px 0 90px">
-                    <div class="container">
-                        <div class="velaLogoListInner">
-                            <div class="velaContent">
-                                <div class="velaOwlRow owlCarouselPlay">
-                                    <div class="owl-carousel" data-nav="true" data-loop="true" data-autoplay="false"
-                                        data-autoplaytimeout="10000" data-columnone="5" data-columntwo="4"
-                                        data-columnthree="3" data-columnfour="3" data-columnfive="2">
-                                        <div class="item">
-                                            <div class="logoImage d-flex flexJustifyCenter">
-                                                <a href="#"><img class="img-responsive" alt="AtoZ"
-                                                        src="https://cdn.shopify.com/s/files/1/1573/5553/files/logo_image1.png?v=1613719814" /></a>
-                                            </div>
-                                        </div>
 
-                                        <div class="item">
-                                            <div class="logoImage d-flex flexJustifyCenter">
-                                                <a href="#"><img class="img-responsive" alt="AtoZ"
-                                                        src="https://cdn.shopify.com/s/files/1/1573/5553/files/logo_image2.png?v=1613719814" /></a>
-                                            </div>
-                                        </div>
-
-                                        <div class="item">
-                                            <div class="logoImage d-flex flexJustifyCenter">
-                                                <a href="#"><img class="img-responsive" alt="AtoZ"
-                                                        src="https://cdn.shopify.com/s/files/1/1573/5553/files/logo_image3.png?v=1613719814" /></a>
-                                            </div>
-                                        </div>
-
-                                        <div class="item">
-                                            <div class="logoImage d-flex flexJustifyCenter">
-                                                <a href="#"><img class="img-responsive" alt="AtoZ"
-                                                        src="https://cdn.shopify.com/s/files/1/1573/5553/files/logo_image4.png?v=1613719815" /></a>
-                                            </div>
-                                        </div>
-
-                                        <div class="item">
-                                            <div class="logoImage d-flex flexJustifyCenter">
-                                                <a href="#"><img class="img-responsive" alt="AtoZ"
-                                                        src="https://cdn.shopify.com/s/files/1/1573/5553/files/logo_image5.png?v=1613719815" /></a>
-                                            </div>
-                                        </div>
-
-                                        <div class="item">
-                                            <div class="logoImage d-flex flexJustifyCenter">
-                                                <a href="#"><img class="img-responsive" alt="AtoZ"
-                                                        src="https://cdn.shopify.com/s/files/1/1573/5553/files/logo_image6.png?v=1613719815" /></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div> -->
 
             <!-- END content_for_index -->
 

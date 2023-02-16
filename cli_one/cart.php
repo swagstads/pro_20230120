@@ -7,124 +7,6 @@
  
 <meta http-equiv="content-type" content="text/html;charset=utf-8" /> 
 
-<style>
-    .show-address{
-        display: flex;
-        width: 100%;
-        /* justify-content: center; */
-        align-items: center;
-        gap: 20px;
-    }
-    .show-address textarea{
-        resize: none;
-        border: none;
-        border-bottom: 1px solid;
-    }
-    .new-address-modal{
-        background-color: rgba(0, 0, 0, 0.67);
-        position: fixed;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 100%;
-        height: 100%;
-        top: 0;
-        left: 0;
-        z-index: 999;
-    }
-    .new-address-modal .address-fields{
-        background-color: white;
-        padding: 20px 40px ;
-        border-radius: 10px 10px 10px 10px;
-    }
-    .new-address-modal .address-fields .address-field-row{
-        display: flex;
-        justify-content: space-between;
-        gap: 20px;
-    }
-    .new-address-modal .address-fields .address-field-row p{
-        width: 100%;
-    }
-    .new-address-modal .address-fields .address-field-row{
-        width: 100%;
-    }
-    .new-address-modal .modal-top{
-        width: 100%;
-        display: flex;
-        justify-content: space-between;
-        border-bottom: 1px solid;
-    }
-    .new-address-modal .address-inputs{
-        position: relative;
-        margin-top: 20px;
-    }
-    .submit-button {
-        border:none;
-        background-color: #0d6efd;
-        color: white;
-        padding: 10px 20px;
-        border-radius: 5px;
-        margin-top: 20px;
-        text-align: center;
-        text-decoration: none;
-        display: inline-block;
-        transition: 0.3s;
-      }
-      .submit-button:hover {
-        color: white;
-        background: var(--vela-color-secondary); 
-    }
-    .new-address-modal input[type="text"],
-    .new-address-modal input[type="email"],
-    .new-address-modal input[type="password"],
-    .new-address-modal input[type="number"],
-    .new-address-modal input[type="tel"] {
-        border: none;
-        border-bottom: 1px solid var(--vela-color-primary);
-        background-color: transparent;
-        font-size: 1.5rem;
-        padding: 10px 5px;
-        width: 100%;
-        transition: all 0.3s ease-in-out;
-    }
-    .new-address-modal input[type="text"]:focus,
-    .new-address-modal input[type="email"]:focus,
-    .new-address-modal input[type="password"]:focus,
-    .new-address-modal input[type="number"]:focus,
-    .new-address-modal input[type="tel"]:focus {
-        border-bottom: 1px solid var(--vela-color-secondary);
-    /* outline: none; */
-    }
-    .new-address-modal input[type="text"]:disabled,
-    .new-address-modal input[type="email"]:disabled,
-    .new-address-modal input[type="password"]:disabled,
-    .new-address-modal input[type="number"]:disabled,
-    .new-address-modal input[type="tel"]:disabled{
-        border-bottom: 1px solid grey;
-        opacity: 0.7;
-        background: lightgrey
-    }
-    .close-bttn{
-        cursor: pointer !important;
-    }
-    @media (max-width: 768px) {
-        .new-address-modal .address-fields{
-            width: 90%;
-        }
-        .new-address-modal .address-fields .address-field-row>*{
-            min-width: 20px;
-        }
-        .new-address-modal .address-fields .address-field-row{
-            flex-wrap: wrap ;
-        }
-    }
-    .Total-amount-container{
-        display: flex;
-        width: 100%;
-        justify-content: right;
-    }
-</style>
-
 <head>
     <?php include('header_links.php') ?>
 </head>
@@ -203,55 +85,65 @@
                 var return_data = jsonData.response;
                 let amount_arr = [], total_amount = "";
                 $(".cart-product-container").empty()
+                if(jsonData.response.length > 0){
+                    $("#cartEmptyContent").hide()
+                    for (var i = 0; i < jsonData.response.length; i++) {
+                        let input_id = "product_"+return_data[i].product_id;
+                        let exact_amount = return_data[i].product_price * return_data[i].required_quantity;
+                        
+                        let amount = Math.round(exact_amount * 100) / 100;
 
-                for (var i = 0; i < jsonData.response.length; i++) {
-                    let input_id = "product_"+return_data[i].product_id;
-                    let exact_amount = return_data[i].product_price * return_data[i].required_quantity;
-                    
-                    let amount = Math.round(exact_amount * 100) / 100;
+                        amount_arr.push(amount)
 
-                    amount_arr.push(amount)
-
-                    $(".cart-product-container").append('<div class="cart-product-container-row">'+
-                        '<div class="left">'+
-                            '<div class="image">'+
-                                '<img src="https://cdn.shopify.com/s/files/1/1573/5553/products/14-1_360x.jpg" alt="" srcset="">'+
-                            '</div>'+
-                        '</div>'+
-                        '<div class="right">'+
-                            '<div class="ordered-product-details">'+
-                                '<div class="title">'+
-                                    '<h2>'+return_data[i].product_name+'</h2>'+
-                                '</div>'+
-                                '<div class="description truncate-overflow ">'+
-                                    return_data[i].product_description+
+                        $(".cart-product-container").append('<div class="cart-product-container-row">'+
+                            '<div class="left">'+
+                                '<div class="image">'+
+                                    '<img src="https://cdn.shopify.com/s/files/1/1573/5553/products/14-1_360x.jpg" alt="" srcset="">'+
                                 '</div>'+
                             '</div>'+
-                            '<div class="quantity-container">Quantity'+
-                                '<div class="ordered-quantity">'+
-                                    '<span class="input-number-decrement"'+
-                                        'onclick="decrease_quantity('+return_data[i].product_id+','+return_data[i].required_quantity+','+return_data[i].product_quantity+')" >-</span>'+
-                                    '<input class="input-number"'+
-                                        'id="'+input_id+'" type="" value="'+return_data[i].required_quantity+'" min="1" max="'+return_data[i].product_quantity+'">'+
-                                    '<span class="input-number-increment"'+
-                                        'onclick="increase_quantity('+return_data[i].product_id+','+return_data[i].required_quantity+','+return_data[i].product_quantity+')" >+</span>'+
+                            '<div class="right">'+
+                                '<div class="ordered-product-details">'+
+                                    '<div class="title">'+
+                                        '<h2>'+return_data[i].product_name+'</h2>'+
+                                    '</div>'+
+                                    '<div class="description truncate-overflow ">'+
+                                        return_data[i].product_description+
+                                    '</div>'+
+                                '</div>'+
+                                '<div class="quantity-container">Quantity'+
+                                    '<div class="ordered-quantity">'+
+                                        '<span class="input-number-decrement"'+
+                                            'onclick="decrease_quantity('+return_data[i].product_id+','+return_data[i].required_quantity+','+return_data[i].product_quantity+')" >-</span>'+
+                                        '<input class="input-number"'+
+                                            'id="'+input_id+'" type="" value="'+return_data[i].required_quantity+'" min="1" max="'+return_data[i].product_quantity+'">'+
+                                        '<span class="input-number-increment"'+
+                                            'onclick="increase_quantity('+return_data[i].product_id+','+return_data[i].required_quantity+','+return_data[i].product_quantity+')" >+</span>'+
+                                    '</div>'+
+                                '</div>'+
+                                '<div class="price">'+
+                                    'Amount: &nbsp;<h4>&#8377;.<span id="total_product_amount"">'+(amount)+'<span></h4>'+
+                                '</div>'+
+                                '<div class="action">'+
+                                    '<a onclick="remove_from_cart('+return_data[i].product_id+')" >'+
+                                        '<svg width="20px" height="20px" viewBox="0 0 1024 1024" fill="currentcolor" class="icon"  version="1.1" xmlns="http://www.w3.org/2000/svg"><path d="M32 241.6c-11.2 0-20-8.8-20-20s8.8-20 20-20l940 1.6c11.2 0 20 8.8 20 20s-8.8 20-20 20L32 241.6zM186.4 282.4c0-11.2 8.8-20 20-20s20 8.8 20 20v688.8l585.6-6.4V289.6c0-11.2 8.8-20 20-20s20 8.8 20 20v716.8l-666.4 7.2V282.4z" fill="" /><path d="M682.4 867.2c-11.2 0-20-8.8-20-20V372c0-11.2 8.8-20 20-20s20 8.8 20 20v475.2c0.8 11.2-8.8 20-20 20zM367.2 867.2c-11.2 0-20-8.8-20-20V372c0-11.2 8.8-20 20-20s20 8.8 20 20v475.2c0.8 11.2-8.8 20-20 20zM524.8 867.2c-11.2 0-20-8.8-20-20V372c0-11.2 8.8-20 20-20s20 8.8 20 20v475.2c0.8 11.2-8.8 20-20 20zM655.2 213.6v-48.8c0-17.6-14.4-32-32-32H418.4c-18.4 0-32 14.4-32 32.8V208h-40v-42.4c0-40 32.8-72.8 72.8-72.8H624c40 0 72.8 32.8 72.8 72.8v48.8h-41.6z" fill="" /></svg>&nbsp; Remove'+
+                                    '</a>'+
                                 '</div>'+
                             '</div>'+
-                            '<div class="price">'+
-                                'Amount: &nbsp;<h4>&#8377;.<span id="total_product_amount"">'+(amount)+'<span></h4>'+
-                            '</div>'+
-                            '<div class="action">'+
-                                '<a onclick="remove_from_cart('+return_data[i].product_id+')" >'+
-                                    '<svg width="20px" height="20px" viewBox="0 0 1024 1024" fill="currentcolor" class="icon"  version="1.1" xmlns="http://www.w3.org/2000/svg"><path d="M32 241.6c-11.2 0-20-8.8-20-20s8.8-20 20-20l940 1.6c11.2 0 20 8.8 20 20s-8.8 20-20 20L32 241.6zM186.4 282.4c0-11.2 8.8-20 20-20s20 8.8 20 20v688.8l585.6-6.4V289.6c0-11.2 8.8-20 20-20s20 8.8 20 20v716.8l-666.4 7.2V282.4z" fill="" /><path d="M682.4 867.2c-11.2 0-20-8.8-20-20V372c0-11.2 8.8-20 20-20s20 8.8 20 20v475.2c0.8 11.2-8.8 20-20 20zM367.2 867.2c-11.2 0-20-8.8-20-20V372c0-11.2 8.8-20 20-20s20 8.8 20 20v475.2c0.8 11.2-8.8 20-20 20zM524.8 867.2c-11.2 0-20-8.8-20-20V372c0-11.2 8.8-20 20-20s20 8.8 20 20v475.2c0.8 11.2-8.8 20-20 20zM655.2 213.6v-48.8c0-17.6-14.4-32-32-32H418.4c-18.4 0-32 14.4-32 32.8V208h-40v-42.4c0-40 32.8-72.8 72.8-72.8H624c40 0 72.8 32.8 72.8 72.8v48.8h-41.6z" fill="" /></svg>&nbsp; Remove'+
-                                '</a>'+
-                            '</div>'+
-                        '</div>'+
-                    '</div>')
+                        '</div>')
+                        total_amount = Math.round(amount_arr.reduce((accumulator, currentValue) => accumulator + currentValue,0) * 100) / 100
+                        console.log(...amount_arr,"=>",total_amount);
+                        $("#total_amount").text(total_amount)
+                        $("#total_amount_inp").val(total_amount)
+                    }
                 }
-                total_amount = Math.round(amount_arr.reduce((accumulator, currentValue) => accumulator + currentValue,0) * 100) / 100
-                console.log(...amount_arr,"=>",total_amount);
-                $("#total_amount").text(total_amount)
-                $("#total_amount_inp").val(total_amount)
+                else{
+                    $(".add-new-address-bttn-container").hide()
+                    $(".Total-amount-container").hide()
+                    $("#total_amount_inp").val(0)
+                    $("#checkout_bttn").hide()
+                    $("#show_address").hide()
+                    $("#cartEmptyContent").show()
+                }
             }
         })
 
@@ -286,7 +178,7 @@
         }
     }   
     function increase_quantity(product_id,order_qnty,product_qnty){
-        let increased_qnty =  order_qnty+1;;
+        let increased_qnty =  order_qnty+1;
         if(increased_qnty <= product_qnty){
             event.preventDefault()
             let api_url = "./api/increase_qnty.php";
@@ -328,6 +220,7 @@
                     display_cart_data()
                 }
             })
+            cart_count();
     }  
     // ====== fetch address ======
     let api_url_fetch_address = "./api/fetch_address.php";
@@ -385,7 +278,7 @@
 </script>
 <div class="Total-amount-container">
    <h3>Total: &#8377;<span class="total-amount" id="total_amount"></span></h3>
-   <input type="hidden" id="total_amount_inp" >
+   <input type="hidden"  id="total_amount_inp" >
 </div>
 
 
@@ -401,14 +294,14 @@
             }
 ?>
         <br>
-        <div class="show-address">
+        <div class="show-addresss" id="show_address" >
             <div class="text"> <h5>Your delivery Address:</h5> </div>
             <div class="address-div" id="address_div">
 
             </div>
 
             <!-- New address modal -->
-            <div id="new_address_modal" class="new-address-modal disp-none">
+            <div id="new_address_modal" class="new-address-modal">
                 <div class="address-fields">
                     <div class="modal-top">
                         <label for="Address"><h4>New Delivery Address:</h4></label>
@@ -417,26 +310,24 @@
                             </svg>
                         </div>
                     </div>
-                </div>
-
-                <div class="address-inputs">
-                    <div class="address-field-row">
-                    <input type="hidden" class="profile_address_id" name="" id="address_id">
-                    <p class="info address"><input type="text" placeholder="Address Line 1" name="" id="address_line_1" required></p>
-                    <p class="info address"><input type="text" placeholder="Address Line 2" name="" id="address_line_2" required></p>
-                    </div>
-                    <div class="address-field-row">
-                    <p class="info address"><input type="text" placeholder="City" name="" id="address_city" required></p>
-                    <p class="info address"><input type="text" placeholder="State" name="" id="address_state" required></p>
-                    <p class="info address"><input type="tel" pattern="[0-9]+"  placeholder="Zip" name="" id="address_zip" required></p>
-                    </div>
-                    <div class="submit-bttn">
-                        <button type="submit" onclick="insert_new_address()" class="submit-button">Save</button>
+                    <div class="address-inputs">
+                        <div class="address-field-row">
+                        <input type="hidden" class="profile_address_id" name="" id="address_id">
+                        <p class="info address"><input type="text" placeholder="Address Line 1" name="" id="address_line_1" required></p>
+                        <p class="info address"><input type="text" placeholder="Address Line 2" name="" id="address_line_2" required></p>
+                        </div>
+                        <div class="address-field-row">
+                        <p class="info address"><input type="text" placeholder="City" name="" id="address_city" required></p>
+                        <p class="info address"><input type="text" placeholder="State" name="" id="address_state" required></p>
+                        <p class="info address"><input type="tel" pattern="[0-9]+"  placeholder="Zip" name="" id="address_zip" required></p>
+                        </div>
+                        <div class="submit-bttn">
+                            <button type="submit" onclick="insert_new_address()" class="submit-button">Save</button>
+                        </div>
                     </div>
                 </div>
                 <script>
                     // $(document).click(function() {
-
                     //     var container = $("#new_address_modal");
                     //     if(!container.hasClass(".disp-none")){
                     //         if (container.is(event.target) && container.has(event.target).length) {
@@ -446,12 +337,13 @@
                     // });
                     function addModalVisibility(){
                         console.log("ADD");
-                        $("#new_address_modal").removeClass("disp-none")
+                        $("#new_address_modal").show()
                     }
                     function removeModalVisibility(){
                         console.log("remove");
-                        $("#new_address_modal").addClass("disp-none")
+                        $("#new_address_modal").hide()
                     }
+                    removeModalVisibility()
                     function insert_new_address(){
                             event.preventDefault()
                             let api_url_ = "./api/insert_address.php";
@@ -500,15 +392,22 @@
             <button class="submit-button">Add new Address</button>
         </div>
         <br>
-        <button class="submit-button" onclick="checkout()">checkout</button>
+        <button class="submit-button" id="checkout_bttn" onclick="checkout()">checkout</button>
 
         <!-- payment gateway - do not touch  -->
         <button class="disp-none" id="rzp-button1">Pay</button>
         <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
         <script>
+        // show_msg(parseInt(parseFloat($("#total_amount_inp").val()) * 100))
+
+        function get_amount(){
+            total_amount = parseInt(parseFloat($("#total_amount_inp").val()) * 100);
+            return total_amount;
+        }
+
         var options = {
             "key": "rzp_test_vMCLbtwM7n8HDj", // Enter the Key ID generated from the Dashboard
-            "amount": parseInt(parseFloat($("#total_amount_inp").val()) * 100), // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
+            "amount": get_amount(), // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
             "currency": "INR",
             "name": "AToZ Furnishing",
             "description": "Test Transaction",
@@ -530,6 +429,7 @@
                 "color": "#3399cc"
             }
         };
+
         var rzp1 = new Razorpay(options);
         rzp1.on('payment.failed', function (response){
                 // show_msg(response.error.code);
@@ -549,36 +449,49 @@
 <?php
 }
 else {
-echo "<div class='cartEmptyContent'>
-        <p class='cartEmpty'>Your cart is currently empty.</p>
-        <p>
-            Before proceed to checkout you must add some products to
-            your shopping cart.<br />
-            You will find a lot of interesting products on our
-            Website.
-        </p>
-        <p>
-            <a class='btn btnVelaOne' href='./index.php' title='Go to Shopping'>Go
-                to Shopping</a>
-        </p>
-    </div>";
+// echo "<div class='cartEmptyContent'>
+//         <p class='cartEmpty'>Your cart is currently empty.</p>
+//         <p>
+//             Before proceed to checkout you must add some products to
+//             your shopping cart.<br />
+//             You will find a lot of interesting products on our
+//             Website.
+//         </p>
+//         <p>
+//             <a class='btn btnVelaOne' href='./index.php' title='Go to Shopping'>Go
+//                 to Shopping</a>
+//         </p>
+//     </div>";
 }
 ?>
+<div class='cartEmptyContent' id="cartEmptyContent">
+    <p class='cartEmpty'>Your cart is currently empty.</p>
+    <p>
+        Before proceed to checkout you must add some products to
+        your shopping cart.<br />
+        You will find a lot of interesting products on our
+        Website.
+    </p>
+    <p>
+        <a class='btn btnVelaOne' href='./index.php' title='Go to Shopping'>Go
+            to Shopping</a>
+    </p>
+</div>
 <?php
     } // If logged in
     else{ // If not logged in
 ?>
-                    <div class="cartEmptyContent">
-                        <p class="cartEmpty">You haven't logged in yet.</p>
-                        <p>
-                            Please Login to continue.
-                        </p>
-                        <p>
-                            <a class="btn btnVelaOne" href="./login-page.php" title="Go to Shopping">
-                                Login
-                            </a>
-                        </p>
-                    </div>
+    <div class="loginContent">
+        <p class="cartEmpty">You haven't logged in yet.</p>
+        <p>
+            Please Login to continue.
+        </p>
+        <p>
+            <a class="btn btnVelaOne" href="./login-page.php" title="Go to Shopping">
+                Login
+            </a>
+        </p>
+    </div>
 <?php
     // If not logged in
     }

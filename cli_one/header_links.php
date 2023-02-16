@@ -261,7 +261,6 @@
         --button_one_txtcolor_hover: #ffffff;
 
         --button_one_bgcolor_hover: #0087c7;
-        --button_one_bordercolor_hover: #0087c7;
 
         --btnpro_txtcolor: #969696;
         --btnpro_bgcolor: #ffffff;
@@ -277,9 +276,9 @@
         --addtocart_txtcolor_hover: #ffffff;
         /* --addtocart_txtcolor_hover: #e30d7c; */
         /* --addtocart_bgcolor_hover: #bd8448; */
-        --addtocart_bgcolor_hover: #0087c7;
+        --addtocart_bgcolor_hover: var(--vela-color-primary);
         /* --addtocart_bordercolor_hover: #bd8448; */
-        --addtocart_bordercolor_hover: #0087c7;
+        --addtocart_bordercolor_hover: var(--vela-color-primary);
 
 
         --velamenu-bgcolor: #ffffff;
@@ -344,8 +343,23 @@
         })
     }
 
+    function cart_count(){
+        let api_url = "./api/get_cart_row_count.php";
+        // form data values
+        var form_data = {"fetch_row_count":"yes"};
+        $.ajax({
+        url: api_url,
+        type: 'POST',
+        // type: 'GET',
+        data: form_data,
+        success: function (returned_data) {
+                var jsonData = JSON.parse(returned_data);
+                console.log("Row count: ",jsonData.response[0].row_count);
+                $("#CartCount").html(jsonData.response[0].row_count)
+            }
+        })
+    }
+    cart_count()
 
 </script>
-
-
-<?php include('./api/config.php') ?>
+<?php require("./api/config.php") ?>

@@ -1,0 +1,104 @@
+.profile-page-container {
+    width: 80%;
+    margin: 50px auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items:center
+  }
+  .left-section {
+    width: 30%;
+    text-align: center;
+    padding: 20px;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .left-section img {
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+  }
+  .right-section {
+    width: 70%;
+    padding: 20px;
+  }
+  h1 {
+    font-size: 2em;
+    margin-bottom: 20px;
+  }
+  .info {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+  }
+  .info small{
+    color: rgb(255, 127, 127)
+  }
+  .submit-button {
+    border:none;
+    background-color: var(--vela-color-primary);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin-top: 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    transition: 0.3s;
+  }
+  .submit-button:hover {
+    color: white;
+    background: var(--vela-color-secondary); 
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="number"],
+input[type="tel"] {
+  border: none;
+  border-bottom: 1px solid var(--vela-color-primary);
+  background-color: transparent;
+  font-size: 1.5rem;
+  padding: 10px 5px;
+  width: 100%;
+  transition: all 0.3s ease-in-out;
+}
+.profile-page-container .address-field-row{
+  display: flex;
+  gap: 20px;
+}
+.profile-page-container .address-field-row *{
+  width: 100%;
+}
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus,
+input[type="number"]:focus,
+input[type="tel"]:focus {
+  border-bottom: 1px solid var(--vela-color-secondary);
+  /* outline: none; */
+}
+input[type="text"]:disabled,
+input[type="email"]:disabled,
+input[type="password"]:disabled,
+input[type="number"]:disabled,
+input[type="tel"]:disabled{
+    border-bottom: 1px solid grey;
+    opacity: 0.7;
+    background: lightgrey
+}
+
+@media (max-width: 768px) {
+.profile-page-container {
+width: 90%;
+flex-direction: row;
+}
+.left-section {
+width: 100%;
+margin-bottom: 20px;
+}
+.right-section {
+width: 100%;
+}
+}

@@ -12,11 +12,11 @@
                                 </div>
                             </div>
 
-                            <div class="contactinfo-desc clearfix">
+                            <!-- <div class="contactinfo-desc clearfix">
                                 AtoZ is a premium Templates theme with advanced admin
                                 module. It’s extremely customizable, easy to use and
                                 fully responsive and retina ready.
-                            </div>
+                            </div> -->
 
                             <div class="contactinfo-address clearfix">
                                 <i class="icons">
@@ -66,7 +66,7 @@
                     </div>
                 </div>
 
-                <div class="col-xs-12 col-sm-3 col-md-3 mb20">
+                <div class="col-xs-12 col-sm-2 col-md-2 mb20">
                     <div class="velaFooterMenu">
                         <h4 class="velaFooterTitle">Information</h4>
 
@@ -96,7 +96,7 @@
                     </div>
                 </div>
 
-                <div class="col-xs-12 col-sm-3 col-md-3 mb20">
+                <div class="col-xs-12 col-sm-2 col-md-2 mb20">
                     <div class="velaFooterMenu">
                         <h4 class="velaFooterTitle">Our services</h4>
 
@@ -115,6 +115,26 @@
 
                                 <li class="">
                                     <a href="./tandc.php" title="">Terms & Conditions</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            <div class="col-xs-12 col-sm-2 col-md-2 mb20">
+                    <div class="velaFooterMenu">
+                        <h4 class="velaFooterTitle">Internal links</h4>
+
+                        <div class="velaContent">
+                            <ul class="velaFooterLinks list-unstyled">
+                                <li class="">
+                                    <a href="./index.php" title="">Home</a>
+                                </li>
+                                <li class="">
+                                    <a href="./contact-us.php" title="">Contact Us</a>
+                                </li>
+
+                                <li class="">
+                                    <a href="./about-us.php" title="">About us</a>
                                 </li>
                             </ul>
                         </div>
