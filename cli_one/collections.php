@@ -85,7 +85,7 @@
                 var return_data = jsonData.response;
                 if(jsonData.response.length > 0){
                     for (var i = 0; i < jsonData.response.length; i++) {
-                        $(".order-history-container").append('<div class="order-history-container-row">'+
+                        $(".order-history-container").append('<a href="./productpage.php?productid='+return_data[i].id+'"  ><div class="order-history-container-row">'+
                             '<div class="left">'+
                                 '<div class="image">'+
                                     '<img src="https://cdn.shopify.com/s/files/1/1573/5553/products/14-1_360x.jpg" alt="" srcset="">'+
@@ -94,23 +94,23 @@
                             '<div class="right">'+
                                 '<div class="ordered-product-details">'+
                                     '<div class="title">'+
-                                        '<h2>'+return_data[i].title+' - ' +return_data[i].category+ + ' </h2>'+
+                                        '<h2>'+return_data[i].title+' - ' +return_data[i].category+ ' </h2>'+
                                     '</div>'+
                                     '<div class="description truncate-overflow ">'+
                                         return_data[i].description+
                                     '</div>'+
                                 '</div>'+
                                 '<div class="ordered-quantity">'+
-                                        'Qnty: &nbsp;<h4></h4>'+
+                                        // 'Qnty: &nbsp;<h4></h4>'+
                                 '</div>'+
                                 '<div class="price">'+
-                                    // 'Dilevery on: &nbsp;<h4>'+return_data[i].price+'</h4>'+
+                                    'Our price: &nbsp;<h4>'+return_data[i].price+'</h4>'+
                                 '</div>'+
                                 '<div class="mrp">'+
                                     // 'Amount: &nbsp;<h4>Rs.'+return_data[i].mrp+'</h4>'+
                                 '</div>'+
                             '</div>'+
-                        '</div>')
+                        '</div></a>')
                     }
                 }
                 else{
