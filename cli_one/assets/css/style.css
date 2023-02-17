@@ -10,6 +10,29 @@
 .disp-none{
   display: none;
 }
+/* ======== scrollbar ======== */
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: white;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgb(158, 158, 158);
+  border-radius: 20px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+/* ======== index ======== */
 #hero {
   display: flex;
   justify-content: center;

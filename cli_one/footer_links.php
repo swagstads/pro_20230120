@@ -20,10 +20,10 @@
         background: #25D366;
         border-radius: 5px;
         outline: none;
+        border: none;
         transition: 0.3s;
     }
     .sticky-whatsapp-icon-container:hover{
-        border: none
     }
 </style>
 
