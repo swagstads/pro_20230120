@@ -14,7 +14,7 @@ if (isset($_SESSION['them'])) {
 
 include 'db.php';
 
-$result = mysqli_query($conn, "select * from `user`");
+$result = mysqli_query($conn, "select * from `users`");
 $no = 1;
 ?>
 
