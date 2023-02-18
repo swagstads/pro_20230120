@@ -19,7 +19,7 @@
             <div class="modal-body"><?php echo $lang['logout_msg']; ?></div>
             <div class="modal-footer">
                 <button class="btn btn-secondary" type="button" data-dismiss="modal"><?php echo $lang['cancel']; ?></button>
-                <a class="btn btn-primary" href="index.php"><?php echo $lang['logout']; ?></a>
+                <a class="btn btn-primary" href="logout.php"><?php echo $lang['logout']; ?></a>
             </div>
         </div>
     </div>
