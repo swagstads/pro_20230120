@@ -14,7 +14,7 @@ if (isset($_SESSION['them'])) {
 
 include 'db.php';
 
-$result = mysqli_query($conn, "select * from `contact`");
+$result = mysqli_query($conn, "select * from `contact_us`");
 $no = 1;
 ?>
 

@@ -17,25 +17,25 @@
         <link rel="apple-touch-icon" sizes="144x144" href="icons/Icon-192.png">
         <link rel="apple-touch-icon" sizes="152x152" href="icons/Icon-192.png">
         <link rel="apple-touch-icon" sizes="180x180" href="icons/Icon-192.png">
-        <link rel="apple-touch-icon" href="./icons/Icon-192.png">
-        <link rel="icon" type="image/png" sizes="192x192" href="./icons/Icon-192.png">
-        <link rel="icon" type="image/png" sizes="32x32" href="./icons/Icon-192.png">
-        <link rel="icon" type="image/png" sizes="96x96" href="./icons/Icon-192.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="./icons/Icon-192.png">
+        <link rel="apple-touch-icon" href="icons/Icon-192.png">
+        <link rel="icon" type="image/png" sizes="192x192" href="icons/Icon-192.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="icons/Icon-192.png">
+        <link rel="icon" type="image/png" sizes="96x96" href="icons/Icon-192.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="icons/Icon-192.png">
         <link rel="icon" type="image/pg" href="favicon/png"/>
         <meta name="msapplication-TileColor" content="#6200EA">
-        <meta name="msapplication-TileImage" content="./icons/Icon-192.png">
+        <meta name="msapplication-TileImage" content="icons/Icon-192.png">
 
         <title><?php echo $lang['app_name'];?></title>
 
         <!-- Bootstrap core CSS-->
-        <link href="./vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+        <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
         <!-- Custom fonts for this template-->
-        <link href="./vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+        <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
 
         <!-- Custom styles for this template-->
-        <link href="./css/sb-admin.css" rel="stylesheet">
+        <link href="css/sb-admin.css" rel="stylesheet">
 
     </head>
     <body class="bg-dark">

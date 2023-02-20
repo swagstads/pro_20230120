@@ -12,7 +12,7 @@ include_once 'GCM.php';
 
 if (isset($_GET['eid'])) {
     $uid = $_GET['eid'];
-    $query ="select * from contact where id='$uid';";
+    $query ="select * from contact_us where id='$uid';";
     $message_result =  mysqli_query($conn,$query);
     if (mysqli_num_rows($message_result) > 0) {
         $message = $message_result->fetch_assoc();
@@ -32,9 +32,9 @@ if ($_SESSION['role']!='Admin'){
 }
 
 if (isset($_POST['btnedit'])) {
-    $id = $_POST['id'];
+    $id = $_GET['eid'];
     $status = $_POST['status'];
-    $query = "UPDATE `contact` SET `status`='$status', `modified_on`=now() WHERE id = '$id';";
+    $query = "UPDATE `contact_us` SET `status`='$status' WHERE id = '$id';";
     $result =  mysqli_query($conn,$query);
     header("Location: messages.php");
 }
@@ -104,7 +104,7 @@ if (isset($_POST['btnedit'])) {
                             </div>
                         <input '.$display.' type="submit" value="Update" id="btnedit" name="btnedit" class="btn btn-primary btn-block col-sm-3"/>
                         <br />
-                        
+                        <!--
                         <div class="form-group">
                             <label class="control-label"><b>Subject :</b></label>
                             <input type="text" name="title" id="subject" required="required" class="form-control" placeholder="Subject" 
@@ -127,7 +127,7 @@ if (isset($_POST['btnedit'])) {
                                 $subject = $message['subject'];
                                 $message = $_POST['reply'];
                                 if(mail($to, $subject, $message, $headers)){
-                                    $update = mysqli_query($conn,"UPDATE `contact` SET `status`='Replied' WHERE id='$uid';");
+                                    $update = mysqli_query($conn,"UPDATE `contact_us` SET `status`='Replied' WHERE id='$uid';");
                                 }
                                 header("Location: messages.php");
                             }
@@ -139,6 +139,8 @@ if (isset($_POST['btnedit'])) {
                             <br />
                             <input '.$display.' type="submit" value="Reply" id="btnreply" name="btnreply" class="btn btn-primary btn-block col-sm-3"/>
                         </div>
+                        -->
+                        <a href="mailto:<?php echo $message['email']; ?>"><input '.$display.' value="Reply" id="btnreply" name="btnreply" class="btn btn-primary btn-block col-sm-3"/></a>
                         <?php
                         }
                         ?>
@@ -155,7 +157,7 @@ include 'footer.php';
 
 <script>
     // CKEditor Scriptckeditor
-    CKEDITOR.replace( 'reply', {
+    CKEDITOR.replace( 'reply-inactive', {
         wordcount: {
             showCharCount: true,
             maxCharCount: 600,

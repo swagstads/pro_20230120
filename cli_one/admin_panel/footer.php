@@ -19,7 +19,7 @@
             <div class="modal-body"><?php echo $lang['logout_msg']; ?></div>
             <div class="modal-footer">
                 <button class="btn btn-secondary" type="button" data-dismiss="modal"><?php echo $lang['cancel']; ?></button>
-                <a class="btn btn-primary" href="index.php"><?php echo $lang['logout']; ?></a>
+                <a class="btn btn-primary" href="logout.php"><?php echo $lang['logout']; ?></a>
             </div>
         </div>
     </div>
@@ -119,6 +119,29 @@
                 $(this).val($(this).val().trim());
             }
         );
+
+        $('#category_id').select2({
+            data: [<?php
+                $i=1;
+                $get_cat = mysqli_query($conn, "select * from category where status='active'");
+                if (mysqli_num_rows($get_cat) > 0) {
+                    while ($row = mysqli_fetch_array($get_cat)) {
+
+                        if ($i == 1)
+                            echo '{' . 'id' . ':' . $row['id'] . ',' . 'text' . ':' . "'" . $row['category_name'] . "'" . "}";
+                        else
+                            echo ',' . '{' . 'id' . ':' . $row['id'] . ',' . 'text' . ':' . "'" . $row['category_name'] . "'" . "}";
+                        $i++;
+                    }
+                }
+                ?>
+            ],
+            allowClear: true,
+            multiple: true,
+            formatNoMatches: function(term) {
+                return "<div class='select2-result-label'><span class='select2-match'></span><?php echo $lang['not_found'];?></div>"
+            }
+        });
 
     });
 

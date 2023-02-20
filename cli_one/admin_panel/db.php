@@ -1,6 +1,6 @@
 <?php
 
-$conn = mysqli_connect('localhost', 'root','', 'atozecommerce');
+$conn = mysqli_connect('localhost', 'root', '', 'atozecommerce');
 
 //$conn = mysqli_connect('localhost', 'techshot_pawnestc_cio', 'd=ocNSnLxV9#', 'techshot_pawnestc_cio');
 
@@ -9,10 +9,20 @@ if (!$conn) {
     die('Could not connect: ' . mysqli_connect_error());
 
 }
+
+
+
 mysqli_select_db($conn,"DB_NAME");
+
+
+
 mysqli_set_charset($conn,"utf8");
 
+
+
 $perPage=50;
+
+
 
 $is_debug = false;
 

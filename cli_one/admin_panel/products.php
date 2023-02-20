@@ -123,7 +123,7 @@ $no = 1;
                                         if (mysqli_num_rows($get_images)) {
                                             while ($image_data = $get_images->fetch_assoc()) {
                                                 $image = $image_data['image_name'];
-                                                echo "<img src='/uploads/products/$image' height='80' width='80' style='padding: 2px;'>";
+                                                echo "<img src='./uploads/products/$image' height='80' width='80' style='padding: 2px;'>";
                                             }
                                         }
                                     }
