@@ -624,7 +624,7 @@ p.dropcap span.first-letter { font-size: 55px; float: left; color: var(--col2); 
 
 /* Header
 -------------------------------------------------------------- */
-#site-header { position: relative; background-color: #fff; z-index: 999; }
+#site-header { position: relative; background-color: #fff; z-index: 990; }
 #site-header-inner { position: relative; padding-top: 10px; padding-bottom: 10px; height: 100%; }
 #site-logo { float: left; }
 #site-logo .site-logo-text { color: #252525; font-size: 22px; line-height: 34px; font-weight: 700; }
