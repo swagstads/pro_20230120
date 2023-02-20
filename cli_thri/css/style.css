@@ -390,10 +390,31 @@ button {
     left: 0;
     margin: auto;
     width: 80%;
-    display: grid;
-    grid-template-columns: repeat(4,calc(25% - 10px) );
-    gap: 10px;
+    display: flex;
+    /* grid-template-columns: repeat(4,calc(25% - 10px) ); */
+    gap: 20px;
+    overflow-x: scroll;    
     text-align: center;
+}
+/* width */
+.group-of-companies .company-container::-webkit-scrollbar {
+    height: 8px;
+  }
+  
+/* Track */
+.group-of-companies .company-container::-webkit-scrollbar-track {
+background: #f1f1f1;
+}
+
+/* Handle */
+.group-of-companies .company-container::-webkit-scrollbar-thumb {
+background: #ababab;
+border-radius: 5px;
+}
+
+/* Handle on hover */
+.group-of-companies .company-container::-webkit-scrollbar-thumb:hover {
+background: #555;
 }
 .group-of-companies .company-container .company-info{
     width: 100%;
