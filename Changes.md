@@ -3,15 +3,17 @@
 1. On clicking anything on header the active must change to the active page - done
 2. Change images + Content
 3. On click scroll effect ( Optional )
-4. Conatct Us and google map location
-5. On click logo - redirection
+4. Conatct Us and google map location - done
+5. On click logo - redirection 
 6. Database on contact us ( Optional )
 7. Small admin panel showing all data of customers came through database ( Optional )
-8. Rounded edges on images with a small box shadow in Construction part 
-9. Button in What we offer Section should not be clickable
-10. Change Footer to something like AtoZ or suggest something else
-11. Remove the person from the Map 
-
+8. Rounded edges on images with a small box shadow in Construction part - done
+9. Button in What we offer Section should not be clickable - done
+10. Change Footer to something like AtoZ or suggest something else - done
+11. Remove the person from the Map - map hi nikal dia lol
+14. Logo increase -> nav - done
+15. Decrease gap in intro - done
+16. project images
 
 # Admin Panel 
 1. Orders.php page error

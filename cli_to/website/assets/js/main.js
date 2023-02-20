@@ -219,12 +219,10 @@
         scrollTarget: function() {
             $('.scroll-target, .one-page #main-nav > ul > li > a').on('click',function() {
                 var anchor = $(this).attr('href').split('#')[1];
-
                 $(this).parent()
                     .addClass('current-menu-item')
                     .siblings()
                         .removeClass('current-menu-item');
-
                 if ( anchor ) {
                     if ( $('#'+anchor).length > 0 ) {
                         var headerHeight = 0;
@@ -234,7 +232,7 @@
 
                         var target = $('#' + anchor).offset().top - headerHeight;
 
-                        $('html,body').animate({scrollTop: target}, 1200, 'easeInOutExpo');
+                        $('html,body').animate({scrollTop: target}, 100, 'easeInOutExpo');
                    }
                 }
                 return false;
