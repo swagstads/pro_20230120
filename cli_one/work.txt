@@ -4,3 +4,6 @@ order.php ->  mail for pending, shipped, delivered, cancelled ; Invoice generati
 
 
 payment int. -> paytm - GST, business details - pan, Bank details linked to pan card.
+
+
+Remove trending animation -> and change to zoom effect
