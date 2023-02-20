@@ -403,9 +403,9 @@
                             </svg>
                         </i>
                     </div>
-                    <div class="velaCartTop" style="white-space: nowrap;">
+                    <div id="cd-cart-trigger" class="velaCartTop" style="white-space: nowrap;">
                         <!-- <a href="cart.php" class="jsDrawerOpenRight d-flex"> -->
-                        <a href="cart.php">
+                        <a href="">
                             <i class="icons">
                                 <!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
                                 <svg width="25px" height="25px" viewBox="0 0 1024 1024" fill="#000000" class="icon" version="1.1" xmlns="http://www.w3.org/2000/svg">
@@ -768,3 +768,4 @@
         }
     }
 </script>
+<?php include 'cart.php'; ?>
