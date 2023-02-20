@@ -39,8 +39,15 @@
 
           <form  onsubmit="login_verify_user()" method="post" >
 
+          <span>
             <input type="email" id="login_email" name="email" placeholder="Email" required />
+          </span> 
+          <span>
             <input type="password" id="login_password" name="password" placeholder="Password" required />
+            <span class="Show-password-action" >
+              <input type="checkbox" name="" onclick="show_password()" id="show_password_checkbox"> <span>Show Password</span>
+            </span>
+          </span>
 
             <div class="remember-form">
               <span>
@@ -63,6 +70,18 @@
   </div>
 
   <script>
+
+    function show_password(){
+      let checkbox = document.querySelector("#show_password_checkbox").checked;
+      let password_inp = document.querySelector("#login_password")
+      if(checkbox === true){
+        password_inp.type = "text"
+      } 
+      else{
+        password_inp.type = "password"
+      }
+    }
+
     function login_verify_user(){
         console.log("Login attempt");
 

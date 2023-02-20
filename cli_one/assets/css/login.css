@@ -110,16 +110,21 @@ img {
   display: -ms-grid;
   display: grid;
 }
-.login .container .login-form form input {
+.login .container .login-form form input:not([type=checkbox]) {
   font-size: 1.5rem;
   font-weight: normal;
   background: rgba(57, 57, 57, 0.07);
   margin: 12.5px 0;
-  height: 60px;
+  height: 55px;
   width: 100%;
   border: none;
   padding: 0 30px;
   border-radius: 10px;
+}
+.Show-password-action{
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 .login .container .login-form form button[type=submit] {
   background: var(--vela-color-primary);
