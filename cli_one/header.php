@@ -465,7 +465,7 @@
                     } // when use is logged in end
                     else { /// when use is not logged in
                     ?>
-                        <div class="box">
+                        <div class="box login-link-container">
                             <a href="login-page.php" id="customer_login_link">
                                 <i class="icons nav-icons">
                                     <svg fill="#000000" width="25px" height="25px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">

@@ -154,17 +154,19 @@
   z-index: 999;
 }
 
-.nav-icons:hover{
+.nav-icons:hover {
   cursor: pointer;
   color: var(--col2);
 }
-.nav-icons:hover svg path.fill-change{
+.nav-icons:hover svg path.fill-change, .login-link-container:hover svg{
   fill: var(--col2);
 }
 .nav-icons:hover svg path.stroke-change{
   stroke: var(--col2) !important;
 }
-
+.login-link-container *{
+  white-space: nowrap;
+}
 /* Style the dropdown container */
 .dropdown {
   position: relative;
