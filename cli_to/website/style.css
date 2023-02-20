@@ -556,7 +556,10 @@ p.dropcap span.first-letter { font-size: 55px; float: left; color: var(--col2); 
 #hero-section .arrow:hover:after {
 	color: var(--col2);
 }
-
+.service-item .thumb img{
+	border-radius: 5px;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.258);
+}
 @-webkit-keyframes rotate {
 	0% {
 		-webkit-transform: rotate(0deg);
@@ -621,8 +624,8 @@ p.dropcap span.first-letter { font-size: 55px; float: left; color: var(--col2); 
 
 /* Header
 -------------------------------------------------------------- */
-#site-header { position: relative; background-color: #fff; }
-#site-header-inner { position: relative; padding-top: 30px; padding-bottom: 30px; height: 100%; }
+#site-header { position: relative; background-color: #fff; z-index: 999; }
+#site-header-inner { position: relative; padding-top: 10px; padding-bottom: 10px; height: 100%; }
 #site-logo { float: left; }
 #site-logo .site-logo-text { color: #252525; font-size: 22px; line-height: 34px; font-weight: 700; }
 #site-logo .site-logo-text:hover { color: var(--col2); }
@@ -853,6 +856,8 @@ p.dropcap span.first-letter { font-size: 55px; float: left; color: var(--col2); 
 .mobile-button.active span { opacity: 0; }
 .mobile-button.active:before { -webkit-transform: rotate3d(0, 0, 1, 45deg); -moz-transform: rotate3d(0, 0, 1, 45deg); transform: rotate3d(0, 0, 1, 45deg); }
 .mobile-button.active:after { -webkit-transform: rotate3d(0, 0, 1, -45deg); -moz-transform: rotate3d(0, 0, 1, -45deg); transform: rotate3d(0, 0, 1, -45deg); }
+
+
 
 /* Featured Title
 -------------------------------------------------------------- */
@@ -1374,7 +1379,7 @@ body.page #main-content { padding-top: 0; padding-bottom: 0; }
 
 /* Bottom Bar
 -------------------------------------------------------------- */
-#bottom { font-size: 0.857em; background-color: #101010; padding: 19px 0; color: #484848; font-family: "Montserrat", sans-serif; }
+#bottom { font-size: 0.857em; background-color: #101010; padding: 19px 0; color: #ffffff; font-family: "Montserrat", sans-serif; }
 #bottom a:hover { color: #fff; }
 
 #bottom .bottom-bar-inner-wrap { display: table; overflow: hidden; width: 100%; }
@@ -1395,7 +1400,7 @@ body.page #main-content { padding-top: 0; padding-bottom: 0; }
 /* Bottom Navigation */
 #bottom ul.bottom-nav { list-style: none; margin: 0; }
 #bottom ul.bottom-nav > li { display: inline-block; }
-#bottom ul.bottom-nav > li > a { display: block; color: #484848; padding: 0 10px; position: relative; }
+#bottom ul.bottom-nav > li > a { display: block; color: #ffffff; padding: 0 10px; position: relative; }
 
 #bottom ul.bottom-nav > li > a:hover { color: var(--col2); }
 #bottom ul.bottom-nav ul ul { display: none; }

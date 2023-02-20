@@ -109,14 +109,15 @@
             // Run on Window Load
             self.config.$window.on( 'load', function() {
                 // Google Map
-                self.googleMap();
+                // self.googleMap();
 
                 // Parallax
                 self.parallax();
 
                 // Detect Viewport
                 self.inViewport();
-            } );
+            } 
+            );
         },
 
         preLoader: function() {
@@ -938,9 +939,9 @@
                     position: [11.537034, 106.890167],
                     content: contentString
                 })
-                .then(function (infowindow) {
-                    infowindow.open(this.get(0));
-                });
+                // .then(function (infowindow) {
+                //     infowindow.open(this.get(0));
+                // });
             }
         },
 
