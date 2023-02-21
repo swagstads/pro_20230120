@@ -54,7 +54,7 @@ if(mysqli_num_rows($result)){
             $_SESSION['user_id']=$user_id;
 
             $_SESSION['them'] = "adminthem";
-            if (strtolower($db_role) != "delete") {
+            if (strtolower($db_role) != "Delete") {
                 header("Location:dashboard.php?login=success");
             } else{
                 header("Location:index.php?login=failed");

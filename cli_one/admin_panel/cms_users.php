@@ -125,12 +125,13 @@ if(isset($_GET['rid'])){
 
 if(isset($_GET['did'])){
     $id=$_GET['did'];
-
-    $check_dept=mysqli_query($conn,"select * from tbl_admin where FIND_IN_SET($id,id) and is_active='yes'");
-    if(mysqli_num_rows($check_dept)>0){
+    $check_dept=mysqli_query($conn,"select * from tbl_admin where FIND_IN_SET($id,id)");
+    if(mysqli_num_rows($check_dept)>1){
+        echo "IF";
         $terrormsg=$lang['user_delete_error_msg'];
     }else{
-        $query ="update `tbl_admin` set role='delete' WHERE id=$id";
+        echo "Else";
+        $query ="update `tbl_admin` set role='Delete' WHERE id='$id';";
         $result =  mysqli_query($conn,$query);
         //$tmsg=$lang['category_delete_success'];
 
@@ -139,7 +140,7 @@ if(isset($_GET['did'])){
 
 }
 
-$result = mysqli_query($conn, "select * from tbl_admin Where role <> 'delete'");
+$result = mysqli_query($conn, "select * from tbl_admin Where role <> 'Delete'");
 $no = 1;
 ?>
 
@@ -153,8 +154,7 @@ if($_SESSION['role']=='Admin'){
 
         <!-- Breadcrumbs-->
         <ol class="breadcrumb">
-            <li class="breadcrumb-item">
-                <a href="#">
+              <li class="breadcrumb-item" style="color: #007bff;">
                     <?php
                     if(isset($_GET['eid'])) {
                         echo $lang['edit_user'];
@@ -272,10 +272,10 @@ if($_SESSION['role']=='Admin'){
                                             <div class="modal-content">
 
                                                 <div class="modal-header">
+                                                <h4 class="modal-title" id="myModalLabel2"><?php echo $lang['reset'];?></h4>
                                                     <button type="button" class="close" data-dismiss="modal"
                                                             aria-label="Close"><span aria-hidden="true">×</span>
                                                     </button>
-                                                    <h4 class="modal-title" id="myModalLabel2"><?php echo $lang['reset'];?></h4>
                                                 </div>
                                                 <div class="modal-body">
                                                     <h4><?php echo $lang['confirm_reset'];?></h4>
@@ -307,10 +307,10 @@ if($_SESSION['role']=='Admin'){
                                             <div class="modal-content">
 
                                                 <div class="modal-header">
-                                                    <button type="button" class="close" data-dismiss="modal"
+                                                <h4 class="modal-title" id="myModalLabel2"><?php echo $lang['delete'];?></h4>
+                                                <button type="button" class="close" data-dismiss="modal"
                                                             aria-label="Close"><span aria-hidden="true">×</span>
                                                     </button>
-                                                    <h4 class="modal-title" id="myModalLabel2"><?php echo $lang['delete'];?></h4>
                                                 </div>
                                                 <div class="modal-body">
                                                     <h4><?php echo $lang['confirm_delete'];?></h4>
@@ -358,8 +358,7 @@ else{
 
         <!-- Breadcrumbs-->
         <ol class="breadcrumb">
-            <li class="breadcrumb-item">
-                <a href="#">
+              <li class="breadcrumb-item" style="color: #007bff;">
                     Unauthorised Account
                 </a>
             </li>

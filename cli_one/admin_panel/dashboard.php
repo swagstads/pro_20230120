@@ -17,13 +17,13 @@ if (isset($_SESSION['them'])) {
 }
 include 'db.php';
 
-$user_count = mysqli_num_rows(mysqli_query($conn,"select * from users"));
+$user_count = mysqli_num_rows(mysqli_query($conn,"select * from users Where status <> 'deleted'"));
 $sales = mysqli_query($conn,"select SUM(amount) from payment");
 while ($row = $sales->fetch_assoc()) {
     $sales_amt = $row['SUM(amount)'];
 }
 $sales_count = mysqli_num_rows(mysqli_query($conn,"select * from orders"));
-$product_count = mysqli_num_rows(mysqli_query($conn,"select * from product"));
+$product_count = mysqli_num_rows(mysqli_query($conn,"select * from product Where status = 'active'"));
 
 $order_result = mysqli_query($conn, "select * from orders join users on users.id = orders.user_id join product on product.id = orders.product_id ORDER BY delivery_date DESC;");
 $order_no = 1;
@@ -40,8 +40,8 @@ $message_no = 1;
 
             <!-- Breadcrumbs-->
             <ol class="breadcrumb">
-                <li class="breadcrumb-item">
-                    <a href="#"><?php echo $lang['dashboard']; ?></a>
+                <li class="breadcrumb-item" style="color: #007bff;">
+                    <?php echo $lang['dashboard']; ?>
                 </li>
             </ol>
 
@@ -73,7 +73,7 @@ $message_no = 1;
                             </div>
                             <div class="mr-5"><?php echo 'Rs. '.$sales_amt; ?></div>
                         </div>
-                        <a class="card-footer text-white clearfix small z-1" href="orders.php">
+                        <a class="card-footer text-white clearfix small z-1" href="payments.php">
                             <span class="float-left"><?php echo $lang['view_details']; ?></span>
                             <span class="float-right">
                                 <i class="fas fa-angle-right"></i>
@@ -122,8 +122,9 @@ $message_no = 1;
                 <div class="col-6">
                     <div class="card mb-3">
                         <div class="card-header">
+                        <a href="orders.php">
                             <i class="fas fa-table"></i>
-                            Orders
+                            Orders</a>
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
@@ -163,8 +164,9 @@ $message_no = 1;
                 <div class="col-6">
                     <div class="card mb-3">
                         <div class="card-header">
+                        <a href="messages.php">
                             <i class="fas fa-table"></i>
-                            Messages
+                            Messages</a>
                         </div>
                         <div class="card-body">
                              <div class="table-responsive">

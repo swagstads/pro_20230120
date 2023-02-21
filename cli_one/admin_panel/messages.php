@@ -25,10 +25,8 @@ $no = 1;
 
         <!-- Breadcrumbs-->
         <ol class="breadcrumb">
-            <li class="breadcrumb-item">
-                <a href="#">
-                    Messages
-                </a>
+            <li class="breadcrumb-item"  style="color: #007bff;">
+                Messages
             </li>
         </ol>
 
