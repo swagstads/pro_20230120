@@ -3,8 +3,8 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 17, 2023 at 12:16 PM
--- Server version: 8.0.27
+-- Generation Time: Feb 21, 2023 at 01:50 PM
+-- Server version: 10.4.21-MariaDB
 -- PHP Version: 8.0.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
@@ -15,7 +15,7 @@ SET time_zone = "+00:00";
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8 */;
+/*!40101 SET NAMES utf8mb4 */;
 
 --
 -- Database: `atozecommerce`
@@ -28,18 +28,18 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `addresses` (
-  `id` int NOT NULL,
-  `user_id` int UNSIGNED NOT NULL,
+  `id` int(11) NOT NULL,
+  `user_id` int(10) UNSIGNED NOT NULL,
   `addressline1` varchar(255) NOT NULL,
   `addressline2` varchar(255) DEFAULT NULL,
   `city` varchar(255) NOT NULL,
   `state` varchar(255) NOT NULL,
   `zip` varchar(10) NOT NULL,
-  `timestamp` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `modified_on` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `timestamp` timestamp NOT NULL DEFAULT current_timestamp(),
+  `modified_on` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `status` enum('primary','secondary','deleted') NOT NULL,
   `deleted_on` timestamp NULL DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `addresses`
@@ -61,23 +61,54 @@ INSERT INTO `addresses` (`id`, `user_id`, `addressline1`, `addressline2`, `city`
 --
 
 CREATE TABLE `cart` (
-  `id` int UNSIGNED NOT NULL,
-  `user_id` int UNSIGNED NOT NULL,
+  `id` int(10) UNSIGNED NOT NULL,
+  `user_id` int(10) UNSIGNED NOT NULL,
   `amount` float DEFAULT NULL,
-  `quantity` int DEFAULT NULL,
+  `quantity` int(11) DEFAULT NULL,
   `message` varchar(255) DEFAULT NULL,
-  `product_id` int DEFAULT NULL,
-  `location` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
-  `status` enum('ordered','in cart') CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-  `timestamp` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+  `product_id` int(11) DEFAULT NULL,
+  `location` varchar(255) DEFAULT NULL,
+  `status` enum('ordered','in cart') NOT NULL,
+  `timestamp` timestamp NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `cart`
 --
 
 INSERT INTO `cart` (`id`, `user_id`, `amount`, `quantity`, `message`, `product_id`, `location`, `status`, `timestamp`) VALUES
-(125, 8, NULL, 1, 'Message for Cart 1', 17, NULL, 'in cart', '2023-02-16 12:32:49');
+(125, 8, NULL, 1, 'Message for Cart 1', 17, NULL, 'in cart', '2023-02-16 12:32:49'),
+(131, 67, NULL, 1, 'Message for Cart 1', 20, NULL, 'in cart', '2023-02-21 11:01:52'),
+(132, 67, NULL, 2, 'Message for Cart 1', 19, NULL, 'in cart', '2023-02-21 11:01:53');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `category`
+--
+
+CREATE TABLE `category` (
+  `id` int(11) NOT NULL,
+  `category_name` varchar(128) COLLATE utf8_bin NOT NULL,
+  `category_img` varchar(128) COLLATE utf8_bin NOT NULL,
+  `status` enum('active','delete') COLLATE utf8_bin NOT NULL,
+  `created_at` datetime NOT NULL DEFAULT current_timestamp(),
+  `updated_at` datetime NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+--
+-- Dumping data for table `category`
+--
+
+INSERT INTO `category` (`id`, `category_name`, `category_img`, `status`, `created_at`, `updated_at`) VALUES
+(1, 'Chairs', '1.png', 'delete', '2023-02-12 18:02:09', '2023-02-12 18:10:15'),
+(2, 'Sets', '', 'delete', '2023-02-12 18:08:08', '2023-02-12 18:08:08'),
+(3, 'Sofasets', '3.jpeg', 'delete', '2023-02-12 18:08:36', '2023-02-21 18:05:45'),
+(4, 'Table', '4.png', 'active', '2023-02-13 16:35:26', '2023-02-13 16:35:26'),
+(5, 'Robe', '5.jpg', 'active', '2023-02-13 17:04:28', '2023-02-13 17:04:28'),
+(6, 'Robe', '6.jpg', 'delete', '2023-02-13 17:04:35', '2023-02-13 17:04:35'),
+(7, 'Robe', '7.jpg', 'delete', '2023-02-13 17:04:42', '2023-02-13 17:04:42'),
+(8, 'aa', '8.jpeg', 'active', '2023-02-19 21:38:20', '2023-02-19 21:38:20');
 
 -- --------------------------------------------------------
 
@@ -86,13 +117,13 @@ INSERT INTO `cart` (`id`, `user_id`, `amount`, `quantity`, `message`, `product_i
 --
 
 CREATE TABLE `contact_us` (
-  `id` int UNSIGNED NOT NULL,
+  `id` int(10) UNSIGNED NOT NULL,
   `name` varchar(30) NOT NULL,
   `email` varchar(50) NOT NULL,
   `subject` varchar(100) NOT NULL,
   `message` varchar(255) NOT NULL,
-  `added_on` timestamp NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+  `added_on` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `contact_us`
@@ -118,35 +149,41 @@ INSERT INTO `contact_us` (`id`, `name`, `email`, `subject`, `message`, `added_on
 --
 
 CREATE TABLE `orders` (
-  `id` int NOT NULL,
-  `cart_id` int UNSIGNED NOT NULL,
-  `user_id` int UNSIGNED NOT NULL,
-  `product_id` int NOT NULL,
-  `quantity` int NOT NULL,
+  `id` int(11) NOT NULL,
+  `cart_id` int(10) UNSIGNED NOT NULL,
+  `user_id` int(10) UNSIGNED NOT NULL,
+  `product_id` int(11) NOT NULL,
+  `quantity` int(11) NOT NULL,
   `delivery_date` timestamp NULL DEFAULT NULL,
   `location` varchar(255) DEFAULT NULL,
-  `amount` int NOT NULL,
-  `status` enum('pending','shipped','delivered','canceled') CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+  `amount` int(11) NOT NULL,
+  `status` enum('pending','shipped','delivered','canceled') DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `orders`
 --
-INSERT INTO `orders` (`id`, `cart_id`, `user_id`, `product_id`, `delivery_date`, `location`, `status`) VALUES
-(1, '13', 8, 5, '2023-02-17 10:55:11', NULL, 'pending');
+
+INSERT INTO `orders` (`id`, `cart_id`, `user_id`, `product_id`, `quantity`, `delivery_date`, `location`, `amount`, `status`) VALUES
+(1, 13, 8, 5, 0, '2023-02-17 10:55:11', NULL, 0, 'pending');
+
 -- --------------------------------------------------------
+
 --
 -- Table structure for table `password_reset`
 --
+
 CREATE TABLE `password_reset` (
   `id` int(11) NOT NULL,
   `user_id` varchar(128) COLLATE utf8_bin NOT NULL,
   `time` datetime NOT NULL DEFAULT current_timestamp(),
   `token` varchar(128) COLLATE utf8_bin NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
 --
 -- Dumping data for table `password_reset`
 --
+
 INSERT INTO `password_reset` (`id`, `user_id`, `time`, `token`) VALUES
 (1, '1', '2023-01-23 10:45:29', 'd28ea2957f53725251b4afbbef1cf0bb'),
 (2, '1', '2023-01-29 15:47:31', 'ebb4190a8d0033190f2991f346963a43'),
@@ -188,22 +225,26 @@ INSERT INTO `password_reset` (`id`, `user_id`, `time`, `token`) VALUES
 --
 
 CREATE TABLE `payment` (
-  `id` int NOT NULL,
+  `id` int(11) NOT NULL,
   `amount` float DEFAULT NULL,
-  `product_id` int NOT NULL,
-  `sender` int UNSIGNED NOT NULL,
+  `product_id` int(11) NOT NULL,
+  `sender` int(10) UNSIGNED NOT NULL,
   `timestamp` timestamp NULL DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `payment`
 --
+
 INSERT INTO `payment` (`id`, `amount`, `product_id`, `sender`, `timestamp`) VALUES
 (1, 0, 1, 1, '2023-02-14 16:42:39');
+
 -- --------------------------------------------------------
+
 --
 -- Table structure for table `product`
 --
+
 CREATE TABLE `product` (
   `id` int(32) NOT NULL,
   `title` varchar(256) COLLATE utf8_bin NOT NULL,
@@ -211,21 +252,28 @@ CREATE TABLE `product` (
   `price` float NOT NULL,
   `mrp` varchar(128) COLLATE utf8_bin NOT NULL,
   `color` varchar(7) COLLATE utf8_bin NOT NULL,
+  `category_id` varchar(128) COLLATE utf8_bin NOT NULL,
   `status` enum('active','inactive','deleted') COLLATE utf8_bin NOT NULL,
   `quantity` varchar(128) COLLATE utf8_bin NOT NULL,
   `added_by` varchar(128) COLLATE utf8_bin NOT NULL,
   `added_on` datetime NOT NULL DEFAULT current_timestamp(),
   `modified_on` datetime NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
 --
 -- Dumping data for table `product`
 --
-INSERT INTO `product` (`id`, `title`, `description`, `price`, `mrp`, `color`, `status`, `quantity`, `added_by`, `added_on`, `modified_on`) VALUES
-(1, 'Sofa', 'Test product', 5000, '15000', '#000000', 'active', '10', 'garv@atoz.com', '2023-01-30 22:24:25', '2023-01-30 22:24:25'),
-(2, 'Wardrobe', '<p><u>Sample</u> <strong>Wardrobe</strong>&nbsp;</p>\r\n', 15002, '30000', '', 'deleted', '15', 'malav@atoz.com', '2023-01-30 23:47:38', '2023-02-02 06:05:00'),
-(3, '$title', '$description', 0, '100000', '', 'active', '20', '$user', '2023-01-30 23:45:59', '2023-01-30 23:45:59'),
-(5, 'Tset MRP', 'MRP tets', 5000, '150000', '', 'active', '50', 'garv@atoz.com', '2023-02-12 17:33:52', '2023-02-12 17:33:52'),
-(6, 'Tets colour', 'Color tets', 200, '10', '#007bff', 'active', '5', 'garv@atoz.com', '2023-02-12 17:46:45', '2023-02-12 17:46:45');
+
+INSERT INTO `product` (`id`, `title`, `description`, `price`, `mrp`, `color`, `category_id`, `status`, `quantity`, `added_by`, `added_on`, `modified_on`) VALUES
+(1, 'Sofa', 'Test product', 5000, '15000', '#000000', '', 'active', '10', 'garv@atoz.com', '2023-01-30 22:24:25', '2023-01-30 22:24:25'),
+(2, 'Wardrobe', '<p><u>Sample</u> <strong>Wardrobe</strong>&nbsp;</p>\r\n', 15002, '30000', '', '', 'deleted', '15', 'malav@atoz.com', '2023-01-30 23:47:38', '2023-02-02 06:05:00'),
+(3, '$title', '$description', 0, '100000', '', '', 'active', '20', '$user', '2023-01-30 23:45:59', '2023-01-30 23:45:59'),
+(5, 'Tset MRP', 'MRP tets', 5000, '', '', '', 'active', '', 'malav@atoz.com', '2023-02-12 17:33:52', '2023-02-19 16:53:00'),
+(6, 'Tets colour', 'Color tets', 200, '10', '#007bff', '', 'active', '5', 'garv@atoz.com', '2023-02-12 17:46:45', '2023-02-12 17:46:45'),
+(7, 'aa', '', 103, '55', '', '', 'deleted', '', 'malav@atoz.com', '2023-02-21 17:39:10', '2023-02-21 17:39:10'),
+(8, 'aa', '', 122, '11', '', '', 'active', '', 'malav@atoz.com', '2023-02-21 18:01:53', '2023-02-21 18:01:53'),
+(14, 'aax', 'aax', 122, '11', '', '', 'deleted', '', 'malav@atoz.com', '2023-02-21 18:05:02', '2023-02-21 18:05:02');
+
 -- --------------------------------------------------------
 
 --
@@ -233,16 +281,16 @@ INSERT INTO `product` (`id`, `title`, `description`, `price`, `mrp`, `color`, `s
 --
 
 CREATE TABLE `products` (
-  `id` int NOT NULL,
-  `title` varchar(80) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
+  `id` int(11) NOT NULL,
+  `title` varchar(80) DEFAULT NULL,
   `category` varchar(255) DEFAULT NULL,
-  `quantity` int NOT NULL,
+  `quantity` int(11) NOT NULL,
   `description` varchar(255) DEFAULT NULL,
   `mrp` float NOT NULL,
   `price` float DEFAULT NULL,
   `img_location` varchar(255) DEFAULT NULL,
-  `click_count` int NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+  `click_count` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `products`
@@ -251,7 +299,7 @@ CREATE TABLE `products` (
 INSERT INTO `products` (`id`, `title`, `category`, `quantity`, `description`, `mrp`, `price`, `img_location`, `click_count`) VALUES
 (17, 'cushion covers', 'Leaves', 10, 'Blue and Green Floral Cushion Cover', 500, 15.99, 'img/cushion_cover.jpg', 5),
 (18, 'Rugs', 'abstract', 1, 'Beige and Black Area Rug', 150, 99.99, 'img/rug.jpg', 6),
-(19, 'Rugs', 'leaves', 10, 'Soft and Cozy Plush Robe', 1000, 39.99, 'img/robe.jpg', 3),
+(19, 'Rugs', 'leaves', 10, 'Soft and Cozy Plush Robe', 1000, 39.99, 'img/robe.jpg', 4),
 (20, 'Rugs', 'classical', 10, 'Light Filtering White Curtains', 1030, 24.99, 'img/curtains.jpg', 1),
 (33, 'Cushion Cover', 'Home Decor', 10, 'Blue and Green Floral Cushion Cover', 300, 15.99, 'img/cushion_cover.jpg', 2),
 (34, 'Rug', 'Home Decor', 10, 'Beige and Black Area Rug', 1400, 99.99, 'img/rug.jpg', 0),
@@ -276,30 +324,37 @@ INSERT INTO `products` (`id`, `title`, `category`, `quantity`, `description`, `m
 
 -- --------------------------------------------------------
 
-
 --
 -- Table structure for table `product_media`
 --
+
 CREATE TABLE `product_media` (
   `id` int(11) NOT NULL,
   `product_id` varchar(128) COLLATE utf8_bin NOT NULL,
   `image_name` varchar(128) COLLATE utf8_bin NOT NULL,
   `added_on` datetime NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
 --
 -- Dumping data for table `product_media`
 --
+
 INSERT INTO `product_media` (`id`, `product_id`, `image_name`, `added_on`) VALUES
 (1, '1', 'sofa.jpg', '2023-01-30 21:06:50'),
 (4, '2', 'RW1epuJJsJ.jpg', '2023-02-02 06:05:37'),
-(5, '5', 'ZhzGAL9T8t.png', '2023-02-12 17:33:52'),
 (6, '5', 'BpLaQjvnSF.jpg', '2023-02-12 17:33:52'),
 (7, '6', '3MEBEJPph9.jpg', '2023-02-12 17:46:45'),
-(8, '6', '1br5BBWyr5.jpg', '2023-02-12 17:46:45');
+(8, '6', '1br5BBWyr5.jpg', '2023-02-12 17:46:45'),
+(0, '0', 's5fo9vGpIR.jpeg', '2023-02-21 17:39:10'),
+(0, '0', '1d4BrK881a.jpeg', '2023-02-21 18:01:53'),
+(0, '14', 'LbsvVUNiMi.jpeg', '2023-02-21 18:05:02');
+
 -- --------------------------------------------------------
+
 --
 -- Table structure for table `tbl_admin`
 --
+
 CREATE TABLE `tbl_admin` (
   `id` int(11) NOT NULL,
   `email` varchar(900) COLLATE utf8_bin NOT NULL,
@@ -309,39 +364,43 @@ CREATE TABLE `tbl_admin` (
   `created_at` datetime NOT NULL DEFAULT current_timestamp(),
   `updated_at` datetime NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
 --
 -- Dumping data for table `tbl_admin`
 --
+
 INSERT INTO `tbl_admin` (`id`, `email`, `password`, `fullname`, `role`, `created_at`, `updated_at`) VALUES
 (1, 'garv@atoz.com', '25d55ad283aa400af464c76d713c07ad', 'Garv Jhangiani', 'Admin', '2022-01-10 23:01:49', '2022-01-10 23:01:49'),
 (2, 'sristi@atoz.com', '25d55ad283aa400af464c76d713c07ad', 'Sristi Sharma', 'Admin', '2022-06-25 14:11:29', '2022-06-25 14:11:29'),
 (3, 'malav@atoz.com', '25d55ad283aa400af464c76d713c07ad', 'Malav', 'Admin', '2023-01-20 18:21:16', '2023-01-20 18:21:16'),
 (5, 'rishabhpnahar@gmail.com', '25d55ad283aa400af464c76d713c07ad', 'Rishabh', 'Admin', '2023-02-13 17:09:17', '2023-02-13 17:09:17');
 
+-- --------------------------------------------------------
+
 --
 -- Table structure for table `users`
 --
 
 CREATE TABLE `users` (
-  `id` int UNSIGNED NOT NULL,
+  `id` int(10) UNSIGNED NOT NULL,
   `name` varchar(30) NOT NULL,
   `email` varchar(50) NOT NULL,
   `password` varchar(255) NOT NULL,
   `phone` varchar(20) NOT NULL,
-  `address` varchar(100) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
+  `address` varchar(100) DEFAULT NULL,
   `role` enum('customer','admin') NOT NULL,
-  `added_on` timestamp NOT NULL,
-  `modified_on` timestamp NOT NULL,
+  `added_on` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  `modified_on` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
   `deleted_on` timestamp NULL DEFAULT NULL,
   `status` enum('active','dormant','deleted','removed') NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `users`
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `password`, `phone`, `address`, `role`, `added_on`, `modified_on`, `deleted_on`, `status`) VALUES
-(8, 'Rishabh Nahar', 'rishabhnahar@gmail.com', '$2y$10$X1zyI2Q6ddbMPQIf5iQvgOAg6rV5bDuNa3EQjOxsdsDrd8Jf4khiK', '99879990099', '123 Dahisar bldg, ,sjblashdb, mumbai, maha, 400058', 'customer', '2023-02-03 13:33:22', '2023-02-03 13:33:22', NULL, 'active'),
+(8, 'Rishabh Nahar', 'rishabhnahar@gmail.com', '$2y$10$X1zyI2Q6ddbMPQIf5iQvgOAg6rV5bDuNa3EQjOxsdsDrd8Jf4khiK', '99879990099', '123 Dahisar bldg, ,sjblashdb, mumbai, maha, 400058', 'customer', '2023-02-21 12:30:15', '2023-02-21 12:30:15', NULL, 'deleted'),
 (52, 'Rishabh Nahar', 'rishabhn@gmail.com', '$2y$10$zEkh37gtkA9cgue9FSaTVeVKdcGxhSBDA5xVHbqI1DvdCvCIvLphW', '9191919191', NULL, 'customer', '2023-02-04 02:42:56', '2023-02-04 02:42:56', NULL, 'active'),
 (53, 'Rishabh Nahar', 'rishabhnahar123@gmail.com', '$2y$10$5JBSJJF.6tAl01SZWArZ4uvEPp5n5jPtxulneKsVH/sqoOIGAhnBu', '9090909090', NULL, 'customer', '2023-02-04 03:02:14', '2023-02-04 03:02:14', NULL, 'dormant'),
 (54, 'Rishabh Nahar', 'rishabhnahar123456@gmail.com', '$2y$10$UeKZbQx60Nq3zM4lxfNDXuBZHYpCvEoZUADru4vZBXICMlJ7uLcGO', '9999999999', NULL, 'customer', '2023-02-04 04:05:09', '2023-02-04 04:05:09', NULL, 'dormant'),
@@ -354,7 +413,9 @@ INSERT INTO `users` (`id`, `name`, `email`, `password`, `phone`, `address`, `rol
 (62, 'tanisha richawara', 'richawara2002@gmail.com', '$2y$10$vMk3WcF.PUFm0uwligI98ONEl/GCod4tV5gCpWwP6UoApBcW36pUC', '1234567891', NULL, 'customer', '2023-02-15 07:40:35', '2023-02-15 07:40:35', NULL, 'active'),
 (63, 'Taneehsa', 'richawaratanisha2004@gmail.com', '$2y$10$Majsl7MjWH3y11T4DW5c.O8d/PHPFsQQM4AXASbG17NOF8taQuDca', '1234567895', 'jain coloney, , mumbai, MH, ', 'customer', '2023-02-16 03:13:42', '2023-02-16 03:13:42', NULL, 'active'),
 (65, 'sanskriti sharma', 'sanskritisharma2002@gmail.com', '$2y$10$E13O6tIrjgoo9FRDbAxsEetxUyR0qE8hBHLGiu4EQd1wAB7G6do76', '8291747186', NULL, 'customer', '2023-02-16 03:20:55', '2023-02-16 03:20:55', NULL, 'active'),
-(66, 'Rishabh', 'rishabhpnahar@gmail.com', '$2y$10$sWOKZ/nwOUHBydxycYBm3OcpUH4IiBHmc0S0V41EUJKoSlMuqaIUe', '9987990097', NULL, 'customer', '2023-02-16 14:28:52', '2023-02-16 14:28:52', NULL, 'dormant');
+(66, 'Rishabh', 'rishabhpnahar@gmail.com', '$2y$10$sWOKZ/nwOUHBydxycYBm3OcpUH4IiBHmc0S0V41EUJKoSlMuqaIUe', '9987990097', NULL, 'customer', '2023-02-16 14:28:52', '2023-02-16 14:28:52', NULL, 'dormant'),
+(67, '\"Malav', 'malav@atoz.com', '$2y$10$eptUNXQuOAUvcTfkW0ZaN.zzvOVTdCVN0oyoUtBVU3qKRv/I8tP4G', '1212121212', NULL, 'customer', '2023-02-21 12:08:24', '2023-02-21 12:08:24', NULL, 'removed'),
+(68, 'Malav Shah', 'shahmalav1999@gmail.com', '$2y$10$MW2jKjssYDiUuNBBNoMK8e1y7asGso6ibndJSUuxTYOASkezysokC', '9892827779', 'malav 2/10, 11425, mumbai, maharashtra, 400004', 'customer', '2023-02-21 12:07:31', '2023-02-21 07:33:21', NULL, 'active');
 
 -- --------------------------------------------------------
 
@@ -363,11 +424,11 @@ INSERT INTO `users` (`id`, `name`, `email`, `password`, `phone`, `address`, `rol
 --
 
 CREATE TABLE `user_verification` (
-  `id` int NOT NULL,
-  `user_id` int UNSIGNED NOT NULL,
+  `id` int(11) NOT NULL,
+  `user_id` int(10) UNSIGNED NOT NULL,
   `verify` tinyint(1) NOT NULL,
   `verification_code` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `user_verification`
@@ -385,7 +446,22 @@ INSERT INTO `user_verification` (`id`, `user_id`, `verify`, `verification_code`)
 (27, 62, 1, 'bfeaaf3f276f16286c7743903da3ce269fb81505'),
 (28, 63, 1, 'e70be42ef8c96244318aaef1099df2b520da2ccd'),
 (30, 65, 1, '59fcca75a150e7d6930b4f915b18be34af93f9b5'),
-(31, 66, 0, '3343ebf2387d0062cdfe76b88d85d20da591e9b6');
+(31, 66, 1, '3343ebf2387d0062cdfe76b88d85d20da591e9b6'),
+(32, 67, 1, 'd7b4b74f65627a90c0ae71f41edcdecf2f145548'),
+(33, 68, 1, 'aa27bc802b4183eb3cf7b44dafcc1ee1639a0e2a');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `wishlist`
+--
+
+CREATE TABLE `wishlist` (
+  `id` int(11) NOT NULL,
+  `user_id` varchar(128) COLLATE utf8_bin NOT NULL,
+  `product_id` varchar(128) COLLATE utf8_bin NOT NULL,
+  `time` timestamp NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
 -- Indexes for dumped tables
@@ -405,6 +481,12 @@ ALTER TABLE `cart`
   ADD PRIMARY KEY (`id`),
   ADD KEY `cart_ibfk_1` (`product_id`),
   ADD KEY `user_id` (`user_id`);
+
+--
+-- Indexes for table `category`
+--
+ALTER TABLE `category`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `contact_us`
@@ -430,6 +512,12 @@ ALTER TABLE `payment`
   ADD KEY `sender` (`sender`);
 
 --
+-- Indexes for table `product`
+--
+ALTER TABLE `product`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `products`
 --
 ALTER TABLE `products`
@@ -450,6 +538,12 @@ ALTER TABLE `user_verification`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `wishlist`
+--
+ALTER TABLE `wishlist`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -457,49 +551,67 @@ ALTER TABLE `user_verification`
 -- AUTO_INCREMENT for table `addresses`
 --
 ALTER TABLE `addresses`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
 
 --
 -- AUTO_INCREMENT for table `cart`
 --
 ALTER TABLE `cart`
-  MODIFY `id` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=126;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=134;
+
+--
+-- AUTO_INCREMENT for table `category`
+--
+ALTER TABLE `category`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `contact_us`
 --
 ALTER TABLE `contact_us`
-  MODIFY `id` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `payment`
 --
 ALTER TABLE `payment`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `product`
+--
+ALTER TABLE `product`
+  MODIFY `id` int(32) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=53;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=53;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=67;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=69;
 
 --
 -- AUTO_INCREMENT for table `user_verification`
 --
 ALTER TABLE `user_verification`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
+
+--
+-- AUTO_INCREMENT for table `wishlist`
+--
+ALTER TABLE `wishlist`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- Constraints for dumped tables
@@ -516,22 +628,7 @@ ALTER TABLE `addresses`
 --
 ALTER TABLE `cart`
   ADD CONSTRAINT `cart_ibfk_1` FOREIGN KEY (`product_id`) REFERENCES `products` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `user_id` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT;
-
---
--- Constraints for table `orders`
---
-ALTER TABLE `orders`
-  ADD CONSTRAINT `orders_ibfk_1` FOREIGN KEY (`product_id`) REFERENCES `products` (`id`),
-  ADD CONSTRAINT `orders_ibfk_2` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`),
-  ADD CONSTRAINT `orders_ibfk_3` FOREIGN KEY (`cart_id`) REFERENCES `cart` (`id`);
-
---
--- Constraints for table `payment`
---
-ALTER TABLE `payment`
-  ADD CONSTRAINT `payment_ibfk_1` FOREIGN KEY (`product_id`) REFERENCES `products` (`id`),
-  ADD CONSTRAINT `payment_ibfk_2` FOREIGN KEY (`sender`) REFERENCES `users` (`id`);
+  ADD CONSTRAINT `user_id` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
