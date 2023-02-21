@@ -1,3 +1,8 @@
+:root{
+	--col1: rgba(33,33,57,1);
+	--col2: rgba(154,57,60,1);
+	--col3: #aa585a
+}
 /* Woocommerce
 -------------------------------------------------------------- */
 .woocommerce-page abbr[data-original-title], abbr[title] { border: 0; }

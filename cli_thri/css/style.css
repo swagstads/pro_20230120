@@ -252,8 +252,8 @@ button {
 }
 .navbar-expand-lg .navbar-nav .nav-link {
     padding-right: 15px;
-    padding-left: 15px;
-    font-size: 0.95rem;
+    /* padding-left: 15px; */
+    font-size: 0.8rem;
     color: #acabab;
     text-transform: uppercase;
 }
@@ -977,7 +977,7 @@ textarea#comment::placeholder {
 .footer_section_2{
     width: 100%;
     float: left;
-    padding-top: 50px;
+    padding-top: 40px;
 }
 .footer_taital{
     width: 100%;
@@ -990,7 +990,7 @@ textarea#comment::placeholder {
 .footer_text{
     width: 80%;
     float: left;
-    font-size: 16px;
+    font-size: 14px;
     color: #8e8e8e;
     margin: 0px;
     padding-top: 20px;

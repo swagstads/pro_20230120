@@ -109,14 +109,15 @@
             // Run on Window Load
             self.config.$window.on( 'load', function() {
                 // Google Map
-                self.googleMap();
+                // self.googleMap();
 
                 // Parallax
                 self.parallax();
 
                 // Detect Viewport
                 self.inViewport();
-            } );
+            } 
+            );
         },
 
         preLoader: function() {
@@ -218,12 +219,10 @@
         scrollTarget: function() {
             $('.scroll-target, .one-page #main-nav > ul > li > a').on('click',function() {
                 var anchor = $(this).attr('href').split('#')[1];
-
                 $(this).parent()
                     .addClass('current-menu-item')
                     .siblings()
                         .removeClass('current-menu-item');
-
                 if ( anchor ) {
                     if ( $('#'+anchor).length > 0 ) {
                         var headerHeight = 0;
@@ -233,7 +232,7 @@
 
                         var target = $('#' + anchor).offset().top - headerHeight;
 
-                        $('html,body').animate({scrollTop: target}, 1200, 'easeInOutExpo');
+                        $('html,body').animate({scrollTop: target}, 100, 'easeInOutExpo');
                    }
                 }
                 return false;
@@ -938,9 +937,9 @@
                     position: [11.537034, 106.890167],
                     content: contentString
                 })
-                .then(function (infowindow) {
-                    infowindow.open(this.get(0));
-                });
+                // .then(function (infowindow) {
+                //     infowindow.open(this.get(0));
+                // });
             }
         },
 
