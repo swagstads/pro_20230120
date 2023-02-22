@@ -14,7 +14,13 @@ if (isset($_SESSION['them'])) {
 
 include 'db.php';
 
-$result = mysqli_query($conn, "select orders.id, orders.user_id, users.name, users.email, users.phone, users.address, orders.status, product.title from `orders` JOIN `users` ON `orders`.`user_id` = `users`.`id` JOIN `product` ON `product`.`id` = `orders`.`product_id`");
+if($_GET['type'] == 'delivered'){
+    $result = mysqli_query($conn, "select orders.id, orders.user_id, users.name, users.email, users.phone, users.address, orders.status, product.title from `orders` JOIN `users` ON `orders`.`user_id` = `users`.`id` JOIN `product` ON `product`.`id` = `orders`.`product_id` where orders.status='Delivered'");
+}elseif($_GET['type'] == 'pending'){
+    $result = mysqli_query($conn, "select orders.id, orders.user_id, users.name, users.email, users.phone, users.address, orders.status, product.title from `orders` JOIN `users` ON `orders`.`user_id` = `users`.`id` JOIN `product` ON `product`.`id` = `orders`.`product_id` where orders.status<>'Delivered'");
+}else{
+    $result = mysqli_query($conn, "select orders.id, orders.user_id, users.name, users.email, users.phone, users.address, orders.status, product.title from `orders` JOIN `users` ON `orders`.`user_id` = `users`.`id` JOIN `product` ON `product`.`id` = `orders`.`product_id`");
+}
 $no = 1;
 ?>
 
@@ -26,7 +32,15 @@ $no = 1;
         <!-- Breadcrumbs-->
         <ol class="breadcrumb">
               <li class="breadcrumb-item" style="color: #007bff;">
-                    Orders
+                <?php
+                    if($_GET['type'] == 'delivered'){
+                        echo 'Delivered Orders';
+                    }elseif($_GET['type'] == 'pending'){
+                        echo 'Pending Orders';
+                    }else{
+                        echo 'Orders';
+                    }
+                ?>
                 </a>
             </li>
         </ol>

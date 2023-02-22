@@ -36,6 +36,7 @@ if (isset($_POST['btnedit'])) {
     $status = $_POST['status'];
     $query = "UPDATE `users` SET `status`='$status', `modified_on`= now() WHERE id = '$id';";
     $result =  mysqli_query($conn,$query);
+    echo "<script>window.location.href='users.php';</script>";
     header("Location: users.php");
 }
 

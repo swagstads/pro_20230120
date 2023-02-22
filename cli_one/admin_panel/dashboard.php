@@ -18,11 +18,12 @@ if (isset($_SESSION['them'])) {
 include 'db.php';
 
 $user_count = mysqli_num_rows(mysqli_query($conn,"select * from users Where status <> 'deleted'"));
-$sales = mysqli_query($conn,"select SUM(amount) from payment");
+$order_count = mysqli_num_rows(mysqli_query($conn,"select * from orders where status <> 'Delivered'"));
+/*$sales = mysqli_query($conn,"select SUM(amount) from payment");
 while ($row = $sales->fetch_assoc()) {
-    $sales_amt = $row['SUM(amount)'];
-}
-$sales_count = mysqli_num_rows(mysqli_query($conn,"select * from orders"));
+    $order_count = $row['SUM(amount)'];
+}*/
+$sales_count = mysqli_num_rows(mysqli_query($conn,"select * from orders where status = 'Delivered'"));
 $product_count = mysqli_num_rows(mysqli_query($conn,"select * from product Where status = 'active'"));
 
 $order_result = mysqli_query($conn, "select * from orders join users on users.id = orders.user_id join product on product.id = orders.product_id ORDER BY delivery_date DESC;");
@@ -69,11 +70,11 @@ $message_no = 1;
                     <div class="card text-white bg-warning o-hidden h-100">
                         <div class="card-body">
                             <div class="card-body-icon">
-                                <i class="fas fa-fw fa-sack-dollar"></i>
+                                <i class="fas fa-fw fa-cart-shopping"></i>
                             </div>
-                            <div class="mr-5"><?php echo 'Rs. '.$sales_amt; ?></div>
+                            <div class="mr-5"><?php echo $order_count.' Pending Orders'; ?></div>
                         </div>
-                        <a class="card-footer text-white clearfix small z-1" href="payments.php">
+                        <a class="card-footer text-white clearfix small z-1" href="orders.php?type=pending">
                             <span class="float-left"><?php echo $lang['view_details']; ?></span>
                             <span class="float-right">
                                 <i class="fas fa-angle-right"></i>
@@ -88,9 +89,9 @@ $message_no = 1;
                             <div class="card-body-icon">
                                 <i class="fas fa-fw fa-cart-shopping"></i>
                             </div>
-                            <div class="mr-5"><?php echo $sales_count.' Orders';?></div>
+                            <div class="mr-5"><?php echo $sales_count.' Delivered Orders';?></div>
                         </div>
-                        <a class="card-footer text-white clearfix small z-1" href="orders.php">
+                        <a class="card-footer text-white clearfix small z-1" href="orders.php?type=delivered">
                             <span class="float-left"><?php echo $lang['view_details']; ?></span>
                             <span class="float-right">
                                 <i class="fas fa-angle-right"></i>
