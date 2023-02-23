@@ -123,8 +123,7 @@ $no = 1;
         {
         ?>
         <ol class="breadcrumb">
-            <li class="breadcrumb-item">
-                <a href="#">
+              <li class="breadcrumb-item" style="color: #007bff;">
                     <?php
                     if(isset($_GET['eid'])) {
                         echo $lang['edit_category'];
@@ -259,10 +258,10 @@ $no = 1;
                                             <div class="modal-content">
 
                                                 <div class="modal-header">
+                                                    <h4 class="modal-title" id="myModalLabel2"><?php echo $lang['delete'];?></h4>
                                                     <button type="button" class="close" data-dismiss="modal"
                                                             aria-label="Close"><span aria-hidden="true">×</span>
                                                     </button>
-                                                    <h4 class="modal-title" id="myModalLabel2"><?php echo $lang['delete'];?></h4>
                                                 </div>
                                                 <div class="modal-body">
                                                     <h4><?php echo $lang['confirm_delete'];?></h4>

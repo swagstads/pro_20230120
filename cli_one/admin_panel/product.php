@@ -53,13 +53,14 @@ if (isset($_POST['btnSubmit'])) {
     $user = $_SESSION['usr'];
     $mrp = $_POST['mrp'];
     $color = $_POST['color'];
+    $category_id = $_POST['category_id'];
     $price = $_POST['price'];
     $title = $_POST['title'];
     $quantity = $_POST['quantity'];
     $description = $_POST['description'];
     $now = date('Y-m-d H:i',time());
-    $insert_query = "INSERT INTO `product`(`title`, `description`, `price`, `status`, `added_by`, `mrp`, `color`, `added_on`, `modified_on`, `quantity`) ";
-    $insert_query .= "VALUES ('$title','$description','$price','active','$user','$mrp','$color',now(),now(), '$quantity');";
+    $insert_query = "INSERT INTO `product`(`title`, `category_id`, `description`, `price`, `status`, `added_by`, `mrp`, `color`, `added_on`, `modified_on`, `quantity`) ";
+    $insert_query .= "VALUES ('$title','$category_id','$description','$price','active','$user','$mrp','$color',now(),now(), '$quantity');";
   //  print($insert_query);
     $insertdata = mysqli_query($conn, $insert_query);
    // print($insertdata);
@@ -98,14 +99,15 @@ if (isset($_POST['btnDraft'])) {
     //echo '<pre>';print_r($_POST);die;
     $user = $_SESSION['usr'];
     $mrp = $_POST['mrp'];
+    $category_id = $_POST['category_id'];
     $color = $_POST['color'];
     $price = $_POST['price'];
     $title = $_POST['title'];
     $quantity = $_POST['quantity'];
     $description = $_POST['description'];
     $now = date('Y-m-d H:i',time());
-    $insert_query = "INSERT INTO `product`(`title`, `description`, `price`, `status`, `added_by`, `mrp`, `color`, `added_on`, `modified_on`, `quantity`) ";
-    $insert_query .= "VALUES ('$title','$description','$price','inactive',$user','$mrp','$color',now(),now(), '$quantity');";
+    $insert_query = "INSERT INTO `product`(`title`, `category_id`, `description`, `price`, `status`, `added_by`, `mrp`, `color`, `added_on`, `modified_on`, `quantity`) ";
+    $insert_query .= "VALUES ('$title','$category_id','$description','$price','inactive',$user','$mrp','$color',now(),now(), '$quantity');";
   //  print($insert_query);
     $insertdata = mysqli_query($conn, $insert_query);
    // print($insertdata);
@@ -145,13 +147,14 @@ if (isset($_POST['btnEditDraft'])) {
     $id = $_POST['product_id'];
     $user = $_SESSION['usr'];
     $mrp = $_POST['mrp'];
+    $category_id = $_POST['category_id'];
     $color = $_POST['color'];
     $price = $_POST['price'];
     $title = $_POST['title'];
     $quantity = $_POST['quantity'];
     $description = $_POST['description'];
     $now = date('Y-m-d H:i',time());
-    $query = "UPDATE `product` set color='$color', mrp='$mrp', title='$title',description='$description',price='$price',status='inactive',added_by='$user',modified_on='$now', quantity='$quantity' WHERE id='$id';";
+    $query = "UPDATE `product` set color='$color', category_id='$category_id', mrp='$mrp', title='$title',description='$description',price='$price',status='inactive',added_by='$user',modified_on='$now', quantity='$quantity' WHERE id='$id';";
     //echo $query;die;
     $result =  mysqli_query($conn,$query);
 
@@ -190,13 +193,14 @@ if (isset($_POST['btnedit'])) {
     $id = $_POST['product_id'];
     $user = $_SESSION['usr'];
     $mrp = $_POST['mrp'];
+    $category_id = $_POST['category_id'];
     $color = $_POST['color'];
     $price = $_POST['price'];
     $title = $_POST['title'];
     $quantity = $_POST['quantity'];
     $description = $_POST['description'];
     $now = date('Y-m-d H:i',time());
-    $query = "UPDATE `product` set color='$color', mrp='$mrp', title='$title',description='$description',price='$price',status='active',added_by='$user',modified_on='$now', quantity='$quantity' WHERE id='$id';";
+    $query = "UPDATE `product` set color='$color', `category_id`='$category_id', mrp='$mrp', title='$title',description='$description',price='$price',status='active',added_by='$user',modified_on='$now', quantity='$quantity' WHERE id='$id';";
     //echo $query;die;
     $result =  mysqli_query($conn,$query);
     if(isset($product)&&$product['media_type']=='image'){
@@ -283,8 +287,7 @@ if(isset($_GET['did'])){
 
         <!-- Breadcrumbs-->
         <ol class="breadcrumb">
-            <li class="breadcrumb-item">
-                <a href="#">
+             <li class="breadcrumb-item" style="color: #007bff;">
                     <?php
                     if(isset($_GET['eid'])) {
                         echo 'Edit Product';
@@ -292,7 +295,6 @@ if(isset($_GET['did'])){
                         echo 'Add Product';
                     }
                     ?>
-                </a>
             </li>
         </ol>
         <?php
@@ -333,33 +335,33 @@ if(isset($_GET['did'])){
 
                         <div class="form-group">
                             <label class="control-label"><b>Description :</b></label>
-                            <textarea name="description" id="description" class="form-control" rows="5" maxlength="20">
+                            <textarea name="description" id="description" required="required" class="form-control" rows="5" maxlength="20">
                             <?php if(isset($product)){echo $product['description'];}?>
                             </textarea>
                         </div>
                         
                         <div class="form-group">
                             <label class="control-label"><b>Category :</b></label>
-                            <input  type="text" name="category_id" value="<?php if(isset($product)){echo $product['category_id'];}?>" id="category_id" rows="5" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" class="select2-input select2-default"  style="width: 100%; ">
+                            <input  type="text" name="category_id" required="required" value="<?php if(isset($product)){echo $product['category_id'];}?>" id="category_id" rows="5" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" class="select2-input select2-default"  style="width: 100%; ">
                         </div>
                         
                         <div class="form-group field_wrapper" id="image_div" style="display:block;">
                             <label class="control-label"><b>Product Images :</b></label>
-                            <input type="file" id="photo" class="form-control-file" name="photo[]" accept="image/jpeg,image/png" />
+                            <input type="file" id="photo" class="form-control-file" name="photo[]" <?php if(!isset($product)){echo 'required="required"'; } ?> accept="image/jpeg,image/png" />
                             <br/>
                             <a href="javascript:void(0);" class="add_button" title="Add field"><input type="button" value="<?php echo $lang['add_multi_images'];?>" class="btn btn-primary"></a>
                         </div>
                         <div class="form-group">
                             <label class="control-label"><b>Our Price :</b></label>
-                            <input  type="number" name="price" value="<?php if(isset($product)){echo $product['price'];}?>" id="price" rows="5" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" class="form-control"  style="width: 100%; ">
+                            <input  type="number" name="price" required="required" value="<?php if(isset($product)){echo $product['price'];}?>" id="price" rows="5" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" class="form-control"  style="width: 100%; ">
                         </div>
                         <div class="form-group">
                             <label class="control-label"><b>M.R.P. :</b></label>
-                            <input  type="number" name="mrp" value="<?php if(isset($product)){echo $product['mrp'];}?>" id="mrp" rows="5" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" class="form-control"  style="width: 100%; ">
+                            <input  type="number" name="mrp" required="required" value="<?php if(isset($product)){echo $product['mrp'];}?>" id="mrp" rows="5" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" class="form-control"  style="width: 100%; ">
                         </div>
                         <div class="form-group">
                             <label class="control-label"><b>Quantity :</b></label>
-                            <input  type="number" name="mrp" value="<?php if(isset($product)){echo $product['quantity'];}?>" id="mrp" rows="5" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" class="form-control"  style="width: 100%; ">
+                            <input  type="number" name="quantity" required="required" value="<?php if(isset($product)){echo $product['quantity'];}?>" id="mrp" rows="5" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" class="form-control"  style="width: 100%; ">
                         </div>
                         <!--
                         <div class="form-group">
@@ -415,10 +417,10 @@ if(isset($_GET['did'])){
                                         <div class="modal-content">
 
                                             <div class="modal-header">
+                                                <h4 class="modal-title" id="myModalLabel2"><?php echo $lang['delete'];?></h4>
                                                 <button type="button" class="close" data-dismiss="modal"
                                                         aria-label="Close"><span aria-hidden="true">×</span>
                                                 </button>
-                                                <h4 class="modal-title" id="myModalLabel2"><?php echo $lang['delete'];?></h4>
                                             </div>
                                             <div class="modal-body">
                                                 <h4><?php echo $lang['confirm_delete'];?></h4>

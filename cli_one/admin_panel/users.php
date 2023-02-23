@@ -25,8 +25,7 @@ $no = 1;
 
         <!-- Breadcrumbs-->
         <ol class="breadcrumb">
-            <li class="breadcrumb-item">
-                <a href="#">
+              <li class="breadcrumb-item" style="color: #007bff;">
                     <?php
                         echo $lang['app_users'];
                     ?>
@@ -70,7 +69,7 @@ $no = 1;
                                 <td><?php echo $phone; ?></td>
                                 <td><?php echo $address; ?></td>
                                 <td><a href="reset_password.php?uid=<?php echo $id; ?>" style="color:red;">Send Reset E-mail</a></td>
-                                <td><a href="user_status.php?eid=<?php echo $id;?>" style="color: <?php if($status == 'Active'){echo 'green';}elseif($status == 'Dormant'){echo 'orange';}else{echo 'red';} ?>;"><?php echo $status; ?></a></td>
+                                <td><a href="user_status.php?eid=<?php echo $id;?>" style="color: <?php if($status == 'active'){echo 'green';}elseif($status == 'dormant'){echo 'orange';}else{echo 'red';} ?>;"><?php echo $status; ?></a></td>
                             </tr>
 
                             <?php

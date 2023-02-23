@@ -2,8 +2,8 @@
 $lang=array();
 
 //index
-$lang['app_name']="AtoZ Furnishings Backend";
-$lang['fortin_salon_login']="AtoZ Furnishings Backend";
+$lang['app_name']="Admin Panel";
+$lang['fortin_salon_login']="Admin Panel";
 $lang['login']="Login";
 $lang['invalid_login']="Invalid Login!!";
 $lang['sign_in']="Sign in";

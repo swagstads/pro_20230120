@@ -12,7 +12,7 @@ if (!$conn) {
 
 
 
-mysqli_select_db($conn,"DB_NAME");
+mysqli_select_db($conn,"atozecommerce");
 
 
 

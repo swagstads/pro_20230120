@@ -14,7 +14,13 @@ if (isset($_SESSION['them'])) {
 
 include 'db.php';
 
-$result = mysqli_query($conn, "select orders.order_id, orders.location, users.name, users.email, users.phone, users.address, orders.status, product.title from `orders` JOIN `users` ON `orders`.`user_id` = `users`.`id` JOIN `product` ON `product`.`id` = `orders`.`product_id`");
+if($_GET['type'] == 'delivered'){
+    $result = mysqli_query($conn, "select orders.id, orders.user_id, users.name, users.email, users.phone, users.address, orders.status, product.title from `orders` JOIN `users` ON `orders`.`user_id` = `users`.`id` JOIN `product` ON `product`.`id` = `orders`.`product_id` where orders.status='Delivered'");
+}elseif($_GET['type'] == 'pending'){
+    $result = mysqli_query($conn, "select orders.id, orders.user_id, users.name, users.email, users.phone, users.address, orders.status, product.title from `orders` JOIN `users` ON `orders`.`user_id` = `users`.`id` JOIN `product` ON `product`.`id` = `orders`.`product_id` where orders.status<>'Delivered'");
+}else{
+    $result = mysqli_query($conn, "select orders.id, orders.user_id, users.name, users.email, users.phone, users.address, orders.status, product.title from `orders` JOIN `users` ON `orders`.`user_id` = `users`.`id` JOIN `product` ON `product`.`id` = `orders`.`product_id`");
+}
 $no = 1;
 ?>
 
@@ -25,9 +31,16 @@ $no = 1;
 
         <!-- Breadcrumbs-->
         <ol class="breadcrumb">
-            <li class="breadcrumb-item">
-                <a href="#">
-                    Orders
+              <li class="breadcrumb-item" style="color: #007bff;">
+                <?php
+                    if($_GET['type'] == 'delivered'){
+                        echo 'Delivered Orders';
+                    }elseif($_GET['type'] == 'pending'){
+                        echo 'Pending Orders';
+                    }else{
+                        echo 'Orders';
+                    }
+                ?>
                 </a>
             </li>
         </ol>
@@ -55,7 +68,7 @@ $no = 1;
                         <?php
                         while ($row = $result->fetch_assoc()) {
                             $id = $row['id'];
-                            $oid = $row['order_id'];
+                            $user_id = $row['user_id'];
                             $location = $row['address'];
                             $name = $row['name'];
                             $email = $row['email'];
@@ -68,7 +81,17 @@ $no = 1;
                                 <td><?php echo $email; ?></td>
                                 <td><?php echo $phone; ?></td>
                                 <td><?php echo $location; ?></td>
-                                <td><?php echo $oid; ?></td>
+                                <td><?php
+                                $presult = mysqli_query($conn, "SELECT product.price, orders.product_id, product.title, orders.quantity FROM `orders` JOIN product on product.id = orders.product_id WHERE orders.user_id = '$user_id';");
+                                while($prod = $presult->fetch_assoc()){
+                                    $pid = $prod['product_id'];
+                                    $title = $prod['title'];
+                                    $price = $prod['price'];
+                                    $quant = $prod['quantity'];
+                                    echo '<a href="product.php?eid='.$pid.'">'.$title.'</a>'." &emsp; (Rs. ".$quant." * ".$price.")<br />";
+                                    $value = $value + ($quant*$price);
+                                }
+                                ?></td>
                                 <td><?php echo $status; ?></td>
                                 <!--
                                 <td><a href="order.php?eid=<?php echo $id; ?>" style="color: <?php if($status == 'delivered'){echo 'green';}elseif($status == 'in progress'){echo 'orange';}else{echo 'red';} ?>;"><?php echo $status; ?></p></td>

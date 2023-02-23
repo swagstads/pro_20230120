@@ -53,8 +53,7 @@ if (isset($_POST['btnSubmit'])) {
 
         <!-- Breadcrumbs-->
         <ol class="breadcrumb">
-            <li class="breadcrumb-item">
-                <a href="#"><?php echo $lang['change_password']; ?></a>
+              <li class="breadcrumb-item" style="color: #007bff;"><?php echo $lang['change_password']; ?></a>
             </li>
         </ol>
 

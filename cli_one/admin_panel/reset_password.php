@@ -2,7 +2,7 @@
 include 'db.php';
 if(isset($_GET['uid'])){
     $id = $_GET['uid'];
-    $query ="select * from user where id='$id';";
+    $query ="select * from users where id='$id';";
     $user_result =  mysqli_query($conn,$query);
     if (mysqli_num_rows($user_result) > 0) {
         $users = $user_result->fetch_assoc();

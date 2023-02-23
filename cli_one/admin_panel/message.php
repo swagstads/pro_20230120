@@ -32,10 +32,11 @@ if ($_SESSION['role']!='Admin'){
 }
 
 if (isset($_POST['btnedit'])) {
-    $id = $_GET['eid'];
+    $id = $_POST['id'];
     $status = $_POST['status'];
-    $query = "UPDATE `contact_us` SET `status`='$status' WHERE id = '$id';";
+    $query = "UPDATE `contact_us` SET `status`='$status', `modified_on`=now() WHERE id = '$id';";
     $result =  mysqli_query($conn,$query);
+    echo "<script>window.location.href='messages.php';</script>";
     header("Location: messages.php");
 }
 
@@ -137,10 +138,9 @@ if (isset($_POST['btnedit'])) {
                             <textarea name="reply" id="reply" class="form-control" rows="5" maxlength="20">
                             </textarea>
                             <br />
-                            <input '.$display.' type="submit" value="Reply" id="btnreply" name="btnreply" class="btn btn-primary btn-block col-sm-3"/>
-                        </div>
                         -->
-                        <a href="mailto:<?php echo $message['email']; ?>"><input '.$display.' value="Reply" id="btnreply" name="btnreply" class="btn btn-primary btn-block col-sm-3"/></a>
+                            <input '.$display.' type="button" value="Reply" id="btnreply" name="btnreply" class="btn btn-primary btn-block col-sm-3" onclick="location.href='mailto:<?php echo $message['email'];?>';"/>
+                        </div>
                         <?php
                         }
                         ?>

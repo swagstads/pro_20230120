@@ -163,20 +163,6 @@
         opacity: 0.6;
     }
 </style>
-<link rel="stylesheet" href="css/reset.css"> <!-- CSS reset -->
-<link rel="stylesheet" href="css/style.css"> <!-- Gem style -->
-<link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700' rel='stylesheet' type='text/css'>
-
-<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-<script>
-    $(document).ready(function(){
-        $("button").click(function(){
-            alert("jQuery is working perfectly.");
-        });      
-    });
-</script>
-<script src="js/modernizr.js"></script> <!-- Modernizr -->
-<script src="js/main.js"></script> <!-- Modernizr -->
 
 <link href="./cdn.shopify.com/s/files/1/1573/5553/t/43/assets/vela-fontseb87.css" rel="stylesheet" type="text/css" media="all" />
 <link href="./cdn.shopify.com/s/files/1/1573/5553/t/43/assets/plugind6e7.css" rel="stylesheet" type="text/css" media="all" />

@@ -36,6 +36,7 @@ if (isset($_POST['btnedit'])) {
     $status = $_POST['status'];
     $query = "UPDATE `users` SET `status`='$status', `modified_on`= now() WHERE id = '$id';";
     $result =  mysqli_query($conn,$query);
+    echo "<script>window.location.href='users.php';</script>";
     header("Location: users.php");
 }
 
@@ -45,8 +46,7 @@ if (isset($_POST['btnedit'])) {
 <div id="content-wrapper">
     <div class="container-fluid">
         <ol class="breadcrumb">
-            <li class="breadcrumb-item">
-                <a href="#">
+              <li class="breadcrumb-item" style="color: #007bff;">
                     Change User Status
                 </a>
             </li>
@@ -96,10 +96,10 @@ if (isset($_POST['btnedit'])) {
                         <div class="form-group">
                                 <label class="control-label"><b>Status :</b></label>
                                 <select name="status" class="form-control" id="status">
-                                    <option value="Active" <?php if($users['status'] == 'Active'){echo 'selected';} ?>>Active</option>
-                                    <option value="Dormant" <?php if($users['status'] == 'Dormant'){echo 'selected';} ?>>Dormant</option>
-                                    <option value="Deleted" <?php if($users['status'] == 'Deleted'){echo 'selected';} ?>>Deleted</option>
-                                    <option value="Removed" <?php if($users['status'] == 'Removed'){echo 'selected';} ?>>Removed</option>
+                                    <option value="active" <?php if($users['status'] == 'active'){echo 'selected';} ?>>active</option>
+                                    <option value="dormant" <?php if($users['status'] == 'dormant'){echo 'selected';} ?>>dormant</option>
+                                    <option value="deleted" <?php if($users['status'] == 'deleted'){echo 'selected';} ?>>deleted</option>
+                                    <option value="removed" <?php if($users['status'] == 'removed'){echo 'selected';} ?>>removed</option>
                                 </select>
                             </div>
                         <input '.$display.' type="submit" value="Update" id="btnedit" name="btnedit" class="btn btn-primary btn-block col-sm-3"/>

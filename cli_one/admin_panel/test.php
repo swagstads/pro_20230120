@@ -27,8 +27,7 @@ if($_SESSION['usr']=='garv@atoz.com'){
 
         <!-- Breadcrumbs-->
         <ol class="breadcrumb">
-            <li class="breadcrumb-item">
-                <a href="#">
+              <li class="breadcrumb-item" style="color: #007bff;">
                     <?php
                     echo '<pre>' . print_r($_SESSION, TRUE) . '</pre>';
                     ?>
@@ -48,8 +47,7 @@ else{
 
         <!-- Breadcrumbs-->
         <ol class="breadcrumb">
-            <li class="breadcrumb-item">
-                <a href="#">
+              <li class="breadcrumb-item" style="color: #007bff;">
                     Unauthorised Account
                 </a>
             </li>

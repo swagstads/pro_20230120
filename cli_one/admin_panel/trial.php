@@ -503,8 +503,7 @@ if(isset($_GET['did'])){
 
         <!-- Breadcrumbs-->
         <ol class="breadcrumb">
-            <li class="breadcrumb-item">
-                <a href="#">
+              <li class="breadcrumb-item" style="color: #007bff;">
                     <?php
                     if(isset($_GET['eid'])) {
                         echo $lang['edit_news'];
