@@ -269,7 +269,7 @@
                 var return_data = jsonData.response[0];
                 console.log(return_data);
                 if(return_data.status === "ok"){
-                    $("#rzp-button1").click()
+                    window.location.href = "./checkout.php"
                 }
                 else{
                     show_msg(return_data.message)
@@ -280,7 +280,7 @@
 </script>
 <div class="Total-amount-container">
    <h3>Total: &#8377;<span class="total-amount" id="total_amount"></span></h3>
-   <input type=""  id="total_amount_inp" value="0" >
+   <input type="hidden"  id="total_amount_inp" value="0" >
 </div>
 
 
@@ -396,60 +396,6 @@
         <br>
         <button class="submit-button" id="checkout_bttn" onclick="checkout()">checkout</button>
 
-        <!-- payment gateway - do not touch  -->
-        <button class="disp-none" id="rzp-button1">Pay</button>
-        <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
-        <script>
-        // show_msg(parseInt(parseFloat($("#total_amount_inp").val()) * 100))
-
-        function get_amount(){
-            total_amount = parseInt(parseFloat($("#total_amount_inp").val()) * 100);
-            return total_amount;
-        }
-
-        var options = {
-            "key": "rzp_test_vMCLbtwM7n8HDj", // Enter the Key ID generated from the Dashboard
-            "amount": get_amount(), // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
-            "currency": "INR",
-            "name": "AToZ Furnishing",
-            "description": "Test Transaction",
-            "image": "",
-            "handler": function (response){
-                show_msg(response.razorpay_payment_id);
-                show_msg(response.razorpay_order_id);
-                show_msg(response.razorpay_signature)
-            },
-            "prefill": {
-                "name": "Gaurav Kumar",
-                "email": "gaurav.kumar@example.com",
-                "contact": "9000090000"
-            },
-            "notes": {
-                "address": "Razorpay Corporate Office"
-            },
-            "theme": {
-                "color": "#3399cc"
-            }
-        };
-        
-        var rzp1 = new Razorpay(options);
-        rzp1.on('payment.failed', function (response){
-                // show_msg(response.error.code);
-                show_msg(response.error.description);
-                // show_msg(response.error.source);
-                // show_msg(response.error.step);
-                // show_msg(response.error.reason);
-                // show_msg(response.error.metadata.order_id);
-                // show_msg(response.error.metadata.payment_id);
-        });
-
-
-        document.getElementById('rzp-button1').onclick = function(e){
-            rzp1.open();
-            e.preventDefault();
-        }
-        </script>
-        <!-- payment gateway code end -->        
 <?php
 }
 else {
@@ -468,6 +414,7 @@ else {
 //     </div>";
 }
 ?>
+
 <div class='cartEmptyContent' id="cartEmptyContent">
     <p class='cartEmpty'>Your cart is currently empty.</p>
     <p>
@@ -481,6 +428,7 @@ else {
             to Shopping</a>
     </p>
 </div>
+
 <?php
     } // If logged in
     else{ // If not logged in

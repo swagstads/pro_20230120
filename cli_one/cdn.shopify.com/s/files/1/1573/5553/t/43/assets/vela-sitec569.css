@@ -10235,6 +10235,7 @@ ul.lower-alpha {
   padding: 20px 0;
   color: var(--vela-text-color-secondary);
   font-size: calc(var(--vela-font-size) - 1px);
+  display: none;
 }
 .cartEmptyContent .cartEmpty {
   color: var(--vela-text-color-primary);
