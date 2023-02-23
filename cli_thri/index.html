@@ -57,9 +57,6 @@
                   <a class="nav-link" href="#services_section">Services</a>
                </li>
                <li class="nav-item">
-                  <a class="nav-link" href="#group_of_companies_section">Companies</a>
-               </li>
-               <li class="nav-item">
                   <a class="nav-link" href="#events_section">Events</a>
                </li>
                <li class="nav-item">
@@ -253,12 +250,23 @@
       </div>
    </div>
    <!-- services section end -->
+
+   <!-- Hover me cards section  -->
+
+   <div class="card-1">
+      <p><span>HOVER ME</span></p>
+      <p><span>HOVER ME</span></p>
+      <p><span>HOVER ME</span></p>
+      <p><span>HOVER ME</span></p>
+      <p><span>HOVER ME</span></p>
+   </div>
+
    <!-- Group of companies -->
-   <div id="group_of_companies_section" class="group-of-companies  layout_padding">
+   <!-- <div id="group_of_companies_section" class="group-of-companies  layout_padding">
       <h2 class="heading">Our Companies</h2>
       <div class="company-container">
 
-         <!-- Company -->
+         Company
          <div class="company-info">
             <div class="image">
                <img src="./images/index/logo1.jpg" alt="">
@@ -267,7 +275,7 @@
                <h2>AToZ</h2>
             </div>
          </div>
-         <!-- Company -->
+         Company
          <div class="company-info">
             <div class="image">
                <img src="./images/index/logo1.jpg" alt="">
@@ -276,7 +284,7 @@
                <h2>AToZ</h2>
             </div>
          </div>
-         <!-- Company -->
+         Company
          <div class="company-info">
             <div class="image">
                <img src="./images/index/logo1.jpg" alt="">
@@ -285,7 +293,7 @@
                <h2>AToZ</h2>
             </div>
          </div>
-         <!-- Company -->
+         Company
          <div class="company-info">
             <div class="image">
                <img src="./images/index/logo1.jpg" alt="">
@@ -293,24 +301,7 @@
             <div class="company-name">
                <h2>AToZ</h2>
             </div>
-         </div> <!-- Company -->
-         <div class="company-info">
-            <div class="image">
-               <img src="./images/index/logo1.jpg" alt="">
-            </div>
-            <div class="company-name">
-               <h2>AToZ</h2>
-            </div>
-         </div>
-         <!-- Company -->
-         <div class="company-info">
-            <div class="image">
-               <img src="./images/index/logo1.jpg" alt="">
-            </div>
-            <div class="company-name">
-               <h2>AToZ</h2>
-            </div>
-         </div> <!-- Company -->
+         </div> Company
          <div class="company-info">
             <div class="image">
                <img src="./images/index/logo1.jpg" alt="">
@@ -319,7 +310,24 @@
                <h2>AToZ</h2>
             </div>
          </div>
-         <!-- Company -->
+         Company
+         <div class="company-info">
+            <div class="image">
+               <img src="./images/index/logo1.jpg" alt="">
+            </div>
+            <div class="company-name">
+               <h2>AToZ</h2>
+            </div>
+         </div> Company
+         <div class="company-info">
+            <div class="image">
+               <img src="./images/index/logo1.jpg" alt="">
+            </div>
+            <div class="company-name">
+               <h2>AToZ</h2>
+            </div>
+         </div>
+         Company
          <div class="company-info">
             <div class="image">
                <img src="./images/index/logo1.jpg" alt="">
@@ -331,38 +339,8 @@
 
 
       </div>
-   </div>
+   </div> -->
 
-   <!-- Gorup of companies end -->
-   <!-- blog section start -->
-   <!-- <div class="blog_section layout_padding">
-         <div class="container">
-            <div class="row">
-               <div class="col-md-6">
-                  <div class="blog_img"><img src="images/blog-img.png"></div>
-               </div>
-               <div class="col-md-6">
-                  <h1 class="blog_taital">Easily Grow Your Business Earn More Money</h1>
-                  <p class="blog_text">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words There uffered alteration in some form, by injected humour, or randomised words </p>
-                  <div class="read_bt"><a href="#">Read More</a></div>
-               </div>
-            </div>
-         </div>
-      </div> -->
-   <!-- blog section end -->
-   <!-- events section start -->
-   <div id="events_section" class="events_section layout_padding">
-      <div class="container">
-         <h1 class="events_taital">Follow Our Video For Solved Your Problem</h1>
-         <div class="events_section_2">
-            <div class="events_bg">
-               <div class="play_icon"><a href="#"><img src="images/play-icon.png"></a></div>
-            </div>
-         </div>
-         <div class="seemore_bt"><a href="#">See More</a></div>
-      </div>
-   </div>
-   <!-- events section end -->
    <!-- contact section start -->
    <div id="contact_section" class="contact_section layout_padding">
       <div class="container">
@@ -373,11 +351,32 @@
             <div class="row">
                <div class="col-md-6">
                   <div class="contact_main">
-                     <input type="text" class="mail_text" placeholder="Full Name" name="Full Name">
-                     <input type="text" class="mail_text" placeholder="Phone Number" name="Phone Number">
-                     <input type="text" class="mail_text" placeholder="Email" name="Email">
-                     <textarea class="massage-bt" placeholder="Massage" rows="5" id="comment" name="Massage"></textarea>
-                     <div class="send_bt"><a href="#">SEND</a></div>
+                     <form action="" method="POST" enctype="multipart/form-data">
+                        <div class="user-box">
+                           <input type="text"  name="name" minlength="2" maxlength="15" pattern="[A-Za-z ]{2,25}" title="Please write a valid name" required>
+                           <label>Name</label>
+                        </div>
+                        <div class="user-box">
+                           <input type="email" name="email" required>
+                           <label>Email</label>
+                        </div>
+                        <div class="user-box">
+                           <input type="tel" name="contact" minlength="10" maxlength="10" pattern="[56789][0-9]{9}" title="Please Enter a valid contact number" required>
+                           <label>Contact Number</label>
+                        </div>
+                        <div class="user-box">
+                           <input type="textbox" name="message">
+                           <label>Message</label>
+                        </div>
+                        
+                       <a href="#">
+                         <span></span>
+                         <span></span>
+                         <span></span>
+                         <span></span>
+                         Submit
+                       </a>
+                     </form>
                   </div>
                </div>
                <div class="col-md-6">
@@ -521,18 +520,35 @@
             <div class="row">
                <div class="col-md-6">
                   <div class="contact_main">
-                     <input type="text" class="mail_text" placeholder="Full Name" name="Full Name">
-                     <input type="email" class="mail_text" placeholder="Email" name="Email">
-                     <input type="text" class="mail_text" placeholder="Phone Number" name="Phone Number">
-                     <textarea class="massage-bt" placeholder="Message" rows="5" id="comment" name="Massage"></textarea>
-                     <div class="send_bt"><a href="#">SEND</a></div>
+                        <form action="" method="POST" enctype="multipart/form-data">
+                           <div class="user-box">
+                              <input type="text"  name="name" minlength="2" maxlength="15" pattern="[A-Za-z ]{2,25}" title="Please write a valid name" required>
+                              <label>Name</label>
+                           </div>
+                           <div class="user-box">
+                              <input type="email" name="email" required>
+                              <label>Email</label>
+                           </div>
+                           <div class="user-box">
+                              <input type="tel" name="contact" minlength="10" maxlength="10" pattern="[56789][0-9]{9}" title="Please Enter a valid contact number" required>
+                              <label>Contact Number</label>
+                           </div>
+                           <div class="user-box">
+                              <input type="file" name="pdf_file" accept="application/pdf">
+                              <label>Upload your resume</label>
+                           </div>
+                           
+                          <a href="#">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            Submit
+                          </a>
+                        </form>
                   </div>
                </div>
-               <div class="col-md-6">
-                  <div class="contact_main">
-
-                  </div>
-               </div>
+               
             </div>
          </div>
       </div>
@@ -567,9 +583,9 @@
                   </p>
                </div>
                <div class="col-lg-4">
-                  <h2 class="footer_taital">Subscribe</h2>
+                  <!-- <h2 class="footer_taital">Subscribe</h2>
                   <input type="text" class="Enter_text" placeholder="Enter Your Email" name="Enter Your Email">
-                  <div class="subscribe_bt"><a href="#">Subscribe</a></div>
+                  <div class="subscribe_bt"><a href="#">Subscribe</a></div> -->
                   <div class="social_icon">
                      <ul>
                         <li><a href="#"><img src="images/fb-icon.png"></a></li>
