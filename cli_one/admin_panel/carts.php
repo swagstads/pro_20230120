@@ -68,7 +68,7 @@ $no = 1;
                                 <td><?php echo $name; ?></td>
                                 <td><?php echo $phone; ?></td>
                                 <td><a href="mailto:<?php echo $email; ?>"><?php echo $email; ?></a></td>
-                                <td><a href="user_status.php?eid=<?php echo $user_id;?>" style="color: <?php if($status == 'Active'){echo 'green';}elseif($status == 'Dormant'){echo 'orange';}else{echo 'red';} ?>;"><?php echo $status; ?></a></td>
+                                <td><a href="user_status.php?cid=<?php echo $user_id;?>" style="color: <?php if($status == 'active'){echo 'green';}elseif($status == 'dormant'){echo 'orange';}else{echo 'red';} ?>;"><?php echo $status; ?></a></td>
                                 <td><?php
                                 $presult = mysqli_query($conn, "SELECT product.price, cart.product_id, product.title, cart.quantity FROM `cart` JOIN product on product.id = cart.product_id WHERE cart.user_id = '$user_id';");
                                 while($prod = $presult->fetch_assoc()){

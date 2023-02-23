@@ -244,8 +244,9 @@ if (isset($_POST['btnedit'])) {
     }
 
 }
-
+$min = 1;
 if(isset($_GET['eid'])){
+    $min = 0;
     $id=$_GET['eid'];
     $query ="select * from product where id=$id";
     $result =  mysqli_query($conn,$query);
@@ -361,7 +362,7 @@ if(isset($_GET['did'])){
                         </div>
                         <div class="form-group">
                             <label class="control-label"><b>Quantity :</b></label>
-                            <input  type="number" name="quantity" required="required" value="<?php if(isset($product)){echo $product['quantity'];}?>" id="mrp" rows="5" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" class="form-control"  style="width: 100%; ">
+                            <input  type="number" name="quantity" required="required" min="<?php echo $min; ?>" value="<?php if(isset($product)){echo $product['quantity'];}?>" id="mrp" rows="5" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" class="form-control"  style="width: 100%; ">
                         </div>
                         <!--
                         <div class="form-group">

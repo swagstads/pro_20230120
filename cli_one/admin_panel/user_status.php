@@ -11,7 +11,16 @@ include 'db.php';
 include_once 'GCM.php';
 
 if (isset($_GET['eid'])) {
+    $page = 'users.php';
     $id = $_GET['eid'];
+    $query ="select * from users where id='$id';";
+    $user_result =  mysqli_query($conn,$query);
+    if (mysqli_num_rows($user_result) > 0) {
+        $users = $user_result->fetch_assoc();
+    }
+}elseif (isset($_GET['cid'])) {
+    $page = 'carts.php';
+    $id = $_GET['cid'];
     $query ="select * from users where id='$id';";
     $user_result =  mysqli_query($conn,$query);
     if (mysqli_num_rows($user_result) > 0) {
@@ -32,12 +41,18 @@ if ($_SESSION['role']!='Admin'){
 }
 
 if (isset($_POST['btnedit'])) {
-    $id = $_GET['eid'];
+    if(isset($_GET['eid'])){
+        $id = $_GET['eid'];
+    }elseif(isset($_GET['cid'])){
+        $id = $_GET['cid'];
+    }else{
+        $id = $_POST['id'];
+    }
     $status = $_POST['status'];
     $query = "UPDATE `users` SET `status`='$status', `modified_on`= now() WHERE id = '$id';";
     $result =  mysqli_query($conn,$query);
-    echo "<script>window.location.href='users.php';</script>";
-    header("Location: users.php");
+    echo "<script>window.location.href='".$page."';</script>";
+    header("Location: ".$page);
 }
 
 ?>

@@ -40,11 +40,11 @@ if(isset($_GET['did'])){
 
     $query ="UPDATE `product` SET `status`='deleted' WHERE id=$id";
     $delete =  mysqli_query($conn,$query);
-    $result = mysqli_query($conn, "select product.id, product.title, product.description, product.added_on, product.modified_on, product.status, tbl_admin.fullname from product JOIN tbl_admin ON product.added_by=tbl_admin.email WHERE `status` <> 'deleted' ORDER by added_on DESC;");
+    $result = mysqli_query($conn, "select product.id, product.category_id, product.title, product.description, product.added_on, product.modified_on, product.status, tbl_admin.fullname from product JOIN tbl_admin ON product.added_by=tbl_admin.email WHERE `status` <> 'deleted' ORDER by added_on DESC;");
     $tmsg='Product Deleted!';
 
 }else {
-    $result = mysqli_query($conn, "select product.id, product.title, product.description, product.added_on, product.modified_on, product.status, tbl_admin.fullname from product JOIN tbl_admin ON product.added_by=tbl_admin.email WHERE `status` <> 'deleted' ORDER by added_on DESC;");
+    $result = mysqli_query($conn, "select product.id, product.category_id, product.title, product.description, product.added_on, product.modified_on, product.status, tbl_admin.fullname from product JOIN tbl_admin ON product.added_by=tbl_admin.email WHERE `status` <> 'deleted' ORDER by added_on DESC;");
 }
 $no = 1;
 ?>
@@ -88,10 +88,10 @@ $no = 1;
                             <th>Sr. No.</th>
                             <th>Title</th>
                             <th>Images</th>
+                            <th>Category</th>
                             <th>Description</th>
                             <th>Added By</th>
                             <th>Added On</th>
-                            <th>Modified On</th>
                             <th>Status</th>
                             <?php
                             if($_SESSION['role']=='Admin'){
@@ -106,6 +106,7 @@ $no = 1;
                         while ($row = $result->fetch_assoc()) {
                             $id = $row['id'];
                             $title = $row['title'];
+                            $category_id = $row['category_id'];
                             $description = $row['description'];
                             $status=$row['status'];
                             $added_by=$row['fullname'];
@@ -128,10 +129,18 @@ $no = 1;
                                     }
                                 ?>
                                 </td>
+                                <td><?php
+                                    $category_list = mysqli_query($conn, "SELECT category_name FROM category WHERE id = '$category_id';"); 
+                                    if (mysqli_num_rows($category_list)) {
+                                        while ($category_data = $category_list->fetch_assoc()) {
+                                            $category = $category_data['category_name'];
+                                            echo $category;
+                                        }
+                                    }
+                                ?></td>
                                 <td><?php echo $description; ?></td>
                                 <td><?php echo $added_by; ?></td>
                                 <td><?php echo $added_on; ?></td>
-                                <td><?php echo $modified_on; ?></td>
                                 <td><?php echo $status; ?></td>
                                 <?php
                                 if($_SESSION['role']=='Admin'){

@@ -68,10 +68,10 @@ if (isset($_POST['btnedit'])) {
     $id = $_POST['user_id'];
     $name=$_POST['name'];
     $email=$_POST['email'];
-
-    $query ="UPDATE `tbl_admin` set fullname='$name',email='$email',updated_at=now() WHERE id=$id";
+    $role = $_POST['role'];
+    $upquery ="UPDATE `tbl_admin` set `role`='$role', fullname='$name',email='$email',updated_at=now() WHERE id='$id';";
     //echo $query;die;
-    $result =  mysqli_query($conn,$query);
+    $result =  mysqli_query($conn,$upquery);
     if ($result) {
 
         
