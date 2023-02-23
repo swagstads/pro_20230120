@@ -127,7 +127,7 @@
                 var quantity = 1;
                 api_url = "./api/add_to_cart.php";
                 // console.log("adding to cart: pro id,", product_id);
-                var form_data = { "add_to_cart": "add or update" , "productid": product_id,'quantity': quantity};
+                var form_data = { "add_to_cart": "add" , "productid": product_id,'quantity': quantity};
                 console.log(form_data);
                 $.ajax({
                         url: api_url,

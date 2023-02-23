@@ -23,6 +23,10 @@
 <meta name="twitter:title" content="A to Z Furnishings" />
 <meta name="twitter:description" content="Fashion, Apparel, Electronics, Tools, Lingeri, Glasses, Furniture, Jewelry, Bikes, Cosmetics, Gifts, Handmade store. Try new premium multipurpose Shopify theme from Elite Author velatheme. velatheme Shopify theme is new approach to ecommerce web development." />
 
+<!-- Icons -->
+<script src="https://cdn.lordicon.com/ritcuqlt.js"></script>
+
+
 <style>
  /*--------------------------------------------------------------
   # Portfolio

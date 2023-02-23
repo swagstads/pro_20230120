@@ -64,8 +64,8 @@ try {
 
                     else{   
                             // insert to cart
-                            $sql = "INSERT INTO Cart (user_id, quantity, message, product_id,status) 
-                                        VALUES (:user_id, :quantity, 'Message for Cart 1', :product_id,'in cart')";
+                            $sql = "INSERT INTO Cart (user_id, quantity, product_id,status) 
+                                        VALUES (:user_id, :quantity, :product_id,'in cart')";
                             $query = $dbh->prepare($sql);
                             $query->bindParam(':user_id', $user_id, PDO::PARAM_STR);
                             $query->bindParam(':product_id', $product_id, PDO::PARAM_STR);
@@ -93,6 +93,7 @@ try {
 } catch (\Throwable $th) {
     $data["status"] = "Fail";
     $data["message"] = "Something went wrong, please try again later.";
+    $data["error"] = $th;
 }
 
 

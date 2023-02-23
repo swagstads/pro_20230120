@@ -507,7 +507,6 @@
             </div>
         </main>
 
-<div id="goToTop" class="hidden-xs hidden-sm"><span class="fa fa-angle-double-up"></span></div>
 <div id="shopify-section-vela-footer" class="shopify-section">
 <footer id="velaFooter">
     <?php include('footer.php'); ?>
