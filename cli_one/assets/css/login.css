@@ -50,6 +50,9 @@ img {
   -webkit-animation: bgslide 2.3s forwards;
           animation: bgslide 2.3s forwards;
 }
+.bg-illustration .logo{
+  width: 100px;
+}
 .bg-illustration img {
   -webkit-user-select: none;
   -moz-user-select: none;

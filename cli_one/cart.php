@@ -68,8 +68,9 @@
     </div>
 </div>
 <script>
-
+    $("#cartEmptyContent").hide()
     function display_cart_data(){
+
         var api_url_for_cart_data = './api/fetch_cart_details.php';
         var order_history_table = document.querySelector(".cart-product-table");
 
@@ -85,8 +86,7 @@
                 var return_data = jsonData.response;
                 let amount_arr = [], total_amount = "";
                 $(".cart-product-container").empty()
-                if(jsonData.response.length > 0){
-                    $("#cartEmptyContent").hide()
+                if(jsonData.response.length >= 1){
                     for (var i = 0; i < jsonData.response.length; i++) {
                         let input_id = "product_"+return_data[i].product_id;
                         let exact_amount = return_data[i].product_price * return_data[i].required_quantity;
@@ -134,15 +134,17 @@
                         console.log(...amount_arr,"=>",total_amount);
                         $("#total_amount").text(total_amount)
                         $("#total_amount_inp").val(total_amount)
+
                     }
+                    $("#cartEmptyContent").hide()
                 }
                 else{
+                    $("#cartEmptyContent").show()
                     $(".add-new-address-bttn-container").hide()
                     $(".Total-amount-container").hide()
                     $("#total_amount_inp").val(0)
                     $("#checkout_bttn").hide()
                     $("#show_address").hide()
-                    $("#cartEmptyContent").show()
                 }
             }
         })
@@ -278,7 +280,7 @@
 </script>
 <div class="Total-amount-container">
    <h3>Total: &#8377;<span class="total-amount" id="total_amount"></span></h3>
-   <input type="hidden"  id="total_amount_inp" >
+   <input type=""  id="total_amount_inp" value="0" >
 </div>
 
 
@@ -429,7 +431,7 @@
                 "color": "#3399cc"
             }
         };
-
+        
         var rzp1 = new Razorpay(options);
         rzp1.on('payment.failed', function (response){
                 // show_msg(response.error.code);
@@ -440,6 +442,8 @@
                 // show_msg(response.error.metadata.order_id);
                 // show_msg(response.error.metadata.payment_id);
         });
+
+
         document.getElementById('rzp-button1').onclick = function(e){
             rzp1.open();
             e.preventDefault();

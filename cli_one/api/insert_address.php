@@ -12,9 +12,6 @@ if(isset($_POST['edit_address'])){
 
     $user_id = $_SESSION['user_id'];
 
-    $sanitized_ids = array_map('intval', $_POST['cart_ids']);
-    $cart_ids = implode(",",$sanitized_ids);
-
     $address_line_1 = $_POST['address_line_1'];
     $address_line_2 = $_POST['address_line_2'];
     $address_city = $_POST['address_city'];
@@ -23,12 +20,10 @@ if(isset($_POST['edit_address'])){
 
     $address = $address_line_1.", ".$address_line_2.", ".$address_city.", ".$address_state.", ".$address_zip;
 
-    // $sql = "UPDATE cart SET location=:address WHERE id IN ( :cart_ids ) ";
     $sql = "UPDATE users SET address=:address WHERE id = :user_id ";
     $query = $dbh->prepare($sql);
     $query->bindParam(':address', $address, PDO::PARAM_STR);
     $query->bindParam(':user_id', $user_id, PDO::PARAM_STR);
-    // $query->bindParam(':cart_ids', $cart_ids, PDO::PARAM_INT);
     if($query->execute()){
 
         $data['status'] = "ok";
@@ -49,7 +44,6 @@ if(isset($_POST['edit_address'])){
             $data['status'] = "ok";
             $data['message'] = "address updated";
             $data['updated_address'] = $address;
-            // $data['cart_ids'] = $cart_ids;
         }else{
             $data['status'] = "fail";
             $data['message'] = "address not updated";        

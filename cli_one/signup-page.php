@@ -15,7 +15,7 @@
 <div class="parent clearfix">
     <div class="bg-illustration">
         <a href="./index.php">
-            <img src="./assets/images/logo1.jpg" alt="logo">
+            <img class="logo" src="./assets/images/logo1.jpg" alt="logo">
         </a>
 
       <!-- <div class="burger-btn">
