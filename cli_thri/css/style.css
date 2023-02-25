@@ -1492,18 +1492,20 @@ footer {
 .copyright_text {
     width: 100%;
     float: left;
-    font-size: 16px;
+    font-size: 0.8rem;
     color: #ffffff;
     text-align: center;
     padding: 20px 0px;
     margin: 0px;
+    display: flex;
+    justify-content: space-between;
 }
 
 .copyright_text a {
-    color: #ffffff;
+    color: var(--primary-color);
 }
 .copyright_text a:hover {
-    color: var(--primary-color);
+    color: var(--secondary-color);
 }
 
 
