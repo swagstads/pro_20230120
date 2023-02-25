@@ -76,7 +76,18 @@ let password = document.getElementById("signup_password").value;
 let contact = document.getElementById("signup_contact").value;
 let confirmpassword = document.getElementById("signup_confirm_password").value;
 
-if(contact.length !== 10 && ( contact[0] !== "6" || contact[0] !== "7" || contact[0] !== "8" || contact[0] !== "9") ){
+function validateName(name) {
+  let regex = /^[A-Za-z\s]+$/;
+  return regex.test(name);
+}
+
+if(!validateName(name)){
+  document.getElementById("signup_alert_message").innerHTML = "Please enter valid name";
+}
+else if(contact[0] !== "6"  && contact[0] !== "7" &&  contact[0] !== "8" &&  contact[0] !== "9"  ){
+    document.getElementById("signup_alert_message").innerHTML = "Please provide a valid mobile number ";
+}
+else if(contact.length !== 10   ){
     document.getElementById("signup_alert_message").innerHTML = "Please provide a valid mobile number ";
 }
 else if (password.length < 8) {

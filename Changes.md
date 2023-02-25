@@ -33,23 +33,23 @@
 2. An option to view password - done
 3. while Signup
 4. If Email is not present in database message should be Email is not registered ( Currently it shows invalid ema..) - done
-5. Accepting phone number as 12121 should only except numbers starting from 6-7-8-9 
-6. Accepting " in First Name field
-7. Change icons
-8. Pop up " Please provide your address to checkout " is seen on first time going to cart 
-9. Go to Shopping redirecting on home page but it should be on products page where there is list of all products
-10. On "cli_one/productpage.php?productid=17" The image is of red chair but when added to cart image changes to white chair on carts page
-11. Data is not filled in Edit Profile page all the fields are empty 
-12. On order history rather than no order history found message can be like "Let's Order something and fill the order history page" Or something small and motivating to purchase something
+5. Accepting phone number as 12121 should only except numbers starting from 6-7-8-9 - done
+6. Accepting " in First Name field - done
+7. Change icons - done
+8. Pop up " Please provide your address to checkout " is seen on first time going to cart - done
+9. Go to Shopping redirecting on home page but it should be on products page where there is list of all products - done
+10. On "cli_one/productpage.php?productid=17" The image is of red chair but when added to cart image changes to white chair on carts page - Image is not dynamic
+11. Data is not filled in Edit Profile page all the fields are empty - done
+12. On order history rather than no order history found message can be like "Let's Order something and fill the order history page" Or something small and motivating to purchase something - done
 13. Login Button Ui changes while visiting back to home page
 14. About Us Ui fix ..There should not be space between the " Hello, We are part "
 15. On click of Image in about us the Image should open and background should go blackish 
-16. The top button is seen on about us page behind whatsapp logo 
+16. The top button is seen on about us page behind whatsapp logo - done
 17. On click of particular products below we can see more products so only the products which have keyword in them as rugs or category as rugs should be seen 
-18. In best sellers (home page) all the images are redirecting on same page product-id=17 ...Is this intentionall or is it static ?
-19. Unlink Pintrest
+18. In best sellers (home page) all the images are redirecting on same page product-id=17 ...Is this intentionall or is it static ? - static
+19. Unlink Pintrest - done
 20. Link instagram
 21. Check Twitter redirection ( If any redirections are not correct or not available then comment for now)
 22. Clear Console from every page which is completed
 23. Remove unwanted code
-24. Might need to change database for product which has sale / discount on them
+24. Might need to change database for product which has sale / discount on them 

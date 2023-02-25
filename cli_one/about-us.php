@@ -78,24 +78,18 @@
                             <div class="pageContent">
                                 <div class="groupHeading">
                                     <div class="subtitle">Our History</div>
-                                    <h3 class="aboutTitle"><span>Hello, We are Outstock. </span>With 25+ Years of
-                                        Experience</h3>
+                                    <h3 class="aboutTitle"><span>87 years of</span> service and counting</h3>
                                 </div>
                                 <div class="rte mb20">
-                                    <p><span style="color: #000;">It is accompanied by a case that can contain up to
-                                            three different diffusers and can be used for dry storage of loose tea. The
-                                            perfect way to enjoy brewing tea on low hanging fruit to identify. Lighting
-                                            is a minimal residence located in Tokyo, Japan, designed by Outstock. Large
-                                            tiles were arranged on the counter top plate near the window.</span></p>
-                                    <p><br>The perfect way to enjoy brewing tea on low hanging fruit to identify. Duis
-                                        autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie
-                                        consequat, vel illum dolore eu feugiat nulla facilisis. For me, the most
-                                        important part of improving at photography has been sharing it. Sign up for an
-                                        Exposure account, or post regularly to Tumblr, or both. Tell people you’re
-                                        trying to get better at photography. Talk about it. When you talk about it,
-                                        other people get excited about it. There are few plugins and apps available for
-                                        this purpose, many of them required a monthlysubscription or needed to expose
-                                        the full store data to a third party.</p>
+                                    <p  style="color: #000;">
+                                        At AtoZ we challenge the way we see and do things, which leads us to fresh perspectives and new ideas. Believing that we can definitely do better, we always strive to be the leader of the market for which we offer products and services. We operate with the principle of absolute customer satisfaction and it is our company’s biggest achievement that the quality of service offered to every client in span of 87 years is perfect! We thrive to ensure that the latest trends and designs are available to our clients. We have the innovation for every vision.
+                                    </p><br>
+                                    <p>
+                                    <div style="color: #000;">Integrating lifestyle design and performance fabrics.</div>
+                                    AtoZ- bringing you fabrics like no other
+                                    For us at AtoZ every fabric, every color and texture is a separate passion that comes with impeccable workmanship, high-quality materials, and a strong understanding of global trends. AtoZ was established to provide a one-stop furnishing service to hotels, homeowners, and property developers. We follow the three golden principles while working with our clients regarding the selection of product "Affordable and Well-made. Convenient and Sustainable. Smart and Stylish."
+
+                                    </p>
                                 </div>
                                 <div class="rte">
 
@@ -267,11 +261,9 @@
 
                                         </div>
                                         <div class="boxServiceContent">
-                                            <h4 class="boxServiceTitle">25+ Years of Experience</h4>
+                                            <h4 class="boxServiceTitle">85+ Years of Experience</h4>
                                             <div class="boxServiceDesc">
-                                                Sed ut perspiciatis unde omnis iste natus error sit
-                                                accusantium doloremque laudantium, totam rem aperiam, eaque
-                                                ipsa quae ab illo inventore veritatis.
+                                                AtoZ Furnishings was founded and established in the year 1934. We deliver more than 80 years' of experience curating a collection of the finest fabrics for both commercial spaces and private residences.
                                             </div>
                                         </div>
                                     </div>
@@ -298,11 +290,9 @@
 
                                         </div>
                                         <div class="boxServiceContent">
-                                            <h4 class="boxServiceTitle">60,000+ Happy Customer</h4>
+                                            <h4 class="boxServiceTitle">10,00,000+ Happy Customer</h4>
                                             <div class="boxServiceDesc">
-                                                Sed ut perspiciatis unde omnis iste natus error sit
-                                                accusantium doloremque laudantium, totam rem aperiam, eaque
-                                                ipsa quae ab illo inventore veritatis.
+                                                We are humbled to have touched the lives of millions of people with our range of world-class rugs and curtains, innovative bedsheets, Soft towels, and top-grade wallpapers.
                                             </div>
                                         </div>
                                     </div>
@@ -329,11 +319,9 @@
 
                                         </div>
                                         <div class="boxServiceContent">
-                                            <h4 class="boxServiceTitle">Awesome Performance</h4>
+                                            <h4 class="boxServiceTitle">Awesome Service</h4>
                                             <div class="boxServiceDesc">
-                                                Sed ut perspiciatis unde omnis iste natus error sit
-                                                accusantium doloremque laudantium, totam rem aperiam, eaque
-                                                ipsa quae ab illo inventore veritatis.
+                                                We maintain a staff of skilled associates that can help make your shopping experience simple and stress-free. You can always look forward to our great deals and top-notch customer service.
                                             </div>
                                         </div>
                                     </div>
@@ -362,9 +350,7 @@
                                         <div class="boxServiceContent">
                                             <h4 class="boxServiceTitle">Impressive Design</h4>
                                             <div class="boxServiceDesc">
-                                                Sed ut perspiciatis unde omnis iste natus error sit
-                                                accusantium doloremque laudantium, totam rem aperiam, eaque
-                                                ipsa quae ab illo inventore veritatis.
+                                                Our team of style experts works with you on finding the right balance between aesthetics and functionality. We have a strategy for serving things right because we believe in providing you with the finest.
                                             </div>
                                         </div>
                                     </div>

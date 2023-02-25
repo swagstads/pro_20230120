@@ -245,7 +245,8 @@
                 $("#address_div").text(return_data.address)
             }
             else{
-                show_msg("Please provide your address to checkout")
+                // show_msg("Please provide your address to checkout")
+                $("#address_div").html("<small><i>Please provide adress</i></small>")
             }
         }
 
@@ -424,8 +425,7 @@ else {
         Website.
     </p>
     <p>
-        <a class='btn btnVelaOne' href='./index.php' title='Go to Shopping'>Go
-            to Shopping</a>
+        <a class='btn btnVelaOne' href='./collections.php' title='Go to Shopping'>Go to Shopping</a>
     </p>
 </div>
 

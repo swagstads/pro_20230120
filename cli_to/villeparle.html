@@ -14,49 +14,50 @@
         <link rel="stylesheet" type="text/css" href="./style.css">
 
         <!-- Favicon and touch icons  -->
-        <link rel="shortcut icon" href="./assets/img/logo_black.png">
-        <link rel="apple-touch-icon-precomposed" href="./assets/img/logo_black.png">
+        <link rel="shortcut icon" href="./assets/images/logo_black.png">
+        <link rel="apple-touch-icon-precomposed" href="./assets/images/logo_black.png">
 
         
         <link rel="stylesheet" href="./assets/css/projects.css">
 
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.css"/>
         <style>
+          
+        .section-grid{
+            display: grid;
+            grid-template-columns: 48% auto;
+            gap: 20px;
+            align-items: center;
+            justify-content: center;
+            width: 90%;
+            left: 0;
+            right: 0;
+            margin: 10px auto ;
+            text-align: justify;
+        }
+        .section-grid>*{
+            overflow: hidden;
+        }
+        .section-grid img{
+            object-fit:contain;
+            width: 100%;
+        }
+        .justify-right{
+            justify-self: right;
+        }
+        .wprt-spacer{
+            height: 30px;
+        }
+        @media (max-width: 720px) {
             .section-grid{
-                display: flex;
-                grid-template-columns: 48% 48%;
-                gap: 20px;
-                align-items: center;
-                justify-content: center;
-                width: 90%;
-                left: 0;
-                right: 0;
-                margin: 10px auto ;
-                text-align: justify;
+                display: block;
             }
-            .section-grid>*{
-                overflow: hidden;
-                object-fit: cover;
-            }
-            .section-grid img{
-
-            }
-            .justify-right{
-                justify-self: right;
-            }
-            .wprt-spacer{
-                height: 30px;
-            }
-            @media (max-width: 720px) {
-                .section-grid{
-                    display: block;
-                }
-            }
-            .video{
-                display: flex;
-                align-items: center;
-                justify-content: center;
-            }
+        }
+        .video{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
         </style>
     </head>
     <body>
@@ -66,8 +67,9 @@
                 <div class="wrap-inner">          
                     <div id="site-logo" class="clearfix">
                         <div id="site-logo-inner">
-                            <a href="./#top" title="Construction" rel="home" class="main-logo">
-                                <img src="./assets/img/logo.png" alt="Kratee" data-retina="./assets/img/logo.png" height="50" width="50">
+                            <a href="./#top" title="Construction" style="display: flex; align-items: center; gap: 10px;" rel="home" class="main-logo">
+                                <img src="./assets/images/logo.png" alt="Kratee" data-retina="./assets/images/logo.png" height="45" width="45">
+                                <h3 style="position:relative;top:5px;font-weight: 800;color: var(--col2);">Kratee Infracon</h3>
                             </a>
                         </div>
                     </div><!-- /#site-logo -->
@@ -97,7 +99,7 @@
             <div class="section-grid">
                 <div class="left">
                     <div class="image">
-                        <img src="./assets/Images/projects/VilleParle/slider.jpeg" alt="">
+                        <img src="./assets/Images/projects/VilleParle/display.jpeg" alt="">
                     </div>
                 </div>
                 <div class="info right">
@@ -105,9 +107,13 @@
                         <h2>Heading</h2>
                     </div>
                     <div class="description">
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid hic suscipit laudantium velit, quos eum quia facilis laborum eveniet illo eos repudiandae cupiditate architecto nesciunt, quas iste? Dolores, fugit hic.</p>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid hic suscipit laudantium velit, quos eum quia facilis laborum eveniet illo eos repudiandae cupiditate architecto nesciunt, quas iste? Dolores, fugit hic.</p>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid hic suscipit laudantium velit, quos eum quia facilis laborum eveniet illo eos repudiandae cupiditate architecto nesciunt, quas iste? Dolores, fugit hic.</p>
+                        <br>
+                        <p>Spacious living areas: We recognize the importance of having ample space to relax and entertain, and we work with clients to design living areas that are open, inviting, and functional.</p>
+
+                        <p> High-quality finishes: We believe that the details matter, and we use only the highest-quality materials and finishes to create a luxurious and welcoming atmosphere.</p>
+                            
+                        <p> Modern kitchens: The kitchen is often the heart of the home, and we strive to create modern, functional kitchens that are equipped with the latest in appliances and finishes.</p>
+                            
                     </div>
                 </div>
             </div>
@@ -119,14 +125,15 @@
                         <h2>Heading</h2>
                     </div>
                     <div class="description">
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid hic suscipit laudantium velit, quos eum quia facilis laborum eveniet illo eos repudiandae cupiditate architecto nesciunt, quas iste? Dolores, fugit hic.</p>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid hic suscipit laudantium velit, quos eum quia facilis laborum eveniet illo eos repudiandae cupiditate architecto nesciunt, quas iste? Dolores, fugit hic.</p>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid hic suscipit laudantium velit, quos eum quia facilis laborum eveniet illo eos repudiandae cupiditate architecto nesciunt, quas iste? Dolores, fugit hic.</p>
+                        <br>
+                        <p> Spa-like bathrooms: Bathrooms should be a place of relaxation and tranquility, and we work with clients to design spa-like bathrooms that are functional and beautiful. </p>
+                            
+                        <p> Smart home technology: We understand the increasing demand for smart home technology and are equipped to incorporate these features into our designs. Our fully constructed buildings include features such as smart lighting systems, thermostats, and security systems that can be controlled remotely from a smartphone or other device.</p>
                     </div>
                 </div>
                 <div class="right justify-right">
                     <div class="image">
-                        <img src="./assets/img/KrateeBuildingPhoto/works/works.jpeg" alt="">
+                        <img src="./assets/Images/projects/VilleParle/gallary1.jpg" alt="">
                     </div>
                 </div>
             </div>
@@ -141,38 +148,74 @@
                 </div>
                 <div id="mainCarousel" class="carousel w-10/12 max-w-5xl mx-auto">
                     <div
-                    class="carousel__slide"
-                    data-src="./assets/img/KrateeBuildingPhoto/VilleParle/slider.jpeg"
-                    data-fancybox="gallery"
-                    >
-                    <img  src="./assets/img/KrateeBuildingPhoto/VilleParle/slider.jpeg" />
+                        class="carousel__slide"
+                        data-src="./assets/Images/projects/VilleParle/display.jpeg"
+                        data-fancybox="gallery"
+                        >
+                        <img  src="./assets/Images/projects/VilleParle/display.jpeg" />
                     </div>
                     <div
-                    class="carousel__slide"
-                    data-src="./assets/img/KrateeBuildingPhoto/works/works.jpeg"
-                    data-fancybox="gallery"
-                    data-caption=""
-                    >
-                    <img src="./assets/img/KrateeBuildingPhoto/works/works.jpeg" />
+                        class="carousel__slide"
+                        data-src="./assets/Images/projects/VilleParle/gallary1.jpg"
+                        data-fancybox="gallery"
+                        >
+                        <img src="./assets/Images/projects/VilleParle/gallary1.jpg" />
                     </div>
+                    
                     <div
-                    class="carousel__slide"
-                    data-src="./assets/img/KrateeBuildingPhoto/works/slider.jpeg"
-                    data-fancybox="gallery"
-                    >
-                    <img src="./assets/img/KrateeBuildingPhoto/works/slider.jpeg" />
+                        class="carousel__slide"
+                        data-src="./assets/Images/projects/VilleParle/gallary2.jpg"
+                        data-fancybox="gallery"
+                        >
+                        <img src="./assets/Images/projects/VilleParle/gallary2.jpg" />
+                    </div>
+                    
+                    <div
+                        class="carousel__slide"
+                        data-src="./assets/Images/projects/VilleParle/gallary3.jpg"
+                        data-fancybox="gallery"
+                        >
+                        <img src="./assets/Images/projects/VilleParle/gallary3.jpg" />
+                    </div>
+                    
+                    <div
+                        class="carousel__slide"
+                        data-src="./assets/Images/projects/VilleParle/gallary4.jpg"
+                        data-fancybox="gallery"
+                        >
+                        <img src="./assets/Images/projects/VilleParle/gallary4.jpg" />
+                    </div>
+                    
+                    <div
+                        class="carousel__slide"
+                        data-src="./assets/Images/projects/VilleParle/gallary5.jpg"
+                        data-fancybox="gallery"
+                        >
+                        <img src="./assets/Images/projects/VilleParle/gallary5.jpg" />
                     </div>
                 </div>
                 <div id="thumbCarousel" class="carousel max-w-xl mx-auto">
-                <div class="carousel__slide">
-                    <img class="panzoom__content" src="./assets/img/KrateeBuildingPhoto/VilleParle/slider.jpeg" />
-                </div>
-                <div class="carousel__slide">
-                    <img class="panzoom__content" src="./assets/img/KrateeBuildingPhoto/works/works.jpeg" />
-                </div>
-                <div class="carousel__slide">
-                    <img class="panzoom__content" src="./assets/img/KrateeBuildingPhoto/works/slider.jpeg" />
-                </div>
+                    <div class="carousel__slide">
+                        <img class="panzoom__content" src="./assets/Images/projects/VilleParle/display.jpeg" />
+                    </div>
+                    <div class="carousel__slide">
+                        <img class="panzoom__content" src="./assets/Images/projects/VilleParle/gallary1.jpg" />
+                    </div>
+                    <div class="carousel__slide">
+                        <img class="panzoom__content" src="./assets/Images/projects/VilleParle/gallary2.jpg" />
+                    </div>
+                    <div class="carousel__slide">
+                        <img class="panzoom__content" src="./assets/Images/projects/VilleParle/gallary3.jpg" />
+                    </div>
+                    <div class="carousel__slide">
+                        <img class="panzoom__content" src="./assets/Images/projects/VilleParle/gallary4.jpg" />
+                    </div>
+                    
+                    <div class="carousel__slide">
+                        <img class="panzoom__content" src="./assets/Images/projects/VilleParle/gallary5.jpg" />
+                    </div>
+                    
+                    
                 </div>
             </div>
             <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js"></script>
@@ -214,8 +257,11 @@
             <div class="wprt-spacer" data-desktop="36" data-mobi="30" data-smobi="30"></div>
 
             <div class="video">
-                <iframe width="1020" height="500" src="https://www.youtube.com/embed/tgbNymZ7vqY"></iframe>
-            </div>
+                <video width="900" height="515" controls>
+                    <source src="./assets/video/Mahindra Alcove - Project Walkthrough.mp4" type="video/webm">
+                  <!-- Your browser does not support the video tag. -->
+                  </video>
+        </div>
 
         </main>
         <!-- main content end -->
@@ -227,24 +273,11 @@
             <div class="bwp-row">
                 <div class="bwp-col-12 col">
                     <div id="footer-widgets">
-                        <!-- <div class="widget widget_socials">
-                            <div class="wprt-spacer" data-desktop="20" data-mobi="10" data-smobi="10"></div>
-
-                            <div class="socials text-center">
-                                <a target="_blank" href="#"><i class="fa fa-twitter"></i></a>
-                                <a target="_blank" href="#"><i class="fa fa-google-plus"></i></a>
-                                <a target="_blank" href="#"><i class="fa fa-dribbble"></i></a>
-                                <a target="_blank" href="#"><i class="fa fa-instagram"></i></a>
-                                <a target="_blank" href="#"><i class="fa fa-github"></i></a>
-                                <a target="_blank" href="#"><i class="fa fa-xing"></i></a>
-                            </div>
-                        </div> -->
-
                         <div class="widget widget_text">
                             <div class="textwidget text-center">
                                 <div class="wprt-spacer" data-desktop="30" data-mobi="30" data-smobi="20"></div>
 
-                                <img src="./assets/img/logo_white.png" width="100" height="20" alt="image" />
+                                <img src="./assets/images/logo_white.png" width="100" height="20" alt="image" />
 
                                 <div class="wprt-spacer" data-desktop="25" data-mobi="25" data-smobi="25"></div>
 

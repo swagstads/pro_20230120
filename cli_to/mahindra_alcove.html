@@ -14,8 +14,8 @@
     <link rel="stylesheet" type="text/css" href="./style.css">
 
     <!-- Favicon and touch icons  -->
-    <link rel="shortcut icon" href="./assets/img/logo_black.png">
-    <link rel="apple-touch-icon-precomposed" href="./assets/img/logo_black.png">
+    <link rel="shortcut icon" href="./assets/images/logo_black.png">
+    <link rel="apple-touch-icon-precomposed" href="./assets/images/logo_black.png">
 
     
     <link rel="stylesheet" href="./assets/css/projects.css">
@@ -23,8 +23,8 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.css"/>
     <style>
         .section-grid{
-            display: flex;
-            grid-template-columns: 48% 48%;
+            display: grid;
+            grid-template-columns: 48% auto;
             gap: 20px;
             align-items: center;
             justify-content: center;
@@ -36,10 +36,10 @@
         }
         .section-grid>*{
             overflow: hidden;
-            object-fit: cover;
         }
         .section-grid img{
-
+            object-fit:contain;
+            width: 100%;
         }
         .justify-right{
             justify-self: right;
@@ -66,8 +66,9 @@
             <div class="wrap-inner">          
                 <div id="site-logo" class="clearfix">
                     <div id="site-logo-inner">
-                        <a href="./#top" title="Construction" rel="home" class="main-logo">
-                            <img src="./assets/img/logo.png" alt="Kratee" data-retina="./assets/img/logo.png" height="50" width="50">
+                        <a href="./#top" title="Construction" style="display: flex; align-items: center; gap: 10px;" rel="home" class="main-logo">
+                            <img src="./assets/images/logo.png" alt="Kratee" data-retina="./assets/images/logo.png" height="45" width="45">
+                            <h3 style="position:relative;top:5px;font-weight: 800;color: var(--col2);">Kratee Infracon</h3>
                         </a>
                     </div>
                 </div><!-- /#site-logo -->
@@ -97,7 +98,7 @@
         <div class="section-grid">
             <div class="left">
                 <div class="image">
-                    <img src="./assets/Images/projects/VilleParle/slider.jpeg" alt="">
+                    <img src="./assets/Images/projects/MahidraAlcove/gallary1.jpg" alt="">
                 </div>
             </div>
             <div class="info right">
@@ -105,9 +106,14 @@
                     <h2>Heading</h2>
                 </div>
                 <div class="description">
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid hic suscipit laudantium velit, quos eum quia facilis laborum eveniet illo eos repudiandae cupiditate architecto nesciunt, quas iste? Dolores, fugit hic.</p>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid hic suscipit laudantium velit, quos eum quia facilis laborum eveniet illo eos repudiandae cupiditate architecto nesciunt, quas iste? Dolores, fugit hic.</p>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid hic suscipit laudantium velit, quos eum quia facilis laborum eveniet illo eos repudiandae cupiditate architecto nesciunt, quas iste? Dolores, fugit hic.</p>
+                    <p>
+                        As a construction company, we take pride in offering our clients a range of amenities and facilities that are tailored to meet their unique needs and preferences. Some of the amenities that we may include in a fully constructed building include:</p>
+
+<p>Green spaces: We believe that access to green spaces is essential for promoting health and well-being. This project includes outdoor spaces such as rooftop gardens, courtyards, or patios that provide a peaceful retreat for occupants.</p>
+
+<p>Accessible design: We strive to create buildings that are accessible to all, regardless of physical ability. We have provided amenities such as ramps, elevators, and wide doorways to ensure that everyone can enjoy the space.</p>
+
+                    </p>
                 </div>
             </div>
         </div>
@@ -119,14 +125,17 @@
                     <h2>Heading</h2>
                 </div>
                 <div class="description">
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid hic suscipit laudantium velit, quos eum quia facilis laborum eveniet illo eos repudiandae cupiditate architecto nesciunt, quas iste? Dolores, fugit hic.</p>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid hic suscipit laudantium velit, quos eum quia facilis laborum eveniet illo eos repudiandae cupiditate architecto nesciunt, quas iste? Dolores, fugit hic.</p>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid hic suscipit laudantium velit, quos eum quia facilis laborum eveniet illo eos repudiandae cupiditate architecto nesciunt, quas iste? Dolores, fugit hic.</p>
+               
+<p>High-end finishes: We work with clients to choose high-end finishes that reflect their style and preferences. Our fully constructed building includes features such as hardwood flooring, granite countertops, and custom cabinetry that create a luxurious and welcoming atmosphere.</p>
+
+<p>Energy-efficient systems: We understand the importance of sustainability and energy efficiency, and we strive to incorporate these principles into our designs.  Mahindra Alcove includes features such as solar panels, high-efficiency HVAC systems, and LED lighting to reduce energy consumption and lower utility costs.</p>
+
+<p>Smart home technology: We recognize the increasing demand for smart home technology and are equipped to incorporate these features into our designs. Mahindra Alcove includes features such as smart thermostats, lighting systems, and security systems that can be controlled remotely from a smartphone or other device.</p>
                 </div>
             </div>
             <div class="right justify-right">
                 <div class="image">
-                    <img src="./assets/Images/projects/VilleParle/slider.jpeg" alt="">
+                    <img src="./assets/Images/projects/MahidraAlcove/gallary2.jpg" alt="">
                 </div>
             </div>
         </div>
@@ -141,72 +150,52 @@
               </h2>
           </div>
           <div id="mainCarousel" class="carousel w-10/12 max-w-5xl mx-auto mahindra-alcove">
-              <div
-              class="carousel__slide"
-              data-src="./assets/img/KrateeBuildingPhoto/MahidraAlcove/slider.jpg"
-              data-fancybox="gallery"
-              data-caption="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum lobortis ultricies ipsum, a maximus ligula dignissim in. Sed consectetur tellus egestas, consequat dolor at, tempus augue. Morbi quis ipsum quis velit."
-              >
-              <img  src="./assets/img/KrateeBuildingPhoto/MahidraAlcove/slider.jpg" />
+                <div
+                    class="carousel__slide"
+                    data-src="./assets/Images/projects/MahidraAlcove/display.jpeg"
+                    data-fancybox="gallery"
+                    data-caption="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum lobortis ultricies ipsum, a maximus ligula dignissim in. Sed consectetur tellus egestas, consequat dolor at, tempus augue. Morbi quis ipsum quis velit."
+                >
+              <img  src="./assets/Images/projects/MahidraAlcove/display.jpeg" />
               </div>
               <div
-              class="carousel__slide"
-              data-src="./assets/img/KrateeBuildingPhoto/MahidraAlcove/ab1.jpg"
-              data-fancybox="gallery"
-              data-caption="Ut semper, justo eget vehicula vestibulum, enim enim suscipit lectus, et sagittis nibh risus vel metus. Quisque eu ornare ante, et gravida mauris"
+                    class="carousel__slide"
+                    data-src="./assets/Images/projects/MahidraAlcove/gallary1.jpg"
+                    data-fancybox="gallery"
+                    data-caption="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum lobortis ultricies ipsum, a maximus ligula dignissim in. Sed consectetur tellus egestas, consequat dolor at, tempus augue. Morbi quis ipsum quis velit."
               >
-              <img src="./assets/img/KrateeBuildingPhoto/MahidraAlcove/ab1.jpg" />
+              <img  src="./assets/Images/projects/MahidraAlcove/gallary1.jpg" />
               </div>
               <div
-              class="carousel__slide"
-              data-src="./assets/img/KrateeBuildingPhoto/MahidraAlcove/ab2.jpg"
-              data-fancybox="gallery"
-              data-caption="Hello 🖐"
+                    class="carousel__slide"
+                    data-src="./assets/Images/projects/MahidraAlcove/gallary2.jpg"
+                    data-fancybox="gallery"
+                    data-caption="Ut semper, justo eget vehicula vestibulum, enim enim suscipit lectus, et sagittis nibh risus vel metus. Quisque eu ornare ante, et gravida mauris"
               >
-              <img src="./assets/img/KrateeBuildingPhoto/MahidraAlcove/ab2.jpg" />
+              <img src="./assets/Images/projects/MahidraAlcove/gallary2.jpg" />
               </div>
               <div
-              class="carousel__slide"
-              data-src="./assets/img/KrateeBuildingPhoto/MahidraAlcove/works2.jpg"
-              data-fancybox="gallery"
-              data-caption="Another caption"
+                    class="carousel__slide"
+                    data-src="./assets/Images/projects/MahidraAlcove/gallary3.jpg"
+                    data-fancybox="gallery"
+                    data-caption="Hello 🖐"
               >
-              <img src="./assets/img/KrateeBuildingPhoto/MahidraAlcove/works2.jpg" />
-              </div>
-              <div
-              class="carousel__slide"
-              data-src="./assets/img/KrateeBuildingPhoto/MahidraAlcove/IMG20221124104646.jpg"
-              data-fancybox="gallery"
-              >
-              <img src="./assets/img/KrateeBuildingPhoto/MahidraAlcove/IMG20221124104646.jpg" />
-              </div>
-              <div
-              class="carousel__slide"
-              data-src="./assets/img/KrateeBuildingPhoto/MahidraAlcove/IMG_20221122_172926.jpg"
-              data-fancybox="gallery"
-              >
-              <img src="./assets/img/KrateeBuildingPhoto/MahidraAlcove/IMG_20221122_172926.jpg" />
+              <img src="./assets/Images/projects/MahidraAlcove/gallary3.jpg" />
               </div>
           </div>
           <div id="thumbCarousel" class="carousel max-w-xl mx-auto">
-              <div class="carousel__slide">
-              <img class="panzoom__content" src="./assets/img/KrateeBuildingPhoto/MahidraAlcove/slider.jpg" />
-              </div>
-              <div class="carousel__slide">
-              <img class="panzoom__content" src="./assets/img/KrateeBuildingPhoto/MahidraAlcove/ab1.jpg" />
-              </div>
-              <div class="carousel__slide">
-              <img class="panzoom__content" src="./assets/img/KrateeBuildingPhoto/MahidraAlcove/ab2.jpg" />
-              </div>
-              <div class="carousel__slide">
-              <img class="panzoom__content" src="./assets/img/KrateeBuildingPhoto/MahidraAlcove/works2.jpg" />
-              </div>
-              <div class="carousel__slide">
-              <img class="panzoom__content" src="./assets/img/KrateeBuildingPhoto/MahidraAlcove/IMG20221124104646.jpg" />
-              </div>
-              <div class="carousel__slide">
-              <img class="panzoom__content" src="./assets/img/KrateeBuildingPhoto/MahidraAlcove/IMG_20221122_172926.jpg" />
-              </div>
+                <div class="carousel__slide">
+                    <img class="panzoom__content" src="./assets/Images/projects/MahidraAlcove/display.jpeg" />
+                </div>
+                <div class="carousel__slide">
+                    <img class="panzoom__content" src="./assets/Images/projects/MahidraAlcove/gallary1.jpg" />
+                </div>
+                <div class="carousel__slide">
+                    <img class="panzoom__content" src="./assets/Images/projects/MahidraAlcove/gallary2.jpg" />
+                </div>
+                <div class="carousel__slide">
+                    <img class="panzoom__content" src="./assets/Images/projects/MahidraAlcove/gallary3.jpg" />
+                </div>
           </div>
       </div>
         <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js"></script>
@@ -248,7 +237,10 @@
         <div class="wprt-spacer" data-desktop="36" data-mobi="30" data-smobi="30"></div>
 
         <div class="video">
-            <iframe width="1020" height="500" src="https://www.youtube.com/embed/tgbNymZ7vqY"></iframe>
+                <video width="900" height="515" controls>
+                    <source src="./assets/video/Mahindra Alcove Customer Testimonial _ Ms. Aarti Sharma.mp4" type="video/webm">
+                  <!-- Your browser does not support the video tag. -->
+                  </video>
         </div>
 
     </main>
@@ -278,7 +270,7 @@
                         <div class="textwidget text-center">
                             <div class="wprt-spacer" data-desktop="30" data-mobi="30" data-smobi="20"></div>
 
-                            <img src="./assets/img/logo_white.png" width="100" height="20" alt="image" />
+                            <img src="./assets/images/logo_white.png" width="100" height="20" alt="image" />
 
                             <div class="wprt-spacer" data-desktop="25" data-mobi="25" data-smobi="25"></div>
 

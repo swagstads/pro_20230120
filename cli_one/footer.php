@@ -163,13 +163,6 @@
                                 <span>Instagram</span>
                             </a>
                         </li>
-                        <li class="pinterest">
-                            <a target="_blank" href="index.php" title="AtoZ on Pinterest"
-                                class="btn-social btn-social--pinterest" data-original-title="Pinterest">
-                                <i class="fa fa-pinterest"></i>
-                                <span>Pinterest</span>
-                            </a>
-                        </li>
                     </ul>
                 </div>
             </div>

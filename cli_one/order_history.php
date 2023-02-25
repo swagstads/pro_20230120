@@ -147,7 +147,7 @@
                     }
                 }
                 else{
-                    $(".order-history-container").html("<h3 style='text-align:center'>No order history found</h3>")
+                    $(".order-history-container").html("<h3 style='text-align:center'>Let's Order something</h3>")
                 }
             }
         })
