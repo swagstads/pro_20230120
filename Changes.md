@@ -52,4 +52,4 @@
 21. Check Twitter redirection ( If any redirections are not correct or not available then comment for now)
 22. Clear Console from every page which is completed
 23. Remove unwanted code
-24. Might need to change database for product which has sale / discount on them 
+24. Might need to change database for product which has sale / discount on them - on hold

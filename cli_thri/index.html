@@ -10,7 +10,7 @@
    <meta name="viewport" content="width=device-width, initial-scale=1">
    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
    <!-- site metas -->
-   <title>CoBsine</title>
+   <title>AToZ Group</title>
    <meta name="keywords" content="">
    <meta name="description" content="">
    <meta name="author" content="">
@@ -31,13 +31,22 @@
    <!-- owl stylesheets -->
    <link rel="stylesheet" href="css/owl.carousel.min.css">
    <link rel="stylesheet" href="css/owl.theme.default.min.css">
-   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css"
-      media="screen">
+
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+   <script src="./js/page-scroller.js"></script>
+
+
 </head>
 
 <body>
+
+   <!-- snackbar -->
+   <div id="snackbar"></div>
+
+   <!-- snackbar end -->
+
    <!--header section start -->
-   <div class="header_section">
+   <div class="header_section section">
       <nav class="navbar navbar-expand-lg navbar-light bg-light">
          <div class="logo"><a href="index.html"><img src="./images/index/logo1.jpg"></a></div>
 
@@ -54,10 +63,7 @@
                   <a class="nav-link" href="#about_section">About</a>
                </li>
                <li class="nav-item">
-                  <a class="nav-link" href="#services_section">Services</a>
-               </li>
-               <li class="nav-item">
-                  <a class="nav-link" href="#events_section">Events</a>
+                  <a class="nav-link" href="#company_section">Companies</a>
                </li>
                <li class="nav-item">
                   <a class="nav-link" href="#contact_section">Contact Us</a>
@@ -73,88 +79,12 @@
 
       </nav>
       <!--banner section start -->
-      <div id="banner_section" class="banner_section layout_padding">
+      <div id="banner_section" class="banner_section layout_padding section">
          <div class="container-fluid">
             <section class="slide-wrapper">
                <div class="container-fluid">
                   <div id="myCarousel" class="carousel slide" data-ride="carousel">
-                     <!-- Indicators -->
-                     <ol class="carousel-indicators">
-                        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-                        <li data-target="#myCarousel" data-slide-to="1"></li>
-                        <li data-target="#myCarousel" data-slide-to="2"></li>
-                        <li data-target="#myCarousel" data-slide-to="3"></li>
-                        <li data-target="#myCarousel" data-slide-to="4"></li>
-                     </ol>
-                     <!-- Wrapper for slides -->
-                     <div class="carousel-inner">
-                        <div class="carousel-item active">
-                           <div class="container">
-                              <div class="banner_main">
-                                 <h1 class="banner_taital">Business Agency Profit Your Marketing</h1>
-                                 <p class="banner_text">It is a long established fact that a reader will be distracted
-                                    by the readable content of a page when</p>
-                                 <div class="btn_main">
-                                    <div class="contact_bt active "><a href="#">Read More</a></div>
-                                    <!-- <div class="readmore_bt"><a href="#">Read More</a></div> -->
-                                 </div>
-                              </div>
-                           </div>
-                        </div>
-                        <div class="carousel-item">
-                           <div class="container">
-                              <div class="banner_main">
-                                 <h1 class="banner_taital">Business Agency Profit Your Marketing</h1>
-                                 <p class="banner_text">It is a long established fact that a reader will be distracted
-                                    by the readable content of a page when</p>
-                                 <div class="btn_main">
-                                    <div class="contact_bt active "><a href="#">Read More</a></div>
-                                    <!-- <div class="readmore_bt"><a href="#">Read More</a></div> -->
-                                 </div>
-                              </div>
-                           </div>
-                        </div>
-                        <div class="carousel-item">
-                           <div class="container">
-                              <div class="banner_main">
-                                 <h1 class="banner_taital">Business Agency Profit Your Marketing</h1>
-                                 <p class="banner_text">It is a long established fact that a reader will be distracted
-                                    by the readable content of a page when</p>
-                                 <div class="btn_main">
-                                    <div class="contact_bt active "><a href="#">Read More</a></div>
-                                    <!-- <div class="readmore_bt"><a href="#">Read More</a></div> -->
-                                 </div>
-                              </div>
-                           </div>
-                        </div>
-                        <div class="carousel-item">
-                           <div class="container">
-                              <div class="banner_main">
-                                 <h1 class="banner_taital">Business Agency Profit Your Marketing</h1>
-                                 <p class="banner_text">It is a long established fact that a reader will be distracted
-                                    by the readable content of a page when</p>
-                                 <div class="btn_main">
-                                    <div class="contact_bt active "><a href="#">Read More</a></div>
-                                    <!-- <div class="readmore_bt"><a href="#">Read More</a></div> -->
-                                 </div>
-                              </div>
-                           </div>
-                        </div>
-                        <div class="carousel-item">
-                           <div class="container">
-                              <div class="banner_main">
-                                 <h1 class="banner_taital">Business Agency Profit Your Marketing</h1>
-                                 <p class="banner_text">It is a long established fact that a reader will be distracted
-                                    by the readable content of a page when</p>
-                                 <div class="btn_main">
-                                    <div class="contact_bt active "><a href="#">Read More</a></div>
-                                    <!-- <div class="readmore_bt"><a href="#">Read More</a></div> -->
-                                 </div>
-                              </div>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
+                </div>
                </div>
             </section>
          </div>
@@ -165,7 +95,7 @@
 
 
    <!--about section start -->
-   <div id="about_section" class="about_section layout_padding">
+   <div id="about_section" class="about_section layout_padding section">
       <div class="container">
          <h1 class="about_taital">About Us</h1>
          <p class="about_text">AtoZ Group is a conglomerate of companies based in India with a rich history dating back
@@ -181,7 +111,7 @@
                         spanning across industries including infrastructure, interiors, furnishing, jewelry, and more.
                         AtoZ’s success is founded on its commitment to innovation and customer service, allowing it to
                         maintain its position as a leader in several sectors. </p>
-                     <div class="read_bt"><a href="#">Read More</a></div>
+                     <!-- <div class="read_bt"><a href="#">Read More</a></div> -->
                   </div>
                </div>
             </div>
@@ -191,7 +121,7 @@
    <!--about section end -->
 
    <!-- services section start -->
-   <div id="services_section" class="services_section layout_padding">
+   <!-- <div id="services_section" class="services_section layout_padding section">
       <div class="container">
          <h1 class="services_taital">What We Do</h1>
          <p class="about_text">We bring together expertise, innovation, and a commitment to excellence to deliver
@@ -248,21 +178,89 @@
             </div>
          </div>
       </div>
-   </div>
+   </div> -->
    <!-- services section end -->
 
-   <!-- Hover me cards section  -->
+   <!-- Companies section -->
+   <div  id="company_section">
+      <div class="company-section layout_padding">
+         <div class="company-banner-container" id="company-banner-1">
+           <div class="text-box right">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas mollitia ipsa dolor culpa, modi iste sed fuga blanditiis reprehenderit ratione cum dicta impedit consequuntur quis delectus sapiente ullam quod est.</div>
+         </div>
+         <div class="company-banner-container" id="company-banner-2">
+           <div class="text-box ">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas mollitia ipsa dolor culpa, modi iste sed fuga blanditiis reprehenderit ratione cum dicta impedit consequuntur quis delectus sapiente ullam quod est.</div>
 
+         </div>
+         <div class="company-banner-container" id="company-banner-3">
+           <div class="text-box left">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas mollitia ipsa dolor culpa, modi iste sed fuga blanditiis reprehenderit ratione cum dicta impedit consequuntur quis delectus sapiente ullam quod est.</div>
+
+         </div>
+         <div class="company-banner-container" id="company-banner-4">
+           <div class="text-box">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas mollitia ipsa dolor culpa, modi iste sed fuga blanditiis reprehenderit ratione cum dicta impedit consequuntur quis delectus sapiente ullam quod est.</div>
+         </div>
+       </div>
+       
+       <div class="company-names">
+         <div class="company-name" data-target="#company-banner-1">Child 1</div>
+         <div class="company-name" data-target="#company-banner-2">Child 2</div>
+         <div class="company-name" data-target="#company-banner-3">Child 3</div>
+         <div class="company-name" data-target="#company-banner-4">Child 4</div>
+       </div>
+   </div>
+    
+   <!-- Companies section end -->
+     <!-- Hover me cards section  -->
    <div class="card-1">
-      <p><span>HOVER ME</span></p>
-      <p><span>HOVER ME</span></p>
-      <p><span>HOVER ME</span></p>
-      <p><span>HOVER ME</span></p>
-      <p><span>HOVER ME</span></p>
+      <div class="hover-card-container">
+         <div class="hover-card-overlay"></div>
+         <div class="hover-card-bg"></div>
+         <span class="hover-card hover-card-1" >
+            <h3>Hover me</h3>
+            <p class="hover-card-description" >Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quaerat assumenda commodi dignissimos, quae vel accusantium dicta corrupti neque incidunt ullam possimus? Similique, eaque? Numquam doloribus sint excepturi iure minus laudantium?
+            </p>
+         </span>
+      </div>
+      <div class="hover-card-container">
+         <div class="hover-card-overlay"></div>
+         <div class="hover-card-bg"></div>
+         <span class="hover-card hover-card-1" >
+            <h3>Hover me</h3>
+            <p class="hover-card-description" >Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quaerat assumenda commodi dignissimos, quae vel accusantium dicta corrupti neque incidunt ullam possimus? Similique, eaque? Numquam doloribus sint excepturi iure minus laudantium?
+            </p>
+         </span>
+      </div>
+      <div class="hover-card-container">
+         <div class="hover-card-overlay"></div>
+         <div class="hover-card-bg"></div>
+         <span class="hover-card hover-card-1" >
+            <h3>Hover me</h3>
+            <p class="hover-card-description" >Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quaerat assumenda commodi dignissimos, quae vel accusantium dicta corrupti neque incidunt ullam possimus? Similique, eaque? Numquam doloribus sint excepturi iure minus laudantium?
+            </p>
+         </span>
+      </div>
+      <div class="hover-card-container">
+         <div class="hover-card-overlay"></div>
+         <div class="hover-card-bg"></div>
+         <span class="hover-card hover-card-1" >
+            <h3>Hover me</h3>
+            <p class="hover-card-description" >Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quaerat assumenda commodi dignissimos, quae vel accusantium dicta corrupti neque incidunt ullam possimus? Similique, eaque? Numquam doloribus sint excepturi iure minus laudantium?
+            </p>
+         </span>
+      </div>
+      <div class="hover-card-container">
+         <div class="hover-card-overlay"></div>
+         <div class="hover-card-bg"></div>
+         <span class="hover-card hover-card-1" >
+            <h3>Hover me</h3>
+            <p class="hover-card-description" >Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quaerat assumenda commodi dignissimos, quae vel accusantium dicta corrupti neque incidunt ullam possimus? Similique, eaque? Numquam doloribus sint excepturi iure minus laudantium?
+            </p>
+         </span>
+      </div>
    </div>
 
    <!-- Group of companies -->
-   <!-- <div id="group_of_companies_section" class="group-of-companies  layout_padding">
+   <!-- <div id="group_of_companies_section" class="group-of-companies  layout_padding section">
       <h2 class="heading">Our Companies</h2>
       <div class="company-container">
 
@@ -342,12 +340,12 @@
    </div> -->
 
    <!-- contact section start -->
-   <div id="contact_section" class="contact_section layout_padding">
+   <div id="contact_section" class="contact_section layout_padding section">
       <div class="container">
          <h1 class="contact_taital">Get In Touch</h1>
          <p class="contact_text">Contact us for any queries or concerns. We're happy to assist you.
          </p>
-         <div class="contact_section_2 layout_padding">
+         <div class="contact_section_2 layout_padding section">
             <div class="row">
                <div class="col-md-6">
                   <div class="contact_main">
@@ -395,7 +393,7 @@
    </div>
    <!-- contact section end -->
    <!-- testimonial section start -->
-   <div id="testimonial_section" class="testimonial_section layout_padding">
+   <div id="testimonial_section" class="testimonial_section layout_padding section">
       <div id="my_carousel" class="carousel slide" data-ride="carousel">
          <h1 class="testimonial_taital">Testimonial</h1>
          <p class="testimonial_text">majority have suffered alteration in some form, by injected humour, or </p>
@@ -512,40 +510,66 @@
    </div>
    <!-- testimonial section end -->
    <!-- opportuniites section start -->
-   <div id="careers_section" class="contact_section layout_padding">
+   <div id="careers_section" class="contact_section layout_padding section">
       <div class="container">
          <h1 class="contact_taital">Careers</h1>
          <p class="contact_text">Join our team and discover opportunities that align with your values </p>
-         <div class="contact_section_2 layout_padding">
+         <div class="contact_section_2 layout_padding section">
             <div class="row">
                <div class="col-md-6">
                   <div class="contact_main">
-                        <form action="" method="POST" enctype="multipart/form-data">
+                        <form action="./api/mail_data.php" method="POST" enctype="multipart/form-data">
                            <div class="user-box">
-                              <input type="text"  name="name" minlength="2" maxlength="15" pattern="[A-Za-z ]{2,25}" title="Please write a valid name" required>
+                              <input type="text" id="career_name" name="name" minlength="2" maxlength="15" pattern="[A-Za-z ]{2,25}" title="Please write a valid name" required>
                               <label>Name</label>
                            </div>
                            <div class="user-box">
-                              <input type="email" name="email" required>
+                              <input type="email" id="career_email" name="email" required>
                               <label>Email</label>
                            </div>
                            <div class="user-box">
-                              <input type="tel" name="contact" minlength="10" maxlength="10" pattern="[56789][0-9]{9}" title="Please Enter a valid contact number" required>
+                              <input type="tel" id="career_contact" name="contact" minlength="10" maxlength="10" pattern="[56789][0-9]{9}" title="Please Enter a valid contact number" required>
                               <label>Contact Number</label>
                            </div>
                            <div class="user-box">
-                              <input type="file" name="pdf_file" accept="application/pdf">
+                              <input type="file" name="resume" id="resume" accept="application/pdf">
                               <label>Upload your resume</label>
                            </div>
                            
-                          <a href="#">
+                          <button type="submit" >
                             <span></span>
                             <span></span>
                             <span></span>
                             <span></span>
                             Submit
-                          </a>
+                          </button>
                         </form>
+                     
+                        <script>
+                           function submit_resume(){
+                              event.preventDefault()
+                              var api_url = './api/mail_data.php';
+                              let name = document.getElementById("career_name").value;
+                              let email = document.getElementById("career_email").value;
+                              let contact = document.getElementById("career_contact").value;
+                              let resume = document.getElementById("resume")
+                              var form_data = { "resume": "1","name":name,"email":email,"contact":contact,"resume":resume};
+                              // console.log(form_data);
+                              $.ajax({
+                                    url: api_url,
+                                    type: 'POST',
+                                    data: form_data,
+                                    success: function (returned_data) {
+                                          console.log(returned_data);
+                                          var jsonData = JSON.parse(returned_data);
+                                          var return_data = jsonData.response;
+                                          console.log(jsonData.response);
+                                          // console.log("response",jsonData.response[0]);
+                                    }
+                                 })
+                           }
+
+                        </script>
                   </div>
                </div>
                
@@ -555,7 +579,7 @@
    </div>
    <!-- opportuniites section end -->
    <!-- footer section start -->
-   <div class="footer_section layout_padding">
+   <div class="footer_section layout_padding section">
       <div class="container">
          <div class="location_main">
             <div class="location_text"><img src="images/map-icon.png"><span class="padding_left_10"><a
@@ -577,9 +601,7 @@
                <div class="col-lg-4">
                   <h2 class="footer_taital">Services Link</h2>
                   <p class="footer_text">As a global organization, we offer a wide range of career opportunities across
-                     our various business sectors, including infrastructure, interiors, furnishing, jewelry, and more.
-                     Whether you are a recent graduate, an experienced professional, or someone looking for a career
-                     change, we have something for you.
+                     our various business sectors. Join our team and discover opportunity that align with your values.
                   </p>
                </div>
                <div class="col-lg-4">
@@ -609,6 +631,21 @@
    </div>
    <!-- copyright section end -->
    <!-- Javascript files-->
+   <script>
+      // Get the snackbar element
+      function show_alert(){
+         var snackbar = document.getElementById("snackbar");
+         // Display the snackbar
+         var urlParams = new URLSearchParams(window.location.search);
+         var alertParam = urlParams.get('alert');
+         if(alertParam){
+            snackbar.innerText =alertParam ;
+            snackbar.className = "show";
+            setTimeout(function(){ snackbar.className = snackbar.className.replace("show", ""); }, 3000);
+         }
+      }
+      show_alert()
+   </script>
    <script src="js/jquery.min.js"></script>
    <script src="js/popper.min.js"></script>
    <script src="js/bootstrap.bundle.min.js"></script>

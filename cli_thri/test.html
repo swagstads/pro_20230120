@@ -4,120 +4,151 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>sliders</title>
-    <style>
-        .group-of-companies{
-            /* border: 1px solid; */
-        }
-        .group-of-companies .company-container{
-            display: grid;
-            grid-template-columns: repeat(4,calc(25% - 10px) );
-            gap: 10px;
-            text-align: center;
-        }
-        .group-of-companies .company-container .company-info{
-            width: 100%;
-            /* border: 1px solid; */
-            display: grid;
-            justify-content: center;
-            width: 100%;
-        }
-        .group-of-companies .company-container .company-info .image img{
-            height: 150px;
-            width: 150px;
-            border-radius: 5px;
-            box-shadow: 0 0 15px rgba(0, 0, 0, 0.295);
-        }
-        .group-of-companies .company-container .company-info .image{
-       
-            /* border: 1px solid; */
-            height: 150px;
-            width: 150px;
-        }
-        .group-of-companies .company-container .company-info .company-name{
-            padding: 10px 0;
-        }
-    </style>
+    <title>Document</title>
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+<style>
+    body {
+  margin: 0;
+  padding: 0;
+}
+
+.companies {
+  flex-direction: row;
+  height: 100vh;
+  width: 100%;
+  position: relative;
+}
+.company-banner-container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  z-index: 999;
+}
+
+.company-banner-container:nth-child(odd) {
+  background-color: #f1f1f1;
+}
+
+.company-banner-container:nth-child(even) {
+  background-color: #e1e1e1;
+}
+
+.company-banner-container .company-banner {
+  height: 80%;
+  width: 80%;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.company-banner-container .company-banner h2 {
+  font-size: 2rem;
+  margin: 0;
+}
+
+.company-banner-container .company-banner p {
+  font-size: 1rem;
+  margin: 0;
+}
+
+.company-names {
+  position: fixed;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  width: 100px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.company-names .company-name {
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.company-names .company-name:hover {
+  background-color: #f1f1f1;
+}
+
+</style>
 </head>
 <body>
-
-    <div class="group-of-companies">
-        <div class="company-container">
-
-            <!-- Company -->
-            <div class="company-info">
-                <div class="image">
-                    <img src="./images/index/logo1.jpg" alt="">
-                </div>
-                <div class="company-name">
-                    Title
-                </div>
-            </div>
-            <!-- Company -->
-            <div class="company-info">
-                <div class="image">
-                    <img src="./images/index/logo1.jpg" alt="">
-                </div>
-                <div class="company-name">
-                    Title
-                </div>
-            </div>
-            <!-- Company -->
-            <div class="company-info">
-                <div class="image">
-                    <img src="./images/index/logo1.jpg" alt="">
-                </div>
-                <div class="company-name">
-                    Title
-                </div>
-            </div>
-            <!-- Company -->
-            <div class="company-info">
-                <div class="image">
-                    <img src="./images/index/logo1.jpg" alt="">
-                </div>
-                <div class="company-name">
-                    Title
-                </div>
-            </div>            <!-- Company -->
-            <div class="company-info">
-                <div class="image">
-                    <img src="./images/index/logo1.jpg" alt="">
-                </div>
-                <div class="company-name">
-                    Title
-                </div>
-            </div>
-            <!-- Company -->
-            <div class="company-info">
-                <div class="image">
-                    <img src="./images/index/logo1.jpg" alt="">
-                </div>
-                <div class="company-name">
-                    Title
-                </div>
-            </div>            <!-- Company -->
-            <div class="company-info">
-                <div class="image">
-                    <img src="./images/index/logo1.jpg" alt="">
-                </div>
-                <div class="company-name">
-                    Title
-                </div>
-            </div>
-            <!-- Company -->
-            <div class="company-info">
-                <div class="image">
-                    <img src="./images/index/logo1.jpg" alt="">
-                </div>
-                <div class="company-name">
-                    Title
-                </div>
-            </div> 
-
-
+    <div class="companies">
+        <div class="company-banner-container" id="company-banner-1">
+          <h1>Company 1 Banner</h1>
         </div>
-    </div>
+        <div class="company-banner-container" id="company-banner-2">
+          <h1>Company 2 Banner</h1>
+        </div>
+        <div class="company-banner-container" id="company-banner-3">
+          <h1>Company 3 Banner</h1>
+        </div>
+        <div class="company-banner-container" id="company-banner-4">
+          <h1>Company 4 Banner</h1>
+        </div>
+      </div>
+      
+      <div class="company-names">
+        <div class="company-name" data-target="#company-banner-1">Child 1</div>
+        <div class="company-name" data-target="#company-banner-2">Child 2</div>
+        <div class="company-name" data-target="#company-banner-3">Child 3</div>
+        <div class="company-name" data-target="#company-banner-4">Child 4</div>
+      </div>
+<script>
+$(document).ready(function() {
+// get the fixed child element
+var fixedChild = $('.company-names');
 
+// add click event listener to each child element of the fixed child
+fixedChild.children().each(function(index) {
+    $(this).click(function() {
+    // get the corresponding company banner container
+    var companyBanner = $('.company-banner-container').eq(index);
+    
+    // scroll to the corresponding company banner container
+    $('html, body').animate({
+        scrollTop: companyBanner.offset().top
+    }, 1000);
+    });
+});
+});
+$(document).ready(function() {
+  // get the fixed child element
+  var fixedChild = $('.company-names');
+
+  // initially hide the fixed child element
+  fixedChild.hide();
+
+  // add scroll event listener
+  $(window).scroll(function() {
+    // loop through each company banner container
+    $('.company-banner-container').each(function(index) {
+      var companyBanner = $(this);
+
+      // check if the current scroll position is on this company banner
+      if ($(window).scrollTop() >= companyBanner.offset().top && $(window).scrollTop() < companyBanner.offset().top + companyBanner.outerHeight()) {
+        // show the fixed child element
+        fixedChild.show();
+        return false; // exit the loop
+      } else {
+        // hide the fixed child element
+        fixedChild.hide();
+      }
+    });
+  });
+});
+</script>
 </body>
 </html>
