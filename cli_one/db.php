@@ -38,6 +38,4 @@ if($is_debug === false){
 
 }
 
-
-
 ?>

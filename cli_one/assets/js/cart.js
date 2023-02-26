@@ -3,17 +3,9 @@ jQuery(document).ready(function($){
 	var $L = 1200,
 		$menu_navigation = $('#main-nav'),
 		$cart_trigger = $('#cd-cart-trigger'),
-		$hamburger_icon = $('#cd-hamburger-menu'),
 		$lateral_cart = $('#cd-cart'),
 		$shadow_layer = $('#cd-shadow-layer');
 
-	//open lateral menu on mobile
-	$hamburger_icon.on('click', function(event){
-		event.preventDefault();
-		//close cart panel (if it's open)
-		$lateral_cart.removeClass('speed-in');
-		toggle_panel_visibility($menu_navigation, $shadow_layer, $('body'));
-	});
 
 	//open cart
 	$cart_trigger.on('click', function(event){
@@ -54,7 +46,52 @@ jQuery(document).ready(function($){
 
 	});*/
 });
+function moveToCart (wishlist_id){
+	event.preventDefault();
+    let api_url_delete_from_cart = "./api/move_cart.php";
+    var form_data = {"wishlist_id":wishlist_id};
+    $.ajax({
+        url: api_url_delete_from_cart,
+        type: 'POST',
+        data: form_data,
+        success: function (returned_data) {
+            console.log("yeah");
+            var jsonData = JSON.parse(returned_data);
+            console.log("yeah",returned_data);
+            var return_data = jsonData.response;
+            show_msg("Product Moved to Cart");
+        }
+    })
+	wish_item = document.getElementById(wishlist_id);
+	wish_item.remove();
+	console.log($product_id);
+	console.log($user_id);
+	//Add AJAX
+}
 
+function removeWish(wishlist_id){
+	event.preventDefault();
+	console.log("Meh")
+    let api_url_delete_from_cart = "./api/remove_wishlist.php";
+    var form_data = {"wishlist_id":wishlist_id};
+    $.ajax({
+        url: api_url_delete_from_cart,
+        type: 'POST',
+        data: form_data,
+        success: function (returned_data) {
+            console.log("yeah");
+            var jsonData = JSON.parse(returned_data);
+            console.log("yeah",returned_data);
+            var return_data = jsonData.response;
+            show_msg("Product removed from Wishlist");
+        }
+    })
+	wish_item = document.getElementById(wishlist_id);
+	wish_item.remove();
+	console.log($product_id);
+	console.log($user_id);
+	//Add AJAX
+}
 function toggle_panel_visibility ($lateral_panel, $background_layer, $body) {
 	if( $lateral_panel.hasClass('speed-in') ) {
 		// firefox transitions break when parent overflow is changed, so we need to wait for the end of the trasition to give the body an overflow hidden
@@ -84,8 +121,8 @@ function move_navigation( $navigation, $MQ) {
 // QUANTITY ADD, SUBT
 
 // Get all the quantity elements in the cart
-var qtyInputs = document.querySelectorAll('.cd-quantity input[type="number"]');
-
+//var qtyInputs = document.querySelectorAll('.cd-quantity input[type="number"]');
+/*
 // Add a click event listener to each "+" and "-" button
 qtyInputs.forEach(function(qtyInput) {
   $id = qtyInput.id;
@@ -107,3 +144,4 @@ qtyInputs.forEach(function(qtyInput) {
     }
   });
 });
+*/
