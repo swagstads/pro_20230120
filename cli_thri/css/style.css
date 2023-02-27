@@ -1015,9 +1015,9 @@ background: #555;
     margin-top: 20px;
    font-family: 'Roboto', sans-serif;
 }
-input.mail_text::placeholder {
-    /* color: #727272; */
-}
+/*input.mail_text::placeholder {
+    color: #727272; 
+}*/
 .massage-bt {
     /* color: #727272; */
     width: 100%;
