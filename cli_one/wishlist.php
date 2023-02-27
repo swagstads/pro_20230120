@@ -1,8 +1,22 @@
 <?php
-include 'db.php';
+
+require("./db.php");
+
 if(isset($_SESSION['user_id'])){
-	$user_id = $_SESSION['user_id'];
-	$result = mysqli_query($conn,"SELECT wishlist.id, product.id AS pid, product.title, product.price, product_media.image_name FROM wishlist JOIN product ON product.id = wishlist.product_id JOIN product_media on product_media.product_id = wishlist.product_id WHERE wishlist.user_id = '$user_id';");
+	
+	// $user_id = $_SESSION['user_id'];
+
+	// $sql = "SELECT wishlist.id, product.id AS pid, product.title, product.price, product_media.image_name FROM wishlist JOIN product ON product.id = wishlist.product_id JOIN product_media on product_media.product_id = wishlist.product_id WHERE wishlist.user_id = :user_id";
+
+	// $query = $dbh->prepare($sql);
+	// $query->bindParam(':user_id', $user_id, PDO::PARAM_STR);
+	// if($query->execute()){
+	// 	$result = $query->fetchAll(PDO::FETCH_OBJ);
+	// }
+	// else{
+	// 	$result = [];
+	// }
+	$result = mysqli_query($conn,"SELECT wishlist.id, product.id AS pid, product.title, product.price, product_media.image_name FROM wishlist JOIN product ON product.id = wishlist.product_id JOIN product_media on product_media.product_id = wishlist.product_id WHERE wishlist.user_id = '$user_id'");
 }
 ?>
 
@@ -15,7 +29,7 @@ if(isset($_SESSION['user_id'])){
 		?>
 	    <ul class="cd-cart-items">
             <?php
-			if(mysqli_num_rows($result)){
+			if(mysqli_num_row($result)){
            		while($row = $result->fetch_assoc()){
            		    $id = $row['id'];
            		    $pid = $row['pid'];

@@ -380,4 +380,9 @@
     cart_count()
 
 </script>
-<?php require("./api/config.php") ?>
+
+
+<?php 
+    require("./db.php");    
+    require("./api/config.php") ;
+?>

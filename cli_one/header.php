@@ -775,4 +775,6 @@
         }
     }
 </script>
-<?php include 'wishlist.php'; ?>
+<?php 
+include 'wishlist.php'; 
+?>
