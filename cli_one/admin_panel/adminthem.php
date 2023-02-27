@@ -55,16 +55,16 @@ include 'language_setting.php';
     <link href="vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet">
 
     <!-- Custom styles for this template-->
-    <link href="css/sb-admin.css" rel="stylesheet">
+    <link href="./css/sb-admin.css" rel="stylesheet">
 
     <!--  select2  -->
-    <link rel="stylesheet" href="vendor/select2/css/select2.min.css">
+    <link rel="stylesheet" href="./vendor/select2/css/select2.min.css">
 
     <!-- FancyBox  -->
-    <link rel="stylesheet" href="vendor/fancybox/jquery.fancybox.min.css">
+    <link rel="stylesheet" href="./vendor/fancybox/jquery.fancybox.min.css">
 
     <!-- DateTimePicker  -->
-    <link rel="stylesheet" type="text/css" href="vendor/datetimepicker/css/bootstrap-datetimepicker.min.css"/>
+    <link rel="stylesheet" type="text/css" href="./vendor/datetimepicker/css/bootstrap-datetimepicker.min.css"/>
 
     <link href="https://fonts.googleapis.com/css?family=Oxygen" rel="stylesheet">
 </head>
