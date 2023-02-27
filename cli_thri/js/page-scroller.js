@@ -30,7 +30,7 @@ $(document).ready(function() {
     $('.company-banner-container').each(function(index) {
       var companyBanner = $(this);
 
-      // check if the current scroll position is on this company banner
+      // check if the current scroll position is on th  is company banner
       if ($(window).scrollTop() >= companyBanner.offset().top  - 250
           && $(window).scrollTop() < companyBanner.offset().top + companyBanner.outerHeight() - 250) {
         // show the fixed child element
