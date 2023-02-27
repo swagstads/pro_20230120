@@ -1,30 +1,8 @@
 <?php
-<<<<<<< HEAD
-
-require("./db.php");
-
-if(isset($_SESSION['user_id'])){
-	
-	// $user_id = $_SESSION['user_id'];
-
-	// $sql = "SELECT wishlist.id, product.id AS pid, product.title, product.price, product_media.image_name FROM wishlist JOIN product ON product.id = wishlist.product_id JOIN product_media on product_media.product_id = wishlist.product_id WHERE wishlist.user_id = :user_id";
-
-	// $query = $dbh->prepare($sql);
-	// $query->bindParam(':user_id', $user_id, PDO::PARAM_STR);
-	// if($query->execute()){
-	// 	$result = $query->fetchAll(PDO::FETCH_OBJ);
-	// }
-	// else{
-	// 	$result = [];
-	// }
-	$result = mysqli_query($conn,"SELECT wishlist.id, product.id AS pid, product.title, product.price, product_media.image_name FROM wishlist JOIN product ON product.id = wishlist.product_id JOIN product_media on product_media.product_id = wishlist.product_id WHERE wishlist.user_id = '$user_id'");
-=======
-// include './api/config.php';
 if(isset($_SESSION['user_id'])){
 	$stmt = $dbh->prepare(' SELECT wishlist.id, product.id AS pid, product.title, product.price, product_media.image_name FROM wishlist JOIN product ON product.id = wishlist.product_id JOIN product_media on product_media.product_id = wishlist.product_id WHERE wishlist.user_id = :user_id GROUP BY product.id;');
     $stmt->bindParam(':user_id', $_SESSION['user_id'], PDO::PARAM_STR);
     $stmt->execute();
->>>>>>> 94bf3108b579c226d309591e84e312b382456b0a
 }
 ?>
 
@@ -37,11 +15,6 @@ if(isset($_SESSION['user_id'])){
 		?>
 	    <ul class="cd-cart-items">
             <?php
-<<<<<<< HEAD
-			if(mysqli_num_row($result)){
-           		while($row = $result->fetch_assoc()){
-           		    $id = $row['id'];
-=======
 			if(true){
            		while($fetch_data_wishlist = $stmt->fetchAll(PDO::FETCH_ASSOC)){
 				    $data["status"] = "ok";
@@ -52,7 +25,6 @@ if(isset($_SESSION['user_id'])){
 				    $title = $fetch_data_wishlist->title;	
            		    /*
 					$id = $row['id'];
->>>>>>> 94bf3108b579c226d309591e84e312b382456b0a
            		    $pid = $row['pid'];
            		    $image = $row['image_name'];
            		    $price = $row['price'];

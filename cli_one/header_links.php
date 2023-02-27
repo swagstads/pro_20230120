@@ -383,6 +383,5 @@
 
 
 <?php 
-    require("./db.php");    
     require("./api/config.php") ;
 ?>
