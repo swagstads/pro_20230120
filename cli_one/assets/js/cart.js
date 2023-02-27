@@ -46,8 +46,9 @@ jQuery(document).ready(function($){
 
 	});*/
 });
-function moveToCart (wishlist_id){
+function moveToCart (wishlist_id, product_id){
 	event.preventDefault();
+	addToCart(product_id);
     let api_url_delete_from_cart = "./api/move_cart.php";
     var form_data = {"wishlist_id":wishlist_id};
     $.ajax({
@@ -117,6 +118,28 @@ function move_navigation( $navigation, $MQ) {
 		$navigation.insertAfter('header');
 	}
 }
+
+function addToCart(product_id){
+	var quantity = 1;
+	api_url = "./api/add_to_cart.php";
+	// console.log("adding to cart: pro id,", product_id);
+	var form_data = { "add_to_cart": "add" , "productid": product_id,'quantity': quantity};
+	console.log(form_data);
+	$.ajax({
+			url: api_url,
+			type: 'POST',
+			data: form_data,
+			success: function (returned_data) {
+				var jsonData = JSON.parse(returned_data);
+				var return_data = jsonData.response;
+				console.log(return_data);
+				show_msg(return_data[0].message)
+			}
+	})
+	console.log(product_id,"Added to cart");
+	cart_count()
+}
+
 
 // QUANTITY ADD, SUBT
 
