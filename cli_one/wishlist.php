@@ -1,4 +1,5 @@
 <?php
+<<<<<<< HEAD
 
 require("./db.php");
 
@@ -17,6 +18,13 @@ if(isset($_SESSION['user_id'])){
 	// 	$result = [];
 	// }
 	$result = mysqli_query($conn,"SELECT wishlist.id, product.id AS pid, product.title, product.price, product_media.image_name FROM wishlist JOIN product ON product.id = wishlist.product_id JOIN product_media on product_media.product_id = wishlist.product_id WHERE wishlist.user_id = '$user_id'");
+=======
+// include './api/config.php';
+if(isset($_SESSION['user_id'])){
+	$stmt = $dbh->prepare(' SELECT wishlist.id, product.id AS pid, product.title, product.price, product_media.image_name FROM wishlist JOIN product ON product.id = wishlist.product_id JOIN product_media on product_media.product_id = wishlist.product_id WHERE wishlist.user_id = :user_id GROUP BY product.id;');
+    $stmt->bindParam(':user_id', $_SESSION['user_id'], PDO::PARAM_STR);
+    $stmt->execute();
+>>>>>>> 94bf3108b579c226d309591e84e312b382456b0a
 }
 ?>
 
@@ -29,13 +37,27 @@ if(isset($_SESSION['user_id'])){
 		?>
 	    <ul class="cd-cart-items">
             <?php
+<<<<<<< HEAD
 			if(mysqli_num_row($result)){
            		while($row = $result->fetch_assoc()){
            		    $id = $row['id'];
+=======
+			if(true){
+           		while($fetch_data_wishlist = $stmt->fetchAll(PDO::FETCH_ASSOC)){
+				    $data["status"] = "ok";
+				    $id = $fetch_data_wishlist->id;
+				    $pid = $fetch_data_wishlist->pid;
+				    $image_name = $fetch_data_wishlist->image_name;
+				    $price = $fetch_data_wishlist->price;
+				    $title = $fetch_data_wishlist->title;	
+           		    /*
+					$id = $row['id'];
+>>>>>>> 94bf3108b579c226d309591e84e312b382456b0a
            		    $pid = $row['pid'];
            		    $image = $row['image_name'];
            		    $price = $row['price'];
            		    $name = $row['title'];
+					*/
             ?>
 		    <li id="<?php echo $id; ?>"class="cd-cart-item">
 				<div class="container" style="display: flex; height: 125px; position:relative; overflow: hidden;" >
@@ -56,10 +78,12 @@ if(isset($_SESSION['user_id'])){
             	}
 			}else{
             ?>
-			<p>You haven't added anything to Wishlist yet.</p>
-           	<p>
-              	Continue browsing and wishlist products.
-           	</p>
+			<div style="vertical-align:middle; padding-top: 40vh;">
+				<p>You haven't added anything to Wishlist yet.</p>
+	           	<p>
+	              	Continue browsing and wishlist products.
+	           	</p>
+			</div>
 			<?php
 			}
 			?>

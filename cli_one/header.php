@@ -408,7 +408,7 @@
                         <lord-icon
                             src="https://cdn.lordicon.com/rjzlnunf.json"
                             trigger="click"
-                            colors="primary:#121331,secondary:#08a88a"
+                            colors="primary:#121331,secondary:#018dca"
                             state="hover-2"
                             style="width:24px;height:24px">
                         </lord-icon>
