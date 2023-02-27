@@ -491,7 +491,7 @@ button {
     padding-top:10px;
     position: fixed;
     text-align: center;
-    top: 79%;
+    top: 69%;
     right: 20px;
     transform: translateY(-50%);
     width: 138px;
@@ -1593,11 +1593,11 @@ footer {
     opacity: 0;
     position: absolute;
     bottom: -100vh;
-    transition: .1s,0.2s ease-in .3s;
+    transition: .4s,0.3s ease-in .1s;
 }
 
     .card-1 .hover-card-container:hover .hover-card-description {
-    position: static;
+    position: relative;
     opacity: 1;
     bottom: 0;
   }
@@ -1764,7 +1764,7 @@ footer {
     padding: 5px 10px;
     background: #000;
     letter-spacing: 0.2em;
-    color: #fff;
+    color: #fff;  
     border: 2px;
   }
   
