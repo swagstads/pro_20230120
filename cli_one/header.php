@@ -403,6 +403,18 @@
                             </svg>
                         </i>
                     </div>
+                    <div id="cd-cart-trigger" class="header-admin-icon" style="padding-left:20px; padding-top: 3px;">
+                        <a href>
+                        <lord-icon
+                            src="https://cdn.lordicon.com/rjzlnunf.json"
+                            trigger="click"
+                            colors="primary:#121331,secondary:#08a88a"
+                            state="hover-2"
+                            style="width:24px;height:24px">
+                        </lord-icon>
+                        </a>
+                        <!--<i class="icons nav-icons"></i>-->
+                    </div>
                     <div class="velaCartTop" style="white-space: nowrap;">
                         <!-- <a href="cart.php" class="jsDrawerOpenRight d-flex"> -->
                         <a href="cart.php">
@@ -763,3 +775,4 @@
         }
     }
 </script>
+<?php include 'wishlist.php'; ?>
