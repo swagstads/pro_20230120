@@ -25,15 +25,15 @@ try {
     $stmt->execute();
 
     // PRODUCT
-    $stmt = $dbh->prepare("INSERT INTO product (title, description, price, delivery_date, location, status, img_location)
-                           VALUES (:title, :description, :price, :delivery_date, :location, :status, :img_location)");
+    $stmt = $dbh->prepare("INSERT INTO product (title, description, price, delivery_date, location, status, image_name)
+                           VALUES (:title, :description, :price, :delivery_date, :location, :status, :image_name)");
     $stmt->bindParam(':title', $title);
     $stmt->bindParam(':description', $description);
     $stmt->bindParam(':price', $price);
     $stmt->bindParam(':delivery_date', $delivery_date);
     $stmt->bindParam(':location', $location);
     $stmt->bindParam(':status', $status);
-    $stmt->bindParam(':img_location', $img_location);
+    $stmt->bindParam(':image_name', $image_name);
 
     $title = "Product 1";
     $description = "This is a description of Product 1";
@@ -41,7 +41,7 @@ try {
     $delivery_date = "2022-12-31";
     $location = "123 Main St";
     $status = "pending";
-    $img_location = "product1.jpg";
+    $image_name = "product1.jpg";
 
     $stmt->execute();
 

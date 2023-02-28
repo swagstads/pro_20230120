@@ -20,7 +20,7 @@ try {
             // $amount = $_POST['amount'];
             
             // get the stock quantity
-            $sql = " SELECT id,quantity FROM products WHERE id=:product_id" ;
+            $sql = " SELECT id,quantity FROM product JOIN category ON FIND_IN_SET(category.id, product.category_id) WHERE id=:product_id" ;
             $query = $dbh->prepare($sql);
             $query->bindParam(':product_id', $product_id, PDO::PARAM_STR);
             $query->execute();

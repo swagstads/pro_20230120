@@ -46,7 +46,7 @@ else{
 //     quantity UNSIGNED INT,
 //     MRP FLOAT,
 //     our_price FLOAT,
-//     img_location VARCHAR(255)
+//     image_name VARCHAR(255)
 //     )";
     
 //     if ($conn->query($sql) === TRUE) {
