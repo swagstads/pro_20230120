@@ -5,237 +5,109 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
-</head>
-<style>
-  .careers-section {
-  padding: 50px;
-  background-color: #f9f9f9;
-  text-align: center;
-}
 
-.job-listing {
-  margin: 20px;
-  padding: 20px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  box-shadow: 0px 0px 10px #ccc;
-}
+  <style>
 
-.job-listing h3 {
-  font-size: 24px;
-  margin-bottom: 10px;
-}
-
-.job-listing p {
-  font-size: 16px;
-  margin-bottom: 20px;
-}
-
-.apply-form {
+.logo-container {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 20px;
+  overflow-x: hidden;
+  position: relative;
 }
 
-.form-group {
+.logo-wrapper {
   display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  margin-bottom: 10px;
+  flex-wrap: nowrap;
+  transition: transform 0.5s ease-in-out;
 }
 
-.form-group label {
-  font-size: 16px;
-  margin-bottom: 5px;
+.logo-wrapper img {
+  max-width: 100%;
+  height: auto;
+  margin-right: 20px;
 }
 
-.form-group input[type="text"],
-.form-group input[type="email"],
-.form-group input[type="tel"],
-.form-group input[type="file"] {
-  width: 100%;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  font-size: 16px;
-}
-
-.apply-button {
-  margin-top: 20px;
-  background-color: #4CAF50;
-  color: white;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  font-size: 16px;
-  cursor: pointer;
-}
-
-.apply-button:hover {
-  background-color: #3e8e41;
-}
-.file-upload-container {
-  max-width: 500px;
-  margin: 0 auto;
-  text-align: center;
-}
-
-label {
-  display: block;
-  margin-bottom: 10px;
-  font-size: 18px;
-}
-
-input[type="file"] {
-  display: none;
-}
-
-.drop-zone {
-  border: 2px dashed #ccc;
-  padding: 20px;
-  margin-bottom: 20px;
-  cursor: pointer;
-}
-
-.drop-zone span {
-  font-size: 18px;
-}
-
-.file-list {
-  text-align: left;
-}
-
-.file-list ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-.file-list li {
+.scroll-buttons {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  padding: 10px;
-  background-color: #f9f9f9;
-  border-radius: 5px;
-  margin-bottom: 10px;
+  width: 100%;
+  height: 100%;
 }
 
-.file-list li:last-child {
-  margin-bottom: 0;
-}
-
-.file-list .file-name {
-  flex-grow: 1;
-}
-
-.file-list .file-size {
-  margin-left: 10px;
-  font-size: 14px;
-  color: #999;
-}
-
-.file-list .file-remove {
-  color: red;
+.scroll-left,
+.scroll-right {
   cursor: pointer;
+  font-size: 36px;
+  font-weight: bold;
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 10px;
+  border-radius: 50%;
+  transition: background-color 0.2s ease-in-out;
 }
 
-</style>
+.scroll-left:hover,
+.scroll-right:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+@media screen and (min-width: 768px) {
+  .logo-wrapper img {
+    margin-right: 30px;
+  }
+}
+
+
+
+
+  </style>
+</head>
 <body>
-  <section class="careers-section">
-    <h2>Careers at Our Company</h2>
-    <div class="job-listings">
-      <div class="job-listing">
-        <h3>Software Engineer</h3>
-        <p>We are seeking a talented software engineer to join our team.</p>
-        <form class="apply-form">
-          <div class="form-group">
-            <label for="name-input">Name</label>
-            <input type="text" id="name-input" name="name" required>
-          </div>
-          <div class="form-group">
-            <label for="email-input">Email</label>
-            <input type="email" id="email-input" name="email" required>
-          </div>
-          <div class="form-group">
-            <label for="phone-input">Phone</label>
-            <input type="tel" id="phone-input" name="phone" required>
-          </div>
-          <div class="form-group">
-            <div class="file-upload-container">
-              <label for="file-input">Select a file</label>
-              <input type="file" id="file-input" name="file" multiple>
-              <div class="drop-zone">
-                <span>Drag and drop files here</span>
-              </div>
-              <div class="file-list"></div>
-            </div>
-          </div>
-          <button class="apply-button">Apply Now</button>
-        </form>
-      </div>
+  <div class="logo-container">
+    <div class="logo-wrapper">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/a/ab/Android_O_Preview_Logo.png" alt="Logo 1">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/a/ab/Android_O_Preview_Logo.png" alt="Logo 2">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/a/ab/Android_O_Preview_Logo.png" alt="Logo 3">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/a/ab/Android_O_Preview_Logo.png" alt="Logo 4">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/a/ab/Android_O_Preview_Logo.png" alt="Logo 5">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/a/ab/Android_O_Preview_Logo.png" alt="Logo 6">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/a/ab/Android_O_Preview_Logo.png" alt="Logo 7">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/a/ab/Android_O_Preview_Logo.png" alt="Logo 8">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/a/ab/Android_O_Preview_Logo.png" alt="Logo 9">
     </div>
-  </section>
+    <div class="scroll-buttons">
+      <div class="scroll-left">&lt;</div>
+      <div class="scroll-right">&gt;</div>
+    </div>
+  </div>
   <script>
-    var fileInput = document.querySelector('#file-input');
-var dropZone = document.querySelector('.drop-zone');
-var fileList = document.querySelector('.file-list');
+    const logoWrapper = document.querySelector('.logo-wrapper');
+const scrollLeft = document.querySelector('.scroll-left');
+const scrollRight = document.querySelector('.scroll-right');
+let scrollAmount = 0;
+const scrollStep = 400; // adjust this to control scrolling speed
+const autoScrollDelay = 5000; // adjust this to control auto-scroll delay
 
-fileInput.addEventListener('change', function() {
-  updateFileList(fileInput.files);
+// scroll to the left
+scrollLeft.addEventListener('click', () => {
+  scrollAmount -= scrollStep;
+  logoWrapper.style.transform = `translateX(${scrollAmount}px)`;
 });
 
-dropZone.addEventListener('dragover', function(event) {
-  event.preventDefault();
-  dropZone.classList.add('drag-over');
+// scroll to the right
+scrollRight.addEventListener('click', () => {
+  scrollAmount += scrollStep;
+  logoWrapper.style.transform = `translateX(${scrollAmount}px)`;
 });
 
-dropZone.addEventListener('dragleave', function(event) {
-  event.preventDefault();
-  dropZone.classList.remove('drag-over');
-});
-
-dropZone.addEventListener('drop', function(event) {
-  event.preventDefault();
-  dropZone.classList.remove('drag-over');
-  updateFileList(event.dataTransfer.files);
-});
-
-function updateFileList(files) {
-  fileList.innerHTML = '';
-  for (var i = 0; i < files.length; i++) {
-    var li = document.createElement('li');
-    var fileName = document.createElement('span');
-    fileName.classList.add('file-name');
-    fileName.textContent = files[i].name;
-    var fileSize = document.createElement('span');
-    fileSize.classList.add('file-size');
-    fileSize.textContent = formatSize(files[i].size);
-    var removeButton = document.createElement('span');
-    removeButton.classList.add('file-remove');
-    removeButton.textContent = 'Remove';
-    removeButton.addEventListener('click', function() {
-      li.remove();
-    });
-    li.appendChild(fileName);
-    li.appendChild(fileSize);
-    li.appendChild(removeButton);
-    fileList.appendChild(li);
-  }
-}
-
-function formatSize(size) {
-  var units = ['B', 'KB', 'MB', 'GB', 'TB'];
-  var unitIndex = 0;
-  while (size >= 1024 && unitIndex < units.length - 1) {
-    size /= 1024;
-    unitIndex++;
-  }
-  return size.toFixed(2) + ' ' + units[unitIndex];
-}
+// auto-scroll every 5 seconds
+setInterval(() => {
+  scrollAmount -= scrollStep;
+  logoWrapper.style.transform = `translateX(${scrollAmount}px)`;
+}, autoScrollDelay);
 
   </script>
-  
 </body>
 </html>

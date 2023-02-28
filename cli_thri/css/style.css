@@ -132,7 +132,6 @@ ol {
 }
 
 p {
-     margin: 20px;
      font-weight: 300;
      font-size: 15px;
      line-height: 24px;
@@ -287,6 +286,7 @@ button {
     width: 100%;
     display: flex !important;
     justify-content: right;
+    background-color: white;
 }
 .bg-light {
     padding: 20px 60px 17px 70px;
@@ -329,7 +329,7 @@ button {
     background-image: url("../images/index/atoz-bannerr.jpg");
     background-position: center;
     background-repeat: no-repeat;
-    background-size: 100% 85vh;
+    background-size: contain;
 }
 .banner_main {
     width: 44%;
@@ -1672,7 +1672,7 @@ footer {
 
 .job-listing {
   padding: 20px;
-  border: 1px solid #ccc;
+  /* border: 1px solid #ccc; */
   border-radius: 5px;
   background-color: rgba(255, 255, 255, 0.705);
 }

@@ -19,7 +19,7 @@ if(isset($_FILES['resume'])){
 
     // Set the email details
     $mail->setFrom("rishabhpnahar@gmail.com", "Your Name");
-    $mail->addAddress("rishabhnahar33@gmail.com", "Recipient Name");
+    $mail->addAddress("malavshah166@gmail.com", "Recipient Name");
     $mail->Subject = "Resume from ".$_POST["name"];
     $mail->isHTML(true);
 
@@ -72,7 +72,7 @@ if(isset($_POST['message'])){
     
         // Set the email details
         $mail->setFrom("rishabhpnahar@gmail.com", "Your Name");
-        $mail->addAddress("rishabhnahar33@gmail.com", "Recipient Name");
+        $mail->addAddress("shahmalav1999@gmail.com", "Recipient Name");
         $mail->Subject = "Resume from ".$_POST["name"];
         $mail->isHTML(true);
 
