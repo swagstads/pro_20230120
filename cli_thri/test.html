@@ -1,154 +1,241 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
 <style>
-    body {
+  .careers-section {
+  padding: 50px;
+  background-color: #f9f9f9;
+  text-align: center;
+}
+
+.job-listing {
+  margin: 20px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px #ccc;
+}
+
+.job-listing h3 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.job-listing p {
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+.apply-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 10px;
+}
+
+.form-group label {
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="tel"],
+.form-group input[type="file"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.apply-button {
+  margin-top: 20px;
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.apply-button:hover {
+  background-color: #3e8e41;
+}
+.file-upload-container {
+  max-width: 500px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+label {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 18px;
+}
+
+input[type="file"] {
+  display: none;
+}
+
+.drop-zone {
+  border: 2px dashed #ccc;
+  padding: 20px;
+  margin-bottom: 20px;
+  cursor: pointer;
+}
+
+.drop-zone span {
+  font-size: 18px;
+}
+
+.file-list {
+  text-align: left;
+}
+
+.file-list ul {
+  list-style: none;
   margin: 0;
   padding: 0;
 }
 
-.companies {
-  flex-direction: row;
-  height: 100vh;
-  width: 100%;
-  position: relative;
-}
-.company-banner-container {
-  width: 100%;
-  height: 100vh;
+.file-list li {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  background-color: #fff;
-  z-index: 999;
+  padding: 10px;
+  background-color: #f9f9f9;
+  border-radius: 5px;
+  margin-bottom: 10px;
 }
 
-.company-banner-container:nth-child(odd) {
-  background-color: #f1f1f1;
+.file-list li:last-child {
+  margin-bottom: 0;
 }
 
-.company-banner-container:nth-child(even) {
-  background-color: #e1e1e1;
+.file-list .file-name {
+  flex-grow: 1;
 }
 
-.company-banner-container .company-banner {
-  height: 80%;
-  width: 80%;
-  background-color: #fff;
-  border-radius: 10px;
-  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
+.file-list .file-size {
+  margin-left: 10px;
+  font-size: 14px;
+  color: #999;
 }
 
-.company-banner-container .company-banner h2 {
-  font-size: 2rem;
-  margin: 0;
-}
-
-.company-banner-container .company-banner p {
-  font-size: 1rem;
-  margin: 0;
-}
-
-.company-names {
-  position: fixed;
-  top: 50%;
-  left: 0;
-  transform: translateY(-50%);
-  width: 100px;
-  background-color: #fff;
-  border-radius: 10px;
-  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-.company-names .company-name {
-  height: 50px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.file-list .file-remove {
+  color: red;
   cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.company-names .company-name:hover {
-  background-color: #f1f1f1;
 }
 
 </style>
-</head>
 <body>
-    <div class="companies">
-        <div class="company-banner-container" id="company-banner-1">
-          <h1>Company 1 Banner</h1>
-        </div>
-        <div class="company-banner-container" id="company-banner-2">
-          <h1>Company 2 Banner</h1>
-        </div>
-        <div class="company-banner-container" id="company-banner-3">
-          <h1>Company 3 Banner</h1>
-        </div>
-        <div class="company-banner-container" id="company-banner-4">
-          <h1>Company 4 Banner</h1>
-        </div>
+  <section class="careers-section">
+    <h2>Careers at Our Company</h2>
+    <div class="job-listings">
+      <div class="job-listing">
+        <h3>Software Engineer</h3>
+        <p>We are seeking a talented software engineer to join our team.</p>
+        <form class="apply-form">
+          <div class="form-group">
+            <label for="name-input">Name</label>
+            <input type="text" id="name-input" name="name" required>
+          </div>
+          <div class="form-group">
+            <label for="email-input">Email</label>
+            <input type="email" id="email-input" name="email" required>
+          </div>
+          <div class="form-group">
+            <label for="phone-input">Phone</label>
+            <input type="tel" id="phone-input" name="phone" required>
+          </div>
+          <div class="form-group">
+            <div class="file-upload-container">
+              <label for="file-input">Select a file</label>
+              <input type="file" id="file-input" name="file" multiple>
+              <div class="drop-zone">
+                <span>Drag and drop files here</span>
+              </div>
+              <div class="file-list"></div>
+            </div>
+          </div>
+          <button class="apply-button">Apply Now</button>
+        </form>
       </div>
-      
-      <div class="company-names">
-        <div class="company-name" data-target="#company-banner-1">Child 1</div>
-        <div class="company-name" data-target="#company-banner-2">Child 2</div>
-        <div class="company-name" data-target="#company-banner-3">Child 3</div>
-        <div class="company-name" data-target="#company-banner-4">Child 4</div>
-      </div>
-<script>
-$(document).ready(function() {
-// get the fixed child element
-var fixedChild = $('.company-names');
+    </div>
+  </section>
+  <script>
+    var fileInput = document.querySelector('#file-input');
+var dropZone = document.querySelector('.drop-zone');
+var fileList = document.querySelector('.file-list');
 
-// add click event listener to each child element of the fixed child
-fixedChild.children().each(function(index) {
-    $(this).click(function() {
-    // get the corresponding company banner container
-    var companyBanner = $('.company-banner-container').eq(index);
-    
-    // scroll to the corresponding company banner container
-    $('html, body').animate({
-        scrollTop: companyBanner.offset().top
-    }, 1000);
+fileInput.addEventListener('change', function() {
+  updateFileList(fileInput.files);
+});
+
+dropZone.addEventListener('dragover', function(event) {
+  event.preventDefault();
+  dropZone.classList.add('drag-over');
+});
+
+dropZone.addEventListener('dragleave', function(event) {
+  event.preventDefault();
+  dropZone.classList.remove('drag-over');
+});
+
+dropZone.addEventListener('drop', function(event) {
+  event.preventDefault();
+  dropZone.classList.remove('drag-over');
+  updateFileList(event.dataTransfer.files);
+});
+
+function updateFileList(files) {
+  fileList.innerHTML = '';
+  for (var i = 0; i < files.length; i++) {
+    var li = document.createElement('li');
+    var fileName = document.createElement('span');
+    fileName.classList.add('file-name');
+    fileName.textContent = files[i].name;
+    var fileSize = document.createElement('span');
+    fileSize.classList.add('file-size');
+    fileSize.textContent = formatSize(files[i].size);
+    var removeButton = document.createElement('span');
+    removeButton.classList.add('file-remove');
+    removeButton.textContent = 'Remove';
+    removeButton.addEventListener('click', function() {
+      li.remove();
     });
-});
-});
-$(document).ready(function() {
-  // get the fixed child element
-  var fixedChild = $('.company-names');
+    li.appendChild(fileName);
+    li.appendChild(fileSize);
+    li.appendChild(removeButton);
+    fileList.appendChild(li);
+  }
+}
 
-  // initially hide the fixed child element
-  fixedChild.hide();
+function formatSize(size) {
+  var units = ['B', 'KB', 'MB', 'GB', 'TB'];
+  var unitIndex = 0;
+  while (size >= 1024 && unitIndex < units.length - 1) {
+    size /= 1024;
+    unitIndex++;
+  }
+  return size.toFixed(2) + ' ' + units[unitIndex];
+}
 
-  // add scroll event listener
-  $(window).scroll(function() {
-    // loop through each company banner container
-    $('.company-banner-container').each(function(index) {
-      var companyBanner = $(this);
-
-      // check if the current scroll position is on this company banner
-      if ($(window).scrollTop() >= companyBanner.offset().top && $(window).scrollTop() < companyBanner.offset().top + companyBanner.outerHeight()) {
-        // show the fixed child element
-        fixedChild.show();
-        return false; // exit the loop
-      } else {
-        // hide the fixed child element
-        fixedChild.hide();
-      }
-    });
-  });
-});
-</script>
+  </script>
+  
 </body>
 </html>

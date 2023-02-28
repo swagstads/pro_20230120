@@ -400,75 +400,159 @@
    </div>
    <!-- testimonial section end -->
    <!-- opportuniites section start -->
-   <!-- <div id="careers_section" class="contact_section layout_padding section">
-      <div class="container">
-         <h1 class="contact_taital">Careers</h1>
-         <p class="contact_text">Join our team and discover opportunities that align with your values </p>
-         <div class="contact_section_2 layout_padding section">
-            <div class="row">
-               <div class="col-md-6">
-                  <div class="contact_main">
-                        <form action="./api/mail_data.php" method="POST" enctype="multipart/form-data">
-                           <div class="user-box">
-                              <input type="text" id="career_name" name="name" minlength="2" maxlength="15" pattern="[A-Za-z ]{2,25}" title="Please write a valid name" required>
-                              <label>Name</label>
-                           </div>
-                           <div class="user-box">
-                              <input type="email" id="career_email" name="email" required>
-                              <label>Email</label>
-                           </div>
-                           <div class="user-box">
-                              <input type="tel" id="career_contact" name="contact" minlength="10" maxlength="10" pattern="[56789][0-9]{9}" title="Please Enter a valid contact number" required>
-                              <label>Contact Number</label>
-                           </div>
-                           <div class="user-box">
-                              <input type="file" name="resume" id="resume" accept="application/pdf">
-                              <label>Upload your resume</label>
-                           </div>
-                           
-                          <div class="send-bttn">
-                              <button class="cta">
-                                 <span class="hover-underline-animation"> Submit </span>
-                                 <svg viewBox="0 0 46 16" height="10" width="30" xmlns="http://www.w3.org/2000/svg" id="arrow-horizontal">
-                                    <path transform="translate(30)" d="M8,0,6.545,1.455l5.506,5.506H-30V9.039H12.052L6.545,14.545,8,16l8-8Z" data-name="Path 10" id="Path_10"></path>
-                                 </svg>
-                           </button>
-                          </div>
-                        </form>
-                     
-                        <script>
-                           function submit_resume(){
-                              event.preventDefault()
-                              var api_url = './api/mail_data.php';
-                              let name = document.getElementById("career_name").value;
-                              let email = document.getElementById("career_email").value;
-                              let contact = document.getElementById("career_contact").value;
-                              let resume = document.getElementById("resume")
-                              var form_data = { "resume": "1","name":name,"email":email,"contact":contact,"resume":resume};
-                              // console.log(form_data);
-                              $.ajax({
-                                    url: api_url,
-                                    type: 'POST',
-                                    data: form_data,
-                                    success: function (returned_data) {
-                                          console.log(returned_data);
-                                          var jsonData = JSON.parse(returned_data);
-                                          var return_data = jsonData.response;
-                                          console.log(jsonData.response);
-                                          // console.log("response",jsonData.response[0]);
-                                    }
-                                 })
-                           }
-
-                        </script>
+   <section id="careers_section">
+      <div class="career-content">
+        <h2>Careers at Our Company</h2>
+        <div class="job-listings">
+           <h4>Join our team and discover opportunities that align with your values </h4>
+          <div class="job-listing">
+            <form>
+               <div class="apply-form">                  
+                  <div class="left">
+                     <div class="form-group">
+                       <label for="name-input">Name</label>
+                       <input type="text" id="name-input" name="name" required>
+                     </div>
+                     <div class="form-group">
+                       <label for="email-input">Email</label>
+                       <input type="email" id="email-input" name="email" required>
+                     </div>
+                     <div class="form-group">
+                       <label for="phone-input">Phone</label>
+                       <input type="tel" id="phone-input" name="phone" required>
+                     </div>
+                  </div>
+                  <div class="right">
+                     <div class="file-upload">
+                        <div class="form-group">
+                           <label for="resume-upload">Resume</label>
+                           <input type="file" id="resume-upload" name="resume" accept=".pdf" required />
+                           <p>Drag and drop your resume file here or click to select a file.</p>
+                        </div>
+                     </div>
                   </div>
                </div>
+               <br>
                
+               <button class="career-form-bttn" style="vertical-align:middle"><span>Apply</span></button>
+
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      <!-- script for drag drop resume -->
+
+      <script>
+
+const container = document.querySelector('.file-upload');
+const fileInput = container.querySelector('input[type="file"]');
+const fileNameDiv = document.querySelector('.file-upload p');
+
+container.addEventListener('click', () => {
+  fileInput.click();
+});
+
+fileInput.addEventListener('change', () => {
+  fileNameDiv.innerHTML = fileInput.files[0].name;
+});
+container.addEventListener('dragover', (event) => {
+  event.preventDefault();
+  container.classList.add("active")
+});
+
+container.addEventListener('drop', (event) => {
+  event.preventDefault();
+  container.classList.remove("active")
+  container.classList.add("activated")
+  const file = event.dataTransfer.files[0];
+  fileInput.files = event.dataTransfer.files;
+  fileInput.nextElementSibling.textContent = file.name;
+});
+
+      </script>
+
+
+      <!-- script for drag drop resume end -->
+
+      
+
+
+
+
+
+          
+      <!-- <div class="container">
+         <div class="career-content">
+            <h1 class="contact_taital">Careers</h1>
+            <p class="contact_text">Join our team and discover opportunities that align with your values </p>
+            <div class="contact_section_2 layout_padding section">
+               <div class="row">
+                  <div class="col-md-6">
+                     <div class="contact_main">
+                           <form action="./api/mail_data.php" method="POST" enctype="multipart/form-data">
+                              <div class="user-box">
+                                 <input type="text" id="career_name" name="name" minlength="2" maxlength="15" pattern="[A-Za-z ]{2,25}" title="Please write a valid name" required>
+                                 <label>Name</label>
+                              </div>
+                              <div class="user-box">
+                                 <input type="email" id="career_email" name="email" required>
+                                 <label>Email</label>
+                              </div>
+                              <div class="user-box">
+                                 <input type="tel" id="career_contact" name="contact" minlength="10" maxlength="10" pattern="[56789][0-9]{9}" title="Please Enter a valid contact number" required>
+                                 <label>Contact Number</label>
+                              </div>
+                              <div class="user-box">
+                                 <input type="file" name="resume" id="resume" accept="application/pdf">
+                                 <label>Upload your resume</label>
+                              </div>
+                              
+                             <div class="send-bttn">
+                                 <button class="cta">
+                                    <span class="hover-underline-animation"> Submit </span>
+                                    <svg viewBox="0 0 46 16" height="10" width="30" xmlns="http://www.w3.org/2000/svg" id="arrow-horizontal">
+                                       <path transform="translate(30)" d="M8,0,6.545,1.455l5.506,5.506H-30V9.039H12.052L6.545,14.545,8,16l8-8Z" data-name="Path 10" id="Path_10"></path>
+                                    </svg>
+                              </button>
+                             </div>
+                           </form>
+                        
+                           <script>
+                              function submit_resume(){
+                                 event.preventDefault()
+                                 var api_url = './api/mail_data.php';
+                                 let name = document.getElementById("career_name").value;
+                                 let email = document.getElementById("career_email").value;
+                                 let contact = document.getElementById("career_contact").value;
+                                 let resume = document.getElementById("resume")
+                                 var form_data = { "resume": "1","name":name,"email":email,"contact":contact,"resume":resume};
+                                 // console.log(form_data);
+                                 $.ajax({
+                                       url: api_url,
+                                       type: 'POST',
+                                       data: form_data,
+                                       success: function (returned_data) {
+                                             console.log(returned_data);
+                                             var jsonData = JSON.parse(returned_data);
+                                             var return_data = jsonData.response;
+                                             console.log(jsonData.response);
+                                             // console.log("response",jsonData.response[0]);
+                                       }
+                                    })
+                              }
+   
+                           </script>
+                     </div>
+                  </div>
+                  
+               </div>
             </div>
          </div>
-      </div>
-   </div> -->
-   <div id="careers_section" class="careers_section layout_padding">
+      </div> -->
+   </div>
+   <!-- <div id="careers_section" class="careers_section layout_padding">
       <form method="POST" action="./api/mail_data.php" enctype="multipart/form-data">
          <div class="car-container">
             <div class="car-card">
@@ -494,7 +578,7 @@
             </div>
          </div>
       </form>
-   </div>
+   </div> -->
 
    <!-- opportuniites section end -->
    <!-- footer section start -->

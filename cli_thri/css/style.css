@@ -1651,44 +1651,164 @@ footer {
   min-height: 90vh;
   width: 100%;
   background: url("../images/index/career.jpg");
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+@media (min-width: 1245px ) {
+  #careers_section{
+    padding: 40px;
+  }
+}
+.career-content{
+  width: auto;
+  padding: 30px;
+}
+.careers-section {
+  padding: 50px;
+  background-color: rgba(255, 255, 255, 0.808);
+  text-align: center;
 }
 
-.cta {
-    border: none;
-    background: none;
+.job-listing {
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0.705);
+
+  /* box-shadow: 0px 0px 10px #ccc; */
+}
+
+.job-listing h3 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.job-listing p {
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+.apply-form {
+  display: flex;
+  gap: 30px;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+.apply-form>*{
+  width: 50%;
+}
+.form-group {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 10px;
+  width: 100%;
+}
+.form-group label {
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="tel"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.form-group input[type="file"] {
+  display: none;
+}
+
+.file-upload {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  border: 2px dotted #949494;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.file-upload label,.file-upload p {
+  margin: 0;
+  text-align: center;
+  width: 100%;
+}
+
+.file-upload:hover {
+  background-color: #f2f2f2;
+}
+.file-upload.active{
+  border-color: var(--primary-color);
+}
+.file-upload.activated{
+  border-color: var(--secondary-color);
+}
+@media screen and (max-width: 768px) {
+  .apply-form {
+    flex-direction: column;
   }
-  
-  .cta span {
-    color: white;
-    font-weight: 600;
-    padding-bottom: 7px;
-    letter-spacing: 2px;
-    font-size: 14px;
-    padding-right: 5px;
-    text-transform: uppercase;
+  .form-group,
+  .file-upload {
+    width: 100%;
+    margin-right: 0;
   }
-  
-  .cta svg {
-    color: white;
-    fill: white;
-    transform: translateX(-10px);
-    transition: all 0.3s ease;
+  .apply-form>*{
+    width: 100%;
   }
-  
-  .cta:hover svg {
-    transform: translateX(0);
-  }
-  
-  .cta:active svg {
-    transform: scale(0.9);
-  }
-  
-  .hover-underline-animation {
-    position: relative;
-    color: white;
-    padding-bottom: 20px;
-  }
-  
+}
+
+.career-form-bttn {
+  display: inline-block;
+  border-radius: 7px;
+  border: none;
+  background: #1875FF;
+  color: white;
+  font-family: inherit;
+  text-align: center;
+  font-size: 13px;
+  /* box-shadow: 0px 14px 56px -11px var(--primary-color); */
+  width: 10em;
+  padding: 1em;
+  transition: all 0.4s;
+  cursor: pointer;
+ }
+ 
+ .career-form-bttn span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.4s;
+ }
+ 
+ .career-form-bttn span:after {
+  content: 'Now';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -5px;
+  transition: 0.7s;
+ }
+ 
+ .career-form-bttn:hover span {
+  padding-right: 2.55em;
+ }
+ 
+ .career-form-bttn:hover span:after {
+  opacity: 4;
+  right: 0;
+ }
+
+
+
   .hover-underline-animation:after {
     content: "";
     position: absolute;
@@ -1709,7 +1829,7 @@ footer {
 
 
   /* Careers Card */
-
+/* 
   .car-login {
     color: #000;
     text-transform: uppercase;
@@ -1743,7 +1863,6 @@ footer {
     flex-direction: column;
     gap: 35px;
     background-color: white;
-    /* background: #e3e3e3; */
     box-shadow: 16px 16px 32px #c8c8c8,
           -16px -16px 32px #fefefe; 
     border-radius: 8px;
@@ -1762,10 +1881,8 @@ footer {
     color: #000;
     font-size: .8em;
     background: transparent;
-    /* border-left: 2px solid #000; */
     border-bottom: 1px solid #000;
     transition: 0.1s;
-    /* border-bottom-left-radius: 8px; */
   }
 
   .car-inputBox span {
@@ -1799,6 +1916,6 @@ footer {
   .car-inputBox input:focus {
     border: 1px solid #000;
     border-radius: 3px;
-  }
+  } */
 
   
