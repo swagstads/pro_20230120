@@ -4,7 +4,7 @@ include('../api/config.php');
 
 
 // Insert dummy data into the "Product" table
-$sql = "INSERT INTO Products (title, category,quantity, description,mrp, price, img_location)
+$sql = "INSERT INTO Products (title, category,quantity, description,mrp, price, image_name)
 VALUES
 ('Cushion Cover', 'Home Decor', 10, 'Blue and Green Floral Cushion Cover',100, 15.99, 'img/cushion_cover.jpg'),
 ('Rug', 'Home Decor',10, 'Beige and Black Area Rug',100, 99.99, 'img/rug.jpg'),

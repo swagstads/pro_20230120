@@ -1649,8 +1649,8 @@ footer {
 #careers_section{
   float: left;
   min-height: 90vh;
+  /* background-color: var(--primary-color); */
   width: 100%;
-  background: url("../images/index/career.jpg");
   left: 0;
   right: 0;
   margin: auto;
@@ -1675,8 +1675,6 @@ footer {
   border: 1px solid #ccc;
   border-radius: 5px;
   background-color: rgba(255, 255, 255, 0.705);
-
-  /* box-shadow: 0px 0px 10px #ccc; */
 }
 
 .job-listing h3 {
@@ -1698,6 +1696,16 @@ footer {
 }
 .apply-form>*{
   width: 50%;
+}
+.apply-form .left{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+.apply-form .left img{
+  height: 100%;
+  mix-blend-mode:multiply;
 }
 .form-group {
   display: flex;
@@ -1726,11 +1734,12 @@ footer {
 }
 
 .file-upload {
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: 100%;
+  min-height: 250px;
   padding: 20px;
   border: 2px dotted #949494;
   border-radius: 5px;

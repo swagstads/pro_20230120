@@ -14,8 +14,9 @@ $data = array();
 if (isset($_POST['show_products'])) {
     // $user_id=$_POST['user_id'];
 
-    $stmt = $dbh->prepare(' SELECT * FROM products');
+    $stmt = $dbh->prepare(' SELECT * FROM product JOIN category ON FIND_IN_SET(category.id, product.category_id)');
     $stmt->execute();
+
     $count = $stmt->rowCount();
 
     if ($count > 0) {
@@ -23,13 +24,19 @@ if (isset($_POST['show_products'])) {
         for ($i = 0; $i < $count; $i++) {
             $data["id"] = $fetch_data[$i]['id'];
             $data["title"] = $fetch_data[$i]['title'];
-            $data["category"] = $fetch_data[$i]['category'];
+            $data["category"] = $fetch_data[$i]['category_name'];
             $data["description"] = $fetch_data[$i]['description'];
             $data["product_quantity"] = $fetch_data[$i]['quantity'];
             $data["mrp"] = $fetch_data[$i]['mrp'];
             $data["price"] = $fetch_data[$i]['price'];
-            $data["img_location"] = $fetch_data[$i]['img_location'];
-
+            $stmt2 = $dbh->prepare(' SELECT image_name FROM product_media WHERE product_id = :product_id');
+            $stmt2->bindParam(':product_id', $data["id"], PDO::PARAM_STR);
+            $stmt2->execute();
+            $im_count = $stmt2->rowCount();
+            for ($j = 0; $j < $im_count; $j++){
+                $fetch_image = $stmt2->fetchAll(PDO::FETCH_ASSOC);
+                $data["image_name"] = $fetch_image[$j]['image_name'];
+            }
             $data["status"] = "success";
             $data["reason"] = "orders_fetched";
             array_push($response["response"], $data);

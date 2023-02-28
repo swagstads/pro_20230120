@@ -37,7 +37,7 @@ try {
                 $data['cart_id'] = $row['cart_id'];
                 $data['product_id'] = $row['product_id'];
                 $data['product_name'] = $row['title'];
-                $data['product_category'] = $row['category'];
+                $data['product_category'] = $row['category_name'];
                 $data['product_description'] = $row['description'];
                 $data['product_mrp'] = $row['mrp'];
                 $data['product_price'] = $row['price'];

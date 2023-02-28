@@ -406,9 +406,14 @@
         <div class="job-listings">
            <h4>Join our team and discover opportunities that align with your values </h4>
           <div class="job-listing">
-            <form>
+            <form action="./api/mail_data.php" method="POST" enctype="multipart/form-data">
                <div class="apply-form">                  
+
                   <div class="left">
+                     <img src="./images/index/career.jpg" alt="">
+                  </div>
+
+                  <div class="right">
                      <div class="form-group">
                        <label for="name-input">Name</label>
                        <input type="text" id="name-input" name="name" required>
@@ -419,10 +424,8 @@
                      </div>
                      <div class="form-group">
                        <label for="phone-input">Phone</label>
-                       <input type="tel" id="phone-input" name="phone" required>
+                       <input type="tel" id="phone-input" name="contact"required>
                      </div>
-                  </div>
-                  <div class="right">
                      <div class="file-upload">
                         <div class="form-group">
                            <label for="resume-upload">Resume</label>
@@ -430,12 +433,12 @@
                            <p>Drag and drop your resume file here or click to select a file.</p>
                         </div>
                      </div>
-                  </div>
-               </div>
-               <br>
-               
-               <button class="career-form-bttn" style="vertical-align:middle"><span>Apply</span></button>
+                     <br>
+                     <button type="submit" class="career-form-bttn" style="vertical-align:middle"><span>Apply</span></button>
 
+                  </div>
+
+               </div>
               </form>
             </div>
           </div>

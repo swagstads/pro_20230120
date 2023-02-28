@@ -39,7 +39,11 @@ try {
                 $data['mrp'] = $row['mrp'] ; 
                 $data['price'] = $row['price'] ; 
                 $data['amount'] = $row['amount'] ; 
-                $data['img_location'] = $row['img_location'] ; 
+                $stmt2 = $dbh->prepare(' SELECT image_name FROM product_media WHERE product_id = :product_id');
+                $stmt2->bindParam(':product_id', $data["id"], PDO::PARAM_STR);
+                $stmt2->execute();
+                $fetch_image = $stmt2->fetchAll(PDO::FETCH_ASSOC);
+                $data['image_name'] = $fetch_image[0]['image_name'];
                 $data['order_status'] = $row['order_status'] ; 
 
                 $data["status"] = "ok";
