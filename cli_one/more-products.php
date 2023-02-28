@@ -52,15 +52,14 @@
                 success: function (returned_data) {
                     var jsonData = JSON.parse(returned_data);
                     var return_data = jsonData.response;
-                    // console.log(jsonData);
+                    console.log(jsonData);
                     if (return_data[0].status == "failed") {
                         // console.log('failed to fetched product data');
                         $("#product_container").append('<div style="text-align:center;width:100%;font-size:20px">Sorry, no results found</div>')
                     }
                     else if (return_data[0].status == "success") {
                         // console.log('Fetched products Data');
-                        // console.log(jsonData.response);
-                        
+                        console.log(jsonData.response);
                         for (var i = 0; i < jsonData.response.length; i++) {
                             
                             let outOfStockMessage = "";
@@ -74,7 +73,7 @@
                             else{
                                 inStockMessage = "In Stock"
                             }
-                            // console.log("Data "+i+":"+return_data[i].title);
+                            console.log("Data "+i+":"+return_data[i].title);
                             $('.scrolling-products').append(
                                 '<div class="product-slider">'+
                                     '<a onclick="increase_click_count('+return_data[i].id+')"  href="./productpage.php?productid='+return_data[i].id+'" >'+
@@ -126,7 +125,6 @@
         function addToCart(product_id){
                 var quantity = 1;
                 api_url = "./api/add_to_cart.php";
-                // console.log("adding to cart: pro id,", product_id);
                 var form_data = { "add_to_cart": "add" , "productid": product_id,'quantity': quantity};
                 console.log(form_data);
                 $.ajax({
@@ -138,9 +136,9 @@
                             var return_data = jsonData.response;
                             console.log(return_data);
                             show_msg(return_data[0].message)
+                            console.log(product_id,"Added to cart");
                         }
                 })
-                console.log(product_id,"Added to cart");
                 cart_count()
             }
 

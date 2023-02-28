@@ -13,12 +13,12 @@ $response["response"] = array();
 try {
     if(isset($_POST['trending_prods'])){
         // Execute the query to fetch the top 3 products by click_count
-        $sql = "SELECT * FROM product JOIN category ON FIND_IN_SET(category.id, product.category_id) ORDER BY click_count DESC LIMIT 3";
+        $sql = "SELECT *, p.id AS product_id FROM product p JOIN category c ON FIND_IN_SET(c.id, p.category_id) ORDER BY click_count DESC LIMIT 3";
         $stmt = $dbh->query($sql);
     
         // Fetch the rows and display the results
         while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
-            $data['product_id'] = $row['id'];
+            $data['product_id'] = $row['product_id'];
             $data['product_title'] = $row['title'];
             $data['product_category'] = $row['category_name'];
             $stmt2 = $dbh->prepare(' SELECT image_name FROM product_media WHERE product_id = :product_id');

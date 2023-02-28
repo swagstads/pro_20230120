@@ -333,6 +333,7 @@
                                             var jsonData = JSON.parse(returned_data);
                                             var return_data = jsonData.response;
                                             for (i=0;i<= 3; i++){
+                                                console.log("trending: ", return_data[i]);
                                                 $(".trending-products").append(
                                                     '<a href="productpage.php?productid='+return_data[i].product_id+'">'+
                                                         '<div class="container10 col-md-3">'+
@@ -385,7 +386,7 @@
    
                     <div class="row portfolio-container" id="category">
 
-                        <a href="./productpage.php?productid=18">
+                        <a href="./productpage.php?productid=1">
                             <div class="col-lg-4 col-md-6 portfolio-item filter-bedsheets">
                                 <img src="assets/images/portfolio/portfolio-2.jpg" class="img-fluid" alt="">
                                 <div class="portfolio-info">
@@ -397,7 +398,7 @@
                             </div>
                         </a>
 
-                        <a href="./productpage.php?productid=17">
+                        <a href="./productpage.php?productid=1">
                             <div class="col-lg-4 col-md-6 portfolio-item filter-bedsheets">
                                 <img src="assets/images/portfolio/portfolio-2.jpg" class="img-fluid" alt="">
                                 <div class="portfolio-info">
@@ -409,7 +410,7 @@
                             </div>
                         </a>
 
-                        <a href="./productpage.php?productid=17">
+                        <a href="./productpage.php?productid=1">
                             <div class="col-lg-4 col-md-6 portfolio-item filter-bedsheets">
                                 <img src="assets/images/portfolio/portfolio-2.jpg" class="img-fluid" alt="">
                                 <div class="portfolio-info">
@@ -433,7 +434,7 @@
                             </div>
                         </a>
 
-                        <a href="./productpage.php?productid=17">
+                        <a href="./productpage.php?productid=1">
                             <div class="col-lg-4 col-md-6 portfolio-item filter-cushion-covers">
                                 <img src="assets/images/portfolio/portfolio-2.jpg" class="img-fluid" alt="">
                                 <div class="portfolio-info">
@@ -445,7 +446,7 @@
                             </div>
                         </a>
 
-                        <a href="./productpage.php?productid=17">
+                        <a href="./productpage.php?productid=1">
                             <div class="col-lg-4 col-md-6 portfolio-item filter-cushion-covers">
                                 <img src="assets/images/portfolio/portfolio-2.jpg" class="img-fluid" alt="">
                                 <div class="portfolio-info">
@@ -469,7 +470,7 @@
                             </div>
                         </a>
 
-                        <a href="./productpage.php?productid=17">
+                        <a href="./productpage.php?productid=1">
                             <div class="col-lg-4 col-md-6 portfolio-item filter-curtains">
                                 <img src="assets/images/portfolio/portfolio-2.jpg" class="img-fluid" alt="">
                                 <div class="portfolio-info">
@@ -481,7 +482,7 @@
                             </div>
                         </a>
 
-                        <a href="./productpage.php?productid=17">
+                        <a href="./productpage.php?productid=1">
                             <div class="col-lg-4 col-md-6 portfolio-item filter-curtains">
                                 <img src="assets/images/portfolio/portfolio-2.jpg" class="img-fluid" alt="">
                                 <div class="portfolio-info">

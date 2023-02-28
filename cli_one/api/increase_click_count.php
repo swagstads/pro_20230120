@@ -13,7 +13,7 @@ $response["response"] = array();
 try {
     if(isset($_POST['product_id'])){
         $product_id = $_POST['product_id'];
-        $sql = "UPDATE products SET click_count = click_count + 1  WHERE id=:product_id" ;
+        $sql = "UPDATE product SET click_count = click_count + 1  WHERE id=:product_id" ;
         $query = $dbh->prepare($sql);
         $query->bindParam(':product_id', $product_id, PDO::PARAM_STR);
         if($query->execute()){    

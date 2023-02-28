@@ -12,7 +12,7 @@ $data = array();
 try {
     if(isset($_SESSION['user_id'])){
         $user_id = $_SESSION['user_id'];
-        $sql = "SELECT c.*, c.quantity AS cart_quantity, c.id AS cart_id, p.*,p.quantity AS product_quantity, p.id AS product_id FROM cart c INNER JOIN products p ON c.product_id = p.id WHERE user_id=:user_id";
+        $sql = "SELECT c.*, c.quantity AS cart_quantity, c.id AS cart_id, p.*,p.quantity AS product_quantity, p.id AS product_id FROM cart c INNER JOIN product p ON c.product_id = p.id WHERE user_id=:user_id";
         $stmt = $dbh->prepare($sql);
         $stmt->bindParam(':user_id', $user_id, PDO::PARAM_STR);
         $stmt->execute();
@@ -37,7 +37,7 @@ try {
                 $data['cart_id'] = $row['cart_id'];
                 $data['product_id'] = $row['product_id'];
                 $data['product_name'] = $row['title'];
-                $data['product_category'] = $row['category_name'];
+                // $data['product_category'] = $row['category_name'];
                 $data['product_description'] = $row['description'];
                 $data['product_mrp'] = $row['mrp'];
                 $data['product_price'] = $row['price'];

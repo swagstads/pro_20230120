@@ -20,19 +20,17 @@ try {
             // $amount = $_POST['amount'];
             
             // get the stock quantity
-            $sql = " SELECT id,quantity FROM products WHERE id=:product_id" ;
+            $sql = " SELECT quantity,p.id AS product_id  FROM product p JOIN category c ON FIND_IN_SET(c.id, p.category_id) WHERE p.id=:product_id " ;
             $query = $dbh->prepare($sql);
             $query->bindParam(':product_id', $product_id, PDO::PARAM_STR);
             $query->execute();
             $row = $query->fetch(PDO::FETCH_OBJ);
             $data["qnty"] = $row->quantity;
-            $data['proid'] = $row->id;
+            $data['proid'] = $row->product_id;
             
             if( $row->quantity >= 1){
 
-                    $sql = " SELECT * FROM Cart WHERE user_id=:user_id 
-                                AND product_id=:product_id " ;
-            
+                    $sql = " SELECT * FROM Cart WHERE user_id=:user_id AND product_id=:product_id " ;
                     $query = $dbh->prepare($sql);
                     $query->bindParam(':user_id', $user_id, PDO::PARAM_STR);
                     $query->bindParam(':product_id', $product_id, PDO::PARAM_STR);
@@ -45,7 +43,7 @@ try {
                             $data["message"] = "Item is already in cart";
                         }
                         else if($quantity >= 1){
-                        $sql = "    UPDATE Cart SET quantity=:quantity  WHERE  user_id=:user_id AND product_id=:product_id  ";
+                        $sql = "UPDATE Cart SET quantity=:quantity  WHERE  user_id=:user_id AND product_id=:product_id  ";
                         $query = $dbh->prepare($sql);
                         $query->bindParam(':user_id', $user_id, PDO::PARAM_STR);
                         $query->bindParam(':product_id', $product_id, PDO::PARAM_STR);
@@ -95,7 +93,6 @@ try {
     $data["message"] = "Something went wrong, please try again later.";
     $data["error"] = $th;
 }
-
 
 array_push($response["response"], $data);
 echo json_encode($response);
