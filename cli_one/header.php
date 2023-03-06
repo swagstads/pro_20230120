@@ -433,8 +433,11 @@
                     <?php if (isset($_SESSION['username'])) {  ?> <!-- when user is logged in -->
 
                         <div class="dropdown">
-                            <button class="dropbtn">                                
-                                    <svg width="25px" height="25px" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg"><path fill="currentcolor" d="M831.872 340.864 512 652.672 192.128 340.864a30.592 30.592 0 0 0-42.752 0 29.12 29.12 0 0 0 0 41.6L489.664 714.24a32 32 0 0 0 44.672 0l340.288-331.712a29.12 29.12 0 0 0 0-41.728 30.592 30.592 0 0 0-42.752 0z"/></svg>
+                            <button class="dropbtn">  
+                                        <h5>&nbsp;Hello <b><?php echo $_SESSION['name'] ?>!</b> </h5>
+
+                                        <svg width="25px" height="25px" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg"><path fill="currentcolor" d="M831.872 340.864 512 652.672 192.128 340.864a30.592 30.592 0 0 0-42.752 0 29.12 29.12 0 0 0 0 41.6L489.664 714.24a32 32 0 0 0 44.672 0l340.288-331.712a29.12 29.12 0 0 0 0-41.728 30.592 30.592 0 0 0-42.752 0z"/></svg>
+
                             </button>
                             <div class="dropdown-content">
                                 <a href="./profile.php">
@@ -467,7 +470,6 @@
                             </div>
                         </div>
 
-
                     <?php
                     } // when use is logged in end
                     else { /// when use is not logged in
@@ -490,7 +492,7 @@
                     }
                     ?>
                     <div class="header-admin-icon" style="padding-left:20px; ">
-                        <a href="./admin_panel"><i class="fa fa-thin fa-lock icons" style="font-size:25px;"></i></a>
+                        <a href="./admin_panel"><i class="fa fa-thin fa-lock icons" style="font-size:25px;"></i></a>&nbsp;
                         <!--<i class="icons nav-icons"></i>-->
                     </div>
                 </div>
@@ -513,6 +515,9 @@
                         </form>
                     </div>
                 </div> -->
+
+
+                
             </div>
         </div>
     </div>

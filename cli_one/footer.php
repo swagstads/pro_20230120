@@ -62,6 +62,11 @@
                                 </i>
                                 Email: Contact@erentheme.com
                             </div>
+
+                            <div class="payment-icons">
+                                <img src="./assets/images/footer/payment.jpg" height="40px" alt="">
+                            </div>
+
                         </div>
                     </div>
                 </div>

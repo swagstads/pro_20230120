@@ -18,7 +18,7 @@ if ( isset($_SESSION['username']) ) {
     $fetch_data_users = $stmt->fetch(PDO::FETCH_OBJ);
 
 
-    $stmt2 = $dbh->prepare(' SELECT * FROM addresses WHERE user_id=:user_id');
+    $stmt2 = $dbh->prepare(' SELECT * FROM addresses WHERE user_id=:user_id ORDER BY modified_on DESC');
     $stmt2->bindParam(':user_id', $_SESSION['user_id'], PDO::PARAM_STR);
     $stmt2->execute();
     $fetch_address_users = $stmt2->fetch(PDO::FETCH_OBJ);
@@ -38,7 +38,6 @@ if ( isset($_SESSION['username']) ) {
     $data["profile_address_zip"] = $fetch_address_users->zip;
 
 }
-
 else{
     $data["status"] = "Fail";
     $data["message"] = "Login first";

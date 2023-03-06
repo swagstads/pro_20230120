@@ -13616,6 +13616,11 @@ button:active:focus,
 #velaFooter .vela-contactinfo .contactinfo-desc {
   margin-bottom: 30px;
 }
+#velaFooter .payment-icons img{
+  height: 40px;
+  border-radius: 5px;
+  opacity: 0.8;
+}
 #velaFooter .vela-contactinfo .icons {
   position: absolute;
   left: 0;

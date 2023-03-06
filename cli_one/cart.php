@@ -313,21 +313,23 @@
                             </svg>
                         </div>
                     </div>
-                    <div class="address-inputs">
-                        <div class="address-field-row">
-                        <input type="hidden" class="profile_address_id" name="" id="address_id">
-                        <p class="info address"><input type="text" placeholder="Address Line 1" name="" id="address_line_1" required></p>
-                        <p class="info address"><input type="text" placeholder="Address Line 2" name="" id="address_line_2" required></p>
+                    <form onsubmit="insert_new_address()">
+                        <div class="address-inputs">
+                            <div class="address-field-row">
+                            <input type="hidden" class="profile_address_id" name="" id="address_id">
+                            <p class="info address"><input type="text" pattern="^[a-zA-Z0-9\.\,\-\#\(\)\s]{1,100}$" placeholder="Address Line 1" name="" id="address_line_1" required></p>
+                            <p class="info address"><input type="text" pattern="^[a-zA-Z0-9\.\,\-\#\(\)\s]{1,100}$" placeholder="Address Line 2" name="" id="address_line_2" required></p>
+                            </div>
+                            <div class="address-field-row">
+                            <p class="info address"><input type="text" placeholder="City" pattern="^[a-zA-Z\s]{1,100}$" name="" id="address_city" required></p>
+                            <p class="info address"><input type="text" placeholder="State" pattern="^[a-zA-Z\s]{1,100}$" name="" id="address_state" required></p>
+                            <p class="info address"><input type="tel" pattern="^\d{6}$"  placeholder="Zip" name="" id="address_zip" required></p>
+                            </div>
+                            <div class="submit-bttn">
+                                <button type="submit" class="submit-button">Save</button>
+                            </div>
                         </div>
-                        <div class="address-field-row">
-                        <p class="info address"><input type="text" placeholder="City" name="" id="address_city" required></p>
-                        <p class="info address"><input type="text" placeholder="State" name="" id="address_state" required></p>
-                        <p class="info address"><input type="tel" pattern="[0-9]+"  placeholder="Zip" name="" id="address_zip" required></p>
-                        </div>
-                        <div class="submit-bttn">
-                            <button type="submit" onclick="insert_new_address()" class="submit-button">Save</button>
-                        </div>
-                    </div>
+                    </form>
                 </div>
                 <script>
                     // $(document).click(function() {

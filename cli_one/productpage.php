@@ -43,10 +43,11 @@
                     <div class="product-description">
                         <span id="product_category"></span>
                         <h1 id="product_title"></h1>
-                        <p id="product_description">
+                        <p>
+                            <svg width="20px" height="20px" fill="green" xmlns="http://www.w3.org/2000/svg" shape-rendering="geometricPrecision" text-rendering="geometricPrecision" image-rendering="optimizeQuality" fill-rule="evenodd" clip-rule="evenodd" viewBox="0 0 512 512"><path fill-rule="nonzero" d="M256 0c70.69 0 134.7 28.66 181.02 74.98C483.34 121.31 512 185.31 512 256c0 70.69-28.66 134.7-74.98 181.02C390.7 483.34 326.69 512 256 512c-70.69 0-134.7-28.66-181.02-74.98C28.66 390.7 0 326.69 0 256c0-70.69 28.66-134.69 74.98-181.02C121.3 28.66 185.31 0 256 0zm17.75 342.25h29.15v29.32h-93.79v-29.32h28.76v-92.34h-28.76v-29.32h64.64v121.66zm-27.94-150.37c-7.08-.05-13.12-2.53-18.2-7.56-5.08-5.01-7.56-11.11-7.56-18.25 0-7.01 2.48-13.06 7.56-18.08 5.08-5.02 11.12-7.55 18.2-7.55 6.95 0 12.99 2.53 18.08 7.55 5.13 5.02 7.67 11.07 7.67 18.08 0 4.72-1.2 9.07-3.56 12.94-2.36 3.93-5.45 7.07-9.31 9.37-3.87 2.3-8.17 3.45-12.88 3.5zm171.9-97.59C376.33 52.92 319.15 27.32 256 27.32c-63.15 0-120.33 25.6-161.71 66.97C52.92 135.68 27.32 192.85 27.32 256c0 63.15 25.6 120.33 66.97 161.71 41.38 41.37 98.56 66.97 161.71 66.97 63.15 0 120.33-25.6 161.71-66.97 41.37-41.38 66.97-98.56 66.97-161.71 0-63.15-25.6-120.32-66.97-161.71z"/></svg> This is secure product
                         </p>
+                        <!-- <p id="product_description"></p> -->
                     </div>
-    
                     <!-- Product Pricing -->
                     <div class="product-price">
                         <span id="product_our_price">&#8377; <span id="product_price"></span></span>
@@ -57,10 +58,89 @@
                     <div class="product-mrp">
                         <span>&#8377; <span id="product_mrp"></span></span>
                     </div>
+                    <div class="social-media-share-links">
+                        <div><h3>Share on:</h3></div>
+                        <div class="share-buttons">
+                            <a href="#" title="Whatsap" class="share-btn whatsapp-btn"><i class="fa fa-whatsapp"></i></a>
+                            <a href="#" title="Copy to clipboard" class="share-btn copy-btn"><i class="fa fa-copy"></i></a>
+                            <!-- Add more social media buttons here -->
+                        </div>
+                        <script>
+                            // Get the current URL
+var currentUrl = window.location.href;
 
+// Get all share buttons
+var shareButtons = document.querySelectorAll('.share-btn');
+
+// Loop through each button and add a click event listener
+shareButtons.forEach(function(button) {
+  button.addEventListener('click', function(e) {
+    e.preventDefault();
+    var app = this.classList[1];
+
+    // Create a share URL for the selected app
+    var shareUrl;
+    switch (app) {
+      case 'whatsapp-btn':
+        general_product_description = "Hey! I just came across this amazing product and I had to share it with you. Check it out here: "
+        shareUrl = 'whatsapp://send?text='+ general_product_description + encodeURIComponent(currentUrl);
+        break;
+      // Add more social media apps here
+    }
+
+    // Open the share URL in a new tab
+    window.open(shareUrl);
+  });
+});
+
+                        </script>
+
+                    </div>
+                </div>
+
+                
+            </div>
+            <div class="description-reviews">
+                <div class="container">
+                    <div class="tab">
+                        <button class="tablinks" onclick="openTab(event, 'container1')">Description</button>
+                        <button class="tablinks" onclick="openTab(event, 'container2')">Reviews</button>
+                    </div>
+
+                    <div id="container1" class="tabcontent active show">
+                        <h3>Description</h3>
+                        <p id="product_description" ></p>
+                    </div>
+
+                    <div id="container2" class="tabcontent">
+                        <h3>Reviews</h3>
+                        <p>In construction...</p>
+                    </div>
                 </div>
             </div>
 
+            <script>
+                
+                function openTab(evt, tabName) {
+                    var i, tabcontent, tablinks;
+
+                    tabcontent = document.getElementsByClassName("tabcontent");
+                    for (i = 0; i < tabcontent.length; i++) {
+                        tabcontent[i].classList.remove("show");
+                    }
+
+                    tablinks = document.getElementsByClassName("tablinks");
+                    for (i = 0; i < tablinks.length; i++) {
+                        tablinks[i].classList.remove("active");
+                    }
+
+                    document.getElementById(tabName).classList.add("show");
+                    evt.currentTarget.classList.add("active");
+                    }
+
+            </script>
+            
+            <br>
             <div class="more-products">
                 <?php include('./more-products.php') ?>
             </div>
