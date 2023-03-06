@@ -455,8 +455,12 @@ button {
   .company-banner-container:nth-child(n) {
     background-repeat: no-repeat;
     background-position: left;
-    background-size: cover;
+    background-size: contain;
     background-attachment: fixed;
+    padding-top: calc(100% / (16 / 9)); /* Replace 16/9 with the aspect ratio of your image */
+    position: relative;
+  
+
   }
   .company-banner-container{
     background-color: #fff;
@@ -469,7 +473,6 @@ button {
   }
   .company-banner-container .text-box-know{
     position: absolute;
-    width: 15%;
     padding: 30px;
     background-color: white;
     bottom: 20px;
@@ -481,6 +484,11 @@ button {
     padding: 30px;
     background-color: white;
     bottom: 20px;
+  }
+  @media (max-width: 750px) {
+    .company-banner-container .text-box{
+      width: 90%;
+    }
   }
    .company-banner-container .text-box.right{
     right: 20px;
@@ -617,7 +625,6 @@ button {
    .know-more-bttn:hover .know-more-bttn-text {
     color: #fff;
    }
-
 /* 
 .group-of-companies{
     padding: auto 50px;
