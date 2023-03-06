@@ -188,6 +188,21 @@
                                                         '<span>Add to Cart</span>'+
                                                     '</button>'+
                                                 '</form>'+
+                                                '<form action="https://vela-kazan.myshopify.com/wishlist/add" method="post" enctype="multipart/form-data" class="formAddToWishlist">'+
+                                                    '<input type="hidden" name="id"  value="39397249056833" />'+
+                                                    '<button class="btn btnAddToWish" type="submit" value="Submit">'+
+                                                        '<i class="icons">'+
+                                                            '<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve">'+
+                                                                '<g>'+
+                                                                    '<g>'+
+                                                                    ' <path d="M416,277.333H277.333V416h-42.666V277.333H96v-42.666h138.667V96h42.666v138.667H416V277.333z" />'+
+                                                                    '</g>'+
+                                                                '</g>'+
+                                                            '</svg>'+
+                                                        '</i>'+
+                                                        '<span>Add to Wishlist</span>'+
+                                                    '</button>'+
+                                                '</form>'+
                                             '</div>'+
                                         '</div>'+
                                     '</div>'+

@@ -736,6 +736,22 @@
   color: white;
 }
 
+.wish-btn {
+  margin-left: 10px;
+  display: inline-block;
+  background-color: #ffffff;
+  border-radius: 6px;
+  font-size: 16px;
+  color: #000000;
+  text-decoration: none;
+  padding: 12px 30px;
+  transition: all .3s;
+}
+.wish-btn:hover {
+  background-color: #000000;
+  color: #ffffff;
+}
+
 /* Responsive */
 @media (max-width: 940px) {
   .mainContent.productpage {
@@ -1118,6 +1134,7 @@
     visibility: visible;
   }
   .product-slider-container .product-slider:hover .price-container{
+    height: 50px;
     display: block;
   }
 
@@ -1312,9 +1329,9 @@ body {
   background-color: #eeeff7;
 }
 .overflow-hidden {
-  height: 100vh;
+  /* height: 100vh; */
   /* prevent 2 vertical scrollbars on ie and firefox when the cart is visible */
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 
 a {

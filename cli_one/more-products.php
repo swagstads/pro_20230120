@@ -92,7 +92,7 @@
                                         
                                         '<div class="product-price">'+
                                             '<div class="price-container">'+
-                                                '<div class="our-price">'+
+                                                '<div class="our-price" style="height: 20px;">'+
                                                     '&#8377; '+return_data[i].price+' &nbsp;'+
                                                 '</div>'+
                                                 '<div class="product-mrp">'+
@@ -101,6 +101,9 @@
                                            '</div>'+
                                            ' <div class="add-to-cart-slide-button">'+
                                                 '<button onclick="addToCart('+return_data[i].id+')">&plus; Add to cart</button>'+
+                                            '</div>'+
+                                            ' <div class="add-to-cart-slide-button">'+
+                                                '<button onclick="addToWishlist('+return_data[i].id+')">&plus; Add to Wishlist</button>'+
                                             '</div>'+
                                         '</div>'+
                                 '</div>'

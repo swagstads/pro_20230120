@@ -47,27 +47,9 @@ jQuery(document).ready(function($){
 	});*/
 });
 function moveToCart (wishlist_id, product_id){
-	event.preventDefault();
 	addToCart(product_id);
-    let api_url_delete_from_cart = "./api/move_cart.php";
-    var form_data = {"wishlist_id":wishlist_id};
-    $.ajax({
-        url: api_url_delete_from_cart,
-        type: 'POST',
-        data: form_data,
-        success: function (returned_data) {
-            console.log("yeah");
-            var jsonData = JSON.parse(returned_data);
-            console.log("yeah",returned_data);
-            var return_data = jsonData.response;
-            show_msg("Product Moved to Cart");
-        }
-    })
-	wish_item = document.getElementById(wishlist_id);
-	wish_item.remove();
-	console.log($product_id);
-	console.log($user_id);
-	//Add AJAX
+    removeWish(wishlist_id);
+	$( "#cd-cart" ).load(document.URL + " #cd-cart>*" );
 }
 
 function removeWish(wishlist_id){
@@ -87,11 +69,13 @@ function removeWish(wishlist_id){
             show_msg("Product removed from Wishlist");
         }
     })
+	$( "#cd-cart" ).load(document.URL + " #cd-cart>*" );
+	/* 
 	wish_item = document.getElementById(wishlist_id);
 	wish_item.remove();
 	console.log($product_id);
 	console.log($user_id);
-	//Add AJAX
+	*/
 }
 function toggle_panel_visibility ($lateral_panel, $background_layer, $body) {
 	if( $lateral_panel.hasClass('speed-in') ) {
@@ -119,6 +103,30 @@ function move_navigation( $navigation, $MQ) {
 	}
 }
 
+function addToWishlist(product_id){
+	console.log("Here");
+
+	api_url = "./api/add_to_wishlist.php";
+	var form_data = {"productid": product_id};
+	console.log(form_data);
+	$.ajax({
+			url: api_url,
+			type: 'POST',
+			data: form_data,
+			success: function (returned_data) {
+				var jsonData = JSON.parse(returned_data);
+				var return_data = jsonData.response;
+				console.log(return_data);
+				console.log("Hereee");
+				show_msg(return_data[0].message)
+			}
+	})
+	console.log(product_id,"Added to Wishlist");
+	$( "#cd-cart" ).load(document.URL + " #cd-cart>*" );
+
+}
+
+
 function addToCart(product_id){
 	var quantity = 1;
 	api_url = "./api/add_to_cart.php";
@@ -137,6 +145,7 @@ function addToCart(product_id){
 			}
 	})
 	console.log(product_id,"Added to cart");
+	$( "#cd-cart" ).load(document.URL + " #cd-cart>*" );
 	cart_count()
 }
 
