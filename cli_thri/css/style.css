@@ -467,6 +467,14 @@ button {
     flex-direction: column;
     position: relative;
   }
+  .company-banner-container .text-box-know{
+    position: absolute;
+    width: 15%;
+    padding: 30px;
+    background-color: white;
+    bottom: 20px;
+  }
+
   .company-banner-container .text-box{
     position: absolute;
     width: 50%;
@@ -478,6 +486,9 @@ button {
     right: 20px;
   }
    .company-banner-container .text-box.left{
+    left: 20px;
+  }
+  .company-banner-container .text-box-know.left{
     left: 20px;
   }
   .company-banner-container h2 {
@@ -1522,6 +1533,14 @@ footer {
   @media (max-width: 750px) {
     .card-1{
       display: block;
+    }
+  }
+  @media (max-width: 750px) {
+    .banner_section{
+    background-image: url("../images/index/mobile_view.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
     }
   }
   .hover-card-bg-1{
