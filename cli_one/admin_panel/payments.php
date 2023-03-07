@@ -33,8 +33,10 @@ $no = 1;
 
         <div class="card mb-3">
             <div class="card-header">
+                <div>
                 <i class="fas fa-table"></i>
                 Payments
+                </div>
             </div>
             <div class="card-body">
                 <p>Payment platform Integration required</p>
