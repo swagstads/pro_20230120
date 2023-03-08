@@ -29,7 +29,7 @@ if(isset($_GET['update']) || isset($_GET['delete'])){
 }
 
 if (isset($_POST['btnSubmit'])) {
-    $name=$_POST['name'];
+    $name=strtolower($_POST['name']);
 
     $insertdata = mysqli_query($conn, "INSERT INTO `category` (`category_name`,`created_at`,`updated_at`) VALUES ('$name',now(),now());");
     $id = mysqli_insert_id($conn);
@@ -60,7 +60,7 @@ if (isset($_POST['btnSubmit'])) {
 if (isset($_POST['btnedit'])) {
 
     $id = $_POST['cat_id'];
-    $name=$_POST['name'];
+    $name=strtolower($_POST['name']);
 
     $query ="UPDATE `category` set category_name='$name',updated_at=now() WHERE id=$id";
     //echo $query;die;
@@ -199,8 +199,10 @@ $no = 1;
 
         <div class="card mb-3">
             <div class="card-header">
+                <div>
                 <i class="fas fa-table"></i>
                 <?php echo $lang['categories_list']; ?>
+                </div>
             </div>
             <div class="card-body">
                 <div class="table-responsive">
@@ -223,7 +225,7 @@ $no = 1;
                         <?php
                             while ($row = $result->fetch_assoc()) {
                                 $id = $row['id'];
-                                $name = $row['category_name'];
+                                $name = strtolower($row['category_name']);
                                 $image=$row['category_img'];
                         ?>
                             <tr>

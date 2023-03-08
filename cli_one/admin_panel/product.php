@@ -353,7 +353,7 @@ if(isset($_GET['did'])){
                             <a href="javascript:void(0);" class="add_button" title="Add field"><input type="button" value="<?php echo $lang['add_multi_images'];?>" class="btn btn-primary"></a>
                         </div>
                         <div class="form-group">
-                            <label class="control-label"><b>Our Price :</b></label>
+                            <label class="control-label"><b>Discounted Price :</b></label>
                             <input  type="number" name="price" required="required" value="<?php if(isset($product)){echo $product['price'];}?>" id="price" rows="5" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" class="form-control"  style="width: 100%; ">
                         </div>
                         <div class="form-group">

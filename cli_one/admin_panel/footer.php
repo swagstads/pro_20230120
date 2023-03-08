@@ -84,7 +84,11 @@
 <script src="js/custom.js"></script>
 
 <script type="text/javascript">
-
+    jQuery(document).ready(function($) {
+        $(".clickable-row").click(function() {
+            window.location = $(this).data("href");
+        });
+    });
     $(document).ready(function() {
         var page_name = $("#page_name").val();
         $("#"+page_name).addClass("active");

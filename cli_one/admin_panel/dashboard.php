@@ -123,10 +123,13 @@ $message_no = 1;
                 <div class="col-6">
                     <div class="card mb-3">
                         <div class="card-header">
-                        <a href="orders.php">
-                            <i class="fas fa-table"></i>
-                            Orders</a>
-                        </div>
+                            <div>    
+                                <i class="fas fa-table"></i>
+                                Orders
+                            </div>
+                            <a href="orders.php" style="color: #1f1f1f">
+                            View All</a>
+                        </div>                        
                         <div class="card-body">
                             <div class="table-responsive">
 
@@ -148,8 +151,8 @@ $message_no = 1;
                                 ?>
                                 <tr>
                                     <td><?php echo $order_no; ?></td>
-                                    <td><a href="product.php?eid=<?php echo $pid; ?>"><?php echo strlen($product) > 70 ? substr($product,0,70).'..' : $product; ?></a></td>
-                                    <td><a href="user_status.php?eid=<?php echo $uid; ?>"><?php echo $user; ?></a></td>
+                                    <td><?php echo strlen($product) > 70 ? substr($product,0,70).'..' : $product; ?></td>
+                                    <td><?php echo $user; ?></td>
                                 </tr>
 
                                 <?php
@@ -164,10 +167,13 @@ $message_no = 1;
 
                 <div class="col-6">
                     <div class="card mb-3">
-                        <div class="card-header">
-                        <a href="messages.php">
-                            <i class="fas fa-table"></i>
-                            Messages</a>
+                    <div class="card-header">
+                            <div>    
+                                <i class="fas fa-table"></i>
+                                Messages
+                            </div>
+                            <a href="messages.php" style="color: #1f1f1f">
+                            View All</a>
                         </div>
                         <div class="card-body">
                              <div class="table-responsive">
@@ -186,12 +192,11 @@ $message_no = 1;
                                 $name = $row['name'];
                                 $message = $row['message'];
                                 ?>
-                                <tr>
+                                <tr class="clickable-row" data-href="message.php?eid=<?php echo $id; ?>">
                                     <td><?php echo $message_no; ?></td>
                                     <td><?php echo strlen($name) > 70 ? substr($name,0,70).'..' : $name; ?></td>
-                                    <td><a href="message.php?eid=<?php echo $id; ?>"><?php echo strlen($message) > 70 ? substr($message,0,70).'..': $message; ?></a></td>
+                                    <td><?php echo strlen($message) > 70 ? substr($message,0,70).'..': $message; ?></td>
                                 </tr>
-
                                 <?php
                                 $message_no++;
                             }
