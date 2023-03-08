@@ -16,14 +16,18 @@
             <div class="mainContent productpage" role="main">
                     <!-- Left Column / Headphones Image -->
                     <div class="left-column">
-                        <img class="product-img-active" id="activeImage" data-image="" 
-                        src="./cdn.shopify.com/s/files/1/1573/5553/products/1-10ea2.jpg?v=1601694960"
-                        alt="">
+                        <div class="main_img_container" id="main_img_container">
+                            <!-- <img class="product-img-active" id="activeImage" data-image="" 
+                            src="./cdn.shopify.com/s/files/1/1573/5553/products/1-10ea2.jpg?v=1601694960"
+                            alt=""> -->
+                        </div>
                         <div class="product-configuration"  >
                             <!-- Product Color -->
                             <div class="img-choose" id="all_prod_images_container">
-                                <img class="small-view-image" onclick="changeActiveImg(this.src)" src="./cdn.shopify.com/s/files/1/1573/5553/products/1-10ea2.jpg?v=1601694960" alt="">
-                                <img class="small-view-image" onclick="changeActiveImg(this.src)" src="./cdn.shopify.com/s/files/1/1573/5553/products/1_c14253f1-8cb5-4a88-921b-d3dbaffaaafa0ea2.jpg?v=1601694960" alt="">
+                                <!-- <img class="small-view-image" onclick="changeActiveImg(this.src)" src="./cdn.shopify.com/s/files/1/1573/5553/products/1-10ea2.jpg?v=1601694960" alt="">
+                                <img class="small-view-image" onclick="changeActiveImg(this.src)" src="./cdn.shopify.com/s/files/1/1573/5553/products/1_c14253f1-8cb5-4a88-921b-d3dbaffaaafa0ea2.jpg?v=1601694960" alt=""> -->
+
+
                             </div>
                         </div>
                     </div>
@@ -167,21 +171,37 @@ shareButtons.forEach(function(button) {
                             $("#product_mrp").html(jsonData.response[0].mrp)
                             $("#product_title").html(jsonData.response[0].title)
                             $("#product_description").html(jsonData.response[0].description)
-                            // $("#product_description").html(jsonData.response[0].image_name[0])
+
+                           
+
                             if(jsonData.response[0].image === "no"){
                                 show_msg("No Image")
                             }
                             else{
-                                images_arr = jsonData.response[0];
+                                images_arr = jsonData.response[0].image_name;
+                                primary_img = "../admin_panel/uploads/products/"+images_arr[0];
+                                // $(".product-img-active").attr(src , primary_img)
+
+                            
+                            $('<img />', { 
+                                class:"product-img-active",
+                                id:"activeImage", 
+                                src: primary_img , 
+                            })
+                            .appendTo($('#main_img_container'));
+
                                 for (let i = 0; i < images_arr.length; i++) {
-                                    console.log(images_arr[i])
-                                    $("#all_prod_images_container").append(
-                                        '<img'+ 
-                                            'class="small-view-image"'+
-                                            'onclick="changeActiveImg(this.src)"'+
-                                            'src="../admin_panel/uploads/products/'+return_data[i].image_name[i]+ 
-                                            'alt="">'
-                                    )
+
+                                    var img = $('<img />',
+                                    { 
+                                        onclick: 'changeActiveImg(this.src)',
+                                        class: 'small-view-image',
+                                        src: "../admin_panel/uploads/products/"+images_arr[i]+"", 
+                                    })
+                                    .appendTo($('#all_prod_images_container'));
+
+                                    show_msg(images_arr)
+
                                 }
                             }
                         }
