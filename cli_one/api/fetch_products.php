@@ -10,6 +10,7 @@ date_default_timezone_set('Asia/Kolkata');
 //    print_r($_POST);  
 $response["response"] = array();
 $data = array();
+$prod_images = array();
 
 if (isset($_POST['show_products'])) {
     // $user_id=$_POST['user_id'];
@@ -18,20 +19,20 @@ if (isset($_POST['show_products'])) {
     if( strlen($_POST['product_category']) >= 1 ){
             $searched_category = $_POST['product_category'];
         
-            $stmt = $dbh->prepare(' SELECT * FROM product JOIN category ON FIND_IN_SET(category.id, product.category_id)  
+            $stmt = $dbh->prepare(' SELECT *,p.id AS prod_id FROM product p JOIN category c ON FIND_IN_SET(c.id, p.category_id)  
                                     WHERE  
-                                    title LIKE :searched_product 
+                                    category_name LIKE :searched_product 
                                     AND
-                                    category_name LIKE :searched_category ');
+                                    title LIKE :searched_category ');
         
             $stmt->bindParam(':searched_product', $searched_product, PDO::PARAM_STR);
             $stmt->bindParam(':searched_category', $searched_category, PDO::PARAM_STR);
     }
     else{
         
-        $stmt = $dbh->prepare(' SELECT * FROM product JOIN category ON FIND_IN_SET(category.id, product.category_id)
+        $stmt = $dbh->prepare(' SELECT *,p.id AS prod_id FROM product p JOIN category c ON FIND_IN_SET(c.id, p.category_id)
                                 WHERE  
-                                title LIKE :searched_product ');
+                                category_name LIKE :searched_product ');
     
         $stmt->bindParam(':searched_product', $searched_product, PDO::PARAM_STR);
     }
@@ -41,20 +42,31 @@ if (isset($_POST['show_products'])) {
     if ($count > 0) {
         $fetch_data = $stmt->fetchAll(PDO::FETCH_ASSOC);
         for ($i = 0; $i < $count; $i++) {
-            $data["id"] = $fetch_data[$i]['id'];
+            $pid = $fetch_data[$i]['prod_id'];
+            $data["id"] = $pid;
             $data["title"] = $fetch_data[$i]['title'];
             $data["category"] = $fetch_data[$i]['category_name'];
             $data["description"] = $fetch_data[$i]['description'];
             $data["mrp"] = $fetch_data[$i]['mrp'];
             $data["price"] = $fetch_data[$i]['price'];
-            $stmt2 = $dbh->prepare(' SELECT image_name FROM product_media WHERE product_id = :product_id');
-            $stmt2->bindParam(':product_id', $data["id"], PDO::PARAM_STR);
-            $stmt2->execute();
-            $im_count = $stmt2->rowCount();
-            for ($j = 0; $j < $im_count; $j++){
+
+            try {
+                $stmt2 = $dbh->prepare('SELECT image_name FROM product_media WHERE product_id=:product_id');
+                $stmt2->bindParam(':product_id',  $pid , PDO::PARAM_INT);
+                $stmt2->execute();
+
+                $im_count = $stmt2->rowCount();
+                $data["image_name"] = array();
+
                 $fetch_image = $stmt2->fetchAll(PDO::FETCH_ASSOC);
-                $data["image_name"] = $fetch_image[$j]['image_name'];
+
+                for ($j = 0; $j < $im_count; $j++){
+                    array_push( $data["image_name"] , $fetch_image[$j]['image_name'] );
+                }
+            } catch (\Throwable $th) {
+                $data["image_error"] = "Error: ".$th;
             }
+            
             $data["quantity"] = $fetch_data[$i]['quantity'];
             $data["status"] = "success";
             $data["reason"] = "orders_fetched";

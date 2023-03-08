@@ -121,7 +121,7 @@
                                     '</div>'+
                                 '</div>'+
                                 '<div class="price">'+
-                                    'Amount: &nbsp;<h4>&#8377;.<span id="total_product_amount"">'+(amount)+'<span></h4>'+
+                                    'Amount: &nbsp;<h4>&#8377;<span id="total_product_amount"">'+(amount)+'<span></h4>'+
                                 '</div>'+
                                 '<div class="action">'+
                                     '<a onclick="remove_from_cart('+return_data[i].product_id+')" >'+

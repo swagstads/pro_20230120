@@ -29,7 +29,7 @@
                       <div class="address-field-row">
                         <input type="hidden" class="profile_address_id" name="" id="profile_address_id">
                         <p class="info address"><input type="text" placeholder="Address Line 1" name="" id="profile_address_line_1" required></p>
-                        <p class="info address"><input type="text" placeholder="Address Line 2" name="" id="profile_address_line_2" required></p>
+                        <p class="info address"><input type="text" placeholder="Address Line 2" name="" id="profile_address_line_2" value=""></p>
                       </div>
                       <div class="address-field-row">
                         <p class="info address"><input type="text" placeholder="City" name="" id="profile_address_city" required></p>

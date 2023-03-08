@@ -491,7 +491,7 @@
                     <?php
                     }
                     ?>
-                    <div class="header-admin-icon" style="padding-left:20px; ">
+                    <div class="header-admin-icon" style="display: flex; align-items: center; padding: 20px">
                         <a href="./admin_panel"><i class="fa fa-thin fa-lock icons" style="font-size:25px;"></i></a>&nbsp;
                         <!--<i class="icons nav-icons"></i>-->
                     </div>

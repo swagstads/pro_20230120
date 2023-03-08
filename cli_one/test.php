@@ -1,107 +1,84 @@
-<!DOCTYPE html>
-    <html>
-    <head>
-      <meta charset='utf-8'>
-      <meta name='viewport' content='width=device-width'>
-      <title>Privacy Policy</title>
-      <style> 
-      .policy-container{
-        padding: 20px 0 80px 0;
-        width: 100%;
-        text-align: justify;
-        display: flex;
-        justify-content: center;
-      }
-      @media (min-width: 992px){
-        .policy-container div{
-            max-width: 980px;
-        }
-      }
-      @media (min-width: 1220){
-        .policy-container div{
-            max-width: 1210px;
-        }
-      }
-      </style>
-    </head>
+<?php
 
-    <body>
-    <div id="cartDrawer" class="drawer drawerRight">
-        <div class="drawerClose">
-            <span class="jsDrawerClose"></span>
-        </div>
-        <div class="drawerCartTitle">
-            <span>Shopping cart</span>
-        </div>
-        <div id="cartContainer"></div>
-    </div>
-    <?php include('./header_links.php') ?>
-    <div id="pageContainer" class="isMoved">
-        <div id="shopify-section-vela-header" class="shopify-section">
-            <header id="velaHeader" class="velaHeader">
-                <?php include('./header.php'); ?>
-            </header>
-        </div>
-        <div id="shopify-section-vela-breacrumb-image" class="shopify-section">
+require('./api/config.php'); 
+date_default_timezone_set('Asia/Kolkata');
 
+$response["response"] = array();
+$data = array();
 
-            <section class="velaBreadcrumbs hasBackgroundImage floaHeader">
-                <div class="velaBreadcrumbsInner" style="background-color: #ffffff">
-                    <div class="velaBreadcrumbImage">
-                        <img alt="Outstock"
-                            src="./cdn.shopify.com/s/files/1/1573/5553/files/bread-blog8c8c.jpg?v=1614329640" />
-                    </div>
-                    <nav class="velaBreadcrumbWrap container">
-                        <div class="velaBreadcrumbsInnerWrap">
-                            <h2 class="breadcrumbHeading">Order History</h2>
-                            <ol class="breadcrumb" itemscope itemtype="http://schema.org/BreadcrumbList">
-                                <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
-                                    <a href="../index.html" title="Back to the frontpage" itemprop="item">
-                                        <span itemprop="name">Home</span>
-                                    </a>
-                                    <meta itemprop="position" content="1" />
-                                </li>
-                                <li class="active" itemprop="itemListElement" itemscope
-                                    itemtype="http://schema.org/ListItem">
-                                    <span itemprop="name">Shipping policy</span>
-                                    <meta itemprop="position" content="2" />
-                                </li>
-                            </ol>
-                        </div>
-                    </nav>
-                </div>
-            </section>
-        </div>
-        <main>
-            <div class="order-history-container">
+{
+    // $user_id=$_GET['user_id'];
+    $searched_product = $_GET['product_name'];
+
+    if( strlen($_GET['product_category']) >= 5 ){
+            $searched_category = $_GET['product_category'];
+        
+            $stmt = $dbh->prepare(' SELECT *,p.id AS prod_id FROM product p JOIN category c ON FIND_IN_SET(c.id, p.category_id)  
+                                    WHERE  
+                                    category_name LIKE :searched_product 
+                                    AND
+                                    title LIKE :searched_category ');
+        
+            $stmt->bindParam(':searched_product', $searched_product, PDO::PARAM_STR);
+            $stmt->bindParam(':searched_category', $searched_category, PDO::PARAM_STR);
+    }
+    else{
+        
+        $stmt = $dbh->prepare(' SELECT *,p.id AS prod_id FROM product p JOIN category c ON FIND_IN_SET(c.id, p.category_id)
+                                WHERE  
+                                category_name LIKE :searched_product ');
     
-            </div>
-        </main>
+        $stmt->bindParam(':searched_product', $searched_product, PDO::PARAM_STR);
+    }
+    $stmt->execute();
+    $count = $stmt->rowCount();
 
-        <script>
-                var api_url = './api/prev_orders.php';
-                let user_id = "<?php $_SESSION['user_id'] ?>";
-                var order_history_table = document.querySelector(".order-history-table");
+    if ($count > 0) {
+        $fetch_data = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        for ($i = 0; $i < $count; $i++) {
+            $pid = $fetch_data[$i]['prod_id'];
+            $data["id"] = $pid;
+            $data["title"] = $fetch_data[$i]['title'];
+            $data["category"] = $fetch_data[$i]['category_name'];
+            $data["description"] = $fetch_data[$i]['description'];
+            $data["mrp"] = $fetch_data[$i]['mrp'];
+            $data["price"] = $fetch_data[$i]['price'];
 
-                var form_data = { "orders": "previous","user_id":user_id};
+            try {
+                $stmt2 = $dbh->prepare('SELECT * FROM product_media WHERE product_id=:product_id');
+                $stmt2->bindParam(':product_id',  $pid , PDO::PARAM_INT);
+                $stmt2->execute();
 
-                $.ajax({
-                    url: api_url,
-                    type: 'POST',
-                    data: form_data,
-                    success: function (returned_data) {
-                        console.log(returned_data);
-                        var jsonData = JSON.parse(returned_data);
-                        var return_data = jsonData.response;
+                $data['image_name'] = array();
 
-                        for (var i = 0; i < jsonData.response.length; i++) {
-
-                        }
+                $im_count = $stmt2->rowCount();
+                echo "<br><br>_________________________________________________<br>".$data["id"].": Row Count: ".$im_count."<br>";
+                $prod_img = array();
+                if($im_count > 0){
+                    for ($j = 0; $j < $im_count; $j++){
+                        $fetch_image = $stmt2->fetchAll(PDO::FETCH_ASSOC);
+                        array_push( $data['image_name'] , $fetch_image);
+                        echo "<br>================== $i $j <br> ";
+                        print_r($fetch_image[$j] );
                     }
-                })
-        </script>
-      
+                }
+            } catch (\Throwable $th) {
+                $data["image_error"] = "Error: ".$th;
+            }
+            
+            $data["quantity"] = $fetch_data[$i]['quantity'];
+            $data["status"] = "success";
+            $data["reason"] = "orders_fetched";
+            array_push($response["response"], $data);
+        }
+    } 
+    else {
+        $data["status"] = "failed";
+        $data["reason"] = "No results";
+        array_push($response["response"], $data);
 
-</body>
-</html>
-      
+    }
+    echo json_encode($response);
+}
+
+?>

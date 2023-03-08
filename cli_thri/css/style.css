@@ -457,7 +457,6 @@ button {
     background-position: left;
     background-size: contain;
     background-attachment: fixed;
-    padding-top: calc(100% / (16 / 9)); /* Replace 16/9 with the aspect ratio of your image */
     position: relative;
   
 
