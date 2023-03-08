@@ -7,9 +7,9 @@
                                 <h3 class="velaHomeTitle text-center">
                                     <span>More Products</span>
                                 </h3>
-                                <span class="subTitle">
+                                <!-- <span class="subTitle">
                                     Mirum est notare quam littera gothica quam nunc putamus  parum claram!
-                                </span>
+                                </span> -->
                             </div>
                             <div class="product-slider-container">
 
@@ -39,9 +39,6 @@
             const queryString = window.location.search;
             const urlParams = new URLSearchParams(queryString);
             var searched_product = urlParams.get('category') || "all"
-
-            console.log("SP: ",searched_product);   
-
             var api_url = './api/more-products.php';
             console.log(api_url);
             var form_data = { "show_products": searched_product, "user_id": localStorage.getItem('user_id') };
@@ -55,7 +52,7 @@
                     console.log(jsonData);
                     if (return_data[0].status == "failed") {
                         // console.log('failed to fetched product data');
-                        $("#product_container").append('<div style="text-align:center;width:100%;font-size:20px">Sorry, no results found</div>')
+                        $("#product_container").append('<div style="text-align:center;width:100%;font-size:20px">Sorry, Something went wrong!</div>')
                     }
                     else if (return_data[0].status == "success") {
                         // console.log('Fetched products Data');
@@ -76,9 +73,9 @@
                             console.log("Data "+i+":"+return_data[i].title);
                             $('.scrolling-products').append(
                                 '<div class="product-slider">'+
-                                    '<a onclick="increase_click_count('+return_data[i].id+')"  href="./productpage.php?productid='+return_data[i].id+'" >'+
+                                    '<a onclick="increase_click_count('+return_data[i].prod_id+')"  href="./productpage.php?productid='+return_data[i].prod_id+'" >'+
                                         '<div class="product-image">'+
-                                            '<img class="image1 active lazyload" data-src="https://cdn.shopify.com/s/files/1/1573/5553/products/14_360x.jpg?v=1601694510" alt="">'+
+                                            '<img class="image1 active lazyload" data-src="../admin_panel/uploads/products/'+return_data[i].image_name+'" alt="">'+
                                         '</div>'+
                                         '<div class="product-title">'+
                                             '<span>'+return_data[i].title+'</span><br>'+
@@ -100,10 +97,10 @@
                                                ' </div>'+
                                            '</div>'+
                                            ' <div class="add-to-cart-slide-button">'+
-                                                '<button onclick="addToCart('+return_data[i].id+')">&plus; Add to cart</button>'+
+                                                '<button onclick="addToCart('+return_data[i].prod_id+')">&plus; Add to cart</button>'+
                                             '</div>'+
                                             ' <div class="add-to-cart-slide-button">'+
-                                                '<button onclick="addToWishlist('+return_data[i].id+')">&plus; Add to Wishlist</button>'+
+                                                '<button onclick="addToWishlist('+return_data[i].prod_id+')">&plus; Add to Wishlist</button>'+
                                             '</div>'+
                                         '</div>'+
                                 '</div>'
