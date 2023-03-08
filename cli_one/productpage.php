@@ -19,9 +19,9 @@
                         <img class="product-img-active" id="activeImage" data-image="" 
                         src="./cdn.shopify.com/s/files/1/1573/5553/products/1-10ea2.jpg?v=1601694960"
                         alt="">
-                        <div class="product-configuration">
+                        <div class="product-configuration"  >
                             <!-- Product Color -->
-                            <div class="img-choose">
+                            <div class="img-choose" id="all_prod_images_container">
                                 <img class="small-view-image" onclick="changeActiveImg(this.src)" src="./cdn.shopify.com/s/files/1/1573/5553/products/1-10ea2.jpg?v=1601694960" alt="">
                                 <img class="small-view-image" onclick="changeActiveImg(this.src)" src="./cdn.shopify.com/s/files/1/1573/5553/products/1_c14253f1-8cb5-4a88-921b-d3dbaffaaafa0ea2.jpg?v=1601694960" alt="">
                             </div>
@@ -61,7 +61,7 @@
                     <div class="social-media-share-links">
                         <div><h3>Share on:</h3></div>
                         <div class="share-buttons">
-                            <a href="#" title="Whatsap" class="share-btn whatsapp-btn"><i class="fa fa-whatsapp"></i></a>
+                            <a href="#" title="Whatsapp" class="share-btn whatsapp-btn"><i class="fa fa-whatsapp"></i></a>
                             <a href="#" title="Copy to clipboard" class="share-btn copy-btn"><i class="fa fa-copy"></i></a>
                             <!-- Add more social media buttons here -->
                         </div>
@@ -159,7 +159,7 @@ shareButtons.forEach(function(button) {
                         type: 'GET',
                         data: form_data,
                         success: function (returned_data) {
-                            console.log(returned_data);
+                            console.log("Data: ",returned_data);
                             var jsonData = JSON.parse(returned_data);
                             var return_data = jsonData.response;
                             $("#product_category").html(jsonData.response[0].category)
@@ -167,7 +167,23 @@ shareButtons.forEach(function(button) {
                             $("#product_mrp").html(jsonData.response[0].mrp)
                             $("#product_title").html(jsonData.response[0].title)
                             $("#product_description").html(jsonData.response[0].description)
-
+                            // $("#product_description").html(jsonData.response[0].image_name[0])
+                            if(jsonData.response[0].image === "no"){
+                                show_msg("No Image")
+                            }
+                            else{
+                                images_arr = jsonData.response[0];
+                                for (let i = 0; i < images_arr.length; i++) {
+                                    console.log(images_arr[i])
+                                    $("#all_prod_images_container").append(
+                                        '<img'+ 
+                                            'class="small-view-image"'+
+                                            'onclick="changeActiveImg(this.src)"'+
+                                            'src="../admin_panel/uploads/products/'+return_data[i].image_name[i]+ 
+                                            'alt="">'
+                                    )
+                                }
+                            }
                         }
                     })
             }
