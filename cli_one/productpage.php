@@ -85,15 +85,17 @@ shareButtons.forEach(function(button) {
     // Create a share URL for the selected app
     var shareUrl;
     switch (app) {
-      case 'whatsapp-btn':
-        general_product_description = "Hey! I just came across this amazing product and I had to share it with you. Check it out here: "
-        shareUrl = 'whatsapp://send?text='+ general_product_description + encodeURIComponent(currentUrl);
-        break;
-      // Add more social media apps here
-    }
+        case 'whatsapp-btn':
+            general_product_description = "Hey! I just came across this amazing product and I had to share it with you. Check it out here: "
+            shareUrl = 'whatsapp://send?text='+ general_product_description + encodeURIComponent(currentUrl);
+            window.open(shareUrl);
+            break;
+        case 'copy-btn':
+            navigator.clipboard.writeText(currentUrl) 
+            show_msg("URL Copied to clipboard")   
+            break;
 
-    // Open the share URL in a new tab
-    window.open(shareUrl);
+        }
   });
 });
 
@@ -200,7 +202,6 @@ shareButtons.forEach(function(button) {
                                     })
                                     .appendTo($('#all_prod_images_container'));
 
-                                    show_msg(images_arr)
 
                                 }
                             }
