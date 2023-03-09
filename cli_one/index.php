@@ -515,7 +515,19 @@
     <?php include('footer_links.php'); ?>
     <script src="js/main.js?key=<?= date('is') ?>" type="text/javascript"></script>
     <script>
-    get_cat();
+        // To open search modal on key press
+        document.onkeydown = function() {
+            let all_contact_inp = document.querySelectorAll(".contact-form");
+            let all_inp = document.querySelectorAll(".info");
+
+            if (window.event.keyCode >= 65 & window.event.keyCode <= 90 & all_contact_inp.length <= 0 & all_inp.length <= 0) {
+                openSearchModal()
+                document.getElementById("search_query").focus();
+            }
+            if (window.event.keyCode === 27) {
+                closeSearchModal()
+            }
+        }
     </script>
 </body>
 

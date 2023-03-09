@@ -4,7 +4,9 @@
   <link rel="stylesheet" href="./assets/css/profile.css">
   </head>
   <body>
-    <?php include('header.php') ?>
+  <header id="velaHeader" class="velaHeader">
+      <?php include('header.php') ?>
+  </header>
     <div class="profile-page-container">
         <div class="left-section">
             <img src="https://uxwing.com/wp-content/themes/uxwing/download/peoples-avatars/no-profile-picture-icon.png" alt="profile image">
@@ -17,8 +19,6 @@
 
                     <label for="email"><h4>Email:</h4></label>
                     <p class="info email"><input type="email" name="" id="profile_email" disabled required></p>
-
-
                                     
                     <label for="phone"><h4>Phone Number:</h4></label>
                     <p class="info phone"><input type="tel" name="" id="profile_contact" required></p>

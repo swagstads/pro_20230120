@@ -268,6 +268,22 @@
         src="./cdn.shopify.com/s/files/1/1573/5553/t/32/assets/jquery.cookie0b11.js?v=72365755745404048181601353800"
         type="text/javascript"></script>
 
+    <script>
+                // To open search modal on key press
+                document.onkeydown = function() {
+                    let all_contact_inp = document.querySelectorAll(".contact-form");
+                    let all_inp = document.querySelectorAll(".info");
+
+                    if (window.event.keyCode >= 65 & window.event.keyCode <= 90 & all_contact_inp.length <= 0 & all_inp.length <= 0) {
+                        openSearchModal()
+                        document.getElementById("search_query").focus();
+                    }
+                    if (window.event.keyCode === 27) {
+                        closeSearchModal()
+                    }
+                }
+    </script>
+
 </body>
 
 

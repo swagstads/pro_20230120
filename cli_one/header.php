@@ -719,18 +719,6 @@
 <div id="snackbar"><span id="msg_text"></span></div>
 
 <script>
-    document.onkeydown = function() {
-        let all_contact_inp = document.querySelectorAll(".contact-form");
-        let all_inp = document.querySelectorAll(".info");
-
-        if (window.event.keyCode >= 65 & window.event.keyCode <= 90 & all_contact_inp.length <= 0 & all_inp.length <= 0) {
-            openSearchModal()
-            document.getElementById("search_query").focus();
-        }
-        if (window.event.keyCode === 27) {
-            closeSearchModal()
-        }
-    }
     $(document).click(function() {
         var container = $(".search-box-container");
         var search_icon = $(".header-search-icon");
