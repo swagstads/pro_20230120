@@ -87,7 +87,7 @@ shareButtons.forEach(function(button) {
     switch (app) {
         case 'whatsapp-btn':
             general_product_description = "Hey! I just came across this amazing product and I had to share it with you. Check it out here: "
-            shareUrl = 'whatsapp://send?text='+ general_product_description + encodeURIComponent(currentUrl);
+            shareUrl = 'https://api.whatsapp.com/send?text='+ general_product_description + encodeURIComponent(currentUrl);
             window.open(shareUrl);
             break;
         case 'copy-btn':

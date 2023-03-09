@@ -49,14 +49,10 @@
                 success: function (returned_data) {
                     var jsonData = JSON.parse(returned_data);
                     var return_data = jsonData.response;
-                    console.log(jsonData);
                     if (return_data[0].status == "failed") {
-                        // console.log('failed to fetched product data');
                         $("#product_container").append('<div style="text-align:center;width:100%;font-size:20px">Sorry, Something went wrong!</div>')
                     }
                     else if (return_data[0].status == "success") {
-                        // console.log('Fetched products Data');
-                        console.log(jsonData.response);
                         for (var i = 0; i < jsonData.response.length; i++) {
                             
                             let outOfStockMessage = "";
@@ -70,7 +66,6 @@
                             else{
                                 inStockMessage = "In Stock"
                             }
-                            console.log("Data "+i+":"+return_data[i].title);
                             $('.scrolling-products').append(
                                 '<div class="product-slider">'+
                                     '<a onclick="increase_click_count('+return_data[i].prod_id+')"  href="./productpage.php?productid='+return_data[i].prod_id+'" >'+

@@ -24,7 +24,7 @@ if(isset($_POST['change_password'])){
         $result = $query->fetch(PDO::FETCH_OBJ);
         $user_id = $result->id;
         $old_password = $result->password;
-
+        
         $sql = "SELECT verification_code from forget_password WHERE user_id=:user_id ORDER BY timestamp DESC";
         $query = $dbh->prepare($sql);
         $query->bindParam(':user_id', $user_id, PDO::PARAM_STR);
@@ -40,7 +40,7 @@ if(isset($_POST['change_password'])){
                     $query = $dbh->prepare($sql);
                     $query->bindParam(':username', $username, PDO::PARAM_STR);
                     $query->bindParam(':new_hashed_password', $new_hashed_password, PDO::PARAM_STR);
-                    
+
                     if($query->execute()){
                         $data['status'] = "ok";
                         $data['success_message'] = "Password updated!"; 

@@ -299,23 +299,7 @@
                                     </span>
                                 </div>
                                 <div class="row1 trending-products ">
-                                    <!-- <a href="">
-                                        <div class="container10 col-md-3">
-                                            <img src="https://cdn.shopify.com/s/files/1/1573/5553/products/14_360x.jpg" />
-                                            <img src="https://cdn.shopify.com/s/files/1/1573/5553/products/14-1_360x.jpg" />
-                                            <img src="https://cdn.shopify.com/s/files/1/1573/5553/products/14-1_360x.jpg" />
-                                        </div>
-                                    </a>
-                                    <div class="container10 col-md-3">
-                                        <img src="https://cdn.shopify.com/s/files/1/1573/5553/products/14_360x.jpg" />
-                                        <img src="https://cdn.shopify.com/s/files/1/1573/5553/products/14-1_360x.jpg" />
-                                        <img src="https://cdn.shopify.com/s/files/1/1573/5553/products/14-1_360x.jpg" />
-                                    </div>
-                                    <div class="container10 col-md-3">
-                                        <img src="https://cdn.shopify.com/s/files/1/1573/5553/products/14_360x.jpg" />
-                                        <img src="https://cdn.shopify.com/s/files/1/1573/5553/products/14-1_360x.jpg" />
-                                        <img src="https://cdn.shopify.com/s/files/1/1573/5553/products/14-1_360x.jpg" />
-                                    </div> -->
+                                    <!-- Trending products from js (AJAX) -->
                                 </div>
                                 <div class="proLoadMoreBottom"></div>
 
@@ -329,11 +313,9 @@
                                     // type: 'GET',
                                     data: form_data,
                                     success: function (returned_data) {
-                                            console.log(returned_data);
                                             var jsonData = JSON.parse(returned_data);
                                             var return_data = jsonData.response;
-                                            for (i=0;i<= 3; i++){
-                                                console.log("trending: ", return_data[i]);
+                                            for (i=0;i< 3; i++){
                                                 $(".trending-products").append(
                                                     '<a href="productpage.php?productid='+return_data[i].product_id+'">'+
                                                         '<div class="container10 col-md-3">'+
@@ -495,6 +477,18 @@
                         </a>
               
                     </div>
+
+                    <!-- <script>
+                        let best_seller_api_url = '../api/best_sellers.php';
+                        $.ajax({
+                        url: best_seller_api_url,
+                        type: 'GET',
+                        success: function (returned_data) {
+                            var jsonData = JSON.parse(returned_data);
+                            console.log("Best sellers",jsonData);
+                        }
+                    })
+                    </script> -->
 
                 </div>
             </section>
