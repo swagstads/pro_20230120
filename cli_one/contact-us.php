@@ -345,7 +345,7 @@
 
         event.preventDefault()
 
-        var api_url = '/api/contact-us.php';
+        var api_url = './api/contact-us.php';
 
         let name = document.getElementById("ContactFormName").value;
         let email = document.getElementById("ContactFormEmail").value;

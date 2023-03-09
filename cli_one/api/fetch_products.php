@@ -13,7 +13,6 @@ $data = array();
 $prod_images = array();
 
 if (isset($_POST['show_products'])) {
-    // $user_id=$_POST['user_id'];
     $searched_product = $_POST['product_name'];
 
     if( strlen($_POST['product_category']) >= 1 ){
@@ -21,10 +20,9 @@ if (isset($_POST['show_products'])) {
         
             $stmt = $dbh->prepare(' SELECT *,p.id AS prod_id FROM product p JOIN category c ON FIND_IN_SET(c.id, p.category_id)  
                                     WHERE  
-                                    category_name LIKE :searched_product 
+                                    category_name LIKE %:searched_product% 
                                     AND
-                                    title LIKE :searched_category ');
-        
+                                    title LIKE %:searched_category% ');
             $stmt->bindParam(':searched_product', $searched_product, PDO::PARAM_STR);
             $stmt->bindParam(':searched_category', $searched_category, PDO::PARAM_STR);
     }
@@ -32,7 +30,7 @@ if (isset($_POST['show_products'])) {
         
         $stmt = $dbh->prepare(' SELECT *,p.id AS prod_id FROM product p JOIN category c ON FIND_IN_SET(c.id, p.category_id)
                                 WHERE  
-                                category_name LIKE :searched_product ');
+                                category_name LIKE %:searched_product% ');
     
         $stmt->bindParam(':searched_product', $searched_product, PDO::PARAM_STR);
     }
