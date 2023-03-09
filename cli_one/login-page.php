@@ -49,7 +49,7 @@
                 <input type="checkbox" name="" onclick="show_password()" id="show_password_checkbox"> 
                 <span>Show Password</span>
               </span>
-              <a href="./forget_password.php">Forget password?</a>
+              <a href="./forget_password.php">Forgot password?</a>
             </span>
           </span>
           <br>

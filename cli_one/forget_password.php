@@ -30,7 +30,7 @@
     
     <div class="login">
       <div class="container">
-        <h1>Forget Password</h1>
+        <h1>Forgot Password</h1>
         
         <div class="login-form">
 
@@ -50,7 +50,7 @@
                         </span>
                     </span>
                 </span>
-                <button type="submit">Change Password</button>
+                <button type="submit">Submit</button>
 
           </form>
         </div>

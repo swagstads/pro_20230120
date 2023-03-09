@@ -10,33 +10,36 @@ $response["response"] = array();
 
     if(isset($_POST['username'])){
         $email = $_POST['username'];
-        echo $email;
         // Check if mail exist
         $sql = "SELECT id,email,phone,password FROM users WHERE email=:email";
         $query = $dbh->prepare($sql);
         $query->bindParam(':email', $email, PDO::PARAM_STR);
         if($query->execute()){
-
+            
             $result = $query->fetch(PDO::FETCH_OBJ);
-
-            $verification_code = bin2hex(openssl_random_pseudo_bytes(20));
-
-            // insert into forget_password table
-            $sql = "INSERT INTO forget_password (user_id,old,verification_code) 
-                    VALUES(:user_id, :old_pass, :verification_code)";
-            $query = $dbh->prepare($sql);
-            $query->bindParam(':user_id', $result->id, PDO::PARAM_STR);
-            $query->bindParam(':old_pass', $result->password, PDO::PARAM_STR);
-            $query->bindParam(':verification_code', $verification_code, PDO::PARAM_STR);
-
-            if($query->execute()){
-                forget_password_mailer($result->email , $verification_code);
+            if($result !== false){
+                    echo $email;
+                    $verification_code = bin2hex(openssl_random_pseudo_bytes(20));
+                    // insert into forget_password table
+                    $sql = "INSERT INTO forget_password (user_id,old,verification_code) 
+                            VALUES(:user_id, :old_pass, :verification_code)";
+                    $query = $dbh->prepare($sql);
+                    $query->bindParam(':user_id', $result->id, PDO::PARAM_STR);
+                    $query->bindParam(':old_pass', $result->password, PDO::PARAM_STR);
+                    $query->bindParam(':verification_code', $verification_code, PDO::PARAM_STR);
+        
+                    if($query->execute()){
+                        forget_password_mailer($result->email , $verification_code);
+                    }
+                }
+                else{
+                    echo "Not a valid user"; 
+                    echo '<script>document.location = "../forget_password.php?alert=Email is not valid"</script>';
+                }
             }
-
-        }
         else{
             echo "Not a valid user"; 
-            echo '<script>document.location = "../forget_password.php?alert=Email is not registered"</script>';
+            echo '<script>document.location = "../forget_password.php?alert=Email is not valid"</script>';
         }
     }
     else{
