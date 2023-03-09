@@ -45,22 +45,18 @@
           <span>
             <input type="password" id="login_password" name="password" placeholder="Password" required />
             <span class="Show-password-action" >
-              <input type="checkbox" name="" onclick="show_password()" id="show_password_checkbox"> <span>Show Password</span>
+              <span>
+                <input type="checkbox" name="" onclick="show_password()" id="show_password_checkbox"> 
+                <span>Show Password</span>
+              </span>
+              <a href="./forget_password.php">Forget password?</a>
             </span>
           </span>
+          <br>
 
-            <div class="remember-form">
-              <span>
-                Don't have account? <a class="col-primary" href="./signup-page.php">Signup</a>
-              </span>
-              <!-- <input type="checkbox"> -->
-              <!-- <span>Remember me</span> -->
-            </div>
-            <!-- <div class="forget-pass">
-              <a href="#">Forgot Password ?</a>
-            </div> -->
 
-            <button type="submit">LOG-IN</button>
+
+          <button type="submit">LOG-IN</button>
 
           </form>
         </div>

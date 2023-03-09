@@ -127,6 +127,7 @@ img {
 .Show-password-action{
   display: flex;
   align-items: center;
+  justify-content: space-between;
   gap: 10px;
 }
 .login .container .login-form form button[type=submit] {
@@ -149,6 +150,7 @@ img {
 }
 .login .container .remember-form {
   position: relative;
+  display: flex;
 }
 .login .container .remember-form input[type=checkbox] {
   margin-top: 9px;

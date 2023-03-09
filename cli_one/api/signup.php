@@ -27,7 +27,6 @@ if (isset($_POST['add'])) {
     $result = $query->fetch(PDO::FETCH_OBJ);
 
     if(isset($result->email)){
-
         if( $email === $result->email ){
             $data['status'] = "fail";
             $data['alert_message'] = "Email already exist";
@@ -98,19 +97,41 @@ function mail_verification_link($email,$verification_code,$user_id){
     $mail->Port=587;
     $mail->SMTPAuth=true;
     $mail->SMTPSecure='tls';
-    $message='  Hello <br> 
-                Welcome to Atoz <br> 
-                Kindly Verify your Email ID to activate your account <br> 
-                click on the link below to verify account<br> 
-                <a href="http://'.$url_host.'/verify_user.php?code='.$verification_code.'&uid='.$user_id.'&mail='.$email.' ">Verification Link</a>';
+
+
+    $template_variables = array(
+        "host" => $url_host,
+        "code" => $verification_code,
+        "uid" => $user_id,
+        "mail" => $email
+    );
+
+    $template = file_get_contents('../mail-template/reglink.html');
+
+
+    foreach ($template_variables as $key => $value) {
+        $template = str_replace("{{".$key."}}", $value, $template);
+    }
+
+    // $template = str_replace('{verification_link}', $verification_code, $template);
+
+
+    // $message='Hello <br> 
+    //             Welcome to Atoz <br> 
+    //             Kindly Verify your Email ID to activate your account <br> 
+    //             click on the link below to verify account<br> 
+    //             <a href="http://'.$url_host.'/verify_user.php?code='.$verification_code.'&uid='.$uid.'&mail='.$email.' ">Verification Link</a>';
 
     $mail->Username='rishabhpnahar@gmail.com';
     $mail->Password= 'crigdqwxmxunttbz' ;
     $mail->setFrom('team@atoz.com');
     $mail->addAddress($email);
+
+    $mail->isHTML(true);
     $mail->Subject="E-Mail Verification for Atoz"; 
-    $mail->MsgHTML($message);
-    //$mail->Body=
+    // $mail->MsgHTML($message);
+    $mail->Body=$template;
+
     if(!$mail->send()){
         return "-MailNotSent"; //mail not sent 
     }
