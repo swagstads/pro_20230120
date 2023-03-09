@@ -336,7 +336,7 @@ if(isset($_GET['did'])){
 
                         <div class="form-group">
                             <label class="control-label"><b>Description :</b></label>
-                            <textarea name="description" id="description" required="required" class="form-control" rows="5" maxlength="20">
+                            <textarea name="description" id="description" required="required" class="form-control" rows="5">
                             <?php if(isset($product)){echo $product['description'];}?>
                             </textarea>
                         </div>
