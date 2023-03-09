@@ -58,5 +58,24 @@
       </div>
       </div>
   </div>
+    <script>    
+        // getting url details
+        const queryString = window.location.search;
+        const urlParams = new URLSearchParams(queryString);
+        // form data values
+        let alert_msg = urlParams.get('alert')
+        let success_msg = urlParams.get('success')
+        if(!!success_msg){
+            $('#login_success_message').text(success_msg)
+        }
+        if(!!alert_msg){
+            $("#login_alert_message").text(alert_msg)
+        }
+
+
+    </script>
+
+
+
 </body>
 </html>

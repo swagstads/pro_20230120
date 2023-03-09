@@ -113,6 +113,11 @@ function mail_verification_link($email,$verification_code,$user_id){
         $template = str_replace("{{".$key."}}", $value, $template);
     }
 
+    $image_data = file_get_contents("../assets/images/logo1.jpg");
+    $image_cid = $mail->addStringEmbeddedImage($image_data, 'logo', 'Example Image', 'base64');
+
+    $html = str_replace('cid:logo', 'cid:' . $image_cid, $template);
+
     // $template = str_replace('{verification_link}', $verification_code, $template);
 
 

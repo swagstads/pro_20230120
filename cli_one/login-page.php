@@ -54,7 +54,17 @@
           </span>
           <br>
 
+          <div class="remember-form">
+            <span>
+              Don't have account? <a class="col-primary" href="./signup-page.php">Signup</a>
+            </span>
 
+            <!-- <input type="checkbox"> -->
+            <!-- <span>Remember me</span> -->
+          </div>
+          <!-- <div class="forget-pass">
+            <a href="#">Forgot Password ?</a>
+          </div> -->
 
           <button type="submit">LOG-IN</button>
 
