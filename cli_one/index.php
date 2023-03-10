@@ -485,7 +485,6 @@
                         type: 'GET',
                         success: function (returned_data) {
                             var jsonData = JSON.parse(returned_data);
-                            console.log("Best sellers",jsonData);
                         }
                     })
                     </script> -->
@@ -513,7 +512,7 @@
     </div>
 
     <?php include('footer_links.php'); ?>
-    <script src="js/main.js?key=<?= date('is') ?>" type="text/javascript"></script>
+    <!-- <script src="js/main.js?key=<?= date('is') ?>" type="text/javascript"></script> -->
     <script>
         // To open search modal on key press
         document.onkeydown = function() {

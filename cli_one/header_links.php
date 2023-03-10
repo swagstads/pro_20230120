@@ -215,7 +215,7 @@
 <link rel="nokia-touch-icon" href="./cdn.shopify.com/s/files/1/1573/5553/files/icon_48x48e751.png?v=1613719979" type="image/png" />
 
 <!-- For icons - font awesome -->
-<link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+<!-- <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css"> -->
 
 <!-- Jquery SLider lib - swiper -->
 <link
@@ -268,7 +268,7 @@
         --vela-heading-color: var(--vela-text-color-secondary);
 
         --newslettermodal: url(../cdn.shopify.com/s/files/1/1573/5553/t/45/assets/newslettermodal5d42.png?v=139240221732415983441617538989);
-        --icon_loading: url(../cdn.shopify.com/s/files/1/1573/5553/t/45/assets/loading5f18.gif?v=47373580461733618591617538988);
+        /* --icon_loading: url(../cdn.shopify.com/s/files/1/1573/5553/t/45/assets/loading5f18.gif?v=47373580461733618591617538988); */
         --icon_close: url(../cdn.shopify.com/s/files/1/1573/5553/t/45/assets/velaClose76d2.png?v=121253005341505273761617538993);
 
         --button_one_txtcolor: #201f1f;
@@ -352,11 +352,8 @@
         // type: 'GET',
         data: form_data,
         success: function (returned_data) {
-            console.log(returned_data);
             var jsonData = JSON.parse(returned_data);
             var return_data = jsonData.response[0];
-            // console.log(return_data);
-            // show_msg(return_data.message)
             }
         })
     }
@@ -372,7 +369,6 @@
         data: form_data,
         success: function (returned_data) {
                 var jsonData = JSON.parse(returned_data);
-                console.log("Row count: ",jsonData.response[0].row_count);
                 $("#CartCount").html(jsonData.response[0].row_count)
             }
         })

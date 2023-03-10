@@ -40,7 +40,6 @@
             const urlParams = new URLSearchParams(queryString);
             var searched_product = urlParams.get('category') || "all"
             var api_url = './api/more-products.php';
-            console.log(api_url);
             var form_data = { "show_products": searched_product, "user_id": localStorage.getItem('user_id') };
             $.ajax({
                 url: api_url,
@@ -121,7 +120,6 @@
                 var quantity = 1;
                 api_url = "./api/add_to_cart.php";
                 var form_data = { "add_to_cart": "add" , "productid": product_id,'quantity': quantity};
-                console.log(form_data);
                 $.ajax({
                         url: api_url,
                         type: 'POST',
@@ -129,9 +127,7 @@
                         success: function (returned_data) {
                             var jsonData = JSON.parse(returned_data);
                             var return_data = jsonData.response;
-                            console.log(return_data);
                             show_msg(return_data[0].message)
-                            console.log(product_id,"Added to cart");
                         }
                 })
                 cart_count()
