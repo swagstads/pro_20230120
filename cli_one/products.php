@@ -114,11 +114,13 @@
     </div>
 
     <script>
+        let fetched_product  ;
+
         function fetch_products() {
             const queryString = window.location.search;
             const urlParams = new URLSearchParams(queryString);
-            const searched_product = urlParams.get('product')
-            const product_category = urlParams.get('category')
+            const searched_product = urlParams.get('product');
+            const product_category = urlParams.get('category');
             console.log(searched_product,product_category);
             var api_url = './api/fetch_products.php';
             var form_data = { 
@@ -127,25 +129,23 @@
                 "product_category":product_category, 
                 "user_id": localStorage.getItem('user_id') 
             };
+
             $.ajax({
                 url: api_url,
                 type: 'POST',
                 data: form_data,
                 success: function (returned_data) {
-                    // console.log(returned_data);
-
                     var jsonData = JSON.parse(returned_data);
                     var return_data = jsonData.response;
-                    console.log(jsonData);
 
-                    if (return_data[0].status == "failed") {
+                    fetched_product = return_data[0]
+
+                    if (return_data[0].status === "failed") {
                         console.log('failed to fetched product data');
 
                         $("#product_container").append('<div style="text-align:center;width:100%;font-size:20px">Sorry, no results found</div>')
                     }
-                    else if (return_data[0].status == "success") {
-                        console.log('Fetched products Data');
-                        console.log(jsonData.response);
+                    else if (return_data[0].status === "success") {
                         for (var i = 0; i < jsonData.response.length; i++) {
                             // console.log("Data "+i+":"+return_data[i].id);
                             let outOfStockMessage = "", inStockMessage="";
@@ -159,6 +159,12 @@
                             }
                             else{
                                 inStockMessage = "In Stock"
+                            }
+                            if(!return_data[i].image_name[0]){
+                                return_data[i].image_name[0] = "default.jpg";
+                            }
+                            if(!return_data[i].image_name[1]){
+                                return_data[i].image_name[1] = return_data[i].image_name[0];
                             }
                             $("#product_container").append('<div class="velaProBlock list col-xs-6  col-sm-12 col-md-12 col-12" data-price="260.00">'+
                                 '<div class="velaProBlockInner mb20">'+
@@ -211,12 +217,19 @@
                         }
                     }
                     else{
-                        console.log("Nothing");
+                        // console.log("Nothing");
                     }
                 }
             })
         }
+                
+        function filter_search(){
+            console.log("filtered result: ",fetched_product);
+        }
+        
         fetch_products();
+        filter_search()
+
 
 
         function addToCart(product_id,stockQuantity){
@@ -241,9 +254,11 @@
                     })
                 }
                 cart_count()
-            }
+        }
 
+            
     </script>
+    
 
     <script
         src="./cdn.shopify.com/shopifycloud/shopify/assets/themes_support/option_selection-9f517843f664ad329c689020fb1e45d03cac979f64b9eb1651ea32858b0ff452.js"
@@ -268,20 +283,21 @@
         src="./cdn.shopify.com/s/files/1/1573/5553/t/32/assets/jquery.cookie0b11.js?v=72365755745404048181601353800"
         type="text/javascript"></script>
 
-    <script>
-                // To open search modal on key press
-                document.onkeydown = function() {
-                    let all_contact_inp = document.querySelectorAll(".contact-form");
-                    let all_inp = document.querySelectorAll(".info");
 
-                    if (window.event.keyCode >= 65 & window.event.keyCode <= 90 & all_contact_inp.length <= 0 & all_inp.length <= 0) {
-                        openSearchModal()
-                        document.getElementById("search_query").focus();
-                    }
-                    if (window.event.keyCode === 27) {
-                        closeSearchModal()
-                    }
-                }
+    <script>
+    // To open search modal on key press
+    document.onkeydown = function() {
+        let all_contact_inp = document.querySelectorAll(".contact-form");
+        let all_inp = document.querySelectorAll(".info");
+
+        if (window.event.keyCode >= 65 & window.event.keyCode <= 90 & all_contact_inp.length <= 0 & all_inp.length <= 0) {
+            openSearchModal()
+            document.getElementById("search_query").focus();
+        }
+        if (window.event.keyCode === 27) {
+            closeSearchModal()
+        }
+    }
     </script>
 
 </body>
