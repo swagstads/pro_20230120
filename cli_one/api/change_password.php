@@ -57,7 +57,7 @@ if(isset($_POST['change_password'])){
                     else{ 
                         // Password not updated in users table
                         $data['status'] = "ok";
-                        $data['success_message'] = "Something went wrong";
+                        $data['alert_message'] = "Something went wrong";
                     }
         
                 }
@@ -73,19 +73,19 @@ if(isset($_POST['change_password'])){
                 $data['verification_code'] = $code;
                 $data['verification_code_table'] = $result->verification_code;
                 $data['status'] = "ok";
-                $data['success_message'] = "It seems something is not right!";
+                $data['alert_message'] = "It seems something is not right!";
             }
         }
         else{
             // Not found in verification table
             $data['status'] = "ok";
-            $data['success_message'] = "Something went wrong, Try again!";
+            $data['alert_message'] = "Something went wrong, Try again!";
         }
     }
     else{
         // User not found
         $data['status'] = "ok";
-        $data['success_message'] = "User not Found";
+        $data['alert_message'] = "User not Found";
     }
 }
 array_push($response["response"], $data);
