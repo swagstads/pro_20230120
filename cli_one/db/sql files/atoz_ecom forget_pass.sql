@@ -39,7 +39,7 @@ CREATE TABLE `addresses` (
   `modified_on` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `status` enum('primary','secondary','deleted') NOT NULL,
   `deleted_on` timestamp NULL DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `addresses`
@@ -61,7 +61,7 @@ CREATE TABLE `cart` (
   `product_id` varchar(128) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
   `quantity` varchar(128) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
   `status` enum('in cart','ordered') COLLATE utf8_bin NOT NULL DEFAULT 'in cart'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8_bin;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8_bin;
 
 --
 -- Dumping data for table `cart`
@@ -87,7 +87,7 @@ CREATE TABLE `category` (
   `status` enum('active','delete') CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
   `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `updated_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8_bin;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8_bin;
 
 --
 -- Dumping data for table `category`
@@ -117,7 +117,7 @@ CREATE TABLE `contact_us` (
   `added_on` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `modified_on` datetime DEFAULT CURRENT_TIMESTAMP,
   `deleted_on` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8_bin;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8_bin;
 
 --
 -- Dumping data for table `contact_us`
@@ -140,7 +140,7 @@ CREATE TABLE `forget_password` (
   `new` varchar(255) DEFAULT NULL,
   `timestamp` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `verification_code` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `forget_password`
@@ -188,7 +188,7 @@ CREATE TABLE `orders` (
   `order_date` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `delivery_date` datetime NOT NULL,
   `cancellation_date` datetime DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8_bin;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8_bin;
 
 --
 -- Dumping data for table `orders`
@@ -209,7 +209,7 @@ CREATE TABLE `password_reset` (
   `user_id` varchar(128) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
   `time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `token` varchar(128) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8_bin;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8_bin;
 
 --
 -- Dumping data for table `password_reset`
@@ -262,7 +262,7 @@ CREATE TABLE `payment` (
   `product_id` int NOT NULL,
   `sender` int UNSIGNED NOT NULL,
   `timestamp` timestamp NULL DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `payment`
@@ -291,7 +291,7 @@ CREATE TABLE `product` (
   `added_on` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `modified_on` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `click_count` int NOT NULL DEFAULT '0'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8_bin;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8_bin;
 
 --
 -- Dumping data for table `product`
@@ -339,7 +339,7 @@ CREATE TABLE `products` (
   `price` float DEFAULT NULL,
   `img_location` varchar(255) DEFAULT NULL,
   `click_count` int NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `products`
@@ -382,7 +382,7 @@ CREATE TABLE `product_media` (
   `product_id` varchar(128) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
   `image_name` varchar(128) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
   `added_on` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8_bin;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8_bin;
 
 --
 -- Dumping data for table `product_media`
@@ -410,7 +410,7 @@ CREATE TABLE `tbl_admin` (
   `role` enum('Admin','Editor','Standard','Delete') CHARACTER SET utf8 COLLATE utf8_bin NOT NULL DEFAULT 'Standard',
   `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `updated_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8_bin;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8_bin;
 
 --
 -- Dumping data for table `tbl_admin`
@@ -440,7 +440,7 @@ CREATE TABLE `users` (
   `modified_on` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
   `deleted_on` timestamp NULL DEFAULT NULL,
   `status` enum('active','dormant','deleted','removed') NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `users`
@@ -474,7 +474,7 @@ CREATE TABLE `user_verification` (
   `user_id` int UNSIGNED NOT NULL,
   `verify` tinyint(1) NOT NULL,
   `verification_code` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `user_verification`
@@ -503,7 +503,7 @@ CREATE TABLE `wishlist` (
   `user_id` varchar(128) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
   `product_id` varchar(128) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
   `time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8_bin;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8_bin;
 
 --
 -- Dumping data for table `wishlist`
