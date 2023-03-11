@@ -98,7 +98,7 @@
                         $(".cart-product-container").append('<div class="cart-product-container-row">'+
                             '<div class="left">'+
                                 '<div class="image">'+
-                                    '<img src="https://cdn.shopify.com/s/files/1/1573/5553/products/14-1_360x.jpg" alt="" srcset="">'+
+                                    '<img src="./admin_panel/uploads/products/'+return_data[i].image_name+'"  alt="" srcset="">'+
                                 '</div>'+
                             '</div>'+
                             '<div class="right">'+

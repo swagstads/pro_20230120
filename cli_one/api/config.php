@@ -3,7 +3,7 @@
 define('DB_HOST','localhost');
 define('DB_USER','root');
 define('DB_PASS','');
-define('DB_NAME','atoz_ecom'); 
+define('DB_NAME','atozecommerce'); 
 // Establish database connection.
 try
 {

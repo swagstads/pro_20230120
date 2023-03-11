@@ -205,14 +205,14 @@
                                                 ' <div class="wrap ">'+
                                                         '<div class="p-relative">'+
                                                             '<div class="product-card__image" style="padding-top:126.90355329949239%;">'+
-                                                                '<img class="product-card__img lazyload imgFlyCart " data-src="../admin_panel/uploads/products/'+return_data[i].image_name[0]+'"  data-widths="[360,540,720,900,1080,1296,1728,1944,2808,4320]" data-sizes="auto" alt="'+return_data[i].title+'" /> </div>'+
+                                                                '<img class="product-card__img lazyload imgFlyCart " data-src="./admin_panel/uploads/products/'+return_data[i].image_name[0]+'"  data-widths="[360,540,720,900,1080,1296,1728,1944,2808,4320]" data-sizes="auto" alt="'+return_data[i].title+'" /> </div>'+
                                                             '<div class="placeholder-background placeholder-background--animation" data-image-placeholder></div>'+
                                                         '</div>'+
                                                     '</div>'+
                                                     '<div class="hidden-sm hidden-xs proSwatch proImageSecond">'+
                                                         '<div class="p-relative">'+
                                                             '<div class="product-card__image" style="padding-top:126.90355329949239%;">'+
-                                                            ' <img class="product-card__img lazyload imgFlyCart " data-src="../admin_panel/uploads/products/'+return_data[i].image_name[1]+'" data-widths="[360,540,720,900,1080,1296,1728,1944,2808,4320]" data-sizes="auto" alt="'+return_data[i].title+'" /> </div>'+
+                                                            ' <img class="product-card__img lazyload imgFlyCart " data-src="./admin_panel/uploads/products/'+return_data[i].image_name[1]+'" data-widths="[360,540,720,900,1080,1296,1728,1944,2808,4320]" data-sizes="auto" alt="'+return_data[i].title+'" /> </div>'+
                                                         ' <div class="placeholder-background placeholder-background--animation" data-image-placeholder></div>'+
                                                         '</div>'+
                                                     '</div>'+

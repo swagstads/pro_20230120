@@ -113,12 +113,12 @@
                 console.log(returned_data);
                 var jsonData = JSON.parse(returned_data);
                 var return_data = jsonData.response;
-                if(jsonData.response.length > 0){
-                    for (var i = 0; i < jsonData.response.length; i++) {
+                if(return_data.length > 0){
+                    for (var i = 0; i < return_data.length; i++) {
                         $(".order-history-container").append('<div class="order-history-container-row">'+
                             '<div class="left">'+
                                 '<div class="image">'+
-                                    '<img src="https://cdn.shopify.com/s/files/1/1573/5553/products/14-1_360x.jpg" alt="" srcset="">'+
+                                    '<img src="./admin_panel/uploads/products/'+return_data[i].image_name+'" height="200px" alt="" srcset="">'+
                                 '</div>'+
                             '</div>'+
                             '<div class="right">'+

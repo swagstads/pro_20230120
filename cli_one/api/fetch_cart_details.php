@@ -37,11 +37,20 @@ try {
                 $data['cart_id'] = $row['cart_id'];
                 $data['product_id'] = $row['product_id'];
                 $data['product_name'] = $row['title'];
-                // $data['product_category'] = $row['category_name'];
                 $data['product_description'] = $row['description'];
                 $data['product_mrp'] = $row['mrp'];
                 $data['product_price'] = $row['price'];
                 $data['product_quantity'] = $row['product_quantity'];
+
+
+                $stmt2 = $dbh->prepare(' SELECT image_name FROM product_media WHERE product_id = :product_id');
+                $stmt2->bindParam(':product_id', $data["product_id"], PDO::PARAM_STR);
+                $stmt2->execute();
+
+                $fetch_image = $stmt2->fetchAll(PDO::FETCH_ASSOC);
+
+                $data['image_name'] = $fetch_image[0]['image_name'];
+
                 array_push($response["response"], $data);
             }
         }
