@@ -1,0 +1,168 @@
+.projects-container{
+    padding: var(--nav-height) 0;
+    width: 100vw;
+    position: relative;
+}
+.projects-container * {
+    z-index: 5;
+}
+/* project forehead */
+.projects .projects-container .forehead-area{
+    display: grid;
+    grid-template-columns: 50% auto;
+    min-height: 270px;
+}   
+.projects .projects-container .forehead-area .left{
+    display: grid;
+    width: 100%;
+    position: relative;
+}
+.projects .projects-container .forehead-area .left .vertical-text-container{
+    position: absolute;
+    right: 35px;
+    transform: rotate(-90deg);
+    transform-origin: right;
+    font-size: 2.5rem;
+}
+.projects .projects-container .forehead-area .right{
+    transform: translateY(70px);
+    padding: 0 20px;
+}
+.projects .projects-container .forehead-area .right .text{
+    max-width: 250px;
+    font-size: 20px;
+}
+
+/* project card */
+.projects .projects-container .project-card-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;    
+    gap: 20px;
+    width: 100vw;
+}
+.projects .projects-container .project-card{
+    display: grid;
+    grid-template-columns: 20% auto;
+    grid-template-areas: 'left right';
+    gap: 10px;
+    background-color: var(--dark2);
+    width: 70vw;
+    min-height: 80vh;
+    border-radius: 10px;
+    padding: 50px;
+}   
+.projects .projects-container .project-card .left{
+    grid-area: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    margin: 20px 0;
+    width: 15vw;
+}
+.projects .projects-container .project-card .title{
+    font-family: var(--font-family-font4);
+    font-size: 2.5rem;
+}
+.projects .projects-container .project-card .desc{
+    font-size: 1.2rem;
+}
+.projects .projects-container .project-card .right{
+    grid-area: right;
+    position: relative;
+    height: 70vh;
+}
+.projects .projects-container .project-card .right .img-overlay{
+    width: 100%;
+    height: 100%;
+}
+.projects .projects-container .project-card .right .card-img{
+    position: relative;
+    object-fit: contain;
+    height: 100%;
+    width: 100%;
+    z-index: 4;
+}
+.projects .projects-container .view-more-bttn-container button {
+    background-color: var(--dark2);
+    padding: 20px 50px;
+    color: var(--light1);
+    border-radius: 5px;
+    transition: 0.3s;
+    position: relative;
+    cursor: pointer;
+    border: transparent;
+}
+.projects .projects-container .view-more-bttn-container button:hover:after{
+    width: 100%;
+}
+.projects .projects-container .view-more-bttn-container button::after{
+    content: "\2192";
+    white-space: nowrap;
+    overflow: hidden;
+    top: 0;
+    left: 0;
+    position: absolute;
+    height: 100%;
+    width: 0%;
+    font-size: 30px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--dark2);
+    transition: 0.3s;
+
+    color: var(--light4);
+}
+/* .projects .projects-container .view-more-bttn-container button:hover {
+    transform: scale(1.05);
+} */
+@media (max-width: 1200px) {
+    .projects .projects-container .project-card{
+        grid-template-areas: 'right' 'left';
+        grid-template-columns: 100%;
+        min-height: auto;
+        width: 90vw;
+    }
+    .projects .projects-container .project-card *{
+        /* border: 1px solid; */
+    }
+    .projects .projects-container .project-card .left{
+        justify-content: left;
+    }
+    .projects .projects-container .project-card .right,
+    .projects .projects-container .project-card .left{
+        width: 100%;
+        margin: 0;
+    }
+    .projects .projects-container .project-card .right {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        height: auto;
+    }
+}
+
+/* blob */
+
+.svg-blob>img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 3;
+    margin: 0;
+    animation: move 10s ease-in-out infinite;
+    transform-origin: 50% 50%;
+}
+@keyframes move {
+    0%   { transform: scale(1) rotate(5deg)}
+    20%  { transform: scale(0.9, 1) rotate(10deg); }
+    40%  { transform: scale(0.9, 1) rotate(20deg); }
+    60%  { transform: scale(1.1) rotate(10deg); }
+    80%  { transform: scale(1.1) rotate(5deg); }
+    100% { transform: scale(1) }
+}

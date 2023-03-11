@@ -1,11 +1,11 @@
 <!doctype html>
- 
+
 <html class="no-js" lang="en">
- 
+
 
 <!--  collections/furniture  24:30 GMT -->
- 
-<meta http-equiv="content-type" content="text/html;charset=utf-8" /> 
+
+<meta http-equiv="content-type" content="text/html;charset=utf-8" />
 
 <head>
     <?php include('header_links.php'); ?>
@@ -29,7 +29,7 @@
                                 <?php
                                     if( isset($_GET['product'])){
                                         echo $_GET['product'];
-                                    } 
+                                    }
                                     else{
                                         echo "Products";
                                     }
@@ -48,14 +48,14 @@
                                     <span itemprop="name">
                                         <?php
                                             if( isset($_GET['product'])){
-                                                
+
                                                 if( isset($_GET['category'])){
                                                     echo $_GET['product']." - ".$_GET['category'];
                                                 }
                                                 else{
                                                     echo $_GET['product'];
                                                 }
-                                            } 
+                                            }
                                             else{
                                                 echo "Products";
                                             }
@@ -72,7 +72,24 @@
 
         <main class="mainContent" role="main">
 
-
+        <div class="filter-wrapper">
+            <div class="filter-products-container">
+                <div class="filter-text">
+                    Filter:
+                </div>
+                <div class="all-filters">
+                    <div class="filters relevence">
+                        Relevance
+                    </div>
+                    <div class="filters relevence">
+                        Price low to high
+                    </div>
+                    <div class="filters relevence">
+                        Price high to low
+                    </div>
+                </div>
+            </div>
+        </div>
             <section id="pageContent">
                 <div class="container">
                     <div class="pageCollectionInner mb20 pb-md-30">
@@ -82,6 +99,7 @@
                                     <div class="collBoxProducts">
 
                                         <div id="velaProList" class="proList list">
+
                                             <div id="product_container"  class="rowFlex rowFlexMargin product-list-container">
                                                 <!-- prodcut showcase -->
                                             </div>
@@ -102,7 +120,8 @@
 
     <!-- <div id="loading" style="display:none;"></div> -->
 
-    <div id="goToTop" class="hidden-xs hidden-sm"><span class="fa fa-long-arrow-up"></span></div>
+    <!-- <div id="goToTop" class="hidden-xs hidden-sm"><span class="fa fa-long-arrow-up"></span></div> -->
+
     <div id="velaPreLoading">
         <span></span>
         <div class="velaLoading">
@@ -114,39 +133,50 @@
     </div>
 
     <script>
-        let fetched_product  ;
 
-        function fetch_products() {
-            const queryString = window.location.search;
-            const urlParams = new URLSearchParams(queryString);
-            const searched_product = urlParams.get('product');
-            const product_category = urlParams.get('category');
-            console.log(searched_product,product_category);
-            var api_url = './api/fetch_products.php';
-            var form_data = { 
-                "show_products": "yes", 
-                "product_name":searched_product,
-                "product_category":product_category, 
-                "user_id": localStorage.getItem('user_id') 
-            };
+        // Get url params to fetch all products data
+        const queryString = window.location.search;
+        const urlParams = new URLSearchParams(queryString);
+        // url params
+        const searched_product = urlParams.get('product');
+        const product_category = urlParams.get('category');
+        // API to fetch data
+        var api_url = './api/fetch_products.php';
+        // form data -> sent to backend
+        var form_data = {
+            "show_products": "yes",
+            "product_name":searched_product,
+            "product_category":product_category,
+            "user_id": localStorage.getItem('user_id')
+        };
+        // Ajax call to API 
+        $.ajax({
+            url: api_url,
+            type: 'POST',
+            data: form_data,
+            success: function (returned_data) {
+                // Response from API
+                var jsonData = JSON.parse(returned_data);
+                var return_data = jsonData.response;
+                // Cleaning response
+                var fetched_product = return_data
+                // Displaying products
+                display_products(fetched_product);
 
-            $.ajax({
-                url: api_url,
-                type: 'POST',
-                data: form_data,
-                success: function (returned_data) {
-                    var jsonData = JSON.parse(returned_data);
-                    var return_data = jsonData.response;
+                filter_search(fetched_product)
 
-                    fetched_product = return_data[0]
+            }
+        })
 
-                    if (return_data[0].status === "failed") {
+        function display_products(return_data){
+            $("#product_container").empty()
+            if (return_data[0].status === "failed") {
                         console.log('failed to fetched product data');
 
                         $("#product_container").append('<div style="text-align:center;width:100%;font-size:20px">Sorry, no results found</div>')
                     }
                     else if (return_data[0].status === "success") {
-                        for (var i = 0; i < jsonData.response.length; i++) {
+                        for (var i = 0; i < return_data.length; i++) {
                             // console.log("Data "+i+":"+return_data[i].id);
                             let outOfStockMessage = "", inStockMessage="";
                             let addToCartDisabled = false;
@@ -155,7 +185,7 @@
                                 addToCartDisabled = true;
                             }
                             else if(return_data[i].quantity <= 5){
-                                inStockMessage = "only " + return_data[i].quantity + " left" 
+                                inStockMessage = "only " + return_data[i].quantity + " left"
                             }
                             else{
                                 inStockMessage = "In Stock"
@@ -219,17 +249,24 @@
                     else{
                         // console.log("Nothing");
                     }
-                }
-            })
         }
-                
-        function filter_search(){
-            console.log("filtered result: ",fetched_product);
-        }
-        
-        fetch_products();
-        filter_search()
 
+        function filter_search(fetched_product){
+            sortByPriceLowToHigh(fetched_product)
+        }
+        function sortByPriceLowToHigh(data) {
+        // Sort the array of objects by price (low to high)
+        data.sort((a, b) => {
+            return a.price - b.price;
+        });
+
+        // Log the sorted data to the console
+        console.log(data);
+
+        //display data from price low to high
+        display_products(data);
+
+        }
 
 
         function addToCart(product_id,stockQuantity){
@@ -256,9 +293,9 @@
                 cart_count()
         }
 
-            
+
     </script>
-    
+
 
     <script
         src="./cdn.shopify.com/shopifycloud/shopify/assets/themes_support/option_selection-9f517843f664ad329c689020fb1e45d03cac979f64b9eb1651ea32858b0ff452.js"

@@ -1,0 +1,29 @@
+.quote-card-container{
+    background-color: var(--dark2);
+    min-height: 400px;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;    
+    font-size: 3rem;
+    font-family: var(--font-family-font4);
+    position: relative;
+    /* border-left: 10px solid var(--dark3);
+    border-right: 10px solid var(--dark3); */
+    border-radius: 5px;
+}
+
+.quote-card-container .quote-svg-icon{
+    position: absolute;
+    opacity: 0.6;
+    top: 0;
+    /* left: 0; */
+    fill: var(--dark3);
+    z-index: 2;
+}
+.quote-card-container .the-quote{
+    z-index: 3;
+    text-align: center;
+    padding: 0 10px;
+}
