@@ -81,14 +81,15 @@
             type: 'POST',
             data: form_data,
             success: function (returned_data) {
-                console.log(returned_data);
                 var jsonData = JSON.parse(returned_data);
                 var return_data = jsonData.response;
                 let amount_arr = [], total_amount = "";
-                $(".cart-product-container").empty()
+                $(".cart-product-container").empty();
+                
                 if(jsonData.response.length >= 1){
+
                     for (var i = 0; i < jsonData.response.length; i++) {
-                        let input_id = "product_"+return_data[i].product_id;
+                        let input_id = "product_"+return_data[i].prod_id_;
                         let exact_amount = return_data[i].product_price * return_data[i].required_quantity;
                         
                         let amount = Math.round(exact_amount * 100) / 100;
@@ -107,24 +108,25 @@
                                         '<h2>'+return_data[i].product_name+'</h2>'+
                                     '</div>'+
                                     '<div class="description truncate-overflow ">'+
-                                        return_data[i].product_description+
+                                        return_data[i].product_description+"["+return_data[i].prod_id_ +"|" +return_data[i].cart_id+"]"+
                                     '</div>'+
                                 '</div>'+
                                 '<div class="quantity-container">Quantity'+
                                     '<div class="ordered-quantity">'+
                                         '<span class="input-number-decrement"'+
-                                            'onclick="decrease_quantity('+return_data[i].product_id+','+return_data[i].required_quantity+','+return_data[i].product_quantity+')" >-</span>'+
-                                        '<input class="input-number"'+
-                                            'id="'+input_id+'" type="" value="'+return_data[i].required_quantity+'" min="1" max="'+return_data[i].product_quantity+'">'+
+                                            'onclick="decrease_quantity('+return_data[i].prod_id_+','+return_data[i].required_quantity+','+return_data[i].product_quantity+')" >-</span>'+
+                                            '<span style="border:1px solid rgba(55,55,55,0.4); padding:9px 10px">'+return_data[i].required_quantity+'</span>'+
+                                        // '<input class="input-number"'+
+                                        //     'id="'+input_id+'" type="" value="'+return_data[i].required_quantity+'" min="1" max="'+return_data[i].required_quantity+'">'+
                                         '<span class="input-number-increment"'+
-                                            'onclick="increase_quantity('+return_data[i].product_id+','+return_data[i].required_quantity+','+return_data[i].product_quantity+')" >+</span>'+
+                                            'onclick="increase_quantity('+return_data[i].prod_id_+','+return_data[i].required_quantity+','+return_data[i].product_quantity+')" >+</span>'+
                                     '</div>'+
                                 '</div>'+
-                                '<div class="price">'+
+                                '<div class="price">'+return_data[i].prod_id_+
                                     'Amount: &nbsp;<h4>&#8377;<span id="total_product_amount"">'+(amount)+'<span></h4>'+
                                 '</div>'+
                                 '<div class="action">'+
-                                    '<a onclick="remove_from_cart('+return_data[i].product_id+')" >'+
+                                    '<a onclick="remove_from_cart('+return_data[i].prod_id_+')" >'+
                                         '<svg width="20px" height="20px" viewBox="0 0 1024 1024" fill="currentcolor" class="icon"  version="1.1" xmlns="http://www.w3.org/2000/svg"><path d="M32 241.6c-11.2 0-20-8.8-20-20s8.8-20 20-20l940 1.6c11.2 0 20 8.8 20 20s-8.8 20-20 20L32 241.6zM186.4 282.4c0-11.2 8.8-20 20-20s20 8.8 20 20v688.8l585.6-6.4V289.6c0-11.2 8.8-20 20-20s20 8.8 20 20v716.8l-666.4 7.2V282.4z" fill="" /><path d="M682.4 867.2c-11.2 0-20-8.8-20-20V372c0-11.2 8.8-20 20-20s20 8.8 20 20v475.2c0.8 11.2-8.8 20-20 20zM367.2 867.2c-11.2 0-20-8.8-20-20V372c0-11.2 8.8-20 20-20s20 8.8 20 20v475.2c0.8 11.2-8.8 20-20 20zM524.8 867.2c-11.2 0-20-8.8-20-20V372c0-11.2 8.8-20 20-20s20 8.8 20 20v475.2c0.8 11.2-8.8 20-20 20zM655.2 213.6v-48.8c0-17.6-14.4-32-32-32H418.4c-18.4 0-32 14.4-32 32.8V208h-40v-42.4c0-40 32.8-72.8 72.8-72.8H624c40 0 72.8 32.8 72.8 72.8v48.8h-41.6z" fill="" /></svg>&nbsp; Remove'+
                                     '</a>'+
                                 '</div>'+
@@ -180,7 +182,7 @@
         }
     }   
     function increase_quantity(product_id,order_qnty,product_qnty){
-        let increased_qnty =  order_qnty+1;
+        let increased_qnty =  order_qnty + 1;
         if(increased_qnty <= product_qnty){
             event.preventDefault()
             let api_url = "./api/increase_qnty.php";
@@ -196,7 +198,7 @@
                     var jsonData = JSON.parse(returned_data);
                     var return_data = jsonData.response[0];
                     show_msg("Quantity Updated")
-                    console.log(return_data);
+                    console.log("Quantity:",return_data);
                     display_cart_data()
                 }
             })

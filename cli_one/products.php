@@ -252,21 +252,28 @@
         }
 
         function filter_search(fetched_product){
-            sortByPriceLowToHigh(fetched_product)
+            sortByClickCount(fetched_product)
         }
         function sortByPriceLowToHigh(data) {
-        // Sort the array of objects by price (low to high)
-        data.sort((a, b) => {
-            return a.price - b.price;
-        });
-
-        // Log the sorted data to the console
-        console.log(data);
-
-        //display data from price low to high
-        display_products(data);
-
+            // Sort the array of objects by price (low to high)
+            data.sort((a, b) => {
+                return a.price - b.price;
+            });
+            console.log(data);// Log the sorted data to the console
+            display_products(data); //display data from price low to high
         }
+        function sortByPriceHighToLow(data) {
+            // Sort the array of objects by price (low to high)
+            data.sort((a, b) => {
+                return b.price - a.price;
+            });
+            console.log(data);// Log the sorted data to the console
+            display_products(data); //display data from price hight to low
+        }
+        function sortByClickCount() {
+            products.sort((a, b) => b.click_count - a.click_count);
+        }
+
 
 
         function addToCart(product_id,stockQuantity){

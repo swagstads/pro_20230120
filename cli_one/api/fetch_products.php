@@ -47,6 +47,7 @@ if (isset($_POST['show_products'])) {
             $data["description"] = $fetch_data[$i]['description'];
             $data["mrp"] = $fetch_data[$i]['mrp'];
             $data["price"] = $fetch_data[$i]['price'];
+            $data["click_counts"] = $fetch_data[$i]['click_count'];
 
             try {
                 $stmt2 = $dbh->prepare('SELECT image_name FROM product_media WHERE product_id=:product_id');

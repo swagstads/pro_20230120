@@ -12,7 +12,13 @@ $data = array();
 try {
     if(isset($_SESSION['user_id'])){
         $user_id = $_SESSION['user_id'];
-        $sql = "SELECT c.*, c.quantity AS cart_quantity, c.id AS cart_id, p.*,p.quantity AS product_quantity, p.id AS product_id FROM cart c INNER JOIN product p ON c.product_id = p.id WHERE user_id=:user_id";
+        $sql =  "SELECT *,
+                c.quantity AS cart_quantity,
+                c.id AS cart_id, 
+                p.quantity AS product_quantity 
+                FROM cart c JOIN product p ON c.product_id = p.id 
+                WHERE user_id=:user_id AND c.status = 'in cart'";
+
         $stmt = $dbh->prepare($sql);
         $stmt->bindParam(':user_id', $user_id, PDO::PARAM_STR);
         $stmt->execute();
@@ -34,8 +40,9 @@ try {
                 else{
                     $data['required_quantity'] = $row['cart_quantity'];
                 }
+
+                $data['prod_id_'] = $row['product_id'];
                 $data['cart_id'] = $row['cart_id'];
-                $data['product_id'] = $row['product_id'];
                 $data['product_name'] = $row['title'];
                 $data['product_description'] = $row['description'];
                 $data['product_mrp'] = $row['mrp'];
@@ -43,8 +50,8 @@ try {
                 $data['product_quantity'] = $row['product_quantity'];
 
 
-                $stmt2 = $dbh->prepare(' SELECT image_name FROM product_media WHERE product_id = :product_id');
-                $stmt2->bindParam(':product_id', $data["product_id"], PDO::PARAM_STR);
+                $stmt2 = $dbh->prepare('SELECT image_name FROM product_media WHERE product_id = :product_id');
+                $stmt2->bindParam(':product_id', $row["product_id"], PDO::PARAM_STR);
                 $stmt2->execute();
 
                 $fetch_image = $stmt2->fetchAll(PDO::FETCH_ASSOC);

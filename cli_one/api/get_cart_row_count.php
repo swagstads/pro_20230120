@@ -13,7 +13,7 @@ try {
     if(isset($_SESSION['user_id'])){
 
         $user_id = $_SESSION['user_id'];
-        $sql = "SELECT c.*, c.quantity AS cart_quantity, c.id AS cart_id, p.*,p.quantity AS product_quantity, p.id AS product_id FROM cart c INNER JOIN product p ON c.product_id = p.id WHERE user_id=:user_id";
+        $sql = "SELECT * FROM cart WHERE user_id=:user_id AND status = 'in cart'";
         $stmt = $dbh->prepare($sql);
         $stmt->bindParam(':user_id', $user_id, PDO::PARAM_STR);
         if($stmt->execute()){
