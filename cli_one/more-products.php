@@ -69,7 +69,7 @@
                                 '<div class="product-slider">'+
                                     '<a onclick="increase_click_count('+return_data[i].prod_id+')"  href="./productpage.php?productid='+return_data[i].prod_id+'" >'+
                                         '<div class="product-image">'+
-                                            '<img class="image1 active lazyload" data-src="../admin_panel/uploads/products/'+return_data[i].image_name+'" alt="">'+
+                                            '<img class="image1 active lazyload" data-src="./admin_panel/uploads/products/'+return_data[i].image_name+'" alt="">'+
                                         '</div>'+
                                         '<div class="product-title">'+
                                             '<span>'+return_data[i].title+'</span><br>'+

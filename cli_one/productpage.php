@@ -181,7 +181,7 @@ shareButtons.forEach(function(button) {
                             }
                             else{
                                 images_arr = jsonData.response[0].image_name;
-                                primary_img = "../admin_panel/uploads/products/"+images_arr[0];
+                                primary_img = "./admin_panel/uploads/products/"+images_arr[0];
                                 // $(".product-img-active").attr(src , primary_img)
 
                             
@@ -198,7 +198,7 @@ shareButtons.forEach(function(button) {
                                     { 
                                         onclick: 'changeActiveImg(this.src)',
                                         class: 'small-view-image',
-                                        src: "../admin_panel/uploads/products/"+images_arr[i]+"", 
+                                        src: "./admin_panel/uploads/products/"+images_arr[i]+"", 
                                     })
                                     .appendTo($('#all_prod_images_container'));
 
