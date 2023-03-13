@@ -72,9 +72,8 @@
 
     <script>
         var api_url = './api/fetch_all_products.php';
-        let user_id = "<?php $_SESSION['user_id'] ?>";
         var order_history_table = document.querySelector(".order-history-table");
-        var form_data = { "show_products": "show","user_id":user_id};
+        var form_data = { "show_products": "show"};
         $.ajax({
             url: api_url,
             type: 'POST',
@@ -88,7 +87,7 @@
                         $(".order-history-container").append('<a href="./productpage.php?productid='+return_data[i].id+'"  ><div class="order-history-container-row">'+
                             '<div class="left">'+
                                 '<div class="image">'+
-                                    '<img src="https://cdn.shopify.com/s/files/1/1573/5553/products/14-1_360x.jpg" alt="" srcset="">'+
+                                    '<img src="./admin_panel/uploads/products/'+return_data[i].image_name+'" alt="" srcset="">'+
                                 '</div>'+
                             '</div>'+
                             '<div class="right">'+

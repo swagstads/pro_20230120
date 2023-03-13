@@ -24,27 +24,25 @@ $data = array();
             $data["description"] = $fetch_data[$i]['description'];
             $data["mrp"] = $fetch_data[$i]['mrp'];
             $data["price"] = $fetch_data[$i]['price'];
-            $stmt2 = $dbh->prepare(' SELECT image_name FROM product_media WHERE product_id = :product_id');
-            $stmt2->bindParam(':product_id', $data["prod_id"], PDO::PARAM_STR);
-            $stmt2->execute();
-            $im_count = $stmt2->rowCount();
-            for ($j = 0; $j < $im_count; $j++){
-                $fetch_image = $stmt2->fetchAll(PDO::FETCH_ASSOC);
-                $data["image_name"] = $fetch_image[$j]['image_name'];
-            }
             $data["quantity"] = $fetch_data[$i]['quantity'];
             $data["status"] = "success";
             $data["reason"] = "orders_fetched";
+
+            $stmt2 = $dbh->prepare(' SELECT image_name FROM product_media WHERE product_id = :product_id');
+            $stmt2->bindParam(':product_id', $fetch_data[$i]['prod_id'] , PDO::PARAM_STR);
+            $stmt2->execute();
+            $fetch_image = $stmt2->fetch(PDO::FETCH_OBJ);
+            $data["image_name"] = $fetch_image->image_name;
+       
             array_push($response["response"], $data);
         }
 } 
-// else {
-//     $data["status"] = "failed";
-//     $data["reason"] = "No results";
-//     array_push($response["response"], $data);
+else {
+    $data["status"] = "failed";
+    $data["reason"] = "No results";
+    array_push($response["response"], $data);
 
-// }
-// }
+}
 echo json_encode($response);
 
 ?>
