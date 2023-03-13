@@ -65,7 +65,7 @@ if (isset($_POST['btnSubmit'])) {
 
 if (isset($_POST['btnedit'])) {
 
-    $id = $_POST['user_id'];
+    $id = $_GET['eid'];
     $name=$_POST['name'];
     $email=$_POST['email'];
     $role = $_POST['role'];

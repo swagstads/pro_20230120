@@ -78,7 +78,7 @@ $no = 1;
                                     $title = $prod['title'];
                                     $price = $prod['price'];
                                     $quant = $prod['quantity'];
-                                    echo '<a href="product.php?eid='.$pid.'">'.$title.'</a>'." &emsp; (Rs. ".$quant." * ".$price.")<br />";
+                                    echo $title." &emsp; (Rs. ".$quant." * ".$price.")<br />";
                                     $value = $value + ($quant*$price);
                                 }
                                 ?></td>
