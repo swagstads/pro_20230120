@@ -451,6 +451,23 @@ button {
     background: url("../images/company_banners/5.jpg")
   }
 
+  @media (max-width: 750px) {
+    .company-banner-container:nth-child(1){
+    background-image: url("../images/company_banners/m_1.jpg");
+    }
+    .company-banner-container:nth-child(2){
+      background-image: url("../images/company_banners/m_2.jpg");
+    }
+    .company-banner-container:nth-child(3){
+      background-image: url("../images/company_banners/m_3.jpg");
+    }
+    .company-banner-container:nth-child(4){
+      background-image: url("../images/company_banners/m_4.jpg");
+    }
+    .company-banner-container:nth-child(5){
+      background-image: url("../images/company_banners/m_5.jpg");
+    }
+  }
 
   .company-banner-container:nth-child(n) {
     background-repeat: no-repeat;
@@ -563,7 +580,7 @@ button {
     margin: 0;
     width: 3rem;
     height: 3rem;
-    background: var(--secondary-color);
+    background: var(--primary-color);
     border-radius: 1.625rem;
    }
    
