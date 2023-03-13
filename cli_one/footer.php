@@ -102,69 +102,71 @@
                     </div>
                 </div>
 
-                <div class="col-xs-12 col-sm-2 col-md-2 mb20">
-                    <div class="velaFooterMenu">
-                        <h4 class="velaFooterTitle">Our services</h4>
-
-                        <div class="velaContent">
-                            <ul class="velaFooterLinks list-unstyled">
-                                <li class="">
-                                    <a href="./cart.php" title="">Delivery Inforamtion</a>
-                                </li>
-                                <li class="">
-                                    <a href="./contact-us.php" title="">Help & Contact Us</a>
-                                </li>
-
-                                <li class="">
-                                    <a href="./return_and_refund.php" title="">Returns & Refunds</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-xs-12 col-sm-2 col-md-2 mb20">
-                    <div class="velaFooterMenu">
-                        <h4 class="velaFooterTitle">Information</h4>
-
-                        <div class="velaContent">
-                            <ul class="velaFooterLinks list-unstyled">
-                                <!-- <li class="">
-                                    <a href="#" title="">Careers</a>
-                                </li> -->
-                                <li class="">
-                                    <a href="./shipping_policy.php" title="">Shipping Policy</a>
-                                </li>
-
-                                <li class="">
-                                    <a href="./privacy.php" title="">Privacy Policy</a>
-                                </li>
-
-                                <li class="">
-                                    <a href="./tandc.php" title="">Terms & Condition</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-xs-12 col-sm-2 col-md-2 mb20">
+                <div class="col-xs-12 col-sm-6 col-md-6">
+                    <div class="col-xs-12 col-sm-4 col-md-4 mb20">
                         <div class="velaFooterMenu">
-                            <h4 class="velaFooterTitle">Internal links</h4>
+                            <h4 class="velaFooterTitle">Our services</h4>
 
                             <div class="velaContent">
                                 <ul class="velaFooterLinks list-unstyled">
                                     <li class="">
-                                        <a href="./index.php" title="">Home</a>
+                                        <a href="./cart.php" title="">Delivery Inforamtion</a>
                                     </li>
                                     <li class="">
-                                        <a href="./contact-us.php" title="">Contact Us</a>
+                                        <a href="./contact-us.php" title="">Help & Contact Us</a>
                                     </li>
 
                                     <li class="">
-                                        <a href="./about-us.php" title="">About us</a>
+                                        <a href="./return_and_refund.php" title="">Returns & Refunds</a>
                                     </li>
                                 </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-xs-12 col-sm-4 col-md-4 mb20">
+                        <div class="velaFooterMenu">
+                            <h4 class="velaFooterTitle">Information</h4>
+
+                            <div class="velaContent">
+                                <ul class="velaFooterLinks list-unstyled">
+                                    <!-- <li class="">
+                                        <a href="#" title="">Careers</a>
+                                    </li> -->
+                                    <li class="">
+                                        <a href="./shipping_policy.php" title="">Shipping Policy</a>
+                                    </li>
+
+                                    <li class="">
+                                        <a href="./privacy.php" title="">Privacy Policy</a>
+                                    </li>
+
+                                    <li class="">
+                                        <a href="./tandc.php" title="">Terms & Condition</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-xs-12 col-sm-4 col-md-4 mb20">
+                            <div class="velaFooterMenu">
+                                <h4 class="velaFooterTitle">Internal links</h4>
+
+                                <div class="velaContent">
+                                    <ul class="velaFooterLinks list-unstyled">
+                                        <li class="">
+                                            <a href="./index.php" title="">Home</a>
+                                        </li>
+                                        <li class="">
+                                            <a href="./contact-us.php" title="">Contact Us</a>
+                                        </li>
+
+                                        <li class="">
+                                            <a href="./about-us.php" title="">About us</a>
+                                        </li>
+                                    </ul>
+                                </div>
                             </div>
                         </div>
                     </div>
