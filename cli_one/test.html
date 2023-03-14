@@ -13,34 +13,43 @@
             justify-content: space-between;
             align-items: center;
             width: 100%;
-            border: 1px solid;
             gap: 10px;
         }
         .trending-products-container .trending-product .image-container{
             display: flex;
             align-items: center;
             justify-content: center;
+            gap: 10px;
             width: 300px;
-            height: 400px;  
+            height: 300px;  
             overflow: hidden;      
             border-top-left-radius: 10% 10%;
             border-bottom-right-radius: 10% 10%;  
-            position: relative;  
         }
         .trending-products-container .trending-product img{
-            
             height: 100%;
             transition: .3s;
             object-fit: cover;
             border-top-left-radius: 10% 10%;
             border-bottom-right-radius: 10% 10%;
         }
-        .trending-products-container .trending-product span{
-            /* z-index: 2; */
+        .trending-products-container .trending-product .product a{
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            text-decoration: none;
+            color: black;
         }
-        .trending-products-container .trending-product:hover img{
-            height: 500px;
-            width: 400px;
+        .trending-products-container .trending-product .product{
+            text-align: center;
+            font-size: 1.4rem;
+            font-weight: 500;
+            padding: 20px;
+        }
+
+        .trending-products-container .trending-product img:hover{
+            height: 120%;
+            width: 120%;
         }
     </style>
 
@@ -53,7 +62,18 @@
 
                 <div class="product">
                     <a href="">
-                    <div class="image-container">
+                        <div class="image-container">
+                            <img src="./assets/images/logo1.jpg" alt="">
+                        </div>
+                        <span>
+                            Product title
+                        </span>
+                    </a>
+                </div>
+                
+                <div class="product">
+                    <a href="">
+                        <div class="image-container">
                             <img src="./assets/images/logo1.jpg" alt="">
                         </div>
                         <span>
@@ -62,21 +82,16 @@
                     </a>
                 </div>
 
-
-
-                <div class="image-container">
-                    <img src="./assets/images/logo1.jpg" alt="">
-                    <span>
-                        Product title
-                    </span>
+                <div class="product">
+                    <a href="">
+                        <div class="image-container">
+                            <img src="./assets/images/logo1.jpg" alt="">
+                        </div>
+                        <span>
+                            Product title
+                        </span>
+                    </a>
                 </div>
-                <div class="image-container">
-                    <img src="./assets/images/logo1.jpg" alt="">
-                    <span>
-                        Product title
-                    </span>
-                </div>
-            </div>
 
         </div>
     </div>

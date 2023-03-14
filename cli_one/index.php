@@ -298,9 +298,17 @@
                                         products available.
                                     </span>
                                 </div>
-                                <div class="row1 trending-products ">
-                                    <!-- Trending products from js (AJAX) -->
+                                <!-- <div class="row1 trending-products ">
+                                </div> -->
+
+                                <div class="trending-products-wrapper">
+                                    <div class="trending-products-container">
+                                        <div class="trending-product">
+                                                
+                                        </div>
+                                    </div>
                                 </div>
+
                                 <div class="proLoadMoreBottom"></div>
 
                                 <script>
@@ -315,16 +323,20 @@
                                     success: function (returned_data) {
                                             var jsonData = JSON.parse(returned_data);
                                             var return_data = jsonData.response;
+                                            console.log(return_data);
+
                                             for (i=0;i< 3; i++){
-                                                $(".trending-products").append(
-                                                    '<a href="productpage.php?productid='+return_data[i].product_id+'">'+
-                                                        '<div class="container10 col-md-3">'+
-                                                            '<img src="https://cdn.shopify.com/s/files/1/1573/5553/products/14_360x.jpg" />'+
-                                                            '<img src="https://cdn.shopify.com/s/files/1/1573/5553/products/14-1_360x.jpg" />'+
-                                                            '<img src="https://cdn.shopify.com/s/files/1/1573/5553/products/14-1_360x.jpg" />'+
-                                                        '</div>'+
-                                                        // '<br/><div style="text-align:center">'+return_data[i].product_title+' - '+return_data[i].product_category+'</div>'+
-                                                    '</a>'
+                                                
+                                                $(".trending-product").append('<div class="product">'+
+                                                        '<a href="./productpage.php?productid='+return_data[i].product_id+'">'+
+                                                            '<div class="image-container">'+
+                                                                '<img src="./admin_panel/uploads/products/'+return_data[i].image_name+'" alt="">'+
+                                                            '</div>'+
+                                                            '<span>'+
+                                                                return_data[i].product_title+" - "+return_data[i].product_category + 
+                                                            '</span>'+
+                                                        '</a>'+
+                                                    '</div>'
                                                 )
                                             }
                                         }
@@ -336,164 +348,10 @@
                     </div>
                 </div>
             </div>
-            <!-- ======= Portfolio Section Start======= -->
-            <section id="portfolio">
-                <div class="container" data-aos="fade-up">
-                    <div class="row">
-                        <div class="headingGroup pb20">
-                            <h3 class="velaHomeTitle">
-                                <span> Best Sellers</span>
-                            </h3>
-                            <span class="subTitle">
-                                Watch our best selling products in Market!
-                            </span>
-                        </div>
-                        <!-- <div class="col-md-12">
-            <h3 class="section-title">Portfolio</h3>
-            <div class="section-title-divider"></div>
-            <p class="section-description">Si stante, hoc natura videlicet vult, salvam esse se, quod concedimus ses haec dicturum fuisse</p>
-            </div> -->
-                    </div>
 
-                    <div class="row">
-                        <div class="col-lg-12 d-flex justify-content-center">
-                            <ul id="portfolio-flters">
-                                <li data-filter="*" class="filter-active">All</li>
-                                <li data-filter=".filter-bedsheets">Bedsheets</li>
-                                <li data-filter=".filter-cushion-covers">Cushion Covers</li>
-                                <li data-filter=".filter-curtains">Curtains</li>
-                            </ul>
-                        </div>
-                    </div>
-   
-                    <div class="row portfolio-container" id="category">
-
-                        <a href="./productpage.php?productid=1">
-                            <div class="col-lg-4 col-md-6 portfolio-item filter-bedsheets">
-                                <img src="assets/images/portfolio/portfolio-2.jpg" class="img-fluid" alt="">
-                                <div class="portfolio-info">
-                                    <h4>Bedsheets</h4>
-                                    <p>abstract</p>
-                                    <a href="assets/images/portfolio/portfolio-2.jpg" data-gallery="portfolioGallery"
-                                        class="portfolio-lightbox preview-link" title="Web 3"><i class="bi bi-plus"></i></a>
-                                </div>
-                            </div>
-                        </a>
-
-                        <a href="./productpage.php?productid=1">
-                            <div class="col-lg-4 col-md-6 portfolio-item filter-bedsheets">
-                                <img src="assets/images/portfolio/portfolio-2.jpg" class="img-fluid" alt="">
-                                <div class="portfolio-info">
-                                    <h4>Bedsheets</h4>
-                                    <p>Leaves</p>
-                                    <a href="assets/images/portfolio/portfolio-2.jpg" data-gallery="portfolioGallery"
-                                        class="portfolio-lightbox preview-link" title="Web 3"><i class="bi bi-plus"></i></a>
-                                </div>
-                            </div>
-                        </a>
-
-                        <a href="./productpage.php?productid=1">
-                            <div class="col-lg-4 col-md-6 portfolio-item filter-bedsheets">
-                                <img src="assets/images/portfolio/portfolio-2.jpg" class="img-fluid" alt="">
-                                <div class="portfolio-info">
-                                    <h4>Bedsheets</h4>
-                                    <p>Ethnic</p>
-                                    <a href="assets/images/portfolio/portfolio-2.jpg" data-gallery="portfolioGallery"
-                                        class="portfolio-lightbox preview-link" title="Web 3"><i class="bi bi-plus"></i></a>
-                                </div>
-                            </div>
-                        </a>
-
-                        <a href="./productpage.php?productid=18">
-                            <div class="col-lg-4 col-md-6 portfolio-item filter-cushion-covers">
-                                <img src="assets/images/portfolio/portfolio-2.jpg" class="img-fluid" alt="">
-                                <div class="portfolio-info">
-                                    <h4>Cushion covers</h4>
-                                    <p>abstract</p>
-                                    <a href="assets/images/portfolio/portfolio-2.jpg" data-gallery="portfolioGallery"
-                                        class="portfolio-lightbox preview-link" title="Web 3"><i class="bi bi-plus"></i></a>
-                                </div>
-                            </div>
-                        </a>
-
-                        <a href="./productpage.php?productid=1">
-                            <div class="col-lg-4 col-md-6 portfolio-item filter-cushion-covers">
-                                <img src="assets/images/portfolio/portfolio-2.jpg" class="img-fluid" alt="">
-                                <div class="portfolio-info">
-                                    <h4>Cushion covers</h4>
-                                    <p>abstract</p>
-                                    <a href="assets/images/portfolio/portfolio-2.jpg" data-gallery="portfolioGallery"
-                                        class="portfolio-lightbox preview-link" title="Web 3"><i class="bi bi-plus"></i></a>
-                                </div>
-                            </div>
-                        </a>
-
-                        <a href="./productpage.php?productid=1">
-                            <div class="col-lg-4 col-md-6 portfolio-item filter-cushion-covers">
-                                <img src="assets/images/portfolio/portfolio-2.jpg" class="img-fluid" alt="">
-                                <div class="portfolio-info">
-                                    <h4>Cushion covers</h4>
-                                    <p>ethnic</p>
-                                    <a href="assets/images/portfolio/portfolio-2.jpg" data-gallery="portfolioGallery"
-                                        class="portfolio-lightbox preview-link" title="Web 3"><i class="bi bi-plus"></i></a>
-                                </div>
-                            </div>
-                        </a>
-                        
-                        <a href="./productpage.php?productid=18">
-                            <div class="col-lg-4 col-md-6 portfolio-item filter-curtains">
-                                <img src="assets/images/portfolio/portfolio-2.jpg" class="img-fluid" alt="">
-                                <div class="portfolio-info">
-                                    <h4>Curtains</h4>
-                                    <p>abstract</p>
-                                    <a href="assets/images/portfolio/portfolio-2.jpg" data-gallery="portfolioGallery"
-                                        class="portfolio-lightbox preview-link" title="Web 3"><i class="bi bi-plus"></i></a>
-                                </div>
-                            </div>
-                        </a>
-
-                        <a href="./productpage.php?productid=1">
-                            <div class="col-lg-4 col-md-6 portfolio-item filter-curtains">
-                                <img src="assets/images/portfolio/portfolio-2.jpg" class="img-fluid" alt="">
-                                <div class="portfolio-info">
-                                    <h4>Curtains</h4>
-                                    <p>leaves</p>
-                                    <a href="assets/images/portfolio/portfolio-2.jpg" data-gallery="portfolioGallery"
-                                        class="portfolio-lightbox preview-link" title="Web 3"><i class="bi bi-plus"></i></a>
-                                </div>
-                            </div>
-                        </a>
-
-                        <a href="./productpage.php?productid=1">
-                            <div class="col-lg-4 col-md-6 portfolio-item filter-curtains">
-                                <img src="assets/images/portfolio/portfolio-2.jpg" class="img-fluid" alt="">
-                                <div class="portfolio-info">
-                                    <h4>Curtains</h4>
-                                    <p>Ethnic</p>
-                                    <a href="assets/images/portfolio/portfolio-2.jpg" data-gallery="portfolioGallery"
-                                        class="portfolio-lightbox preview-link" title="Web 3"><i class="bi bi-plus"></i></a>
-                                </div>
-                            </div>
-                        </a>
-              
-                    </div>
-
-                    <!-- <script>
-                        let best_seller_api_url = '../api/best_sellers.php';
-                        $.ajax({
-                        url: best_seller_api_url,
-                        type: 'GET',
-                        success: function (returned_data) {
-                            var jsonData = JSON.parse(returned_data);
-                        }
-                    })
-                    </script> -->
-
-                </div>
-            </section>
-            <!-- ======= Portfolio Section End======= -->
-
-            
+            <div class="best-seller">
+                <?php include('./best_seller.php') ?>
+            </div>
 
             <div class="more-products">
                 <?php include('./more-products.php') ?>

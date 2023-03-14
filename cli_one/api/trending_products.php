@@ -21,14 +21,14 @@ try {
             $data['product_id'] = $row['product_id'];
             $data['product_title'] = $row['title'];
             $data['product_category'] = $row['category_name'];
+
             $stmt2 = $dbh->prepare(' SELECT image_name FROM product_media WHERE product_id = :product_id');
-            $stmt2->bindParam(':product_id', $data["id"], PDO::PARAM_STR);
+            $stmt2->bindParam(':product_id', $row['product_id'], PDO::PARAM_STR);
             $stmt2->execute();
-            $j = 0;
-            while ($fetch_image = $stmt2->fetchAll(PDO::FETCH_ASSOC)){
-                $data["image_name"] = $fetch_image[$j]['image_name'];
-                $j++;
-            }
+
+            $fetch_image = $stmt2->fetch(PDO::FETCH_OBJ);
+            $data["image_name"] = $fetch_image->image_name;
+
             array_push($response["response"], $data);
         }
     }
