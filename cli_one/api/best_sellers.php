@@ -7,7 +7,7 @@ $response["response"] = array();
 $data = array();
 
 
-$stmt = $dbh->prepare(' SELECT *,p.id AS prod_id FROM product p JOIN category c ON FIND_IN_SET(c.id, p.category_id)  WHERE p.click_count > 0 ORDER BY p.click_count DESC LIMIT 3');
+$stmt = $dbh->prepare('SELECT *, p.id AS prod_id FROM product p JOIN category c ON FIND_IN_SET(c.id, p.category_id) ORDER BY click_count DESC LIMIT 9');
 $stmt->execute();
 
 $count = $stmt->rowCount();

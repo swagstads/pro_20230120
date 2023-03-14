@@ -13,7 +13,7 @@
                             </div>
                             <div class="product-slider-container">
 
-                                <div  class="left-arrow scrolling-arrow"> <span onclick="productSliderScrollLeft()" ><</span> </div>
+                                <div  class="left-arrow scrolling-arrow"> <span onclick="productSliderScrollLeftBS()" ><</span> </div>
 
                                 <div class="best-seller-products scrolling-products">
                                     
@@ -23,7 +23,7 @@
                                 </div>
 
 
-                                <div class="right-arrow scrolling-arrow"> <span  onclick="productSliderScrollRight()" >></span> </div>
+                                <div class="right-arrow scrolling-arrow"> <span  onclick="productSliderScrollRightBS()" >></span> </div>
 
                             </div>
 
@@ -111,11 +111,11 @@
         }
         fetchProduct();
 
-        function productSliderScrollLeft(){
-            $('.scrolling-products').scrollLeft( $('.scrolling-products').scrollLeft() - 270 )
+        function productSliderScrollLeftBS(){
+            $('.best-seller-products').scrollLeft( $('.best-seller-products').scrollLeft() - 270 )
         }
-        function productSliderScrollRight(){
-            $('.scrolling-products').scrollLeft( $('.scrolling-products').scrollLeft() + 270 )
+        function productSliderScrollRightBS(){
+            $('.best-seller-products').scrollLeft( $('.best-seller-products').scrollLeft() + 270 )
         }
 
         function addToCart(product_id){

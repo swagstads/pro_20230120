@@ -13,9 +13,9 @@
                             </div>
                             <div class="product-slider-container">
 
-                                <div  class="left-arrow scrolling-arrow"> <span onclick="productSliderScrollLeft()" ><</span> </div>
+                                <div  class="left-arrow scrolling-arrow"> <span onclick="productSliderScrollLeftMP()" ><</span> </div>
 
-                                <div class="scrolling-products">
+                                <div class="more-producst-scroll  scrolling-products">
                                     
                                         <!-- Products -->
 
@@ -23,7 +23,7 @@
                                 </div>
 
 
-                                <div class="right-arrow scrolling-arrow"> <span  onclick="productSliderScrollRight()" >></span> </div>
+                                <div class="right-arrow scrolling-arrow"> <span  onclick="productSliderScrollRightMP()" >></span> </div>
 
                             </div>
 
@@ -65,7 +65,7 @@
                             else{
                                 inStockMessage = "In Stock"
                             }
-                            $('.scrolling-products').append(
+                            $('.more-producst-scroll').append(
                                 '<div class="product-slider">'+
                                     '<a onclick="increase_click_count('+return_data[i].prod_id+')"  href="./productpage.php?productid='+return_data[i].prod_id+'" >'+
                                         '<div class="product-image">'+
@@ -111,11 +111,11 @@
         }
         fetchProduct();
 
-        function productSliderScrollLeft(){
-            $('.scrolling-products').scrollLeft( $('.scrolling-products').scrollLeft() - 270 )
+        function productSliderScrollLeftMP(){
+            $('.more-producst-scroll').scrollLeft( $('.more-producst-scroll').scrollLeft() - 270 )
         }
-        function productSliderScrollRight(){
-            $('.scrolling-products').scrollLeft( $('.scrolling-products').scrollLeft() + 270 )
+        function productSliderScrollRightMP(){
+            $('.more-producst-scroll').scrollLeft( $('.more-producst-scroll').scrollLeft() + 270 )
         }
 
         function addToCart(product_id){
