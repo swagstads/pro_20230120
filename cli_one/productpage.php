@@ -55,15 +55,15 @@
                     <!-- Product Pricing -->
                     <div class="product-price">
                         <span id="product_our_price">&#8377; <span id="product_price"></span></span>
-                        <div class="add-to-bttns">
-                            <button onclick="addToCart( <?php echo $_GET['productid'] ?> )" class="cart-btn">Add to cart</button>
-                            <button onclick="addToWishlist( <?php echo $_GET['productid'] ?> )" class="wish-btn">Add to wishlist</button>
-                        </div>
-                    </div>
                         
+                    </div>
                     <div class="product-mrp">
                         <span>&#8377; <span id="product_mrp"></span></span>
                     </div>
+                    <div class="add-to-bttns">
+                            <button onclick="addToCart( <?php echo $_GET['productid'] ?> )" class="cart-btn">Add to cart</button>
+                            <button onclick="addToWishlist( <?php echo $_GET['productid'] ?> )" class="wish-btn">Add to wishlist</button>
+                        </div>    
                     <div class="social-media-share-links">
                         <div><h3>Share on:</h3></div>
                         <div class="share-buttons">
