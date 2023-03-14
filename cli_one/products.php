@@ -311,20 +311,20 @@
     </script>
 
 
-    <!-- <script
+    <script
         src="./cdn.shopify.com/shopifycloud/shopify/assets/themes_support/option_selection-9f517843f664ad329c689020fb1e45d03cac979f64b9eb1651ea32858b0ff452.js"
-        type="text/javascript"></script> -->
-    <!-- <script
+        type="text/javascript"></script>
+    <script
         src="./cdn.shopify.com/shopifycloud/shopify/assets/themes_support/api.jquery-e94e010e92e659b566dbc436fdfe5242764380e00398907a14955ba301a4749f.js"
-        type="text/javascript"></script> -->
+        type="text/javascript"></script>
     <script src="./cdn.shopify.com/s/files/1/1573/5553/t/32/assets/vendor3462.js?v=138786516400658099071601353808"
         type="text/javascript"></script>
-    <!-- <script
+    <script
         src="./cdn.shopify.com/s/files/1/1573/5553/t/32/assets/vela_ajaxcart02d5.js?v=53329818851908209301618027400"
-        type="text/javascript"></script> -->
-    <!-- <script
+        type="text/javascript"></script>
+    <script
         src="./cdn.shopify.com/s/files/1/1573/5553/t/32/assets/jquery.ion.rangeslider11ad.js?v=25617981562543196831601353802"
-        type="text/javascript"></script> -->
+        type="text/javascript"></script>
     <script
         src="./cdn.shopify.com/s/files/1/1573/5553/t/32/assets/lazysizes.min8f10.js?v=153772683470722238621601353802"
         async="async"></script>
