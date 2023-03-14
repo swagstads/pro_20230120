@@ -55,8 +55,10 @@
                     <!-- Product Pricing -->
                     <div class="product-price">
                         <span id="product_our_price">&#8377; <span id="product_price"></span></span>
-                        <button onclick="addToCart( <?php echo $_GET['productid'] ?> )" class="cart-btn">Add to cart</button>
-                        <button onclick="addToWishlist( <?php echo $_GET['productid'] ?> )" class="wish-btn">Add to wishlist</button>
+                        <div class="add-to-bttns">
+                            <button onclick="addToCart( <?php echo $_GET['productid'] ?> )" class="cart-btn">Add to cart</button>
+                            <button onclick="addToWishlist( <?php echo $_GET['productid'] ?> )" class="wish-btn">Add to wishlist</button>
+                        </div>
                     </div>
                         
                     <div class="product-mrp">
