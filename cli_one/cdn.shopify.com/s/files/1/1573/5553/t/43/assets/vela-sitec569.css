@@ -3372,7 +3372,7 @@ tbody.collapse.in {
 .velaBreadcrumbs {
   position: relative;
   color: var(--vela-breadcrumb-textcolor);
-  margin-bottom: 60px;
+  margin-bottom: 10px;
 }
 @media (max-width: 992px) {
   .velaBreadcrumbs {
