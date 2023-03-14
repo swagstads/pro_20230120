@@ -270,6 +270,7 @@ button {
     height: auto;
     background-size: 100%;
 }
+
 .navbar{
     position: fixed;
     top: 0;
@@ -522,10 +523,25 @@ button {
   .company-banner-container .text-box-know{
     position: absolute;
     padding: 30px;
-    background-color: white;
     bottom: 20px;
   }
 
+  #text-box-1{
+    display: none;
+  }
+
+  #text-box-2{
+    display: none;
+  }
+  #text-box-3{
+    display: none;
+  }
+  #text-box-4{
+    display: none;
+  }
+  #text-box-5{
+    display: none;
+  }
   .company-banner-container .text-box{
     position: absolute;
     width: 50%;
@@ -612,7 +628,7 @@ button {
     margin: 0;
     width: 3rem;
     height: 3rem;
-    background: var(--primary-color);
+    background: #fcfcfc;
     border-radius: 1.625rem;
    }
    
@@ -640,8 +656,8 @@ button {
     right: 0.0625rem;
     width: 0.625rem;
     height: 0.625rem;
-    border-top: 0.125rem solid #fff;
-    border-right: 0.125rem solid #fff;
+    border-top: 0.125rem solid var(--primary-color);
+    border-right: 0.125rem solid var(--primary-color);
     transform: rotate(45deg);
    }
    
@@ -654,7 +670,7 @@ button {
     bottom: 0;
     padding: 0.75rem 0;
     margin: 0 0 0 1.85rem;
-    color: #282936;
+    color: #fcfcfc;
     font-weight: 700;
     line-height: 1.6;
     text-align: center;
@@ -666,12 +682,12 @@ button {
    }
    
    .know-more-bttn:hover .circle .icon.arrow {
-    background: #fff;
+    background: #fcfcfc;
     transform: translate(1rem, 0);
    }
    
    .know-more-bttn:hover .know-more-bttn-text {
-    color: #fff;
+    color: var(--primary-color);
    }
 /* 
 .group-of-companies{
@@ -1345,10 +1361,14 @@ footer {
     gap: 10px;
   }
   .about-service .about{
-    width: 48%;
+    width: 50%;
+    margin-right: 50px;
+    margin-left: 6px;
+    text-align: justify;
   }
   .about-service .service{
-    width: 48%;
+    width: 50%;
+    text-align: justify;
   }
   .about-service h3 {
     margin-top: 0;
@@ -1848,12 +1868,14 @@ footer {
     width: 100%;
   }
 }
-
+.career-subhead{
+  text-align: center;
+}
 .career-form-bttn {
   display: inline-block;
   border-radius: 7px;
   border: none;
-  background: #1875FF;
+  background: var(--primary-color);
   color: white;
   font-family: inherit;
   text-align: center;
