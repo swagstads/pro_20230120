@@ -238,8 +238,11 @@
                                                     '<div class="priceProduct priceSale"><span class="money">&#x20B9;'+return_data[i].price+'</span></div>'+
                                                     '<div class="priceProduct priceCompare"><span class="money">&#x20B9;'+return_data[i].mrp+'</span></div>'+
                                                 '</div>'+
-                                                '<button  onclick="addToCart('+return_data[i].id+','+return_data[i].quantity+')" class="btn btnAddToCart">'+
+                                                '<button onclick="addToCart('+return_data[i].id+','+return_data[i].quantity+')" class="btn btnAddToCart">'+
                                                     '<span>&plus; Add to Cart</span>'+
+                                                '</button>'+
+                                                '<button style="margin-left:5px;" onclick="addToWishlist('+return_data[i].id+','+return_data[i].quantity+')" class="btn btnAddToCart">'+
+                                                    '<span>&plus; Add to Wishlist</span>'+
                                                 '</button>'+
                                             '</div>'+
                                         '</div>'+
