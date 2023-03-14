@@ -223,7 +223,7 @@
                                         '</div>'+
                                         '<div class="col-xs-12 col-sm-9 col-md-9 col-lg-7 mbItemGutter">'+
                                             '<div class="proContent">'+
-                                                '<h4 class="proName"> <a href="./productpage.php?productid='+return_data[i].id+'">'+return_data[i].title+' - '+return_data[i].category+'</a> </h4>'+
+                                                '<h4 class="proName"> <a href="./productpage.php?productid='+return_data[i].id+'">'+return_data[i].title+'</a> </h4>'+
                                                 '<div class="proReviews hidden-xs hidden-sm">'+
                                                 ' <span class="shopify-product-reviews-badge" data-id="23393796112"></span>'+
                                                 '</div>'+
