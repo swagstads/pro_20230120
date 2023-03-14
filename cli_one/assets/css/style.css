@@ -1196,8 +1196,12 @@
 }
 .product-slider .add-bttns{
   display: flex;
-  flex-direction: column;
   gap: 10px;
+}
+@media (max-width: 991px) {
+  .product-slider .add-bttns{
+    flex-direction: column;
+  }
 }
 .product-slider-container .product-slider .add-to-cart-slide-button button{
   width: 100%;
@@ -1218,13 +1222,13 @@
   display: none;
 }
 
-@media (min-width: 720px) {
+@media (min-width: 991px) {
   .product-slider-container .product-slider:hover .add-to-cart-slide-button{
     visibility: visible;
     animation:  0.3s slide-in-right ease-out forwards;
   }
 }
-@media (max-width: 720px) {
+@media (max-width: 991px) {
   .product-slider-container .scrolling-products {
      overflow-x: scroll;
   }

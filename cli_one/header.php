@@ -35,35 +35,6 @@
                                             <div class="col-sm-10 col-10">
                                                 <div class="rowFlex rowFlexMargin velaMenuListLink">
 
-                                                <div class="col-xs-12 col-sm-2">
-                                                        <ul onmouseover="headerShopTextHover('header_cushion_covers_image_container')" class="velaMenuLinks">
-                                                            <li class="menuTitle">
-                                                                <a href="./products.php?product=flooring" title="">Most Searched</a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="./products.php?product=flooring&category=levaes" title="">Leaves</a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="./products.php?product=flooring&category=small motifs" title="">Small
-                                                                    motifs</a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="./products.php?product=flooring&category=plain and textures" title="">Plain
-                                                                    and textures</a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="./products.php?product=flooring&category=atrips and checks" title="">Stripes and
-                                                                    checks</a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="./products.php?product=flooring&category=abstract" title="">Abstract</a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="./products.php?product=flooring&category=geometric" title="">Geometric</a>
-                                                            </li>
-                                                        </ul>
-                                                    </div>
-
                                                     <div class="col-xs-12 col-sm-2">
                                                         <ul onmouseover="headerShopTextHover('header_cushion_covers_image_container')" class="velaMenuLinks">
                                                             <li class="menuTitle">
@@ -93,7 +64,7 @@
                                                         </ul>
                                                     </div>
 
-                                                    <div class="col-xs-12 col-sm-2">
+                                                    <div class="col-xs-12 col-sm-3">
                                                         <ul onmouseover="headerShopTextHover('header_rugs_image_container')" class="velaMenuLinks">
                                                             <li class="menuTitle">
                                                                 <a href="./products.php?product=rugs" title="">Rugs and wallpaper</a>
@@ -121,7 +92,7 @@
                                                         </ul>
                                                     </div>
 
-                                                    <div class="col-xs-12 col-sm-2">
+                                                    <div class="col-xs-12 col-sm-3">
                                                         <ul onmouseover="headerShopTextHover('header_bath_and_bed_image_container')" class="velaMenuLinks">
                                                             <li class="menuTitle">
                                                                 <a href="./products.php?product=bed and bath" title="">Bed &
