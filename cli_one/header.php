@@ -32,43 +32,42 @@
 
                                     <div id="megaDropdown21" class="menuDropdown megaMenu collapse">
                                         <div class="menuGroup rowFlex rowFlexMargin">
-                                            <div class="col-sm-9">
+                                            <div class="col-sm-10">
                                                 <div class="rowFlex rowFlexMargin velaMenuListLink">
 
-                                                    <div class="col-xs-12 col-sm-3">
+                                                    <div class="col-xs-12 col-sm-2">
                                                         <ul onmouseover="headerShopTextHover('header_cushion_covers_image_container')" class="velaMenuLinks">
                                                             <li class="menuTitle">
-                                                                <a href="./products.php?product=cushion covers" title="">Cushion
-                                                                    Covers</a>
+                                                                <a href="./products.php?product=flooring" title="">Flooring</a>
                                                             </li>
                                                             <li>
-                                                                <a href="./products.php?product=cushion covers&category=levaes" title="">Leaves</a>
+                                                                <a href="./products.php?product=flooring&category=levaes" title="">Leaves</a>
                                                             </li>
                                                             <li>
-                                                                <a href="./products.php?product=cushion covers&category=small motifs" title="">Small
+                                                                <a href="./products.php?product=flooring&category=small motifs" title="">Small
                                                                     motifs</a>
                                                             </li>
                                                             <li>
-                                                                <a href="./products.php?product=cushion covers&category=plain and textures" title="">Plain
+                                                                <a href="./products.php?product=flooring&category=plain and textures" title="">Plain
                                                                     and textures</a>
                                                             </li>
                                                             <li>
-                                                                <a href="./products.php?product=cushion covers&category=atrips and checks" title="">Stripes and
+                                                                <a href="./products.php?product=flooring&category=atrips and checks" title="">Stripes and
                                                                     checks</a>
                                                             </li>
                                                             <li>
-                                                                <a href="./products.php?product=cushion covers&category=abstract" title="">Abstract</a>
+                                                                <a href="./products.php?product=flooring&category=abstract" title="">Abstract</a>
                                                             </li>
                                                             <li>
-                                                                <a href="./products.php?product=cushion covers&category=geometric" title="">Geometric</a>
+                                                                <a href="./products.php?product=flooring&category=geometric" title="">Geometric</a>
                                                             </li>
                                                         </ul>
                                                     </div>
 
-                                                    <div class="col-xs-12 col-sm-3">
+                                                    <div class="col-xs-12 col-sm-2">
                                                         <ul onmouseover="headerShopTextHover('header_rugs_image_container')" class="velaMenuLinks">
                                                             <li class="menuTitle">
-                                                                <a href="./products.php?product=rugs" title="">Rugs</a>
+                                                                <a href="./products.php?product=rugs" title="">Rugs and wallpaper</a>
                                                             </li>
                                                             <li>
                                                                 <a href="./products.php?product=rugs&category=plain and textures" title="">Plain and
@@ -93,7 +92,7 @@
                                                         </ul>
                                                     </div>
 
-                                                    <div class="col-xs-12 col-sm-3">
+                                                    <div class="col-xs-12 col-sm-2">
                                                         <ul onmouseover="headerShopTextHover('header_bath_and_bed_image_container')" class="velaMenuLinks">
                                                             <li class="menuTitle">
                                                                 <a href="./products.php?product=bed and bath" title="">Bed &
@@ -134,42 +133,74 @@
                                                         </ul>
                                                     </div>
 
-                                                    <div class="col-xs-12 col-sm-3">
+                                                    <div class="col-xs-12 col-sm-2">
                                                         <ul onmouseover="headerShopTextHover('header_curtains_image_container')" class="velaMenuLinks">
                                                             <li class="menuTitle">
-                                                                <a href="./products.php?product=curtains" title="">Ready Made
-                                                                    Curtains</a>
+                                                                <a href="./products.php?product=blinds" title="">Blinds</a>
                                                             </li>
                                                             <li>
-                                                                <a href="./products.php?product=curtains&category=botanical" title="">Botanical</a>
+                                                                <a href="./products.php?product=blinds&category=botanical" title="">Botanical</a>
                                                             </li>
                                                             <li>
-                                                                <a href="./products.php?product=curtains&category=leaves" title="">Leaves</a>
+                                                                <a href="./products.php?product=blinds&category=leaves" title="">Leaves</a>
                                                             </li>
                                                             <li>
-                                                                <a href="./products.php?product=curtains&category=shiny" title="">Shiny
+                                                                <a href="./products.php?product=blinds&category=shiny" title="">Shiny
                                                                     textures</a>
                                                             </li>
                                                             <li>
-                                                                <a href="./products.php?product=curtains&category=plain" title="">Plain</a>
+                                                                <a href="./products.php?product=blinds&category=plain" title="">Plain</a>
                                                             </li>
                                                             <li>
-                                                                <a href="./products.php?product=curtains&category=floral" title="">Floral</a>
+                                                                <a href="./products.php?product=blinds&category=floral" title="">Floral</a>
                                                             </li>
                                                             <li>
-                                                                <a href="./products.php?product=curtains&category=strips and checks" title="">Stripes and
+                                                                <a href="./products.php?product=blinds&category=strips and checks" title="">Stripes and
                                                                     Checks</a>
                                                             </li>
                                                             <li>
-                                                                <a href="./products.php?product=curtains&category=" title="">For
+                                                                <a href="./products.php?product=blinds&category=" title="">For
                                                                     Kids</a>
                                                             </li>
                                                         </ul>
                                                     </div>
+
+                                                    <div class="col-xs-12 col-sm-2">
+                                                        <ul onmouseover="headerShopTextHover('header_curtains_image_container')" class="velaMenuLinks">
+                                                            <li class="menuTitle">
+                                                                <a href="./products.php?product=furnishing" title="">Furnishing</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="./products.php?product=furnishing&category=botanical" title="">Botanical</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="./products.php?product=furnishing&category=leaves" title="">Leaves</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="./products.php?product=furnishing&category=shiny" title="">Shiny
+                                                                    textures</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="./products.php?product=furnishing&category=plain" title="">Plain</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="./products.php?product=furnishing&category=floral" title="">Floral</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="./products.php?product=furnishing&category=strips and checks" title="">Stripes and
+                                                                    Checks</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="./products.php?product=furnishing&category=" title="">For
+                                                                    Kids</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+
                                                 </div>
                                             </div>
 
-                                            <div class="col-sm-3">
+                                            <div class="col-sm-2">
                                                 <div id="header_cushion_covers_image_container" class="velaMenuBanner mb10">
                                                     <a href="collections/blind.php">
                                                         <div class="p-relative">

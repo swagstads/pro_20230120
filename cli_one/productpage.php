@@ -71,8 +71,8 @@
                             <a href="#" title="Copy to clipboard" class="share-btn copy-btn"><i class="fa fa-copy"></i></a>
                             <!-- Add more social media buttons here -->
                         </div>
-                        <script>
-                            // Get the current URL
+<script>
+// Get the current URL
 var currentUrl = window.location.href;
 
 // Get all share buttons
@@ -93,8 +93,17 @@ shareButtons.forEach(function(button) {
             window.open(shareUrl);
             break;
         case 'copy-btn':
-            navigator.clipboard.writeText(currentUrl) 
-            show_msg("URL Copied to clipboard")   
+            if (navigator.clipboard) {
+                navigator.clipboard.writeText(text)
+                .then(() => {
+                    show_msg(`Copied to clipboard: ${text}`);
+                })
+                .catch((err) => {
+                    show_msg('Failed to copy: ', err);
+                });
+            } else {
+                show_msg('Clipboard API not available');
+            } 
             break;
 
         }
