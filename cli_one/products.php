@@ -188,6 +188,7 @@
                             else{
                                 inStockMessage = "In Stock"
                             }
+                            
                             if(!return_data[i].image_name[0]){
                                 return_data[i].image_name[0] = "default.jpg";
                             }
@@ -228,6 +229,8 @@
                                                 '</div>'+
                                                 '<div class="proDescription">'+
                                                     '<p>'+return_data[i].description+'</p>'+
+                                                '</div>'+
+                                                '<div>'+
                                                     '<p class="out-of-stock-message">'+outOfStockMessage+'</p>'+
                                                     '<p class="in-stock-message">'+inStockMessage+'</p>'+
                                                 '</div>'+
