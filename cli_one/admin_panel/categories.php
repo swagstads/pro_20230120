@@ -172,7 +172,7 @@ $no = 1;
 
                     <div class="form-group">
                         <label class="control-label"><b><?php echo $lang['category_image'];?> :</b></label>
-                        <input type="file" id="category_img" class="form-control-file" name="category_img" accept="image/jpeg,image/png" />
+                        <input type="file" id="category_img" required="required" class="form-control-file" name="category_img" accept="image/jpeg,image/png" />
                         <?php
                         if(isset($category)){
                             if(!empty($category['category_img']) && file_exists('uploads/category/'.$category['category_img'])) {

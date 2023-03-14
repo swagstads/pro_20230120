@@ -17,50 +17,38 @@ $email = $users['email'];
 $time = date("Y-m-d H:i:s", time());
 $token = md5($name.$time);
 $query = mysqli_query($conn, "INSERT INTO `password_reset`(`user_id`, `time`, `token`) VALUES ('$id','$time','$token');");
+send_mail($email);
 
 
 
- 
-$to = $email;
-$subject = "Password Reset Request";
-$message = "
-<html>
-<head>
-<title>Password Reset Request</title>
-</head>
-<body>
-<p>Hi there,</p>
-<p>A password reset request has been made for your account. If you did not make this request, you can safely ignore this email.</p>
-<p>To reset your password, please click the link below:</p>
-<p><a href='http://atoz.garvjhangiani.com/user_change_password.php?token=" . $token . "'>http://atoz.com/user_change_password.php?token=" . $token . "</a></p>
-<p>Best regards,</p>
-<p>The Support Team</p>
-</body>
-</html>
-";
+function send_mail($email)
+{
 
-// Always set content-type when sending HTML email
-$headers = "MIME-Version: 1.0" . "\r\n";
-$headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
+		require ('PHPMailerAutoload.php');
+		$mail= new PHPMailer;
 
-// More headers
-//$from = 'From: yoursite.com'; "\r\n";
-$headers .= 'From: noreply@atoz.com' . "\r\n";
+		$mail->isSMTP();
+		$mail->Host='smtp.gmail.com';
+		$mail->Port=587;
+		$mail->SMTPAuth=true;
+		$mail->SMTPSecure='tls';
+		$message='Hello <br> Kindly use the link below to reset your account password <br> <a href="  https://atozgroup.com/new_password.php?tGQhkey$yt56='.$token.'">Password Reset Link</a>';
+		$mail->Username='malavshah166@gmail.com';
+		$mail->Password='ub';
+		$mail->setFrom('malavshah166@gmail.com');
+		$mail->addAddress($email);
+		$mail->addReplyTo('malavshah166@gmail.com'); 
+		// $mail->isHTML(true);
+		$mail->Subject="Password Reset for Atoz"; 
+		$mail->MsgHTML($message);
+		//$mail->Body=
 
-if(mail($to, $subject, $message, $headers)){
-    //echo "An email has been sent to your email address with instructions on how to reset your password.";
-    if (isset($_SERVER["HTTP_REFERER"])) {
-        header("Location: " . $_SERVER["HTTP_REFERER"]);
-    }
+		if(!$mail->send()){
+			return "MailNotSent"; //mail not sent 
+		}
+		else{
+			return "MailSent"; //mail sent 
+		}
 }
-else{
-    echo("Error sending Mail");
-}
-
-
-// Show a success message
-
-
-
 
 ?>
