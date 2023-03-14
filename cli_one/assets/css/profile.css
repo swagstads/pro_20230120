@@ -1,4 +1,4 @@
-.profile-page-container {
+.profile-page-container form {
     width: 80%;
     margin: 80px auto;
     display: flex;
@@ -18,6 +18,21 @@
     width: 200px;
     height: 200px;
     object-fit: cover;
+  }
+  .profile-picture-inp#profile_picture{
+    display: none;
+  }
+  .profile-actions{
+    padding: 20px;
+    display: flex;
+    gap: 10px;
+  }
+  .profile-actions button{
+    border: none;
+    background-color: var(--vela-color-primary);
+    padding: 10px 15px;
+    border-radius: 5px;
+    color: white;
   }
   .right-section {
     width: 70%;

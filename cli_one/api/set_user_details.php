@@ -6,13 +6,35 @@ require('config.php');
 $data = array();
 $response["response"] = array();
 
-$data['message'] = "";
+$data['message'] = "Something went wrong, try again!";
 
 if(isset($_POST['edit_user'])){
 
     $user_id = $_SESSION['user_id'];
     $name = $_POST['name'];
     $contact = $_POST['contact'];
+
+    $uploadDir = '../profiles/'.$user_id.'/';
+    $filePath = "";
+
+    if (!file_exists($uploadDir)) {
+        mkdir($uploadDir, 0777, true);
+        $data['message'] = "Folder created successfully!";
+    } else {
+        $data['message'] = "Folder already exists!";
+    }
+
+    if (!empty($_FILES['profile_picture'])) {
+        $tmpName = $_FILES['profile_picture']['tmp_name'];
+        $fileName = time()."_".$user_id."_".".jpg";
+        $filePath = $uploadDir . $fileName;
+        if (move_uploaded_file($tmpName, $filePath)) {
+        } else {
+          $data['message'] = 'Error uploading file';
+        }
+      } else {
+        $data['message'] = 'No file uploaded';
+      }
 
     $profile_address_id = $_POST['profile_address_id'];
     $profile_address_line_1 = $_POST['profile_address_line_1'];
@@ -24,12 +46,13 @@ if(isset($_POST['edit_user'])){
     $address = $profile_address_line_1.", ".$profile_address_line_2.", ".$profile_address_city.", ".$profile_address_state.", ".$profile_address_zip;
 
     //Update profile
-    $sql = " UPDATE users SET name=:name, phone=:contact, address=:address WHERE id=:user_id";
+    $sql = " UPDATE users SET name=:name, phone=:contact, address=:address,profile_img=:filePath WHERE id=:user_id";
     $query = $dbh->prepare($sql);
     $query->bindParam(':name', $name, PDO::PARAM_STR);
     $query->bindParam(':contact', $contact, PDO::PARAM_STR);
     $query->bindParam(':address', $address, PDO::PARAM_STR);
     $query->bindParam(':user_id', $user_id, PDO::PARAM_STR);
+    $query->bindParam(':filePath', $filePath, PDO::PARAM_STR);
     $query->execute();
     
 
