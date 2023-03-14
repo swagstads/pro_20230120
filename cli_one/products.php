@@ -90,7 +90,7 @@
                 </div>
             </div>
         </div>
-            <section id="pageContent">
+            <section id="pageContent" class="products-page-section">
                 <div class="container">
                     <div class="pageCollectionInner mb20 pb-md-30">
                         <div class="row">

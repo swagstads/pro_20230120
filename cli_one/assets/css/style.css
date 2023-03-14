@@ -1955,13 +1955,21 @@ Quantity Button
 @media (min-width: 590px) and ( max-width: 768px ) {
   .filter-products-container{
     width: 580px;
-    min-width: 580px;  
+    justify-content: center;
   }
 }
 @media (max-width: 590px) {
+  .products-page-section{
+    top: 80px;
+    margin-bottom: 120px;
+  }
   .filter-products-container{
     width: 100%;
-    min-width: none;
+    min-width: 100%;
+    justify-content: center;
+    position: fixed;
+    top: 80px;
+    background-color: white;
   }
 }
  .filter-products-container>*{
@@ -1971,10 +1979,12 @@ Quantity Button
   font-weight: 500;
  }
  .all-filters{
-   display: flex;
-    align-items: center;
+    width: 100%;
+    display: flex;
     white-space: nowrap;
-   gap: 10px;
+    align-items: center;
+    overflow-x: scroll;
+    gap: 10px;
  }
  .filters{
   padding: 5px 10px;
