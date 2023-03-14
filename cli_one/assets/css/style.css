@@ -1924,7 +1924,7 @@ Quantity Button
   display: grid;
   grid-template-columns: 10% auto;
   gap: 20px;
-  padding: 20px 0;
+  padding: 20px 10px;
   z-index: 999;
  }
 @media (max-width: 768px) {
