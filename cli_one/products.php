@@ -78,13 +78,13 @@
                     Filter:
                 </div>
                 <div class="all-filters">
-                    <div class="filters relevence">
+                    <div class="filters relevence" onclick="filter().sortByClickCount()">
                         Relevance
                     </div>
-                    <div class="filters relevence">
+                    <div class="filters relevence" onclick="filter().sortByPriceLowToHigh()">
                         Price low to high
                     </div>
-                    <div class="filters relevence">
+                    <div class="filters relevence" onclick="filter().sortByPriceHighToLow()">
                         Price high to low
                     </div>
                 </div>
@@ -133,7 +133,7 @@
     </div>
 
     <script>
-
+        var fetched_products;
         // Get url params to fetch all products data
         const queryString = window.location.search;
         const urlParams = new URLSearchParams(queryString);
@@ -158,13 +158,10 @@
                 // Response from API
                 var jsonData = JSON.parse(returned_data);
                 var return_data = jsonData.response;
-                // Cleaning response
-                var fetched_product = return_data
+                // saving response to global var
+                fetched_products = return_data;
                 // Displaying products
-                display_products(fetched_product);
-
-                filter_search(fetched_product)
-
+                display_products(fetched_products);
             }
         })
 
@@ -251,27 +248,34 @@
                     }
         }
 
-        function filter_search(fetched_product){
-            sortByClickCount(fetched_product)
-        }
-        function sortByPriceLowToHigh(data) {
-            // Sort the array of objects by price (low to high)
-            data.sort((a, b) => {
-                return a.price - b.price;
-            });
-            console.log(data);// Log the sorted data to the console
-            display_products(data); //display data from price low to high
-        }
-        function sortByPriceHighToLow(data) {
-            // Sort the array of objects by price (low to high)
-            data.sort((a, b) => {
-                return b.price - a.price;
-            });
-            console.log(data);// Log the sorted data to the console
-            display_products(data); //display data from price hight to low
-        }
-        function sortByClickCount() {
-            products.sort((a, b) => b.click_count - a.click_count);
+        function filter(){
+            function sortByPriceLowToHigh() {
+                // Sort the array of objects by price (low to high)
+                var new_series_fetched_products = fetched_products;
+                new_series_fetched_products.sort((a, b) => {
+                    return a.price - b.price;
+                });
+                display_products(new_series_fetched_products); //display data from price low to high
+            }
+            function sortByPriceHighToLow() {
+                // Sort the array of objects by price (low to high)
+                var new_series_fetched_products = fetched_products;
+                new_series_fetched_products.sort((a, b) => {
+                    return b.price - a.price;
+                });
+                display_products(new_series_fetched_products); //display data from price hight to low
+            }
+            function sortByClickCount() {
+                console.log(fetched_products);
+                fetched_products.sort((a, b) => b.click_counts - a.click_counts);
+                display_products(fetched_products); //display data from click count
+            }
+
+            return {
+                sortByPriceLowToHigh : sortByPriceLowToHigh,
+                sortByPriceHighToLow : sortByPriceHighToLow,
+                sortByClickCount : sortByClickCount
+            }
         }
 
 

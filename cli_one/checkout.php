@@ -127,7 +127,7 @@
 
                                                             '</div>'+
                                                             '<div class="price">'+
-                                                                'Amount: &nbsp;<h4>&#8377;.<span id="total_product_amount"">'+(amount)+'<span></h4>'+
+                                                                'Amount: &nbsp;<h4>&#8377;<span id="total_product_amount"">'+(amount)+'<span></h4>'+
                                                             '</div>'+
                                                         '</div>'+
                                                     '</div>')

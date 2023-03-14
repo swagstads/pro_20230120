@@ -108,7 +108,7 @@
                                         '<h2>'+return_data[i].product_name+'</h2>'+
                                     '</div>'+
                                     '<div class="description truncate-overflow ">'+
-                                        return_data[i].product_description+"["+return_data[i].prod_id_ +"|" +return_data[i].cart_id+"]"+
+                                        return_data[i].product_description+
                                     '</div>'+
                                 '</div>'+
                                 '<div class="quantity-container">Quantity'+
