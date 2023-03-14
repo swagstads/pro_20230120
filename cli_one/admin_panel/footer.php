@@ -177,7 +177,7 @@
     var maxField = 5; //Input fields increment limitation
     var addButton = $('.add_button'); //Add button selector
     var wrapper = $('.field_wrapper'); //Input field wrapper
-    var fieldHTML = '<div><br/><input type="file" name="photo[]" accept="image/jpeg,image/png" /><br/><a href="javascript:void(0);" class="remove_button" title="Remove field"><input type="button" value="- Remove Image" class="btn btn-primary"></a></div>'; //New input field html
+    var fieldHTML = '<div><br/><input class="form-control-file" type="file" name="photo[]" accept="image/jpeg,image/png" /><br/><a href="javascript:void(0);" class="remove_button" title="Remove field"><input type="button" value="- Remove Image" class="btn btn-primary"></a></div>'; //New input field html
     var x = 1; //Initial field counter is 1
     $(addButton).click(function(){ //Once add button is clicked
         //alert('here');
