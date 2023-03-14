@@ -90,11 +90,13 @@
                                                     '<small>&#8377; '+return_data[i].mrp+'</small>'+
                                                ' </div>'+
                                            '</div>'+
-                                           ' <div class="add-to-cart-slide-button">'+
-                                                '<button onclick="addToCart('+return_data[i].prod_id+')">&plus; Add to cart</button>'+
-                                            '</div>'+
+                                           '<div class="add-bttns">'+
                                             ' <div class="add-to-cart-slide-button">'+
-                                                '<button onclick="addToWishlist('+return_data[i].prod_id+')">&plus; Add to Wishlist</button>'+
+                                                    '<button onclick="addToCart('+return_data[i].prod_id+')">&plus; Add to cart</button>'+
+                                                '</div>'+
+                                                ' <div class="add-to-cart-slide-button">'+
+                                                    '<button onclick="addToWishlist('+return_data[i].prod_id+')">&plus; Add to Wishlist</button>'+
+                                                '</div>'+
                                             '</div>'+
                                         '</div>'+
                                 '</div>'

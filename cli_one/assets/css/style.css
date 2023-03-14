@@ -1188,7 +1188,13 @@
   position: relative;
   right: 0%;
 }
+.product-slider .add-bttns{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
 .product-slider-container .product-slider .add-to-cart-slide-button button{
+  width: 100%;
   font-weight: 500;
   background: none;
   border: none;
@@ -1197,7 +1203,8 @@
 .product-slider-container .product-slider .product-price{
   display: flex;
   justify-content: space-between;
-  height: 40px;
+  align-items: center;
+  height: 80px;
   width: 250px;
   /* border: 1px solid; */
 }
