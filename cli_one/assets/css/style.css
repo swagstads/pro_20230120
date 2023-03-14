@@ -2015,3 +2015,37 @@ Quantity Button
   color: white;
 }
 
+
+
+
+/* ============ Trending products ============ */
+.trending-products-container .trending-product{
+  display: flex;
+  grid-template-columns: repeat(3, 1fr);
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  border: 1px solid;
+  gap: 10px;
+}
+.trending-products-container .trending-product .image-container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 300px;
+  height: 400px;  
+  overflow: hidden;      
+  border-top-left-radius: 10% 10%;
+  border-bottom-right-radius: 10% 10%;    
+}
+.trending-products-container .trending-product img{
+  height: 100%;
+  transition: .3s;
+  object-fit: cover;
+  border-top-left-radius: 10% 10%;
+  border-bottom-right-radius: 10% 10%;
+}
+.trending-products-container .trending-product img:hover{
+  height: 500px;
+  width: 400px;
+}

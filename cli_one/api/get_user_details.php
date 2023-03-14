@@ -22,7 +22,9 @@ if ( isset($_SESSION['username']) ) {
     $data["name"] = $fetch_data_users->name;
     $data["email"] = $fetch_data_users->email;
     $data["phone"] = $fetch_data_users->phone;
-    $data["profile_img"] = $fetch_data_users->profile_img;
+    if(isset($fetch_data_users->profile_img)){
+        $data["profile_img"] = $fetch_data_users->profile_img;
+    }
 
     try {
         //code...
