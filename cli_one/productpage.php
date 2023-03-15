@@ -85,7 +85,6 @@ shareButtons.forEach(function(button) {
   button.addEventListener('click', function(e) {
     e.preventDefault();
     var app = this.classList[1];
-
     // Create a share URL for the selected app
     var shareUrl;
     switch (app) {
@@ -106,9 +105,9 @@ shareButtons.forEach(function(button) {
             break;
         case 'copy-btn':
             if (navigator.clipboard) {
-                navigator.clipboard.writeText(text)
+                navigator.clipboard.writeText(currentUrl)
                 .then(() => {
-                    show_msg(`Copied to clipboard: ${text}`);
+                    show_msg(`Copied to clipboard`);
                 })
                 .catch((err) => {
                     show_msg('Failed to copy: ', err);
@@ -167,7 +166,13 @@ shareButtons.forEach(function(button) {
                     }
 
             </script>
-            
+            <br>
+
+            <div class="more-products">
+                <?php include('./similar_products.php') ?>
+            </div>
+
+
             <br>
             <div class="more-products">
                 <?php include('./more-products.php') ?>
@@ -190,6 +195,9 @@ shareButtons.forEach(function(button) {
                             console.log("Data: ",returned_data);
                             var jsonData = JSON.parse(returned_data);
                             var return_data = jsonData.response;
+                            
+                            fetch_similar_products(return_data[0])
+
                             $("#product_category").html(jsonData.response[0].category)
                             $("#product_price").html(jsonData.response[0].price)
                             $("#product_mrp").html(jsonData.response[0].mrp)
