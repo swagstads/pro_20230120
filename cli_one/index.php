@@ -49,7 +49,8 @@
                         <div class="velaSlideshow">
                             <div data-section-id="1551027504217" data-section-type="velaSlideshowSection">
                                 <div class="velaSlideshowWrapper">
-                                    <button type="button" class="btnssPause" data-id="1551027504217">
+                                   
+                                    <!-- <button type="button" class="btnssPause" data-id="1551027504217">
                                         <span class="btnssPauseStop">
                                             <i class="fa fa-play"></i>
                                             <span class="iconText">Pause slideshow</span>
@@ -58,10 +59,9 @@
                                             <i class="fa fa-pause"></i>
                                             <span class="iconText">Play slideshow</span>
                                         </span>
-                                    </button>
-
+                                    </button> -->
                                     <div id="velaSlideshows1551027504217" class="vela--slideshow velaSliderLoading"
-                                        data-autoplay="true" data-speed="8000" data-navigation="true"
+                                        data-autoplay="true" data-speed="4500" data-navigation="true"
                                         data-pagination="true">
                                         <div class="velassSlide velassSlide1551027504217-0">
                                             <div class="velassImage"

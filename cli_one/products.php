@@ -78,6 +78,9 @@
                     Filter:
                 </div>
                 <div class="all-filters">
+                    <div class="filters relevence" onclick="filter().mostRecent()">
+                        New Collection
+                    </div>
                     <div class="filters relevence" onclick="filter().sortByClickCount()">
                         Relevance
                     </div>
@@ -86,6 +89,12 @@
                     </div>
                     <div class="filters relevence" onclick="filter().sortByPriceHighToLow()">
                         Price high to low
+                    </div>
+                    <div class="filters relevence" onclick="filter().sortByClickCountDesc()">
+                        Featured
+                    </div>
+                    <div class="filters relevence" onclick="filter().sortByClickCount()">
+                        Most Searched
                     </div>
                 </div>
             </div>
@@ -279,11 +288,23 @@
                 fetched_products.sort((a, b) => b.click_counts - a.click_counts);
                 display_products(fetched_products); //display data from click count
             }
+            function mostRecent() {
+                console.log(fetched_products);
+                fetched_products.sort((a) => a.added_on);
+                display_products(fetched_products); //display data from click count
+            }
+            function sortByClickCountDesc() {
+                console.log(fetched_products);
+                fetched_products.sort((a, b) => a.click_counts - b.click_counts);
+                display_products(fetched_products); //display data from click count
+            }
 
             return {
                 sortByPriceLowToHigh : sortByPriceLowToHigh,
                 sortByPriceHighToLow : sortByPriceHighToLow,
-                sortByClickCount : sortByClickCount
+                sortByClickCount : sortByClickCount,
+                mostRecent : mostRecent,
+                sortByClickCountDesc : sortByClickCountDesc
             }
         }
 

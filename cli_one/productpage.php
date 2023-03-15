@@ -69,6 +69,8 @@
                         <div class="share-buttons">
                             <a href="#" title="Whatsapp" class="share-btn whatsapp-btn"><i class="fa fa-whatsapp"></i></a>
                             <a href="#" title="Copy to clipboard" class="share-btn copy-btn"><i class="fa fa-copy"></i></a>
+                            <a href="#" title="Instagram" class="share-btn insta-btn"><i class="fa fa-instagram"></i></a>
+                            <a href="#" title="Facebook" class="share-btn fb-btn"><i class="fa fa-facebook"></i></a>
                             <!-- Add more social media buttons here -->
                         </div>
 <script>
@@ -92,6 +94,16 @@ shareButtons.forEach(function(button) {
             shareUrl = 'https://api.whatsapp.com/send?text='+ general_product_description + encodeURIComponent(currentUrl);
             window.open(shareUrl);
             break;
+        case 'insta-btn':
+            general_product_description = "Hey! I just came across this amazing product and I had to share it with you. Check it out here: "
+            shareUrl = 'https://api.instagram.com/send?text='+ general_product_description + encodeURIComponent(currentUrl);
+            window.open(shareUrl);
+            break;
+        case 'fb-btn':
+            general_product_description = "Hey! I just came across this amazing product and I had to share it with you. Check it out here: "
+            shareUrl = 'https://api.facebook.com/send?text='+ general_product_description + encodeURIComponent(currentUrl);
+            window.open(shareUrl);
+            break;
         case 'copy-btn':
             if (navigator.clipboard) {
                 navigator.clipboard.writeText(text)
@@ -105,7 +117,6 @@ shareButtons.forEach(function(button) {
                 show_msg('Clipboard API not available');
             } 
             break;
-
         }
   });
 });

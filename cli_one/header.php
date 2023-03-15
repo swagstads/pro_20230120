@@ -34,6 +34,47 @@
                                         <div class="menuGroup rowFlex rowFlexMargin">
                                             <div class="col-sm-10 col-10">
                                                 <div class="rowFlex rowFlexMargin velaMenuListLink">
+                                                    
+                                                    <div class="col-xs-12 col-sm-3">
+                                                        <ul onmouseover="headerShopTextHover('header_bath_and_bed_image_container')" class="velaMenuLinks">
+                                                            <li class="menuTitle">
+                                                                <a href="./products.php?product=bed and bath" title="">Bed &
+                                                                    Bath Linen</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="./products.php?product=bed and bath&category=bed sheets" title="">Bed
+                                                                    Sheets</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="./products.php?product=bed and bath&category=comforter" title="">Comforter</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="./products.php?product=bed and bath&category=quilts" title="">Quilts</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="./products.php?product=bed and bath&category=dohar" title="">Dohar</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="./products.php?product=bed and bath&category=bedding set" title="">Bedding Set</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="./products.php?product=bed and bath&category=bed in bag" title="">Bed in
+                                                                    Bag</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="./products.php?product=bed and bath&category=hand towels" title="">Hand
+                                                                    towles</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="./products.php?product=bed and bath&category=face towels" title="">Face
+                                                                    towles</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="./products.php?product=bed and bath&category=bath robe" title="">Bath
+                                                                    Robe</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
 
                                                     <div class="col-xs-12 col-sm-2">
                                                         <ul onmouseover="headerShopTextHover('header_cushion_covers_image_container')" class="velaMenuLinks">
@@ -92,46 +133,6 @@
                                                         </ul>
                                                     </div>
 
-                                                    <div class="col-xs-12 col-sm-3">
-                                                        <ul onmouseover="headerShopTextHover('header_bath_and_bed_image_container')" class="velaMenuLinks">
-                                                            <li class="menuTitle">
-                                                                <a href="./products.php?product=bed and bath" title="">Bed &
-                                                                    Bath</a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="./products.php?product=bed and bath&category=bed sheets" title="">Bed
-                                                                    Sheets</a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="./products.php?product=bed and bath&category=comforter" title="">Comforter</a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="./products.php?product=bed and bath&category=quilts" title="">Quilts</a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="./products.php?product=bed and bath&category=dohar" title="">Dohar</a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="./products.php?product=bed and bath&category=bedding set" title="">Bedding Set</a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="./products.php?product=bed and bath&category=bed in bag" title="">Bed in
-                                                                    Bag</a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="./products.php?product=bed and bath&category=hand towels" title="">Hand
-                                                                    towles</a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="./products.php?product=bed and bath&category=face towels" title="">Face
-                                                                    towles</a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="./products.php?product=bed and bath&category=bath robe" title="">Bath
-                                                                    Robe</a>
-                                                            </li>
-                                                        </ul>
-                                                    </div>
 
                                                     <div class="col-xs-12 col-sm-2">
                                                         <ul onmouseover="headerShopTextHover('header_curtains_image_container')" class="velaMenuLinks">
@@ -449,7 +450,11 @@
                             </svg>
                         </i>
                     </div>
-                    <div id="cd-cart-trigger" class="header-admin-icon" style="padding-left:20px; padding-top: 3px;">
+                    <div class="header-admin-icon" style="display: flex; align-items: center;padding-left:10px; padding-top: 3px;">
+                        <a href="https://goo.gl/maps/mGWpdoHE2XxLtBox7" target="_blank"><i class="fa fa-map-o" style="font-size:20px"></i></a>&nbsp;
+                        <!--<i class="icons nav-icons"></i>-->
+                    </div>
+                    <div id="cd-cart-trigger" class="header-admin-icon" style="padding-left:10px; padding-top: 3px;">
                         <a href>
                         <lord-icon
                             src="https://cdn.lordicon.com/rjzlnunf.json"
@@ -481,7 +486,7 @@
                         <div class="dropdown">
                             <button class="dropbtn">  
                                         <h5>&nbsp;Hello <b><?php echo $_SESSION['name'] ?>!</b> </h5>
-
+                                        <!-- <lord-icon src="https://cdn.lordicon.com/bhfjfgqz.json" trigger="loop" style="width:32px;height:32px"> </lord-icon> -->
                                         <svg width="25px" height="25px" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg"><path fill="currentcolor" d="M831.872 340.864 512 652.672 192.128 340.864a30.592 30.592 0 0 0-42.752 0 29.12 29.12 0 0 0 0 41.6L489.664 714.24a32 32 0 0 0 44.672 0l340.288-331.712a29.12 29.12 0 0 0 0-41.728 30.592 30.592 0 0 0-42.752 0z"/></svg>
 
                             </button>
@@ -538,7 +543,7 @@
                     }
                     ?>
                     <div class="header-admin-icon" style="display: flex; align-items: center; padding: 20px">
-                        <a href="./admin_panel"><i class="fa fa-thin fa-lock icons" style="font-size:25px;"></i></a>&nbsp;
+                        <a href="./admin_panel"><i class="fa fa-thin fa-lock icons" style="font-size:25px;color:white;"></i></a>&nbsp;
                         <!--<i class="icons nav-icons"></i>-->
                     </div>
                 </div>
