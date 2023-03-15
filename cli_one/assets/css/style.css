@@ -2027,6 +2027,15 @@ Quantity Button
   width: 100%;
   gap: 10px;
 }
+@media (max-width: 991px) {
+    .trending-products-container .trending-product{
+      overflow: scroll;
+    }
+    /* width */
+    .trending-products-container .trending-product::-webkit-scrollbar {
+      height: 5px;
+    }
+}
 .trending-products-container .trending-product .image-container{
   display: flex;
   align-items: center;
