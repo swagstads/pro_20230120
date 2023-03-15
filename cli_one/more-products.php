@@ -111,12 +111,16 @@
         }
         fetchProduct();
 
-        function productSliderScrollLeftMP(){
+        function productSliderScrollLeftMP(){   
             $('.more-producst-scroll').scrollLeft( $('.more-producst-scroll').scrollLeft() - 270 )
+            clearInterval(automatic_scroll);
         }
         function productSliderScrollRightMP(){
             $('.more-producst-scroll').scrollLeft( $('.more-producst-scroll').scrollLeft() + 270 )
         }
+        let automatic_scroll =  setInterval(() => {
+            productSliderScrollRightMP()
+        }, 5000);
 
         function addToCart(product_id){
                 var quantity = 1;
