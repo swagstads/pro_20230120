@@ -226,7 +226,7 @@ shareButtons.forEach(function(button) {
 
                                     var img = $('<img />',
                                     { 
-                                        onclick: 'changeActiveImg(this.src)',
+                                        onmouseover: 'changeActiveImg(this.src)',
                                         class: 'small-view-image',
                                         src: "./admin_panel/uploads/products/"+images_arr[i]+"", 
                                     })
