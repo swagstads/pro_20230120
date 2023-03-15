@@ -43,7 +43,7 @@
 
         <main class="mainContent" role="main">
             <!-- BEGIN content_for_index -->
-            <div id="shopify-section-1551027504217" class="shopify-section velaFramework">
+            <div id="shopify-section-1551027504217" class="shopify-section velaFramework" style="margin-top: 20px;">
                 <div class="banner-slideShow mbBlockGutter" style="background-color: #eaebef">
                     <div class="container-full">
                         <div class="velaSlideshow">
@@ -65,12 +65,12 @@
                                         data-pagination="true">
                                         <div class="velassSlide velassSlide1551027504217-0">
                                             <div class="velassImage"
-                                                data-image="https://cdn.shopify.com/s/files/1/1573/5553/files/slide1_1944x.jpg?v=1613719087">
+                                                data-image="./assets/images/index/banner1.jpg">
                                                 <div class="p-relative">
                                                     <div class="product-card__image"
                                                         style="padding-top: 48.59375000000001%">
                                                         <img class="product-card__img lazyload imgFlyCart"
-                                                            data-src="https://cdn.shopify.com/s/files/1/1573/5553/files/slide1_1944x.jpg?v=1613719087"
+                                                            data-src="./assets/images/index/banner1.jpg"
                                                             data-widths="[360,540,720,900,1080,1296,1728,1944,2808,4320]"
                                                             data-aspectratio="2.057877813504823"
                                                             data-ratio="2.057877813504823" data-sizes="auto" alt="" />
@@ -115,12 +115,12 @@
 
                                         <div class="velassSlide velassSlide1585906051700">
                                             <div class="velassImage"
-                                                data-image="https://cdn.shopify.com/s/files/1/1573/5553/files/slide2_1944x.jpg?v=1613719087">
+                                                data-image="./assets/images/index/banner2.jpg">
                                                 <div class="p-relative">
                                                     <div class="product-card__image"
                                                         style="padding-top: 48.59375000000001%">
                                                         <img class="product-card__img lazyload imgFlyCart"
-                                                            data-src="https://cdn.shopify.com/s/files/1/1573/5553/files/slide2_1944x.jpg?v=1613719087"
+                                                            data-src="./assets/images/index/banner2.jpg"
                                                             data-widths="[360,540,720,900,1080,1296,1728,1944,2808,4320]"
                                                             data-aspectratio="2.057877813504823"
                                                             data-ratio="2.057877813504823" data-sizes="auto" alt="" />
@@ -142,7 +142,7 @@
                                                                 style="color: #323232">
                                                                 Do otherwise
                                                             </h3>
-                                                            <div class="velassDesc leftright-4" style="color: #323232">
+                                                            <div class="velassDesc leftright-4" style="color: #323232;max-width:400px;">
                                                                 An extensive range of stylish bedsheets, bed
                                                                 covers, embroidered with elegance to highlight
                                                                 Indian homes.
@@ -166,12 +166,12 @@
 
                                         <div class="velassSlide velassSlide1585906169692">
                                             <div class="velassImage"
-                                                data-image="https://cdn.shopify.com/s/files/1/1573/5553/files/slide3_1944x.jpg?v=1613719087">
+                                                data-image="./assets/images/index/banner3.jpg">
                                                 <div class="p-relative">
                                                     <div class="product-card__image"
                                                         style="padding-top: 48.59375000000001%">
                                                         <img class="product-card__img lazyload imgFlyCart"
-                                                            data-src="https://cdn.shopify.com/s/files/1/1573/5553/files/slide3_1944x.jpg?v=1613719087"
+                                                            data-src="./assets/images/index/banner3.jpg"
                                                             data-widths="[360,540,720,900,1080,1296,1728,1944,2808,4320]"
                                                             data-aspectratio="2.057877813504823"
                                                             data-ratio="2.057877813504823" data-sizes="auto" alt="" />
@@ -193,7 +193,7 @@
                                                                 style="color: #323232">
                                                                 Stylish Curtains
                                                             </h3>
-                                                            <div class="velassDesc leftright-4" style="color: #323232">
+                                                            <div class="velassDesc leftright-4" style="color: #323232;">
                                                                 Add a layer of eye catching long tail curtains
                                                                 at your windows to express your persona
                                                             </div>
@@ -232,7 +232,7 @@
                                                 <div class="product-card__image"
                                                     style="padding-top: 61.43617021276596%">
                                                     <img class="product-card__img lazyload imgFlyCart"
-                                                        data-src="https://cdn.shopify.com/s/files/1/1573/5553/files/banner1_540x.jpg?v=1613738659"
+                                                        data-src="./assets/images/index/small.jpg"
                                                         data-widths="[360,540,720,900,1080,1296,1728,1944,2808,4320]"
                                                         data-aspectratio="1.6277056277056277"
                                                         data-ratio="1.6277056277056277" data-sizes="auto" alt="" />
@@ -250,7 +250,7 @@
                                                 <div class="product-card__image"
                                                     style="padding-top: 61.43617021276596%">
                                                     <img class="product-card__img lazyload imgFlyCart"
-                                                        data-src="https://cdn.shopify.com/s/files/1/1573/5553/files/banner2_540x.jpg?v=1613719087"
+                                                        data-src="./assets/images/index/small2.jpg"
                                                         data-widths="[360,540,720,900,1080,1296,1728,1944,2808,4320]"
                                                         data-aspectratio="1.6277056277056277"
                                                         data-ratio="1.6277056277056277" data-sizes="auto" alt="" />
@@ -268,7 +268,7 @@
                                                 <div class="product-card__image"
                                                     style="padding-top: 61.43617021276596%">
                                                     <img class="product-card__img lazyload imgFlyCart"
-                                                        data-src="https://cdn.shopify.com/s/files/1/1573/5553/files/banner3_540x.jpg?v=1613738659"
+                                                        data-src="./assets/images/index/small3.jpg"
                                                         data-widths="[360,540,720,900,1080,1296,1728,1944,2808,4320]"
                                                         data-aspectratio="1.6277056277056277"
                                                         data-ratio="1.6277056277056277" data-sizes="auto" alt="" />
