@@ -480,6 +480,8 @@ include 'footer.php';
 
 <script type="application/javascript">
     function checkform() {
+        return false;
+        /*
         var discount_price = $('input[name=price]').val();
         var mrp = $('input[name=mrp]').val();
         if (discount_price > mrp)
@@ -495,7 +497,7 @@ include 'footer.php';
         // without problems, it's ok and you can submit the form
 
         //return true;
-        
+        */
     }
 
 </script>
