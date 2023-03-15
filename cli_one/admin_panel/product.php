@@ -480,6 +480,11 @@ include 'footer.php';
 
 <script type="application/javascript">
     function checkform() {
+        var discount_price = $('input[name=price]').val();
+        var mrp = $('input[name=mrp]').val();
+        console.log(discount_price);
+        console.log(mrp);
+        console.log(discount_price > mrp);
         return false;
         /*
         var discount_price = $('input[name=price]').val();
