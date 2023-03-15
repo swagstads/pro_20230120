@@ -51,6 +51,7 @@ if (isset($_POST['show_products'])) {
             $data["click_counts"] = $fetch_data[$i]['click_count'];
             $data["status"] = "success";
             $data["reason"] = "orders_fetched";
+            $data["added_on"]=strtotime($fetch_data[$i]['added_on']);
             
             try {
                 $stmt2 = $dbh->prepare('SELECT image_name FROM product_media WHERE product_id=:product_id');
