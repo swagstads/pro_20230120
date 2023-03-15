@@ -16,8 +16,6 @@
         border: none;
         transition: 0.3s;
     }
-
-    .sticky-whatsapp-icon-container:hover {}
 </style>
 
 <a href="https://api.whatsapp.com/send/?phone=7700907449&text&type=phone_number&app_absent=0" target="_blank" class="sticky-whatsapp-icon-container">
