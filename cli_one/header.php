@@ -166,7 +166,7 @@
                                                     </div>
 
                                                     <div class="col-xs-12 col-sm-2">
-                                                        <ul onmouseover="headerShopTextHover('header_curtains_image_container')" class="velaMenuLinks">
+                                                        <ul onmouseover="headerShopTextHover('header_curtains_image_furnishing')" class="velaMenuLinks">
                                                             <li class="menuTitle">
                                                                 <a href="./products.php?product=furnishing" title="">Furnishing</a>
                                                             </li>
@@ -251,7 +251,22 @@
 
 
                                                 </div>
+                                                
+                                                <div id="header_curtains_image_furnishing" class="disp-none">
+                                                    <div class="velaMenuBanner mb10">
+                                                        <a href="#">
+                                                            <div class="p-relative">
+                                                                <div class="product-card__image" style="padding-top: 100%;">
+                                                                    <img class="product-card__img lazyload imgFlyCart" data-src="./assets/images/our-bank/furnishing1.jpg" data-widths="[360,540,720,900,1080,1296,1728,1944,2808,4320]" data-aspectratio="0.9565217391304348" data-ratio="0.9565217391304348" data-sizes="auto" alt="" />
+                                                                </div>
+                                                                <div class="placeholder-background placeholder-background--animation" data-image-placeholder></div>
+                                                            </div>
+                                                        </a>
+                                                    </div>
+                                                </div>
+
                                             </div>
+
 
                                             <script>
                                                 var prev_img_id = "header_cushion_covers_image_container";
