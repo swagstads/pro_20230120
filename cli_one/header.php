@@ -293,7 +293,7 @@
                     </section>
                 </div>
                 <div class="velaHeaderRight col-xs-7 col-sm-6 col-md-3 ">
-                    <div class="header-search-icon  navbar-icons" onclick="openSearchModal()">
+                    <div class="header-search-icon  navbar-icons velaCartTop" onclick="openSearchModal()">
                         <!-- search icon -->
                         <i class="icons nav-icons">
                             <svg   width="25px" height="25px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -302,7 +302,7 @@
                         </i>
                         <!-- search icon end -->
                     </div>
-                    <div class="header-admin-icon hide-on-mobile navbar-icons" style="display: flex; align-items: center;">
+                    <div class="header-admin-icon hide-on-mobile navbar-icons velaCartTop" style="display: flex; align-items: center;">
                         <a href="https://goo.gl/maps/mGWpdoHE2XxLtBox7" target="_blank">
                             <!-- Maps svg icon -->
                             <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" height="23px" width="23px" viewBox="0 0 400 600">
@@ -316,7 +316,7 @@
                         </a>&nbsp;
                         <!--<i class="icons nav-icons"></i>-->
                     </div>
-                    <div id="cd-cart-trigger" class="header-admin-icon  navbar-icons" style="padding-top: 0px;">
+                    <div id="cd-cart-trigger" class="header-admin-icon  navbar-icons velaCartTop" style="padding-top: 0px;">
                         <!-- wishlist icon  -->
                         <a href>
                         <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" height="23px" width="23px" viewBox="00 -50 380 500">
