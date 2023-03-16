@@ -34,7 +34,7 @@ if(isset( $_GET['checkout'] )){
 
         if( $user_address !== null OR strlen($user_address) >= 10 ){
             $data['status'] = "ok";
-            $data['message'] = "Adress provided";
+            $data['message'] = "Address provided";
         
         }
         else{

@@ -105,9 +105,9 @@
                         </div>
                         <div class="share-buttons">
                             <a href="#" title="Whatsapp" class="share-btn whatsapp-btn"><i class="fa fa-whatsapp"></i></a>
-                            <a href="#" title="Copy to clipboard" class="share-btn copy-btn"><i class="fa fa-copy"></i></a>
                             <a href="#" title="Instagram" class="share-btn insta-btn"><i class="fa fa-instagram"></i></a>
                             <a href="#" title="Facebook" class="share-btn fb-btn"><i class="fa fa-facebook"></i></a>
+                            <a href="#" title="Copy to clipboard" class="share-btn copy-btn"><i class="fa fa-copy"></i></a>
                             <!-- Add more social media buttons here -->
                         </div>
                         <script>
@@ -284,18 +284,18 @@
                         var jsonData = JSON.parse(returned_data);
                         var return_data = jsonData.response;
 
-                        let outOfStockMessage = "";
-                        let inStockMessage = "";
-                        if (jsonData.response[0].product_quantity == 0) {
-                            outOfStockMessage = "Out of Stock";
-                            $("#instock").append('<sup class="blinking-box-out"><span>'+outOfStockMessage+'</span></sup>');
-                        } else if (jsonData.response[0].product_quantity <= 60) {
-                            inStockMessage = "Only " + jsonData.response[0].product_quantity + " left";
-                            $("#instock").append('<sup class="blinking-box"><span>'+inStockMessage+'</span></sup>');
-                        } else {
-                            inStockMessage = "In Stock"
-                            $("#instock").html();
-                        }
+                        // let outOfStockMessage = "";
+                        // let inStockMessage = "";
+                        // if (jsonData.response[0].product_quantity == 0) {
+                        //     outOfStockMessage = "Out of Stock";
+                        //     $("#instock").append('<sup class="blinking-box-out"><span>'+outOfStockMessage+'</span></sup>');
+                        // } else if (jsonData.response[0].product_quantity <= 60) {
+                        //     inStockMessage = "Only " + jsonData.response[0].product_quantity + " left";
+                        //     $("#instock").append('<sup class="blinking-box"><span>'+inStockMessage+'</span></sup>');
+                        // } else {
+                        //     inStockMessage = "In Stock"
+                        //     $("#instock").html();
+                        // }
                         fetch_similar_products(return_data[0])
 
                         $("#product_category").html(jsonData.response[0].category)

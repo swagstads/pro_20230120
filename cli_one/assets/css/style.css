@@ -1010,8 +1010,8 @@
   border:none;
   background-color: var(--vela-color-primary);
   color: white;
-  padding: 10px 20px;
-  border-radius: 5px;
+  padding: 10px 40px;
+  /* border-radius: 5px; */
   margin-top: 20px;
   text-align: center;
   text-decoration: none;
