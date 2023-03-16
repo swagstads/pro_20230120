@@ -443,38 +443,50 @@
 
                 <div class="velaHeaderRight col-xs-7 col-sm-6 col-md-3">
                     <div class="header-search-icon " onclick="openSearchModal()">
-                        <!-- <i class="fa fa-search icons"></i> -->
+                        <!-- search icon -->
                         <i class="icons nav-icons">
-                            <svg width="25px" height="25px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <svg   width="25px" height="25px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path class="stroke-change" d="M14.5776 14.5419C15.5805 13.53 16.2 12.1373 16.2 10.6C16.2 7.50721 13.6928 5 10.6 5C7.50721 5 5 7.50721 5 10.6C5 13.6928 7.50721 16.2 10.6 16.2C12.1555 16.2 13.5628 15.5658 14.5776 14.5419ZM14.5776 14.5419L19 19" stroke="#464455" stroke-linecap="round" stroke-linejoin="r.ound" />
                             </svg>
                         </i>
+                        <!-- search icon end -->
                     </div>
                     <div class="header-admin-icon" style="display: flex; align-items: center;padding-left:10px; padding-top: 3px;">
                         <a href="https://goo.gl/maps/mGWpdoHE2XxLtBox7" target="_blank">
                             <!-- Maps svg icon -->
-                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="25px" height="25px" viewBox="0 0 256 256" xml:space="preserve">
-                            <defs>
-                            </defs>
-                            <g style="stroke: none; stroke-width: 0; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: none; fill-rule: nonzero; opacity: 1;" transform="translate(1.4065934065934016 1.4065934065934016) scale(2.81 2.81)" >
-                                <path d="M 45 1.802 c 16.583 0 30.075 13.491 30.075 30.075 c 0 7.102 -2.538 14.004 -7.145 19.434 L 45 78.317 L 22.07 51.311 c -4.608 -5.43 -7.145 -12.332 -7.145 -19.434 C 14.925 15.294 28.417 1.802 45 1.802 M 45 45.692 c 8.222 0 14.912 -6.689 14.912 -14.912 c 0 -8.222 -6.689 -14.912 -14.912 -14.912 S 30.088 22.557 30.088 30.78 C 30.088 39.002 36.778 45.692 45 45.692 M 45 0 C 27.395 0 13.123 14.272 13.123 31.877 c 0 7.86 2.858 15.043 7.573 20.6 L 45 81.101 l 24.304 -28.624 c 4.716 -5.558 7.573 -12.741 7.573 -20.6 C 76.877 14.272 62.605 0 45 0 L 45 0 z M 45 43.889 c -7.24 0 -13.11 -5.869 -13.11 -13.11 c 0 -7.24 5.869 -13.11 13.11 -13.11 s 13.11 5.869 13.11 13.11 C 58.11 38.02 52.24 43.889 45 43.889 L 45 43.889 z" style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(96,96,96); fill-rule: nonzero; opacity: 1;" transform=" matrix(1 0 0 1 0 0) " stroke-linecap="round" />
-                                <path d="M 58.814 71.531 l -1.575 1.575 c 9.772 1.532 15.583 4.707 15.583 7.094 c 0 3.261 -10.838 7.997 -27.822 7.997 S 17.178 83.461 17.178 80.2 c 0 -2.387 5.811 -5.562 15.583 -7.094 l -1.575 -1.575 c -9.401 1.643 -15.81 4.907 -15.81 8.669 c 0 5.412 13.263 9.8 29.625 9.8 c 16.361 0 29.625 -4.388 29.625 -9.8 C 74.625 76.439 68.215 73.174 58.814 71.531 z" style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(96,96,96); fill-rule: nonzero; opacity: 1;" transform=" matrix(1 0 0 1 0 0) " stroke-linecap="round" />
-                            </g>
-                            </svg>
+                            <!-- <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" height="22px" width="22px" viewBox="0 0 380 500">
+                                <defs>
+                                    <style>.cls-1{fill:none;stroke:#000;stroke-miterlimit:10;stroke-width:15px;}</style>
+                                </defs>
+                                <path class="cls-1" d="M541.32,737.74c23.07-14.81,135.3-91.61,162-211.7,29.49-132.77-75-212.84-161.14-211.92C456,313.2,351.53,393.27,381,526c26.68,120.09,137.8,196.89,160.87,211.7" transform="translate(-373.43 -311.62)"/>
+                                <circle class="cls-1" cx="166.48" cy="153.27" r="79.2"/>
+                                <ellipse class="cls-1" cx="168.73" cy="459.62" rx="129.71" ry="16.22"/>
+                            </svg> -->
+                            <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" height="22px" width="22px" viewBox="0 0 380 500"><defs>
+                                    <style>.cls-1{fill:none;stroke:#000;stroke-miterlimit:10;stroke-width:15px;}</style>
+                            </defs><path class="cls-1" d="M541.32,737.74c23.07-14.81,135.3-91.61,162-211.7,29.49-132.77-75-212.84-161.14-211.92C456,313.2,351.53,393.27,381,526c26.68,120.09,137.8,196.89,160.87,211.7" transform="translate(-373.43 -311.62)"/><circle class="cls-1" cx="166.48" cy="153.27" r="79.2"/></svg>
                             <!-- / Maps svg icon end -->
                             
                         </a>&nbsp;
                         <!--<i class="icons nav-icons"></i>-->
                     </div>
+
+                    <?php if(isset($_SESSION['username'])){ ?>
                     <div id="cd-cart-trigger" class="header-admin-icon" style="padding-left:10px; padding-top: 3px;">
+                        <!-- wishlist icon  -->
                         <a href>
-                        <lord-icon
-                            src="https://cdn.lordicon.com/rjzlnunf.json"
-                            trigger="click"
-                            colors="primary:#121331,secondary:#018dca"
-                            state="hover-2"
-                            style="width:24px;height:24px">
-                        </lord-icon>
+                        <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" height="23px" width="23px" viewBox="00 -50 380 500">
+                            <defs>
+                            <style>
+                                .cls-1{
+                                    fill:none;
+                                    stroke:currentcolor;
+                                    stroke-width:20px;
+                                }
+                            </style>
+                            </defs><path class="cls-1" d="M701.23,370.35c-81.12-49.29-157.82,49.29-157.82,49.29s-76.7-98.58-157.82-49.29c-51.52,31.31-67,98.8-36,150.54,10.78,18,26.81,37.87,50.23,59.09L543.41,720.4,687.05,580c23.43-21.22,39.45-41.08,50.23-59.09C768.24,469.15,752.76,401.66,701.23,370.35Z" transform="translate(-331.66 -354.55)"/>
+                        </svg>
+                        <!-- wishlist icon end  -->
                         </a>
                         <!--<i class="icons nav-icons"></i>-->
                     </div>
@@ -493,45 +505,44 @@
                             </span>
                         </a>
                     </div>
-                    <?php if (isset($_SESSION['username'])) {  ?> <!-- when user is logged in -->
 
-                        <div class="dropdown">
-                            <button class="dropbtn">  
-                                        <h5>&nbsp;Hello <b><?php echo $_SESSION['name'] ?>!</b> </h5>
-                                        <!-- <lord-icon src="https://cdn.lordicon.com/bhfjfgqz.json" trigger="loop" style="width:32px;height:32px"> </lord-icon> -->
-                                        <svg width="25px" height="25px" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg"><path fill="currentcolor" d="M831.872 340.864 512 652.672 192.128 340.864a30.592 30.592 0 0 0-42.752 0 29.12 29.12 0 0 0 0 41.6L489.664 714.24a32 32 0 0 0 44.672 0l340.288-331.712a29.12 29.12 0 0 0 0-41.728 30.592 30.592 0 0 0-42.752 0z"/></svg>
+                    <div class="dropdown">
+                        <button class="dropbtn">  
+                                    <h5>&nbsp;Hello <b><?php echo $_SESSION['name'] ?>!</b> </h5>
+                                    <!-- <lord-icon src="https://cdn.lordicon.com/bhfjfgqz.json" trigger="loop" style="width:32px;height:32px"> </lord-icon> -->
+                                    <svg width="25px" height="25px" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg"><path fill="currentcolor" d="M831.872 340.864 512 652.672 192.128 340.864a30.592 30.592 0 0 0-42.752 0 29.12 29.12 0 0 0 0 41.6L489.664 714.24a32 32 0 0 0 44.672 0l340.288-331.712a29.12 29.12 0 0 0 0-41.728 30.592 30.592 0 0 0-42.752 0z"/></svg>
 
-                            </button>
-                            <div class="dropdown-content">
-                                <a href="./profile.php">
+                        </button>
+                        <div class="dropdown-content">
+                            <a href="./profile.php">
 
-                                    <!-- External icon -->
-                                    <lord-icon
-                                        src="https://cdn.lordicon.com/dxjqoygy.json"
-                                        trigger="loop"
-                                        colors="primary:#121331,secondary:#018dca"
-                                        style="width:32px;height:32px">
-                                    </lord-icon> &nbsp;Profile
-                                    <!-- External icon  end-->
-                                </a>
-                                <a href="./order_history.php">
+                                <!-- External icon -->
                                 <lord-icon
-                                    src="https://cdn.lordicon.com/nocovwne.json"
+                                    src="https://cdn.lordicon.com/dxjqoygy.json"
                                     trigger="loop"
                                     colors="primary:#121331,secondary:#018dca"
                                     style="width:32px;height:32px">
-                                </lord-icon> &nbsp;Orders
-                                </a>
-                                <a href="./api/logout.php">
-                                <lord-icon
-                                    src="https://cdn.lordicon.com/moscwhoj.json"
-                                    trigger="loop"
-                                    colors="primary:#121331,secondary:#018dca"
-                                    style="width:32px;height:32px">
-                                </lord-icon> &nbsp;Logout
-                                </a>
-                            </div>
+                                </lord-icon> &nbsp;Profile
+                                <!-- External icon  end-->
+                            </a>
+                            <a href="./order_history.php">
+                            <lord-icon
+                                src="https://cdn.lordicon.com/nocovwne.json"
+                                trigger="loop"
+                                colors="primary:#121331,secondary:#018dca"
+                                style="width:32px;height:32px">
+                            </lord-icon> &nbsp;Orders
+                            </a>
+                            <a href="./api/logout.php">
+                            <lord-icon
+                                src="https://cdn.lordicon.com/moscwhoj.json"
+                                trigger="loop"
+                                colors="primary:#121331,secondary:#018dca"
+                                style="width:32px;height:32px">
+                            </lord-icon> &nbsp;Logout
+                            </a>
                         </div>
+                    </div>
 
                     <?php
                     } // when use is logged in end
@@ -554,10 +565,10 @@
                     <?php
                     }
                     ?>
-                    <div class="header-admin-icon" style="display: flex; align-items: center; padding: 20px">
-                        <a href="./admin_panel"><i class="fa fa-thin fa-lock icons" style="font-size:25px;color:white;"></i></a>&nbsp;
-                        <!--<i class="icons nav-icons"></i>-->
-                    </div>
+                <div class="header-admin-icon" style="display: flex; align-items: center; padding: 20px">
+                    <a href="./admin_panel"><i class="fa fa-thin fa-lock icons" style="font-size:25px;color:white;"></i></a>&nbsp;
+                    <!--<i class="icons nav-icons"></i>-->
+                </div>
                 </div>
 
                 <!-- <div id="velaSearchTop" class="collapse">
@@ -730,6 +741,7 @@
             <li class="">
                 <a href="./contact-us.php" title="">Contact</a>
             </li>
+            <?php if(isset($_SESSION['username'])){ ?> 
             <li class="">
                 <a href="./profile.php" title="">Profile</a>
             </li>
@@ -739,6 +751,7 @@
             <li class="">
                 <a href="./api/logout.php" title="">Logout</a>
             </li>
+            <?php } ?>
         </ul>
     </div>
 </div>
