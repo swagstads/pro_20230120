@@ -84,7 +84,7 @@
                                         '<div class="product-price">'+
                                             '<div class="price-container">'+
                                                 '<div class="our-price" style="height: 25px">'+
-                                                    '&#8377;'+return_data[i].price+' &nTPp;'+
+                                                    '&#8377;'+return_data[i].price+
                                                 '</div>'+
                                                 '<div class="product-mrp">'+
                                                     '<small>&#8377; '+return_data[i].mrp+'</small>'+
