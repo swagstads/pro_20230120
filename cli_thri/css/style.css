@@ -469,19 +469,19 @@ button {
     }
   }
   .company-banner-container:nth-child(1) {
-    background: url("../images/company_banners/1.jpg")
+    background: url("../images/company_banners/1.gif")
   }
   .company-banner-container:nth-child(2) {
-    background: url("../images/company_banners/2.jpg")
+    background: url("../images/company_banners/2.gif")
   }
   .company-banner-container:nth-child(3) {
-    background: url("../images/company_banners/3.jpg")
+    background: url("../images/company_banners/3.gif")
   }
   .company-banner-container:nth-child(4) {
-    background: url("../images/company_banners/4.jpg")
+    background: url("../images/company_banners/4.gif")
   }
   .company-banner-container:nth-child(5) {
-    background: url("../images/company_banners/5.jpg")
+    background: url("../images/company_banners/5.gif")
   }
 
   @media (max-width: 750px) {
