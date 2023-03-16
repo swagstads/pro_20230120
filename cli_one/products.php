@@ -89,7 +89,7 @@
                         <div class="filters relevence" onclick="filter().sortByClickCountDesc()">
                             Featured
                         </div>
-                        <div class="filters relevence" onclick="filter().sortByClickCount()">
+                        <div class="filters relevence" onclick="filter().shuffleMe()">
                             Most Searched
                         </div>
                     </div>
@@ -407,13 +407,19 @@
                     fetched_products.sort((a, b) => a.click_counts - b.click_counts);
                     display_unsf_products(fetched_products); //display data from click count
                 }
+                function shuffleMe() {
+                    console.log(fetched_products);
+                    fetched_products.sort((a, b) => a.click_counts - b.click_counts);
+                    display_products(fetched_products); //display data from click count
+                }
 
                 return {
                     sortByPriceLowToHigh: sortByPriceLowToHigh,
                     sortByPriceHighToLow: sortByPriceHighToLow,
                     sortByClickCount: sortByClickCount,
                     mostRecent: mostRecent,
-                    sortByClickCountDesc: sortByClickCountDesc
+                    sortByClickCountDesc: sortByClickCountDesc,
+                    shuffleMe:shuffleMe
                 }
             }
 
