@@ -26,6 +26,7 @@ if (isset($_GET['fetch_products'])) {
     $data["category_id"] = $fetch_data->category_id;
     $data["mrp"] = $fetch_data->mrp;
     $data["price"] = $fetch_data->price;
+    $data["product_quantity"] = $fetch_data->quantity;
     
     $stmt2 = $dbh->prepare('SELECT image_name FROM product_media WHERE product_id = :product_id');
     $stmt2->bindParam(':product_id', $data["id"], PDO::PARAM_STR);

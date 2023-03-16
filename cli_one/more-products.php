@@ -1,6 +1,6 @@
 <div id="shopify-section-1600942005808" class="shopify-section velaFramework">
                 <div class="productListHome velaProducts mbBlockGutter"
-                    style="background-color: rgba(0, 0, 0, 0); padding: 40px 0 45px">
+                    style="background-color: rgba(0, 0, 0, 0); ">
                     <div class="container">
                         <div class="sectionInner">
                             <div class="headingGroup pb20">
