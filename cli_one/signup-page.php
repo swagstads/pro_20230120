@@ -41,6 +41,12 @@
             <input type="email" id="signup_email" name="email" placeholder="Email" required />
             <input type="password" id="signup_password" name="password" placeholder="Password" required title="8 characters minimum" />
             <input type="password" id="signup_confirm_password" name="confirmpassword" placeholder="Confirm Password" required />
+            <span class="Show-password-action" >
+              <span>
+                <input type="checkbox" name="" onclick="show_password()" id="show_password_checkbox"> 
+                <span>Show Password</span>
+              </span>
+            </span>
 
             <div class="remember-form">
               <span>
@@ -130,6 +136,17 @@ else{
 }
 
 }
+
+function show_password(){
+      let checkbox = document.querySelector("#show_password_checkbox").checked;
+      let password_inp = document.querySelector("#signup_password")
+      if(checkbox === true){
+        password_inp.type = "text"
+      } 
+      else{
+        password_inp.type = "password"
+      }
+    }
 </script>
 
 </body>
