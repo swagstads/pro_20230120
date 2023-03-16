@@ -117,7 +117,9 @@
         function productSliderScrollRightTP(){
             $('.trending-products-scrolling-div').scrollLeft( $('.trending-products-scrolling-div').scrollLeft() + 270 )
         }
-
+        setInterval(() => {
+            productSliderScrollRightTP()
+        }, 5000);
         function addToCart(product_id){
                 var quantity = 1;
                 api_url = "./api/add_to_cart.php";
