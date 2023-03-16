@@ -14561,9 +14561,9 @@ button:active:focus,
   display: -ms-flexbox;
   display: -webkit-flex;
   display: flex;
-  -webkit-justify-content: flex-end;
-  -ms-justify-content: flex-end;
-  justify-content: flex-end;
+  -webkit-justify-content: space-evenly;
+  -ms-justify-content: space-evenly;
+  justify-content: space-evenly;
   -webkit-align-items: center;
   -ms-align-items: center;
   align-items: center;
