@@ -161,11 +161,9 @@
                                                         </div>
                                                         <div class="col-xs-12">
                                                             <div class="form-group">
-                                                                <label for="ContactFormSubject">Subject <sup>*</sup></label>
-                                                                <input type="text" id="ContactFormSubject"
-                                                                    class="form-control contact-form" placeholder="Subject"
-                                                                    name="contact[email]" autocorrect="off"
-                                                                    autocapitalize="off" value="" required>
+                                                                <label for="ContactFormSubject">Contact Number <sup>*</sup></label>
+                                                                <input type="tel" id="ContactFormSubject"
+                                                                    class="form-control contact-form" placeholder="Contact Number"required>
                                                             </div>
                                                         </div>
                                                         <div class="col-xs-12">
