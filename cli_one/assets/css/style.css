@@ -1186,6 +1186,9 @@
 .product-slider-container .best-seller-products{
     direction: rtl;
 }
+.product-slider-container .best-seller-products *{
+  direction: ltr;
+}
 .product-slider-container .left-arrow{
   left: -2%;
 }
