@@ -17,14 +17,13 @@ $email = $users['email'];
 $time = date("Y-m-d H:i:s", time());
 $token = md5($name.$time);
 $query = mysqli_query($conn, "INSERT INTO `password_reset`(`user_id`, `time`, `token`) VALUES ('$id','$time','$token');");
-send_mail($email);
+send_mail($email, $token);
 
 
 
-function send_mail($email)
+function send_mail($email, $token)
 {
-
-		require ('PHPMailerAutoload.php');
+		require ('phpmailer/PHPMailerAutoload.php');
 		$mail= new PHPMailer;
 
 		$mail->isSMTP();

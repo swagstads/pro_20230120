@@ -479,22 +479,21 @@ include 'footer.php';
 </script>
 
 <script type="application/javascript">
-    function checkform() {
-        var discount_price = $('input[name=price]').val();
-        var mrp = $('input[name=mrp]').val();
-        if (discount_price > mrp)
-        {
-            
-            $('#alert_message_div').show();
-            $("#errormsg").html("<i class='fas fw fa-times-circle'></i> Discount Price can not be more than M.R.P.");
-            return false;
-        }else{
-            return true;
-        }
-        // If the script gets this far through all of your fields
-        // without problems, it's ok and you can submit the form
-
-        //return true;
+function checkform() {
+    var discount_price = Number($('input[name=price]').val());
+    var mrp = Number($('input[name=mrp]').val());
+    if (discount_price > mrp)
+    {
+        
+        $('#alert_message_div').show();
+        $("#errormsg").html("<i class='fas fw fa-times-circle'></i> Discount Price can not be more than M.R.P.");
+        return false;
+    }else{
+        return true;
+    }
+    // If the script gets this far through all of your fields
+    // without problems, it's ok and you can submit the form
+    //return true;
         
     }
 
