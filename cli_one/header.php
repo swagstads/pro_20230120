@@ -3,14 +3,7 @@
         <div class="container">
             <div class="headerContent rowFlex flexAlignCenter rowFlexMargin">
                 <div class="velaHeaderLeft flexAlignCenter col-xs-5 col-sm-6 col-md-2 d-flex">
-                    <div class="menuBtnMobile pull-left hidden-md hidden-lg">
-                        <div id="btnMenuMobile" class="btnMenuMobile">
-                            <span class="iconMenu"></span>
-                            <span class="iconMenu"></span>
-                            <span class="iconMenu"></span>
-                            <span class="iconMenu"></span>
-                        </div>
-                    </div>
+
                     <h1 class="velaLogo">
                         <a href="index.php" class="velaLogoLink" style="width: 100px"><span class="text-hide">AtoZ</span>
                             <img class="img-responsive" src="./assets/images/logo1.jpg" alt="AtoZ" style="max-width: 65px" /></a>
@@ -34,6 +27,47 @@
                                         <div class="menuGroup rowFlex rowFlexMargin">
                                             <div class="col-sm-10 col-10">
                                                 <div class="rowFlex rowFlexMargin velaMenuListLink">
+                                                    
+                                                    <div class="col-xs-12 col-sm-3">
+                                                        <ul onmouseover="headerShopTextHover('header_bath_and_bed_image_container')" class="velaMenuLinks">
+                                                            <li class="menuTitle">
+                                                                <a href="./products.php?product=bed and bath" title="">Bed &
+                                                                    Bath Linen</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="./products.php?product=bed and bath&category=bed sheets" title="">Bed
+                                                                    Sheets</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="./products.php?product=bed and bath&category=comforter" title="">Comforter</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="./products.php?product=bed and bath&category=quilts" title="">Quilts</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="./products.php?product=bed and bath&category=dohar" title="">Dohar</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="./products.php?product=bed and bath&category=bedding set" title="">Bedding Set</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="./products.php?product=bed and bath&category=bed in bag" title="">Bed in
+                                                                    Bag</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="./products.php?product=bed and bath&category=hand towels" title="">Hand
+                                                                    towles</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="./products.php?product=bed and bath&category=face towels" title="">Face
+                                                                    towles</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="./products.php?product=bed and bath&category=bath robe" title="">Bath
+                                                                    Robe</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
 
                                                     <div class="col-xs-12 col-sm-2">
                                                         <ul onmouseover="headerShopTextHover('header_cushion_covers_image_container')" class="velaMenuLinks">
@@ -92,46 +126,6 @@
                                                         </ul>
                                                     </div>
 
-                                                    <div class="col-xs-12 col-sm-3">
-                                                        <ul onmouseover="headerShopTextHover('header_bath_and_bed_image_container')" class="velaMenuLinks">
-                                                            <li class="menuTitle">
-                                                                <a href="./products.php?product=bed and bath" title="">Bed &
-                                                                    Bath</a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="./products.php?product=bed and bath&category=bed sheets" title="">Bed
-                                                                    Sheets</a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="./products.php?product=bed and bath&category=comforter" title="">Comforter</a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="./products.php?product=bed and bath&category=quilts" title="">Quilts</a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="./products.php?product=bed and bath&category=dohar" title="">Dohar</a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="./products.php?product=bed and bath&category=bedding set" title="">Bedding Set</a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="./products.php?product=bed and bath&category=bed in bag" title="">Bed in
-                                                                    Bag</a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="./products.php?product=bed and bath&category=hand towels" title="">Hand
-                                                                    towles</a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="./products.php?product=bed and bath&category=face towels" title="">Face
-                                                                    towles</a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="./products.php?product=bed and bath&category=bath robe" title="">Bath
-                                                                    Robe</a>
-                                                            </li>
-                                                        </ul>
-                                                    </div>
 
                                                     <div class="col-xs-12 col-sm-2">
                                                         <ul onmouseover="headerShopTextHover('header_curtains_image_container')" class="velaMenuLinks">
@@ -166,7 +160,7 @@
                                                     </div>
 
                                                     <div class="col-xs-12 col-sm-2">
-                                                        <ul onmouseover="headerShopTextHover('header_curtains_image_container')" class="velaMenuLinks">
+                                                        <ul onmouseover="headerShopTextHover('header_curtains_image_furnishing')" class="velaMenuLinks">
                                                             <li class="menuTitle">
                                                                 <a href="./products.php?product=furnishing" title="">Furnishing</a>
                                                             </li>
@@ -251,7 +245,22 @@
 
 
                                                 </div>
+                                                
+                                                <div id="header_curtains_image_furnishing" class="disp-none">
+                                                    <div class="velaMenuBanner mb10">
+                                                        <a href="#">
+                                                            <div class="p-relative">
+                                                                <div class="product-card__image" style="padding-top: 100%;">
+                                                                    <img class="product-card__img lazyload imgFlyCart" data-src="./assets/images/our-bank/furnishing1.jpg" data-widths="[360,540,720,900,1080,1296,1728,1944,2808,4320]" data-aspectratio="0.9565217391304348" data-ratio="0.9565217391304348" data-sizes="auto" alt="" />
+                                                                </div>
+                                                                <div class="placeholder-background placeholder-background--animation" data-image-placeholder></div>
+                                                            </div>
+                                                        </a>
+                                                    </div>
+                                                </div>
+
                                             </div>
+
 
                                             <script>
                                                 var prev_img_id = "header_cushion_covers_image_container";
@@ -268,149 +277,6 @@
                                     </div>
                                 </li>
 
-                                <!-- <li class="hasMenuDropdown hasMegaMenu">
-                                    <a href="./" title="">
-                                        <span>Collections</span></a>
-                                    <a class="btnCaret hidden-xl hidden-lg hidden-md" data-toggle="collapse"
-                                        href="#megaDropdown22"></a>
-
-                                    <div id="megaDropdown22" class="menuDropdown megaMenu collapse">
-                                        <div class="menuGroup rowFlex rowFlexMargin">
-                                            <div class="col-sm-12">
-                                                <div class="rowFlex rowFlexMargin velaMenuListLink"></div>
-                                            </div>
-
-                                            <div class="col-sm-12">
-                                                <div class="velaMenuListCollection">
-                                                    <div class="menuTitle">
-                                                        <span>List collection</span>
-                                                    </div>
-
-                                                    <div class="velaMenuListContent rowFlex">
-                                                        <div class="coll-item" style="width: 20%">
-                                                            <div class="collImage">
-                                                                <a href="./products.php?product=rugs">
-                                                                    <div class="p-relative">
-                                                                        <div class="product-card__image"
-                                                                            style="padding-top: 100%">
-                                                                            <img class="product-card__img lazyload imgFlyCart"
-                                                                                data-src="https://cdn.shopify.com/s/files/1/1573/5553/collections/18_360x.jpg?v=1511442950"
-                                                                                data-widths="[360,540,720,900,1080,1296,1728,1944,2808,4320]"
-                                                                                data-aspectratio="1.0" data-ratio="1.0"
-                                                                                data-sizes="auto" alt="Decor Art" />
-                                                                        </div>
-                                                                        <div class="placeholder-background placeholder-background--animation"
-                                                                            data-image-placeholder></div>
-                                                                    </div>
-                                                                </a>
-                                                            </div>
-                                                            <h5 class="collTitle">
-                                                                <a href="./products.php?product=rugs" title="Decor Art">
-                                                                    Rugs</a>
-                                                            </h5>
-                                                        </div>
-
-                                                        <div class="coll-item" style="width: 20%">
-                                                            <div class="collImage">
-                                                                <a href="./products.php?product=">
-                                                                    <div class="p-relative">
-                                                                        <div class="product-card__image"
-                                                                            style="padding-top: 100%">
-                                                                            <img class="product-card__img lazyload imgFlyCart"
-                                                                                data-src="https://cdn.shopify.com/s/files/1/1573/5553/collections/7_360x.jpg?v=1511442889"
-                                                                                data-widths="[360,540,720,900,1080,1296,1728,1944,2808,4320]"
-                                                                                data-aspectratio="1.0" data-ratio="1.0"
-                                                                                data-sizes="auto" alt="Furniture" />
-                                                                        </div>
-                                                                        <div class="placeholder-background placeholder-background--animation"
-                                                                            data-image-placeholder></div>
-                                                                    </div>
-                                                                </a>
-                                                            </div>
-                                                            <h5 class="collTitle">
-                                                                <a href="./products.php?product=" title="Furniture">
-                                                                    Curtain</a>
-                                                            </h5>
-                                                        </div>
-
-                                                        <div class="coll-item" style="width: 20%">
-                                                            <div class="collImage">
-                                                                <a href="./products.php?product=">
-                                                                    <div class="p-relative">
-                                                                        <div class="product-card__image"
-                                                                            style="padding-top: 100%">
-                                                                            <img class="product-card__img lazyload imgFlyCart"
-                                                                                data-src="https://cdn.shopify.com/s/files/1/1573/5553/collections/21_360x.jpg?v=1511442906"
-                                                                                data-widths="[360,540,720,900,1080,1296,1728,1944,2808,4320]"
-                                                                                data-aspectratio="1.0" data-ratio="1.0"
-                                                                                data-sizes="auto"
-                                                                                alt="Kitchen Things" />
-                                                                        </div>
-                                                                        <div class="placeholder-background placeholder-background--animation"
-                                                                            data-image-placeholder></div>
-                                                                    </div>
-                                                                </a>
-                                                            </div>
-                                                            <h5 class="collTitle">
-                                                                <a href="./products.php?product="
-                                                                    title="Kitchen Things">
-                                                                    Cushion</a>
-                                                            </h5>
-                                                        </div>
-
-                                                        <div class="coll-item" style="width: 20%">
-                                                            <div class="collImage">
-                                                                <a href="./products.php?product=">
-                                                                    <div class="p-relative">
-                                                                        <div class="product-card__image"
-                                                                            style="padding-top: 100%">
-                                                                            <img class="product-card__img lazyload imgFlyCart"
-                                                                                data-src="https://cdn.shopify.com/s/files/1/1573/5553/collections/12_360x.jpg?v=1511442995"
-                                                                                data-widths="[360,540,720,900,1080,1296,1728,1944,2808,4320]"
-                                                                                data-aspectratio="1.0" data-ratio="1.0"
-                                                                                data-sizes="auto" alt="Illumination" />
-                                                                        </div>
-                                                                        <div class="placeholder-background placeholder-background--animation"
-                                                                            data-image-placeholder></div>
-                                                                    </div>
-                                                                </a>
-                                                            </div>
-                                                            <h5 class="collTitle">
-                                                                <a href="./products.php?product=" title="Illumination">
-                                                                    Bed & bath linen</a>
-                                                            </h5>
-                                                        </div>
-
-                                                        <div class="coll-item" style="width: 20%">
-                                                            <div class="collImage">
-                                                                <a href="#">
-                                                                    <div class="p-relative">
-                                                                        <div class="product-card__image"
-                                                                            style="padding-top: 99%;">
-                                                                            <img class="product-card__img lazyload imgFlyCart"
-                                                                                data-src="https://cdn.shopify.com/s/files/1/1573/5553/collections/Arc-Large-Cup_360x.jpg"
-                                                                                data-widths="[360,540,720,900,1080,1296,1728,1944,2808,4320]"
-                                                                                data-aspectratio="1.0016420361247949"
-                                                                                data-ratio="1.0016420361247949"
-                                                                                data-sizes="auto" alt="Sale Off" />
-                                                                        </div>
-                                                                        <div class="placeholder-background placeholder-background--animation"
-                                                                            data-image-placeholder></div>
-                                                                    </div>
-                                                                </a>
-                                                            </div>
-                                                            <h5 class="collTitle">
-                                                                <a href="#" title="Sale Off">
-                                                                    Blind</a>
-                                                            </h5>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li> -->
-
                                 <li class="">
                                     <a href="about-us.php" title="">
                                         <span>About Us</span></a>
@@ -419,34 +285,56 @@
                                     <a href="contact-us.php" title="">
                                         <span>Contact </span></a>
                                 </li>
+
+                                
+
                             </ul>
                         </nav>
                     </section>
                 </div>
-
-
-                <div class="velaHeaderRight col-xs-7 col-sm-6 col-md-3">
-                    <div class="header-search-icon " onclick="openSearchModal()">
-                        <!-- <i class="fa fa-search icons"></i> -->
+                <div class="velaHeaderRight col-xs-7 col-sm-6 col-md-3 ">
+                    <div class="header-search-icon  navbar-icons" onclick="openSearchModal()">
+                        <!-- search icon -->
                         <i class="icons nav-icons">
-                            <svg width="25px" height="25px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <svg   width="25px" height="25px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path class="stroke-change" d="M14.5776 14.5419C15.5805 13.53 16.2 12.1373 16.2 10.6C16.2 7.50721 13.6928 5 10.6 5C7.50721 5 5 7.50721 5 10.6C5 13.6928 7.50721 16.2 10.6 16.2C12.1555 16.2 13.5628 15.5658 14.5776 14.5419ZM14.5776 14.5419L19 19" stroke="#464455" stroke-linecap="round" stroke-linejoin="r.ound" />
                             </svg>
                         </i>
+                        <!-- search icon end -->
                     </div>
-                    <div id="cd-cart-trigger" class="header-admin-icon" style="padding-left:20px; padding-top: 3px;">
+                    <div class="header-admin-icon hide-on-mobile navbar-icons" style="display: flex; align-items: center;">
+                        <a href="https://goo.gl/maps/mGWpdoHE2XxLtBox7" target="_blank">
+                            <!-- Maps svg icon -->
+                            <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" height="23px" width="23px" viewBox="0 0 400 600">
+                                <defs>
+                                    <style>.cls-1{fill:none;stroke:#000;stroke-miterlimit:10;stroke-width:15px;}</style>
+                                </defs>
+                                <path class="cls-1" d="M541.32,737.74c23.07-14.81,135.3-91.61,162-211.7,29.49-132.77-75-212.84-161.14-211.92C456,313.2,351.53,393.27,381,526c26.68,120.09,137.8,196.89,160.87,211.7" transform="translate(-312.93 -311.62)"/><circle class="cls-1" cx="226.97" cy="153.27" r="79.2"/><path d="M649.83,734.55a27,27,0,0,1-1.12,5c11.76,4.86,18.4,10.38,18.4,15.67,0,7.54-13.5,15.56-36.12,21.45-24.3,6.32-55.61,9.81-91.09,9.81-34.43,0-66.78-3.49-91.08-9.81-22.62-5.89-36.12-13.91-36.12-21.45,0-7.23,12.4-14.9,33.33-20.7a29,29,0,0,1,0-5.19c-17.84,4.8-38.32,13.1-38.32,25.89,0,13.15,21.67,21.55,39.86,26.29,24.7,6.43,57.49,10,92.34,10s67.65-3.54,92.35-10c18.18-4.74,39.86-13.14,39.86-26.29C672.11,746.2,662,739.44,649.83,734.55Z" transform="translate(-312.93 -311.62)"/><path d="M728.63,753.84a45.94,45.94,0,0,1-1.93,8.53c20.19,8.33,31.59,17.81,31.59,26.89,0,13-23.18,26.72-62,36.83C654.56,837,599,842.93,539.9,842.93s-114.66-6-156.37-16.84c-38.83-10.11-62-23.87-62-36.83,0-12.41,21.29-25.57,57.22-35.54a49.92,49.92,0,0,1,0-8.9c-30.63,8.24-65.8,22.49-65.8,44.44,0,22.58,37.22,37,68.44,45.14,42.4,11,98.7,17.11,158.53,17.11S656,845.43,698.44,834.4c31.22-8.13,68.43-22.56,68.43-45.14C766.87,773.85,749.55,762.25,728.63,753.84Z" transform="translate(-312.93 -311.62)"/>
+                            </svg>
+                            <!-- / Maps svg icon end -->
+                            
+                        </a>&nbsp;
+                        <!--<i class="icons nav-icons"></i>-->
+                    </div>
+                    <div id="cd-cart-trigger" class="header-admin-icon  navbar-icons" style="padding-top: 0px;">
+                        <!-- wishlist icon  -->
                         <a href>
-                        <lord-icon
-                            src="https://cdn.lordicon.com/rjzlnunf.json"
-                            trigger="click"
-                            colors="primary:#121331,secondary:#018dca"
-                            state="hover-2"
-                            style="width:24px;height:24px">
-                        </lord-icon>
+                        <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" height="23px" width="23px" viewBox="00 -50 380 500">
+                            <defs>
+                            <style>
+                                .cls-1{
+                                    fill:none;
+                                    stroke:currentcolor;
+                                    stroke-width:20px;
+                                }
+                            </style>
+                            </defs><path class="cls-1" d="M701.23,370.35c-81.12-49.29-157.82,49.29-157.82,49.29s-76.7-98.58-157.82-49.29c-51.52,31.31-67,98.8-36,150.54,10.78,18,26.81,37.87,50.23,59.09L543.41,720.4,687.05,580c23.43-21.22,39.45-41.08,50.23-59.09C768.24,469.15,752.76,401.66,701.23,370.35Z" transform="translate(-331.66 -354.55)"/>
+                        </svg>
+                        <!-- wishlist icon end  -->
                         </a>
                         <!--<i class="icons nav-icons"></i>-->
                     </div>
-                    <div class="velaCartTop" style="white-space: nowrap;">
+                    <div class="velaCartTop  navbar-icons" style="white-space: nowrap;">
                         <!-- <a href="cart.php" class="jsDrawerOpenRight d-flex"> -->
                         <a href="cart.php">
                             <i class="icons">
@@ -461,12 +349,13 @@
                             </span>
                         </a>
                     </div>
-                    <?php if (isset($_SESSION['username'])) {  ?> <!-- when user is logged in -->
+
+                    <?php if(isset($_SESSION['username'])){ ?>
 
                         <div class="dropdown">
                             <button class="dropbtn">  
                                         <h5>&nbsp;Hello <b><?php echo $_SESSION['name'] ?>!</b> </h5>
-
+                                        <!-- <lord-icon src="https://cdn.lordicon.com/bhfjfgqz.json" trigger="loop" style="width:32px;height:32px"> </lord-icon> -->
                                         <svg width="25px" height="25px" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg"><path fill="currentcolor" d="M831.872 340.864 512 652.672 192.128 340.864a30.592 30.592 0 0 0-42.752 0 29.12 29.12 0 0 0 0 41.6L489.664 714.24a32 32 0 0 0 44.672 0l340.288-331.712a29.12 29.12 0 0 0 0-41.728 30.592 30.592 0 0 0-42.752 0z"/></svg>
 
                             </button>
@@ -505,7 +394,7 @@
                     } // when use is logged in end
                     else { /// when use is not logged in
                     ?>
-                        <div class="box login-link-container">
+                        <div class="box login-link-container hide-on-mobile" >
                             <a href="login-page.php" id="customer_login_link">
                                 <i class="icons nav-icons">
                                     <svg fill="#000000" width="25px" height="25px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -522,11 +411,20 @@
                     <?php
                     }
                     ?>
-                    <div class="header-admin-icon" style="display: flex; align-items: center; padding: 20px">
-                        <a href="./admin_panel"><i class="fa fa-thin fa-lock icons" style="font-size:25px;"></i></a>&nbsp;
-                        <!--<i class="icons nav-icons"></i>-->
+                    <!-- <div class="header-admin-icon" style="display: flex; align-items: center; padding: 20px">
+                        <a href="./admin_panel"><i class="fa fa-thin fa-lock icons" style="font-size:25px;color:white;"></i></a>&nbsp;
+                    </div> -->
+                    <div class="menuBtnMobile pull-left hidden-md hidden-lg " >
+                        <div id="btnMenuMobile" class="btnMenuMobile">
+                            <span class="iconMenu"></span>
+                            <span class="iconMenu"></span>
+                            <span class="iconMenu"></span>
+                            <span class="iconMenu"></span>
+                        </div>
                     </div>
+
                 </div>
+
 
                 <!-- <div id="velaSearchTop" class="collapse">
                     <div class="container text-center">
@@ -545,10 +443,7 @@
                             </button>
                         </form>
                     </div>
-                </div> -->
-
-
-                
+                </div> -->       
             </div>
         </div>
     </div>
@@ -685,19 +580,28 @@
             <!-- <li class="">
                 <a href="blogs/news.php" title="">Blog</a>
             </li> -->
-            <?php
-            if (isset($_SESSION['username'])) {
-                echo " <li class=''>
-                        <a href='./profile.php' >Profile</a>
-                    </li>";
-            }
-            ?>
+            <li  onclick="openSearchModal()"  class="">
+                <a title="">Search</a>
+            </li>
+            <li class="">
+                <div id="cd-cart-trigger" class="header-admin-icon" >
+                        <a>Wishlist</a>
+                </div>
+            </li>
+            <li class="">
+                <a href="./cart.php" title="">Cart</a>
+            </li>
+            <li class="">
+                <a href="https://goo.gl/maps/mGWpdoHE2XxLtBox7" target="_blank" title="">Directions</a>
+            </li>
+
             <li class="">
                 <a href="./about-us.php" title="">About us</a>
             </li>
             <li class="">
                 <a href="./contact-us.php" title="">Contact</a>
             </li>
+            <?php if(isset($_SESSION['username'])){ ?> 
             <li class="">
                 <a href="./profile.php" title="">Profile</a>
             </li>
@@ -707,6 +611,14 @@
             <li class="">
                 <a href="./api/logout.php" title="">Logout</a>
             </li>
+            <?php } ?>
+            <?php
+            if (!isset($_SESSION['username'])) { ?>
+                <li class="">
+                    <a href="./login-page.php" title="">Login</a>
+                </li>
+            <?php } ?>
+
         </ul>
     </div>
 </div>

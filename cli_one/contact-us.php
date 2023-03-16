@@ -118,7 +118,7 @@
                                                 </div>
 
 
-                                                <div class="contact-desc clearfix">Outstock is a premium Templates theme
+                                                <div class="contact-desc clearfix">Outstock is a premium owner
                                                     with advanced admin module. It’s
                                                     extremely customizable, easy to use and fully responsive and retina
                                                     ready. Vel illum dolore eu feugiat nulla facilisis at vero eros et
@@ -161,11 +161,16 @@
                                                         </div>
                                                         <div class="col-xs-12">
                                                             <div class="form-group">
+                                                                <label for="ContactFormNumber">Contact Number <sup>*</sup></label>
+                                                                <input type="tel" id="ContactFormNumber"
+                                                                    class="form-control contact-form" placeholder="Contact Number"required>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-xs-12">
+                                                            <div class="form-group">
                                                                 <label for="ContactFormSubject">Subject <sup>*</sup></label>
                                                                 <input type="text" id="ContactFormSubject"
-                                                                    class="form-control contact-form" placeholder="Subject"
-                                                                    name="contact[email]" autocorrect="off"
-                                                                    autocapitalize="off" value="" required>
+                                                                    class="form-control contact-form" placeholder="Subject"required>
                                                             </div>
                                                         </div>
                                                         <div class="col-xs-12">
@@ -351,6 +356,7 @@
         let email = document.getElementById("ContactFormEmail").value;
         let subject = document.getElementById("ContactFormSubject").value;
         let message = document.getElementById("ContactFormMessage").value;
+        // let number = document.getElementById("ContactFormNumber").value
 
         var form_data = { "contactus_form": "filled","name":name,"email":email,"subject":subject,"message":message};
         console.log(form_data);

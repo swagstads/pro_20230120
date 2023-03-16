@@ -1,11 +1,11 @@
 <!DOCTYPE html>
- 
+
 <html class="no-js" lang="en">
- 
+
 
 <!--  cart  27:04 GMT -->
- 
-<meta http-equiv="content-type" content="text/html;charset=utf-8" /> 
+
+<meta http-equiv="content-type" content="text/html;charset=utf-8" />
 
 <head>
     <?php include('header_links.php') ?>
@@ -45,8 +45,7 @@
                                     </a>
                                     <meta itemprop="position" content="1" />
                                 </li>
-                                <li class="active" itemprop="itemListElement" itemscope
-                                    itemtype="http://schema.org/ListItem">
+                                <li class="active" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
                                     <span itemprop="name">Checkout</span>
                                     <meta itemprop="position" content="2" />
                                 </li>
@@ -55,117 +54,120 @@
                     </nav>
                 </div>
             </section>
-        </div> 
+        </div>
         <main class="mainContent" role="main">
             <section id="pageContent">
                 <div class="container">
                     <div id="shopify-section-vela-template-cart" class="shopify-section">
                         <!-- First check logged in -->
                         <?php
-                            if($_SESSION['username']){ // if logged in
+                        if ($_SESSION['username']) { // if logged in
                         ?>
-                        <!-- when logged in  -->
-                        <div class="cart-product-wrapper">
-                            <div class="cart-product-container">
+                            <!-- when logged in  -->
+                            <div class="cart-product-wrapper">
+                                <div class="cart-product-container">
+                                </div>
                             </div>
-                        </div>
-                        <div class="Total-amount-container">
-                            <h3>Total: &#8377;<span class="total-amount" id="total_amount"></span></h3>
-                            <input type="hidden"  id="total_amount_inp" value="0" >
-                        </div>
+                            <div class="Total-amount-container">
+                                <h3>Total: &#8377;<span class="total-amount" id="total_amount"></span></h3>
+                                <input type="hidden" id="total_amount_inp" value="0">
+                            </div>
 
-                        <!-- Payment gateway js link -->
-                        <script  src="https://checkout.razorpay.com/v1/checkout.js"></script>
+                            <!-- Payment gateway js link -->
+                            <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
 
-                        <script>
-                            $("#cartEmptyContent").hide()
-                            function display_cart_data(){
+                            <script>
+                                $("#cartEmptyContent").hide()
 
-                                var api_url_for_cart_data = './api/fetch_cart_details.php';
-                                var order_history_table = document.querySelector(".cart-product-table");
+                                function display_cart_data() {
 
-                                var form_data = { "orders": "previous"};
+                                    var api_url_for_cart_data = './api/fetch_cart_details.php';
+                                    var order_history_table = document.querySelector(".cart-product-table");
 
-                                $.ajax({
-                                    url: api_url_for_cart_data,
-                                    type: 'POST',
-                                    data: form_data,
-                                    success: 
-                                    function (returned_data) {
-                                            console.log(returned_data);
-                                            var jsonData = JSON.parse(returned_data);
-                                            var return_data = jsonData.response;
-                                            let amount_arr = [], total_amount = "";
-                                            $(".cart-product-container").empty()
-                                            if(jsonData.response.length >= 1){
-                                                for (var i = 0; i < jsonData.response.length; i++) {
-                                                    let input_id = "product_"+return_data[i].product_id;
-                                                    let exact_amount = return_data[i].product_price * return_data[i].required_quantity;
-                                                    let amount = Math.round(exact_amount * 100) / 100;
-                                                    amount_arr.push(amount)
-                                                    $(".cart-product-container").append('<div class="cart-product-container-row">'+
-                                                        '<div class="left">'+
-                                                            '<div class="image">'+
-                                                                '<img src="./admin_panel/uploads/products/'+return_data[i].image_name+'" alt="" srcset="">'+
-                                                            '</div>'+
-                                                        '</div>'+
-                                                        '<div class="right">'+
-                                                            '<div class="ordered-product-details">'+
-                                                                '<div class="title">'+
-                                                                    '<h2>'+return_data[i].product_name+'</h2>'+
-                                                                '</div>'+
-                                                                '<div class="description truncate-overflow ">'+
-                                                                    return_data[i].product_description+
-                                                                '</div>'+
-                                                            '</div>'+
-                                                            '<div class="quantity-container">Quantity'+
-                                                                '<div class="ordered-quantity">'+
-                                                                        '<h4>'+return_data[i].required_quantity+'</h4>'+
-                                                                '</div>'+
-                                                            '</div>'+
-                                                            '<div class="action">'+
+                                    var form_data = {
+                                        "orders": "previous"
+                                    };
 
-                                                            '</div>'+
-                                                            '<div class="price">'+
-                                                                'Amount: &nbsp;<h4>&#8377;<span id="total_product_amount"">'+(amount)+'<span></h4>'+
-                                                            '</div>'+
-                                                        '</div>'+
-                                                    '</div>')
+                                    $.ajax({
+                                            url: api_url_for_cart_data,
+                                            type: 'POST',
+                                            data: form_data,
+                                            success: function(returned_data) {
+                                                console.log(returned_data);
+                                                var jsonData = JSON.parse(returned_data);
+                                                var return_data = jsonData.response;
+                                                let amount_arr = [],
+                                                    total_amount = "";
+                                                $(".cart-product-container").empty()
+                                                if (jsonData.response.length >= 1) {
+                                                    for (var i = 0; i < jsonData.response.length; i++) {
+                                                        let input_id = "product_" + return_data[i].product_id;
+                                                        let exact_amount = return_data[i].product_price * return_data[i].required_quantity;
+                                                        let amount = Math.round(exact_amount * 100) / 100;
+                                                        amount_arr.push(amount)
+                                                        $(".cart-product-container").append('<div class="cart-product-container-row">' +
+                                                            '<div class="left">' +
+                                                            '<div class="image">' +
+                                                            '<img src="./admin_panel/uploads/products/' + return_data[i].image_name + '" alt="" srcset="">' +
+                                                            '</div>' +
+                                                            '</div>' +
+                                                            '<div class="right">' +
+                                                            '<div class="ordered-product-details">' +
+                                                            '<div class="title">' +
+                                                            '<h2>' + return_data[i].product_name + '</h2>' +
+                                                            '</div>' +
+                                                            '<div class="description truncate-overflow ">' +
+                                                            return_data[i].product_description +
+                                                            '</div>' +
+                                                            '</div>' +
+                                                            '<div class="quantity-container">Quantity' +
+                                                            '<div class="ordered-quantity">' +
+                                                            '<h4>' + return_data[i].required_quantity + '</h4>' +
+                                                            '</div>' +
+                                                            '</div>' +
+                                                            '<div class="action">' +
+
+                                                            '</div>' +
+                                                            '<div class="price">' +
+                                                            'Amount: &nbsp;<h4>&#8377;<span id="total_product_amount"">' + (amount) + '<span></h4>' +
+                                                            '</div>' +
+                                                            '</div>' +
+                                                            '</div>')
+                                                    }
+                                                    total_amount = Math.round(amount_arr.reduce((accumulator, currentValue) => accumulator + currentValue, 0) * 100) / 100
+                                                    console.log(...amount_arr, "=>", total_amount);
+                                                    $("#total_amount").text(total_amount)
+                                                    $("#total_amount_inp").val(total_amount)
                                                 }
-                                                total_amount = Math.round(amount_arr.reduce((accumulator, currentValue) => accumulator + currentValue,0) * 100) / 100
-                                                console.log(...amount_arr,"=>",total_amount);
-                                                $("#total_amount").text(total_amount)
-                                                $("#total_amount_inp").val(total_amount)
                                             }
-                                        }
-                                    })
-                                .done(function(){
-                                        var options = {
-                                            "key": "rzp_test_vMCLbtwM7n8HDj", // Enter the Key ID generated from the Dashboard
-                                            "amount": (parseFloat($("#total_amount_inp").val()) * 100), // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
-                                            "currency": "INR",
-                                            "name": "AToZ Furnishing",
-                                            "description": "Test Transaction",
-                                            "image": "",
-                                            "handler": function (response){
-                                                show_msg(response.razorpay_payment_id);
-                                                show_msg(response.razorpay_order_id);
-                                                show_msg(response.razorpay_signature)
-                                            },
-                                            "prefill": {
-                                                "name": "Gaurav Kumar",
-                                                "email": "gaurav.kumar@example.com",
-                                                "contact": "9000090000"
-                                            },
-                                            "notes": {
-                                                "address": "Razorpay Corporate Office"
-                                            },
-                                            "theme": {
-                                                "color": "#3399cc"
-                                            }
-                                        };
-                                        var rzp1 = new Razorpay(options);
-                                        rzp1.on('payment.failed', function (response){
+                                        })
+                                        .done(function() {
+                                            var options = {
+                                                "key": "rzp_test_vMCLbtwM7n8HDj", // Enter the Key ID generated from the Dashboard
+                                                "amount": (parseFloat($("#total_amount_inp").val()) * 100), // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
+                                                "currency": "INR",
+                                                "name": "AToZ Furnishing",
+                                                "description": "Test Transaction",
+                                                "image": "",
+                                                "handler": function(response) {
+                                                    show_msg(response.razorpay_payment_id);
+                                                    show_msg(response.razorpay_order_id);
+                                                    show_msg(response.razorpay_signature)
+                                                },
+                                                "prefill": {
+                                                    "name": "Gaurav Kumar",
+                                                    "email": "gaurav.kumar@example.com",
+                                                    "contact": "9000090000"
+                                                },
+                                                "notes": {
+                                                    "address": "Razorpay Corporate Office"
+                                                },
+                                                "theme": {
+                                                    "color": "#3399cc"
+                                                }
+                                            };
+                                            var rzp1 = new Razorpay(options);
+                                            rzp1.on('payment.failed', function(response) {
                                                 // show_msg(response.error.code);
                                                 show_msg(response.error.description);
                                                 // show_msg(response.error.source);
@@ -173,98 +175,102 @@
                                                 // show_msg(response.error.reason);
                                                 // show_msg(response.error.metadata.order_id);
                                                 // show_msg(response.error.metadata.payment_id);
+                                            });
+
+
+                                            document.getElementById('rzp-button1').onclick = function(e) {
+                                                rzp1.open();
+                                                e.preventDefault();
+                                            }
                                         });
 
-
-                                        document.getElementById('rzp-button1').onclick = function(e){
-                                            rzp1.open();
-                                            e.preventDefault();
-                                        }
-                                    });
-
-                            }
+                                }
 
 
-                            display_cart_data()
-                            function decrease_quantity(product_id,order_qnty,product_qnty){
-                                let decreased_qnty = order_qnty-1;
-                                if(decreased_qnty < product_qnty && decreased_qnty!== 0 ){
-                                    let api_url = "./api/increase_qnty.php";
-                                    // form data values
-                                    var form_data = {"quantity_action":"increase" ,"product_id": product_id, "quantity": decreased_qnty};
-                                    $.ajax({
-                                    url: api_url,
-                                    type: 'POST',
-                                    // type: 'GET',
+                                display_cart_data()
+
+                                function decrease_quantity(product_id, order_qnty, product_qnty) {
+                                    let decreased_qnty = order_qnty - 1;
+                                    if (decreased_qnty < product_qnty && decreased_qnty !== 0) {
+                                        let api_url = "./api/increase_qnty.php";
+                                        // form data values
+                                        var form_data = {
+                                            "quantity_action": "increase",
+                                            "product_id": product_id,
+                                            "quantity": decreased_qnty
+                                        };
+                                        $.ajax({
+                                            url: api_url,
+                                            type: 'POST',
+                                            // type: 'GET',
+                                            data: form_data,
+                                            success: function(returned_data) {
+                                                console.log(returned_data);
+                                                var jsonData = JSON.parse(returned_data);
+                                                var return_data = jsonData.response[0];
+                                                show_msg("Quantity Updated")
+                                                console.log(return_data);
+                                                $("#product_" + product_id).val(decreased_qnty)
+                                                display_cart_data()
+                                            }
+                                        })
+                                    } else {
+                                        show_msg("Quantity cannot be 0")
+                                    }
+                                }
+                                // ====== fetch address ======
+
+                                let api_url_fetch_address = "./api/fetch_address.php";
+                                // let cart_ids = [];
+                                var form_data = {
+                                    "fetch_address": "fetch"
+                                };
+
+                                let address_field = $(".address-div")
+
+
+                                $.ajax({
+                                    url: api_url_fetch_address,
+                                    type: 'GET',
                                     data: form_data,
-                                    success: function (returned_data) {
-                                        console.log(returned_data);
+
+                                    success: function(returned_data) {
                                         var jsonData = JSON.parse(returned_data);
                                         var return_data = jsonData.response[0];
-                                        show_msg("Quantity Updated")
                                         console.log(return_data);
-                                        $("#product_"+product_id).val(decreased_qnty)
-                                        display_cart_data()
+                                        if (return_data.status === "ok") {
+                                            console.log("Address", return_data.status);
+                                            $("#rzp-button1").removeAttr('disabled');
+                                        } else {
+                                            show_msg("Please provide your address to checkout")
+                                            $(".Address-details").text("Please provide valid address to pay")
                                         }
-                                    })
-                                }
-                                else{
-                                    show_msg("Quantity cannot be 0")
-                                }
-                            }    
-                            // ====== fetch address ======
-
-                            let api_url_fetch_address = "./api/fetch_address.php";
-                            // let cart_ids = [];
-                            var form_data = {"fetch_address":"fetch"};
-
-                            let address_field = $(".address-div")
-                            
-
-                            $.ajax({    
-                                url: api_url_fetch_address,
-                                type: 'GET',
-                                data: form_data,
-
-                                success: function (returned_data) {
-                                    var jsonData = JSON.parse(returned_data);
-                                    var return_data = jsonData.response[0];
-                                    console.log(return_data);
-                                    if(return_data.status === "ok"){
-                                        console.log("Address",return_data.status);
-                                        $("#rzp-button1").removeAttr('disabled');
                                     }
-                                    else{
-                                        show_msg("Please provide your address to checkout")
-                                        $(".Address-details").text("Please provide valid address to pay")
-                                    }
-                                }
-                            })
+                                })
+                            </script>
 
-                        </script>
-                                        
-                        <!-- payment gateway - do not touch  -->
-                        <div class="Address-details">
+                            <!-- payment gateway - do not touch  -->
+                            <div class="Address-details">
 
-                        </div>
-                        <span>
+                            </div>
+                            <span>
                                 <span>
-                                    <button class="submit-button" id="rzp-button1"  disabled >Pay</button>
+                                    <button class="submit-button" id="rzp-button1" style="float: right;" disabled>Pay</button>
                                 </span>
                                 <span>
                                     <a href="./cart.php"><button class="submit-button" id="Edit">Edit</button></a>
                                 </span>
-                        </span>
-                        
-                        <br><br>
-                        <!-- payment gateway code end -->  
+                            </span>
+
+                            <br><br>
+                            <!-- payment gateway code end -->
 
 
-                        <!-- when logged in end -->
+                            <!-- when logged in end -->
                         <?php
-                            } // when logged in ended
-                            else{ // If not logged in
-                            ?>
+                        } // when logged in ended
+                        else { // If not logged in
+                        ?>
                             <div class="loginContent">
                                 <p class="cartEmpty">You haven't logged in yet.</p>
                                 <p>
@@ -277,7 +283,7 @@
                                 </p>
                             </div>
                         <?php
-                        // If not logged in end
+                            // If not logged in end
                         }
                         ?>
                     </div>
@@ -296,8 +302,8 @@
 
     </div>
 
-<?php include('footer_links.php'); ?>
-<script src="js/main.js?key=<?= date('is') ?>" type="text/javascript"></script>
+    <?php include('footer_links.php'); ?>
+    <script src="js/main.js?key=<?= date('is') ?>" type="text/javascript"></script>
 </body>
 
 <!--  cart  27:04 GMT -->

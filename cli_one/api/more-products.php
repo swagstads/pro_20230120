@@ -7,7 +7,7 @@ $response["response"] = array();
 $data = array();
 
 
-$stmt = $dbh->prepare(' SELECT *,p.id AS prod_id FROM product p JOIN category c ON FIND_IN_SET(c.id, p.category_id)');
+$stmt = $dbh->prepare(' SELECT *,p.id AS prod_id FROM product p JOIN category c ON FIND_IN_SET(c.id, p.category_id) LIMIT 25');
 $stmt->execute();
 
 $count = $stmt->rowCount();

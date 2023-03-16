@@ -10,6 +10,8 @@
 .disp-none{
   display: none;
 }
+
+
 /* ======== scrollbar ======== */
 
 /* width */
@@ -587,7 +589,37 @@
 /*--------------------------------------------------------------
 # Product page - single product showcase page
 --------------------------------------------------------------*/
+.productpage-bredcrum{
+  position: absolute;
+  top: 90px;
+  left: 0;
+  right: 0;
+  margin: auto;
+  max-width: 1210px;
+  z-index: 800;
+  padding: 0 10px;
+}
 
+@media (max-width: 768px) {
+  .productpage-bredcrum {
+      max-width: 568px !important;
+  }            
+}
+@media (min-width: 768px) {
+  .productpage-bredcrum {
+      max-width: 768px !important;
+  }            
+}
+@media (min-width: 992px) {
+  .productpage-bredcrum {
+      max-width: 985px !important;
+  }            
+}
+@media (min-width: 1220px){
+  .productpage-bredcrum {
+      max-width: 1210px !important;
+  }
+}
 
 .productpage {
   /* position: relative; */
@@ -598,7 +630,6 @@
   padding: 100px 25px 30px 25px;
   gap: 20px;
   display: flex !important;
-  align-items: center;
   /* border: 2px solid; */
   /* border: 1px solid; */
 }
@@ -611,7 +642,6 @@
   display: flex;
   gap: 5px;
   flex-direction: column;
-  justify-content: center;
 }
 .left-column #main_img_container{
   height: 450px;
@@ -621,7 +651,6 @@
 .right-column {
   width: 60%;
   /* border: 1px solid; */
-  max-height: 90vh;
 }
 
 
@@ -670,6 +699,15 @@
   color: #86939E;
   line-height: 24px;
 }
+
+.read-more-bttn-container button{
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  color: var(--col1);
+}
+
+
 .small-view-image{
   height: 70px !important;
   width: 70px !important;
@@ -751,25 +789,76 @@
 .product-price .add-to-bttns{
   display: flex;
 }
+
+.product_overview{
+  margin-top: 10px;
+  display: flex;
+  font-size: 18px;
+  font-weight: 300;
+  color: #43474D;
+  margin-right: 5px;
+  font-family: Lato,sans-serif;
+
+}
+
+.blinking-box {
+  position: relative;
+  top: -0.5em;
+  display: inline-block;
+  animation: blink 2s infinite;
+}
+.blinking-box-out {
+  position: relative;
+  top: -0.5em;
+  display: inline-block;
+  /* animation: blink 2s infinite; */
+}
+
+.blinking-box-out span {
+  display: inline-block;
+  background-color: red;
+  color: white;
+  padding: 1em 0.5em;
+  border-radius: 0.3em;
+}
+
+.blinking-box span {
+  display: inline-block;
+  background-color: black;
+  color: white;
+  padding: 1em 0.5em;
+  border-radius: 0.3em;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
 /* #product_our_price, #product_price{
   color: var(--col2);
 } */
-.product-mrp{
+.product-mrp #product_mrp{
   text-decoration: line-through;
   color: var(--col1);
 }
+.incl-of-tax{
+  font-size: 14px !important;
+}
 .product-price span {
-  font-size: 26px;
+  font-size: 18px;
   font-weight: 300;
   color: #43474D;
-  margin-right: 20px;
+  margin-right: 5px;
+  font-family: Lato,sans-serif;
 }
 
 .cart-btn {
   display: inline-block;
   background-color: var(--col2);
   border: none;
-  border-radius: 6px;
+  border-radius: 0px;
   font-size: 16px;
   color: #FFFFFF;
   text-decoration: none;
@@ -786,7 +875,7 @@
   display: inline-block;
   background-color: #fff;
   border: 2px solid #000000b5;
-  border-radius: 6px;
+  border-radius: 0px;
   font-size: 16px;
   color: #000000;
   text-decoration: none;
@@ -921,8 +1010,8 @@
   border:none;
   background-color: var(--vela-color-primary);
   color: white;
-  padding: 10px 20px;
-  border-radius: 5px;
+  padding: 10px 40px;
+  /* border-radius: 5px; */
   margin-top: 20px;
   text-align: center;
   text-decoration: none;
@@ -1130,6 +1219,12 @@
   overflow: hidden;
 
 }
+.product-slider-container .best-seller-products ,.product-slider-container .similar-products-scroll{
+    direction: rtl;
+}
+.product-slider-container .best-seller-products *, .product-slider-container .similar-products-scroll *{
+  direction: ltr;
+}
 .product-slider-container .left-arrow{
   left: -2%;
 }
@@ -1209,6 +1304,10 @@
   background: none;
   border: none;
   border-bottom: 1px solid black;
+}
+.product-slider-container .product-slider .product-price .product-mrp{
+  text-decoration: line-through;
+  color: red;
 }
 .product-slider-container .product-slider .product-price{
   display: flex;
@@ -1478,7 +1577,7 @@ Modules - reusable parts of our design
 
 /* -------------------------------- 
 
-xheader 
+ ========== header ========== 
 
 -------------------------------- */
 header {
@@ -1523,7 +1622,9 @@ header {
     transform: scale(1);
   }
 }
-
+.navbar-icons{
+  padding: 0 2px  ;
+}
 #cd-hamburger-menu {
   left: 0;
 }
@@ -2025,18 +2126,27 @@ Quantity Button
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  border: 1px solid;
   gap: 10px;
+}
+@media (max-width: 991px) {
+    .trending-products-container .trending-product{
+      overflow: scroll;
+    }
+    /* width */
+    .trending-products-container .trending-product::-webkit-scrollbar {
+      height: 5px;
+    }
 }
 .trending-products-container .trending-product .image-container{
   display: flex;
   align-items: center;
   justify-content: center;
+  gap: 10px;
   width: 300px;
-  height: 400px;  
+  height: 300px;  
   overflow: hidden;      
   border-top-left-radius: 10% 10%;
-  border-bottom-right-radius: 10% 10%;    
+  border-bottom-right-radius: 10% 10%;  
 }
 .trending-products-container .trending-product img{
   height: 100%;
@@ -2045,7 +2155,51 @@ Quantity Button
   border-top-left-radius: 10% 10%;
   border-bottom-right-radius: 10% 10%;
 }
+.trending-products-container .trending-product .product a{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  text-decoration: none;
+  color: black;
+}
+.trending-products-container .trending-product .product{
+  text-align: center;
+  font-size: 1.4rem;
+  font-weight: 500;
+  padding: 20px;
+}
+
 .trending-products-container .trending-product img:hover{
-  height: 500px;
-  width: 400px;
+  height: 120%;
+  width: 120%;
+}
+
+.social-media-share-links .fb-btn{
+  background: #3B5998;
+  color: white;
+}
+.social-media-share-links .insta-btn{
+  background:
+  radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f
+  60%, #285aeb 90%);
+  color: white;
+}
+
+
+/* ======== General CSS ======== */
+
+@media (max-width: 991px) {
+  .hide-on-mobile{
+    display: none !important;
+  }
+}
+
+.truncate-line-3{
+  display:  -webkit-box;
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 3; /* Limit the number of lines to 3 */
+  -webkit-box-orient: vertical;
+  white-space: pre-line;
 }

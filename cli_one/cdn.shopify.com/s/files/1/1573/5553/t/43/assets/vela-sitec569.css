@@ -3456,6 +3456,8 @@ tbody.collapse.in {
   padding: 0;
   list-style: none;
   font-size: calc(var(--vela-font-size) - 1px);
+  display: flex;
+  justify-content: center;
 }
 .breadcrumb > li {
   display: inline-block;
@@ -14567,6 +14569,18 @@ button:active:focus,
   -webkit-align-items: center;
   -ms-align-items: center;
   align-items: center;
+}
+.velaHeaderHamIconRight{
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-justify-content: flex-end;
+  -ms-justify-content: flex-end;
+  justify-content: flex-end;
+  -webkit-align-items: center;
+  -ms-align-items: center;
+  align-items: center;
+  gap: 10px;
 }
 .velaIonTopLinks {
   display: block;

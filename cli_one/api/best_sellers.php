@@ -1,46 +1,51 @@
 <?php
 
-session_start();
-require('config.php');
+require('./config.php'); 
+date_default_timezone_set('Asia/Kolkata');
 
-
-$data = array();
 $response["response"] = array();
-$data['status'] = "fetching data";
+$data = array();
 
-$sql = " SELECT id, category_name  FROM category" ;
-$query = $dbh->prepare($sql);
-if($query->execute()){
-    while ($result = $query->fetch(PDO::FETCH_ASSOC)) {
 
-        $category_id = $result['id'];
-        $category_name = $result['category_name'];
-        $sql = " SELECT id,title  FROM product WHERE category_id=:category_id ORDER BY click_count DESC LIMIT 3";
-        $product_query = $dbh->prepare($sql);
-        $product_query->bindParam(':category_id', $category_id, PDO::PARAM_STR);
-        $data[$category_name] = array();
-        if($product_query->execute()){
+$stmt = $dbh->prepare('SELECT *, p.id AS prod_id FROM product p JOIN category c ON FIND_IN_SET(c.id, p.category_id) ORDER BY click_count DESC LIMIT 9');
+$stmt->execute();
 
-            $category_data = array();
+$count = $stmt->rowCount();
 
-            while ($product_result = $product_query->fetch(PDO::FETCH_ASSOC)) {
+if ($count > 0) {
+    $fetch_data = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    for ($i = 0; $i < $count; $i++) {
+        $data["prod_id"] = $fetch_data[$i]['prod_id'];
+        $data["title"] = $fetch_data[$i]['title'];
+        $data["category"] = $fetch_data[$i]['category_name'];
+        $data["description"] = $fetch_data[$i]['description'];
+        $data["product_quantity"] = $fetch_data[$i]['quantity'];
+        $data["mrp"] = $fetch_data[$i]['mrp'];
+        $data["price"] = $fetch_data[$i]['price'];
 
-                $product_result['image_name'] = false;
-                $prod_img_query = $dbh->prepare('SELECT image_name FROM product_media WHERE product_id = :product_id');
-                $prod_img_query->bindParam(':product_id', $product_result['id'], PDO::PARAM_STR);
-                if($prod_img_query->execute()){
-                    $data['image_name']  = "";
-                    if($fetch_image = $prod_img_query->fetch(PDO::FETCH_OBJ)){
-                        $product_result['image_name'] = $fetch_image->image_name;
-                    }
-                }
-                array_push($data[$category_name],$product_result);
-
+        $stmt2 = $dbh->prepare('SELECT image_name FROM product_media WHERE product_id = :product_id');
+        $stmt2->bindParam(':product_id', $fetch_data[$i]['prod_id'], PDO::PARAM_STR);
+        if($stmt2->execute()){
+            $data['image_name']  = "";
+            if($fetch_image = $stmt2->fetch(PDO::FETCH_OBJ)){
+                $data['image_name'] = $fetch_image->image_name;
             }
-        }
-    }
-}
 
-array_push($response["response"], $data);
+
+        }
+
+
+        $data["status"] = "success";
+        $data["reason"] = "orders_fetched";
+        array_push($response["response"], $data);
+    }
+} 
+else {
+    $data["status"] = "failed";
+    $data["reason"] = "No results";
+    array_push($response["response"], $data);
+
+}
 echo json_encode($response);
+
 ?>
