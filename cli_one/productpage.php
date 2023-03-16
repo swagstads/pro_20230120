@@ -231,15 +231,25 @@
             </script>
             <br>
 
+
+
             <div class="more-products">
                 <?php include('./similar_products.php') ?>
             </div>
 
+            
+            <div class="trending-products">
+                <?php include('./trending_products.php') ?>
+            </div>
 
-            <br>
+            <div class="best-seller">
+                <?php include('./best_seller.php') ?>
+            </div>
+
             <div class="more-products">
                 <?php include('./more-products.php') ?>
             </div>
+            
         </main>
 
         <script>

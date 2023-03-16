@@ -113,7 +113,6 @@
 
         function productSliderScrollLeftMP(){   
             $('.more-producst-scroll').scrollLeft( $('.more-producst-scroll').scrollLeft() - 270 )
-            clearInterval(automatic_scroll);
         }
         function productSliderScrollRightMP(){
             $('.more-producst-scroll').scrollLeft( $('.more-producst-scroll').scrollLeft() + 270 )
