@@ -3,14 +3,7 @@
         <div class="container">
             <div class="headerContent rowFlex flexAlignCenter rowFlexMargin">
                 <div class="velaHeaderLeft flexAlignCenter col-xs-5 col-sm-6 col-md-2 d-flex">
-                    <div class="menuBtnMobile pull-left hidden-md hidden-lg">
-                        <div id="btnMenuMobile" class="btnMenuMobile">
-                            <span class="iconMenu"></span>
-                            <span class="iconMenu"></span>
-                            <span class="iconMenu"></span>
-                            <span class="iconMenu"></span>
-                        </div>
-                    </div>
+
                     <h1 class="velaLogo">
                         <a href="index.php" class="velaLogoLink" style="width: 100px"><span class="text-hide">AtoZ</span>
                             <img class="img-responsive" src="./assets/images/logo1.jpg" alt="AtoZ" style="max-width: 65px" /></a>
@@ -284,149 +277,6 @@
                                     </div>
                                 </li>
 
-                                <!-- <li class="hasMenuDropdown hasMegaMenu">
-                                    <a href="./" title="">
-                                        <span>Collections</span></a>
-                                    <a class="btnCaret hidden-xl hidden-lg hidden-md" data-toggle="collapse"
-                                        href="#megaDropdown22"></a>
-
-                                    <div id="megaDropdown22" class="menuDropdown megaMenu collapse">
-                                        <div class="menuGroup rowFlex rowFlexMargin">
-                                            <div class="col-sm-12">
-                                                <div class="rowFlex rowFlexMargin velaMenuListLink"></div>
-                                            </div>
-
-                                            <div class="col-sm-12">
-                                                <div class="velaMenuListCollection">
-                                                    <div class="menuTitle">
-                                                        <span>List collection</span>
-                                                    </div>
-
-                                                    <div class="velaMenuListContent rowFlex">
-                                                        <div class="coll-item" style="width: 20%">
-                                                            <div class="collImage">
-                                                                <a href="./products.php?product=rugs">
-                                                                    <div class="p-relative">
-                                                                        <div class="product-card__image"
-                                                                            style="padding-top: 100%">
-                                                                            <img class="product-card__img lazyload imgFlyCart"
-                                                                                data-src="https://cdn.shopify.com/s/files/1/1573/5553/collections/18_360x.jpg?v=1511442950"
-                                                                                data-widths="[360,540,720,900,1080,1296,1728,1944,2808,4320]"
-                                                                                data-aspectratio="1.0" data-ratio="1.0"
-                                                                                data-sizes="auto" alt="Decor Art" />
-                                                                        </div>
-                                                                        <div class="placeholder-background placeholder-background--animation"
-                                                                            data-image-placeholder></div>
-                                                                    </div>
-                                                                </a>
-                                                            </div>
-                                                            <h5 class="collTitle">
-                                                                <a href="./products.php?product=rugs" title="Decor Art">
-                                                                    Rugs</a>
-                                                            </h5>
-                                                        </div>
-
-                                                        <div class="coll-item" style="width: 20%">
-                                                            <div class="collImage">
-                                                                <a href="./products.php?product=">
-                                                                    <div class="p-relative">
-                                                                        <div class="product-card__image"
-                                                                            style="padding-top: 100%">
-                                                                            <img class="product-card__img lazyload imgFlyCart"
-                                                                                data-src="https://cdn.shopify.com/s/files/1/1573/5553/collections/7_360x.jpg?v=1511442889"
-                                                                                data-widths="[360,540,720,900,1080,1296,1728,1944,2808,4320]"
-                                                                                data-aspectratio="1.0" data-ratio="1.0"
-                                                                                data-sizes="auto" alt="Furniture" />
-                                                                        </div>
-                                                                        <div class="placeholder-background placeholder-background--animation"
-                                                                            data-image-placeholder></div>
-                                                                    </div>
-                                                                </a>
-                                                            </div>
-                                                            <h5 class="collTitle">
-                                                                <a href="./products.php?product=" title="Furniture">
-                                                                    Curtain</a>
-                                                            </h5>
-                                                        </div>
-
-                                                        <div class="coll-item" style="width: 20%">
-                                                            <div class="collImage">
-                                                                <a href="./products.php?product=">
-                                                                    <div class="p-relative">
-                                                                        <div class="product-card__image"
-                                                                            style="padding-top: 100%">
-                                                                            <img class="product-card__img lazyload imgFlyCart"
-                                                                                data-src="https://cdn.shopify.com/s/files/1/1573/5553/collections/21_360x.jpg?v=1511442906"
-                                                                                data-widths="[360,540,720,900,1080,1296,1728,1944,2808,4320]"
-                                                                                data-aspectratio="1.0" data-ratio="1.0"
-                                                                                data-sizes="auto"
-                                                                                alt="Kitchen Things" />
-                                                                        </div>
-                                                                        <div class="placeholder-background placeholder-background--animation"
-                                                                            data-image-placeholder></div>
-                                                                    </div>
-                                                                </a>
-                                                            </div>
-                                                            <h5 class="collTitle">
-                                                                <a href="./products.php?product="
-                                                                    title="Kitchen Things">
-                                                                    Cushion</a>
-                                                            </h5>
-                                                        </div>
-
-                                                        <div class="coll-item" style="width: 20%">
-                                                            <div class="collImage">
-                                                                <a href="./products.php?product=">
-                                                                    <div class="p-relative">
-                                                                        <div class="product-card__image"
-                                                                            style="padding-top: 100%">
-                                                                            <img class="product-card__img lazyload imgFlyCart"
-                                                                                data-src="https://cdn.shopify.com/s/files/1/1573/5553/collections/12_360x.jpg?v=1511442995"
-                                                                                data-widths="[360,540,720,900,1080,1296,1728,1944,2808,4320]"
-                                                                                data-aspectratio="1.0" data-ratio="1.0"
-                                                                                data-sizes="auto" alt="Illumination" />
-                                                                        </div>
-                                                                        <div class="placeholder-background placeholder-background--animation"
-                                                                            data-image-placeholder></div>
-                                                                    </div>
-                                                                </a>
-                                                            </div>
-                                                            <h5 class="collTitle">
-                                                                <a href="./products.php?product=" title="Illumination">
-                                                                    Bed & bath linen</a>
-                                                            </h5>
-                                                        </div>
-
-                                                        <div class="coll-item" style="width: 20%">
-                                                            <div class="collImage">
-                                                                <a href="#">
-                                                                    <div class="p-relative">
-                                                                        <div class="product-card__image"
-                                                                            style="padding-top: 99%;">
-                                                                            <img class="product-card__img lazyload imgFlyCart"
-                                                                                data-src="https://cdn.shopify.com/s/files/1/1573/5553/collections/Arc-Large-Cup_360x.jpg"
-                                                                                data-widths="[360,540,720,900,1080,1296,1728,1944,2808,4320]"
-                                                                                data-aspectratio="1.0016420361247949"
-                                                                                data-ratio="1.0016420361247949"
-                                                                                data-sizes="auto" alt="Sale Off" />
-                                                                        </div>
-                                                                        <div class="placeholder-background placeholder-background--animation"
-                                                                            data-image-placeholder></div>
-                                                                    </div>
-                                                                </a>
-                                                            </div>
-                                                            <h5 class="collTitle">
-                                                                <a href="#" title="Sale Off">
-                                                                    Blind</a>
-                                                            </h5>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li> -->
-
                                 <li class="">
                                     <a href="about-us.php" title="">
                                         <span>About Us</span></a>
@@ -435,13 +285,14 @@
                                     <a href="contact-us.php" title="">
                                         <span>Contact </span></a>
                                 </li>
+
+                                
+
                             </ul>
                         </nav>
                     </section>
                 </div>
-
-
-                <div class="velaHeaderRight col-xs-7 col-sm-6 col-md-3">
+                <div class="velaHeaderRight col-xs-7 col-sm-6 col-md-3 ">
                     <div class="header-search-icon " onclick="openSearchModal()">
                         <!-- search icon -->
                         <i class="icons nav-icons">
@@ -451,7 +302,7 @@
                         </i>
                         <!-- search icon end -->
                     </div>
-                    <div class="header-admin-icon" style="display: flex; align-items: center;padding:3px 5px 0 5px ;">
+                    <div class="header-admin-icon hide-on-mobile" style="display: flex; align-items: center;padding:3px 5px 0 5px ;">
                         <a href="https://goo.gl/maps/mGWpdoHE2XxLtBox7" target="_blank">
                             <!-- Maps svg icon -->
                             <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" height="22px" width="22px" viewBox="0 0 380 500">
@@ -465,7 +316,6 @@
                         </a>&nbsp;
                         <!--<i class="icons nav-icons"></i>-->
                     </div>
-                    <?php if(isset($_SESSION['username'])){ ?>
                     <div id="cd-cart-trigger" class="header-admin-icon" style="padding-left:10px; padding-top: 3px;">
                         <!-- wishlist icon  -->
                         <a href>
@@ -500,49 +350,51 @@
                         </a>
                     </div>
 
-                    <div class="dropdown">
-                        <button class="dropbtn">  
-                                    <h5>&nbsp;Hello <b><?php echo $_SESSION['name'] ?>!</b> </h5>
-                                    <!-- <lord-icon src="https://cdn.lordicon.com/bhfjfgqz.json" trigger="loop" style="width:32px;height:32px"> </lord-icon> -->
-                                    <svg width="25px" height="25px" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg"><path fill="currentcolor" d="M831.872 340.864 512 652.672 192.128 340.864a30.592 30.592 0 0 0-42.752 0 29.12 29.12 0 0 0 0 41.6L489.664 714.24a32 32 0 0 0 44.672 0l340.288-331.712a29.12 29.12 0 0 0 0-41.728 30.592 30.592 0 0 0-42.752 0z"/></svg>
+                    <?php if(isset($_SESSION['username'])){ ?>
 
-                        </button>
-                        <div class="dropdown-content">
-                            <a href="./profile.php">
+                        <div class="dropdown">
+                            <button class="dropbtn">  
+                                        <h5>&nbsp;Hello <b><?php echo $_SESSION['name'] ?>!</b> </h5>
+                                        <!-- <lord-icon src="https://cdn.lordicon.com/bhfjfgqz.json" trigger="loop" style="width:32px;height:32px"> </lord-icon> -->
+                                        <svg width="25px" height="25px" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg"><path fill="currentcolor" d="M831.872 340.864 512 652.672 192.128 340.864a30.592 30.592 0 0 0-42.752 0 29.12 29.12 0 0 0 0 41.6L489.664 714.24a32 32 0 0 0 44.672 0l340.288-331.712a29.12 29.12 0 0 0 0-41.728 30.592 30.592 0 0 0-42.752 0z"/></svg>
 
-                                <!-- External icon -->
+                            </button>
+                            <div class="dropdown-content">
+                                <a href="./profile.php">
+
+                                    <!-- External icon -->
+                                    <lord-icon
+                                        src="https://cdn.lordicon.com/dxjqoygy.json"
+                                        trigger="loop"
+                                        colors="primary:#121331,secondary:#018dca"
+                                        style="width:32px;height:32px">
+                                    </lord-icon> &nbsp;Profile
+                                    <!-- External icon  end-->
+                                </a>
+                                <a href="./order_history.php">
                                 <lord-icon
-                                    src="https://cdn.lordicon.com/dxjqoygy.json"
+                                    src="https://cdn.lordicon.com/nocovwne.json"
                                     trigger="loop"
                                     colors="primary:#121331,secondary:#018dca"
                                     style="width:32px;height:32px">
-                                </lord-icon> &nbsp;Profile
-                                <!-- External icon  end-->
-                            </a>
-                            <a href="./order_history.php">
-                            <lord-icon
-                                src="https://cdn.lordicon.com/nocovwne.json"
-                                trigger="loop"
-                                colors="primary:#121331,secondary:#018dca"
-                                style="width:32px;height:32px">
-                            </lord-icon> &nbsp;Orders
-                            </a>
-                            <a href="./api/logout.php">
-                            <lord-icon
-                                src="https://cdn.lordicon.com/moscwhoj.json"
-                                trigger="loop"
-                                colors="primary:#121331,secondary:#018dca"
-                                style="width:32px;height:32px">
-                            </lord-icon> &nbsp;Logout
-                            </a>
+                                </lord-icon> &nbsp;Orders
+                                </a>
+                                <a href="./api/logout.php">
+                                <lord-icon
+                                    src="https://cdn.lordicon.com/moscwhoj.json"
+                                    trigger="loop"
+                                    colors="primary:#121331,secondary:#018dca"
+                                    style="width:32px;height:32px">
+                                </lord-icon> &nbsp;Logout
+                                </a>
+                            </div>
                         </div>
-                    </div>
 
                     <?php
                     } // when use is logged in end
                     else { /// when use is not logged in
                     ?>
-                        <div class="box login-link-container">
+                        <div class="box login-link-container hide-on-mobile" >
                             <a href="login-page.php" id="customer_login_link">
                                 <i class="icons nav-icons">
                                     <svg fill="#000000" width="25px" height="25px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -562,8 +414,16 @@
                     <!-- <div class="header-admin-icon" style="display: flex; align-items: center; padding: 20px">
                         <a href="./admin_panel"><i class="fa fa-thin fa-lock icons" style="font-size:25px;color:white;"></i></a>&nbsp;
                     </div> -->
-                </div>
+                    <div class="menuBtnMobile pull-left hidden-md hidden-lg " >
+                        <div id="btnMenuMobile" class="btnMenuMobile">
+                            <span class="iconMenu"></span>
+                            <span class="iconMenu"></span>
+                            <span class="iconMenu"></span>
+                            <span class="iconMenu"></span>
+                        </div>
+                    </div>
 
+                </div>
 
 
                 <!-- <div id="velaSearchTop" class="collapse">
@@ -720,13 +580,21 @@
             <!-- <li class="">
                 <a href="blogs/news.php" title="">Blog</a>
             </li> -->
-            <?php
-            if (isset($_SESSION['username'])) {
-                echo " <li class=''>
-                        <a href='./profile.php' >Profile</a>
-                    </li>";
-            }
-            ?>
+            <li  onclick="openSearchModal()"  class="">
+                <a title="">Search</a>
+            </li>
+            <li class="">
+                <div id="cd-cart-trigger" class="header-admin-icon" >
+                        <a>Wishlist</a>
+                </div>
+            </li>
+            <li class="">
+                <a href="./cart.php" title="">Cart</a>
+            </li>
+            <li class="">
+                <a href="https://goo.gl/maps/mGWpdoHE2XxLtBox7" target="_blank" title="">Directions</a>
+            </li>
+
             <li class="">
                 <a href="./about-us.php" title="">About us</a>
             </li>
@@ -744,6 +612,13 @@
                 <a href="./api/logout.php" title="">Logout</a>
             </li>
             <?php } ?>
+            <?php
+            if (!isset($_SESSION['username'])) { ?>
+                <li class="">
+                    <a href="./login-page.php" title="">Login</a>
+                </li>
+            <?php } ?>
+
         </ul>
     </div>
 </div>
