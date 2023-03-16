@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 15, 2023 at 12:33 PM
+-- Generation Time: Mar 16, 2023 at 01:37 PM
 -- Server version: 10.4.25-MariaDB
 -- PHP Version: 7.4.30
 
@@ -41,6 +41,13 @@ CREATE TABLE `addresses` (
   `deleted_on` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Dumping data for table `addresses`
+--
+
+INSERT INTO `addresses` (`id`, `user_id`, `addressline1`, `addressline2`, `city`, `state`, `zip`, `timestamp`, `modified_on`, `status`, `deleted_on`) VALUES
+(1, 1, 'TEst', 'test', 'Maharashtra', 'Mumbai', '400004', '2023-03-16 10:44:02', '2023-03-16 10:44:02', 'secondary', NULL);
+
 -- --------------------------------------------------------
 
 --
@@ -54,6 +61,14 @@ CREATE TABLE `cart` (
   `quantity` varchar(128) COLLATE utf8_bin NOT NULL,
   `status` enum('in cart','ordered') COLLATE utf8_bin NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+--
+-- Dumping data for table `cart`
+--
+
+INSERT INTO `cart` (`id`, `user_id`, `product_id`, `quantity`, `status`) VALUES
+(2, '1', '1', '2', 'in cart'),
+(3, '1', '14', '1', 'in cart');
 
 -- --------------------------------------------------------
 
@@ -112,6 +127,34 @@ CREATE TABLE `contact_us` (
   `modified_on` datetime DEFAULT current_timestamp(),
   `deleted_on` datetime NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+--
+-- Dumping data for table `contact_us`
+--
+
+INSERT INTO `contact_us` (`id`, `name`, `email`, `subject`, `message`, `status`, `added_on`, `modified_on`, `deleted_on`) VALUES
+(1, 'aaa', 'aa@a.com', 'Kakaka', 'aa', 'Pending', '2023-03-16 09:52:25', '2023-03-16 14:22:25', '2023-03-16 14:22:25'),
+(2, 'aa', 'malavshah166@gmail.com', 'Aaa', 'Testing', 'Pending', '2023-03-16 09:59:13', '2023-03-16 14:29:13', '2023-03-16 14:29:13');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `coupon`
+--
+
+CREATE TABLE `coupon` (
+  `id` int(20) NOT NULL,
+  `coup_name` varchar(500) NOT NULL,
+  `status` enum('active','inactive','','') NOT NULL,
+  `added_on` varchar(40) NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `coupon`
+--
+
+INSERT INTO `coupon` (`id`, `coup_name`, `status`, `added_on`) VALUES
+(1, 'atoz', 'active', '2023-03-16 16:12:33');
 
 -- --------------------------------------------------------
 
@@ -207,23 +250,23 @@ CREATE TABLE `product` (
 --
 
 INSERT INTO `product` (`id`, `title`, `description`, `price`, `mrp`, `color`, `category_id`, `click_count`, `status`, `quantity`, `added_by`, `added_on`, `modified_on`) VALUES
-(1, 'Plain and Textures', 'Cushion Covers category in plain and textures', 1200, '1300', '', '2', 1, 'active', '50', 'malav@atoz.com', '2023-03-10 11:57:49', '2023-03-10 11:57:49'),
+(1, 'Plain and Textures', 'Cushion Covers category in plain and textures', 1200, '1300', '', '2', 3, 'active', '50', 'malav@atoz.com', '2023-03-10 11:57:49', '2023-03-10 11:57:49'),
 (2, 'Duet Sets', 'These are Duet Sets of cushion cover as well as bedsheets', 2000, '2100', '', '3', 2, 'active', '10', 'malav@atoz.com', '2023-03-11 10:20:19', '2023-03-11 10:20:19'),
-(3, 'Bath Robes', 'Amazing Bath robes', 1255, '1300', '', '3', 0, 'active', '10', 'malav@atoz.com', '2023-03-11 10:39:39', '2023-03-11 10:39:39'),
+(3, 'Bath Robes', 'Amazing Bath robes', 1255, '1300', '', '3', 0, 'active', '0', 'malav@atoz.com', '2023-03-11 10:39:39', '2023-03-11 10:39:39'),
 (4, 'Mats', 'Washroom Mats', 100, '88', '', '3', 0, 'active', '11', 'malav@atoz.com', '2023-03-11 10:40:52', '2023-03-11 10:40:52'),
-(5, 'Napkin and Towels', 'Napkin and towelsss', 1200, '1200', '', '3', 0, 'active', '12', 'malav@atoz.com', '2023-03-11 10:42:29', '2023-03-11 10:42:29'),
-(6, 'Bed Cover', 'Bed Covers', 1222, '133', '', '3', 3, 'active', '12', 'malav@atoz.com', '2023-03-11 10:43:14', '2023-03-11 10:43:14'),
+(5, 'Napkin and Towels', 'Napkin and towelsss', 1200, '1200', '', '3', 1, 'active', '12', 'malav@atoz.com', '2023-03-11 10:42:29', '2023-03-11 10:42:29'),
+(6, 'Bed Cover', 'Bed Covers', 1222, '133', '', '3', 4, 'active', '12', 'malav@atoz.com', '2023-03-11 10:43:14', '2023-03-11 10:43:14'),
 (7, 'Bed Sheets', 'Beautiful Bed Sheets', 130, '152', '', '3', 0, 'active', '50', 'malav@atoz.com', '2023-03-11 10:44:30', '2023-03-11 10:44:30'),
-(8, 'Throw', 'This throw are amazing', 100, '120', '', '3', 1, 'active', '10', 'malav@atoz.com', '2023-03-11 10:45:04', '2023-03-11 10:45:04'),
+(8, 'Throw', 'This throw are amazing', 100, '120', '', '3', 4, 'active', '10', 'malav@atoz.com', '2023-03-11 10:45:04', '2023-03-11 10:45:04'),
 (9, 'Bolsters', 'This bolsters are amazing', 150, '1000', '', '3', 0, 'active', '10', 'malav@atoz.com', '2023-03-11 10:46:42', '2023-03-11 10:46:42'),
-(10, 'Quilts', 'This quilts are amazing', 1400, '1500', '', '3', 1, 'active', '10', 'malav@atoz.com', '2023-03-11 10:47:28', '2023-03-11 10:47:28'),
+(10, 'Quilts', 'This quilts are amazing', 1400, '1500', '', '3', 2, 'active', '10', 'malav@atoz.com', '2023-03-11 10:47:28', '2023-03-11 10:47:28'),
 (11, 'Mattress', 'This mattress are amazing', 200, '210', '', '3', 0, 'active', '10', 'malav@atoz.com', '2023-03-11 10:48:22', '2023-03-11 10:48:22'),
 (12, 'Comforter', 'This comforter are amazing', 1300, '11111', '', '3', 0, 'active', '12', 'malav@atoz.com', '2023-03-11 10:49:10', '2023-03-11 10:49:10'),
 (13, 'Towels', 'This towels are amazing', 1500, '12000', '', '3', 0, 'active', '15', 'malav@atoz.com', '2023-03-11 10:51:36', '2023-03-11 10:51:36'),
-(14, 'PVC Flooring', 'This PVC Flooring are amazing', 200, '300', '', '2', 0, 'active', '3', 'malav@atoz.com', '2023-03-11 10:58:30', '2023-03-11 10:58:30'),
+(14, 'PVC Flooring', 'This PVC Flooring are amazing', 200, '300', '', '2', 1, 'active', '3', 'malav@atoz.com', '2023-03-11 10:58:30', '2023-03-11 10:58:30'),
 (15, 'Wooden flooring', 'This wooden Flooring are amazing', 300, '400', '', '2', 0, 'active', '5', 'malav@atoz.com', '2023-03-11 10:59:19', '2023-03-11 10:59:19'),
 (16, 'Gym Flooring', 'This gym Flooring are amazing', 500, '600', '', '2', 0, 'active', '6', 'malav@atoz.com', '2023-03-11 10:59:59', '2023-03-11 10:59:59'),
-(17, 'Carpet wall to wall', 'carpet wall to wall', 500, '6000', '', '2', 0, 'active', '8', 'malav@atoz.com', '2023-03-11 11:00:56', '2023-03-11 11:00:56'),
+(17, 'Carpet wall to wall', 'carpet wall to wall', 500, '6000', '', '2', 1, 'active', '8', 'malav@atoz.com', '2023-03-11 11:00:56', '2023-03-11 11:00:56'),
 (18, 'Sports Flooring', 'This sports Flooring are amazing', 500, '600', '', '2', 0, 'active', '4', 'malav@atoz.com', '2023-03-11 11:01:49', '2023-03-11 11:01:49'),
 (19, 'EVA Foam Mat', 'This EVA are amazing', 1000, '2000', '', '2', 0, 'active', '20', 'malav@atoz.com', '2023-03-11 11:02:31', '2023-03-11 11:02:31'),
 (20, 'Grass Flooring ', 'This grass Flooring are amazing', 300, '400', '', '2', 0, 'active', '40', 'malav@atoz.com', '2023-03-11 11:03:25', '2023-03-11 11:03:25'),
@@ -396,7 +439,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `password`, `phone`, `address`, `role`, `added_on`, `modified_on`, `deleted_on`, `status`) VALUES
-(1, 'Malav Shah', 'shahmalav1999@gmail.com', '$2y$10$/JhaRln4yvNwMbYIq5HaM.E4WczItfZ/Y.d.eWZWc05wr5feygiTW', '8355817127', NULL, 'customer', '2023-03-10 05:31:38', '2023-03-10 01:01:06', NULL, 'active');
+(1, 'Malav Shah', 'shahmalav1999@gmail.com', '$2y$10$/JhaRln4yvNwMbYIq5HaM.E4WczItfZ/Y.d.eWZWc05wr5feygiTW', '8355817127', 'TEst, test, Maharashtra, Mumbai, 400004', 'customer', '2023-03-16 10:44:02', '2023-03-10 01:01:06', NULL, 'active');
 
 -- --------------------------------------------------------
 
@@ -464,6 +507,12 @@ ALTER TABLE `clicks`
 -- Indexes for table `contact_us`
 --
 ALTER TABLE `contact_us`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `coupon`
+--
+ALTER TABLE `coupon`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -539,13 +588,13 @@ ALTER TABLE `wishlist`
 -- AUTO_INCREMENT for table `addresses`
 --
 ALTER TABLE `addresses`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `cart`
 --
 ALTER TABLE `cart`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `category`
@@ -563,7 +612,13 @@ ALTER TABLE `clicks`
 -- AUTO_INCREMENT for table `contact_us`
 --
 ALTER TABLE `contact_us`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `coupon`
+--
+ALTER TABLE `coupon`
+  MODIFY `id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `forget_password`
