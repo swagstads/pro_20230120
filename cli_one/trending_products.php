@@ -5,7 +5,7 @@
                         <div class="sectionInner">
                             <div class="headingGroup pb20">
                                 <h3 class="velaHomeTitle text-center">
-                                    <span>Trending Products</span>
+                                    <span>New Arrivals</span>
                                 </h3>
                                 <!-- <span class="subTitle">
                                     Mirum est notare quam littera gothica quam nunc putamus  parum claram!
@@ -39,7 +39,7 @@
             const queryString = window.location.search;
             const urlParams = new URLSearchParams(queryString);
             var searched_product = urlParams.get('category') || "all"
-            var api_url_best_seller = './api/best_sellers.php';
+            var api_url_best_seller = './api/new_arrivals.php';
             var form_data = { "show_products": searched_product, "user_id": localStorage.getItem('user_id') };
             $.ajax({
                 url: api_url_best_seller,
@@ -56,7 +56,7 @@
                             
                             let outOfStockMessage = "";
                             let inStockMessage="";
-                            if(return_data[i].product_quantity === 0){
+                            if(return_data[i].product_quantity == 0){
                                 outOfStockMessage = "Out of Stock";
                             }
                             else if(return_data[i].product_quantity <= 5){
