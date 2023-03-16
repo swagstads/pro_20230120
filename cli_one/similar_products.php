@@ -120,7 +120,9 @@
         function productSliderScrollRightsimilarProd(){
             $('.similar-products-scroll').scrollLeft( $('.similar-products-scroll').scrollLeft() + 270 )
         }
-
+        setInterval(() => {
+            productSliderScrollLeftsimilarProd()
+        }, 5000);
         function addToCart(product_id){
                 var quantity = 1;
                 api_url = "./api/add_to_cart.php";

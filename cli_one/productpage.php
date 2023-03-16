@@ -64,7 +64,25 @@
                 <span class="product-price"> <span id="product_our_price" > Previously: </span></span><span style="margin-left: 20px;">&#8377; <span id="product_mrp"></span></span>
                 </div> -->
                     <span class="product_overview"> Overview</span>
-                    <p id="product_description"></p>
+                    <p id="product_description" class="truncate-line-3"></p>
+                    <div class="read-more-bttn-container">
+                        <button onclick="show_description(this)" class="read-more">Read more</button>
+                        <script>
+                            function show_description(bttn){
+                                if(bttn.classList.contains("active")){
+                                    document.getElementById("product_description").style.display = "-webkit-box";
+                                    bttn.textContent = "Read more";
+                                    bttn.classList.remove("active")
+                                }
+                                else{
+                                    document.getElementById("product_description").style.display = "block";
+                                    bttn.classList.add("active");
+                                    bttn.textContent = "Read less";
+                                }
+                            }
+                        </script>
+                    </div>
+                    <br>
                     <div class="add-to-bttns">
                         <button onclick="addToCart( <?php echo $_GET['productid'] ?> )" class="cart-btn">Add to cart</button>
                         <button onclick="addToWishlist( <?php echo $_GET['productid'] ?> )" class="wish-btn">Add to wishlist</button>
@@ -129,6 +147,49 @@
                         </script>
 
                     </div>
+                            <br>
+                    <div class="shipping-policy">
+                    <details>
+                        <summary> <i class="fa fa-chevron-right"></i> Shipping Policy</summary>
+                        <div>
+                            <p> 
+                                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Placeat itaque voluptate maiores exercitationem nostrum beatae atque maxime voluptatum.     Expedita illo molestiae libero incidunt optio, alias obcaecati tempore quae quas voluptate!</p> 
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio, incidunt ea. Tempore sed nesciunt quis non dolores molestiae ullam modi aut cumque pariatur ipsam, tempora, repellendus ad fuga sequi eum?              
+                            </p> 
+                            <p> 
+                                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Placeat itaque voluptate maiores exercitationem nostrum beatae atque maxime voluptatum.     Expedita illo molestiae libero incidunt optio, alias obcaecati tempore quae quas voluptate!</p> 
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio, incidunt ea. Tempore sed nesciunt quis non dolores molestiae ullam modi aut cumque pariatur ipsam, tempora, repellendus ad fuga sequi eum?              
+                            </p> 
+                            <p class="para-heading">
+                                <strong>Log Data</strong></p> 
+                                <p> 
+                                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Neque alias ab aliquid qui, molestias repellendus dolorum eius culpa voluptate, voluptas, consequatur deleniti mollitia delectus optio? Suscipit in ullam quas laudantium.
+                                </p> 
+                                <p class="para-heading"><strong>Cookies</strong></p> 
+                                <p>
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos sit voluptatum deserunt quisquam voluptate, magni aut expedita reprehenderit, recusandae, ullam accusamus asperiores iusto doloremque! Deleniti ducimus iure dolores explicabo illo?
+                                </p> 
+                                <p>
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam omnis ipsam molestiae commodi distinctio. Modi illum sequi consectetur in totam earum odio, velit maxime nihil, vero repellendus rem quo inventore.
+                                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Atque officiis voluptate cum assumenda accusamus nisi fugiat ipsam repellat. Enim praesentium quibusdam ratione earum eius et temporibus totam sunt! Numquam, ex!
+                                </p> 
+                                <p class="para-heading"><strong>Service Providers</strong></p> <p> 
+                                I may employ third-party companies and individuals due to the following reasons:</p>
+                                <ul>
+                                    <li>To facilitate our Service;</li> 
+                                    <li>To provide the Service on our behalf;</li> 
+                                    <li>To perform Service-related services; or</li> 
+                                    <li>To assist us in analyzing how our Service is used.</li>
+                                </ul> 
+                                <p>
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi aspernatur distinctio quasi facere voluptatibus harum velit fugiat qui, aperiam, ducimus animi doloremque voluptas? Nihil qui accusantium illo provident, hic molestiae.
+                                </p>
+                        </div>
+                    </details>
+                    </div>
+
                 </div>
 
 
@@ -139,12 +200,10 @@
                         <button class="tablinks" onclick="openTab(event, 'container1')">Description</button>
                         <button class="tablinks" onclick="openTab(event, 'container2')">Reviews</button>
                     </div>
-
                     <div id="container1" class="tabcontent active show">
                         <h3>Description</h3>
                         <p id="product_description"></p>
                     </div>
-
                     <div id="container2" class="tabcontent">
                         <h3>Reviews</h3>
                         <p>In construction...</p>
@@ -205,7 +264,7 @@
 
                         let outOfStockMessage = "";
                         let inStockMessage = "";
-                        if (jsonData.response[0].product_quantity === 0) {
+                        if (jsonData.response[0].product_quantity == 0) {
                             outOfStockMessage = "Out of Stock";
                             $("#instock").append('<sup class="blinking-box-out"><span>'+outOfStockMessage+'</span></sup>');
                         } else if (jsonData.response[0].product_quantity <= 60) {
