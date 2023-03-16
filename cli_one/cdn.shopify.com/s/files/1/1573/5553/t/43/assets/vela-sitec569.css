@@ -3456,6 +3456,8 @@ tbody.collapse.in {
   padding: 0;
   list-style: none;
   font-size: calc(var(--vela-font-size) - 1px);
+  display: flex;
+  justify-content: center;
 }
 .breadcrumb > li {
   display: inline-block;

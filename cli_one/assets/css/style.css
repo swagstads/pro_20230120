@@ -589,7 +589,37 @@
 /*--------------------------------------------------------------
 # Product page - single product showcase page
 --------------------------------------------------------------*/
+.productpage-bredcrum{
+  position: absolute;
+  top: 90px;
+  left: 0;
+  right: 0;
+  margin: auto;
+  max-width: 1210px;
+  z-index: 800;
+  padding: 0 10px;
+}
 
+@media (max-width: 768px) {
+  .productpage-bredcrum {
+      max-width: 568px !important;
+  }            
+}
+@media (min-width: 768px) {
+  .productpage-bredcrum {
+      max-width: 768px !important;
+  }            
+}
+@media (min-width: 992px) {
+  .productpage-bredcrum {
+      max-width: 985px !important;
+  }            
+}
+@media (min-width: 1220px){
+  .productpage-bredcrum {
+      max-width: 1210px !important;
+  }
+}
 
 .productpage {
   /* position: relative; */
@@ -1547,7 +1577,7 @@ Modules - reusable parts of our design
 
 /* -------------------------------- 
 
-xheader 
+ ========== header ========== 
 
 -------------------------------- */
 header {
@@ -1592,7 +1622,9 @@ header {
     transform: scale(1);
   }
 }
-
+.navbar-icons{
+  padding: 0 2px  ;
+}
 #cd-hamburger-menu {
   left: 0;
 }

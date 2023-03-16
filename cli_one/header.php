@@ -293,7 +293,7 @@
                     </section>
                 </div>
                 <div class="velaHeaderRight col-xs-7 col-sm-6 col-md-3 ">
-                    <div class="header-search-icon " onclick="openSearchModal()">
+                    <div class="header-search-icon  navbar-icons" onclick="openSearchModal()">
                         <!-- search icon -->
                         <i class="icons nav-icons">
                             <svg   width="25px" height="25px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -302,10 +302,10 @@
                         </i>
                         <!-- search icon end -->
                     </div>
-                    <div class="header-admin-icon hide-on-mobile" style="display: flex; align-items: center;padding:3px 5px 0 5px ;">
+                    <div class="header-admin-icon hide-on-mobile navbar-icons" style="display: flex; align-items: center;">
                         <a href="https://goo.gl/maps/mGWpdoHE2XxLtBox7" target="_blank">
                             <!-- Maps svg icon -->
-                            <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" height="22px" width="22px" viewBox="0 50 400 500">
+                            <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" height="23px" width="23px" viewBox="0 0 400 600">
                                 <defs>
                                     <style>.cls-1{fill:none;stroke:#000;stroke-miterlimit:10;stroke-width:15px;}</style>
                                 </defs>
@@ -316,7 +316,7 @@
                         </a>&nbsp;
                         <!--<i class="icons nav-icons"></i>-->
                     </div>
-                    <div id="cd-cart-trigger" class="header-admin-icon" style="padding-left:10px; padding-top: 3px;">
+                    <div id="cd-cart-trigger" class="header-admin-icon  navbar-icons" style="padding-top: 0px;">
                         <!-- wishlist icon  -->
                         <a href>
                         <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" height="23px" width="23px" viewBox="00 -50 380 500">
@@ -334,7 +334,7 @@
                         </a>
                         <!--<i class="icons nav-icons"></i>-->
                     </div>
-                    <div class="velaCartTop" style="white-space: nowrap;">
+                    <div class="velaCartTop  navbar-icons" style="white-space: nowrap;">
                         <!-- <a href="cart.php" class="jsDrawerOpenRight d-flex"> -->
                         <a href="cart.php">
                             <i class="icons">
