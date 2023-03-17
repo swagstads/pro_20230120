@@ -29,8 +29,11 @@
                                 <?php
                                 if (isset($_GET['product'])) {
                                     echo $_GET['product'];
-                                } else {
+                                } else if (isset($_GET['category'])){
                                     echo ucfirst($_GET['category']);
+                                }
+                                else{
+                                    echo "Our Products";
                                 }
                                 ?>
                             </h1>
