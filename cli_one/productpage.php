@@ -19,10 +19,11 @@
                 </span>
                 /
                 <span>
-                    <a href="./">category</a>
+                    <a  id="breadcrum_category" href="./" >category</a>
                 </span>
+                /
                 <span>
-                    <a>Product</a>
+                    <a id="breadcrum_product_name">Product</a>
                 </span>
             </div>
             <div class="mainContent productpage" role="main">
@@ -38,12 +39,58 @@
                         <div class="img-choose" id="all_prod_images_container">
                             <!-- <img class="small-view-image" onclick="changeActiveImg(this.src)" src="./cdn.shopify.com/s/files/1/1573/5553/products/1-10ea2.jpg?v=1601694960" alt="">
                                 <img class="small-view-image" onclick="changeActiveImg(this.src)" src="./cdn.shopify.com/s/files/1/1573/5553/products/1_c14253f1-8cb5-4a88-921b-d3dbaffaaafa0ea2.jpg?v=1601694960" alt=""> -->
-
-
                         </div>
                     </div>
                 </div>
                 <script>
+                      $(document).ready(function() {
+                        var magnifyingGlass = $('.magnifying-glass');
+                        var image = $('#activeImage');
+                        
+                        // Load the full-sized image and set it as the background image of the magnifying glass
+                        var fullSizeImage = new Image();
+                        fullSizeImage.src = image.attr('src');
+                        $(fullSizeImage).on('load', function() {
+                            magnifyingGlass.css('background-image', 'url(' + fullSizeImage.src + ')');
+                        });
+                        
+                        image.mousemove(function(event) {
+                            // Calculate the position of the mouse relative to the image
+                            var posX = event.pageX - image.offset().left;
+                            var posY = event.pageY - image.offset().top;
+                            
+                            // Calculate the position of the magnifying glass relative to the image
+                            var glassPosX = posX - magnifyingGlass.width() / 2;
+                            var glassPosY = posY - magnifyingGlass.height() / 2;
+                            
+                            // Limit the movement of the magnifying glass to stay within the boundaries of the image
+                            if (glassPosX < 0) {
+                            glassPosX = 0;
+                            } else if (glassPosX > image.width() - magnifyingGlass.width()) {
+                            glassPosX = image.width() - magnifyingGlass.width();
+                            }
+                            
+                            if (glassPosY < 0) {
+                            glassPosY = 0;
+                            } else if (glassPosY > image.height() - magnifyingGlass.height()) {
+                            glassPosY = image.height() - magnifyingGlass.height();
+                            }
+                            
+                            // Move the magnifying glass to the current mouse position
+                            magnifyingGlass.css({
+                            'left': event.pageX - 200 + 'px',
+                            'top': event.pageY - 150 + 'px',
+                            'visibility': 'visible',
+                            'background-position': '-' + (posX) + 'px -' + (posY) + 'px'
+                            });
+                        });
+                        
+                        // Hide the magnifying glass when the mouse leaves the image
+                        image.mouseleave(function() {
+                            magnifyingGlass.css('visibility', 'hidden');
+                        });
+                    });
+
                     function changeActiveImg(sourceImg) {
                         var activeImg = document.getElementById("activeImage")
                         activeImg.src = sourceImg
@@ -51,10 +98,7 @@
                 </script>
                 <!-- Right Column -->
                 <div class="right-column">
-
-                    <!-- Product Configuration -->
-
-
+                    <div class="magnifying-glass"></div>
                     <!-- Product Description -->
                     <div class="product-description">
                         <span id="product_category"></span>
@@ -68,8 +112,10 @@
                     </div>
                     <!-- Product Pricing -->
                     <div class="product-price">
-                        <span id="product_our_price">Price : <span style="margin-left: 20px;">MRP &#8377;<span id="product_price"></span>
-                                <span class="incl-of-tax">(incl. of all taxes)</span></span>
+                        <span id="product_our_price">Price : 
+                            <span>&#8377;<span id="product_price"></span>
+                            <span class="product-mrp"><span id="product_mrp"></span></span>
+                            <span class="incl-of-tax">(incl. of all taxes)</span></span>
                         </span>
                     </div>
                     <!-- <div class="product-mrp">
@@ -78,7 +124,7 @@
                     <span class="product_overview"> Overview</span>
                     <p id="product_description" class="truncate-line-3"></p>
                     <div class="read-more-bttn-container">
-                        <button onclick="show_description(this)" class="read-more">Read more</button>
+                        <button id="read_more_bttn" onclick="show_description(this)" class="read-more">Read more</button>
                         <script>
                             function show_description(bttn){
                                 if(bttn.classList.contains("active")){
@@ -261,10 +307,13 @@
             <div class="more-products">
                 <?php include('./more-products.php') ?>
             </div>
-            
+        
+
         </main>
 
+
         <script>
+
             function fetch_product() {
                 console.log(" fetching product...");
                 var product_id = <?php echo $_GET['productid'] ?>;
@@ -298,11 +347,22 @@
                         // }
                         fetch_similar_products(return_data[0])
 
-                        $("#product_category").html(jsonData.response[0].category)
-                        $("#product_price").html(jsonData.response[0].price)
-                        $("#product_mrp").html(jsonData.response[0].mrp)
-                        $("#product_title").html(jsonData.response[0].title)
-                        $("#product_description").html(jsonData.response[0].description)
+                        $(document).ready(()=>{
+
+                        if(jsonData.response[0].description.lentgh <= 280){
+                            $("#read_more_bttn").hide()
+                        }
+
+                        // Chaange breadcrum text and href link to products category
+                        $("#breadcrum_category").text(jsonData.response[0].category_name).attr('href', '/products.php?category='+jsonData.response[0].category_name);
+                        
+                        // add product title description and price dynamically
+                        $("#breadcrum_product_name").text(jsonData.response[0].title)
+                        $("#product_title").text(jsonData.response[0].title)
+                        $("#product_description").text(jsonData.response[0].description)
+                        $("#product_price").text(jsonData.response[0].price)
+                        $("#product_mrp").html("&#8377;"+jsonData.response[0].mrp)
+                        })
 
 
 
