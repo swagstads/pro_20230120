@@ -30,7 +30,7 @@
                                 if (isset($_GET['product'])) {
                                     echo $_GET['product'];
                                 } else {
-                                    echo "Products";
+                                    echo ucfirst($_GET['category']);
                                 }
                                 ?>
                             </h1>
@@ -50,7 +50,7 @@
                                             if (isset($_GET['product'])) {?>
                                                 <a href="./products.php?category=<?php echo ucfirst($_GET['category'])?>"><?php echo ucfirst($_GET['category'])?><li class="active" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"></a><?php echo $_GET['product'];
                                             } else {
-                                                echo $_GET['product'];
+                                                echo ucfirst($_GET['category']);
                                             }
                                         } else {
                                             echo "Products";
