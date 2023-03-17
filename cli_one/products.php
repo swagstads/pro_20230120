@@ -45,10 +45,10 @@
                                 <li class="active" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
                                     <span itemprop="name">
                                         <?php
-                                        if (isset($_GET['product'])) {
+                                        if (isset($_GET['category'])) {
 
-                                            if (isset($_GET['category'])) {
-                                                echo $_GET['product'] . " - " . $_GET['category'];
+                                            if (isset($_GET['product'])) {?>
+                                                <a href="./products.php?category=<?php echo ucfirst($_GET['category'])?>"><?php echo ucfirst($_GET['category'])?><li class="active" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"></a><?php echo $_GET['product'];
                                             } else {
                                                 echo $_GET['product'];
                                             }
@@ -142,15 +142,16 @@
             const queryString = window.location.search;
             const urlParams = new URLSearchParams(queryString);
             // url params
-            const searched_product = urlParams.get('product');
-            const product_category = urlParams.get('category');
+            const category_name = urlParams.get('category');
+            const product_name = urlParams.get('product');
+
             // API to fetch data
             var api_url = './api/fetch_products.php';
             // form data -> sent to backend
             var form_data = {
                 "show_products": "yes",
-                "product_name": searched_product,
-                "product_category": product_category,
+                "category_name": category_name,
+                "product_name": product_name,
                 "user_id": localStorage.getItem('user_id')
             };
             // Ajax call to API 

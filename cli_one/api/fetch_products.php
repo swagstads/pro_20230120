@@ -13,26 +13,29 @@ $data = array();
 $prod_images = array();
 
 if (isset($_POST['show_products'])) {
-    $searched_product = "%".strtolower($_POST['product_name'])."%";
+    $category_name = "%".strtolower($_POST['category_name'])."%";
 
-    if( strlen($_POST['product_category']) >= 1 ){
-            $searched_category = "%".strtolower($_POST['product_category'])."%";
+    if( strlen($_POST['product_name']) >= 1 ){
+            $search_product = "%".strtolower($_POST['product_name'])."%";
         
             $stmt = $dbh->prepare(" SELECT *,p.id AS prod_id FROM product p JOIN category c ON FIND_IN_SET(c.id, p.category_id)  
                                     WHERE  
-                                    LOWER(category_name) LIKE :searched_product 
+                                    LOWER(category_name) LIKE :category_name 
                                     AND
-                                    LOWER(title) LIKE :searched_category");
-            $stmt->bindParam(':searched_product', $searched_product, PDO::PARAM_STR);
-            $stmt->bindParam(':searched_category', $searched_category, PDO::PARAM_STR);
+                                    ( LOWER(title) LIKE :search_product
+                                    OR LOWER(description) LIKE :search_product )");
+            $stmt->bindParam(':category_name', $category_name, PDO::PARAM_STR);
+            $stmt->bindParam(':search_product', $search_product, PDO::PARAM_STR);
     }
-    else{
-        
+    else{    
         $stmt = $dbh->prepare(' SELECT *,p.id AS prod_id FROM product p JOIN category c ON FIND_IN_SET(c.id, p.category_id)
                                 WHERE  
-                                LOWER(category_name) LIKE :searched_product OR LOWER(title) LIKE :searched_product OR LOWER(description) LIKE :searched_product ');
+                                LOWER(category_name) LIKE :category_name 
+                                OR LOWER(title) LIKE :search_product 
+                                OR LOWER(description) LIKE :search_product ');
     
-        $stmt->bindParam(':searched_product', $searched_product, PDO::PARAM_STR);
+        $stmt->bindParam(':search_product', $search_product, PDO::PARAM_STR);
+        $stmt->bindParam(':category_name', $category_name, PDO::PARAM_STR);
     }
     $stmt->execute();
     $count = $stmt->rowCount();
