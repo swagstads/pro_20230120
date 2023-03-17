@@ -21,8 +21,8 @@
     type="text/javascript"></script>
 <script src="./cdn.shopify.com/s/files/1/1573/5553/t/43/assets/vendor93dd.js?v=138786516400658099071617237749"
     type="text/javascript"></script>
-<script src="./cdn.shopify.com/s/files/1/1573/5553/t/43/assets/vela_ajaxcart7578.js?v=53329818851908209301618026644"
-    type="text/javascript"></script>
+<!-- <script src="./cdn.shopify.com/s/files/1/1573/5553/t/43/assets/vela_ajaxcart7578.js?v=53329818851908209301618026644"
+    type="text/javascript"></script> -->
 <script src="./cdn.shopify.com/s/files/1/1573/5553/t/43/assets/lazysizes.min0a9f.js?v=153772683470722238621617237743"
     async="async"></script>
 <script src="./cdn.shopify.com/s/files/1/1573/5553/t/43/assets/vela755f.js?" type="text/javascript"></script>

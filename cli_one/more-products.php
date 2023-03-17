@@ -122,7 +122,7 @@
         }, 5000);
 
         function addToCart(product_id){
-                var quantity = 1;
+                var quantity = $("#prod_qnty_inp").val() || 1;
                 api_url = "./api/add_to_cart.php";
                 var form_data = { "add_to_cart": "add" , "productid": product_id,'quantity': quantity};
                 $.ajax({

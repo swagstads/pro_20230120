@@ -33,9 +33,12 @@
                 <div class="col-xs-12 col-sm-5 col-md-5">
                     <div class="vela-contactinfo velaBlock">
                         <div class="vela-content">
-                            <div class="contactinfo-logo clearfix">
+                            <div class="contactinfo-logo logo-container clearfix">
                                 <div itemscope itemtype="http://schema.org/Organization">
                                     <a href="index.php" itemprop="url" class="velaLogoLink" style="width: 50px"><img class="img-responsive" src="assets/images/logo1.jpg" alt="AtoZ" /></a>
+                                </div>
+                                <div class="near-logo-text">
+                                    Someone please replace me.
                                 </div>
                             </div>
 
@@ -44,9 +47,7 @@
                                 module. It’s extremely customizable, easy to use and
                                 fully responsive and retina ready.
                             </div> -->
-                            <div class="contactinfo-address clearfix" style="padding-left: 0px;">
-                                Someone please replace me.
-                            </div>
+            
 
                             <div class="contactinfo-address clearfix">
                                 <i class="icons">

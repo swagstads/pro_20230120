@@ -115,15 +115,15 @@
                                                             '</div>' +
                                                             '</div>' +
                                                             '<div class="quantity-container">Quantity' +
-                                                            '<div class="ordered-quantity">' +
-                                                            '<span class="input-number-decrement"' +
-                                                            'onclick="decrease_quantity(' + return_data[i].prod_id_ + ',' + return_data[i].required_quantity + ',' + return_data[i].product_quantity + ')" >-</span>' +
-                                                            '<span style="border:1px solid rgba(55,55,55,0.4); padding:9px 10px">' + return_data[i].required_quantity + '</span>' +
-                                                            // '<input class="input-number"'+
-                                                            //     'id="'+input_id+'" type="" value="'+return_data[i].required_quantity+'" min="1" max="'+return_data[i].required_quantity+'">'+
-                                                            '<span class="input-number-increment"' +
-                                                            'onclick="increase_quantity(' + return_data[i].prod_id_ + ',' + return_data[i].required_quantity + ',' + return_data[i].product_quantity + ')" >+</span>' +
-                                                            '</div>' +
+                                                            '<div class="manipulate-quantity-container justify-content-center ordered-quantity">' +
+                                                                '<span class="input-number-decrement"' +
+                                                                'onclick="decrease_quantity(' + return_data[i].prod_id_ + ',' + return_data[i].required_quantity + ',' + return_data[i].product_quantity + ')" >-</span>' +
+                                                                '<span  id="prod_qnty_show" >' + return_data[i].required_quantity + '</span>' +
+                                                                // '<input class="input-number"'+
+                                                                //     'id="'+input_id+'" type="" value="'+return_data[i].required_quantity+'" min="1" max="'+return_data[i].required_quantity+'">'+
+                                                                '<span class="input-number-increment"' +
+                                                                'onclick="increase_quantity(' + return_data[i].prod_id_ + ',' + return_data[i].required_quantity + ',' + return_data[i].product_quantity + ')" >+</span>' +
+                                                                '</div>' +
                                                             '</div>' +
                                                             '<div class="price">' + return_data[i].prod_id_ +
                                                             'Amount: &nbsp;<h4>&#8377;<span id="total_product_amount"">' + (amount) + '<span></h4>' +
@@ -525,21 +525,7 @@
                                         </div>
 
                                     <?php
-                                    } else {
-                                        // echo "<div class='cartEmptyContent'>
-                                        //         <p class='cartEmpty'>Your cart is currently empty.</p>
-                                        //         <p>
-                                        //             Before proceed to checkout you must add some products to
-                                        //             your shopping cart.<br />
-                                        //             You will find a lot of interesting products on our
-                                        //             Website.
-                                        //         </p>
-                                        //         <p>
-                                        //             <a class='btn btnVelaOne' href='./index.php' title='Go to Shopping'>Go
-                                        //                 to Shopping</a>
-                                        //         </p>
-                                        //     </div>";
-                                    }
+                                    } 
                                     ?>
 
                                     <div class='cartEmptyContent' id="cartEmptyContent">
@@ -551,7 +537,7 @@
                                             Website.
                                         </p>
                                         <p>
-                                            <a class='btn btnVelaOne' href='./collections.php' title='Go to Shopping'>Go to Shopping</a>
+                                            <a class='btn btnVelaOne' href='./products.php' title='Go to Shopping'>Go to Shopping</a>
                                         </p>
                                     </div>
 

@@ -14,20 +14,49 @@
         </div>
         <main>
             <div class="productpage-bredcrum">
-                <span>
-                    <a href="./">Home</a>
-                </span>
-                /
-                <span>
-                    <a  id="breadcrum_category" href="./" >category</a>
-                </span>
-                /
-                <span>
-                    <a id="breadcrum_product_name">Product</a>
-                </span>
-                <meta itemprop="position" content="2" />
-                    </li>
-                </ol>
+                <div>
+                    <span>
+                        <a href="./">Home</a>
+                    </span>
+                    /
+                    <span>
+                        <a  id="breadcrum_category" href="./" >category</a>
+                    </span>
+                    /
+                    <span>
+                        <a id="breadcrum_product_name">Product</a>
+                    </span>
+                </div>
+                <div>
+                    <span>
+                        Use code <span class="copon-code" title="Click to cpoy" data-clipboard-text="AToZ"> AToZ </span> to get 10% discount.
+                        <script>
+                            $(document).ready(()=>{
+                                $(".copon-code").click(function() {
+                                    // Get the text to copy from the data attribute
+                                    var text = $(this).attr("data-clipboard-text");
+                                    
+                                    // Create a temporary input element
+                                    var $input = $("<input>")
+                                        .attr("type", "text")
+                                        .attr("value", text)
+                                        .appendTo("body")
+                                        .css("position", "fixed")
+                                        .css("opacity", "0");
+                                    
+                                    // Select the text in the input element
+                                    $input[0].select();
+                                    
+                                    // Copy the selected text to the clipboard
+                                    document.execCommand("copy");
+                                    show_msg("Coupon code copied to clipboard")
+                                    // Remove the temporary input element
+                                    $input.remove();
+                                });
+                            })
+                        </script>
+                    </span>
+                </div>
             </div>
             <div class="mainContent productpage" role="main">
                 <!-- Left Column / Headphones Image -->
@@ -121,9 +150,19 @@
                             <span class="incl-of-tax">(incl. of all taxes)</span></span>
                         </span>
                     </div>
-                    <!-- <div class="product-mrp">
-                <span class="product-price"> <span id="product_our_price" > Previously: </span></span><span style="margin-left: 20px;">&#8377; <span id="product_mrp"></span></span>
-                </div> -->
+                    <br>
+                    <div class="manipulate-quantity-container">
+                        <span class="input-number-decrement" onclick="product_quantity().decrease()">-</span>  
+
+                        <span id="prod_qnty_show" >1</span>
+                        <input type="hidden" id="prod_qnty_inp" min="1" max="" value="1"> 
+
+                        <span class="input-number-increment" onclick="product_quantity().increase()">+</span> 
+                    </div>
+                    <div class="out-of-stock-mssge">
+                        <span>Out of stock</span>
+                    </div>
+
                     <span class="product_overview"> Overview</span>
                     <p id="product_description" class="truncate-line-3"></p>
                     <div class="read-more-bttn-container">
@@ -352,19 +391,31 @@
 
                         $(document).ready(()=>{
 
-                        if(jsonData.response[0].description.lentgh <= 280){
-                            $("#read_more_bttn").hide()
-                        }
+                            product_qnty = return_data[0].product_quantity;
+                            if(product_qnty != 0){
+                                $("#prod_qnty_inp").attr("max",product_qnty)
+                                $(".out-of-stock-mssge").hide()
+                            }
+                            else{
+                                $(".manipulate-quantity-container").hide()
+                                $(".out-of-stock-mssge").show()
+                            }
 
-                        // Chaange breadcrum text and href link to products category
-                        $("#breadcrum_category").text(jsonData.response[0].category_name).attr('href', '/products.php?category='+jsonData.response[0].category_name);
-                        
-                        // add product title description and price dynamically
-                        $("#breadcrum_product_name").text(jsonData.response[0].title)
-                        $("#product_title").text(jsonData.response[0].title)
-                        $("#product_description").text(jsonData.response[0].description)
-                        $("#product_price").text(jsonData.response[0].price)
-                        $("#product_mrp").html("&#8377;"+jsonData.response[0].mrp)
+
+                            if(jsonData.response[0].description.length <= 280){
+                                $("#read_more_bttn").hide()
+                            }
+
+                            // Chaange breadcrum text and href link to products category
+                            $("#breadcrum_category").text(jsonData.response[0].category_name).attr('href', '/products.php?category='+jsonData.response[0].category_name);
+                            
+                            // add product title description and price dynamically
+                            $("#breadcrum_product_name").text(jsonData.response[0].title)
+                            $("#product_title").text(jsonData.response[0].title)
+                            $("#product_description").text(jsonData.response[0].description)
+                            $("#product_price").text(jsonData.response[0].price)
+                            $("#product_mrp").html("&#8377;"+jsonData.response[0].mrp)
+                            
                         })
 
 
@@ -411,8 +462,40 @@
 
     <?php include('footer_links.php'); ?>
     <script src="js/main.js?key=<?= date('is') ?>" type="text/javascript"></script>
+
     <script>
-        get_cat();
+
+    function product_quantity(){
+        qnty_val = $("#prod_qnty_inp").val();
+        max_qnty = $("#prod_qnty_inp").attr("max");
+        function increase(){
+            qnty_val = parseInt(qnty_val) + 1
+            if(qnty_val <= max_qnty){
+                $("#prod_qnty_inp").val(qnty_val)
+                $("#prod_qnty_show").text(qnty_val)
+            }
+            else{
+                show_msg("Stock not available")
+            }
+        }
+
+        function decrease(){
+            qnty_val = parseInt(qnty_val) - 1
+            if(qnty_val > 0){
+                $("#prod_qnty_inp").val(qnty_val)
+                $("#prod_qnty_show").text(qnty_val)
+
+            }
+            else{
+                show_msg("Quantity cannot be 0")
+            }
+        }
+
+        return{
+            increase : increase,
+            decrease : decrease
+        }
+    }
     </script>
 
 </body>

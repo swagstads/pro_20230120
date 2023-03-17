@@ -13530,6 +13530,14 @@ button:active:focus,
   color: var(--vela-footer-textcolor);
   background-color: var(--vela-footer-bgcolor);
 }
+#velaFooter .logo-container{
+  display: flex;
+  align-items: center;
+} 
+#velaFooter .near-logo-text{
+  padding: 0 10px;
+  margin: 0;
+}
 #velaFooter .footerTop {
   background-color: var(--vela-body-bg);
 }
