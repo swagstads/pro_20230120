@@ -127,6 +127,28 @@ function addToWishlist(product_id){
 }
 
 
+function instant_checkout(product_id){
+	var quantity = 1;
+	api_url = "./api/instant_checkout.php";
+	// console.log("adding to cart: pro id,", product_id);
+	var form_data = { "instant_checkout": "add" , "productid": product_id,'quantity': quantity};
+	console.log(form_data);
+	$.ajax({
+			url: api_url,
+			type: 'POST',
+			data: form_data,
+			success: function (returned_data) {
+				var jsonData = JSON.parse(returned_data);
+				var return_data = jsonData.response;
+				console.log(return_data);
+				show_msg(return_data[0].message)
+			}
+	})
+	console.log(product_id,"Added to cart");
+	$( "#cd-cart" ).load(document.URL + " #cd-cart>*" );
+	cart_count()
+}
+
 function addToCart(product_id){
 	var quantity = 1;
 	api_url = "./api/add_to_cart.php";

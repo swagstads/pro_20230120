@@ -20,7 +20,7 @@
                     </span>
                     /
                     <span>
-                        <a  id="breadcrum_category" href="./" >category</a>
+                        <a id="breadcrum_category" href="./">category</a>
                     </span>
                     /
                     <span>
@@ -31,11 +31,11 @@
                     <span>
                         Use code <span class="copon-code" title="Click to cpoy" data-clipboard-text="AToZ"> AToZ </span> to get 10% discount.
                         <script>
-                            $(document).ready(()=>{
+                            $(document).ready(() => {
                                 $(".copon-code").click(function() {
                                     // Get the text to copy from the data attribute
                                     var text = $(this).attr("data-clipboard-text");
-                                    
+
                                     // Create a temporary input element
                                     var $input = $("<input>")
                                         .attr("type", "text")
@@ -43,10 +43,10 @@
                                         .appendTo("body")
                                         .css("position", "fixed")
                                         .css("opacity", "0");
-                                    
+
                                     // Select the text in the input element
                                     $input[0].select();
-                                    
+
                                     // Copy the selected text to the clipboard
                                     document.execCommand("copy");
                                     show_msg("Coupon code copied to clipboard")
@@ -75,48 +75,48 @@
                     </div>
                 </div>
                 <script>
-                      $(document).ready(function() {
+                    $(document).ready(function() {
                         var magnifyingGlass = $('.magnifying-glass');
                         var image = $('#activeImage');
-                        
+
                         // Load the full-sized image and set it as the background image of the magnifying glass
                         var fullSizeImage = new Image();
                         fullSizeImage.src = image.attr('src');
                         $(fullSizeImage).on('load', function() {
                             magnifyingGlass.css('background-image', 'url(' + fullSizeImage.src + ')');
                         });
-                        
+
                         image.mousemove(function(event) {
                             // Calculate the position of the mouse relative to the image
                             var posX = event.pageX - image.offset().left;
                             var posY = event.pageY - image.offset().top;
-                            
+
                             // Calculate the position of the magnifying glass relative to the image
                             var glassPosX = posX - magnifyingGlass.width() / 2;
                             var glassPosY = posY - magnifyingGlass.height() / 2;
-                            
+
                             // Limit the movement of the magnifying glass to stay within the boundaries of the image
                             if (glassPosX < 0) {
-                            glassPosX = 0;
+                                glassPosX = 0;
                             } else if (glassPosX > image.width() - magnifyingGlass.width()) {
-                            glassPosX = image.width() - magnifyingGlass.width();
+                                glassPosX = image.width() - magnifyingGlass.width();
                             }
-                            
+
                             if (glassPosY < 0) {
-                            glassPosY = 0;
+                                glassPosY = 0;
                             } else if (glassPosY > image.height() - magnifyingGlass.height()) {
-                            glassPosY = image.height() - magnifyingGlass.height();
+                                glassPosY = image.height() - magnifyingGlass.height();
                             }
-                            
+
                             // Move the magnifying glass to the current mouse position
                             magnifyingGlass.css({
-                            'left': event.pageX - 200 + 'px',
-                            'top': event.pageY - 150 + 'px',
-                            'visibility': 'visible',
-                            'background-position': '-' + (posX) + 'px -' + (posY) + 'px'
+                                'left': event.pageX - 200 + 'px',
+                                'top': event.pageY - 150 + 'px',
+                                'visibility': 'visible',
+                                'background-position': '-' + (posX) + 'px -' + (posY) + 'px'
                             });
                         });
-                        
+
                         // Hide the magnifying glass when the mouse leaves the image
                         image.mouseleave(function() {
                             magnifyingGlass.css('visibility', 'hidden');
@@ -144,20 +144,20 @@
                     </div>
                     <!-- Product Pricing -->
                     <div class="product-price">
-                        <span id="product_our_price">Price : 
+                        <span id="product_our_price">Price :
                             <span>&#8377;<span id="product_price"></span>
-                            <span class="product-mrp"><span id="product_mrp"></span></span>
-                            <span class="incl-of-tax">(incl. of all taxes)</span></span>
+                                <span class="product-mrp"><span id="product_mrp"></span></span>
+                                <span class="incl-of-tax">(incl. of all taxes)</span></span>
                         </span>
                     </div>
                     <br>
                     <div class="manipulate-quantity-container">
-                        <span class="input-number-decrement" onclick="product_quantity().decrease()">-</span>  
+                        <span class="input-number-decrement" onclick="product_quantity().decrease()">-</span>
 
-                        <span id="prod_qnty_show" >1</span>
-                        <input type="hidden" id="prod_qnty_inp" min="1" max="" value="1"> 
+                        <span id="prod_qnty_show">1</span>
+                        <input type="hidden" id="prod_qnty_inp" min="1" max="" value="1">
 
-                        <span class="input-number-increment" onclick="product_quantity().increase()">+</span> 
+                        <span class="input-number-increment" onclick="product_quantity().increase()">+</span>
                     </div>
                     <div class="out-of-stock-mssge">
                         <span>Out of stock</span>
@@ -185,6 +185,7 @@
                     <div class="add-to-bttns">
                         <button onclick="addToCart( <?php echo $_GET['productid'] ?> )" class="cart-btn">Add to cart</button>
                         <button onclick="addToWishlist( <?php echo $_GET['productid'] ?> )" class="wish-btn">Add to wishlist</button>
+                        <button id="checkout_bttn" onclick="instant_checkout( <?php echo $_GET['productid'] ?> )" class="checkout-btn">Buy Now</button>
                     </div>
                     <div class="social-media-share-links">
                         <div>
@@ -192,8 +193,8 @@
                         </div>
                         <div class="share-buttons">
                             <a href="#" title="Whatsapp" class="share-btn whatsapp-btn"><i class="fa fa-whatsapp"></i></a>
-                            <a href="#" title="Instagram" class="share-btn insta-btn"><i class="fa fa-instagram"></i></a>
-                            <a href="#" title="Facebook" class="share-btn fb-btn"><i class="fa fa-facebook"></i></a>
+                            <!-- <a href="#" title="Instagram" class="share-btn insta-btn"><i class="fa fa-instagram"></i></a> -->
+                            <!-- <a href="#" title="Facebook" class="share-btn fb-btn"><i class="fa fa-facebook"></i></a> -->
                             <a href="#" title="Copy to clipboard" class="share-btn copy-btn"><i class="fa fa-copy"></i></a>
                             <!-- Add more social media buttons here -->
                         </div>
@@ -339,17 +340,20 @@
             </div>
 
 
-            <div class="trending-products">
-                <?php include('./trending_products.php') ?>
+            <!-- <div class="trending-products">
+                <?php //include('./trending_products.php') 
+                ?>
             </div>
 
             <div class="best-seller">
-                <?php include('./best_seller.php') ?>
+                <?php //include('./best_seller.php') 
+                ?>
             </div>
 
             <div class="more-products">
-                <?php include('./more-products.php') ?>
-            </div>
+                <?php //include('./more-products.php') 
+                ?>
+            </div> -->
 
         </main>
 
@@ -389,33 +393,32 @@
                         // }
                         fetch_similar_products(return_data[0])
 
-                        $(document).ready(()=>{
+                        $(document).ready(() => {
 
                             product_qnty = return_data[0].product_quantity;
-                            if(product_qnty != 0){
-                                $("#prod_qnty_inp").attr("max",product_qnty)
+                            if (product_qnty != 0) {
+                                $("#prod_qnty_inp").attr("max", product_qnty)
                                 $(".out-of-stock-mssge").hide()
-                            }
-                            else{
+                            } else {
                                 $(".manipulate-quantity-container").hide()
                                 $(".out-of-stock-mssge").show()
                             }
 
 
-                            if(jsonData.response[0].description.length <= 280){
+                            if (jsonData.response[0].description.length <= 280) {
                                 $("#read_more_bttn").hide()
                             }
 
                             // Chaange breadcrum text and href link to products category
-                            $("#breadcrum_category").text(jsonData.response[0].category_name).attr('href', '/products.php?category='+jsonData.response[0].category_name);
-                            
+                            $("#breadcrum_category").text(jsonData.response[0].category_name).attr('href', '/products.php?category=' + jsonData.response[0].category_name);
+
                             // add product title description and price dynamically
                             $("#breadcrum_product_name").text(jsonData.response[0].title)
                             $("#product_title").text(jsonData.response[0].title)
                             $("#product_description").text(jsonData.response[0].description)
                             $("#product_price").text(jsonData.response[0].price)
-                            $("#product_mrp").html("&#8377;"+jsonData.response[0].mrp)
-                            
+                            $("#product_mrp").html("&#8377;" + jsonData.response[0].mrp)
+
                         })
 
 
@@ -464,38 +467,36 @@
     <script src="js/main.js?key=<?= date('is') ?>" type="text/javascript"></script>
 
     <script>
+        function product_quantity() {
+            qnty_val = $("#prod_qnty_inp").val();
+            max_qnty = $("#prod_qnty_inp").attr("max");
 
-    function product_quantity(){
-        qnty_val = $("#prod_qnty_inp").val();
-        max_qnty = $("#prod_qnty_inp").attr("max");
-        function increase(){
-            qnty_val = parseInt(qnty_val) + 1
-            if(qnty_val <= max_qnty){
-                $("#prod_qnty_inp").val(qnty_val)
-                $("#prod_qnty_show").text(qnty_val)
+            function increase() {
+                qnty_val = parseInt(qnty_val) + 1
+                if (qnty_val <= max_qnty) {
+                    $("#prod_qnty_inp").val(qnty_val)
+                    $("#prod_qnty_show").text(qnty_val)
+                } else {
+                    show_msg("Stock not available")
+                }
             }
-            else{
-                show_msg("Stock not available")
+
+            function decrease() {
+                qnty_val = parseInt(qnty_val) - 1
+                if (qnty_val > 0) {
+                    $("#prod_qnty_inp").val(qnty_val)
+                    $("#prod_qnty_show").text(qnty_val)
+
+                } else {
+                    show_msg("Quantity cannot be 0")
+                }
+            }
+
+            return {
+                increase: increase,
+                decrease: decrease
             }
         }
-
-        function decrease(){
-            qnty_val = parseInt(qnty_val) - 1
-            if(qnty_val > 0){
-                $("#prod_qnty_inp").val(qnty_val)
-                $("#prod_qnty_show").text(qnty_val)
-
-            }
-            else{
-                show_msg("Quantity cannot be 0")
-            }
-        }
-
-        return{
-            increase : increase,
-            decrease : decrease
-        }
-    }
     </script>
 
 </body>
