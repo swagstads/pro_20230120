@@ -2269,6 +2269,29 @@ Quantity Button
 }
 
 
+/* New Arrivals */
+.new-arrivals-product-slider{
+  animation: productScrollerFromRight 100s linear infinite;
+}
+.new-arrivals-scrolling-div:hover .new-arrivals-product-slider{
+  animation-play-state: paused;
+}
+.new-arrivals-scrolling-div{
+  transform: translateX(0);
+  position: relative;
+}
+@keyframes productScrollerFromRight {
+  0%{
+      transform: translateX(100px);
+  }
+  50%{
+      transform: translateX(calc(-270px * 5));
+  }
+  100%{
+      transform: translateX(100px);
+  }
+}
+
 /* ======== General CSS ======== */
 
 @media (max-width: 991px) {

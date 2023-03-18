@@ -99,7 +99,8 @@
 
                                                         amount_arr.push(amount)
 
-                                                        $(".cart-product-container").append('<div class="cart-product-container-row">' +
+                                                        $(".cart-product-container").append(
+                                                            '<div class="cart-product-container-row">' +
                                                             '<div class="left">' +
                                                             '<div class="image">' +
                                                             '<img src="./admin_panel/uploads/products/' + return_data[i].image_name + '"  alt="" srcset="">' +
@@ -134,7 +135,8 @@
                                                             '</a>' +
                                                             '</div>' +
                                                             '</div>' +
-                                                            '</div>')
+                                                            '</div>'
+                                                            )
                                                         total_amount = Math.round(amount_arr.reduce((accumulator, currentValue) => accumulator + currentValue, 0) * 100) / 100
                                                         console.log(...amount_arr, "=>", total_amount);
                                                         $("#total_amount").text(total_amount)

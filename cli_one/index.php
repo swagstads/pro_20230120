@@ -247,6 +247,10 @@
             </div>
 
             <div class="trending-products">
+                <?php include('./new_arrivals.php') ?>
+            </div>
+
+            <div class="trending-products">
                 <?php include('./trending_products.php') ?>
             </div>
 
