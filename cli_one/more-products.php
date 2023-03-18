@@ -122,7 +122,7 @@
             } else {
                 container.scrollLeft(scrollLeft - productWidth);
             }
-        }
+        } 
         function productSliderScrollRightMP() {
             const container = $('.more-producst-scroll');
             const containerWidth = container.width();

@@ -8,40 +8,56 @@
   <head>
     <?php include('header_links.php'); ?>
 </head>
-</head>
+
+<style>
+    .product-slider{
+        animation: productScrollerFromRight 100s linear infinite;
+    }
+    .trending-products-scrolling-div:hover .product-slider{
+        animation-play-state: paused;
+    }
+    .trending-products-scrolling-div{
+        transform: translateX(0);
+        position: relative;
+    }
+    @keyframes productScrollerFromRight {
+        0%{
+            transform: translateX(100px);
+        }
+        50%{
+            transform: translateX(calc(-270px * 5));
+        }
+        100%{
+            transform: translateX(100px);
+        }
+    }
+</style>
+
 <body>
 <div id="shopify-section-vela-header" class="shopify-section">
     <header id="header" class="velaHeader">
         <?php include('./header.php'); ?>
     </header>
 </div>
-<div id="shopify-section-1600942005808" class="shopify-section velaFramework">
+<div id="shopify-section-1600942005808" class="shopify-section velaFramework" style="position:relative; margin-top:100px">
                 <div class="productListHome velaProducts mbBlockGutter"
-                    style="background-color: rgba(0, 0, 0, 0); padding: 40px 0 45px">
+                    style="background-color: rgba(0, 0, 0, 0); padding: 20px 0 25px">
                     <div class="container">
                         <div class="sectionInner">
                             <div class="headingGroup pb20">
                                 <h3 class="velaHomeTitle text-center">
-                                    <span>Best Sellers</span>
+                                    <span>New Arrivals</span>
                                 </h3>
                                 <!-- <span class="subTitle">
                                     Mirum est notare quam littera gothica quam nunc putamus  parum claram!
                                 </span> -->
                             </div>
                             <div class="product-slider-container">
-
-                                <div  class="left-arrow scrolling-arrow"> <span onclick="productSliderScrollLeftBS()" ><</span> </div>
-
-                                <div class="best-seller-products scrolling-products">
+                                <div class="trending-products-scrolling-div scrolling-products" id="product-container">
                                     
                                         <!-- Products -->
 
-
                                 </div>
-
-
-                                <div class="right-arrow scrolling-arrow"> <span  onclick="productSliderScrollRightBS()" >></span> </div>
-
                             </div>
 
                             
@@ -56,7 +72,7 @@
             const queryString = window.location.search;
             const urlParams = new URLSearchParams(queryString);
             var searched_product = urlParams.get('category') || "all"
-            var api_url_best_seller = './api/best_sellers.php';
+            var api_url_best_seller = './api/new_arrivals.php';
             var form_data = { "show_products": searched_product, "user_id": localStorage.getItem('user_id') };
             $.ajax({
                 url: api_url_best_seller,
@@ -73,16 +89,16 @@
                             
                             let outOfStockMessage = "";
                             let inStockMessage="";
-                            if(return_data[i].product_quantity === 0){
+                            if(return_data[i].product_quantity == 0){
                                 outOfStockMessage = "Out of Stock";
                             }
-                            else if(return_data[i].product_quantity <= 5){
-                                inStockMessage = "only " + return_data[i].product_quantity + " left" 
-                            }
+                            // else if(return_data[i].product_quantity <= 5){
+                            //     inStockMessage = "only " + return_data[i].product_quantity + " left" 
+                            // }
                             else{
                                 inStockMessage = "In Stock"
                             }
-                            $('.best-seller-products').append(
+                            $('.trending-products-scrolling-div').append(
                                 '<div class="product-slider">'+
                                     '<a onclick="increase_click_count('+return_data[i].prod_id+')"  href="./productpage.php?productid='+return_data[i].prod_id+'" >'+
                                         '<div class="product-image">'+
@@ -101,7 +117,7 @@
                                         '<div class="product-price">'+
                                             '<div class="price-container">'+
                                                 '<div class="our-price" style="height: 25px">'+
-                                                    '&#8377;'+return_data[i].price+' &nbsp;'+
+                                                    '&#8377;'+return_data[i].price+
                                                 '</div>'+
                                                 '<div class="product-mrp">'+
                                                     '<small>&#8377; '+return_data[i].mrp+'</small>'+
@@ -119,6 +135,8 @@
                                 '</div>'
                             )
                         }
+                        
+                        $( ".trending-products-scrolling-div" ).clone().prepend( ".trending-products-scrolling-div" );
                     }
                     else{
                         // console.log("Nothing");
@@ -127,50 +145,16 @@
             })
         }
         fetchProduct();
+        var productContainer = document.getElementById("product-container");
+        productContainer.addEventListener("animationiteration", function() {
+            // Get the first product element
+            var firstProduct = productContainer.firstElementChild;
+
+            // Move the first product element to the end of the list
+            productContainer.appendChild(firstProduct);
+        });
 
 
-      function productSliderScrollRightBS() {
-        const container = $('.best-seller-products');
-        const scrollAmount = 270;
-        const containerWidth = container.width();
-        const scrollAmt = container.scrollLeft()
-        console.log(containerWidth, scrollAmt ,  container.scrollLeft() + scrollAmount);
-        container.animate({scrollLeft: container.scrollLeft() + scrollAmount}, 100);
-}
-
-function productSliderScrollLeftBS() {
-    const container = $('.best-seller-products');
-    const scrollAmount = 270;
-    const containerWidth = container.prop('scrollWidth');;
-    const scrollAmt = container.scrollLeft()
-    console.log(containerWidth, scrollAmt ,containerWidth - container.scrollLeft() - container.outerWidth() );
-    if(scrollAmt < container.scrollLeft() + scrollAmount )
-
-    container.animate({scrollLeft: container.scrollLeft() - scrollAmount}, 100);
-}
-
-let automatic_scroll;
-
-function startAutomaticScroll() {
-    automatic_scroll = setInterval(function() {
-        productSliderScrollRightBS();
-    }, 5000);
-}
-
-function stopAutomaticScroll() {
-    clearInterval(automatic_scroll);
-}
-
-$('.product-slider-container').on({
-    mouseenter: function() {
-        stopAutomaticScroll();
-    },
-    mouseleave: function() {
-        startAutomaticScroll();
-    }
-});
-
-startAutomaticScroll();
 
 
         function addToCart(product_id){
@@ -192,7 +176,8 @@ startAutomaticScroll();
 
 </script>
 
-   <div id="shopify-section-vela-footer" class="shopify-section">
+
+<div id="shopify-section-vela-footer" class="shopify-section">
         <footer id="velaFooter">
             <?php include('footer.php'); ?>
         </footer>
@@ -200,5 +185,6 @@ startAutomaticScroll();
     </div>
 
     <?php include('footer_links.php'); ?>
+
 </body>
 </html>
