@@ -64,7 +64,7 @@ if(isset($_SESSION['user_id'])){
                 c.id AS cart_id, 
                 p.quantity AS product_quantity 
                 FROM cart c JOIN product p ON c.product_id = p.id 
-                WHERE cart_id=:cart_id AND c.status = 'instant_checkout'";
+                WHERE c.id=:cart_id AND c.status = 'instant_checkout'";
     
         $stmt = $dbh->prepare($sql);
         $stmt->bindParam(':cart_id', $cart_id, PDO::PARAM_STR);
@@ -99,6 +99,8 @@ if(isset($_SESSION['user_id'])){
                 echo json_encode($response);
             }
         }
+        array_push($response["response"], $data);
+        echo json_encode($response);
     }    
     else{
         $data["status"] = "ok";

@@ -145,7 +145,7 @@ function addToWishlist(product_id){
 // 			}
 // 	})
 // 	console.log(product_id,"Instant Checkout");
-// 	// $( "#cd-cart" ).load(document.URL + " #cd-cart>*" );
+// 	$( "#cd-cart" ).load(document.URL + " #cd-cart>*" );
 // }
 
 // function fetch_instant_checkout(cart_id){

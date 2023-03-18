@@ -188,7 +188,7 @@
                     <div class="add-to-bttns">
                         <button onclick="addToCart( <?php echo $_GET['productid'] ?> )" class="cart-btn">Add to cart</button>
                         <button onclick="addToWishlist( <?php echo $_GET['productid'] ?> )" class="wish-btn">Add to wishlist</button>
-                        <!-- <button onclick="instant_checkout( <?php // echo $_GET['productid'] ?> )" class="wish-btn" id="checkout_bttn">Buy Now</button> -->
+                        <!-- <button onclick="instant_checkout( <?php //echo $_GET['productid'] ?> )" class="wish-btn" id="checkout_bttn">Buy Now</button> -->
                     </div>
                     <div class="social-media-share-links">
                         <div>
