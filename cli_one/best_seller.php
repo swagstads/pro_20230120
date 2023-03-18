@@ -111,16 +111,43 @@
         }
         fetchProduct();
 
-        function productSliderScrollLeftBS(){
-            $('.best-seller-products').scrollLeft( $('.best-seller-products').scrollLeft() - 270 )
-        }
-        function productSliderScrollRightBS(){
-            $('.best-seller-products').scrollLeft( $('.best-seller-products').scrollLeft() + 270 )
-        }
-        setInterval(() => {
-            productSliderScrollLeftBS()
-        }, 5000);
-        
+
+        function productSliderScrollRightBS() {
+    const container = $('.best-seller-products');
+    const scrollAmount = 300;
+    container.animate({scrollLeft: container.scrollLeft() - scrollAmount}, 300);
+}
+
+function productSliderScrollLeftBS() {
+    const container = $('.best-seller-products');
+    const scrollAmount = 300;
+    container.animate({scrollLeft: container.scrollLeft() + scrollAmount}, 300);
+}
+
+let automatic_scroll;
+
+function startAutomaticScroll() {
+    automatic_scroll = setInterval(function() {
+        productSliderScrollRightBS();
+    }, 5000);
+}
+
+function stopAutomaticScroll() {
+    clearInterval(automatic_scroll);
+}
+
+$('.product-slider-container').on({
+    mouseenter: function() {
+        stopAutomaticScroll();
+    },
+    mouseleave: function() {
+        startAutomaticScroll();
+    }
+});
+
+startAutomaticScroll();
+
+
         function addToCart(product_id){
                 var quantity = 1;
                 api_url = "./api/add_to_cart.php";

@@ -12,33 +12,6 @@
     </header>
 </div>
 
-<section id="hero">
-    <div class="hero-container">
-        <div data-aos="fade-in">
-            <div class="logo">
-                <img src="./assets/images/logo1.jpg" alt="">
-            </div>
-            <div class="welcome-text">
-                <h1>
-                    Welcome to AToZ!
-                </h1>
-            </div>
-            <br>
-            <div class="we-provide-text">
-                <h2>
-                    We provide
-                </h2>
-                <h2 class="type-animate-container">
-                    <span class="typed" data-typed-items="Vishnu style sitting sofa, fanciful rugs, finest bedsheets, plushy carpet"></span>
-                </h2>
-            </div>
-            <div class="actions">
-                <!-- <a href="#about" class="btn-get-started">Get Strated</a> -->
-                <!-- <a href="#services" class="btn-services">Our Services</a> -->
-            </div>
-        </div>
-    </div>
-</section>
     <div id="pageContainer" class="isMoved">
 
         <main class="mainContent" role="main">
@@ -49,17 +22,6 @@
                         <div class="velaSlideshow">
                             <div data-section-id="1551027504217" data-section-type="velaSlideshowSection">
                                 <div class="velaSlideshowWrapper">
-                                   
-                                    <!-- <button type="button" class="btnssPause" data-id="1551027504217">
-                                        <span class="btnssPauseStop">
-                                            <i class="fa fa-play"></i>
-                                            <span class="iconText">Pause slideshow</span>
-                                        </span>
-                                        <span class="btnssPausePlay">
-                                            <i class="fa fa-pause"></i>
-                                            <span class="iconText">Play slideshow</span>
-                                        </span>
-                                    </button> -->
                                     <div id="velaSlideshows1551027504217" class="vela--slideshow velaSliderLoading"
                                         data-autoplay="true" data-speed="4500" data-navigation="true"
                                         data-pagination="true">
@@ -150,12 +112,11 @@
                                                             <div>
                                                                 <a class="btn btnVelaSlider leftright-5"
                                                                     href="./products.php?product=cushion%20covers" style="
-                                      border-color: #201f1f;
-                                      background-color: rgba(0, 0, 0, 0);
-                                      color: #201f1f;
-                                      padding: 16px 40px;
-                                    ">
-                                                                    discover now
+                                            border-color: #201f1f;
+                                            background-color: rgba(0, 0, 0, 0);
+                                            color: #201f1f;
+                                            padding: 16px 40px;">
+                                                                            discover now
                                                                 </a>
                                                             </div>
                                                         </div>
@@ -200,11 +161,11 @@
                                                             <div>
                                                                 <a class="btn btnVelaSlider leftright-5"
                                                                     href="./products.php?product=cushion%20covers" style="
-                                      border-color: #201f1f;
-                                      background-color: rgba(0, 0, 0, 0);
-                                      color: #201f1f;
-                                      padding: 16px 40px;
-                                    ">
+                                            border-color: #201f1f;
+                                            background-color: rgba(0, 0, 0, 0);
+                                            color: #201f1f;
+                                            padding: 16px 40px;
+                                            ">
                                                                     discover now
                                                                 </a>
                                                             </div>

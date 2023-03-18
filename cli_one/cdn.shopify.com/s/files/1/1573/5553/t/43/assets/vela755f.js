@@ -1015,7 +1015,7 @@ typeof Shopify == "undefined" && (Shopify = {}), Shopify.formatMoney || (Shopify
             arrows: this.$slideshow.data("navigation"),
             dots: this.$slideshow.data("pagination"),
             fade: !0,
-            pauseOnHover: !0,
+            pauseOnHover: 0,
             draggable: !0,
             touchThreshold: 20,
             autoplay: this.$slideshow.data("autoplay"),
