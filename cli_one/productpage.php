@@ -13,49 +13,51 @@
             </header>
         </div>
         <main>
-            <div class="productpage-bredcrum">
-                <div>
-                    <span>
-                        <a href="./">Home</a>
-                    </span>
-                    /
-                    <span>
-                        <a id="breadcrum_category" href="./">category</a>
-                    </span>
-                    /
-                    <span>
-                        <a id="breadcrum_product_name">Product</a>
-                    </span>
-                </div>
-                <div>
-                    <span>
-                        Use code <span class="copon-code" title="Click to cpoy" data-clipboard-text="AToZ"> AToZ </span> to get 10% discount.
-                        <script>
-                            $(document).ready(() => {
-                                $(".copon-code").click(function() {
-                                    // Get the text to copy from the data attribute
-                                    var text = $(this).attr("data-clipboard-text");
-
-                                    // Create a temporary input element
-                                    var $input = $("<input>")
-                                        .attr("type", "text")
-                                        .attr("value", text)
-                                        .appendTo("body")
-                                        .css("position", "fixed")
-                                        .css("opacity", "0");
-
-                                    // Select the text in the input element
-                                    $input[0].select();
-
-                                    // Copy the selected text to the clipboard
-                                    document.execCommand("copy");
-                                    show_msg("Coupon code copied to clipboard")
-                                    // Remove the temporary input element
-                                    $input.remove();
-                                });
-                            })
-                        </script>
-                    </span>
+            <div class="productpage-bredcrum-wrapper">
+                <div class="productpage-bredcrum">
+                    <div>
+                        <span>
+                            <a href="./">Home</a>
+                        </span>
+                        /
+                        <span>
+                            <a  id="breadcrum_category" href="./" >category</a>
+                        </span>
+                        /
+                        <span>
+                            <a id="breadcrum_product_name">Product</a>
+                        </span>
+                    </div>
+                    <div>
+                        <span>
+                            Use code <span class="copon-code" title="Click to cpoy" data-clipboard-text="AToZ"> AToZ </span> to get 10% discount.
+                            <script>
+                                $(document).ready(()=>{
+                                    $(".copon-code").click(function() {
+                                        // Get the text to copy from the data attribute
+                                        var text = $(this).attr("data-clipboard-text");
+                                        
+                                        // Create a temporary input element
+                                        var $input = $("<input>")
+                                            .attr("type", "text")
+                                            .attr("value", text)
+                                            .appendTo("body")
+                                            .css("position", "fixed")
+                                            .css("opacity", "0");
+                                        
+                                        // Select the text in the input element
+                                        $input[0].select();
+                                        
+                                        // Copy the selected text to the clipboard
+                                        document.execCommand("copy");
+                                        show_msg("Coupon code copied to clipboard")
+                                        // Remove the temporary input element
+                                        $input.remove();
+                                    });
+                                })
+                            </script>
+                        </span>
+                    </div>
                 </div>
             </div>
             <div class="mainContent productpage" role="main">
@@ -78,15 +80,16 @@
                     $(document).ready(function() {
                         var magnifyingGlass = $('.magnifying-glass');
                         var image = $('#activeImage');
-
-                        // Load the full-sized image and set it as the background image of the magnifying glass
-                        var fullSizeImage = new Image();
-                        fullSizeImage.src = image.attr('src');
-                        $(fullSizeImage).on('load', function() {
-                            magnifyingGlass.css('background-image', 'url(' + fullSizeImage.src + ')');
-                        });
-
+                        
                         image.mousemove(function(event) {
+                            
+                            // Load the full-sized image and set it as the background image of the magnifying glass
+                            var fullSizeImage = new Image();
+                            fullSizeImage.src = image.attr('src');
+                            $(fullSizeImage).on('load', function() {
+                                magnifyingGlass.css('background-image', 'url(' + fullSizeImage.src + ')');
+                            });
+
                             // Calculate the position of the mouse relative to the image
                             var posX = event.pageX - image.offset().left;
                             var posY = event.pageY - image.offset().top;
@@ -110,10 +113,10 @@
 
                             // Move the magnifying glass to the current mouse position
                             magnifyingGlass.css({
-                                'left': event.pageX - 200 + 'px',
-                                'top': event.pageY - 150 + 'px',
-                                'visibility': 'visible',
-                                'background-position': '-' + (posX) + 'px -' + (posY) + 'px'
+                            // 'left': event.pageX - 200 + 'px',
+                            // 'top': event.pageY - 150 + 'px',
+                            'visibility': 'visible',
+                            'background-position': '-' + (posX * 2) + 'px -' + (posY * 2) + 'px'
                             });
                         });
 
@@ -130,7 +133,7 @@
                 </script>
                 <!-- Right Column -->
                 <div class="right-column">
-                    <div class="magnifying-glass"></div>
+                    <div class="magnifying-glass hide-on-mobile"></div>
                     <!-- Product Description -->
                     <div class="product-description">
                         <span id="product_category"></span>

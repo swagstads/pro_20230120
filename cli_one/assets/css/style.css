@@ -589,9 +589,16 @@
 /*--------------------------------------------------------------
 # Product page - single product showcase page
 --------------------------------------------------------------*/
-.productpage-bredcrum{
+.productpage-bredcrum-wrapper{
+  background-color: rgba(177, 177, 177, 0.106);
+  width: 100%;
   position: absolute;
   top: 80px;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+.productpage-bredcrum{
   left: 0;
   right: 0;
   margin: auto;
@@ -600,13 +607,13 @@
   padding: 10px 15px;
   font-weight: 500;
   border-radius: 1px;
-  background-color: rgba(177, 177, 177, 0.106);
   display: flex;
   align-items: center;
   justify-content:space-between;
   flex-wrap: wrap;
   line-height: 3rem;
 }
+
 .productpage-bredcrum .copon-code{
   cursor:copy !important;
   color: var(--col1);
@@ -657,11 +664,10 @@
 
 .magnifying-glass {
   position: absolute;
-  width: 300px;
-  height: 300px;
-  border: 1px solid #ccc;
+  width: 100%;
+  height: 100%;
+  border: 10px solid #ffffff;
   cursor:zoom-in;
-  border-radius:  50%;
   background-repeat: no-repeat;
   background-size: 200% 200%;
   visibility: hidden;
@@ -673,9 +679,16 @@
   display: flex;
   justify-content: center;
   position: relative;
+  transition: all 0.3s ease;
+  border-top-left-radius: 50px;
+  border-bottom-right-radius: 50px;
 }
 .right-column {
   width: 60%;
+  position: relative;
+  left: 0;
+  right: 0;
+  margin: auto;
   /* border: 1px solid; */
 }
 .productpage .out-of-stock-mssge{
@@ -686,7 +699,6 @@
 
 /* Left Column */
 .left-column #main_img_container .product-img-active {
-  object-fit: contain;
   width: calc(80% - 60px);
   left: 0;
   right: 0;
@@ -962,9 +974,28 @@
   }
 }
 
-@media (max-width: 535px) {
 
+@media (max-width: 768px) {
+  .right-column {
+      max-width: 568px !important;
+  }            
 }
+@media (min-width: 768px) {
+  .right-column {
+      max-width: 768px !important;
+  }            
+}
+@media (min-width: 992px) {
+  .right-column {
+      max-width: 985px !important;
+  }            
+}
+@media (min-width: 1220px){
+  .right-column {
+      max-width: 1210px !important;
+  }
+}
+
 .description-reviews .container {
   border: 1px solid rgba(0, 0, 0, 0.192);
   padding: 10px;
