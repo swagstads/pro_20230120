@@ -59,9 +59,9 @@
                             if(return_data[i].product_quantity === 0){
                                 outOfStockMessage = "Out of Stock";
                             }
-                            else if(return_data[i].product_quantity <= 5){
-                                inStockMessage = "only " + return_data[i].product_quantity + " left" 
-                            }
+                            // else if(return_data[i].product_quantity <= 5){
+                            //     inStockMessage = "only " + return_data[i].product_quantity + " left" 
+                            // }
                             else{
                                 inStockMessage = "In Stock"
                             }
