@@ -115,7 +115,7 @@
 
         function productSliderScrollLeftsimilarProd(){   
             $('.similar-products-scroll').scrollLeft( $('.similar-products-scroll').scrollLeft() - 270 )
-            clearInterval(automatic_scroll);
+            // clearInterval(automatic_scroll);
         }
         function productSliderScrollRightsimilarProd(){
             $('.similar-products-scroll').scrollLeft( $('.similar-products-scroll').scrollLeft() + 270 )
