@@ -60,6 +60,7 @@
                     </div>
                 </div>
             </div>
+            <div class="magnifying-glass hide-on-mobile"></div>
             <div class="mainContent productpage" role="main">
                 <!-- Left Column / Headphones Image -->
                 <div class="left-column">
@@ -133,7 +134,6 @@
                 </script>
                 <!-- Right Column -->
                 <div class="right-column">
-                    <div class="magnifying-glass hide-on-mobile"></div>
                     <!-- Product Description -->
                     <div class="product-description">
                         <span id="product_category"></span>
