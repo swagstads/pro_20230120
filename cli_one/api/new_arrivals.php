@@ -7,7 +7,7 @@ $response["response"] = array();
 $data = array();
 
 
-$stmt = $dbh->prepare('SELECT *, p.id AS prod_id FROM product p JOIN category c ON FIND_IN_SET(c.id, p.category_id) ORDER BY added_on DESC LIMIT 9');
+$stmt = $dbh->prepare('SELECT *, p.id AS prod_id FROM product p JOIN category c ON FIND_IN_SET(c.id, p.category_id) ORDER BY added_on DESC LIMIT 10');
 $stmt->execute();
 
 $count = $stmt->rowCount();

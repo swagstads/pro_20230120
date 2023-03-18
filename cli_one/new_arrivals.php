@@ -1,44 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <head>
-    <?php include('header_links.php'); ?>
-</head>
-
-<style>
-    .product-slider{
-        animation: productScrollerFromRight 100s linear infinite;
-    }
-    .trending-products-scrolling-div:hover .product-slider{
-        animation-play-state: paused;
-    }
-    .trending-products-scrolling-div{
-        transform: translateX(0);
-        position: relative;
-    }
-    @keyframes productScrollerFromRight {
-        0%{
-            transform: translateX(100px);
-        }
-        50%{
-            transform: translateX(calc(-270px * 5));
-        }
-        100%{
-            transform: translateX(100px);
-        }
-    }
-</style>
-
-<body>
-<div id="shopify-section-vela-header" class="shopify-section">
-    <header id="header" class="velaHeader">
-        <?php include('./header.php'); ?>
-    </header>
-</div>
 <div id="shopify-section-1600942005808" class="shopify-section velaFramework" style="position:relative; margin-top:100px">
         <div class="productListHome velaProducts mbBlockGutter"
             style="background-color: rgba(0, 0, 0, 0); padding: 20px 0 25px">
@@ -53,7 +12,7 @@
                         </span> -->
                     </div>
                     <div class="product-slider-container">
-                        <div class="trending-products-scrolling-div scrolling-products" id="product-container">
+                        <div class="new-arrivals-scrolling-div scrolling-products" id="product-container">
                             
                                 <!-- Products -->
 
@@ -66,8 +25,7 @@
         </div>
     </div>
 </div>
-
-    <script>
+<script>
         function fetchProduct(){
             const queryString = window.location.search;
             const urlParams = new URLSearchParams(queryString);
@@ -98,8 +56,8 @@
                             else{
                                 inStockMessage = "In Stock"
                             }
-                            $('.trending-products-scrolling-div').append(
-                                '<div class="product-slider">'+
+                            $('.new-arrivals-scrolling-div').append(
+                                '<div class="new-arrivals-product-slider product-slider">'+
                                     '<a onclick="increase_click_count('+return_data[i].prod_id+')"  href="./productpage.php?productid='+return_data[i].prod_id+'" >'+
                                         '<div class="product-image">'+
                                             '<img class="image1 active lazyload" data-src="./admin_panel/uploads/products/'+return_data[i].image_name+'" alt="">'+
@@ -175,16 +133,3 @@
             }
 
 </script>
-
-
-<div id="shopify-section-vela-footer" class="shopify-section">
-        <footer id="velaFooter">
-            <?php include('footer.php'); ?>
-        </footer>
-    </div>
-    </div>
-
-    <?php include('footer_links.php'); ?>
-
-</body>
-</html>

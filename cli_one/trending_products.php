@@ -5,7 +5,7 @@
                         <div class="sectionInner">
                             <div class="headingGroup pb20">
                                 <h3 class="velaHomeTitle text-center">
-                                    <span>New Arrivals</span>
+                                    <span>Trending products</span>
                                 </h3>
                                 <!-- <span class="subTitle">
                                     Mirum est notare quam littera gothica quam nunc putamus  parum claram!
@@ -39,15 +39,16 @@
             const queryString = window.location.search;
             const urlParams = new URLSearchParams(queryString);
             var searched_product = urlParams.get('category') || "all"
-            var api_url_best_seller = './api/new_arrivals.php';
+            var api_url_trending_prods = './api/trending_products.php';
             var form_data = { "show_products": searched_product, "user_id": localStorage.getItem('user_id') };
             $.ajax({
-                url: api_url_best_seller,
+                url: api_url_trending_prods,
                 type: 'POST',
                 data: form_data,
                 success: function (returned_data) {
                     var jsonData = JSON.parse(returned_data);
                     var return_data = jsonData.response;
+                    console.log(return_data);
                     if (return_data[0].status == "failed") {
                         $("#product_container").append('<div style="text-align:center;width:100%;font-size:20px">Sorry, Something went wrong!</div>')
                     }
