@@ -67,7 +67,7 @@
     </div>
 </div>
 
-    <script>
+<script>
         function fetchProduct(){
             const queryString = window.location.search;
             const urlParams = new URLSearchParams(queryString);

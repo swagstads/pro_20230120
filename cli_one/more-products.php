@@ -141,21 +141,6 @@
             productSliderScrollRightMP()
         }, 5000);
 
-        function addToCart(product_id){
-                var quantity = $("#prod_qnty_inp").val() || 1;
-                api_url = "./api/add_to_cart.php";
-                var form_data = { "add_to_cart": "add" , "productid": product_id,'quantity': quantity};
-                $.ajax({
-                        url: api_url,
-                        type: 'POST',
-                        data: form_data,
-                        success: function (returned_data) {
-                            var jsonData = JSON.parse(returned_data);
-                            var return_data = jsonData.response;
-                            show_msg(return_data[0].message)
-                        }
-                })
-                cart_count()
-            }
+
 
 </script>

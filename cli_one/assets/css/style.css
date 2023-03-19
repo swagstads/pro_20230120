@@ -922,7 +922,7 @@
 .cart-btn {
   display: inline-block;
   background-color: var(--col2);
-  border: none;
+  border:2px solid currentColor;
   border-radius: 0px;
   font-size: 16px;
   color: #FFFFFF;

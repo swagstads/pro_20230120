@@ -32,7 +32,7 @@ $response["response"] = array();
         }
         else{
             $data['status'] = "fail";
-            $data['message'] = "Address not provided";
+            $data['message'] = "Please complete your profile";
         }
     }
     else{

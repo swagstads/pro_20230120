@@ -118,7 +118,7 @@
                                                             '<div class="quantity-container">Quantity' +
                                                             '<div class="manipulate-quantity-container justify-content-center ordered-quantity">' +
                                                                 '<span class="input-number-decrement"' +
-                                                                'onclick="decrease_quantity(' + return_data[i].prod_id_ + ',' + return_data[i].required_quantity + ',' + return_data[i].product_quantity + ')" >-</span>' +
+                                                                'onclick="decrease_quantity(' + return_data[i].prod_id_ + ',' + return_data[i].required_quantity + ',' + return_data[i].product_quantitclsy + ')" >-</span>' +
                                                                 '<span  id="prod_qnty_show" >' + return_data[i].required_quantity + '</span>' +
                                                                 // '<input class="input-number"'+
                                                                 //     'id="'+input_id+'" type="" value="'+return_data[i].required_quantity+'" min="1" max="'+return_data[i].required_quantity+'">'+

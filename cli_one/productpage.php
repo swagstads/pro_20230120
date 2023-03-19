@@ -28,7 +28,7 @@
                             <a id="breadcrum_product_name">Product</a>
                         </span>
                     </div>
-                    <div>
+                    <div> 
                         <span>
                             Use code <span class="copon-code" title="Click to cpoy" data-clipboard-text="AToZ"> AToZ </span> to get 10% discount.
                             <script>
@@ -188,7 +188,33 @@
                     <div class="add-to-bttns">
                         <button onclick="addToCart( <?php echo $_GET['productid'] ?> )" class="cart-btn">Add to cart</button>
                         <button onclick="addToWishlist( <?php echo $_GET['productid'] ?> )" class="wish-btn">Add to wishlist</button>
-                        <!-- <button onclick="instant_checkout( <?php //echo $_GET['productid'] ?> )" class="wish-btn" id="checkout_bttn">Buy Now</button> -->
+                        <button onclick="instant_checkout(<?php echo $_GET['productid'] ?> )" class="wish-btn" id="checkout_bttn">Buy Now</button>
+                        <script>
+                            function instant_checkout(prod_id){
+                                event.preventDefault()
+                                let api_url = "./api/fetch_address.php";
+
+                                // form data values
+                                $.ajax({
+                                url: api_url,
+                                type: 'POST',
+                                // type: 'GET',
+                                success: function (returned_data) {
+                                    var jsonData = JSON.parse(returned_data);
+                                    var return_data = jsonData.response[0];
+                                    console.log(return_data);
+                                    if(return_data.status === "ok"){
+                                        localStorage.setItem("instant_checkout_product_id",prod_id)
+                                        localStorage.setItem("instant_checkout_quantity",$("#prod_qnty_inp").val())
+                                        window.location.href = "./instant_checkout.php"
+                                    }
+                                    else{
+                                        show_msg(return_data.message)
+                                    }
+                                    }
+                                })
+                            }
+                        </script>
                     </div>
                     <div class="social-media-share-links">
                         <div>
@@ -317,22 +343,24 @@
             </div> -->
 
             <script>
-                function openTab(evt, tabName) {
-                    var i, tabcontent, tablinks;
+               
 
-                    tabcontent = document.getElementsByClassName("tabcontent");
-                    for (i = 0; i < tabcontent.length; i++) {
-                        tabcontent[i].classList.remove("show");
-                    }
+                // function openTab(evt, tabName) {
+                //     var i, tabcontent, tablinks;
 
-                    tablinks = document.getElementsByClassName("tablinks");
-                    for (i = 0; i < tablinks.length; i++) {
-                        tablinks[i].classList.remove("active");
-                    }
+                //     tabcontent = document.getElementsByClassName("tabcontent");
+                //     for (i = 0; i < tabcontent.length; i++) {
+                //         tabcontent[i].classList.remove("show");
+                //     }
 
-                    document.getElementById(tabName).classList.add("show");
-                    evt.currentTarget.classList.add("active");
-                }
+                //     tablinks = document.getElementsByClassName("tablinks");
+                //     for (i = 0; i < tablinks.length; i++) {
+                //         tablinks[i].classList.remove("active");
+                //     }
+
+                //     document.getElementById(tabName).classList.add("show");
+                //     evt.currentTarget.classList.add("active");
+                // }
             </script>
             <br>
 
@@ -394,6 +422,7 @@
                         //     inStockMessage = "In Stock"
                         //     $("#instock").html();
                         // }
+                        
                         fetch_similar_products(return_data[0])
 
                         $(document).ready(() => {
