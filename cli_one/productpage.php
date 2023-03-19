@@ -391,101 +391,86 @@
 
         <script>
 
-            function fetch_product() {
-                console.log(" fetching product...");
-                var product_id = <?php echo $_GET['productid'] ?>;
+            var product_id = <?php echo $_GET['productid'] ?>;
+            var api_url = './api/fetch_single_product.php?product_id';
+            var form_data = {
+                "fetch_products": "fetch",
+                "productid": product_id
+            };
+            // console.log(form_data);
+            $.ajax({
+                url: api_url,
+                type: 'GET',
+                data: form_data,
+                success: function(returned_data) {
+                    console.log("Data: ", returned_data);
+                    var jsonData = JSON.parse(returned_data);
+                    var return_data = jsonData.response;
+                    // let outOfStockMessage = "";
+                    // let inStockMessage = "";
+                    // if (jsonData.response[0].product_quantity == 0) {
+                    //     outOfStockMessage = "Out of Stock";
+                    //     $("#instock").append('<sup class="blinking-box-out"><span>'+outOfStockMessage+'</span></sup>');
+                    // } else if (jsonData.response[0].product_quantity <= 60) {
+                    //     inStockMessage = "Only " + jsonData.response[0].product_quantity + " left";
+                    //     $("#instock").append('<sup class="blinking-box"><span>'+inStockMessage+'</span></sup>');
+                    // } else {
+                    //     inStockMessage = "In Stock"
+                    //     $("#instock").html();
+                    // }
+                    fetch_similar_products(return_data[0])
+                    product_qnty = return_data[0].product_quantity;
+                    if (product_qnty != 0) {
+                        $("#prod_qnty_inp").attr("max", product_qnty)
+                        $(".out-of-stock-mssge").hide()
+                    } else {
+                        $(".manipulate-quantity-container").hide()
+                        $(".out-of-stock-mssge").show()
+                    }
 
-                var api_url = './api/fetch_single_product.php?product_id';
-                var form_data = {
-                    "fetch_products": "fetch",
-                    "productid": product_id
-                };
-                // console.log(form_data);
-                $.ajax({
-                    url: api_url,
-                    type: 'GET',
-                    data: form_data,
-                    success: function(returned_data) {
-                        console.log("Data: ", returned_data);
-                        var jsonData = JSON.parse(returned_data);
-                        var return_data = jsonData.response;
+                    if (jsonData.response[0].description.length <= 280) {
+                        $("#read_more_bttn").hide()
+                    }
+                    // Chaange breadcrum text and href link to products category
+                    $("#breadcrum_category").text(jsonData.response[0].category_name).attr('href', '/products.php?category=' + jsonData.response[0].category_name);
+                    // add product title description and price dynamically
+                    $("#breadcrum_product_name").text(jsonData.response[0].title)
+                    $("#product_title").text(jsonData.response[0].title)
+                    $("#product_description").text(jsonData.response[0].description)
+                    $("#product_price").text(jsonData.response[0].price)
+                    $("#product_mrp").html("&#8377;" + jsonData.response[0].mrp)
 
-                        // let outOfStockMessage = "";
-                        // let inStockMessage = "";
-                        // if (jsonData.response[0].product_quantity == 0) {
-                        //     outOfStockMessage = "Out of Stock";
-                        //     $("#instock").append('<sup class="blinking-box-out"><span>'+outOfStockMessage+'</span></sup>');
-                        // } else if (jsonData.response[0].product_quantity <= 60) {
-                        //     inStockMessage = "Only " + jsonData.response[0].product_quantity + " left";
-                        //     $("#instock").append('<sup class="blinking-box"><span>'+inStockMessage+'</span></sup>');
-                        // } else {
-                        //     inStockMessage = "In Stock"
-                        //     $("#instock").html();
-                        // }
-                        
-                        fetch_similar_products(return_data[0])
-
-                        $(document).ready(() => {
-
-                            product_qnty = return_data[0].product_quantity;
-                            if (product_qnty != 0) {
-                                $("#prod_qnty_inp").attr("max", product_qnty)
-                                $(".out-of-stock-mssge").hide()
-                            } else {
-                                $(".manipulate-quantity-container").hide()
-                                $(".out-of-stock-mssge").show()
-                            }
-
-
-                            if (jsonData.response[0].description.length <= 280) {
-                                $("#read_more_bttn").hide()
-                            }
-
-                            // Chaange breadcrum text and href link to products category
-                            $("#breadcrum_category").text(jsonData.response[0].category_name).attr('href', '/products.php?category=' + jsonData.response[0].category_name);
-
-                            // add product title description and price dynamically
-                            $("#breadcrum_product_name").text(jsonData.response[0].title)
-                            $("#product_title").text(jsonData.response[0].title)
-                            $("#product_description").text(jsonData.response[0].description)
-                            $("#product_price").text(jsonData.response[0].price)
-                            $("#product_mrp").html("&#8377;" + jsonData.response[0].mrp)
-
-                        })
+                    if (jsonData.response[0].image === "no") {
+                        // show_msg("")
+                        console.log("No Image");
+                    } else {
+                        images_arr = jsonData.response[0].image_name;
+                        primary_img = "./admin_panel/uploads/products/" + images_arr[0];
+                        // $(".product-img-active").attr(src , primary_img)
 
 
+                        $('<img />', {
+                                class: "product-img-active",
+                                id: "activeImage",
+                                src: primary_img,
+                            })
+                            .appendTo($('#main_img_container'));
 
-                        if (jsonData.response[0].image === "no") {
-                            show_msg("No Image")
-                        } else {
-                            images_arr = jsonData.response[0].image_name;
-                            primary_img = "./admin_panel/uploads/products/" + images_arr[0];
-                            // $(".product-img-active").attr(src , primary_img)
+                        for (let i = 0; i < images_arr.length; i++) {
 
-
-                            $('<img />', {
-                                    class: "product-img-active",
-                                    id: "activeImage",
-                                    src: primary_img,
+                            var img = $('<img />', {
+                                    onmouseover: 'changeActiveImg(this.src)',
+                                    class: 'small-view-image',
+                                    src: "./admin_panel/uploads/products/" + images_arr[i] + "",
                                 })
-                                .appendTo($('#main_img_container'));
-
-                            for (let i = 0; i < images_arr.length; i++) {
-
-                                var img = $('<img />', {
-                                        onmouseover: 'changeActiveImg(this.src)',
-                                        class: 'small-view-image',
-                                        src: "./admin_panel/uploads/products/" + images_arr[i] + "",
-                                    })
-                                    .appendTo($('#all_prod_images_container'));
+                                .appendTo($('#all_prod_images_container'));
 
 
-                            }
                         }
                     }
-                })
-            }
-            fetch_product()
+                }
+            })
+        
         </script>
 
     </div>
