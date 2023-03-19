@@ -150,6 +150,7 @@ $no = 1;
             echo '</div><br/>';
         }
         ?>
+        <div class="row">
         <div class="col-md-6">
             <div class="card-body">
                 <?php
@@ -173,13 +174,7 @@ $no = 1;
                     <div class="form-group">
                         <label class="control-label"><b><?php echo $lang['category_image'];?> :</b></label>
                         <input type="file" id="category_img" required="required" class="form-control-file" name="category_img" accept="image/jpeg,image/png" />
-                        <?php
-                        if(isset($category)){
-                            if(!empty($category['category_img']) && file_exists('uploads/category/'.$category['category_img'])) {
-                                echo "<img src='uploads/category/".$category['category_img']."' height='50' width='50' style='margin-top:3px;'>";
-                            }
-                        }
-                        ?>
+                        
                     </div>
 
                     <?php
@@ -194,6 +189,16 @@ $no = 1;
                 <?php
                 }
                 ?>
+            </div>
+            </div>
+            <div class="col-md-6">
+            <?php
+            if(isset($category)){
+                if(!empty($category['category_img']) && file_exists('uploads/category/'.$category['category_img'])) {
+                    echo "<img src='uploads/category/".$category['category_img']."' height='150' width='150' style='margin-top:3px; padding: 1.25em;'>";
+                }
+            }
+            ?>
             </div>
         </div>
 

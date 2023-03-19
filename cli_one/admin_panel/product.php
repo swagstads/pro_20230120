@@ -487,6 +487,7 @@ function checkform() {
         
         $('#alert_message_div').show();
         $("#errormsg").html("<i class='fas fw fa-times-circle'></i> Discount Price can not be more than M.R.P.");
+        show_msg("Discount Price can not be more than M.R.P.");
         return false;
     }else{
         return true;

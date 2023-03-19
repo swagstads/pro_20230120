@@ -192,6 +192,15 @@
         x--; //Decrement field counter
     });
 
+    function show_msg(msg) {
+        var x = document.getElementById("snackbar");
+        document.getElementById("msg_text").textContent = msg;
+        x.className = ("show");
+        setTimeout(function() {
+            x.className = x.className.replace("show", "");
+        }, 3000);
+    }
+
 </script>
 </body>
 

@@ -71,6 +71,8 @@ include 'language_setting.php';
 
 <body id="page-top">
 
+<div id="snackbar"><span id="msg_text"></span></div>
+
 <nav class="navbar navbar-expand static-top" style="background-color: #1f1f1f;">
 
     <a class="navbar-brand mr-1" href="dashboard.php" style="color: #0087c7;"><?php echo $lang['app_name']; ?></a>
@@ -143,16 +145,19 @@ include 'language_setting.php';
                 <span><?php echo $lang['dashboard']; ?></span>
             </a>
         </li>
-        <li class="nav-item" id="users">
-            <a class="nav-link" href="users.php">
-                <i class="fas fa-fw fa-users"></i>
-                <span>Users</span>
-            </a>
-        </li>
         <li class="nav-item" id="products">
             <a class="nav-link" href="products.php">
                 <i class="fas fa-fw fa-couch"></i>
                 <span>Products</span>
+            </a>
+        </li>
+        <?php
+        if($_SESSION['role']=='Admin'){
+        ?>
+        <li class="nav-item" id="users">
+            <a class="nav-link" href="users.php">
+                <i class="fas fa-fw fa-users"></i>
+                <span>Users</span>
             </a>
         </li>
         <li class="nav-item" id="categories">
@@ -222,9 +227,7 @@ include 'language_setting.php';
             </a>
         </li>
         -->
-        <?php
-        if($_SESSION['role']=='Admin'){
-        ?>
+        
         <li class="nav-item" id="cms_users">
             <a class="nav-link" href="cms_users.php">
                 <i class="fas fa-fw fa-user-circle"></i>
@@ -247,7 +250,7 @@ include 'language_setting.php';
         }
         ?>
         <?php
-        if($_SESSION['usr']=='garv@atoz.com'){
+        if($_SESSION['usr']=='garv@atoz.in'){
         ?>
         <li class="nav-item" id="debug">
             <a class="nav-link" href="test.php">
