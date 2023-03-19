@@ -211,10 +211,10 @@
 <meta name="theme-color" content="#bd8448" />
 <link rel="canonical" href="collections.php" />
 
-<link rel="shortcut icon" href="./cdn.shopify.com/s/files/1/1573/5553/files/icon_32x32e751.png?v=1613719979" type="image/png" />
+<link rel="shortcut icon" href="./assets/images/logo1.jpg" type="image/png" />
 <!-- iPad icons -->
-<link rel="apple-touch-icon-precomposed" href="./cdn.shopify.com/s/files/1/1573/5553/files/icon_48x48e751.png?v=1613719979" type="image/png" />
-<link rel="nokia-touch-icon" href="./cdn.shopify.com/s/files/1/1573/5553/files/icon_48x48e751.png?v=1613719979" type="image/png" />
+<link rel="apple-touch-icon-precomposed" href="./assets/images/logo1.jpg" type="image/png" />
+<link rel="nokia-touch-icon" href="./assets/images/logo1.jpg" type="image/png" />
 
 <!-- For icons - font awesome -->
 <!-- <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css"> -->
@@ -227,7 +227,7 @@
 
 <title>Collections &ndash; Outstock</title>
 
-<meta name="description" content="Fashion, Apparel, Electronics, Tools, Lingeri, Glasses, Furniture, Jewelry, Bikes, Cosmetics, Gifts, Handmade store. Try new premium multipurpose Shopify theme from Elite Author velatheme. velatheme Shopify theme is new approach to ecommerce web development." />
+<meta name="description" content="Fashion, Apparel, Electronics, Tools, Lingeri, Glasses, Furniture, Jewelry, Bikes, Cosmetics, Gifts, Handmade store. Try new premium multipurpose from Elite. theme is new approach to ecommerce web development." />
 
 <!-- /snippets/social-meta-tags.liquid -->
 
