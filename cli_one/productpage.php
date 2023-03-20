@@ -364,7 +364,9 @@
             </script>
             <br>
 
-
+            <div class="best-seller">
+                <?php include('./recently_viewed.php') ?>
+            </div>
 
             <div class="more-products">
                 <?php include('./similar_products.php') ?>

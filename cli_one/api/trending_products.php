@@ -15,7 +15,6 @@ try {
 $sql = "SELECT *, p.id AS product_id FROM product p JOIN category c ON FIND_IN_SET(c.id, p.category_id) ORDER BY click_count DESC LIMIT 10";
 if($stmt = $dbh->query($sql)){
     $count = $stmt->rowCount();
-
     // Fetch the rows and display the results
     $fetch_data = $stmt->fetchAll(PDO::FETCH_ASSOC);
     for ($i = 0; $i < $count; $i++) {
@@ -35,6 +34,7 @@ if($stmt = $dbh->query($sql)){
                 $data['image_name'] = $fetch_image->image_name;
             }
         }
+        
         $data["status"] = "success";
         $data["reason"] = "orders_fetched";
         array_push($response["response"], $data);
