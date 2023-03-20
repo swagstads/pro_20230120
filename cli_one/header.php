@@ -303,8 +303,6 @@
                                         <span>Contact </span></a>
                                 </li>
 
-
-
                             </ul>
                         </nav>
                     </section>
@@ -407,6 +405,7 @@
                                 </a>
                             </div>
                         </div>
+                        <div id="google_translate_element"></div>
 
                     <?php
                     } // when use is logged in end
@@ -469,6 +468,7 @@
 
 <div id="velaMenuMobile" class="menuMobileContainer hidden-md hidden-lg">
     <div class="menuMobileWrapper">
+        
         <div class="memoHeader">
             <span>AToZ</span>
             <div class="btnMenuClose">&nbsp;</div>
@@ -524,28 +524,28 @@
                         <a href="./products.php?category=Flooring" title="">Flooring</a>
                         <span class="memoBtnDropdown collapsed" data-toggle="collapse" data-target="#memoDropdown2212"><i class="fa fa-angle-down"></i></span>
                         <ul id="memoDropdown2212" class="memoDropdown collapse">
-                            <li  class="">
+                            <li class="">
                                 <a href="./products.php?category=flooring&product=PVC Flooring" title="">PVC Flooring</a>
                             </li>
-                            <li  class="">
+                            <li class="">
                                 <a href="./products.php?category=flooring&product=Wooden Flooring" title="">Wooden Flooring</a>
                             </li>
-                            <li  class="">
+                            <li class="">
                                 <a href="./products.php?category=flooring&product=Gym Flooring" title="">Gym Flooring</a>
                             </li>
-                            <li  class="">
+                            <li class="">
                                 <a href="./products.php?category=flooring&product=Sports Flooring" title="">Sports Flooring</a>
                             </li>
-                            <li  class="">
+                            <li class="">
                                 <a href="./products.php?category=flooring&product=Grass Flooring" title="">Grass Flooring</a>
                             </li>
-                            <li  class="">
+                            <li class="">
                                 <a href="./products.php?category=flooring&product=carpet wall to wall" title="">Carpet Wall to Wall</a>
                             </li>
-                            <li  class="">
+                            <li class="">
                                 <a href="./products.php?category=flooring&product=Tiles Carpet" title="">Tiles Carpet </a>
                             </li>
-                            <li  class="">
+                            <li class="">
                                 <a href="./products.php?category=flooring&product=EVA Foam Mat" title="">EVA Foam Mat </a>
                             </li>
                         </ul>
@@ -578,16 +578,16 @@
                             <li class="">
                                 <a href="./products.php?category=blinds&product=honeycomb blinds" title="">Honeycomb blinds</a>
                             </li>
-                            <li  class="">
+                            <li class="">
                                 <a href="./products.php?category=blinds&product=Motorized Curtains" title="">Motorized Curtains</a>
                             </li>
-                            <li  class="">
+                            <li class="">
                                 <a href="./products.php?category=blinds&product=Shower Curtains" title="">Shower Curtains</a>
                             </li>
-                            <li  class="">
+                            <li class="">
                                 <a href="./products.php?category=blinds&product=AC Curtains" title="">AC Curtains</a>
                             </li>
-                            <li  class="">
+                            <li class="">
                                 <a href="./products.php?category=blinds&product=MTrack Channels" title="">MTrack Channels</a>
                             </li>
                         </ul>
@@ -596,25 +596,25 @@
                         <a href="./products.php?category=furnishing" title="">Furnishings</a>
                         <span class="memoBtnDropdown collapsed" data-toggle="collapse" data-target="#memoDropdown2214"><i class="fa fa-angle-down"></i></span>
                         <ul id="memoDropdown2214" class="memoDropdown collapse">
-                            <li  class="">
+                            <li class="">
                                 <a href="./products.php?category=furnishing&product=Upholstery" title="">Upholstery</a>
                             </li>
-                            <li  class="">
+                            <li class="">
                                 <a href="./products.php?category=furnishing&product=Curtains" title="">Curtains</a>
                             </li>
-                            <li  class="">
+                            <li class="">
                                 <a href="./products.php?category=furnishing&product=Abstract Curtains" title="">Abstract Curtains</a>
                             </li>
-                            <li  class="">
+                            <li class="">
                                 <a href="./products.php?category=furnishing&product=Sheer Curtains" title="">Sheer Curtains</a>
                             </li>
-                            <li  class="">
+                            <li class="">
                                 <a href="./products.php?category=furnishing&product=Tassel" title="">Tassel</a>
                             </li>
-                            <li  class="">
+                            <li class="">
                                 <a href="./products.php?category=furnishing&product=HeadBoard Fabric" title="">HeadBoard Fabric</a>
                             </li>
-                            <li  class="">
+                            <li class="">
                                 <a href="./products.php?category=furnishing&product=Artificial Leather" title="">Artificial Leather</a>
                             </li>
                         </ul>
@@ -623,31 +623,31 @@
                         <a href="./products.php?category=rugs" title="">Rugs</a>
                         <span class="memoBtnDropdown collapsed" data-toggle="collapse" data-target="#memoDropdown2215"><i class="fa fa-angle-down"></i></span>
                         <ul id="memoDropdown2215" class="memoDropdown collapse">
-                            <li  class="">
+                            <li class="">
                                 <a href="./products.php?category=rugs&product=Rugs" title="">Rugs</a>
                             </li>
-                            <li  class="">
+                            <li class="">
                                 <a href="./products.php?category=rugs&product=Fur Carpet" title="">Fur Carpet</a>
                             </li>
-                            <li  class="">
+                            <li class="">
                                 <a href="./products.php?category=rugs&product=Shaggy Carpet" title="">Shaggy Carpet</a>
                             </li>
-                            <li  class="">
+                            <li class="">
                                 <a href="./products.php?category=rugs&product=Tufted Carpet" title="">Tufted Carpet</a>
                             </li>
-                            <li  class="">
+                            <li class="">
                                 <a href="./products.php?category=rugs&product=Center Piece Carpet" title="">Center Piece Carpet</a>
                             </li>
-                            <li  class="">
+                            <li class="">
                                 <a href="./products.php?category=rugs&product=Wallpaper" title="">Wallpaper</a>
                             </li>
-                            <li  class="">
+                            <li class="">
                                 <a href="./products.php?category=rugs&product=customized Wallpaper" title="">Customized Wallpaper</a>
                             </li>
-                            <li  class="">
+                            <li class="">
                                 <a href="./products.php?category=rugs&product=imported wallpaper" title="">Imported Wallpaper</a>
                             </li>
-                            <li  class="">
+                            <li class="">
                                 <a href="./products.php?category=rugs&product=Awning" title="">Awning</a>
                             </li>
                         </ul>
@@ -699,11 +699,9 @@
                     <a href="./login-page.php" title="">Login</a>
                 </li>
             <?php } ?>
-
         </ul>
     </div>
 </div>
-
 <div class="menuMobileOverlay hidden-md hidden-lg"></div>
 
 <div onclick="closeSearchModal()" id="pageOverlay" class="page-overlay"></div>

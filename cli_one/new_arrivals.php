@@ -1,7 +1,7 @@
 <div id="shopify-section-1600942005808" class="shopify-section velaFramework" style="position:relative; margin-top:100px">
         <div class="productListHome velaProducts mbBlockGutter"
             style="background-color: rgba(0, 0, 0, 0); padding: 20px 0 25px">
-            <div class="container">
+            <div class="container" style="max-width: 100%;">
                 <div class="sectionInner">
                     <div class="headingGroup pb20">
                         <h3 class="velaHomeTitle text-center">
@@ -74,7 +74,7 @@
                                         
                                         '<div class="product-price">'+
                                             '<div class="price-container">'+
-                                                '<div class="our-price" style="height: 25px">'+
+                                                '<div class="our-price" style="height:25px">'+
                                                     '&#8377;'+return_data[i].price+
                                                 '</div>'+
                                                 '<div class="product-mrp">'+

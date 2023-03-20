@@ -205,6 +205,7 @@
                     </div>
                 </div>
             </div> -->
+            
             <div class="trending-products">
                 <?php include('./new_arrivals.php') ?>
             </div>
