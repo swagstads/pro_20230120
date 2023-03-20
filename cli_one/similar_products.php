@@ -1,35 +1,35 @@
 <div id="shopify-section-1600942005808" class="shopify-section velaFramework">
-                <div class="productListHome velaProducts mbBlockGutter"
-                    style="background-color: rgba(0, 0, 0, 0); padding: 40px 0 45px">
-                    <div class="container" style="max-width: 100%;">
-                        <div class="sectionInner">
-                            <div class="headingGroup pb20">
-                                <h3 class="velaHomeTitle text-center">
-                                    <span>Similar Products</span>
-                                </h3>
-                                <!-- <span class="subTitle">
-                                    Mirum est notare quam littera gothica quam nunc putamus  parum claram!
-                                </span> -->
-                            </div>
-                            <div class="product-slider-container">
-
-                                <div  class="left-arrow scrolling-arrow"> <span onclick="productSliderScrollLeftsimilarProd()" ><</span></div>
-                                <div class="similar-products-scroll  scrolling-products">
-                                    
-                                        <!-- Products -->
-
-
-                                </div>
-
-
-                                <div class="right-arrow scrolling-arrow"> <span  onclick="productSliderScrollRightsimilarProd()" >></span> </div>
-
-                            </div>
-                 
+        <div class="productListHome velaProducts mbBlockGutter"
+            style="background-color: rgba(0, 0, 0, 0); padding: 40px 0 45px">
+            <div class="container" style="width: 100% !important;max-width: 100% !important;">
+                <div class="sectionInner">
+                    <div class="headingGroup pb20">
+                        <h3 class="velaHomeTitle text-center">
+                            <span>Similar Products</span>
+                        </h3>
+                        <!-- <span class="subTitle">
+                            Mirum est notare quam littera gothica quam nunc putamus  parum claram!
+                        </span> -->
                     </div>
-                </div>
+                    <div class="product-slider-container">
+
+                        <div  class="left-arrow scrolling-arrow"> <span onclick="productSliderScrollLeftsimilarProd()" ><</span></div>
+                        <div class="similar-products-scroll  scrolling-products">
+                            
+                                <!-- Products -->
+
+
+                        </div>
+
+
+                        <div class="right-arrow scrolling-arrow"> <span  onclick="productSliderScrollRightsimilarProd()" >></span> </div>
+
+                    </div>
+            
             </div>
         </div>
+    </div>
+</div>
 
     <script>
         function fetch_similar_products(product_data){
@@ -121,7 +121,7 @@
             $('.similar-products-scroll').scrollLeft( $('.similar-products-scroll').scrollLeft() + 270 )
         }
         setInterval(() => {
-            productSliderScrollLeftsimilarProd()
+            productSliderScrollRightsimilarProd()
         }, 5000);
 
 </script>

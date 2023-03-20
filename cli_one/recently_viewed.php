@@ -72,21 +72,21 @@
                                         '</div>'+
                                     '</a>'+
 
-                                        '<div class="quantity">'+
-                                            '<span class="out-of-stock-message"><small>'+outOfStockMessage+'</small></span>'+
-                                            '<span class="in-stock-message"><small>'+inStockMessage+'</small></span>'+
-                                        '</div>'+
+                                    '<div class="quantity">'+
+                                        '<span class="out-of-stock-message"><small>'+outOfStockMessage+'</small></span>'+
+                                        '<span class="in-stock-message"><small>'+inStockMessage+'</small></span>'+
+                                    '</div>'+
                                         
-                                        '<div class="product-price">'+
-                                            '<div class="price-container">'+
-                                                '<div class="our-price" style="height: 25px">'+
-                                                    '&#8377;'+return_data[i].price+
-                                                '</div>'+
-                                                '<div class="product-mrp">'+
-                                                    '<small>&#8377; '+return_data[i].mrp+'</small>'+
-                                               ' </div>'+
-                                           '</div>'+
-                                           '<div class="add-bttns">'+
+                                    '<div class="product-price">'+
+                                        '<div class="price-container">'+
+                                            '<div class="our-price" style="height: 25px">'+
+                                                '&#8377;'+return_data[i].price+
+                                            '</div>'+
+                                            '<div class="product-mrp">'+
+                                                '<small>&#8377; '+return_data[i].mrp+'</small>'+
+                                            ' </div>'+
+                                        '</div>'+
+                                        '<div class="add-bttns">'+
                                             ' <div class="add-to-cart-slide-button">'+
                                                     '<button onclick="addToCart('+return_data[i].prod_id+')">&plus; Add to cart</button>'+
                                                 '</div>'+
