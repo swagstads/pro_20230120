@@ -390,14 +390,12 @@
 
 
         <script>
-
             var product_id = <?php echo $_GET['productid'] ?>;
             var api_url = './api/fetch_single_product.php?product_id';
             var form_data = {
                 "fetch_products": "fetch",
                 "productid": product_id
             };
-            // console.log(form_data);
             $.ajax({
                 url: api_url,
                 type: 'GET',
@@ -470,7 +468,26 @@
                     }
                 }
             })
-        
+            save_recent_views(product_id)
+            
+
+            function save_recent_views(product_id){
+                let api_url = "./api/insert_recent_views.php";
+                var form_data = {"product_id":product_id};
+                $.ajax({
+                url: api_url,
+                type: 'POST',
+                // type: 'GET',
+                data: form_data,
+                success: function (returned_data) {
+                    console.log(returned_data);
+                    var jsonData = JSON.parse(returned_data);
+                    var return_data = jsonData.response[0];
+                    console.log(return_data);
+                    }
+                })
+            }
+
         </script>
 
     </div>
