@@ -1196,8 +1196,8 @@
 }
 .cart-product-container-row .image img{
   height: 200px;
-  border-top-left-radius: 10% 10% ;
-  border-bottom-right-radius: 10% 10%;
+  /* border-top-left-radius: 10% 10% ; */
+  /* border-bottom-right-radius: 10% 10%; */
 }
 @media (max-width: 992px){
   .cart-product-wrapper .cart-product-container .cart-product-container-row {
@@ -1352,6 +1352,7 @@
   font-weight: 500;
   font-size: 2rem;
   padding: 5px 0;
+  margin-top: 10px;
 }
 .product-slider-container .product-slider .product-image {
   width: 250px;
@@ -1364,8 +1365,8 @@
   width: 100%;
   height: 300px;
   object-fit: cover;
-  border-top-left-radius: 10% 10%;
-  border-bottom-right-radius: 10% 10%;
+  /* border-top-left-radius: 10% 10%; */
+  /* border-bottom-right-radius: 10% 10%; */
 }
 .product-slider-container .product-slider .add-to-cart-slide-button{
   visibility: hidden;
@@ -1396,7 +1397,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 80px;
+  height: 50px;
   width: 250px;
   /* border: 1px solid; */
 }
@@ -1500,8 +1501,8 @@
   }
   .order-history-container-row .image img{
       height: 200px;
-      border-top-left-radius: 10% 10% ;
-      border-bottom-right-radius: 10% 10%;
+      /* border-top-left-radius: 10% 10% ; */
+      /* border-bottom-right-radius: 10% 10%; */
   }
   @media (max-width: 992px){
       .order-history-wrapper .order-history-container .order-history-container-row {
@@ -2228,15 +2229,15 @@ Quantity Button
   width: 300px;
   height: 300px;  
   overflow: hidden;      
-  border-top-left-radius: 10% 10%;
-  border-bottom-right-radius: 10% 10%;  
+  /* border-top-left-radius: 10% 10%; */
+  /* border-bottom-right-radius: 10% 10%;   */
 }
 .trending-products-container .trending-product img{
   height: 100%;
   transition: .3s;
   object-fit: cover;
-  border-top-left-radius: 10% 10%;
-  border-bottom-right-radius: 10% 10%;
+  /* border-top-left-radius: 10% 10%; */
+  /* border-bottom-right-radius: 10% 10%; */
 }
 .trending-products-container .trending-product .product a{
   display: flex;

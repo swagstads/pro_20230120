@@ -21,7 +21,7 @@
                         </span>
                         /
                         <span>
-                            <a  id="breadcrum_category" href="./" >category</a>
+                            <a  id="breadcrum_category" href="./" >Category</a>
                         </span>
                         /
                         <span>
@@ -430,7 +430,7 @@
                         $("#read_more_bttn").hide()
                     }
                     // Chaange breadcrum text and href link to products category
-                    $("#breadcrum_category").text(jsonData.response[0].category_name).attr('href', '/products.php?category=' + jsonData.response[0].category_name);
+                    $("#breadcrum_category").text(jsonData.response[0].caps_category_name).attr('href', '/products.php?category=' + jsonData.response[0].category_name);
                     // add product title description and price dynamically
                     $("#breadcrum_product_name").text(jsonData.response[0].title)
                     $("#product_title").text(jsonData.response[0].title)

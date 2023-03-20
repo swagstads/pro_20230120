@@ -75,7 +75,7 @@
         <main class="policy-container">
           <div>
               <p> 
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Placeat itaque voluptate maiores exercitationem nostrum beatae atque maxime voluptatum.     Expedita illo molestiae libero incidunt optio, alias obcaecati tempore quae quas voluptate!</p> 
+                Lorem ipsum dolor, sit amet consectetur adipisicing elite. Placeat itaque voluptate maiores exercitationem nostrum beatae atque maxime voluptatum.     Expedita illo molestiae libero incidunt optio, alias obcaecati tempore quae quas voluptate!</p> 
               <p>
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio, incidunt ea. Tempore sed nesciunt quis non dolores molestiae ullam modi aut cumque pariatur ipsam, tempora, repellendus ad fuga sequi eum?              
               </p> 

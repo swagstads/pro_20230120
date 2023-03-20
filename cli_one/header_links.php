@@ -8,15 +8,27 @@
 <link href="./assets/css/style.css" rel="stylesheet" />
 <link href="./assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet'>
+<link href="https://fonts.cdnfonts.com/css/avenir" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 
+<script type="text/javascript">
+    function googleTranslateElementInit() {
+        new google.translate.TranslateElement({
+            pageLanguage: 'en'
+        }, 'google_translate_element');
+    }
+</script>
+
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+
 <script>
-    $(document).ready(function(){
-        $("button").click(function(){
+    $(document).ready(function() {
+        $("button").click(function() {
             //alert("jQuery is working perfectly.");
-        });      
+        });
     });
 </script>
 
@@ -44,7 +56,7 @@
 
 
 <style>
- /*--------------------------------------------------------------
+    /*--------------------------------------------------------------
   # Portfolio
   --------------------------------------------------------------*/
     #portfolio {
@@ -211,23 +223,20 @@
 <meta name="theme-color" content="#bd8448" />
 <link rel="canonical" href="collections.php" />
 
-<link rel="shortcut icon" href="./cdn.shopify.com/s/files/1/1573/5553/files/icon_32x32e751.png?v=1613719979" type="image/png" />
+<link rel="shortcut icon" href="./assets/images/logo1.jpg" type="image/png" />
 <!-- iPad icons -->
-<link rel="apple-touch-icon-precomposed" href="./cdn.shopify.com/s/files/1/1573/5553/files/icon_48x48e751.png?v=1613719979" type="image/png" />
-<link rel="nokia-touch-icon" href="./cdn.shopify.com/s/files/1/1573/5553/files/icon_48x48e751.png?v=1613719979" type="image/png" />
+<link rel="apple-touch-icon-precomposed" href="./assets/images/logo1.jpg" type="image/png" />
+<link rel="nokia-touch-icon" href="./assets/images/logo1.jpg" type="image/png" />
 
 <!-- For icons - font awesome -->
 <!-- <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css"> -->
 
 <!-- Jquery SLider lib - swiper -->
-<link
-  rel="stylesheet"
-  href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"
-/>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
 
 <title>Collections &ndash; Outstock</title>
 
-<meta name="description" content="Fashion, Apparel, Electronics, Tools, Lingeri, Glasses, Furniture, Jewelry, Bikes, Cosmetics, Gifts, Handmade store. Try new premium multipurpose Shopify theme from Elite Author velatheme. velatheme Shopify theme is new approach to ecommerce web development." />
+<meta name="description" content="Fashion, Apparel, Electronics, Tools, Lingeri, Glasses, Furniture, Jewelry, Bikes, Cosmetics, Gifts, Handmade store. Try new premium multipurpose from Elite. theme is new approach to ecommerce web development." />
 
 <!-- /snippets/social-meta-tags.liquid -->
 
@@ -236,7 +245,7 @@
         /* --vela-color-primary: #bd8448; */
         /* --vela-color-secondary: #bd8448; */
         --vela-color-primary: #0087c7;
-        --vela-color-secondary: #e30d7c ;
+        --vela-color-secondary: #e30d7c;
         --vela-border-color: #e1e1e1;
         --vela-body-bg: #ffffff;
 
@@ -343,59 +352,68 @@
         }, 3000);
     }
 
-    function increase_click_count(product_id){
+    function increase_click_count(product_id) {
         // event.preventDefault()
         let api_url = "./api/increase_click_count.php";
         // form data values
-        var form_data = {"click_count":"increase","product_id":product_id};
+        var form_data = {
+            "click_count": "increase",
+            "product_id": product_id
+        };
         $.ajax({
-        url: api_url,
-        type: 'POST',
-        // type: 'GET',
-        data: form_data,
-        success: function (returned_data) {
-            var jsonData = JSON.parse(returned_data);
-            var return_data = jsonData.response[0];
+            url: api_url,
+            type: 'POST',
+            // type: 'GET',
+            data: form_data,
+            success: function(returned_data) {
+                var jsonData = JSON.parse(returned_data);
+                var return_data = jsonData.response[0];
             }
         })
     }
 
-    function cart_count(){
+    function cart_count() {
         let api_url = "./api/get_cart_row_count.php";
         // form data values
-        var form_data = {"fetch_row_count":"yes"};
+        var form_data = {
+            "fetch_row_count": "yes"
+        };
         $.ajax({
-        url: api_url,
-        type: 'POST',
-        // type: 'GET',
-        data: form_data,
-        success: function (returned_data) {
+            url: api_url,
+            type: 'POST',
+            // type: 'GET',
+            data: form_data,
+            success: function(returned_data) {
                 var jsonData = JSON.parse(returned_data);
                 $("#CartCount").html(jsonData.response[0].row_count)
             }
         })
     }
     cart_count()
-    
-    function addToCart(product_id){
+
+    function addToCart(product_id) {
         var quantity = $("#prod_qnty_inp").val() || 1;
         api_url = "./api/add_to_cart.php";
-        var form_data = { "add_to_cart": "add" , "productid": product_id,'quantity': quantity};
+        var form_data = {
+            "add_to_cart": "add",
+            "productid": product_id,
+            'quantity': quantity
+        };
         $.ajax({
-                url: api_url,
-                type: 'POST',
-                data: form_data,
-                success: function (returned_data) {
-                    var jsonData = JSON.parse(returned_data);
-                    var return_data = jsonData.response;
-                    show_msg(return_data[0].message)
-                }
+            url: api_url,
+            type: 'POST',
+            data: form_data,
+            success: function(returned_data) {
+                var jsonData = JSON.parse(returned_data);
+                var return_data = jsonData.response;
+                show_msg(return_data[0].message)
+            }
         })
         cart_count()
     }
 </script>
 
 
-<?php 
-    require("./api/config.php") ;
+<?php
+require("./api/config.php");
 ?>

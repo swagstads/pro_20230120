@@ -23,6 +23,7 @@ if (isset($_GET['fetch_products'])) {
     $data["title"] = $fetch_data->title;
     $data["description"] = $fetch_data->description;
     $data["category_name"] = $fetch_data->category_name;
+    $data["caps_category_name"] = ucfirst($fetch_data->category_name);
     $data["category_id"] = $fetch_data->category_id;
     $data["mrp"] = $fetch_data->mrp;
     $data["price"] = $fetch_data->price;
