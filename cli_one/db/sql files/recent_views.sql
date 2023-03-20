@@ -32,7 +32,7 @@ CREATE TABLE `recent_views` (
   `user_id` int UNSIGNED NOT NULL,
   `product_id` int NOT NULL,
   `timestamp` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `recent_views`
@@ -52,8 +52,8 @@ INSERT INTO `recent_views` (`id`, `user_id`, `product_id`, `timestamp`) VALUES
 --
 
 --
--- Indexes for table `recent_views`
 --
+-- Indexes for table `recent_views`
 ALTER TABLE `recent_views`
   ADD PRIMARY KEY (`id`),
   ADD KEY `product_id` (`product_id`),
