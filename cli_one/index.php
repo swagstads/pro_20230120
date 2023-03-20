@@ -195,7 +195,74 @@
                 </div>
             </div>
 
+            <div class="about-content-card-wrapper">
+                <div class="about-content-card-container">
+                    <div class="about-content-card">
+                        <div class="left">
+                            <div class="icon">
+                            <img class="product-card__img-icon about-content-card-icon lazyload imgFlyCart "
+                                src="./assets/icons/25-years.svg" 
+                                data-widths="[360,540,720,900,1080,1296,1728,1944,2808,4320]"
+                                data-aspectratio="1.1538461538461537"
+                                data-ratio="1.1538461538461537" data-sizes="auto" alt="" />
+                            </div>
+                        </div>
+                        <div class="right">
+                            <div class="text">
+                                <h4 class="index-about-heading">85+ Years of Experience</h4>
+                                <p class="desc">
+                                    This some description
+                                </p>
 
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="about-content-card">
+                        <div class="left">
+                            <div class="icon">
+                                <img class="product-card__img-icon about-content-card-icon lazyload imgFlyCart "
+                                    src="./assets/icons/design.svg" 
+                                    data-widths="[360,540,720,900,1080,1296,1728,1944,2808,4320]"
+                                    data-aspectratio="1.1538461538461537"
+                                    data-ratio="1.1538461538461537" data-sizes="auto" alt="" />
+                            </div>
+                        </div>
+                        <div class="right">
+                            <div class="text">
+                                <h4 class="index-about-heading">Impressive Design</h4> 
+                                <p class="desc">
+                                    This some description
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="about-content-card">
+                        <div class="left">
+                            <div class="icon">
+                            <img class="product-card__img-icon about-content-card-icon lazyload imgFlyCart "
+                                src="./assets/icons/happy-customer.svg" 
+                                data-widths="[360,540,720,900,1080,1296,1728,1944,2808,4320]"
+                                data-aspectratio="1.1538461538461537"
+                                data-ratio="1.1538461538461537" data-sizes="auto" alt="" />
+                            </div>
+                        </div>
+                        <div class="right">
+                            <div class="text">
+                                <h4 class="index-about-heading">10,00,000+ Happy Customer</h4>
+                                <p class="desc">
+                                    This some description
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+
+                </div>
             <!-- <div class="container-full">
                 <div class="velaAboutTextInner p-relative">
                     <div class="velaContent text-center">

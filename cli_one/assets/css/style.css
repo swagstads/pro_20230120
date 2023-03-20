@@ -2293,6 +2293,90 @@ Quantity Button
   }
 }
 
+
+
+/* Index about cards */
+.about-content-card-wrapper{
+  padding: 0 25px;
+}
+.about-content-card-container{
+  display: grid;
+  grid-template-columns: 33% 33% 33%;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+.about-content-card-container .about-content-card{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 40px 50px;
+  min-height: 100%;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.118);
+}
+.about-content-card-container .about-content-card:nth-child(1){
+  background-color: #9fc1ff;
+  /* background-color: var(--col1); */
+}
+.about-content-card-container .about-content-card:nth-child(2){
+  background-color: #ff97a3;
+  /* background-color: var(--col2); */
+}
+.about-content-card-container .about-content-card:nth-child(3){
+  background-color: #8484b3;
+}
+.about-content-card-container .about-content-card .left .icon{
+  display: flex;
+  height: 100%;
+  align-items: center;
+}
+.about-content-card-container .about-content-card .left .about-content-card-icon{
+  height: 50px;
+}
+
+.about-content-card-container .right .text{
+  display: flex;
+  flex-direction: column;
+}
+.about-content-card-container .right .text .index-about-heading{
+
+}
+.about-content-card-container .right .text .desc{
+  color: rgba(0, 0, 0, 0.731); 
+}
+
+@media (max-width: 992px) {
+  .about-content-card-container {
+      grid-template-columns: 50% 50%;
+  }
+}
+@media (max-width: 768px) {
+  .about-content-card-container {
+      grid-template-columns: auto;
+  }
+}
+@media (min-width: 768px) {
+.about-content-card-container {
+  max-width: 768px !important;
+}            
+}
+@media (min-width: 992px) {
+.about-content-card-container {
+  max-width: 985px !important;
+}            
+}
+@media (min-width: 1220px){
+.about-content-card-container {
+  max-width: 1210px !important;
+}
+}
+
+
 /* ======== General CSS ======== */
 
 @media (max-width: 991px) {
@@ -2310,3 +2394,6 @@ Quantity Button
   -webkit-box-orient: vertical;
   white-space: pre-line;
 }
+
+
+
