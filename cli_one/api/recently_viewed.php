@@ -6,15 +6,21 @@ require('config.php');
 
 $data = array();
 $response["response"] = array();
+$user_id = $_SESSION['user_id'];
 
 try {
 // Execute the query to fetch the top 3 products by click_count
-$sql = "SELECT *,p.id AS product_id FROM recent_views rv JOIN product p ON rv.product_id = p.id LIMIT 10";
-if($stmt = $dbh->query($sql)){
-    $count = $stmt->rowCount();
+$sql = "SELECT *,p.id AS product_id FROM recent_views rv JOIN product p ON rv.product_id = p.id WHERE user_id=:user_id LIMIT 10";
+
+$query = $dbh->prepare($sql);
+$query->bindParam(':user_id', $user_id, PDO::PARAM_STR);
+
+if($query->execute()){
+    $count = $query->rowCount();
+
     if($count > 0){
         // Fetch the rows and display the results
-        $fetch_data = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        $fetch_data = $query->fetchAll(PDO::FETCH_ASSOC);
         for ($i = 0; $i < $count; $i++) {
             $data["prod_id"] = $fetch_data[$i]['product_id'];
             $data["title"] = $fetch_data[$i]['title'];
