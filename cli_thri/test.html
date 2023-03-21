@@ -5,109 +5,129 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
-
   <style>
-
-.logo-container {
-  display: flex;
-  overflow-x: hidden;
-  position: relative;
-}
-
-.logo-wrapper {
-  display: flex;
-  flex-wrap: nowrap;
-  transition: transform 0.5s ease-in-out;
-}
-
-.logo-wrapper img {
-  max-width: 100%;
-  height: auto;
-  margin-right: 20px;
-}
-
-.scroll-buttons {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-  height: 100%;
-}
-
-.scroll-left,
-.scroll-right {
-  cursor: pointer;
-  font-size: 36px;
-  font-weight: bold;
-  color: #fff;
-  background-color: rgba(0, 0, 0, 0.5);
-  padding: 10px;
-  border-radius: 50%;
-  transition: background-color 0.2s ease-in-out;
-}
-
-.scroll-left:hover,
-.scroll-right:hover {
-  background-color: rgba(0, 0, 0, 0.8);
-}
-
-@media screen and (min-width: 768px) {
-  .logo-wrapper img {
-    margin-right: 30px;
-  }
-}
-
-
-
-
+    .company-link-container{
+      width: 100%;
+      position: relative;
+    }
+    .company-link-cards{
+      width: 100%;
+      overflow-x: auto;
+      display: flex;
+      justify-content:stretch;
+      touch-action: cross-slide-x;
+      gap: 20px;
+      position: relative;
+      overflow: hidden;
+    }
+    .company-link-cards .company{
+      height: 100px;
+      border-radius: 5px;
+      min-width: 200px;
+      text-align: center;
+      width: 20%;
+      border: 1px solid rgba(0, 0, 0, 0.373);
+      position: relative;
+      color: white;
+      overflow: hidden;
+    }
+    .company-link-cards .company-title{
+      height: 100px !important;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: absolute;
+      left: 0;
+      top: 0;
+      z-index: 5;
+      color: white;
+    }
+    .company-link-cards .company .bg-img{
+      height: 100%;
+      width: 100%;
+      z-index: -1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .company-link-cards .company:hover .bg-img  img{
+      width: 120%;
+      height: 120%;
+    }
+    .company-link-cards .company .bg-img img{
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      transition: .3s;
+      width: 100%;
+      object-fit: cover;
+      z-index: -1;
+      filter: brightness(0.5);
+    }
   </style>
 </head>
 <body>
-  <div class="logo-container">
-    <div class="logo-wrapper">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/a/ab/Android_O_Preview_Logo.png" alt="Logo 1">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/a/ab/Android_O_Preview_Logo.png" alt="Logo 2">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/a/ab/Android_O_Preview_Logo.png" alt="Logo 3">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/a/ab/Android_O_Preview_Logo.png" alt="Logo 4">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/a/ab/Android_O_Preview_Logo.png" alt="Logo 5">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/a/ab/Android_O_Preview_Logo.png" alt="Logo 6">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/a/ab/Android_O_Preview_Logo.png" alt="Logo 7">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/a/ab/Android_O_Preview_Logo.png" alt="Logo 8">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/a/ab/Android_O_Preview_Logo.png" alt="Logo 9">
-    </div>
-    <div class="scroll-buttons">
-      <div class="scroll-left">&lt;</div>
-      <div class="scroll-right">&gt;</div>
-    </div>
-  </div>
-  <script>
-    const logoWrapper = document.querySelector('.logo-wrapper');
-const scrollLeft = document.querySelector('.scroll-left');
-const scrollRight = document.querySelector('.scroll-right');
-let scrollAmount = 0;
-const scrollStep = 400; // adjust this to control scrolling speed
-const autoScrollDelay = 5000; // adjust this to control auto-scroll delay
+      <div class="company-link-container">
 
-// scroll to the left
-scrollLeft.addEventListener('click', () => {
-  scrollAmount -= scrollStep;
-  logoWrapper.style.transform = `translateX(${scrollAmount}px)`;
-});
+        <div class="company-link-cards">
 
-// scroll to the right
-scrollRight.addEventListener('click', () => {
-  scrollAmount += scrollStep;
-  logoWrapper.style.transform = `translateX(${scrollAmount}px)`;
-});
+          <div class="company company-1">
+            <a href="#">
+              <div class="bg-img">
+                <img src="./images/company_banners/1.jpg" alt="">
+              </div>
+              <div class="company-title">
+                Company
+              </div> 
+            </a> 
+          </div>
+          <div class="company company-2">
+            <a href="#">
+              <div class="bg-img">
+                <img src="./images/company_banners/1.jpg" alt="">
+              </div>
+              <div class="company-title">
+                Company
+              </div> 
+            </a> 
+          </div>
+          <div class="company company-3">
+            <a href="#">
+              <div class="bg-img">
+                <img src="./images/company_banners/1.jpg" alt="">
+              </div>
+              <div class="company-title">
+                Company
+              </div> 
+            </a> 
+          </div>
+          <div class="company company-4">
+            <a href="#">
+              <div class="bg-img">
+                <img src="./images/company_banners/1.jpg" alt="">
+              </div>
+              <div class="company-title">
+                Company
+              </div> 
+            </a> 
+          </div>
+          <div class="company company-5">
+            <a href="#">
+              <div class="bg-img">
+                <img src="./images/company_banners/1.jpg" alt="">
+              </div>
+              <div class="company-title">
+                Company
+              </div> 
+            </a> 
+          </div>
 
-// auto-scroll every 5 seconds
-setInterval(() => {
-  scrollAmount -= scrollStep;
-  logoWrapper.style.transform = `translateX(${scrollAmount}px)`;
-}, autoScrollDelay);
 
-  </script>
+
+        </div>
+
+      </div>
+
 </body>
 </html>
