@@ -109,14 +109,14 @@ if (isset($_POST['btnedit'])) {
                         if($_SESSION['role']=='Admin'||$_SESSION['role']=='Editor'){
                         ?>
                         <div class="form-group">
-                                <label class="control-label"><b>Status :</b></label>
-                                <select name="status" class="form-control" id="status">
-                                    <option value="active" <?php if($users['status'] == 'active'){echo 'selected';} ?>>active</option>
-                                    <option value="dormant" <?php if($users['status'] == 'dormant'){echo 'selected';} ?>>dormant</option>
-                                    <option value="deleted" <?php if($users['status'] == 'deleted'){echo 'selected';} ?>>deleted</option>
-                                    <option value="removed" <?php if($users['status'] == 'removed'){echo 'selected';} ?>>removed</option>
-                                </select>
-                            </div>
+                            <label class="control-label"><b>Status :</b></label>
+                            <select name="status" class="form-control" id="status">
+                                <option value="active" <?php if($users['status'] == 'active'){echo 'selected';} ?>>active</option>
+                                <option value="dormant" <?php if($users['status'] == 'dormant'){echo 'selected';} ?>>dormant</option>
+                                <option value="deleted" <?php if($users['status'] == 'deleted'){echo 'selected';} ?>>deleted</option>
+                                <option value="removed" <?php if($users['status'] == 'removed'){echo 'selected';} ?>>removed</option>
+                            </select>
+                        </div>
                         <input '.$display.' type="submit" value="Update" id="btnedit" name="btnedit" class="btn btn-primary btn-block col-sm-3"/>
                         <?php
                         }
