@@ -2387,6 +2387,7 @@ Quantity Button
 }
 .hero-banner-icons-wrapper .hero-banner-icons-container{
   display: flex;
+  flex-direction: column;
   width: 100%;
   align-items: center;
   justify-content: space-between;
@@ -2397,38 +2398,30 @@ Quantity Button
   padding: 20px;
   gap: 20px;
 }
+.hero-banner-icons-wrapper .hero-banner-icons-container .bottom{
+  width: 100%;
+}
 .hero-banner-icons-wrapper .hero-banner-icons-container .text{
   font-weight: 500;
   font-size: 2.5rem;
   color: black;
 }
-.hero-banner-icons-wrapper .hero-banner-icons-container .right{
-  width: 80%;
-}
 .hero-banner-icons-wrapper .hero-banner-icons-container .icons-container{
   width: 100%;
   display: grid;
-  grid-template-columns: repeat(4,auto);
+  grid-template-columns: repeat(6,auto);
   align-items: center;
   justify-content: space-around;
 }
 .hero-banner-icons-wrapper .hero-banner-icons-container .icons-container img{
   width: 200px;
 }
-
-@media (max-width:992px) {
-  .hero-banner-icons-wrapper{
-    margin-top: 80px;
-  }
+@media (max-width: 992px) {
   .hero-banner-icons-wrapper .hero-banner-icons-container .icons-container{
-      grid-template-columns: repeat(2,auto);
+    grid-template-columns: repeat(3,auto);
   }
 }
-@media (max-width:768px) {
-  .hero-banner-icons-wrapper .hero-banner-icons-container{
-    flex-direction: column;
-  }
-}
+
 
 /* ======== Hero banner icons end ======== */
 
@@ -2467,8 +2460,13 @@ Quantity Button
 .index-product-description-card .info .index-product-description-card-button button{
   border: 1px solid black;
   background-color: transparent;
-  padding: 20px 40px;
+  padding: 10px 40px;
   font-size: 1.2rem;
+  transition: .3s;
+}
+.index-product-description-card .info .index-product-description-card-button button:hover{
+  background-color: black;
+  color: white;
 }
 .index-product-description-card .product-main-img{
   object-fit: cover;
@@ -2511,4 +2509,25 @@ Quantity Button
 }
 
 
+.page-conatiner{
+  position: relative;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+@media (min-width: 768px) {
+  .page-conatiner {
+    max-width: 768px !important;
+  }            
+  }
+  @media (min-width: 992px) {
+  .page-conatiner {
+    max-width: 985px !important;
+  }            
+  }
+  @media (min-width: 1220px){
+  .page-conatiner {
+    max-width: 1210px !important;
+  }
+  }
 
