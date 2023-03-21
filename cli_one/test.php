@@ -6,128 +6,108 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        .about-content-card-container{
-            display: flex;
-            gap: 10px;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-            left: 0;
-            right: 0;
-            margin: auto;
+        .index-product-description-card{
+            display: grid;
+            grid-template-columns: 50% 50%;
+            width: 100%;
+            background-color:beige;
         }
-        .about-content-card-container .about-content-card{
-            display: flex;
-            gap: 10px;
-            padding: 10px;
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.118);
+
+        .index-product-description-card .left,.index-product-description-card .right{
+            max-height: 90vh;
+            overflow: hidden;
         }
-        .about-content-card-container .about-content-card:nth-child(1){
-            background-color: #9fc1ff;
-        }
-        .about-content-card-container .about-content-card:nth-child(2){
-            background-color: #ff97a3;
-        }
-        .about-content-card-container .about-content-card:nth-child(3){
-            background-color: #8484b3;
-        }
-        .about-content-card-container .about-content-card .left .icon{
-            display: flex;
+        .index-product-description-card .info{
             height: 100%;
+            display: flex;
+            flex-direction: column;
             align-items: center;
+            padding: 30px;
         }
-        .about-content-card-container .about-content-card .left .about-content-card-icon{
-            height: 50px;
+        .index-product-description-card .info .title{
+            font-size: 2rem;
         }
-        .about-content-card-container .right .text{
+        .index-product-description-card .info .description{
+            font-size: 1.5rem;
+            padding: 0 0 40px 0;
             text-align: justify;
         }
-        
+        .index-product-description-card .info .index-product-description-card-button button{
+            border: 1px solid black;
+            background-color: transparent;
+            padding: 20px 40px;
+            font-size: 1.2rem;
+        }
+        .index-product-description-card .product-main-img{
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
+        }
         @media (max-width: 992px) {
-            .about-content-card-container {
-                flex-direction: column;
+            .index-product-description-card-image{
+                grid-area: bannerImg;
             }
-        }
-        @media (min-width: 768px) {
-        .about-content-card-container {
-            max-width: 768px !important;
-        }            
-        }
-        @media (min-width: 992px) {
-        .about-content-card-container {
-            max-width: 985px !important;
-        }            
-        }
-        @media (min-width: 1220px){
-        .about-content-card-container {
-            max-width: 1210px !important;
-        }
+            .index-product-description-card-info{
+                grid-area: info;
+            }
+            .index-product-description-card{
+                grid-template-columns: auto;
+                grid-template-areas: 'bannerImg' 'info';
+            }
         }
     </style>
 </head>
 <body>
-    <div class="about-content-card-wrapper">
-
-            <div class="about-content-card-container">
-
+    <div class="index-product-description-card-wrapper">
+        <div class="index-product-description-card-container page-container">
 
 
-                <div class="about-content-card">
-                    <div class="left">
-                        <div class="icon">
-                        <img class="product-card__img-icon about-content-card-icon lazyload imgFlyCart "
-                            src="./assets/icons/25-years.svg" 
-                            data-widths="[360,540,720,900,1080,1296,1728,1944,2808,4320]"
-                            data-aspectratio="1.1538461538461537"
-                            data-ratio="1.1538461538461537" data-sizes="auto" alt="" />
+            <div class="index-product-description-card">
+                <div class="left index-product-description-card-image">
+                    <img class="product-main-img" src="./assets/images/our-bank/floor.jpg" alt="">
+                </div>
+                <div class="right index-product-description-card-info">
+                    <div class="info">
+                        <div class="title">
+                            <h4>Product One</h4>
                         </div>
-                    </div>
-                    <div class="right">
-                        <div class="text">
-                            <h4 class="boxServiceTitle">85+ Years of Experience</h4>
+                        <div class="description">
+                            The classic collection comprises antique pieces and newly recreated versions. The antiques have been handpicked from across the world and are timeless works of art. The recreations are carefully and mindfully created with attention to detail, quality and beauty. The woven magnificence and superb condition of each piece, reflects the discerning standards and thorough process to ensure the high benchmark of quality and craftsmanship that has come to be associated with The Carpet Cellar.
+                        </div>
+                        <div class="index-product-description-card-button">
+                            <button>
+                                Shop Now
+                            </button>
                         </div>
                     </div>
                 </div>
-
-                <div class="about-content-card">
-                    <div class="left">
-                        <div class="icon">
-                            <img class="product-card__img-icon about-content-card-icon lazyload imgFlyCart "
-                                src="./assets/icons/design.svg" 
-                                data-widths="[360,540,720,900,1080,1296,1728,1944,2808,4320]"
-                                data-aspectratio="1.1538461538461537"
-                                data-ratio="1.1538461538461537" data-sizes="auto" alt="" />
-                        </div>
-                    </div>
-                    <div class="right">
-                        <div class="text">
-                            <h4 class="boxServiceTitle">Impressive Design</h4> 
-                        </div>
-                    </div>
-                </div>
-
-
-                <div class="about-content-card">
-                    <div class="left">
-                        <div class="icon">
-                        <img class="product-card__img-icon about-content-card-icon lazyload imgFlyCart "
-                            src="./assets/icons/happy-customer.svg" 
-                            data-widths="[360,540,720,900,1080,1296,1728,1944,2808,4320]"
-                            data-aspectratio="1.1538461538461537"
-                            data-ratio="1.1538461538461537" data-sizes="auto" alt="" />
-                        </div>
-                    </div>
-                    <div class="right">
-                        <div class="text">
-                            <h4 class="boxServiceTitle">10,00,000+ Happy Customer</h4>
-                        </div>
-                    </div>
-                </div>
-
-
             </div>
 
+            <br>
+
+            <div class="index-product-description-card">
+                <div class="left index-product-description-card-info">
+                    <div class="info">
+                        <div class="title">
+                            <h4>Product One</h4>
+                        </div>
+                        <div class="description">
+                            The classic collection comprises antique pieces and newly recreated versions. The antiques have been handpicked from across the world and are timeless works of art. The recreations are carefully and mindfully created with attention to detail, quality and beauty. The woven magnificence and superb condition of each piece, reflects the discerning standards and thorough process to ensure the high benchmark of quality and craftsmanship that has come to be associated with The Carpet Cellar.
+                        </div>
+                        <div class="index-product-description-card-button">
+                            <button>
+                                Shop Now
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="right index-product-description-card-image">
+                    <img class="product-main-img" src="./assets/images/our-bank/floor.jpg" alt="">
+                </div>
+            </div>
+
+
+        </div>
     </div>
 </body>
 </html>

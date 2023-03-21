@@ -14,13 +14,13 @@
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 
 <script type="text/javascript">
-function googleTranslateElementInit() {
-  new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
-}
+    function googleTranslateElementInit() {
+        new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.HORIZONTAL}, 'google_translate_element');
+        new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.HORIZONTAL}, 'google_translate_element_mobile');
+    }
 </script>
 
 <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-
 
 <script>
     $(document).ready(function() {
@@ -192,6 +192,22 @@ function googleTranslateElementInit() {
         margin-top: 53px;
         opacity: 0.6;
     }
+
+    /* Google translator */
+    .skiptranslate{
+        color: transparent
+    }
+    .goog-te-gadget .goog-te-combo {
+        color: black !important;
+        max-width: 50%;
+        overflow: hidden;
+    }
+    .VIpgJd-ZVi9od-l4eHX-hSRGPd{
+        display:none
+    }
+
+    
+
 </style>
 
 <link href="./cdn.shopify.com/s/files/1/1573/5553/t/43/assets/vela-fontseb87.css" rel="stylesheet" type="text/css" media="all" />

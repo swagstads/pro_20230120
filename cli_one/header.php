@@ -405,13 +405,13 @@
                                 </a>
                             </div>
                         </div>
-                        <div id="google_translate_element"></div>
+                        <div style="padding: 0 10px" class="hide-on-mobile" id="google_translate_element"></div>
 
                     <?php
                     } // when use is logged in end
                     else { /// when use is not logged in
                     ?>
-                        <div class="box login-link-container hide-on-mobile">
+                        <div class="box login-link-container  hide-on-mobile" style="display: flex;">
                             <a href="login-page.php" id="customer_login_link">
                                 <i class="icons nav-icons">
                                     <svg fill="#000000" width="25px" height="25px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -424,10 +424,15 @@
                                     </svg>&nbsp;
                                 </i>Login
                             </a>
+
+
+                            <div style="padding: 0 10px" id="google_translate_element" class="hide-on-mobile"></div>
+
                         </div>
                     <?php
                     }
                     ?>
+
                     <!-- <div class="header-admin-icon" style="display: flex; align-items: center; padding: 20px">
                         <a href="./admin_panel"><i class="fa fa-thin fa-lock icons" style="font-size:25px;color:white;"></i></a>&nbsp;
                     </div> -->
@@ -441,26 +446,6 @@
                     </div>
 
                 </div>
-
-
-                <!-- <div id="velaSearchTop" class="collapse">
-                    <div class="container text-center">
-                        <a class="btnClose" href="#velaSearchTop" data-toggle="collapse"><i class="ion ion-android-close"></i></a>
-                        <h3 class="title">Search</h3>
-                        <form id="velaSearchbox" class="formSearch" action="https://vela-kazan.myshopify.com/search" method="get">
-                            <input type="hidden" name="type" value="product" />
-                            <input class="velaSearch form-control" type="search" name="q" value="" placeholder="Enter keywords to search..." autocomplete="off" />
-                            <button id="velaSearchButton" class="btnVelaSearch" type="submit">
-                                <span class="icons">
-                                    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512" style="enable-background: new 0 0 512 512" xml:space="preserve">
-                                        <path d="M344.5,298c15-23.6,23.8-51.6,23.8-81.7c0-84.1-68.1-152.3-152.1-152.3C132.1,64,64,132.2,64,216.3c0,84.1,68.1,152.3,152.1,152.3c30.5,0,58.9-9,82.7-24.4l6.9-4.8L414.3,448l33.7-34.3L339.5,305.1L344.5,298z M301.4,131.2c22.7,22.7,35.2,52.9,35.2,85c0,32.1-12.5,62.3-35.2,85c-22.7,22.7-52.9,35.2-85,35.2c-32.1,0-62.3-12.5-85-35.2c-22.7-22.7-35.2-52.9-35.2-85c0-32.1,12.5-62.3,35.2-85c22.7-22.7,52.9-35.2,85-35.2C248.5,96,278.7,108.5,301.4,131.2z" />
-                                    </svg>
-                                </span>
-                                <span class="btnSearchText">Search</span>
-                            </button>
-                        </form>
-                    </div>
-                </div> -->
             </div>
         </div>
     </div>
@@ -661,17 +646,6 @@
             <!-- <li class="">
                 <a href="blogs/news.php" title="">Blog</a>
             </li> -->
-            <li onclick="openSearchModal()" class="">
-                <a title="">Search</a>
-            </li>
-            <li class="">
-                <div id="cd-cart-trigger" class="header-admin-icon">
-                    <a>Wishlist</a>
-                </div>
-            </li>
-            <li class="">
-                <a href="./cart.php" title="">Cart</a>
-            </li>
             <li class="">
                 <a href="https://goo.gl/maps/mGWpdoHE2XxLtBox7" target="_blank" title="">Directions</a>
             </li>
@@ -682,6 +656,7 @@
             <li class="">
                 <a href="./contact-us.php" title="">Contact</a>
             </li>
+
             <?php if (isset($_SESSION['username'])) { ?>
                 <li class="">
                     <a href="./profile.php" title="">Profile</a>
@@ -699,6 +674,9 @@
                     <a href="./login-page.php" title="">Login</a>
                 </li>
             <?php } ?>
+            <li>
+                <div id="google_translate_element_mobile" >Translate</div>
+            </li>
         </ul>
     </div>
 </div>

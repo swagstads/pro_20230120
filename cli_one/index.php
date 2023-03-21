@@ -195,6 +195,93 @@
                 </div>
             </div>
 
+
+            <div class="hero-banner-icons-wrapper ">
+                <div class="hero-banner-icons-container page-conatiner">
+                    <div class="left">
+                        <div class="text">
+                            As seen in
+                        </div>
+                    </div>
+                    <div class="right">
+                        <div class="icons-container">
+                            <div class="icon">
+                                <svg version="1.1" id="Uploaded to svgrepo.com" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
+                                    width="80px" height="80px" viewBox="0 0 32 32" xml:space="preserve">
+                                <style type="text/css">
+                                    .feather_een{fill:#111918;}
+                                    .st0{fill:#0B1719;}
+                                </style>
+                                <path class="feather_een" d="M29,24V7c0-1.657-1.343-3-3-3H6C4.343,4,3,5.343,3,7v8c0,0.552,0.448,1,1,1v1c0,0.552,0.448,1,1,1h2
+                                    v1.5C7,19.776,7.224,20,7.5,20S8,19.776,8,19.5V18h2c0.552,0,1-0.448,1-1v-1c0.552,0,1-0.448,1-1h6v9H3c-1.105,0-2,0.895-2,2v1
+                                    c0,0.552,0.448,1,1,1h28c0.552,0,1-0.448,1-1v-1C31,24.895,30.105,24,29,24z M10,17H5v-1h5V17z M11,14v1H4V7c0-1.103,0.897-2,2-2h20
+                                    c1.103,0,2,0.897,2,2v17h-9V14H11z M30,27H2v-1c0-0.551,0.449-1,1-1h26c0.551,0,1,0.449,1,1V27z M16.5,7C15.119,7,14,8.119,14,9.5
+                                    c0,1.381,1.119,2.5,2.5,2.5c1.381,0,2.5-1.119,2.5-2.5C19,8.119,17.881,7,16.5,7z M16.5,11c-0.827,0-1.5-0.673-1.5-1.5
+                                    S15.673,8,16.5,8S18,8.673,18,9.5S17.327,11,16.5,11z M23.5,12c1.381,0,2.5-1.119,2.5-2.5C26,8.119,24.881,7,23.5,7
+                                    C22.119,7,21,8.119,21,9.5C21,10.881,22.119,12,23.5,12z M23.5,8C24.327,8,25,8.673,25,9.5S24.327,11,23.5,11S22,10.327,22,9.5
+                                    S22.673,8,23.5,8z M24,17h-1c-0.552,0-1,0.448-1,1v3c0,0.552,0.448,1,1,1h1c0.552,0,1-0.448,1-1v-3C25,17.448,24.552,17,24,17z
+                                    M24,21h-1v-1h1V21z M24,19h-1v-1h1V19z"/>
+                                </svg>
+                            </div>
+                            <div class="icon">
+                                <svg version="1.1" id="Uploaded to svgrepo.com" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
+                                    width="80px" height="80px" viewBox="0 0 32 32" xml:space="preserve">
+                                <style type="text/css">
+                                    .feather_een{fill:#111918;}
+                                    .st0{fill:#0B1719;}
+                                </style>
+                                <path class="feather_een" d="M29,24V7c0-1.657-1.343-3-3-3H6C4.343,4,3,5.343,3,7v8c0,0.552,0.448,1,1,1v1c0,0.552,0.448,1,1,1h2
+                                    v1.5C7,19.776,7.224,20,7.5,20S8,19.776,8,19.5V18h2c0.552,0,1-0.448,1-1v-1c0.552,0,1-0.448,1-1h6v9H3c-1.105,0-2,0.895-2,2v1
+                                    c0,0.552,0.448,1,1,1h28c0.552,0,1-0.448,1-1v-1C31,24.895,30.105,24,29,24z M10,17H5v-1h5V17z M11,14v1H4V7c0-1.103,0.897-2,2-2h20
+                                    c1.103,0,2,0.897,2,2v17h-9V14H11z M30,27H2v-1c0-0.551,0.449-1,1-1h26c0.551,0,1,0.449,1,1V27z M16.5,7C15.119,7,14,8.119,14,9.5
+                                    c0,1.381,1.119,2.5,2.5,2.5c1.381,0,2.5-1.119,2.5-2.5C19,8.119,17.881,7,16.5,7z M16.5,11c-0.827,0-1.5-0.673-1.5-1.5
+                                    S15.673,8,16.5,8S18,8.673,18,9.5S17.327,11,16.5,11z M23.5,12c1.381,0,2.5-1.119,2.5-2.5C26,8.119,24.881,7,23.5,7
+                                    C22.119,7,21,8.119,21,9.5C21,10.881,22.119,12,23.5,12z M23.5,8C24.327,8,25,8.673,25,9.5S24.327,11,23.5,11S22,10.327,22,9.5
+                                    S22.673,8,23.5,8z M24,17h-1c-0.552,0-1,0.448-1,1v3c0,0.552,0.448,1,1,1h1c0.552,0,1-0.448,1-1v-3C25,17.448,24.552,17,24,17z
+                                    M24,21h-1v-1h1V21z M24,19h-1v-1h1V19z"/>
+                                </svg>
+                            </div>
+                            <div class="icon">
+                                <svg version="1.1" id="Uploaded to svgrepo.com" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
+                                    width="80px" height="80px" viewBox="0 0 32 32" xml:space="preserve">
+                                <style type="text/css">
+                                    .feather_een{fill:#111918;}
+                                    .st0{fill:#0B1719;}
+                                </style>
+                                <path class="feather_een" d="M29,24V7c0-1.657-1.343-3-3-3H6C4.343,4,3,5.343,3,7v8c0,0.552,0.448,1,1,1v1c0,0.552,0.448,1,1,1h2
+                                    v1.5C7,19.776,7.224,20,7.5,20S8,19.776,8,19.5V18h2c0.552,0,1-0.448,1-1v-1c0.552,0,1-0.448,1-1h6v9H3c-1.105,0-2,0.895-2,2v1
+                                    c0,0.552,0.448,1,1,1h28c0.552,0,1-0.448,1-1v-1C31,24.895,30.105,24,29,24z M10,17H5v-1h5V17z M11,14v1H4V7c0-1.103,0.897-2,2-2h20
+                                    c1.103,0,2,0.897,2,2v17h-9V14H11z M30,27H2v-1c0-0.551,0.449-1,1-1h26c0.551,0,1,0.449,1,1V27z M16.5,7C15.119,7,14,8.119,14,9.5
+                                    c0,1.381,1.119,2.5,2.5,2.5c1.381,0,2.5-1.119,2.5-2.5C19,8.119,17.881,7,16.5,7z M16.5,11c-0.827,0-1.5-0.673-1.5-1.5
+                                    S15.673,8,16.5,8S18,8.673,18,9.5S17.327,11,16.5,11z M23.5,12c1.381,0,2.5-1.119,2.5-2.5C26,8.119,24.881,7,23.5,7
+                                    C22.119,7,21,8.119,21,9.5C21,10.881,22.119,12,23.5,12z M23.5,8C24.327,8,25,8.673,25,9.5S24.327,11,23.5,11S22,10.327,22,9.5
+                                    S22.673,8,23.5,8z M24,17h-1c-0.552,0-1,0.448-1,1v3c0,0.552,0.448,1,1,1h1c0.552,0,1-0.448,1-1v-3C25,17.448,24.552,17,24,17z
+                                    M24,21h-1v-1h1V21z M24,19h-1v-1h1V19z"/>
+                                </svg>
+                            </div>
+                            <div class="icon">
+                                <svg version="1.1" id="Uploaded to svgrepo.com" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
+                                    width="80px" height="80px" viewBox="0 0 32 32" xml:space="preserve">
+                                <style type="text/css">
+                                    .feather_een{fill:#111918;}
+                                    .st0{fill:#0B1719;}
+                                </style>
+                                <path class="feather_een" d="M29,24V7c0-1.657-1.343-3-3-3H6C4.343,4,3,5.343,3,7v8c0,0.552,0.448,1,1,1v1c0,0.552,0.448,1,1,1h2
+                                    v1.5C7,19.776,7.224,20,7.5,20S8,19.776,8,19.5V18h2c0.552,0,1-0.448,1-1v-1c0.552,0,1-0.448,1-1h6v9H3c-1.105,0-2,0.895-2,2v1
+                                    c0,0.552,0.448,1,1,1h28c0.552,0,1-0.448,1-1v-1C31,24.895,30.105,24,29,24z M10,17H5v-1h5V17z M11,14v1H4V7c0-1.103,0.897-2,2-2h20
+                                    c1.103,0,2,0.897,2,2v17h-9V14H11z M30,27H2v-1c0-0.551,0.449-1,1-1h26c0.551,0,1,0.449,1,1V27z M16.5,7C15.119,7,14,8.119,14,9.5
+                                    c0,1.381,1.119,2.5,2.5,2.5c1.381,0,2.5-1.119,2.5-2.5C19,8.119,17.881,7,16.5,7z M16.5,11c-0.827,0-1.5-0.673-1.5-1.5
+                                    S15.673,8,16.5,8S18,8.673,18,9.5S17.327,11,16.5,11z M23.5,12c1.381,0,2.5-1.119,2.5-2.5C26,8.119,24.881,7,23.5,7
+                                    C22.119,7,21,8.119,21,9.5C21,10.881,22.119,12,23.5,12z M23.5,8C24.327,8,25,8.673,25,9.5S24.327,11,23.5,11S22,10.327,22,9.5
+                                    S22.673,8,23.5,8z M24,17h-1c-0.552,0-1,0.448-1,1v3c0,0.552,0.448,1,1,1h1c0.552,0,1-0.448,1-1v-3C25,17.448,24.552,17,24,17z
+                                    M24,21h-1v-1h1V21z M24,19h-1v-1h1V19z"/>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             <div class="about-content-card-wrapper">
                 <div class="about-content-card-container">
                     <div class="about-content-card">
@@ -204,7 +291,8 @@
                                 src="./assets/icons/25-years.svg" 
                                 data-widths="[360,540,720,900,1080,1296,1728,1944,2808,4320]"
                                 data-aspectratio="1.1538461538461537"
-                                data-ratio="1.1538461538461537" data-sizes="auto" alt="" />
+                                data-ratio="1.1538461538461537" data-sizes="auto" alt="" 
+                            />
                             </div>
                         </div>
                         <div class="right">
@@ -262,7 +350,60 @@
 
                 </div>
 
+            </div>
+
+            <div class="index-product-description-card-wrapper">
+                <div class="index-product-description-card-container page-container">
+
+
+                    <div class="index-product-description-card">
+                        <div class="left index-product-description-card-image">
+                            <img class="product-main-img" src="./assets/images/our-bank/floor.jpg" alt="">
+                        </div>
+                        <div class="right index-product-description-card-info">
+                            <div class="info">
+                                <div class="title">
+                                    <h4>Product One</h4>
+                                </div>
+                                <div class="description">
+                                    The classic collection comprises antique pieces and newly recreated versions. The antiques have been handpicked from across the world and are timeless works of art. The recreations are carefully and mindfully created with attention to detail, quality and beauty. The woven magnificence and superb condition of each piece, reflects the discerning standards and thorough process to ensure the high benchmark of quality and craftsmanship that has come to be associated with The Carpet Cellar.
+                                </div>
+                                <div class="index-product-description-card-button">
+                                    <button>
+                                        Shop Now
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <br>
+
+                    <div class="index-product-description-card">
+                        <div class="left index-product-description-card-info">
+                            <div class="info">
+                                <div class="title">
+                                    <h4>Product Two</h4>
+                                </div>
+                                <div class="description">
+                                    The classic collection comprises antique pieces and newly recreated versions. The antiques have been handpicked from across the world and are timeless works of art. The recreations are carefully and mindfully created with attention to detail, quality and beauty. The woven magnificence and superb condition of each piece, reflects the discerning standards and thorough process to ensure the high benchmark of quality and craftsmanship that has come to be associated with The Carpet Cellar.
+                                </div>
+                                <div class="index-product-description-card-button">
+                                    <button>
+                                        Shop Now
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="right index-product-description-card-image">
+                            <img class="product-main-img" src="./assets/images/our-bank/floor.jpg" alt="">
+                        </div>
+                    </div>
+
+
                 </div>
+            </div>
+
             <!-- <div class="container-full">
                 <div class="velaAboutTextInner p-relative">
                     <div class="velaContent text-center">
