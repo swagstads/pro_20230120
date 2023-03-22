@@ -107,7 +107,7 @@
         });
 
         //datetimepicker
-        $('#news_time').datetimepicker({
+        $('#valid').datetimepicker({
             format: 'DD-MM-YYYY HH:mm',
         });
 
@@ -143,6 +143,24 @@
             allowClear: true,
             multiple: false,
             placeholder: "Select product category",
+            formatNoMatches: function(term) {
+                return "<div class='select2-result-label'><span class='select2-match'></span><?php echo $lang['not_found'];?></div>"
+            }
+        });
+        $('#product_id').select2({
+            data: [<?php
+                $get_cat = mysqli_query($conn, "select * from product where status='active'");
+                if (mysqli_num_rows($get_cat) > 0) {
+                    echo '{' . 'id' . ':' . '0' . ',' . 'text' . ':' . "'Select All'" . "}";
+                    while ($row = mysqli_fetch_array($get_cat)) {
+                        echo ',' . '{' . 'id' . ':' . $row['id'] . ',' . 'text' . ':' . "'" . $row['title'] . "'" . "}";
+                    }
+                }
+                ?>
+            ],
+            allowClear: true,
+            multiple: true,
+            placeholder: "Select products for discount",
             formatNoMatches: function(term) {
                 return "<div class='select2-result-label'><span class='select2-match'></span><?php echo $lang['not_found'];?></div>"
             }

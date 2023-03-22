@@ -166,6 +166,12 @@ include 'language_setting.php';
                 <span>Categories</span>
             </a>
         </li>
+        <li class="nav-item" id="coupons">
+            <a class="nav-link" href="coupons.php">
+                <i class="fas fa-fw fa-ticket"></i>
+                <span>Coupons</span>
+            </a>
+        </li>
         <li class="nav-item" id="payments">
             <a class="nav-link" href="payments.php">
                 <i class="fas fa-fw fa-money-bill-transfer"></i>
