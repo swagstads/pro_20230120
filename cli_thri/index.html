@@ -63,10 +63,10 @@
                   <a class="nav-link" href="#banner_section">Home</a>
                </li>
                <li class="nav-item">
-                  <a class="nav-link" href="#about_section">About</a>
+                  <a class="nav-link" href="#company_section">Companies</a>
                </li>
                <li class="nav-item">
-                  <a class="nav-link" href="#company_section">Companies</a>
+                  <a class="nav-link" href="#about_section">About</a>
                </li>
                <li class="nav-item">
                   <a class="nav-link" href="#testimonial_section">Testimonial</a>
@@ -96,36 +96,17 @@
    <!--header section end -->
 
 
-   <!--about section start -->
-   <div id="about_section" class="about_section layout_padding section">
-      <div class="container">
-         <h1 class="about_taital">About Us</h1>
-         <p class="about_text">AtoZ Group is a conglomerate of companies based in India with a rich history dating back
-            to 1934.</p>
-         <div class="about_section_2">
-            <div class="row">
-               <div class="col-lg-6">
-                  <div class="about_image"><img src="./images/index/about-us.jpg"></div>
-               </div>
-               <div class="col-lg-6">
-                  <div class="about_taital_main">
-                     <p class="lorem_text">AtoZ Group is a diverse and expansive organization, with business interests
-                        spanning across industries including infrastructure, interiors, furnishing, jewelry, and more.
-                        AtoZ’s success is founded on its commitment to innovation and customer service, allowing it to
-                        maintain its position as a leader in several sectors. </p>
-                     <!-- <div class="read_bt"><a href="#">Read More</a></div> -->
-                  </div>
-               </div>
-            </div>
-         </div>
-      </div>
-   </div>
-   <!--about section end -->
-
    <!-- Companies section -->
+   <div class="company-link-title">
+      <h3 style="text-align: center;">We are into</h3>
+   </div>
 
    <div class="company-link-container">
-
+      <div class="left-arrow" onclick="scrollContainer('left')">
+         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512">
+            <path d="M192 448c-8.188 0-16.38-3.125-22.62-9.375l-160-160c-12.5-12.5-12.5-32.75 0-45.25l160-160c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25L77.25 256l137.4 137.4c12.5 12.5 12.5 32.75 0 45.25C208.4 444.9 200.2 448 192 448z"/>
+         </svg>
+      </div>
       <div class="company-link-cards">
 
         <div class="company company-1">
@@ -179,12 +160,24 @@
           </a> 
         </div>
 
-
-
       </div>
-
+      <div class="right-arrow" onclick="scrollContainer('right')">
+         <svg xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 256 512">
+            <path d="M64 448c-8.188 0-16.38-3.125-22.62-9.375c-12.5-12.5-12.5-32.75 0-45.25L178.8 256L41.38 118.6c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0l160 160c12.5 12.5 12.5 32.75 0 45.25l-160 160C80.38 444.9 72.19 448 64 448z"/>
+         </svg>
+      </div>
    </div>
-
+   <script>
+      function scrollContainer(direction) {
+         var container = document.querySelector(".company-link-cards");
+         console.log(direction);
+         if (direction === 'left') {
+            container.scrollLeft -= 270;
+         } else if (direction === 'right') {
+            container.scrollLeft += 270;
+         }
+      }
+   </script>
    <div>
       <div class="company-section layout_padding">
          <div id="company_section" class="company-banner-container" id="company-banner-1">
@@ -306,6 +299,33 @@
          </span>
       </div>
    </div>
+
+   
+   <!--about section start -->
+   <div id="about_section" class="about_section layout_padding section">
+      <div class="container">
+         <h1 class="about_taital">About Us</h1>
+         <p class="about_text">AtoZ Group is a conglomerate of companies based in India with a rich history dating back
+            to 1934.</p>
+         <div class="about_section_2">
+            <div class="row">
+               <div class="col-lg-6">
+                  <div class="about_image"><img src="./images/index/about-us.jpg"></div>
+               </div>
+               <div class="col-lg-6">
+                  <div class="about_taital_main">
+                     <p class="lorem_text">AtoZ Group is a diverse and expansive organization, with business interests
+                        spanning across industries including infrastructure, interiors, furnishing, jewelry, and more.
+                        AtoZ’s success is founded on its commitment to innovation and customer service, allowing it to
+                        maintain its position as a leader in several sectors. </p>
+                     <!-- <div class="read_bt"><a href="#">Read More</a></div> -->
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+   <!--about section end -->
 
    <!-- testimonial section start -->
    <div id="testimonial_section" class="testimonial_section layout_padding section">

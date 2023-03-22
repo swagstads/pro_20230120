@@ -449,12 +449,53 @@ button {
 /* banner section end */
 
 /* Group of companies */
+.company-link-title h3{
+  font-size: 2.5rem;
+  font-weight: 600;
+  font-family: var(    --font-family-sans-serif);
+  margin-bottom: 20px;
+}
 .company-link-container{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 20px 0;
   width: 95%;
   left: 0;
   right: 0;
   margin: auto;
   position: relative;
+  transition: .3s;
+}
+.company-link-container *{
+}
+.company-link-container .left-arrow, .company-link-container .right-arrow{
+  position: absolute;
+  z-index: 5;
+  height: 40px;
+  width: 40px;  
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  background: rgba(0, 0, 0, 0.798);
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.company-link-container .left-arrow svg, .company-link-container .right-arrow svg{
+  height: 20px;
+  width: 20px;
+  fill: white;
+  z-index: 5;
+}
+.company-link-container .right-arrow{
+  right: 0;
+}
+@media (min-width: 1250px) {
+  .company-link-container .left-arrow, .company-link-container .right-arrow{
+    display: none;
+  }
 }
 .company-link-cards{
   width: 100%;
@@ -464,12 +505,13 @@ button {
   touch-action: cross-slide-x;
   gap: 20px;
   position: relative;
+  scroll-behavior: smooth;
   overflow: hidden;
 }
 .company-link-cards .company{
-  height: 100px;
+  height: 150px;
   border-radius: 5px;
-  min-width: 200px;
+  min-width: 250px;
   text-align: center;
   width: 20%;
   border: 1px solid rgba(0, 0, 0, 0.373);
