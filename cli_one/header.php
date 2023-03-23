@@ -405,7 +405,9 @@
                                 </a>
                             </div>
                         </div>
-                        <div style="padding: 0 10px" class="hide-on-mobile" id="google_translate_element"></div>
+                        <!-- <div style="padding: 0 10px" class="hide-on-mobile" id="google_translate_element"></div> -->
+                
+                        <div id="google_translate_element" ></div>
 
                     <?php
                     } // when use is logged in end
@@ -426,7 +428,7 @@
                             </a>
 
 
-                            <div style="padding: 0 10px" id="google_translate_element" class="hide-on-mobile"></div>
+                            <div style="padding: 0 10px" id="google_translate_element" ></div>
 
                         </div>
                     <?php
@@ -675,7 +677,15 @@
                 </li>
             <?php } ?>
             <li>
-                <div id="google_translate_element_mobile" >Translate</div>
+                <!-- <div id="google_translate_element" >
+                    <span id="en-button">
+                        En
+                    </span>
+                    |
+                    <span id="hn-button">
+                        Hn
+                    </span>
+                </div> -->
             </li>
         </ul>
     </div>

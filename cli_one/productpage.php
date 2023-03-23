@@ -30,7 +30,7 @@
                     </div>
                     <div> 
                         <span>
-                            Use code <span class="copon-code" title="Click to cpoy" data-clipboard-text="AToZ"> AToZ </span> to get 10% discount.
+                            <!-- Use code <span class="copon-code" title="Click to cpoy" data-clipboard-text="AToZ"> AToZ </span> to get 10% discount. -->
                             <script>
                                 $(document).ready(()=>{
                                     $(".copon-code").click(function() {

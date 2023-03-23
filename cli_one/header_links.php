@@ -13,22 +13,44 @@
 
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 
-<script type="text/javascript">
-    function googleTranslateElementInit() {
-        new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.HORIZONTAL}, 'google_translate_element');
-        new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.HORIZONTAL}, 'google_translate_element_mobile');
-    }
-</script>
-
 <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
-<script>
-    $(document).ready(function() {
-        $("button").click(function() {
-            //alert("jQuery is working perfectly.");
-        });
+<script type="text/javascript">
+
+
+function googleTranslateElementInit() {
+    new google.translate.TranslateElement({
+        pageLanguage: 'en', 
+        layout: google.translate.TranslateElement.InlineLayout.HORIZONTAL,
+        autoDisplay: false
+    }, 'google_translate_element');
+    // Get the translation buttons
+    const enButton = document.getElementById('en-button');
+    const hnButton = document.getElementById('hn-button');
+
+    // Add event listeners to translation buttons
+    enButton.addEventListener('click', () => {
+        console.log("asd");
+        // Set the target language to Hindi
+        googleTranslateElementInit.googleTranslateElement.getPageLanguage = () => 'en';
+        googleTranslateElementInit.googleTranslateElement.getLang = () => 'hi';
+
+        // Trigger translation
+        googleTranslateElementInit.googleTranslateElement.showBanner(false);
+        googleTranslateElementInit.googleTranslateElement.showInterstitial(false);
+        googleTranslateElementInit.googleTranslateElement.translatePage();
     });
+
+    hnButton.addEventListener('click', () => {
+        googleTranslateElement.showTranslation('hi');
+    });
+} 
+
+
+
 </script>
+
+
 
 <script src="assets/js/modernizr.js"></script> <!-- Modernizr -->
 <script src="assets/js/cart.js"></script> <!-- Modernizr -->
@@ -195,7 +217,8 @@
 
     /* Google translator */
     .skiptranslate{
-        color: transparent
+        color: transparent;
+
     }
     .goog-te-gadget .goog-te-combo {
         color: black !important;
@@ -203,10 +226,15 @@
         overflow: hidden;
     }
     .VIpgJd-ZVi9od-l4eHX-hSRGPd{
-        display:none
+        display:none;
     }
 
-    
+    .VIpgJd-ZVi9od-ORHb iframe{
+        display: none
+    }
+    iframe.VIpgJd-ZVi9od-ORHb-OEVmcd{
+        display: none
+    }
 
 </style>
 
@@ -216,20 +244,6 @@
 
 <script src="./cdn.shopify.com/s/files/1/1573/5553/t/43/assets/jquery-3.5.0.min2a91.js" type="text/javascript"></script>
 
-<link href="https://monorail-edge.shopifysvc.com/" rel="dns-prefetch" />
-<script>
-    window.ShopifyAnalytics = window.ShopifyAnalytics || {};
-    window.ShopifyAnalytics.meta = window.ShopifyAnalytics.meta || {};
-    window.ShopifyAnalytics.meta.currency = "USD";
-    var meta = {
-        page: {
-            pageType: "home"
-        }
-    };
-    for (var attr in meta) {
-        window.ShopifyAnalytics.meta[attr] = meta[attr];
-    }
-</script>
 <!-- Collection Page header -->
 <meta charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -425,6 +439,8 @@
         })
         cart_count()
     }
+
+
 </script>
 
 

@@ -39,7 +39,7 @@
             <input type="text" id="signup_name" name="name" placeholder="Full Name" required />   
             <input type="number" id="signup_contact" name="mobile" minlength="10" maxlength="10" placeholder="Contact" pattern=".{9,}" required title="10 characters minimum" />
             <input type="email" id="signup_email" name="email" placeholder="Email" required />
-            <input type="password" id="signup_password" name="password" placeholder="Password" required title="8 characters minimum" />
+            <input type="password" id="signup_password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" name="password" placeholder="Password" required title="at least 8 characters including at least one uppercase letter, one lowercase letter, and one number" />
             <input type="password" id="signup_confirm_password" name="confirmpassword" placeholder="Confirm Password" required />
             <span class="Show-password-action" >
               <span>

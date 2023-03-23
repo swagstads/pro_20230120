@@ -14,14 +14,14 @@ if (isset($_POST['chk_coupon'])) {
 
   $coupon_name = $_POST['coupon_code'];
 
-  $sql = "SELECT coup_name,status,added_on FROM coupon WHERE coup_name=:coupon";
+  $sql = "SELECT * FROM coupon WHERE code=:coupon";
   $query = $dbh->prepare($sql);
   $query->bindParam(':coupon', $coupon_name, PDO::PARAM_STR);
   $query->execute();
   
   $result = $query->fetch(PDO::FETCH_OBJ);
 
-  if(isset($result->coup_name)){
+  if(isset($result->code)){
     if($result->status === 'active'){
               $data['coupon_name'] = $_POST['coupon_code'];
               $data['message'] = "Coupon Applied";

@@ -126,7 +126,7 @@
                                                                 'onclick="increase_quantity(' + return_data[i].prod_id_ + ',' + return_data[i].required_quantity + ',' + return_data[i].product_quantity + ')" >+</span>' +
                                                                 '</div>' +
                                                             '</div>' +
-                                                            '<div class="price">' + return_data[i].prod_id_ +
+                                                            '<div class="price">'+
                                                             'Amount: &nbsp;<h4>&#8377;<span id="total_product_amount"">' + (amount) + '<span></h4>' +
                                                             '</div>' +
                                                             '<div class="action">' +
@@ -519,10 +519,10 @@
                                             <button class="submit-button">Add new Address</button>
                                         </div>
                                         <div class="add-new-address-bttn-container" style="display:flex;justify-content: space-between;">
-                                            <!-- <div> 
+                                            <div> 
                                                 <button onclick="addCoupon()" class="submit-button"><pa id="coupon_btn_message"></pa></button>
                                                 <button type="submit" class="submit-button" onclick="onRemoveCoupon()">Remove</button>
-                                            </div> -->
+                                            </div>
                                             <button class="submit-button" id="checkout_bttn" style="float: right;" onclick="checkout()">Checkout</button>
                                         </div>
 
