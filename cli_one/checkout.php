@@ -104,6 +104,16 @@
                                                         let input_id = "product_" + return_data[i].product_id;
                                                         let exact_amount = return_data[i].product_price * return_data[i].required_quantity;
                                                         let amount = Math.round(exact_amount * 100) / 100;
+
+                                                        
+
+                                                        let price_entity = "&#8377;"
+                                                        currency = localStorage.getItem("currency");
+                                                        if(currency === "USD"){
+                                                            amount = (amount / localStorage.getItem("inrRate")).toFixed(2)
+                                                            price_entity = "&#36;"
+                                                        }
+
                                                         amount_arr.push(amount)
                                                         $(".cart-product-container").append('<div class="cart-product-container-row">' +
                                                             '<div class="left">' +
@@ -129,7 +139,11 @@
 
                                                             '</div>' +
                                                             '<div class="price">' +
-                                                            'Amount: &nbsp;<h4>&#8377;<span id="total_product_amount"">' + (amount) + '<span></h4>' +
+                                                                'Amount:'+
+                                                                '<h4>'+
+                                                                    '<span class="price-entity">'+price_entity+'</span>'+
+                                                                    '<span id="total_product_amount"">' + (amount) + '<span>'+
+                                                                '</h4>' +
                                                             '</div>' +
                                                             '</div>' +
                                                             '</div>')
@@ -142,10 +156,14 @@
                                             }
                                         })
                                         .done(function() {
+                                            let currency = localStorage.getItem("currency")
+                                            if(!currency){
+                                                currency = "INR"
+                                            }
                                             var options = {
                                                 "key": "rzp_test_vMCLbtwM7n8HDj", // Enter the Key ID generated from the Dashboard
                                                 "amount": (parseFloat($("#total_amount_inp").val()) * 100), // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
-                                                "currency": "INR",
+                                                "currency": currency,
                                                 "name": "AToZ Furnishing",
                                                 "description": "Test Transaction",
                                                 "image": "",

@@ -69,7 +69,7 @@
                                 </div>
                             </div>
                             <div class="Total-amount-container">
-                                <h3>Total: &#8377;<span class="total-amount" id="total_amount"></span></h3>
+                                <h3>Total: <span class="price-entity">&#8377;</span><span class="total-amount" id="total_amount"></span></h3>
                                 <input type="hidden" id="total_amount_inp" value="0">
                             </div>
 
@@ -94,14 +94,23 @@
                                             type: 'GET',
                                             data: form_data,
                                             success: function(returned_data) {
+                                                $(".cart-product-container").empty();
                                                 var jsonData = JSON.parse(returned_data);
                                                 var return_data = jsonData.response[0];
                                                 console.log(returned_data);
 
                                                 let total_amount = return_data.price * parseInt(localStorage.getItem("instant_checkout_quantity"))
+
+                                                let price_entity = "&#8377;"
+                                                currency = localStorage.getItem("currency");
+                                                if(currency === "USD"){
+                                                    total_amount = (total_amount / localStorage.getItem("inrRate")).toFixed(2)
+                                                    price_entity = "&#36;"
+                                                }
+
                                                 $("#total_amount").text(total_amount)
                                                 $("#total_amount_inp").val(total_amount)
-                                                       
+
                                                 $(".cart-product-container").append('<div class="cart-product-container-row">' +
                                                         '<div class="left">' +
                                                         '<div class="image">' +
@@ -126,7 +135,11 @@
 
                                                         '</div>' +
                                                         '<div class="price">' +
-                                                        'Amount: &nbsp;<h4>&#8377;<span id="total_product_amount"">' + (total_amount) + '<span></h4>' +
+                                                        'Amount: &nbsp;'+
+                                                        '<h4>'+
+                                                            '<span class="price-entity">'+price_entity+'</span>'+
+                                                            '<span id="total_product_amount">' + (total_amount) + '<span>'+
+                                                        '</h4>' +
                                                         '</div>' +
                                                         '</div>' +
                                                         '</div>')
@@ -134,10 +147,14 @@
 
                                         })
                                         .done(function() {
+                                            let currency = localStorage.getItem("currency")
+                                            if(!currency){
+                                                currency = "INR"
+                                            }
                                             var options = {
                                                 "key": "rzp_test_vMCLbtwM7n8HDj", // Enter the Key ID generated from the Dashboard
                                                 "amount": (parseFloat($("#total_amount_inp").val()) * 100), // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
-                                                "currency": "INR",
+                                                "currency": currency,
                                                 "name": "AToZ Furnishing",
                                                 "description": "Test Transaction",
                                                 "image": "",

@@ -36,7 +36,12 @@
 					  </div>
 					  <div class="cd-cart-item-right" >
 						<h4 class="cd-cart-item-name"><?php echo $name; ?></h4>
-						<div class="cd-price">RS. <?php echo $price; ?></div>
+						<div class="cd-price">
+							<span class="price-entity"></span>
+							<span class="price-toggle" data-inr="<?php echo $price; ?>" data-currency="INR">
+								<?php echo $price; ?>
+							</span>
+						</div>
 						<div class="cd-quantity">
 						  <input type="button" onclick="moveToCart(<?php echo $id; ?>, <?php echo $pid; ?>)" value="Move to Cart" class="move" id="1" style="padding: 5px 5px; height: 41px; background-color: #ffffff; border: 1px solid #000; cursor:pointer;">
 						  <input type="button" onclick="removeWish(<?php echo $id; ?>)" value="Remove" class="remove" id="1021" style="padding: 5px 5px; height: 41px; background-color: #ffffff; border: 1px solid #000; cursor:pointer;">

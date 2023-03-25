@@ -7,7 +7,11 @@ $(document).ready(()=>{
         }) 
         localStorage.setItem("currency","USD")
         price_entity()
-        display_cart_data()
+        try {
+            display_cart_data()
+        } catch (error) {
+            // console.error("fn display_cart_data not available \n",error);
+        }
     })
     $("#toggle-currency-btn2").click(function(){
 
@@ -17,7 +21,11 @@ $(document).ready(()=>{
         }) 
         localStorage.setItem("currency","INR")
         price_entity()  
-        display_cart_data()
+        try {
+            display_cart_data()
+        } catch (error) {
+            // console.error("fn display_cart_data not available",error);
+        }
     })
 
 
@@ -61,7 +69,7 @@ $.ajax({
 
         $('.price-toggle').each(function() {
         current_price = parseFloat($(this).text())
-            $(this).attr("data-usd",(current_price / inrRate).toFixed(3))
+            $(this).attr("data-usd",(current_price / inrRate).toFixed(2))
         })  
 
 
