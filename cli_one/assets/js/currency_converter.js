@@ -2,36 +2,14 @@ $(document).ready(()=>{
     $("#currency_opt").val(localStorage.getItem("currency"))
     $("#currency_opt").change(function(){
         let currency = $(this).val();
-        entity = "&#8377;";
+        
+        manipulate_currency(currency) // to change all prices according to currency value
 
-        if(currency === "INR"){
 
-            entity = "&#8377;";
-
-            $('.price-toggle').each(function() {
-                let INRVal = $(this).attr("data-inr")  
-                $(this).text(INRVal)
-            }) 
-
-            $(".price-entity").each(function(){
-                $(this).html(entity)
-            })
-            localStorage.setItem("currency","INR")
-
-        }
-        else if(currency === "USD"){
-
-            entity = "&#36;";
-
-            $('.price-toggle').each(function() {
-                let USDVal = $(this).attr("data-usd")  
-                $(this).text(USDVal)
-            }) 
-
-            $(".price-entity").each(function(){
-                $(this).html(entity)
-            })
-            localStorage.setItem("currency","USD")
+        try {
+            display_cart_data()
+        } catch (error) {
+            
         }
     })
 
@@ -55,35 +33,41 @@ $.ajax({
         current_price = parseFloat($(this).text())
             $(this).attr("data-usd",(current_price / inrRate).toFixed(2))
         })  
-
-
-
         currency = localStorage.getItem("currency");
-        if(currency === "INR"){
-            $('.price-toggle').each(function() {
-                let INRVal = $(this).attr("data-inr")
-                // console.log(INRVal);  
-                $(this).text(INRVal)
-            }) 
-        }
-        else if(currency === "USD"){
-            
-            $('.price-toggle').each(function() {
-                let USDVal = $(this).attr("data-usd") 
-                // console.log(USDVal);  
-
-                $(this).text(USDVal)
-            })     
-        }
-        price_entity()
-
-        
+        manipulate_currency(currency) // to change all prices according to currency value
     },
     error: function(xhr, status, error) {
-        // console.log(error);
+        
     }
 });
 
+function manipulate_currency(currency){
+    if(currency === "INR"){
+
+        entity = "&#8377;";
+        $('.price-toggle').each(function() {
+            let INRVal = $(this).attr("data-inr")  
+            $(this).text(INRVal)
+        }) 
+        $(".price-entity").each(function(){
+            $(this).html(entity)
+        })
+        localStorage.setItem("currency","INR")
+
+    }
+    else if(currency === "USD"){
+
+        entity = "&#36;";
+        $('.price-toggle').each(function() {
+            let USDVal = $(this).attr("data-usd")  
+            $(this).text(USDVal)
+        }) 
+        $(".price-entity").each(function(){
+            $(this).html(entity)
+        })
+        localStorage.setItem("currency","USD")
+    }    
+}
 
 
 

@@ -69,7 +69,10 @@
                                 </div>
                             </div>
                             <div class="Total-amount-container">
-                                <h3>Total: &#8377;<span class="total-amount" id="total_amount"></span></h3>
+                                <h3>Total: 
+                                    <span class="price-entity">&#8377;</span>
+                                    <span class="total-amount" id="total_amount"></span>
+                                </h3>
                                 <input type="hidden" id="total_amount_inp" value="0">
                             </div>
 

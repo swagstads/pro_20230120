@@ -136,7 +136,7 @@
                                                             '<div class="price">'+
                                                             'Amount:<h4>'+
                                                                 '<span class="price-entity">'+price_entity+'</span>'+
-                                                                '<span id="total_product_amount" data-inr="'+ amount +'">' + (amount) + '<span>'+
+                                                                '<span id="total_product_amount" data-inr="'+ amount +'">' + amount + '<span>'+
                                                             '</h4>' +
                                                             '</div>' +
                                                             '<div class="action">' +
