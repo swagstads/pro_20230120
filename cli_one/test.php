@@ -7,6 +7,10 @@
   <title>Document</title>
 </head>
 <body>
-  
+    <div class="header-row-2">
+      <div class="search-box-container">
+
+      </div>
+    </div>
 </body>
 </html>

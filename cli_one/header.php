@@ -405,17 +405,26 @@
                                 </a>
                             </div>
                         </div>
-                        <div>
-                            <button id="toggle-currency-btn">
-                                USD
-                            </button>
-                            <button id="toggle-currency-btn2">
-                                INR
-                            </button>
-                        </div>
+                        
                         <!-- <div style="padding: 0 10px" class="hide-on-mobile" id="google_translate_element"></div> -->
-                
-                        <div id="google_translate_element" ></div>
+                        <div id="lang_and_currency">
+
+                            <div class="currency-options">
+
+                                <select name="" id="currency_opt">
+                                    <option value="INR">
+                                        <img id="currency-change-india"  src="./assets/images/flags/india.png" alt="IND">INR
+                                    </option>
+                                    <option value="USD">
+                                        <img id="currency-change-usa"  src="./assets/images/flags/usa.png" alt="USA">USD
+                                    </option>
+                                </select>
+                            </div>
+
+                            <div class="lang-option-container">
+                                <div id="google_translate_element" ></div>
+                            </div>
+                        </div>
 
                     <?php
                     } // when use is logged in end

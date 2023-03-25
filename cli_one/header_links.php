@@ -212,7 +212,7 @@ function googleTranslateElementInit() {
     }
     .goog-te-gadget .goog-te-combo {
         color: black !important;
-        max-width: 50%;
+        max-width: 100%;
         overflow: hidden;
     }
     .VIpgJd-ZVi9od-l4eHX-hSRGPd{

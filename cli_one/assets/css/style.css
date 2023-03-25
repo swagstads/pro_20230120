@@ -1949,8 +1949,17 @@ header {
     right: 1em;
   }
 }
-
-
+#lang_and_currency{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: baseline;
+}
+#lang_and_currency button{
+  border: none;
+  background-color: transparent;
+}
 /* -------------------------------- 
 
 xgallery 

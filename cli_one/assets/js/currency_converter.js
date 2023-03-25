@@ -1,55 +1,39 @@
 $(document).ready(()=>{
-
-    $("#toggle-currency-btn").click(function(){
-        $('.price-toggle').each(function() {
-            let USDVal = $(this).attr("data-usd")  
-            $(this).text(USDVal)
-        }) 
-        localStorage.setItem("currency","USD")
-        price_entity()
-        try {
-            display_cart_data()
-        } catch (error) {
-            // console.error("fn display_cart_data not available \n",error);
-        }
-    })
-    $("#toggle-currency-btn2").click(function(){
-
-        $('.price-toggle').each(function() {
-            let INRVal = $(this).attr("data-inr")  
-            $(this).text(INRVal)
-        }) 
-        localStorage.setItem("currency","INR")
-        price_entity()  
-        try {
-            display_cart_data()
-        } catch (error) {
-            // console.error("fn display_cart_data not available",error);
-        }
-    })
-
-
-
-
-let price_entity = () =>{
-    // $#36 &#8377
-    currency = localStorage.getItem("currency")
-    let entity = ""
-    if(currency === "INR"){
+    $("#currency_opt").val(localStorage.getItem("currency"))
+    $("#currency_opt").change(function(){
+        let currency = $(this).val();
         entity = "&#8377;";
-        $(".price-entity").each(function(){
-            // console.log(entity);
-            $(this).html(entity)
-        })
-    }
-    else if(currency === "USD"){
-        entity = "&#36;";
-        $(".price-entity").each(function(){
-            // console.log(this);
-            $(this).html(entity)
-        })
-    }
-}
+
+        if(currency === "INR"){
+
+            entity = "&#8377;";
+
+            $('.price-toggle').each(function() {
+                let INRVal = $(this).attr("data-inr")  
+                $(this).text(INRVal)
+            }) 
+
+            $(".price-entity").each(function(){
+                $(this).html(entity)
+            })
+            localStorage.setItem("currency","INR")
+
+        }
+        else if(currency === "USD"){
+
+            entity = "&#36;";
+
+            $('.price-toggle').each(function() {
+                let USDVal = $(this).attr("data-usd")  
+                $(this).text(USDVal)
+            }) 
+
+            $(".price-entity").each(function(){
+                $(this).html(entity)
+            })
+            localStorage.setItem("currency","USD")
+        }
+    })
 
 
 $.ajax({
