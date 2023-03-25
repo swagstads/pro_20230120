@@ -17,33 +17,12 @@
 
 <script type="text/javascript">
 
-
 function googleTranslateElementInit() {
     new google.translate.TranslateElement({
         pageLanguage: 'en', 
         layout: google.translate.TranslateElement.InlineLayout.HORIZONTAL,
         autoDisplay: false
     }, 'google_translate_element');
-    // Get the translation buttons
-    const enButton = document.getElementById('en-button');
-    const hnButton = document.getElementById('hn-button');
-
-    // Add event listeners to translation buttons
-    enButton.addEventListener('click', () => {
-        console.log("asd");
-        // Set the target language to Hindi
-        googleTranslateElementInit.googleTranslateElement.getPageLanguage = () => 'en';
-        googleTranslateElementInit.googleTranslateElement.getLang = () => 'hi';
-
-        // Trigger translation
-        googleTranslateElementInit.googleTranslateElement.showBanner(false);
-        googleTranslateElementInit.googleTranslateElement.showInterstitial(false);
-        googleTranslateElementInit.googleTranslateElement.translatePage();
-    });
-
-    hnButton.addEventListener('click', () => {
-        googleTranslateElement.showTranslation('hi');
-    });
 } 
 
 
@@ -62,7 +41,6 @@ function googleTranslateElementInit() {
 <!-- /snippets/social-meta-tags.liquid -->
 <meta property="og:site_name" content="AtoZ" />
 <meta property="og:url" content="index.php" />
-<meta property="og:title" content="Shopify - AtoZ Clean, Minimal , Drag &amp; Drop" />
 <meta property="og:type" content="website" />
 <meta property="og:description" content="Fashion, Apparel, Electronics, Tools, Lingeri, Glasses, Furniture, Jewelry, Bikes, Cosmetics, Gifts, Handmade store. Try new premium multipurpose Shopify theme from Elite Author velatheme. velatheme Shopify theme is new approach to ecommerce web development." />
 
@@ -73,7 +51,6 @@ function googleTranslateElementInit() {
 
 <!-- Icons -->
 <script src="https://cdn.lordicon.com/ritcuqlt.js"></script>
-
 
 <style>
     /*--------------------------------------------------------------
@@ -218,7 +195,20 @@ function googleTranslateElementInit() {
     /* Google translator */
     .skiptranslate{
         color: transparent;
-
+    }
+    .skiptranslate select{
+        /* padding: 5px 0px;  */
+        /* font-size: 16px;  */
+        /* border-radius: 5px;  */
+        /* border: none;  */
+        /* background-color: #f2f2f2;  */
+        /* -webkit-appearance: none;  */
+        /* -moz-appearance: none;  */
+        /* appearance: none;  */
+        /* background-image: url('down-arrow.png');  */
+        /* background-position: right center;  */
+        /* background-repeat: no-repeat;  */
+        /* cursor: pointer;  */
     }
     .goog-te-gadget .goog-te-combo {
         color: black !important;
@@ -243,6 +233,7 @@ function googleTranslateElementInit() {
 <link href="./cdn.shopify.com/s/files/1/1573/5553/t/43/assets/vela-sitec569.css" rel="stylesheet" type="text/css" media="all" />
 
 <script src="./cdn.shopify.com/s/files/1/1573/5553/t/43/assets/jquery-3.5.0.min2a91.js" type="text/javascript"></script>
+<script src="./assets/js/currency_converter.js"></script>
 
 <!-- Collection Page header -->
 <meta charset="utf-8" />
@@ -439,6 +430,7 @@ function googleTranslateElementInit() {
         })
         cart_count()
     }
+
 
 
 </script>

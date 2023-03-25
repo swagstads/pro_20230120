@@ -118,7 +118,7 @@
                                                             '<div class="quantity-container">Quantity' +
                                                             '<div class="manipulate-quantity-container justify-content-center ordered-quantity">' +
                                                                 '<span class="input-number-decrement"' +
-                                                                'onclick="decrease_quantity(' + return_data[i].prod_id_ + ',' + return_data[i].required_quantity + ',' + return_data[i].product_quantitclsy + ')" >-</span>' +
+                                                                'onclick="decrease_quantity(' + return_data[i].prod_id_ + ',' + return_data[i].required_quantity + ',' + return_data[i].product_quantity + ')" >-</span>' +
                                                                 '<span  id="prod_qnty_show" >' + return_data[i].required_quantity + '</span>' +
                                                                 // '<input class="input-number"'+
                                                                 //     'id="'+input_id+'" type="" value="'+return_data[i].required_quantity+'" min="1" max="'+return_data[i].required_quantity+'">'+
@@ -127,7 +127,7 @@
                                                                 '</div>' +
                                                             '</div>' +
                                                             '<div class="price">'+
-                                                            'Amount: &nbsp;<h4>&#8377;<span id="total_product_amount"">' + (amount) + '<span></h4>' +
+                                                            'Amount:<h4> <span class="price-entity">&#8377;</span><span id="total_product_amount"" class="price-toggle">' + (amount) + '<span></h4>' +
                                                             '</div>' +
                                                             '<div class="action">' +
                                                             '<a onclick="remove_from_cart(' + return_data[i].prod_id_ + ')" >' +
@@ -300,7 +300,7 @@
                                     }
                                 </script>
                                 <div class="Total-amount-container">
-                                    <h3>Total: &#8377;<span class="total-amount" id="total_amount"></span></h3>
+                                    <h3>Total: <span class="price-entity"><span class="price-entity">&#8377;</span></span><span class="total-amount price-toggle" id="total_amount"></span></h3>
                                     <input type="hidden" id="total_amount_inp" value="0">
                                 </div>
 

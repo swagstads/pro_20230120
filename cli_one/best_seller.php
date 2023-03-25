@@ -83,11 +83,15 @@
                                         
                                         '<div class="product-price">'+
                                             '<div class="price-container">'+
-                                                '<div class="our-price" style="height: 25px">'+
-                                                    '&#8377;'+return_data[i].price+' &nbsp;'+
+                                                '<div class="our-price" style="height:25px">'+
+                                                    '<span class="price-entity">&#8377;</span>'+
+                                                    '<span class="price-toggle"  data-currency="INR" data-inr="'+return_data[i].price+'" > '+return_data[i].price+'</span>'+
                                                 '</div>'+
                                                 '<div class="product-mrp">'+
-                                                    '<small>&#8377; '+return_data[i].mrp+'</small>'+
+                                                    '<small id="product_mrp">'+
+                                                        '<span class="price-entity">&#8377;</span>'+
+                                                        '<span class="price-toggle"  data-currency="INR" data-inr="'+return_data[i].mrp+'" > '+return_data[i].mrp+'</span>'+
+                                                    '</small>'+
                                                ' </div>'+
                                            '</div>'+
                                            '<div class="add-bttns">'+

@@ -80,10 +80,10 @@
                 <script>
                     $(document).ready(function() {
                         var magnifyingGlass = $('.magnifying-glass');
-                        var image = $('#activeImage');
+                        var image = $('.product-img-active');
                         
-                        image.mousemove(function(event) {
-                            
+                        $(".product-img-active").mousemove(function(event) {
+                            console.log("Mouse Moved on image");
                             // Load the full-sized image and set it as the background image of the magnifying glass
                             var fullSizeImage = new Image();
                             fullSizeImage.src = image.attr('src');
@@ -147,9 +147,25 @@
                     </div>
                     <!-- Product Pricing -->
                     <div class="product-price">
-                        <span id="product_our_price">Price :
-                            <span>&#8377;<span id="product_price"></span>
-                                <span class="product-mrp"><span id="product_mrp"></span></span>
+                        <span id="product_our_price">Price: 
+                            &nbsp;
+                            <span>
+                                <span class="price-entity">&#8377;</span>
+                                <span id="product_price" class="price-toggle">
+
+                                </span>
+                                &nbsp;
+                                <span>
+
+                                    <small  id="product_mrp" class="product-mrp">
+                                        <span class="price-entity">&#8377;</span>
+                                        <span id="product_mrp_val"  class="price-toggle" ></span>
+                                    </small>
+
+                                </span>
+
+                                &nbsp;
+
                                 <span class="incl-of-tax">(incl. of all taxes)</span></span>
                         </span>
                     </div>
@@ -438,7 +454,8 @@
                     $("#product_title").text(jsonData.response[0].title)
                     $("#product_description").text(jsonData.response[0].description)
                     $("#product_price").text(jsonData.response[0].price)
-                    $("#product_mrp").html("&#8377;" + jsonData.response[0].mrp)
+                    $("#product_price").attr("data-inr",jsonData.response[0].price)
+                    $("#product_mrp_val").text( jsonData.response[0].mrp)
 
                     if (jsonData.response[0].image === "no") {
                         // show_msg("")

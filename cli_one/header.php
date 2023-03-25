@@ -405,6 +405,14 @@
                                 </a>
                             </div>
                         </div>
+                        <div>
+                            <button id="toggle-currency-btn">
+                                USD
+                            </button>
+                            <button id="toggle-currency-btn2">
+                                INR
+                            </button>
+                        </div>
                         <!-- <div style="padding: 0 10px" class="hide-on-mobile" id="google_translate_element"></div> -->
                 
                         <div id="google_translate_element" ></div>

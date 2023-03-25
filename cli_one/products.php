@@ -351,9 +351,19 @@
                             '<p class="out-of-stock-message">' + outOfStockMessage + '</p>' +
                             '<p class="in-stock-message">' + inStockMessage + '</p>' +
                             '</div>' +
-                            '<div class="proPrice">' +
-                            '<div class="priceProduct priceSale"><span class="money">&#x20B9;' + return_data[i].price + '</span></div>' +
-                            '<div class="priceProduct priceCompare"><span class="money">&#x20B9;' + return_data[i].mrp + '</span></div>' +
+                            '<div class="proPrice">'+
+
+                            
+                            
+                            
+                            '<div class="priceProduct priceSale"><span class="money">'+
+                                '<span class="price-entity">&#8377;</span>'+
+                                '<span class="price-toggle"  data-currency="INR" data-inr="'+return_data[i].price+'" > '+return_data[i].price+'</span>'+
+                            '</div>' +
+                            '<div class="priceProduct priceCompare">'+
+                                '<span class="price-entity">&#8377;</span>'+
+                                '<span class="price-toggle"  data-currency="INR" data-inr="'+return_data[i].mpr+'" > '+return_data[i].mrp+'</span>'+
+                            '</div>' +
                             '</div>' +
                             '<button onclick="addToCart(' + return_data[i].id + ',' + return_data[i].quantity + ')" class="btn btnAddToCart">' +
                             '<span>&plus; Add to Cart</span>' +
