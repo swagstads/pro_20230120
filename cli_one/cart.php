@@ -97,6 +97,13 @@
 
                                                         let amount = Math.round(exact_amount * 100) / 100;
 
+                                                        let price_entity = "&#8377;"
+
+                                                        currency = localStorage.getItem("currency");
+                                                        if(currency === "USD"){
+                                                            amount = (amount / localStorage.getItem("inrRate")).toFixed(2)
+                                                            price_entity = "&#36;"
+                                                        }
                                                         amount_arr.push(amount)
 
                                                         $(".cart-product-container").append(
@@ -127,7 +134,10 @@
                                                                 '</div>' +
                                                             '</div>' +
                                                             '<div class="price">'+
-                                                            'Amount:<h4> <span class="price-entity">&#8377;</span><span id="total_product_amount"" class="price-toggle">' + (amount) + '<span></h4>' +
+                                                            'Amount:<h4>'+
+                                                                '<span class="price-entity">'+price_entity+'</span>'+
+                                                                '<span id="total_product_amount">' + (amount) + '<span>'+
+                                                            '</h4>' +
                                                             '</div>' +
                                                             '<div class="action">' +
                                                             '<a onclick="remove_from_cart(' + return_data[i].prod_id_ + ')" >' +
@@ -300,7 +310,7 @@
                                     }
                                 </script>
                                 <div class="Total-amount-container">
-                                    <h3>Total: <span class="price-entity"><span class="price-entity">&#8377;</span></span><span class="total-amount price-toggle" id="total_amount"></span></h3>
+                                    <h3>Total: <span class="price-entity"><span class="price-entity">&#8377;</span></span><span class="total-amount " id="total_amount"></span></h3>
                                     <input type="hidden" id="total_amount_inp" value="0">
                                 </div>
 

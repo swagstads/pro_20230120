@@ -7,6 +7,7 @@ $(document).ready(()=>{
         }) 
         localStorage.setItem("currency","USD")
         price_entity()
+        display_cart_data()
     })
     $("#toggle-currency-btn2").click(function(){
 
@@ -16,6 +17,7 @@ $(document).ready(()=>{
         }) 
         localStorage.setItem("currency","INR")
         price_entity()  
+        display_cart_data()
     })
 
 
@@ -28,14 +30,14 @@ let price_entity = () =>{
     if(currency === "INR"){
         entity = "&#8377;";
         $(".price-entity").each(function(){
-            console.log(entity);
+            // console.log(entity);
             $(this).html(entity)
         })
     }
     else if(currency === "USD"){
         entity = "&#36;";
         $(".price-entity").each(function(){
-            console.log(this);
+            // console.log(this);
             $(this).html(entity)
         })
     }
@@ -55,6 +57,8 @@ $.ajax({
         // Get INR and USD exchange rates from the API response
         const inrRate = response.data.INR;
 
+        localStorage.setItem("inrRate",inrRate)
+
         $('.price-toggle').each(function() {
         current_price = parseFloat($(this).text())
             $(this).attr("data-usd",(current_price / inrRate).toFixed(3))
@@ -66,7 +70,7 @@ $.ajax({
         if(currency === "INR"){
             $('.price-toggle').each(function() {
                 let INRVal = $(this).attr("data-inr")
-                console.log(INRVal);  
+                // console.log(INRVal);  
                 $(this).text(INRVal)
             }) 
         }
@@ -74,7 +78,7 @@ $.ajax({
             
             $('.price-toggle').each(function() {
                 let USDVal = $(this).attr("data-usd") 
-                console.log(USDVal);  
+                // console.log(USDVal);  
 
                 $(this).text(USDVal)
             })     
@@ -84,7 +88,7 @@ $.ajax({
         
     },
     error: function(xhr, status, error) {
-        console.log(error);
+        // console.log(error);
     }
 });
 
