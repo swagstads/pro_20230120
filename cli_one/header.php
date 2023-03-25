@@ -409,9 +409,9 @@
                         <!-- <div style="padding: 0 10px" class="hide-on-mobile" id="google_translate_element"></div> -->
                         <div id="lang_and_currency">
 
-                            <div class="currency-options">
+                            <div class="currency-options select-box">
 
-                                <select name="" id="currency_opt">
+                                <select name="" id="currency_opt" >
                                     <option value="INR">
                                         <img id="currency-change-india"  src="./assets/images/flags/india.png" alt="IND">INR
                                     </option>
@@ -422,7 +422,7 @@
                             </div>
 
                             <div class="lang-option-container">
-                                <div id="google_translate_element" ></div>
+                                <div id="google_translate_element" class="select-box" ></div>
                             </div>
                         </div>
 

@@ -196,6 +196,10 @@ function googleTranslateElementInit() {
     .skiptranslate{
         color: transparent;
     }
+    .select-box select{
+        border: 1px solid rgba(0, 0, 0, 0.524);
+        height: 30px;
+    }
     .skiptranslate select{
         /* padding: 5px 0px;  */
         /* font-size: 16px;  */
@@ -212,7 +216,6 @@ function googleTranslateElementInit() {
     }
     .goog-te-gadget .goog-te-combo {
         color: black !important;
-        max-width: 100%;
         overflow: hidden;
     }
     .VIpgJd-ZVi9od-l4eHX-hSRGPd{
