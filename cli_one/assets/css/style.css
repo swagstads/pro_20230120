@@ -663,7 +663,7 @@
 }
 
 .magnifying-glass {
-  position: absolute;
+  position: fixed;
   top: 80px;
   right: 0;
   width: 60%;
@@ -1618,7 +1618,6 @@ body {
   font-size: 100%;
   font-family: "PT Sans", sans-serif;
   color: #31353d;
-  background-color: #eeeff7;
 }
 .overflow-hidden {
   /* height: 100vh; */

@@ -11,7 +11,8 @@
 <link href="https://fonts.cdnfonts.com/css/avenir" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
 
 <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
@@ -52,184 +53,6 @@ function googleTranslateElementInit() {
 <!-- Icons -->
 <script src="https://cdn.lordicon.com/ritcuqlt.js"></script>
 
-<style>
-    /*--------------------------------------------------------------
-  # Portfolio
-  --------------------------------------------------------------*/
-    #portfolio {
-        background: #fff;
-        padding: 0 0;
-    }
-
-    #portfolio #portfolio-flters {
-        padding: 0;
-        margin: 0 auto 35px auto;
-        list-style: none;
-        text-align: center;
-    }
-
-    #portfolio #portfolio-flters li {
-        cursor: pointer;
-        display: inline-block;
-        padding: 8px 12px;
-        font-size: 14px;
-        font-weight: 600;
-        line-height: 1;
-        text-transform: uppercase;
-        color: #666666;
-        transition: all 0.3s ease-in-out;
-    }
-
-    #portfolio #portfolio-flters li:hover,
-    #portfolio #portfolio-flters li.filter-active {
-        color: #03c4eb;
-    }
-
-    #portfolio #portfolio-flters li:last-child {
-        margin-right: 0;
-    }
-
-    #portfolio .portfolio-item {
-        margin-bottom: 30px;
-    }
-
-    #portfolio .portfolio-item .portfolio-info {
-        opacity: 0;
-        position: absolute;
-        left: 12px;
-        right: 12px;
-        bottom: 0;
-        z-index: 3;
-        transition: all ease-in-out 0.3s;
-        background: rgba(255, 255, 255, 0.85);
-        padding: 15px;
-    }
-
-    #portfolio .portfolio-item .portfolio-info h4 {
-        font-size: 18px;
-        color: #fff;
-        font-weight: 600;
-        color: #333333;
-        margin-bottom: 5px;
-    }
-
-    #portfolio .portfolio-item .portfolio-info p {
-        color: #666666;
-        font-size: 14px;
-        margin-bottom: 0;
-    }
-
-    #portfolio .portfolio-item .portfolio-info .preview-link,
-    #portfolio .portfolio-item .portfolio-info .details-link {
-        position: absolute;
-        right: 48px;
-        font-size: 28px;
-        top: calc(50% - 28px);
-        color: #4d4d4d;
-    }
-
-    #portfolio .portfolio-item .portfolio-info .preview-link:hover,
-    #portfolio .portfolio-item .portfolio-info .details-link:hover {
-        color: #03c4eb;
-    }
-
-    #portfolio .portfolio-item .portfolio-info .details-link {
-        right: 15px;
-    }
-
-    #portfolio .portfolio-item:hover .portfolio-info {
-        opacity: 1;
-    }
-
-    /*--------------------------------------------------------------
-  # Trending Products
-  --------------------------------------------------------------*/
-    .container10 {
-        position: relative !important;
-        width: 278px !important;
-        height: 352px !important;
-        background: rgba(0, 0, 0, 0);
-        transition: 0.5s !important;
-    }
-
-    .container10 img:nth-child(1) {
-        position: absolute;
-        width: 100%;
-        transition: 0.5s;
-    }
-
-    .container10 img:nth-child(2) {
-        position: absolute;
-        width: 100%;
-        transition: 0.5s;
-    }
-
-    .container10 img:nth-child(3) {
-        position: absolute;
-        width: 100%;
-        transition: 0.5s;
-    }
-
-    .container10:hover img:nth-child(1) {
-        transform: scale(1.1);
-        z-index: 1;
-        opacity: 1;
-    }
-
-    .container10:hover img:nth-child(2) {
-        filter: brightness(50%);
-        transform: translate(80%) rotate(20deg) scaleX(-1.1);
-        width: 82%;
-        margin-top: 47px;
-        opacity: 0.6;
-    }
-
-    .container10:hover img:nth-child(3) {
-        filter: brightness(50%);
-        transform: translate(-55%) rotate(-30deg) scale(1.1);
-        width: 82%;
-        margin-top: 53px;
-        opacity: 0.6;
-    }
-
-    /* Google translator */
-    .skiptranslate{
-        color: transparent;
-    }
-    .select-box select{
-        border: 1px solid rgba(0, 0, 0, 0.524);
-        height: 30px;
-    }
-    .skiptranslate select{
-        /* padding: 5px 0px;  */
-        /* font-size: 16px;  */
-        /* border-radius: 5px;  */
-        /* border: none;  */
-        /* background-color: #f2f2f2;  */
-        /* -webkit-appearance: none;  */
-        /* -moz-appearance: none;  */
-        /* appearance: none;  */
-        /* background-image: url('down-arrow.png');  */
-        /* background-position: right center;  */
-        /* background-repeat: no-repeat;  */
-        /* cursor: pointer;  */
-    }
-    .goog-te-gadget .goog-te-combo {
-        color: black !important;
-        overflow: hidden;
-    }
-    .VIpgJd-ZVi9od-l4eHX-hSRGPd{
-        display:none;
-    }
-
-    .VIpgJd-ZVi9od-ORHb iframe{
-        display: none
-    }
-    iframe.VIpgJd-ZVi9od-ORHb-OEVmcd{
-        display: none
-    }
-
-</style>
 
 <link href="./cdn.shopify.com/s/files/1/1573/5553/t/43/assets/vela-fontseb87.css" rel="stylesheet" type="text/css" media="all" />
 <link href="./cdn.shopify.com/s/files/1/1573/5553/t/43/assets/plugind6e7.css" rel="stylesheet" type="text/css" media="all" />
@@ -341,29 +164,67 @@ function googleTranslateElementInit() {
         --velasubmenu-linkcolor-hover: #323232;
         --velasubmenu-fontsize: 12px;
     }
-</style>
 
+
+    /* Google translator */
+    .skiptranslate{
+        color: transparent;
+    }
+    .select-box select{
+        border: 1px solid rgba(0, 0, 0, 0.524);
+        height: 30px;
+    }
+    .skiptranslate select{
+        /* padding: 5px 0px;  */
+        /* font-size: 16px;  */
+        /* border-radius: 5px;  */
+        /* border: none;  */
+        /* background-color: #f2f2f2;  */
+        /* -webkit-appearance: none;  */
+        /* -moz-appearance: none;  */
+        /* appearance: none;  */
+        /* background-image: url('down-arrow.png');  */
+        /* background-position: right center;  */
+        /* background-repeat: no-repeat;  */
+        /* cursor: pointer;  */
+    }
+    .goog-te-gadget .goog-te-combo {
+        color: black !important;
+        overflow: hidden;
+    }
+    .VIpgJd-ZVi9od-l4eHX-hSRGPd{
+        display:none;
+    }
+
+    .VIpgJd-ZVi9od-ORHb iframe{
+        display: none
+    }
+    iframe.VIpgJd-ZVi9od-ORHb-OEVmcd{
+        display: none
+    }
+
+</style>
 <script>
-    (function() {
-        function asyncLoad() {
-            var urls = [
-                "\/\/productreviews.shopifycdn.com\/embed\/loader.js?shop=vela-kazan.myshopify.com",
-            ];
-            for (var i = 0; i < urls.length; i++) {
-                var s = document.createElement("script");
-                s.type = "text/javascript";
-                s.async = true;
-                s.src = urls[i];
-                var x = document.getElementsByTagName("script")[0];
-                x.parentNode.insertBefore(s, x);
-            }
-        }
-        if (window.attachEvent) {
-            window.attachEvent("onload", asyncLoad);
-        } else {
-            window.addEventListener("load", asyncLoad, false);
-        }
-    })();
+    // (function() {
+    //     function asyncLoad() {
+    //         var urls = [
+    //             "\/\/productreviews.shopifycdn.com\/embed\/loader.js?shop=vela-kazan.myshopify.com",
+    //         ];
+    //         for (var i = 0; i < urls.length; i++) {
+    //             var s = document.createElement("script");
+    //             s.type = "text/javascript";
+    //             s.async = true;
+    //             s.src = urls[i];
+    //             var x = document.getElementsByTagName("script")[0];
+    //             x.parentNode.insertBefore(s, x);
+    //         }
+    //     }
+    //     if (window.attachEvent) {
+    //         window.attachEvent("onload", asyncLoad);
+    //     } else {
+    //         window.addEventListener("load", asyncLoad, false);
+    //     }
+    // })();
 
     function show_msg(msg) {
         var x = document.getElementById("snackbar");

@@ -28,7 +28,7 @@
                             <a id="breadcrum_product_name">Product</a>
                         </span>
                     </div>
-                    <div> 
+                    <div>
                         <span>
                             <!-- Use code <span class="copon-code" title="Click to cpoy" data-clipboard-text="AToZ"> AToZ </span> to get 10% discount. -->
                             <script>
@@ -36,7 +36,7 @@
                                     $(".copon-code").click(function() {
                                         // Get the text to copy from the data attribute
                                         var text = $(this).attr("data-clipboard-text");
-                                        
+
                                         // Create a temporary input element
                                         var $input = $("<input>")
                                             .attr("type", "text")
@@ -44,10 +44,10 @@
                                             .appendTo("body")
                                             .css("position", "fixed")
                                             .css("opacity", "0");
-                                        
+
                                         // Select the text in the input element
                                         $input[0].select();
-                                        
+
                                         // Copy the selected text to the clipboard
                                         document.execCommand("copy");
                                         show_msg("Coupon code copied to clipboard")
@@ -65,19 +65,15 @@
                 <!-- Left Column / Headphones Image -->
                 <div class="left-column">
                     <div class="main_img_container" id="main_img_container">
-                        <!-- <img class="product-img-active" id="activeImage" data-image="" 
-                            src="./cdn.shopify.com/s/files/1/1573/5553/products/1-10ea2.jpg?v=1601694960"
-                            alt=""> -->
+                        <!-- Main product Image  -->
                     </div>
                     <div class="product-configuration">
-                        <!-- Product Color -->
                         <div class="img-choose" id="all_prod_images_container">
-                            <!-- <img class="small-view-image" onclick="changeActiveImg(this.src)" src="./cdn.shopify.com/s/files/1/1573/5553/products/1-10ea2.jpg?v=1601694960" alt="">
-                                <img class="small-view-image" onclick="changeActiveImg(this.src)" src="./cdn.shopify.com/s/files/1/1573/5553/products/1_c14253f1-8cb5-4a88-921b-d3dbaffaaafa0ea2.jpg?v=1601694960" alt=""> -->
+                            <!-- Product Other images -->
                         </div>
                     </div>
                 </div>
-              
+
                 <!-- Right Column -->
                 <div class="right-column">
                     <!-- Product Description -->
@@ -93,7 +89,7 @@
                     </div>
                     <!-- Product Pricing -->
                     <div class="product-price">
-                        <span id="product_our_price">Price: 
+                        <span id="product_our_price">Price:
                             &nbsp;
                             <span>
                                 <span class="price-entity">&#8377;</span>
@@ -305,7 +301,7 @@
             </div> -->
 
             <script>
-               
+
 
                 // function openTab(evt, tabName) {
                 //     var i, tabcontent, tablinks;
@@ -336,17 +332,17 @@
 
 
             <!-- <div class="trending-products">
-                <?php //include('./trending_products.php') 
+                <?php //include('./trending_products.php')
                 ?>
             </div>
 
             <div class="best-seller">
-                <?php //include('./best_seller.php') 
+                <?php //include('./best_seller.php')
                 ?>
             </div>
 
             <div class="more-products">
-                <?php //include('./more-products.php') 
+                <?php //include('./more-products.php')
                 ?>
             </div> -->
 
@@ -354,6 +350,7 @@
 
 
         <script>
+
             var product_id = <?php echo $_GET['productid'] ?>;
             var api_url = './api/fetch_single_product.php?product_id';
             var form_data = {
@@ -380,7 +377,6 @@
                     //     inStockMessage = "In Stock"
                     //     $("#instock").html();
                     // }
-                    fetch_similar_products(return_data[0])
                     product_qnty = return_data[0].product_quantity;
                     if (product_qnty != 0) {
                         $("#prod_qnty_inp").attr("max", product_qnty)
@@ -409,7 +405,7 @@
                     } else {
                         images_arr = jsonData.response[0].image_name;
                         primary_img = "./admin_panel/uploads/products/" + images_arr[0];
-                        // $(".product-img-active").attr(src , primary_img)
+
 
 
                         $('<img />', {
@@ -430,11 +426,61 @@
 
 
                         }
+                        var magnifyingGlass = $('.magnifying-glass');
+                        var image = $('.product-img-active');
+                        image.ready(()=>{
+                            console.log("Image",image[0]);
+                        })
+                        image.mousemove(function(event) {
+                            console.log("Mouse Moved on image");
+                            // Load the full-sized image and set it as the background image of the magnifying glass
+                            var fullSizeImage = new Image();
+                            fullSizeImage.src = image.attr('src');
+                            $(fullSizeImage).on('load', function() {
+                                magnifyingGlass.css('background-image', 'url(' + fullSizeImage.src + ')');
+                            });
+
+                            // Calculate the position of the mouse relative to the image
+                            var posX = event.pageX - image.offset().left;
+                            var posY = event.pageY - image.offset().top;
+
+                            // Calculate the position of the magnifying glass relative to the image
+                            var glassPosX = posX - magnifyingGlass.width() / 2;
+                            var glassPosY = posY - magnifyingGlass.height() / 2;
+
+                            // Limit the movement of the magnifying glass to stay within the boundaries of the image
+                            if (glassPosX < 0) {
+                                glassPosX = 0;
+                            } else if (glassPosX > image.width() - magnifyingGlass.width()) {
+                                glassPosX = image.width() - magnifyingGlass.width();
+                            }
+
+                            if (glassPosY < 0) {
+                                glassPosY = 0;
+                            } else if (glassPosY > image.height() - magnifyingGlass.height()) {
+                                glassPosY = image.height() - magnifyingGlass.height();
+                            }
+
+                            // Move the magnifying glass to the current mouse position
+                            magnifyingGlass.css({
+                            // 'left': event.pageX - 200 + 'px',
+                            // 'top': event.pageY - 150 + 'px',
+                            'visibility': 'visible',
+                            'background-position': '-' + (posX * 2) + 'px -' + (posY * 2) + 'px'
+                            });
+                        });
+
+                        // Hide the magnifying glass when the mouse leaves the image
+                        image.mouseleave(function() {
+                            magnifyingGlass.css('visibility', 'hidden');
+                        });
                     }
+                    fetch_similar_products(return_data[0])
+
                 }
             })
             save_recent_views(product_id)
-            
+
 
             function save_recent_views(product_id){
                 let api_url = "./api/insert_recent_views.php";
@@ -452,60 +498,13 @@
                     }
                 })
             }
-            $(document).ready(function() {
-                var magnifyingGlass = $('.magnifying-glass');
-                var image = $('.product-img-active');
-                
-                image.mousemove(function(event) {
-                    console.log("Mouse Moved on image");
-                    // Load the full-sized image and set it as the background image of the magnifying glass
-                    var fullSizeImage = new Image();
-                    fullSizeImage.src = image.attr('src');
-                    $(fullSizeImage).on('load', function() {
-                        magnifyingGlass.css('background-image', 'url(' + fullSizeImage.src + ')');
-                    });
-
-                    // Calculate the position of the mouse relative to the image
-                    var posX = event.pageX - image.offset().left;
-                    var posY = event.pageY - image.offset().top;
-
-                    // Calculate the position of the magnifying glass relative to the image
-                    var glassPosX = posX - magnifyingGlass.width() / 2;
-                    var glassPosY = posY - magnifyingGlass.height() / 2;
-
-                    // Limit the movement of the magnifying glass to stay within the boundaries of the image
-                    if (glassPosX < 0) {
-                        glassPosX = 0;
-                    } else if (glassPosX > image.width() - magnifyingGlass.width()) {
-                        glassPosX = image.width() - magnifyingGlass.width();
-                    }
-
-                    if (glassPosY < 0) {
-                        glassPosY = 0;
-                    } else if (glassPosY > image.height() - magnifyingGlass.height()) {
-                        glassPosY = image.height() - magnifyingGlass.height();
-                    }
-
-                    // Move the magnifying glass to the current mouse position
-                    magnifyingGlass.css({
-                    // 'left': event.pageX - 200 + 'px',
-                    // 'top': event.pageY - 150 + 'px',
-                    'visibility': 'visible',
-                    'background-position': '-' + (posX * 2) + 'px -' + (posY * 2) + 'px'
-                    });
-                });
-
-                // Hide the magnifying glass when the mouse leaves the image
-                image.mouseleave(function() {
-                    magnifyingGlass.css('visibility', 'hidden');
-                });
-            });
 
             function changeActiveImg(sourceImg) {
                 var activeImg = document.getElementById("activeImage")
                 activeImg.src = sourceImg
             }
-                </script>
+
+    </script>
 
 
     </div>
@@ -516,7 +515,6 @@
     </div>
 
     <?php include('footer_links.php'); ?>
-    <script src="js/main.js?key=<?= date('is') ?>" type="text/javascript"></script>
 
     <script>
         function product_quantity() {
