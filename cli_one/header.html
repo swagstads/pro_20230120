@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .nav-wrapper{
+            position: fixed;
+            top: 0;
+            width: 100%;
+            height: 75px;
+            max-height: 75px;
+            border: 1px solid;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .nav-wrapper .nav-container{
+            display: flex;
+            width: 1210px;
+            border: 1px solid green;
+            padding: 5px;
+            gap: 5px;
+        }
+        .nav-wrapper .nav-container>.left .logo img{
+            width: 60px;
+        }
+        .nav-wrapper .nav-container>.right{
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+        }
+        .nav-wrapper .nav-container>.right>.top,
+        .nav-wrapper .nav-container>.right>.bottom
+        {
+            display: flex;
+            align-items: center;
+            border: 1px solid;
+            height: 100%;
+            justify-content: space-between;
+        }
+        .nav-wrapper .nav-container>.right>.top .icon-links{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+        @media (min-width: 768px) {
+        .nav-wrapper .nav-container {
+            max-width: 768px !important;
+        }            
+        }
+        @media (min-width: 992px) {
+        .nav-wrapper .nav-container {
+            max-width: 985px !important;
+        }            
+        }
+        @media (min-width: 1220px){
+        .nav-wrapper .nav-container {
+            max-width: 1210px !important;
+        }
+        }
+
+
+        nav.sidebar-wrapper{
+            position: fixed;
+            top: 75px;
+            display: flex;
+            justify-content: center;
+            border: 1px solid;
+            width: 250px;
+            height: calc(100% - 75px);
+        }
+        nav.sidebar-wrapper .sidebar-container{
+            padding: 20px 0;
+        }
+        nav.sidebar-wrapper .sidebar-container .nav-links{
+            display: flex;
+            flex-direction: column;
+            padding: 20px 0;
+            gap: 10px;
+        }
+    </style>
+</head>
+<body>
+    <nav class="nav-wrapper">
+        <div class="nav-container">
+
+            <div class="left">
+
+                <div class="logo">
+
+                    <img src="./assets/images/logo1.jpg" alt="">
+
+                </div>
+
+            </div>
+
+            <div class="right">
+
+
+                <div class="top">
+
+                    <div class="left">
+                        <div class="search-box">
+                            <span>
+                                <input type="text" placeholder="Search" >
+                            </span>
+                            <span>
+
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="right">
+                        <div class="icon-links">
+
+
+                            <span class="icon location">
+                                <div class="header-admin-icon  navbar-icons velaCartTop" style="display: flex; align-items: center;">
+                                    <img src="./assets/svg/locations.svg" alt="">
+                                </div>
+                            </span>
+
+                            <span class="icon wishlist-icon">
+                                <div id="cd-cart-trigger" class="header-admin-icon  navbar-icons velaCartTop" style="padding-top: 0px;">
+                                    <img src="./assets/svg/wishlist.svg" alt="">
+                                </div>
+                            </span>
+
+                            <span class="icon">
+                                <div class="velaCartTop  navbar-icons" style="white-space: nowrap;">
+                                    <img src="./assets/svg/cart.svg" alt="">
+                                </div>
+                            </span>
+
+                            <span class="icon">
+                                <span>
+                                    <img src="./assets/svg/profile.svg" alt="">
+                                </span>
+                                <span>
+                                    Name
+                                </span>
+                                <span>
+                                    <img src="./assets/svg/angle-down.svg" alt="">
+                                </span>
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="bottom">
+
+                    <div class="left">
+                        <div class="nav-links">
+    
+                            <div class="link-items">
+    
+                                <a href="" class="nav-link">
+                                    <span>Home</span>
+                                </a>
+                                <a href="" class="nav-link">
+                                    <span>Shop</span>
+                                </a>
+                                <a href="" class="nav-link">
+                                    <span>About Us</span>
+                                </a>
+                                <a href="" class="nav-link">
+                                    <span>Contact</span>
+                                </a>
+    
+                            </div>
+    
+                        </div>
+                    </div>
+                    <div class="right">
+                        
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="mobile-nav-icon-container">
+                Icons
+            </div>
+
+        </div>
+    </nav>
+
+    <nav class="sidebar-wrapper">
+        <div class="sidebar-container">
+
+            <div class="profile">
+                <span>
+                    <img src="./assets/svg/profile.svg" alt="">
+                </span>
+                <span>
+                    Name
+                </span>
+            </div>
+
+            <div class="nav-links">
+                <a href="" class="link">Home</a>
+                <a href="" class="link">Shop</a>
+                <a href="" class="link">Profile</a>
+                <a href="" class="link">Orders</a>
+                <a href="" class="link">About Us</a>
+                <a href="" class="link">Contact</a>
+
+            </div>
+        </div>
+    </nav>
+
+</body>
+</html>

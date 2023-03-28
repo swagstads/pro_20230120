@@ -14584,6 +14584,12 @@ button:active:focus,
   -ms-align-items: center;
   align-items: center;
 }
+@media (max-width: 992px) {
+  .velaHeaderRight {
+    -ms-justify-content: right;
+    justify-content: right;
+  }
+}
 .velaHeaderHamIconRight{
   display: -ms-flexbox;
   display: -webkit-flex;
