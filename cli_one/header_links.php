@@ -171,8 +171,11 @@ function googleTranslateElementInit() {
         color: transparent;
     }
     .select-box select{
-        border: 1px solid rgba(0, 0, 0, 0.524);
+        border: 1px solid rgba(0, 0, 0, 0.4);
         height: 30px;
+        border-radius: 3px;
+        font-family: arial;
+        font-weight: 600;
     }
     .skiptranslate select{
         /* padding: 5px 0px;  */

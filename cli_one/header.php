@@ -380,13 +380,27 @@
 
                         <div class="dropdown">
                             <button class="dropbtn">
-                                <h5>&nbsp;Hello <b><?php echo $_SESSION['name'] ?>!</b> </h5>
-                                <!-- <lord-icon src="https://cdn.lordicon.com/bhfjfgqz.json" trigger="loop" style="width:32px;height:32px"> </lord-icon> -->
-                                <svg width="25px" height="25px" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
-                                    <path fill="currentcolor" d="M831.872 340.864 512 652.672 192.128 340.864a30.592 30.592 0 0 0-42.752 0 29.12 29.12 0 0 0 0 41.6L489.664 714.24a32 32 0 0 0 44.672 0l340.288-331.712a29.12 29.12 0 0 0 0-41.728 30.592 30.592 0 0 0-42.752 0z" />
-                                </svg>
-
+                                <h5>
+                                    <b>
+                                        <span>
+                                            <svg width="25px" height="25px" viewBox=".5 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M12.0001 13.09C14.4909 13.09 16.5101 11.0708 16.5101 8.58C16.5101 6.08919 14.4909 4.07 12.0001 4.07C9.5093 4.07 7.49011 6.08919 7.49011 8.58C7.49011 11.0708 9.5093 13.09 12.0001 13.09Z" stroke="#0F0F0F" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                                                <path d="M8.98008 11.91C8.97008 11.91 8.97008 11.91 8.96008 11.92" stroke="#0F0F0F" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                                                <path d="M16.9701 12.82C19.5601 14.4 21.3201 17.19 21.5001 20.4C21.5101 20.69 21.2801 20.93 20.9901 20.93H3.01007C2.72007 20.93 2.49007 20.69 2.50007 20.4C2.68007 17.21 4.43007 14.43 6.99007 12.85" stroke="#0F0F0F" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                                                </svg>
+                                        </span>
+                                        <span>
+                                            <?php echo $_SESSION['name'] ?>!
+                                        </span>
+                                        <span>
+                                            <svg width="25px" height="25px" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
+                                                <path fill="currentcolor" d="M831.872 340.864 512 652.672 192.128 340.864a30.592 30.592 0 0 0-42.752 0 29.12 29.12 0 0 0 0 41.6L489.664 714.24a32 32 0 0 0 44.672 0l340.288-331.712a29.12 29.12 0 0 0 0-41.728 30.592 30.592 0 0 0-42.752 0z" />
+                                            </svg>
+                                        </span>
+                                    </b>
+                                </h5>
                             </button>
+
                             <div class="dropdown-content">
                                 <a href="./profile.php">
 
@@ -404,6 +418,7 @@
                                     </lord-icon> &nbsp;Logout
                                 </a>
                             </div>
+
                         </div>
                         
                         <!-- <div style="padding: 0 10px" class="hide-on-mobile" id="google_translate_element"></div> -->
@@ -411,12 +426,12 @@
 
                             <div class="currency-options select-box">
 
-                                <select name="" id="currency_opt" >
+                                <select name="" id="currency_opt" > 
                                     <option value="INR">
-                                        <img id="currency-change-india"  src="./assets/images/flags/india.png" alt="IND">INR
+                                        <img id="currency-change-india"  src="./assets/images/flags/india.png" alt="IND">&#8377;
                                     </option>
                                     <option value="USD">
-                                        <img id="currency-change-usa"  src="./assets/images/flags/usa.png" alt="USA">USD
+                                        <img id="currency-change-usa"  src="./assets/images/flags/usa.png" alt="USA">&#36;
                                     </option>
                                 </select>
                             </div>
