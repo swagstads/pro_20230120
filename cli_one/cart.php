@@ -441,7 +441,8 @@
                                                         <div class="address-inputs">
                                                             <div class="address-field-row">
                                                                 <input type="hidden" class="profile_address_id" name="" id="address_id">
-                                                                <p class="info address"><input type="text" placeholder="Coupon Code" name="coupon_code" id="coupon_code"></p>
+                                                                <p class="info address">
+                                                                    <input type="text" placeholder="Coupon Code" name="coupon_code" id="coupon_code"></p>
                                                             </div>
                                                             <div class="submit-bttn">
                                                                 <button type="submit" class="submit-button">Add</button>
@@ -462,6 +463,7 @@
                                                     function addCoupon() {
                                                         console.log("ADD");
                                                         $("#coupon").show()
+                                                        $("#coupon_code").val(localStorage.getItem("coupon"))
                                                     }
                                                     if(localStorage.getItem("coupon")){
                                                         $(document).ready(function(){
