@@ -101,7 +101,7 @@
 
                                                         currency = localStorage.getItem("currency");
                                                         if(currency === "USD"){
-                                                            amount = (amount / localStorage.getItem("inrRate")).toFixed(2)
+                                                            amount = parseFloat(amount / localStorage.getItem("inrRate")).toFixed(2)
                                                             price_entity = "&#36;"
                                                         }
                                                         amount_arr.push(amount)
@@ -147,11 +147,11 @@
                                                             '</div>' +
                                                             '</div>'
                                                             )
-                                                        total_amount = Math.round(amount_arr.reduce((accumulator, currentValue) => accumulator + currentValue, 0) * 100) / 100
-                                                        console.log(...amount_arr, "=>", total_amount);
+                                                        // console.log(amount_arr);
+                                                        total_amount = (amount_arr.reduce((total, current_val) => parseFloat(total) + parseFloat(current_val)) )
+                                                        // console.log(...amount_arr, "=>", total_amount);
                                                         $("#total_amount").text(total_amount)
                                                         $("#total_amount_inp").val(total_amount)
-
                                                     }
                                                     $("#cartEmptyContent").hide()
                                                 } else {
@@ -186,11 +186,11 @@
                                                 // type: 'GET',
                                                 data: form_data,
                                                 success: function(returned_data) {
-                                                    console.log(returned_data);
+                                                    // console.log(returned_data);
                                                     var jsonData = JSON.parse(returned_data);
                                                     var return_data = jsonData.response[0];
                                                     show_msg("Quantity Updated")
-                                                    console.log(return_data);
+                                                    // console.log(return_data);
                                                     $("#product_" + product_id).val(decreased_qnty)
                                                     display_cart_data()
                                                 }
@@ -217,11 +217,11 @@
                                                 // type: 'GET',
                                                 data: form_data,
                                                 success: function(returned_data) {
-                                                    console.log(returned_data);
+                                                    // console.log(returned_data);
                                                     var jsonData = JSON.parse(returned_data);
                                                     var return_data = jsonData.response[0];
                                                     show_msg("Quantity Updated")
-                                                    console.log("Quantity:", return_data);
+                                                    // console.log("Quantity:", return_data);
                                                     display_cart_data()
                                                 }
                                             })
@@ -242,9 +242,9 @@
                                             type: 'POST',
                                             data: form_data,
                                             success: function(returned_data) {
-                                                console.log("yeah");
+                                                // console.log("yeah");
                                                 var jsonData = JSON.parse(returned_data);
-                                                console.log("yeah", returned_data);
+                                                // console.log("yeah", returned_data);
                                                 var return_data = jsonData.response;
                                                 show_msg("Product removed from cart")
                                                 display_cart_data()
@@ -269,9 +269,9 @@
                                         success: function(returned_data) {
                                             var jsonData = JSON.parse(returned_data);
                                             var return_data = jsonData.response[0];
-                                            console.log(return_data);
+                                            // console.log(return_data);
                                             if (return_data.status === "ok") {
-                                                console.log("Address", return_data.status);
+                                                // console.log("Address", return_data.status);
                                                 $("#address_div").text(return_data.address)
                                             } else {
                                                 // show_msg("Please provide your address to checkout")
@@ -296,10 +296,10 @@
                                             data: form_data,
 
                                             success: function(returned_data) {
-                                                console.log(returned_data);
+                                                // console.log(returned_data);
                                                 var jsonData = JSON.parse(returned_data);
                                                 var return_data = jsonData.response[0];
-                                                console.log(return_data);
+                                                // console.log(return_data);
                                                 if (return_data.status === "ok") {
                                                     window.location.href = "./checkout.php"
                                                 } else {
@@ -375,11 +375,11 @@
                                                     //     }
                                                     // });
                                                     function addModalVisibility() {
-                                                        console.log("ADD");
+                                                        // console.log("ADD");
                                                         $("#new_address_modal").show()
                                                     }
                                                     function removeModalVisibility() {
-                                                        console.log("remove");
+                                                        // console.log("remove");
                                                         $("#new_address_modal").hide()
                                                     }
                                                     removeModalVisibility()
@@ -410,10 +410,10 @@
                                                             type: 'POST',
                                                             data: form_data,
                                                             success: function(returned_data) {
-                                                                console.log(returned_data);
+                                                                // console.log(returned_data);
                                                                 var jsonData = JSON.parse(returned_data);
                                                                 var return_data = jsonData.response[0];
-                                                                console.log(return_data);
+                                                                // console.log(return_data);
                                                                 if (return_data.status === "ok") {
                                                                     $("#address_div").text(return_data.updated_address)
                                                                     removeModalVisibility();
@@ -461,7 +461,7 @@
                                                     // });
                                                     
                                                     function addCoupon() {
-                                                        console.log("ADD");
+                                                        // console.log("ADD");
                                                         $("#coupon").show()
                                                         $("#coupon_code").val(localStorage.getItem("coupon"))
                                                     }
@@ -489,7 +489,7 @@
                                                         }
                                                     }
                                                     function removeCoupon() {
-                                                        console.log("remove");
+                                                        // console.log("remove");
                                                         $("#coupon").hide()
                                                         $("#coupon_code").val(localStorage.getItem("coupon"))
                                                     }
@@ -513,10 +513,10 @@
                                                             type: 'POST',
                                                             data: form_data,
                                                             success: function(returned_data) {
-                                                                console.log(returned_data);
+                                                                // console.log(returned_data);
                                                                 var jsonData = JSON.parse(returned_data);
                                                                 var return_data = jsonData.response[0];
-                                                                console.log(return_data);
+                                                                // console.log(return_data);
                                                                 if (return_data.status === "active") {
                                                                     localStorage.setItem("coupon",return_data.coupon_name)
                                                                     // $("#address_div").text(return_data.updated_address)
