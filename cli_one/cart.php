@@ -480,7 +480,13 @@
                                                     }
                                                     function onRemoveCoupon() {
                                                         changeText('Add Coupon Code');
-                                                        localStorage.removeItem('coupon')
+                                                        if(localStorage.getItem('coupon')){
+                                                            localStorage.removeItem('coupon')
+                                                            show_msg("Coupon removed")
+                                                        }
+                                                        else{
+                                                            show_msg("No coupon applied to remove")
+                                                        }
                                                     }
                                                     function removeCoupon() {
                                                         console.log("remove");
