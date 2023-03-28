@@ -531,7 +531,7 @@
                                         <div class="add-new-address-bttn-container" style="display:flex;justify-content: space-between;">
                                             <div> 
                                                 <button onclick="addCoupon()" class="submit-button"><pa id="coupon_btn_message"></pa></button>
-                                                <button type="submit" class="submit-button" onclick="onRemoveCoupon()">Remove</button>
+                                                <button type="submit" class="submit-button" onclick="onRemoveCoupon()">Remove Coupon</button>
                                             </div>
                                             <button class="submit-button" id="checkout_bttn" style="float: right;" onclick="checkout()">Checkout</button>
                                         </div>

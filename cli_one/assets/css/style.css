@@ -2309,7 +2309,7 @@ Quantity Button
 
 /* Index about cards */
 .about-content-card-wrapper{
-  padding: 0 25px;
+  padding: 35px 25px 35px 25px;
 }
 .about-content-card-container{
   display: grid;
