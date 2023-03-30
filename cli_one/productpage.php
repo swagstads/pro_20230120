@@ -310,7 +310,7 @@
                                     function getFeedbacks(){
                                     let api_url = "./api/fetch_feedbacks.php";
 
-                                    product_id = "1";
+                                    product_id = <?php echo $_GET['productid'] ?>;
 
                                     // form data values
                                     var form_data = {product_id: product_id};
@@ -323,45 +323,50 @@
                                         var return_data = jsonData.response;
                                         console.log(return_data);
 
-                                        let rated_star = '<span class="rate-star rate-star-1">'+
-                                                    '<svg id="Layer_1" data-name="Layer 1" height="50px" width="40px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 595.28 841.89">'+
-                                                    '<polygon class="star-elem rated-fill" points="297.64 258.25 350.5 365.36 468.7 382.54 383.17 465.91 403.36 583.64 297.64 528.05 191.91 583.64 212.1 465.91 126.57 382.54 244.78 365.36 297.64 258.25"/>'+
-                                                    '</svg>'+
-                                                '</span>'
-                                        let unrated_start = '<span class="rate-star rate-star-1">'+
-                                                    '<svg id="Layer_1" data-name="Layer 1" height="50px" width="40px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 595.28 841.89">'+
-                                                    '<polygon class="star-elem" points="297.64 258.25 350.5 365.36 468.7 382.54 383.17 465.91 403.36 583.64 297.64 528.05 191.91 583.64 212.1 465.91 126.57 382.54 244.78 365.36 297.64 258.25"/>'+
-                                                    '</svg>'+
-                                                '</span>'
-                                            
-                                        for (let i = 0; i < return_data.length; i++) {
-                                            let star = "";
-                                            for (let j = 0; j < return_data[i].stars; j++) {
-                                            star += rated_star;
-                                            }
-                                            for (let j = return_data[i].stars; j < 5; j++) {
-                                            star += unrated_start;
-                                            }
-
-                                            let review_container = 
-                                            '<div class="review">'+
-                                                '<div class="user-info">'+
-                                                    '<div class="profile-img-container">'+
-                                                    '<img src="'+return_data[i].profile_img+'"  class="profile-mg"  alt="">'+
+                                        if(return_data.length > 0){
+                                            let rated_star = '<span class="rate-star rate-star-1">'+
+                                                        '<svg id="Layer_1" data-name="Layer 1" height="50px" width="40px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 595.28 841.89">'+
+                                                        '<polygon class="star-elem rated-fill" points="297.64 258.25 350.5 365.36 468.7 382.54 383.17 465.91 403.36 583.64 297.64 528.05 191.91 583.64 212.1 465.91 126.57 382.54 244.78 365.36 297.64 258.25"/>'+
+                                                        '</svg>'+
+                                                    '</span>'
+                                            let unrated_start = '<span class="rate-star rate-star-1">'+
+                                                        '<svg id="Layer_1" data-name="Layer 1" height="50px" width="40px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 595.28 841.89">'+
+                                                        '<polygon class="star-elem" points="297.64 258.25 350.5 365.36 468.7 382.54 383.17 465.91 403.36 583.64 297.64 528.05 191.91 583.64 212.1 465.91 126.57 382.54 244.78 365.36 297.64 258.25"/>'+
+                                                        '</svg>'+
+                                                    '</span>'
+                                                
+                                            for (let i = 0; i < return_data.length; i++) {
+                                                let star = "";
+                                                for (let j = 0; j < return_data[i].stars; j++) {
+                                                star += rated_star;
+                                                }
+                                                for (let j = return_data[i].stars; j < 5; j++) {
+                                                star += unrated_start;
+                                                }
+    
+                                                let review_container = 
+                                                '<div class="review">'+
+                                                    '<div class="user-info">'+
+                                                        '<div class="profile-img-container">'+
+                                                        '<img src="'+return_data[i].profile_img+'"  class="profile-mg"  alt="">'+
+                                                        '</div>'+
+                                                        '<div class="user-name">'+
+                                                        return_data[i].name+
+                                                        '</div>'+
                                                     '</div>'+
-                                                    '<div class="user-name">'+
-                                                    return_data[i].name+
+                                                    '<div class="user-ratings">'+
+                                                        star+
                                                     '</div>'+
-                                                '</div>'+
-                                                '<div class="user-ratings">'+
-                                                    star+
-                                                '</div>'+
-                                                '<div class="user-feeedback">'+
-                                                    return_data[i].feedback+
-                                                '</div>'+
-                                            '</div>'
-
-                                            $(".reviews").append(review_container);
+                                                    '<div class="user-feeedback">'+
+                                                        return_data[i].feedback+
+                                                    '</div>'+
+                                                '</div>'
+    
+                                                $(".reviews").append(review_container);
+                                            }
+                                        }
+                                        else{
+                                            $(".show-reviews-container").html("<h4 style='text-align:center'>No reviews yet..</h4>");
                                         }
                                         
 
@@ -373,7 +378,6 @@
 
                             </div>
                         </div>
-
 
                     </div>
                     <div id="container2" class="tabcontent">
@@ -470,31 +474,41 @@
 
                             <script>
                                 function sendFeedback(){
-                                rateVal = parseInt($("#rating_val").val());
-                                feedback = $(".feedback-input").val();
+                                    event.preventDefault()
 
-                                event.preventDefault()
-                                let inert_feedback_api_url = "./api/insert_feedback.php";
-
-                                // form data values
-                                var form_data = {
-                                    stars: rateVal,
-                                    feedback: feedback,
-                                    product_id: "1"
-                                };
-                                $.ajax({
-                                url: inert_feedback_api_url,
-                                type: 'POST',
-                                // type: 'GET',
-                                data: form_data,
-                                success: function (returned_data) {
-                                    console.log(returned_data);
-                                    var jsonData = JSON.parse(returned_data);
-                                    var return_data = jsonData.response[0];
-                                    console.log(return_data);
+                                    rateVal = parseInt($("#rating_val").val());
+                                    feedback = $(".feedback-input").val();
+                                    if(feedback.length < 500){
+                                        if(rateVal){
+                                            let inert_feedback_api_url = "./api/insert_feedback.php";
+            
+                                            // form data values
+                                            var form_data = {
+                                                stars: rateVal,
+                                                feedback: feedback,
+                                                product_id: <?php echo $_GET['productid'] ?>
+                                            };
+                                            $.ajax({
+                                            url: inert_feedback_api_url,
+                                            type: 'POST',
+                                            // type: 'GET',
+                                            data: form_data,
+                                            success: function (returned_data) {
+                                                console.log(returned_data);
+                                                var jsonData = JSON.parse(returned_data);
+                                                var return_data = jsonData.response[0];
+                                                show_msg(return_data.message)
+                                                }
+                                            })
+                                        }
+                                        else{
+                                            show_msg("Please provide rating to submit feedback...")
+                                        }
                                     }
-                                })
-                                }
+                                    else{
+                                        show_msg("Please provide short feedback of less than 500 letters...")
+                                    }
+                            }
                             </script>
                         </div>
                     </div>
