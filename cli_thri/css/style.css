@@ -278,7 +278,7 @@ button {
     width: 100%;
     min-height: 80px;
     max-height: 80px;
-    background-color: white !important;
+    background-color: none;
     z-index: 999;
     display: flex !important;
     justify-content: space-between !important;
@@ -287,7 +287,6 @@ button {
     width: 100%;
     display: flex !important;
     justify-content: right;
-    background-color: white;
 }
 .bg-light {
     padding: 20px 60px 17px 70px;
@@ -297,7 +296,7 @@ button {
     /* padding-left: 15px; */
     font-size: .9rem;
     font-weight: 500;
-    color: #acabab;
+    color: #000000;
     text-transform: uppercase;
 }
 .navbar-light .navbar-nav .nav-link:focus, 
@@ -327,6 +326,7 @@ button {
   -moz-animation: fadeIn 5s;
   -o-animation: fadeIn 5s;
   -ms-animation: fadeIn 5s;
+  overflow: hidden;
 }
 
 @keyframes fadeIn {
@@ -356,14 +356,35 @@ button {
 
 .banner_section {
     /* height: calc(100vh - 100px); */
-    padding-bottom: 140px;
+    /* padding-bottom: 140px; */
     height: 100vh;
+
     /* border-bottom: 80px solid var(--primary-color); */
-    background-image: url("../images/index/atoz-bannerr.jpg");
-    background-position: center;
+    /* background-image: url("../images/index/atoz-bannerr.jpg"); */
+    /* background-position: center;
     background-repeat: no-repeat;
-    background-size: contain;
+    background-size: contain; */
+    /* position: absolute; */
+    top: 0;
 }
+.video-bg {
+  position: relative;
+  height: 100vh; /* Set height to viewport height */
+  overflow: hidden; /* Hide overflow */
+}
+
+.video-bg video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1; /* Set z-index to put the video behind content */
+  overflow: hidden; /* Hide overflow */
+}
+
+
 .banner_main {
     width: 44%;
     float: left;
@@ -455,11 +476,10 @@ button {
   font-family: var(    --font-family-sans-serif);
   margin: 20px 0 ;
   position: relative;
-  top: 40px;
 }
 @media (max-width: 768px) {
   .company-link-title h3{
-    font-size: 2rem;
+    font-size: 2.5rem;
   }
 }
 .company-link-container{

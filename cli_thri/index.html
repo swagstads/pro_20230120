@@ -50,7 +50,7 @@
 
    <!--header section start -->
    <div class="header_section section">
-      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <nav class="navbar navbar-expand-lg ">
          <div class="logo"><a href="./index.html"><img src="./images/index/logo1.jpg"></a></div>
 
          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
@@ -78,23 +78,28 @@
          </div>
 
       </nav>
-      <!--banner section start -->
-      <div class="fade-in">
-         <div id="banner_section" class="banner_section layout_padding section">
-            <div class="container-fluid">
-               <section class="slide-wrapper">
-                  <div class="container-fluid">
-                     <div id="myCarousel" class="carousel slide" data-ride="carousel">
-                     </div>
-                  </div>
-               </section>
-            </div>
-         </div>
-      </div>
-      <!--banner section end -->
    </div>
    <!--header section end -->
-
+   
+   <!--banner section start -->
+   <div class="fade-in">
+      <div id="banner_section" class="banner_section  section">
+         <div class="">
+            <section class="slide-wrapper">
+               <div class="">
+                  <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                     <div class="video-bg">
+                        <video autoplay loop muted>
+                          <source src="./videos/hote2.mp4" type="video/mp4">
+                        </video>
+                      </div>
+                  </div>
+               </div>
+            </section>
+         </div>
+      </div>
+   </div>
+   <!--banner section end -->
 
    <!-- Companies section -->
    <div class="company-link-title">
@@ -640,6 +645,21 @@
             $(this).hide();
          });
       });
+
+      window.addEventListener('scroll', function() {
+         var container = document.querySelector('.container');
+			var scrollPosition = window.scrollY;
+			if (scrollPosition > 500) {
+            $(".navbar").css('background-color', 'white');
+            console.log("Scrolled")
+
+         } else {
+            $(".navbar").css('background-color', 'transparent');
+            console.log("not Scrolled")
+         }
+		});
+
+
    </script>
    <script src="js/jquery.min.js"></script>
    <script src="js/popper.min.js"></script>
