@@ -6377,7 +6377,6 @@ ul.lower-alpha {
 }
 @media (max-width: 992px) {
   .mbBlockGutter {
-    top: 50px;
     position: relative;
   }
 }

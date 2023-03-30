@@ -19,12 +19,8 @@
 <script type="text/javascript">
 
 function googleTranslateElementInit() {
-    new google.translate.TranslateElement({
-        pageLanguage: 'en', 
-        layout: google.translate.TranslateElement.InlineLayout.HORIZONTAL,
-        autoDisplay: false
-    }, 'google_translate_element');
-} 
+  new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+}
 
 
 
@@ -168,7 +164,7 @@ function googleTranslateElementInit() {
 
     /* Google translator */
     .skiptranslate{
-        color: transparent;
+        color: transparent !important;
     }
     .select-box select{
         border: 1px solid rgba(0, 0, 0, 0);
@@ -176,23 +172,10 @@ function googleTranslateElementInit() {
         border-radius: 3px;
         font-family: arial;
         font-weight: 600;
+        /* margin-top: 27px; */
     }
     .select-box select:hover{
         background-color: #ddd;
-    }
-    .skiptranslate select{
-        /* padding: 5px 0px;  */
-        /* font-size: 16px;  */
-        /* border-radius: 5px;  */
-        /* border: none;  */
-        /* background-color: #f2f2f2;  */
-        /* -webkit-appearance: none;  */
-        /* -moz-appearance: none;  */
-        /* appearance: none;  */
-        /* background-image: url('down-arrow.png');  */
-        /* background-position: right center;  */
-        /* background-repeat: no-repeat;  */
-        /* cursor: pointer;  */
     }
     .goog-te-gadget .goog-te-combo {
         color: black !important;
@@ -211,6 +194,7 @@ function googleTranslateElementInit() {
 
 </style>
 <script>
+
     // (function() {
     //     function asyncLoad() {
     //         var urls = [
@@ -231,7 +215,13 @@ function googleTranslateElementInit() {
     //         window.addEventListener("load", asyncLoad, false);
     //     }
     // })();
-
+    function changeLang(ln){
+        $('.goog-te-combo').val(ln);
+        $('.goog-te-combo').change();
+        var langSelect = document.getElementsByClassName("goog-te-combo")[0];
+  langSelect.value = ln;
+  langSelect.dispatchEvent(new Event('change'));
+    }
     function show_msg(msg) {
         var x = document.getElementById("snackbar");
         document.getElementById("msg_text").textContent = msg;
@@ -305,6 +295,25 @@ function googleTranslateElementInit() {
 
 </script>
 
+<div class="web-lang-container">
+    <div class="web-langs">
+        <span>
+            <button class="lang-bttn hi" onclick="changeLang('hi')">Hindi</button>
+        </span>
+        <span>
+            |
+        </span>
+        <span>
+            <button class="lang-bttn hi" onclick="changeLang('en')">English</button>
+        </span>
+        <span>
+            |
+        </span>
+        <span>
+            <button class="lang-bttn hi" onclick="changeLang('mr')">Marathi</button>
+        </span>
+    </div>
+</div>
 
 <?php
 require("./api/config.php");

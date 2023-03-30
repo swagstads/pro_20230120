@@ -1960,6 +1960,31 @@ header {
   border: none;
   background-color: transparent;
 }
+.web-lang-container{
+  /* position: relative; */
+  /* position: absolute; */
+  height: 65px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* border: 1px solid; */
+  bottom: 0 ;
+  font-size: 1.1rem;
+  left: 10px;
+  position: fixed;
+  z-index: 999;
+}
+.web-lang-container .web-langs{
+  display: flex;
+  background-color: rgba(255, 255, 255, 0.531);
+  border-radius: 5px;
+  color: black;
+
+}
+.web-lang-container .web-langs button{
+  border: transparent;
+  background-color: transparent;
+}
 /* -------------------------------- 
 
 xgallery 
