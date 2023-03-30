@@ -8,7 +8,7 @@ $data = array();
 
 $product_id = $_POST['product_id'];
 
-$stmt = $dbh->prepare('SELECT * FROM ratings WHERE product_id=:product_id ORDER BY timestamp DESC LIMIT 3');
+$stmt = $dbh->prepare('SELECT * FROM ratings WHERE product_id=:product_id ORDER BY timestamp DESC LIMIT 4');
 $stmt->bindParam(':product_id', $product_id, PDO::PARAM_STR);
 if($stmt->execute()){
     $count = $stmt->rowCount();
