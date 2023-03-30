@@ -12,54 +12,54 @@
                 <?php include('header.php'); ?>
             </header>
         </div>
-        <main>
-            <div class="productpage-bredcrum-wrapper">
-                <div class="productpage-bredcrum">
-                    <div>
-                        <span>
-                            <a href="./">Home</a>
-                        </span>
-                        /
-                        <span>
-                            <a  id="breadcrum_category" href="./" >Category</a>
-                        </span>
-                        /
-                        <span>
-                            <a id="breadcrum_product_name">Product</a>
-                        </span>
-                    </div>
-                    <div>
-                        <span>
-                            <!-- Use code <span class="copon-code" title="Click to cpoy" data-clipboard-text="AToZ"> AToZ </span> to get 10% discount. -->
-                            <script>
-                                $(document).ready(()=>{
-                                    $(".copon-code").click(function() {
-                                        // Get the text to copy from the data attribute
-                                        var text = $(this).attr("data-clipboard-text");
+        <div class="productpage-bredcrum-wrapper">
+            <div class="productpage-bredcrum">
+                <div>
+                    <span>
+                        <a href="./">Home</a>
+                    </span>
+                    /
+                    <span>
+                        <a  id="breadcrum_category" href="./" >Category</a>
+                    </span>
+                    /
+                    <span>
+                        <a id="breadcrum_product_name">Product</a>
+                    </span>
+                </div>
+                <div>
+                    <span>
+                        <!-- Use code <span class="copon-code" title="Click to cpoy" data-clipboard-text="AToZ"> AToZ </span> to get 10% discount. -->
+                        <script>
+                            $(document).ready(()=>{
+                                $(".copon-code").click(function() {
+                                    // Get the text to copy from the data attribute
+                                    var text = $(this).attr("data-clipboard-text");
 
-                                        // Create a temporary input element
-                                        var $input = $("<input>")
-                                            .attr("type", "text")
-                                            .attr("value", text)
-                                            .appendTo("body")
-                                            .css("position", "fixed")
-                                            .css("opacity", "0");
+                                    // Create a temporary input element
+                                    var $input = $("<input>")
+                                        .attr("type", "text")
+                                        .attr("value", text)
+                                        .appendTo("body")
+                                        .css("position", "fixed")
+                                        .css("opacity", "0");
 
-                                        // Select the text in the input element
-                                        $input[0].select();
+                                    // Select the text in the input element
+                                    $input[0].select();
 
-                                        // Copy the selected text to the clipboard
-                                        document.execCommand("copy");
-                                        show_msg("Coupon code copied to clipboard")
-                                        // Remove the temporary input element
-                                        $input.remove();
-                                    });
-                                })
-                            </script>
-                        </span>
-                    </div>
+                                    // Copy the selected text to the clipboard
+                                    document.execCommand("copy");
+                                    show_msg("Coupon code copied to clipboard")
+                                    // Remove the temporary input element
+                                    $input.remove();
+                                });
+                            })
+                        </script>
+                    </span>
                 </div>
             </div>
+        </div>
+        <main>
             <div class="magnifying-glass hide-on-mobile"></div>
             <div class="mainContent productpage" role="main">
                 <!-- Left Column / Headphones Image -->
@@ -283,42 +283,241 @@
 
 
             </div>
-            <!-- <div class="description-reviews">
+
+
+<!-- review tab -->
+
+            <div class="description-reviews">
                 <div class="container">
                     <div class="tab">
-                        <button class="tablinks" onclick="openTab(event, 'container1')">Description</button>
-                        <button class="tablinks" onclick="openTab(event, 'container2')">Reviews</button>
+                        <button class="tablinks" onclick="openTab(event, 'container1')">Reviews</button>
+                        <button class="tablinks" onclick="openTab(event, 'container2')">Write feedback</button>
                     </div>
                     <div id="container1" class="tabcontent active show">
-                        <h3>Description</h3>
-                        <p id="product_description"></p>
+                        <h3>Reviews</h3>
+                        <div class="show-reviews-container-wrapper">
+                            <div class="show-reviews-container">
+
+                                <div class="reviews">
+
+
+
+
+                                </div>
+
+
+                                <script>
+                                    function getFeedbacks(){
+                                    let api_url = "./api/fetch_feedbacks.php";
+
+                                    product_id = "1";
+
+                                    // form data values
+                                    var form_data = {product_id: product_id};
+                                    $.ajax({
+                                    url: api_url,
+                                    type: 'POST',
+                                    data: form_data,
+                                    success: function (returned_data) {
+                                        var jsonData = JSON.parse(returned_data);
+                                        var return_data = jsonData.response;
+                                        console.log(return_data);
+
+                                        let rated_star = '<span class="rate-star rate-star-1">'+
+                                                    '<svg id="Layer_1" data-name="Layer 1" height="50px" width="40px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 595.28 841.89">'+
+                                                    '<polygon class="star-elem rated-fill" points="297.64 258.25 350.5 365.36 468.7 382.54 383.17 465.91 403.36 583.64 297.64 528.05 191.91 583.64 212.1 465.91 126.57 382.54 244.78 365.36 297.64 258.25"/>'+
+                                                    '</svg>'+
+                                                '</span>'
+                                        let unrated_start = '<span class="rate-star rate-star-1">'+
+                                                    '<svg id="Layer_1" data-name="Layer 1" height="50px" width="40px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 595.28 841.89">'+
+                                                    '<polygon class="star-elem" points="297.64 258.25 350.5 365.36 468.7 382.54 383.17 465.91 403.36 583.64 297.64 528.05 191.91 583.64 212.1 465.91 126.57 382.54 244.78 365.36 297.64 258.25"/>'+
+                                                    '</svg>'+
+                                                '</span>'
+                                            
+                                        for (let i = 0; i < return_data.length; i++) {
+                                            let star = "";
+                                            for (let j = 0; j < return_data[i].stars; j++) {
+                                            star += rated_star;
+                                            }
+                                            for (let j = return_data[i].stars; j < 5; j++) {
+                                            star += unrated_start;
+                                            }
+
+                                            let review_container = 
+                                            '<div class="review">'+
+                                                '<div class="user-info">'+
+                                                    '<div class="profile-img-container">'+
+                                                    '<img src="'+return_data[i].profile_img+'"  class="profile-mg"  alt="">'+
+                                                    '</div>'+
+                                                    '<div class="user-name">'+
+                                                    return_data[i].name+
+                                                    '</div>'+
+                                                '</div>'+
+                                                '<div class="user-ratings">'+
+                                                    star+
+                                                '</div>'+
+                                                '<div class="user-feeedback">'+
+                                                    return_data[i].feedback+
+                                                '</div>'+
+                                            '</div>'
+
+                                            $(".reviews").append(review_container);
+                                        }
+                                        
+
+                                        }
+                                    })
+                                    }
+                                    getFeedbacks()
+                                </script>
+
+                            </div>
+                        </div>
+
+
                     </div>
                     <div id="container2" class="tabcontent">
-                        <h3>Reviews</h3>
-                        <p>In construction...</p>
+                        <h3>Write your Feedback</h3>
+                         <!-- Rate and feedback -->
+                         <div class="ratings-container-wrapper">
+                            <div class="ratings-container">
+                                <form method="post" onsubmit="sendFeedback()">
+                                    <div class="upper-box">
+
+                                        <div class="user-info">
+
+                                        <div class="profile-img-container">
+                                            <img src="<?php echo $_SESSION['profile_img'] ?>"  class="profile"  alt="">
+                                        </div>
+
+                                        <div class="user-details">
+                                            <?php echo $_SESSION['name'] ?>
+                                        </div>
+
+                                        </div>
+
+                                        <div class="rating-star-input">
+                                        <input type="hidden" name="" id="rating_val" required>
+                                        <span class="rate-star rate-star-1" onclick="rateStarVal(1)" onmouseenter="rateStar(1)" onmouseleave="unrateStar(1)">
+                                            <svg id="Layer_1" data-name="Layer 1" height="50px" width="40px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 595.28 841.89">
+                                            <polygon class="star-elem" points="297.64 258.25 350.5 365.36 468.7 382.54 383.17 465.91 403.36 583.64 297.64 528.05 191.91 583.64 212.1 465.91 126.57 382.54 244.78 365.36 297.64 258.25"/>
+                                            </svg>
+                                        </span>
+                                        <span class="rate-star rate-star-2" onclick="rateStarVal(2)" onmouseenter="rateStar(2)" onmouseleave="unrateStar(2)">
+                                            <svg id="Layer_1" data-name="Layer 1" height="50px" width="40px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 595.28 841.89">
+                                            <polygon class="star-elem" points="297.64 258.25 350.5 365.36 468.7 382.54 383.17 465.91 403.36 583.64 297.64 528.05 191.91 583.64 212.1 465.91 126.57 382.54 244.78 365.36 297.64 258.25"/>
+                                            </svg>
+                                        </span>
+                                        <span class="rate-star rate-star-3" onclick="rateStarVal(3)" onmouseenter="rateStar(3)" onmouseleave="unrateStar(3)">
+                                            <svg id="Layer_1" data-name="Layer 1" height="50px" width="40px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 595.28 841.89">
+                                            <polygon class="star-elem" points="297.64 258.25 350.5 365.36 468.7 382.54 383.17 465.91 403.36 583.64 297.64 528.05 191.91 583.64 212.1 465.91 126.57 382.54 244.78 365.36 297.64 258.25"/>
+                                            </svg>
+                                        </span>
+                                        <span class="rate-star rate-star-4" onclick="rateStarVal(4)" onmouseenter="rateStar(4)" onmouseleave="unrateStar(4)">
+                                            <svg id="Layer_1" data-name="Layer 1" height="50px" width="40px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 595.28 841.89">
+                                            <polygon class="star-elem" points="297.64 258.25 350.5 365.36 468.7 382.54 383.17 465.91 403.36 583.64 297.64 528.05 191.91 583.64 212.1 465.91 126.57 382.54 244.78 365.36 297.64 258.25"/>
+                                            </svg>
+                                        </span>
+                                        <span class="rate-star rate-star-5" onclick="rateStarVal(5)" onmouseenter="rateStar(5)" onmouseleave="unrateStar(5)">
+                                            <svg id="Layer_1" data-name="Layer 1" height="50px" width="40px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 595.28 841.89">
+                                            <polygon class="star-elem" points="297.64 258.25 350.5 365.36 468.7 382.54 383.17 465.91 403.36 583.64 297.64 528.05 191.91 583.64 212.1 465.91 126.57 382.54 244.78 365.36 297.64 258.25"/>
+                                            </svg>
+                                        </span>
+
+
+                                        </div>
+
+                                        <script>
+
+                                        function rateStar(n){
+                                            let star = document.querySelectorAll(`.star-elem`);
+                                            for (let i = 0; i < n; i++) {
+                                            star[i].classList.add("hover-fill")
+                                            }
+                                        }
+
+                                        function unrateStar(n){
+                                            let star = document.querySelectorAll(`.star-elem`);
+                                            for (let i = n-1; i < 5; i++) {
+                                            star[i].classList.remove("hover-fill")
+                                            }
+                                        }
+                                        function rateStarVal(n){
+                                            let star = document.querySelectorAll(`.star-elem`);
+                                            for (let i = 0; i < n; i++) {
+                                            star[i].classList.add("rated-fill")
+                                            }
+                                            for (let i = n; i < 5; i++) {
+                                            star[i].classList.remove("rated-fill")
+                                            }
+                                            $("#rating_val").val(n)
+                                        }
+                                        </script>
+
+                                    </div>
+
+                                    <div class="bottom-box">
+                                        <div class="feedback-section">
+                                        <textarea name="Feedback" class="feedback-input" placeholder="Give me feedback" id=""  rows="5" required></textarea>
+                                        </div>
+                                    </div>
+
+                                    <div class="submit-bttn-container">
+                                        <button class="submit-ratings-bttn">Submit</button>
+                                    </div>
+                                </form>
+                                </div>
+
+                            <script>
+                                function sendFeedback(){
+                                rateVal = parseInt($("#rating_val").val());
+                                feedback = $(".feedback-input").val();
+
+                                event.preventDefault()
+                                let inert_feedback_api_url = "./api/insert_feedback.php";
+
+                                // form data values
+                                var form_data = {
+                                    stars: rateVal,
+                                    feedback: feedback,
+                                    product_id: "1"
+                                };
+                                $.ajax({
+                                url: inert_feedback_api_url,
+                                type: 'POST',
+                                // type: 'GET',
+                                data: form_data,
+                                success: function (returned_data) {
+                                    console.log(returned_data);
+                                    var jsonData = JSON.parse(returned_data);
+                                    var return_data = jsonData.response[0];
+                                    console.log(return_data);
+                                    }
+                                })
+                                }
+                            </script>
+                        </div>
                     </div>
                 </div>
-            </div> -->
+            </div>
 
             <script>
+                function openTab(evt, tabName) {
+                    var i, tabcontent, tablinks;
 
+                    tabcontent = document.getElementsByClassName("tabcontent");
+                    for (i = 0; i < tabcontent.length; i++) {
+                        tabcontent[i].classList.remove("show");
+                    }
 
-                // function openTab(evt, tabName) {
-                //     var i, tabcontent, tablinks;
+                    tablinks = document.getElementsByClassName("tablinks");
+                    for (i = 0; i < tablinks.length; i++) {
+                        tablinks[i].classList.remove("active");
+                    }
 
-                //     tabcontent = document.getElementsByClassName("tabcontent");
-                //     for (i = 0; i < tabcontent.length; i++) {
-                //         tabcontent[i].classList.remove("show");
-                //     }
-
-                //     tablinks = document.getElementsByClassName("tablinks");
-                //     for (i = 0; i < tablinks.length; i++) {
-                //         tablinks[i].classList.remove("active");
-                //     }
-
-                //     document.getElementById(tabName).classList.add("show");
-                //     evt.currentTarget.classList.add("active");
-                // }
+                    document.getElementById(tabName).classList.add("show");
+                    evt.currentTarget.classList.add("active");
+                }
             </script>
             <br>
 

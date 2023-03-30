@@ -53,38 +53,43 @@ if(isset($_POST['edit_user'])){
     $query->bindParam(':address', $address, PDO::PARAM_STR);
     $query->bindParam(':user_id', $user_id, PDO::PARAM_STR);
     $query->bindParam(':filePath', $filePath, PDO::PARAM_STR);
-    $query->execute();
-    
+    if($query->execute()){
 
-    // Insert Address
-    // $sql = " UPDATE addresses 
-    // SET 
-    // addressline1=:profile_address_line_1,
-    // addressline2=:profile_address_line_2,
-    // city=:profile_address_city,
-    // state=:profile_address_state,
-    // zip=:profile_address_zip
+          if(!empty($_FILES['profile_picture'])){
+            $_SESSION["profile_img"] = $filePath;
+          }
 
-    // WHERE id=:profile_address_id";
+          // Insert Address
+          // $sql = " UPDATE addresses 
+          // SET 
+          // addressline1=:profile_address_line_1,
+          // addressline2=:profile_address_line_2,
+          // city=:profile_address_city,
+          // state=:profile_address_state,
+          // zip=:profile_address_zip
+      
+          // WHERE id=:profile_address_id";
+      
+          
+          $sql = " INSERT into 
+          addresses ( user_id, addressline1, addressline2, city, state, zip)
+          VALUES ( :user_id, :profile_address_line_1, :profile_address_line_2, :profile_address_city, :profile_address_state, :profile_address_zip)";
+      
+          $query = $dbh->prepare($sql);
+          $query->bindParam(':user_id', $user_id, PDO::PARAM_STR);
+          // $query->bindParam(':profile_address_id', $profile_address_id, PDO::PARAM_STR);
+          $query->bindParam(':profile_address_line_1', $profile_address_line_1, PDO::PARAM_STR);
+          $query->bindParam(':profile_address_line_2', $profile_address_line_2, PDO::PARAM_STR);
+          $query->bindParam(':profile_address_city', $profile_address_city, PDO::PARAM_STR);
+          $query->bindParam(':profile_address_state', $profile_address_state, PDO::PARAM_STR);
+          $query->bindParam(':profile_address_zip', $profile_address_zip, PDO::PARAM_STR);
+      
+          $query->execute();
+      
+          $data['status'] = "ok";
+          $data['message'] = "Profile updated";
 
-    
-    $sql = " INSERT into 
-    addresses ( user_id, addressline1, addressline2, city, state, zip)
-    VALUES ( :user_id, :profile_address_line_1, :profile_address_line_2, :profile_address_city, :profile_address_state, :profile_address_zip)";
-
-    $query = $dbh->prepare($sql);
-    $query->bindParam(':user_id', $user_id, PDO::PARAM_STR);
-    // $query->bindParam(':profile_address_id', $profile_address_id, PDO::PARAM_STR);
-    $query->bindParam(':profile_address_line_1', $profile_address_line_1, PDO::PARAM_STR);
-    $query->bindParam(':profile_address_line_2', $profile_address_line_2, PDO::PARAM_STR);
-    $query->bindParam(':profile_address_city', $profile_address_city, PDO::PARAM_STR);
-    $query->bindParam(':profile_address_state', $profile_address_state, PDO::PARAM_STR);
-    $query->bindParam(':profile_address_zip', $profile_address_zip, PDO::PARAM_STR);
-
-    $query->execute();
-
-    $data['status'] = "ok";
-    $data['message'] = "Profile updated";
+    }
 }
 
 array_push($response["response"], $data);

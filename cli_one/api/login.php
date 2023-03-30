@@ -15,7 +15,7 @@ if (isset($_POST['user_login'])) {
   $email = $_POST['email'];
   $password = $_POST['password'];
 
-  $sql = "SELECT name,email,password,role,id,status FROM users WHERE email=:email";
+  $sql = "SELECT name,email,profile_img,password,role,id,status FROM users WHERE email=:email";
   $query = $dbh->prepare($sql);
   $query->bindParam(':email', $email, PDO::PARAM_STR);
   $query->execute();
@@ -29,6 +29,12 @@ if (isset($_POST['user_login'])) {
               $_SESSION['username'] = $_POST['email'];
               $_SESSION['user_id'] = $result->id;
               $_SESSION['name'] = $result->name;
+              if(isset($result->profile_img)){
+                $_SESSION['profile_img'] = $result->profile_img;
+              }
+              else{
+                $_SESSION['profile_img'] = "https://uxwing.com/wp-content/themes/uxwing/download/peoples-avatars/no-profile-picture-icon.png";
+              }
               $data['status'] = "ok";
               $data['success_message'] = "Logged in";
           } 

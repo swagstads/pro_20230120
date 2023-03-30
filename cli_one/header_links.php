@@ -186,12 +186,14 @@ function googleTranslateElementInit() {
     }
 
     .VIpgJd-ZVi9od-ORHb iframe{
-        display: none
+        display: none;
     }
     iframe.VIpgJd-ZVi9od-ORHb-OEVmcd{
         display: none
     }
-
+    body{
+        top: 0 !important;
+    }
 </style>
 <script>
 
@@ -298,19 +300,19 @@ function googleTranslateElementInit() {
 <div class="web-lang-container">
     <div class="web-langs">
         <span>
-            <button class="lang-bttn hi" onclick="changeLang('hi')">Hindi</button>
+            <button class="lang-bttn " onclick="changeLang('hi')">Hindi</button>
         </span>
         <span>
             |
         </span>
         <span>
-            <button class="lang-bttn hi" onclick="changeLang('en')">English</button>
+            <button class="lang-bttn " onclick="changeLang('en')">English</button>
         </span>
         <span>
             |
         </span>
         <span>
-            <button class="lang-bttn hi" onclick="changeLang('mr')">Marathi</button>
+            <button class="lang-bttn " onclick="changeLang('mr')">Marathi</button>
         </span>
     </div>
 </div>

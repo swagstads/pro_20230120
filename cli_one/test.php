@@ -5,112 +5,126 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
-  <link rel="stylesheet" href="./assets/css/style.css">
+  <?php require("./header_links.php") ?>
   <style>
-    *{
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
+    .show-reviews-container-wrapper{
+      min-height: 200px;
+      padding: 20px;
     }
-    .ratings-container-wrapper{
-      min-height: 300px;
-      display: flex;
-      justify-content: center;
+    .show-reviews-container-wrapper .show-reviews-container{
+
     }
-    .ratings-container-wrapper .ratings-container{
+    .show-reviews-container-wrapper .show-reviews-container .reviews{
       display: flex;
       flex-direction: column;
-      gap: 20px;
-      width: 100%;
-      padding: 10px;
-      background-color: aliceblue;
-    }
-    .ratings-container-wrapper .upper-box{
-      display: flex;
-      justify-content: space-between;
-      padding: 10px 0;
-    }
-    .ratings-container-wrapper .upper-box .user-info{
-      display: flex;
       gap: 10px;
+    }
+    .show-reviews-container-wrapper .show-reviews-container .reviews .review{
+      display: flex;
+      flex-direction: column;
+      background-color: aliceblue;
+      padding: 20px;
+    }
+    .show-reviews-container-wrapper .show-reviews-container .reviews .review .user-info{
+      display: flex;
       align-items: center;
+      gap: 20px;
     }
-    .ratings-container-wrapper .upper-box .user-info .profile{
-      width: 40px;
+    .show-reviews-container-wrapper .show-reviews-container .reviews .review .user-info .profile-img-container{
+      width: 60px;
     }
-    .ratings-container-wrapper .upper-box .rating-star-input img{
-      width: 40px;
+    .show-reviews-container-wrapper .show-reviews-container .reviews .review .user-info .profile-img-container .profile-img{
+      width: 60px;
     }
-    .ratings-container .bottom-box .feedback-input{
-      width: 100%;
-      min-height: 150px;
-      resize: none;
-      padding: 10px;
-      border: 1px solid rgba(0, 0, 0, 0.279);
-      outline: none;
+    .show-reviews-container .user-ratings{
+      margin-left: 50px;
     }
-    .submit-ratings-bttn{
-      background-color: var(--col1);
-      padding: 15px 45px;
-      border: none;
-      color: white;
-    }
-    @media (min-width: 768px) {
-    .ratings-container {
-        max-width: 768px !important;
-      }            
-    }
-    @media (min-width: 992px) {
-    .ratings-container {
-        max-width: 985px !important;
-      }            
-    }
-    @media (min-width: 1220px){
-    .ratings-container {
-        max-width: 1210px !important;
-      }
+    .show-reviews-container .user-feeedback{
+      margin-left: 60px;
     }
   </style>
 </head>
 <body>
-    <div class="ratings-container-wrapper">
-        <div class="ratings-container">
-          
-            <div class="upper-box">
 
-              <div class="user-info">
-                
-                <div class="profile-img-container">
-                  <img src="./assets/icons/profile-svgrepo-com.svg" class="profile"  alt="">
-                </div>
+  <div class="show-reviews-container-wrapper">
+      <div class="show-reviews-container">
 
-                <div class="user-details">
-                  Rishabh Nahar
-                </div> 
+          <div class="reviews">
 
-              </div>
 
-              <div class="rating-star-input">
-                <img src="./assets/icons/performance.svg" alt="">
-                <img src="./assets/icons/performance.svg" alt="">
-                <img src="./assets/icons/performance.svg" alt="">
-                <img src="./assets/icons/performance.svg" alt="">
-                <img src="./assets/icons/performance.svg" alt="">
-              </div>
 
-            </div>
 
-            <div class="bottom-box">
-              <div class="feedback-section">
-                <textarea name="Feedback" class="feedback-input" placeholder="Give me feedback" id="" cols="30" rows="10"></textarea>
-              </div>
-            </div>
+          </div>
 
-            <div class="submit-bttn-container">
-              <button class="submit-ratings-bttn">Submit</button>
-            </div>
 
-        </div>
-    </div>
+          <script>
+            function getFeedbacks(){
+              let api_url = "./api/fetch_feedbacks.php";
+
+              product_id = "1";
+
+              // form data values
+              var form_data = {product_id: product_id};
+              $.ajax({
+              url: api_url,
+              type: 'POST',
+              data: form_data,
+              success: function (returned_data) {
+                  var jsonData = JSON.parse(returned_data);
+                  var return_data = jsonData.response;
+                  console.log(return_data);
+
+                  let rated_star = '<span class="rate-star rate-star-1">'+
+                              '<svg id="Layer_1" data-name="Layer 1" height="50px" width="40px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 595.28 841.89">'+
+                              '<polygon class="star-elem rated-fill" points="297.64 258.25 350.5 365.36 468.7 382.54 383.17 465.91 403.36 583.64 297.64 528.05 191.91 583.64 212.1 465.91 126.57 382.54 244.78 365.36 297.64 258.25"/>'+
+                              '</svg>'+
+                          '</span>'
+                  let unrated_start = '<span class="rate-star rate-star-1">'+
+                              '<svg id="Layer_1" data-name="Layer 1" height="50px" width="40px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 595.28 841.89">'+
+                              '<polygon class="star-elem" points="297.64 258.25 350.5 365.36 468.7 382.54 383.17 465.91 403.36 583.64 297.64 528.05 191.91 583.64 212.1 465.91 126.57 382.54 244.78 365.36 297.64 258.25"/>'+
+                              '</svg>'+
+                          '</span>'
+                    
+                  for (let i = 0; i < return_data.length; i++) {
+                    let star = "";
+                    for (let j = 0; j < return_data[i].stars; j++) {
+                      star += rated_star;
+                    }
+                    for (let j = return_data[i].stars; j < 5; j++) {
+                      star += unrated_start;
+                    }
+
+                    let review_container = 
+                      '<div class="review">'+
+                        '<div class="user-info">'+
+                            '<div class="profile-img-container">'+
+                              '<img src="'+return_data[i].profile_img+'"  class="profile-mg"  alt="">'+
+                            '</div>'+
+                            '<div class="user-name">'+
+                              return_data[i].name+
+                            '</div>'+
+                        '</div>'+
+                        '<div class="user-ratings">'+
+                            star+
+                        '</div>'+
+                        '<div class="user-feeedback">'+
+                              return_data[i].feedback+
+                        '</div>'+
+                      '</div>'
+
+                    $(".reviews").append(review_container);
+                  }
+                  
+
+                  }
+              })
+            }
+            getFeedbacks()
+          </script>
+
+      </div>
+  </div>
+
+
 </body>
 </html>

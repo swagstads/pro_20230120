@@ -593,7 +593,7 @@
   background-color: rgba(177, 177, 177, 0.106);
   width: 100%;
   position: absolute;
-  top: 80px;
+  top: 80px  !important;
   left: 0;
   right: 0;
   margin: auto;
@@ -641,10 +641,9 @@
 
 .productpage {
   position: relative;
-  top: 130px;
   max-width: 1200px;
   min-height: 100%;
-  margin: auto;
+  margin:130px auto auto auto;
   padding: 0 25px 100px 25px;
   gap: 20px;
   display: flex !important;
@@ -999,6 +998,7 @@
   }
 }
 
+
 .description-reviews .container {
   border: 1px solid rgba(0, 0, 0, 0.192);
   padding: 10px;
@@ -1038,6 +1038,146 @@
 .description-reviews .tabcontent.show {
   display: block;
 }
+  /* =================== Show reviews =================== */
+.show-reviews-container-wrapper{
+  min-height: 200px;
+  padding: 20px;
+}
+.show-reviews-container-wrapper .show-reviews-container{
+
+}
+.show-reviews-container-wrapper .show-reviews-container .reviews{
+  display: grid;
+  grid-template-columns: 50% 50%;
+  gap: 10px;
+}
+@media (max-width: 768px) {
+  .show-reviews-container-wrapper .show-reviews-container .reviews{
+    grid-template-columns: 100%;
+  }
+}
+.show-reviews-container-wrapper .show-reviews-container .reviews .review{
+  display: flex;
+  flex-direction: column;
+  background-color: aliceblue;
+  padding: 20px;
+}
+.show-reviews-container-wrapper .show-reviews-container .reviews .review .user-info{
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.show-reviews-container-wrapper .show-reviews-container .reviews .review .user-info .profile-img-container{
+  width: 60px;
+}
+.show-reviews-container-wrapper .show-reviews-container .reviews .review .user-info .profile-img-container .profile-img{
+  width: 60px;
+}
+.show-reviews-container .user-ratings{
+  margin-left: 50px;
+}
+.show-reviews-container .user-feeedback{
+  margin-left: 60px;
+}
+  /* ==================== Post Ratings ==================== */
+.ratings-container-wrapper{
+  min-height: 300px;
+  display: flex;
+  justify-content: center;
+  background-color: rgba(220, 220, 220, 0.4);
+  padding: 20px 0;
+  width: 100%;
+}
+.ratings-container-wrapper .ratings-container{
+  width: 100%;
+}
+.ratings-container-wrapper .ratings-container form{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+  padding: 0 10px;
+}
+.ratings-container-wrapper .upper-box{
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+}
+.ratings-container-wrapper .upper-box .user-info{
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.ratings-container-wrapper .upper-box .user-info .profile{
+  width: 80px;
+  border-radius: 50%;
+}
+.ratings-container-wrapper .upper-box .rating-star-input img{
+  width: 80px;
+  border-radius: 50%;
+}
+svg{
+  padding: 0;
+  margin: 0;
+  height: 100%;
+}
+.rating-star-input span{
+  height: 100%;
+}
+.rating-star-input{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.star-elem{
+  fill: white;
+  stroke:black;
+  stroke-width: 5px;
+}
+.hover-fill{
+  fill: none;
+  fill: yellow;
+}
+.rated-fill{
+  fill: none;
+  fill: yellow;
+}
+.ratings-container .bottom-box .feedback-input{
+  width: 100%;
+  min-height: 150px;
+  resize: none;
+  padding: 10px;
+  border: 1px solid transparent;
+  background-color: white;
+  border-radius: 5px;
+  outline: none;
+}
+.submit-ratings-bttn{
+  background-color: var(--col1);
+  padding: 10px 45px;
+  border: none;
+  color: white;
+}
+@media (min-width: 768px) {
+.ratings-container {
+    max-width: 768px !important;
+  }            
+}
+@media (min-width: 992px) {
+.ratings-container {
+    max-width: 985px !important;
+  }            
+}
+@media (min-width: 1220px){
+.ratings-container {
+    max-width: 1210px !important;
+  }
+}
+  /* ==================== Post Ratings end ==================== */
+
+
 
 
 /* ======== Cart ======== */
