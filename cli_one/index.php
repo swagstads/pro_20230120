@@ -194,7 +194,7 @@
                     </div>
                 </div>
             </div>
-
+<!-- 
             
             <div class="hero-banner-icons-wrapper ">
                 <div class="hero-banner-icons-container page-conatiner">
@@ -333,7 +333,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> -->
             
             <div class="trending-products">
                 <?php include('./new_arrivals.php') ?>
@@ -403,7 +403,7 @@
             </div> -->
 
             
-            <div class="about-content-card-wrapper">
+            <!-- <div class="about-content-card-wrapper">
                 <div class="about-content-card-container">
                     <div class="about-content-card">
                         <div class="left">
@@ -458,7 +458,7 @@
 
                 </div>
 
-            </div>
+            </div> -->
 
             <!-- <section id="hero">
                 <div class="hero-container">

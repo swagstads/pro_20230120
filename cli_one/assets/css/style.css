@@ -700,15 +700,13 @@
 
 /* Left Column */
 .left-column #main_img_container .product-img-active {
-  width: calc(80% - 60px);
+  width: calc(90% - 10px);
   left: 0;
   right: 0;
   top: 0;
   bottom: 0;
   margin: auto;
   transition: all 0.3s ease;
-  border-top-left-radius: 50px;
-  border-bottom-right-radius: 50px;
   z-index: 100;
   max-height: 450px;
 }

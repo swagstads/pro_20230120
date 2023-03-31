@@ -1,11 +1,11 @@
 <div id="shopify-section-1600942005808" class="shopify-section velaFramework">
                 <div class="productListHome velaProducts mbBlockGutter"
                     style="background-color: rgba(0, 0, 0, 0); padding: 40px 0 45px">
-                    <div class="container" style="max-width: 100%;">
+                    <div class="container">
                         <div class="sectionInner">
                             <div class="headingGroup pb20">
                                 <h3 class="velaHomeTitle text-center">
-                                    <span>Best Sellers</span>
+                                    <span>Featured Products</span>
                                 </h3>
                                 <!-- <span class="subTitle">
                                     Mirum est notare quam littera gothica quam nunc putamus  parum claram!

@@ -157,12 +157,12 @@
                                             <span>Facebook</span>
                                         </a>
                                     </li>
-                                    <li class="twitter">
+                                    <!-- <li class="twitter">
                                         <a target="_blank" href="https://twitter.com/" title="AtoZ on Twitter" class="btn-social btn-social--twitter" data-original-title="Twitter">
                                             <i class="fa fa-twitter"></i>
                                             <span>Twitter</span>
                                         </a>
-                                    </li>
+                                    </li> -->
                                     <li class="instagram">
                                         <a target="_blank" href="https://www.instagram.com/atoz_1934/" title="AtoZ on Instagram" class="btn-social btn-social--instagram" data-original-title="Instagram">
                                             <i class="fa fa-instagram"></i>
