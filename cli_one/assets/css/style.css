@@ -3,6 +3,7 @@
   --col1: #0087c7;
   /* --col2: #bd8448; */
   --col2: #e30d7c;
+  --nav-height: 100px;
 }
 *{
   scroll-behavior: smooth;
@@ -1749,6 +1750,9 @@ html * {
 }
 
 *, *:after, *:before {
+  
+  padding: 0;
+  margin: 0;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
@@ -2668,10 +2672,15 @@ Quantity Button
 
 
 /* ======== General CSS ======== */
-
+.show-on-mobile{
+  display: none;
+}
 @media (max-width: 991px) {
   .hide-on-mobile{
     display: none !important;
+  }
+  .show-on-mobile{
+    display: initial;
   }
 }
 
