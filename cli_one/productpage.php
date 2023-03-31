@@ -89,7 +89,7 @@
                     </div>
                     <!-- Product Pricing -->
                     <div class="product-price">
-                        <span id="product_our_price">Price:
+                        <span id="product_our_price">MRP:
                             &nbsp;
                             <span>
                                 <span class="price-entity">&#8377;</span>
