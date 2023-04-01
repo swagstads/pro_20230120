@@ -24,6 +24,7 @@ if (isset($_POST['chk_coupon'])) {
   if(isset($result->code)){
     if($result->status === 'active'){
               $data['coupon_name'] = $_POST['coupon_code'];
+              $data['amount'] = $result->amount;
               $data['message'] = "Coupon Applied";
               $data['status'] = "active";
           } 

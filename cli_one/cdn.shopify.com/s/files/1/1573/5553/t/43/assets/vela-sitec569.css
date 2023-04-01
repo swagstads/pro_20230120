@@ -6381,7 +6381,7 @@ ul.lower-alpha {
   }
 }
 .mbItemGutter {
-  margin-bottom: 20px;
+  /* margin-bottom: 20px; */
 }
 .pbGutter {
   padding-bottom: 60px;
@@ -6431,6 +6431,9 @@ ul.lower-alpha {
   -webkit-flex-wrap: wrap;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
+}
+.justify-content-space-between{
+  justify-content: space-between;
 }
 .flexWrap {
   display: -ms-flexbox;
@@ -13459,7 +13462,7 @@ button:active:focus,
 }
 .velaHeader .headerWrap {
   position: -webkit-sticky;
-  position: fixed;
+  position: sticky;
   top: 0;
   z-index: 9999;
   background-color: white;
@@ -14489,6 +14492,7 @@ button:active:focus,
   position: fixed !important;
   background: var(--vela-header-bgcolor);
   z-index: 100;
+  top: 0;
   /* -webkit-animation: fadeInDown 0.9s ease-in-out;
   -moz-animation: fadeInDown 0.9s ease-in-out;
   -ms-animation: fadeInDown 0.9s ease-in-out;
@@ -14576,9 +14580,9 @@ button:active:focus,
   display: -ms-flexbox;
   display: -webkit-flex;
   display: flex;
-  -webkit-justify-content: center;
+  /* -webkit-justify-content: center;
   -ms-justify-content: center;
-  justify-content: center;
+  justify-content: center; */
   -webkit-align-items: center;
   -ms-align-items: center;
   align-items: center;
@@ -14694,7 +14698,6 @@ button:active:focus,
 }
 @media (min-width: 992px) {
   .velaBannerFix .velaBannerInner {
-    margin-top: -130px;
     box-shadow: 0 0 0 20px #fff;
     position: relative;
     z-index: 1;

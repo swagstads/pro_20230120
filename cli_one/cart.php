@@ -152,6 +152,7 @@
                                                         // console.log(...amount_arr, "=>", total_amount);
                                                         $("#total_amount").text(total_amount)
                                                         $("#total_amount_inp").val(total_amount)
+                                                        $("#grand_total_amount").text(total_amount)
                                                     }
                                                     $("#cartEmptyContent").hide()
                                                 } else {
@@ -310,8 +311,43 @@
                                     }
                                 </script>
                                 <div class="Total-amount-container">
-                                    <h3>Total: <span class="price-entity"><span class="price-entity">&#8377;</span></span><span class="total-amount " id="total_amount"></span></h3>
+
+                                    <h5>
+                                        <div class="left">
+                                            <span>Subtotal:</span> 
+                                        </div>
+                                        <div class="right">
+                                            <span>
+                                                <span class="price-entity">&#8377;</span>
+                                            </span>
+                                            <span class="total-amount " id="total_amount"></span>
+                                        </div>
+                                    </h5>
+                                    <h5>
+                                        <div class="left">
+                                            <span>Discount:</span>
+                                        </div>
+                                        <div  style='color: green' class="right">
+                                            <span>-</span>
+                                            <span>
+                                                <span class="price-entity">&#8377;</span>
+                                            </span>
+                                            <span class="discount-amount">0</span>
+                                        </div>
+                                    </h5>
+                                    <h4>
+                                        <div class="left">
+                                            <span>Total:</span>
+                                        </div>
+                                        <div class="right">
+                                            <span>
+                                                <span class="price-entity">&#8377;</span>
+                                            </span>
+                                            <span class="grand-total-amount" id="grand_total_amount">0</span>
+                                        </div>
+                                    </h4>
                                     <input type="hidden" id="total_amount_inp" value="0">
+                                    <input type="hidden" id="grand_total_amount_inp" value="0">
                                 </div>
 
 
@@ -469,7 +505,15 @@
                                                         $(document).ready(function(){
                                                         changeText("Coupon Applied")
                                                         $("#coupon_code").val(localStorage.getItem("coupon"))
-                                                        })// alert("yoho");
+
+                                                        discount_amount = localStorage.getItem("coupon_amount"); 
+                                                        console.log(discount_amount);
+
+                                                        $(".discount-amount").text(" ".discount_amount)
+                                                        var subtotal = $("#total_amount_inp").val()
+                                                        var total_amount = subtotal - discount_amount;
+                                                        $("#grand_total_amount").text(total_amount)
+                                                    })
                                                     }else{
                                                         $(document).ready(function(){
                                                         $("#coupon_btn_message").text("Add Coupon Code")
@@ -513,15 +557,19 @@
                                                             type: 'POST',
                                                             data: form_data,
                                                             success: function(returned_data) {
-                                                                // console.log(returned_data);
+                                                                console.log(returned_data);
                                                                 var jsonData = JSON.parse(returned_data);
                                                                 var return_data = jsonData.response[0];
                                                                 // console.log(return_data);
                                                                 if (return_data.status === "active") {
                                                                     localStorage.setItem("coupon",return_data.coupon_name)
-                                                                    // $("#address_div").text(return_data.updated_address)
+                                                                    localStorage.setItem("coupon_amount",return_data.amount)
                                                                     removeCoupon();
                                                                     changeText("Coupon Applied")
+                                                                    $(".discount-amount").text(return_data.amount)
+                                                                    var subtotal = $("#total_amount_inp").val()
+                                                                    var total_amount = subtotal - return_data.amount;
+                                                                    $("#grand_total_amount").text(total_amount)
                                                                 }
                                                                 show_msg(return_data.message)
                                                             }

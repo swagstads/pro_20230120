@@ -1,43 +1,51 @@
-<div id="shopify-section-1600942005808" class="shopify-section velaFramework" style="position:relative; margin-top:100px">
-        <div class="productListHome velaProducts mbBlockGutter"
-            style="background-color: rgba(0, 0, 0, 0); padding: 20px 0 25px">
-            <div class="container"> <!--  style="max-width: 100%;" -->
-                <div class="sectionInner">
-                    <div class="headingGroup pb20">
-                        <h3 class="velaHomeTitle text-center">
-                            <span>Featured Products</span>
-                        </h3>
-                        <!-- <span class="subTitle">
-                            Mirum est notare quam littera gothica quam nunc putamus  parum claram!
-                        </span> -->
-                    </div>
-                    <div class="product-slider-container">
-                        <div class="best-sellers-scrolling-div auto-slider-div scrolling-products" id="product-container">
+<div id="shopify-section-1600942005808" class="shopify-section velaFramework recently-viewed-parent-div">
+                <div class="productListHome velaProducts mbBlockGutter"
+                    style="background-color: rgba(0, 0, 0, 0); padding: 20px 0 25px">
+                    <div class="container">
+                        <div class="sectionInner">
+                            <div class="headingGroup pb20">
+                                <h3 class="velaHomeTitle text-center">
+                                    <span>Recently viewed</span>
+                                </h3>
+                                <!-- <span class="subTitle">
+                                    Mirum est notare quam littera gothica quam nunc putamus  parum claram!
+                                </span> -->
+                            </div>
+                            <div class="product-slider-container">
+
+                                <div  class="left-arrow scrolling-arrow"> <span onclick="productSliderScrollLeftTP()" ><</span> </div>
+
+                                <div class="recently-viewed-scrolling-div auto-slider scrolling-products">
+                                    
+                                        <!-- Products -->
+
+
+                                </div>
+
+
+                                <div class="right-arrow scrolling-arrow"> <span  onclick="productSliderScrollRightTP()" >></span> </div>
+
+                            </div>
+
                             
-                                <!-- Products -->
 
-                        </div>
                     </div>
-
-                    
-
+                </div>
             </div>
         </div>
-    </div>
-</div>
-<script>
+
+    <script>
         function fetchProduct(){
-            const queryString = window.location.search;
-            const urlParams = new URLSearchParams(queryString);
-            var api_url_best_seller = './api/best_sellers.php';
+            var api_url_recently_viewed = './api/recently_viewed.php';
             $.ajax({
-                url: api_url_best_seller,
+                url: api_url_recently_viewed,
                 type: 'POST',
                 success: function (returned_data) {
                     var jsonData = JSON.parse(returned_data);
                     var return_data = jsonData.response;
-                    if (return_data[0].status == "failed") {
-                        $("#product_container").append('<div style="text-align:center;width:100%;font-size:20px">Sorry, Something went wrong!</div>')
+                    console.log(return_data);
+                    if (return_data[0].status == "fail") {
+                        $(".recently-viewed-parent-div").hide();
                     }
                     else if (return_data[0].status == "success") {
                         for (var i = 0; i < jsonData.response.length; i++) {
@@ -53,8 +61,8 @@
                             else{
                                 inStockMessage = "In Stock"
                             }
-                            $('.best-sellers-scrolling-div').append(
-                                '<div class="best-sellers-product-slider auto-slider-slides product-slider">'+
+                            $('.recently-viewed-scrolling-div').append(
+                                '<div class="product-slider auto-slider-slides">'+
                                     '<a onclick="increase_click_count('+return_data[i].prod_id+')"  href="./productpage.php?productid='+return_data[i].prod_id+'" >'+
                                         '<div class="product-image">'+
                                             '<img class="image1 active lazyload" data-src="./admin_panel/uploads/products/'+return_data[i].image_name+'" alt="">'+
@@ -67,26 +75,25 @@
                                         '</div>'+
                                     '</a>'+
 
-                                        '<div class="quantity">'+
-                                            '<span class="out-of-stock-message"><small>'+outOfStockMessage+'</small></span>'+
-                                            '<span class="in-stock-message"><small>'+inStockMessage+'</small></span>'+
-                                        '</div>'+
+                                    '<div class="quantity">'+
+                                        '<span class="out-of-stock-message"><small>'+outOfStockMessage+'</small></span>'+
+                                        '<span class="in-stock-message"><small>'+inStockMessage+'</small></span>'+
+                                    '</div>'+
                                         
-                                        '<div class="product-price">'+
-                                            '<div class="price-container">'+
-                                                '<div class="our-price" style="height:25px">'+
+                                    '<div class="product-price">'+
+                                        '<div class="price-container">'+
+                                            '<div class="our-price" style="height:25px">'+
                                                     '<span class="price-entity">&#8377;</span>'+
                                                     '<span class="price-toggle"  data-currency="INR" data-inr="'+return_data[i].price+'" > '+return_data[i].price+'</span>'+
-                                                '</div>'+
-
-                                                '<div class="product-mrp">'+
+                                            '</div>'+
+                                            '<div class="product-mrp">'+
                                                     '<small id="product_mrp">'+
                                                         '<span class="price-entity">&#8377;</span>'+
                                                         '<span class="price-toggle"  data-currency="INR" data-inr="'+return_data[i].mrp+'" > '+return_data[i].mrp+'</span>'+
                                                     '</small>'+
-                                               ' </div>'+
-                                           '</div>'+
-                                           '<div class="add-bttns">'+
+                                            ' </div>'+
+                                        '</div>'+
+                                        '<div class="add-bttns">'+
                                             ' <div class="add-to-cart-slide-button">'+
                                                     '<button onclick="addToCart('+return_data[i].prod_id+')">&plus; Add to cart</button>'+
                                                 '</div>'+
@@ -98,24 +105,20 @@
                                 '</div>'
                             )
                         }
-                        
-                        $( ".trending-products-scrolling-div" ).clone().prepend( ".trending-products-scrolling-div" );
-                    }
-                    else{
-                        // console.log("Nothing");
                     }
                 }
             })
         }
         fetchProduct();
-        var productContainer = document.getElementById("product-container");
-        productContainer.addEventListener("animationiteration", function() {
-            // Get the first product element
-            var firstProduct = productContainer.firstElementChild;
 
-            // Move the first product element to the end of the list
-            productContainer.appendChild(firstProduct);
-        });
-
-
+        function productSliderScrollLeftTP(){
+            $('.recently-viewed-scrolling-div').scrollLeft( $('.recently-viewed-scrolling-div').scrollLeft() - 270 )
+        }
+        function productSliderScrollRightTP(){
+            $('.recently-viewed-scrolling-div').scrollLeft( $('.recently-viewed-scrolling-div').scrollLeft() + 270 )
+        }
+        setInterval(() => {
+            productSliderScrollRightTP()
+        }, 5000);
+   
 </script>

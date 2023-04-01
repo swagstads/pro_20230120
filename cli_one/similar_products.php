@@ -1,7 +1,7 @@
-<div id="shopify-section-1600942005808" class="shopify-section velaFramework">
+<div id="shopify-section-1600942005808" class="shopify-section velaFramework" style="position:relative; margin-top:100px">
         <div class="productListHome velaProducts mbBlockGutter"
-            style="background-color: rgba(0, 0, 0, 0); padding: 40px 0 45px">
-            <div class="container" style="width: 100% !important;max-width: 100% !important;">
+            style="background-color: rgba(0, 0, 0, 0); padding: 20px 0 25px">
+            <div class="container"> <!--  style="max-width: 100%;" -->
                 <div class="sectionInner">
                     <div class="headingGroup pb20">
                         <h3 class="velaHomeTitle text-center">
@@ -12,26 +12,20 @@
                         </span> -->
                     </div>
                     <div class="product-slider-container">
-
-                        <div  class="left-arrow scrolling-arrow"> <span onclick="productSliderScrollLeftsimilarProd()" ><</span></div>
-                        <div class="similar-products-scroll  scrolling-products">
+                        <div class="similar-products-scrolling-div auto-slider-div  scrolling-products" id="product-container">
                             
                                 <!-- Products -->
 
-
                         </div>
-
-
-                        <div class="right-arrow scrolling-arrow"> <span  onclick="productSliderScrollRightsimilarProd()" >></span> </div>
-
                     </div>
-            
+
+                    
+
             </div>
         </div>
     </div>
 </div>
-
-    <script>
+<script>
         function fetch_similar_products(product_data){
             console.log(product_data);
 
@@ -68,11 +62,14 @@
                             else{
                                 inStockMessage = "In Stock"
                             }
-                            $('.similar-products-scroll').append(
-                                '<div class="product-slider">'+
+                            $('.similar-products-scrolling-div').append(
+                                '<div class="product-slider auto-slider-slides">'+
                                     '<a onclick="increase_click_count('+return_data[i].prod_id+')"  href="./productpage.php?productid='+return_data[i].prod_id+'" >'+
                                         '<div class="product-image">'+
                                             '<img class="image1 active lazyload" data-src="./admin_panel/uploads/products/'+return_data[i].image_name+'" alt="">'+
+                                            '<div class="Image-button">'+
+                                                '<button>Buy Now</button>'+ 
+                                            '</div>'+
                                         '</div>'+
                                         '<div class="product-title">'+
                                             '<span>'+return_data[i].title+'</span><br>'+
@@ -117,15 +114,14 @@
             })
         }
 
-        function productSliderScrollLeftsimilarProd(){   
-            $('.similar-products-scroll').scrollLeft( $('.similar-products-scroll').scrollLeft() - 270 )
-            // clearInterval(automatic_scroll);
-        }
-        function productSliderScrollRightsimilarProd(){
-            $('.similar-products-scroll').scrollLeft( $('.similar-products-scroll').scrollLeft() + 270 )
-        }
-        setInterval(() => {
-            productSliderScrollRightsimilarProd()
-        }, 5000);
+        var productContainer = document.getElementById("product-container");
+        productContainer.addEventListener("animationiteration", function() {
+            // Get the first product element
+            var firstProduct = productContainer.firstElementChild;
+
+            // Move the first product element to the end of the list
+            productContainer.appendChild(firstProduct);
+        });
+
 
 </script>

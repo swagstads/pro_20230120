@@ -12,7 +12,7 @@
                         </span> -->
                     </div>
                     <div class="product-slider-container">
-                        <div class="new-arrivals-scrolling-div scrolling-products" id="product-container">
+                        <div class="new-arrivals-scrolling-div auto-slider-div scrolling-products" id="product-container">
                             
                                 <!-- Products -->
 
@@ -57,10 +57,13 @@
                                 inStockMessage = "In Stock"
                             }
                             $('.new-arrivals-scrolling-div').append(
-                                '<div class="new-arrivals-product-slider product-slider">'+
+                                '<div class="new-arrivals-product-slider auto-slider-slides product-slider">'+
                                     '<a onclick="increase_click_count('+return_data[i].prod_id+')"  href="./productpage.php?productid='+return_data[i].prod_id+'" >'+
                                         '<div class="product-image">'+
                                             '<img class="image1 active lazyload" data-src="./admin_panel/uploads/products/'+return_data[i].image_name+'" alt="">'+
+                                            '<div class="Image-button">'+
+                                                '<button>Buy Now</button>'+ 
+                                            '</div>'+
                                         '</div>'+
                                         '<div class="product-title">'+
                                             '<span>'+return_data[i].title+'</span><br>'+

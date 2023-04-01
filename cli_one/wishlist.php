@@ -2,6 +2,7 @@
 
 <div id="cd-cart">
     <div class="sidebar">
+		<h4>Wishlist</h4>
 		<?php 
 		if(isset($_SESSION['user_id'])){ 		
 			$stmt = $dbh->prepare(' SELECT wishlist.id, product.id AS pid, product.title, product.price, product_media.image_name FROM wishlist JOIN product ON product.id = wishlist.product_id JOIN product_media on product_media.product_id = wishlist.product_id WHERE wishlist.user_id = :user_id GROUP BY product.id;');

@@ -7,15 +7,15 @@
 
 <body>
     <div id="shopify-section-vela-header" class="shopify-section">
-        <header id="header" class="velaHeader">
+       
             <?php include('header.php'); ?>
-        </header>
     </div>
+    
     <div id="pageContainer" class="isMoved">
 
         <main class="mainContent" role="main">
             <!-- BEGIN content_for_index -->
-            <div id="shopify-section-1551027504217" class="shopify-section velaFramework" style="margin-top: 20px;">
+            <div id="shopify-section-1551027504217" class="shopify-section velaFramework">
                 <div class="banner-slideShow mbBlockGutter" style="background-color: #eaebef">
                     <div class="container-full">
                         <div class="velaSlideshow">

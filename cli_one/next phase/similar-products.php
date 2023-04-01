@@ -1,38 +1,53 @@
-<div id="shopify-section-1600942005808" class="shopify-section velaFramework" style="position:relative; margin-top:100px">
+<div id="shopify-section-1600942005808" class="shopify-section velaFramework">
         <div class="productListHome velaProducts mbBlockGutter"
-            style="background-color: rgba(0, 0, 0, 0); padding: 20px 0 25px">
-            <div class="container"> <!--  style="max-width: 100%;" -->
+            style="background-color: rgba(0, 0, 0, 0); padding: 40px 0 45px">
+            <div class="container" style="width: 100% !important;max-width: 100% !important;">
                 <div class="sectionInner">
                     <div class="headingGroup pb20">
                         <h3 class="velaHomeTitle text-center">
-                            <span>Featured Products</span>
+                            <span>Similar Products</span>
                         </h3>
                         <!-- <span class="subTitle">
                             Mirum est notare quam littera gothica quam nunc putamus  parum claram!
                         </span> -->
                     </div>
                     <div class="product-slider-container">
-                        <div class="best-sellers-scrolling-div auto-slider-div scrolling-products" id="product-container">
+
+                        <div  class="left-arrow scrolling-arrow"> <span onclick="productSliderScrollLeftsimilarProd()" ><</span></div>
+                        <div class="similar-products-scroll  scrolling-products">
                             
                                 <!-- Products -->
 
+
                         </div>
+
+
+                        <div class="right-arrow scrolling-arrow"> <span  onclick="productSliderScrollRightsimilarProd()" >></span> </div>
+
                     </div>
-
-                    
-
+            
             </div>
         </div>
     </div>
 </div>
-<script>
-        function fetchProduct(){
-            const queryString = window.location.search;
-            const urlParams = new URLSearchParams(queryString);
-            var api_url_best_seller = './api/best_sellers.php';
+
+    <script>
+        function fetch_similar_products(product_data){
+            console.log(product_data);
+
+            var product_title = product_data.title
+
+            var api_url = './api/similar_products.php';
+
+            var form_data = { 
+                "product_title": product_data.title,
+                "product_category_name": product_data.category_name,
+                "product_category_id": product_data.category_id,
+            };
             $.ajax({
-                url: api_url_best_seller,
-                type: 'POST',
+                url: api_url,
+                type: 'GET',
+                data: form_data,
                 success: function (returned_data) {
                     var jsonData = JSON.parse(returned_data);
                     var return_data = jsonData.response;
@@ -44,7 +59,7 @@
                             
                             let outOfStockMessage = "";
                             let inStockMessage="";
-                            if(return_data[i].product_quantity == 0){
+                            if(return_data[i].product_quantity === 0){
                                 outOfStockMessage = "Out of Stock";
                             }
                             // else if(return_data[i].product_quantity <= 5){
@@ -53,8 +68,8 @@
                             else{
                                 inStockMessage = "In Stock"
                             }
-                            $('.best-sellers-scrolling-div').append(
-                                '<div class="best-sellers-product-slider auto-slider-slides product-slider">'+
+                            $('.similar-products-scroll').append(
+                                '<div class="product-slider">'+
                                     '<a onclick="increase_click_count('+return_data[i].prod_id+')"  href="./productpage.php?productid='+return_data[i].prod_id+'" >'+
                                         '<div class="product-image">'+
                                             '<img class="image1 active lazyload" data-src="./admin_panel/uploads/products/'+return_data[i].image_name+'" alt="">'+
@@ -78,7 +93,6 @@
                                                     '<span class="price-entity">&#8377;</span>'+
                                                     '<span class="price-toggle"  data-currency="INR" data-inr="'+return_data[i].price+'" > '+return_data[i].price+'</span>'+
                                                 '</div>'+
-
                                                 '<div class="product-mrp">'+
                                                     '<small id="product_mrp">'+
                                                         '<span class="price-entity">&#8377;</span>'+
@@ -98,8 +112,6 @@
                                 '</div>'
                             )
                         }
-                        
-                        $( ".trending-products-scrolling-div" ).clone().prepend( ".trending-products-scrolling-div" );
                     }
                     else{
                         // console.log("Nothing");
@@ -107,15 +119,16 @@
                 }
             })
         }
-        fetchProduct();
-        var productContainer = document.getElementById("product-container");
-        productContainer.addEventListener("animationiteration", function() {
-            // Get the first product element
-            var firstProduct = productContainer.firstElementChild;
 
-            // Move the first product element to the end of the list
-            productContainer.appendChild(firstProduct);
-        });
-
+        function productSliderScrollLeftsimilarProd(){   
+            $('.similar-products-scroll').scrollLeft( $('.similar-products-scroll').scrollLeft() - 270 )
+            // clearInterval(automatic_scroll);
+        }
+        function productSliderScrollRightsimilarProd(){
+            $('.similar-products-scroll').scrollLeft( $('.similar-products-scroll').scrollLeft() + 270 )
+        }
+        // setInterval(() => {
+        //     productSliderScrollRightsimilarProd()
+        // }, 5000);
 
 </script>

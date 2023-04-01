@@ -16,7 +16,7 @@
                                 <div  class="left-arrow scrolling-arrow"> <span onclick="productSliderScrollLeftMP()" ><</span> </div>
 
                                 <div class="more-producst-scroll  scrolling-products">
-                                    
+
                                         <!-- Products -->
 
 
@@ -27,7 +27,7 @@
 
                             </div>
 
-                            
+
 
                     </div>
                 </div>
@@ -53,14 +53,14 @@
                     }
                     else if (return_data[0].status == "success") {
                         for (var i = 0; i < jsonData.response.length; i++) {
-                            
+
                             let outOfStockMessage = "";
                             let inStockMessage="";
                             if(return_data[i].product_quantity === 0){
                                 outOfStockMessage = "Out of Stock";
                             }
                             // else if(return_data[i].product_quantity <= 5){
-                            //     inStockMessage = "only " + return_data[i].product_quantity + " left" 
+                            //     inStockMessage = "only " + return_data[i].product_quantity + " left"
                             // }
                             else{
                                 inStockMessage = "In Stock"
@@ -70,6 +70,9 @@
                                     '<a onclick="increase_click_count('+return_data[i].prod_id+')"  href="./productpage.php?productid='+return_data[i].prod_id+'" >'+
                                         '<div class="product-image">'+
                                             '<img class="image1 active lazyload" data-src="./admin_panel/uploads/products/'+return_data[i].image_name+'" alt="">'+
+                                            '<div class="Image-button">'+
+                                                '<button>Buy Now</button>'+ 
+                                            '</div>'+
                                         '</div>'+
                                         '<div class="product-title">'+
                                             '<span>'+return_data[i].title+'</span><br>'+
@@ -80,7 +83,7 @@
                                             '<span class="out-of-stock-message"><small>'+outOfStockMessage+'</small></span>'+
                                             '<span class="in-stock-message"><small>'+inStockMessage+'</small></span>'+
                                         '</div>'+
-                                        
+
                                         '<div class="product-price">'+
                                             '<div class="price-container">'+
                                                 '<div class="our-price" style="height: 25px">'+
@@ -126,7 +129,7 @@
             } else {
                 container.scrollLeft(scrollLeft - productWidth);
             }
-        } 
+        }
         function productSliderScrollRightMP() {
             const container = $('.more-producst-scroll');
             const containerWidth = container.width();
@@ -141,9 +144,10 @@
             }
         }
 
-        setInterval(() => {
-            productSliderScrollRightMP()
-        }, 5000);
+        // ========== uncommment if want to auto slide in every 5 seconds ==========
+        // setInterval(() => {
+        //     productSliderScrollRightMP()
+        // }, 5000);
 
 
 

@@ -19,7 +19,10 @@
 <script type="text/javascript">
 
 function googleTranslateElementInit() {
-  new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+  new google.translate.TranslateElement({
+    pageLanguage: 'en',
+    includedLanguages: 'es,hi,en,mr',
+}, 'google_translate_element');
 }
 
 
@@ -297,7 +300,7 @@ function googleTranslateElementInit() {
 
 </script>
 
-<div class="web-lang-container">
+<!-- <div class="web-lang-container">
     <div class="web-langs">
         <span>
             <button class="lang-bttn " onclick="changeLang('hi')">Hindi</button>
@@ -315,7 +318,7 @@ function googleTranslateElementInit() {
             <button class="lang-bttn " onclick="changeLang('mr')">Marathi</button>
         </span>
     </div>
-</div>
+</div> -->
 
 <?php
 require("./api/config.php");

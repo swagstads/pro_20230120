@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
     <style>
         *{
             box-sizing: border-box;
@@ -29,7 +28,10 @@
             width: 100%;
             height: 100%;
             display: grid;
-            grid-template-columns: 90px auto;
+            /* grid-template-columns: 90px auto; */
+        }
+        .nav-entity{
+            color: #f2f2f2;
         }
         .nav-container-left{
             height: 100%;
@@ -45,12 +47,12 @@
             height: 80px;
         }
         .nav-container-right{
-            width: 100%;
+            /* width: 100%;
             height: 100%;
             display: flex;
             flex-direction: column;
             justify-content: center;
-            align-items: center;
+            align-items: center; */
         }
         .nav-container .link{
             font-size: 0.9rem;
@@ -62,21 +64,36 @@
             color: var(--col1);
         }
         .nav-container .nav-row{
-            height: 100%;
+            /* height: 100%; */
             width: 100%;
             display: flex;
             justify-content: space-between;
-            padding: 0 10px;
+            padding: 5px 0;
             align-items: center;
         }
-        .nav-container .nav-row-1{
-            align-self:flex-end;
+        .nav-container .nav-row-1 {
+            background-color: #f2f2f2;
+            width: 100%;
         }
-        .nav-row-2{
+        .nav-container .nav-row-1 .elems{
             display: flex;
-            align-self: center;
+            justify-content: space-between;
+        }
+        .nav-container .nav-row-1 .web-language-option{
+            /* align-self:flex-end; */
+            font-size: 0.8rem;
+        }
+        .nav-container .nav-row-2 .elems{  
+            display: flex;
+            justify-content: space-between;
             gap: 10px;
         }   
+        .nav-container .nav-row-2 .left{
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            width: 100%;
+        }
         .nav-container .nav-row-2 .right{
             display: flex;
             justify-content: right;
@@ -86,7 +103,7 @@
             position: relative;
         }
         .nav-container .nav-contact{
-            font-size: 0.9rem;
+            font-size: 1.2rem;
             color: var(--col1);
         }
         .nav-container .nav-contact .number a{
@@ -94,9 +111,14 @@
         }
         .nav-container .nav-row-2>.left{
             width: 100%;
+
+        }
+        .nav-container .search-box-container{
+            width: 100%;
         }
         .nav-container .search-box{
             display: flex;
+            width: 900%;
         }
         .nav-container .search-box .search-icon{
             background-color: white;
@@ -106,7 +128,7 @@
             border-left: none;
             border-top-right-radius: 5px;
             border-bottom-right-radius: 5px;
-            height: 30px;
+            height: 40px;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -116,11 +138,11 @@
             font-size: 0.8rem;
         }
         .nav-container .search-box .search-inp{
-            width: clamp(50%,400px,500px);
+            width:clamp( 200px,50%,500px);
         }
         .nav-container .search-box .search-inp input{
+            height: 40px;
             width: 100%;
-            height: 30px;
             padding: 0 5px;
             /* border: 1px solid rgba(0, 0, 0, 0.422); */
             border: none;
@@ -133,6 +155,11 @@
         .links .link{
             padding: 0 2px;
             white-space: nowrap;
+        }
+        .nav-container .nav-row-3 .links{
+            display: flex;
+            flex-direction: row;
+            gap: 25px;
         }
         .nav-cart-bttn{
             padding: 5px 20px;
@@ -152,19 +179,61 @@
             height: 100%;
             /* visibility: hidden; */
         }
-
+        #desktop_nav_shop_dropdown{
+            position: absolute;
+            width: 100%;
+            left: 0;
+            top: calc(var(--nav-height) + 10px);
+        }
+        #desktop_nav_shop_dropdown .sub-categories{
+            color: rgb(62, 62, 62);
+            font-size: 0.8rem;
+        }
+        #desktop_nav_shop_dropdown .category-images {
+            display: flex;
+            justify-content: center;
+            /* align-items: center; */
+            width: 100%;
+        }
+        #desktop_nav_shop_dropdown .category-images img{
+            width: 250px;
+            height: 250px;
+            object-fit: cover;
+            border: 1px ;
+        }
+        .shop-prods-options{
+            display: flex;
+            left: 0;
+            right: 0;
+            margin: auto;
+            gap: 50px;
+            padding: 20px 0;
+            box-shadow: 0 15px 20px rgba(87, 87, 87, 0.11);
+            padding: 20px;
+        }
+        .shop-prods-options a{
+            padding: 5px 0 !important;
+        }
+        .shop-prods-options>span{   
+        }
+        .page-margin{
+            left: 0;
+            right: 0;
+            margin: auto;
+            width: 100%;
+        }
         @media (min-width: 768px) {
-            .nav-container{
+            .page-margin{
                 max-width: 768px !important;
             }            
         }
         @media (min-width: 992px) {
-            .nav-container{
+            .page-margin{
                 max-width: 985px !important;
             }            
         }
         @media (min-width: 1220px){
-            .nav-container{
+            .page-margin{
                 max-width: 1210px !important;
             }
         }
@@ -249,96 +318,208 @@
         <div class="nav-warpper">
             <div class="nav-container">
                     <div class="nav-container-left">
-                        <div class="logo-container">
+                        <!-- <div class="logo-container">
                             <img src="./assets/images/logo.jpg" alt="" class="logo">
-                        </div>
+                        </div> -->
                     </div>
                     <div class="nav-container-right ">
-                            <div class="nav-row nav-row-1 ">
-                                <div class="left user-profile-dropdown">
-                                    Rishabh Nahar
-                                </div>
-                                <div class="right">
-                                    <span class="nav-links links">
-                                        <span class="link">
-                                            <a href="">My Wishlist</a>
+                            <div class="nav-row nav-row-1">
+                                <div  class="page-margin elems">
+                                    <div class="left web-language-option">
+                                        <span>
+                                            English
                                         </span>
                                         |
-                                        <span class="link">
-                                            <a href="">Login</a>
+                                        <span>
+                                            Hindi
                                         </span>
                                         |
-                                        <span class="link">
-                                            <a href="">Store finder</a>
+                                        <span>
+                                            Marathi
                                         </span>
-                                    </span>
+                                    </div>
+                                    <div class="right">
+                                        <span class="nav-links links">
+                                            <span class="link">
+                                                <a href="">My Wishlist</a>
+                                            </span>
+                                            |
+                                            <span class="link">
+                                                <a href="">Login</a>
+                                            </span>
+                                            |
+                                            <span class="link">
+                                                <a href="">Store finder</a>
+                                            </span>
+                                            
+                                        </span>
+                                    </div>
                                 </div>
                             </div>
+
                             <div class="nav-row nav-row-2">
-                                <div class="left search-box-container">
-
-                                    <span class="search-box">
-                                        <span class="search-inp">
-                                            <input type="text" class="search-box-input" placeholder="Search">
-                                        </span>
-                                        <span class="search-icon">
-                                            <i class="fa fa-search"></i>
-                                        </span>
-                                    </span>
-
-                                </div>
-                                <div class="right">
-                                    <div class="nav-contact hide-on-mobile">
-                                        <span class="number">
-                                            <i class="fa fa-phone"></i>
-                                            <a href="tel:8355817127">
-                                                +91 8355817127
-                                            </a>
-                                        </span>
-                                    </div>
-                                    <div class="nav-cart">
-                                        <div class="nav-cart-bttn-container">
-                                            <a href="./cart.php">
-                                                <button class="nav-cart-bttn">Cart</button>
-                                            </a>
+                                <div class="page-margin elems">
+                                    <div class="left">
+                                        <div class="logo-container">
+                                            <img src="./assets/images/logo.jpg" width="70px" alt="" class="logo">
+                                        </div>
+                                        <div class="left search-box-container">
+                                            <span class="search-box">
+                                                <span class="search-inp">
+                                                    <input type="text" class="search-box-input" placeholder="Search">
+                                                </span>
+                                                <span class="search-icon">
+                                                    <i class="fa fa-search"></i>
+                                                </span>
+                                            </span>
+        
                                         </div>
                                     </div>
-                                    <div class="nav-mobile-bar-container show-on-mobile">
-                                        <div class="mobile-bar">
-                                            <div onclick="toggleSidebar()"> <i class="fa fa-bars"></i></div>
+                                    <div class="right">
+                                        <div class="nav-contact hide-on-mobile">
+                                            <span class="number">
+                                                <i class="fa fa-phone"></i>
+                                                <a href="tel:8355817127">
+                                                    +91 8355817127
+                                                </a>
+                                            </span>
+                                        </div>
+                                        <div class="nav-cart">
+                                            <div class="nav-cart-bttn-container">
+                                                <a href="./cart.php">
+                                                    <button class="nav-cart-bttn">Cart</button>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="nav-mobile-bar-container show-on-mobile">
+                                            <div class="mobile-bar">
+                                                <div onclick="toggleSidebar()"> <i class="fa fa-bars"></i></div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                             <div class="nav-row nav-row-3 hide-on-mobile">
-                                <div class="categories-options">
-                                    <span class="links">
-                                        <span class="link">
-                                            <a href="">New Arrivals</a>
+                                <div class="page-margin elems">
+
+                                    <div class="categories-options">
+                                        <span class="links">
+                                            <span class="link">
+                                                <a href="">Home</a>
+                                                
+                                            </span>
+                                            <!-- <span class="nav-entity entity">&#9679;</span> -->
+                                            <!-- <span class="nav-entity entity">|</span> -->
+                                            <span class="link" onmouseenter="showShopCategories('desktop_nav_shop_dropdown')" >
+                                                <span class="link-dropdown">
+                                                    <a class=" nav-dropdown-button"  href="#"> Shop
+                                                        &nbsp; <i class="fa fa-chevron-down"></i> </a>
+                                                </span>
+                                                <div onmouseenter="showShopCategories('desktop_nav_shop_dropdown')" id="desktop_nav_shop_dropdown" class="nav-dropdown-menu">
+                                                    <span  onmouseleave="hideShopCategories('desktop_nav_shop_dropdown')"  class="shop-prods-options nav-container ">
+                                                        <span onmouseenter="changeProdImage('./assets/images/our-bank/floor.jpg')">
+                                                            <div class="product-category">
+                                                                <h4><a href="">Flooring</a> </h4>
+                                                            </div>
+                                                            <div class="sub-categories">
+                                                                    <a href="./products.php?category=flooring&product=PVC Flooring" title="">PVC Flooring</a>
+                                                                    <a href="./products.php?category=flooring&product=Wooden Flooring" title="">Wooden Flooring</a>
+                                                                    <a href="./products.php?category=flooring&product=Gym Flooring" title="">Gym Flooring</a>
+                                                                    <a href="./products.php?category=flooring&product=Sports Flooring" title="">Sports Flooring</a>
+                                                                    <a href="./products.php?category=flooring&product=Grass Flooring" title="">Grass Flooring</a>
+                                                                    <a href="./products.php?category=flooring&product=carpet wall to wall" title="">Carpet Wall to Wall</a>
+                                                                    <a href="./products.php?category=flooring&product=Tiles Carpet" title="">Tiles Carpet </a>
+                                                                    <a href="./products.php?category=flooring&product=EVA Foam Mat" title="">EVA Foam Mat </a>
+                                                            </div>
+                                                        </span>
+                                                        <span onmouseenter="changeProdImage('./assets/images/our-bank/blinds.jpg')">
+                                                            <div class="product-category">
+                                                                <h4><a href="">Blinds</a> </h4>
+                                                            </div>
+                                                            <div class="sub-categories">
+                                                                    <a href="./products.php?category=blinds&product=roman blinds" title="">Roman Blinds</a>
+                                                                    <a href="./products.php?category=blinds&product=Roller Blinds" title="">Roller Blinds</a>
+                                                                    <a href="./products.php?category=blinds&product=Zebra Blinds" title="">Zebra Blinds</a>
+                                                                    <a href="./products.php?category=blinds&product=Horizontal Blinds" title="">Horizontal Blinds</a>
+                                                                    <a href="./products.php?category=blinds&product=Vertical Blinds" title="">Vertical Blinds</a>
+                                                                    <a href="./products.php?category=blinds&product=PVC Blinds" title="">PVC Blinds</a>
+                                                                    <a href="./products.php?category=blinds&product=Chick Blinds" title="">Chick Blinds</a>
+                                                                    <a href="./products.php?category=blinds&product=honeycomb blinds" title="">Honeycomb blinds</a>
+                                                                    <a href="./products.php?category=blinds&product=Motorized Curtains" title="">Motorized Curtains</a>
+                                                                    <a href="./products.php?category=blinds&product=Shower Curtains" title="">Shower Curtains</a>
+                                                                    <a href="./products.php?category=blinds&product=AC Curtains" title="">AC Curtains</a>
+                                                                    <a href="./products.php?category=blinds&product=MTrack Channels" title="">MTrack Channels</a>
+                                                            </div>
+                                                        </span>
+                                                        <span onmouseenter="changeProdImage('./assets/images/our-bank/furnishing.jpg')">
+                                                            <div class="product-category">
+                                                                <h4><a href="">Furnishings</a> </h4>
+                                                            </div>
+                                                            <div class="sub-categories">
+                                                                    <a href="./products.php?category=furnishing&product=Upholstery" title="">Upholstery</a>
+                                                                    <a href="./products.php?category=furnishing&product=Curtains" title="">Curtains</a>
+                                                                    <a href="./products.php?category=furnishing&product=Abstract Curtains" title="">Abstract Curtains</a>
+                                                                    <a href="./products.php?category=furnishing&product=Sheer Curtains" title="">Sheer Curtains</a>
+                                                                    <a href="./products.php?category=furnishing&product=Tassel" title="">Tassel</a>
+                                                                    <a href="./products.php?category=furnishing&product=HeadBoard Fabric" title="">HeadBoard Fabric</a>
+                                                                    <a href="./products.php?category=furnishing&product=Artificial Leather" title="">Artificial Leather</a>
+                                                            </div>
+                                                        </span>
+                                                        <span onmouseenter="changeProdImage('./assets/images/our-bank/sofa-material.jpg')">
+                                                            <div class="product-category">
+                                                                <h4><a href="">Bed & Bath Linen</a> </h4>
+                                                            </div>
+                                                            <div class="sub-categories">
+                                                                    <a href="./products.php?category=bed and bath&product=bed sheets" title="">Bed Sheets</a>
+                                                                    <a href="./products.php?category=bed and bath&product=Bed Cover" title="">Bed Cover</a>
+                                                                    <a href="./products.php?category=bed and bath&product=comforter" title="">Comforter</a>
+                                                                    <a href="./products.php?category=bed and bath&product=Mattresses" title="">Mattresses</a>
+                                                                    <a href="./products.php?category=bed and bath&product=duet sets" title="">Duet Sets</a>
+                                                                    <a href="./products.php?category=bed and bath&product=Bolsters" title="">Bolsters</a>
+                                                                    <a href="./products.php?category=bed and bath&product=Cushion Covers" title="">Cushion Covers</a>
+                                                                    <a href="./products.php?category=bed and bath&product=Throw" title="">Throw</a>
+                                                                    <a href="./products.php?category=bed and bath&product=Bath Robes" title="">Bath Robes</a>
+                                                                    <a href="./products.php?category=bed and bath&product=Napkins and Towels" title="">Napkins and Towels</a>
+                                                                    <a href="./products.php?category=bed and bath&product=Mats" title="">Mats</a>
+                                                            </div>
+                                                        </span> 
+                                                        <span onmouseenter="changeProdImage('./assets/images/our-bank/wallpaper.jpg')">
+                                                            <div class="product-category">
+                                                                <h4><a href="">Rugs & wallpaper</a> </h4>
+                                                            </div>
+                                                            <div class="sub-categories">
+                                                                    <a href="./products.php?category=rugs&product=Rugs" title="">Rugs</a>
+                                                                    <a href="./products.php?category=rugs&product=Fur Carpet" title="">Fur Carpet</a>
+                                                                    <a href="./products.php?category=rugs&product=Shaggy Carpet" title="">Shaggy Carpet</a>
+                                                                    <a href="./products.php?category=rugs&product=Tufted Carpet" title="">Tufted Carpet</a>
+                                                                    <a href="./products.php?category=rugs&product=Center Piece Carpet" title="">Center Piece Carpet</a>
+                                                                    <a href="./products.php?category=rugs&product=Wallpaper" title="">Wallpaper</a>
+                                                                    <a href="./products.php?category=rugs&product=customized Wallpaper" title="">Customized Wallpaper</a>
+                                                                    <a href="./products.php?category=rugs&product=imported wallpaper" title="">Imported Wallpaper</a>
+                                                                    <a href="./products.php?category=rugs&product=Awning" title="">Awning</a>
+                                                            </div>
+                                                        </span> 
+                                                        <span class="category-images ">
+                                                            <img src="./assets/images/our-bank/blinds-2.jpg" alt="" class="category-img">
+                                                        </span>
+                                                    </span>
+                                                </div>
+                                            </span>
+                                            <!-- <span class="nav-entity entity">&#9679;</span> -->
+                                            <!-- <span class="nav-entity entity">|</span> -->
+                                            <span class="link">
+                                                <a href="">About Us </a>
+                                            </span>
+                                            <!-- <span class="nav-entity entity">&#9679;</span> -->
+                                            <!-- <span class="nav-entity entity">|</span> -->
+                                            <span class="link">
+                                                <a href="">Contact Us </a>
+                                            </span>
                                         </span>
-                                        |
-                                        <span class="link">
-                                            <a href="">Rugs and wallpapers</a>
-                                        </span>
-                                        |
-                                        <span class="link">
-                                            <a href="">Flooring</a>
-                                        </span>
-                                        |
-                                        <span class="link">
-                                            <a href="">Blinds</a>
-                                        </span>
-                                        |
-                                        <span class="link">
-                                            <a href="">Furnishing</a>
-                                        </span>
-                                        |
-                                        <span class="link">
-                                            <a href="">Bed & Bath Linen</a>
-                                        </span>
-                                    </span>
+                                    </div>
                                 </div>
                             </div>
+
                     </div>
 
 
@@ -486,13 +667,25 @@
             sidebar.classList.toggle("active")
         }
         function toggleDropdown(dowpdown_id) {
-        var dropdownMenu = document.getElementById(dowpdown_id);
-        // var dropdownMenu = event.target.nextElementSibling;
-        if (dropdownMenu.style.display === "block") {
-            dropdownMenu.style.display = "none";
-        } else {
+            var dropdownMenu = document.getElementById(dowpdown_id);
+            // var dropdownMenu = event.target.nextElementSibling;
+            if (dropdownMenu.style.display === "block") {
+                dropdownMenu.style.display = "none";
+            } else {
+                dropdownMenu.style.display = "block";
+            }
+        }
+        function changeProdImage(image_src){
+            var imageContainer = document.querySelector(".category-img");
+            imageContainer.src = image_src;
+        }
+        function showShopCategories(dowpdown_id){
+            var dropdownMenu = document.getElementById(dowpdown_id);
             dropdownMenu.style.display = "block";
         }
+        function hideShopCategories(dowpdown_id){
+            var dropdownMenu = document.getElementById(dowpdown_id);
+            dropdownMenu.style.display = "none";
         }
     </script>
 

@@ -8,9 +8,7 @@
 <body>
     <div id="pageContainer" class="isMoved">
         <div id="shopify-section-vela-header" class="shopify-section">
-            <header id="header" class="velaHeader">
-                <?php include('header.php'); ?>
-            </header>
+            <?php include('header.php'); ?>
         </div>
         <div class="productpage-bredcrum-wrapper">
             <div class="productpage-bredcrum">
@@ -144,9 +142,9 @@
                     </div>
                     <br>
                     <div class="add-to-bttns">
-                        <button onclick="addToCart( <?php echo $_GET['productid'] ?> )" class="cart-btn">Add to cart</button>
-                        <button onclick="addToWishlist( <?php echo $_GET['productid'] ?> )" class="wish-btn">Add to wishlist</button>
-                        <button onclick="instant_checkout(<?php echo $_GET['productid'] ?> )" class="wish-btn" id="checkout_bttn">Buy Now</button>
+                        <button onclick="addToCart( <?php echo $_GET['productid'] ?> )" class="add-to-bttns cart-btn">Add to cart</button>
+                        <button onclick="instant_checkout(<?php echo $_GET['productid'] ?> )" class="add-to-bttns wish-btn" id="checkout_bttn">Buy Now</button>
+                        <button onclick="addToWishlist( <?php echo $_GET['productid'] ?> )" class="add-to-bttns wish-btn">Add to wishlist</button>
                         <script>
                             function instant_checkout(prod_id){
                                 event.preventDefault()
@@ -594,9 +592,11 @@
                     if (product_qnty != 0) {
                         $("#prod_qnty_inp").attr("max", product_qnty)
                         $(".out-of-stock-mssge").hide()
+
                     } else {
                         $(".manipulate-quantity-container").hide()
                         $(".out-of-stock-mssge").show()
+                        $(".add-to-bttns").hide()
                     }
 
                     if (jsonData.response[0].description.length <= 280) {
