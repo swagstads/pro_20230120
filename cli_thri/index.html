@@ -34,7 +34,7 @@
 
    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
    <script src="./js/page-scroller.js"></script>
-
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
       integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
       crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -55,9 +55,9 @@
 
          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
+            <span class="navbar-toggler-icon"><i class="fa fa-bars"></i></span>
          </button>
-         <div class="collapse navbar-collapse" id="navbarSupportedContent">
+         <div class="collapse navbar-collapse"  id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
                <li class="nav-item active">
                   <a class="nav-link" href="#banner_section">Home</a>
@@ -72,7 +72,7 @@
                   <a class="nav-link" href="#testimonial_section">Testimonial</a>
                </li>
                <li class="nav-item">
-                  <a class="nav-link" href="#careers_section">Careers</a>
+                  <a class="nav-link" href="./careers.html">Careers</a>
                </li>
             </ul>
          </div>
@@ -103,7 +103,7 @@
 
    <!-- Companies section -->
    <div class="company-link-title">
-      <h3 style="text-align: center;">We are into</h3>
+      <h3 style="text-align: center;">Businesses</h3>
    </div>
 
    <div class="company-link-container">
@@ -257,6 +257,34 @@
       </div>
    </div>
    <!-- Companies section end -->
+
+      
+   <!--about section start -->
+   <div id="about_section" class="about_section layout_padding section">
+      <div class="container">
+         <h1 class="about_taital">About Us</h1>
+         <p class="about_text">AtoZ Group is a conglomerate of companies based in India with a rich history dating back
+            to 1934.</p>
+         <div class="about_section_2">
+            <div class="row">
+               <div class="col-lg-6">
+                  <div class="about_image"><img src="./images/index/about-us.jpg"></div>
+               </div>
+               <div class="col-lg-6">
+                  <div class="about_taital_main">
+                     <p class="lorem_text">AtoZ Group is a diverse and expansive organization, with business interests
+                        spanning across industries including infrastructure, interiors, furnishing, jewelry, and more.
+                        AtoZ’s success is founded on its commitment to innovation and customer service, allowing it to
+                        maintain its position as a leader in several sectors. </p>
+                     <!-- <div class="read_bt"><a href="#">Read More</a></div> -->
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+   <!--about section end -->
+
    <!-- Hover me cards section  -->
    <div class="card-1">
       <div class="hover-card-container">
@@ -305,32 +333,7 @@
       </div>
    </div>
 
-   
-   <!--about section start -->
-   <div id="about_section" class="about_section layout_padding section">
-      <div class="container">
-         <h1 class="about_taital">About Us</h1>
-         <p class="about_text">AtoZ Group is a conglomerate of companies based in India with a rich history dating back
-            to 1934.</p>
-         <div class="about_section_2">
-            <div class="row">
-               <div class="col-lg-6">
-                  <div class="about_image"><img src="./images/index/about-us.jpg"></div>
-               </div>
-               <div class="col-lg-6">
-                  <div class="about_taital_main">
-                     <p class="lorem_text">AtoZ Group is a diverse and expansive organization, with business interests
-                        spanning across industries including infrastructure, interiors, furnishing, jewelry, and more.
-                        AtoZ’s success is founded on its commitment to innovation and customer service, allowing it to
-                        maintain its position as a leader in several sectors. </p>
-                     <!-- <div class="read_bt"><a href="#">Read More</a></div> -->
-                  </div>
-               </div>
-            </div>
-         </div>
-      </div>
-   </div>
-   <!--about section end -->
+
 
    <!-- testimonial section start -->
    <div id="testimonial_section" class="testimonial_section layout_padding section">
@@ -450,50 +453,7 @@
    </div>
    <!-- testimonial section end -->
 
-   <!-- opportuniites section start -->
-   <div id="careers_section" class="career-content">
-      <h1 class="testimonial_taital"><b>Careers at Our Company</b></h1>
-      <div class="job-listings">
-         <h4 class="career-subhead">Join our team and discover opportunities that align with your values </h4>
-         <div class="job-listing">
-            <form action="./api/mail_data.php" method="POST" enctype="multipart/form-data">
-               <div class="apply-form">
 
-                  <div class="left">
-                     <img src="./images/index/career.jpg" alt="">
-                  </div>
-
-                  <div class="right">
-                     <div class="form-group">
-                        <label for="name-input">Name</label>
-                        <input type="text" id="name-input" name="name" required>
-                     </div>
-                     <div class="form-group">
-                        <label for="email-input">Email</label>
-                        <input type="email" id="email-input" name="email" required>
-                     </div>
-                     <div class="form-group">
-                        <label for="phone-input">Phone</label>
-                        <input type="tel" id="phone-input" name="contact" required>
-                     </div>
-                     <div class="file-upload">
-                        <div class="form-group">
-                           <label for="resume-upload">Resume</label>
-                           <input type="file" id="resume-upload" name="resume" accept=".pdf" required />
-                           <p>Drag and drop your resume file here or click to select a file.</p>
-                        </div>
-                     </div>
-                     <br>
-                     <button type="submit" class="career-form-bttn"
-                        style="vertical-align:middle"><span>Apply</span></button>
-
-                  </div>
-
-               </div>
-            </form>
-         </div>
-      </div>
-   </div>
 
    <!-- script for drag drop resume -->
 
@@ -651,11 +611,11 @@
 			var scrollPosition = window.scrollY;
 			if (scrollPosition > 500) {
             $(".navbar").css('background-color', 'white');
-            console.log("Scrolled")
+            $(".navbar-nav").css('background-color', 'white');
 
          } else {
             $(".navbar").css('background-color', 'transparent');
-            console.log("not Scrolled")
+            $(".navbar-nav").css('background-color', 'transparent');
          }
 		});
 

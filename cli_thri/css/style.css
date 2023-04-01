@@ -534,6 +534,25 @@ button {
   position: relative;
   scroll-behavior: smooth;
 }
+.company-link-cards::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+.company-link-cards::-webkit-scrollbar-track {
+  background: white;
+}
+
+/* Handle */
+.company-link-cards::-webkit-scrollbar-thumb {
+  background: rgb(255, 255, 255);
+  border-radius: 20px;
+}
+
+/* Handle on hover */
+.company-link-cards::-webkit-scrollbar-thumb:hover {
+  background: #f9f9f9;
+}
 .company-link-cards .company{
   height: 150px;
   border-radius: 5px;
@@ -643,12 +662,10 @@ button {
 
   .company-banner-container:nth-child(n) {
     background-repeat: no-repeat;
-    background-position: left;
+    background-position: center;
     background-size: contain;
     background-attachment: fixed;
     position: relative;
-  
-
   }
   .company-banner-container{
     background-color: #fff;
@@ -912,13 +929,12 @@ background: #555;
 .about_section {
     width: 100%;
     float: left;
-    padding-bottom: 90px;
+    padding-bottom: 40px;
 }
 .about_section_2 {
     width: 100%;
     float: left;
     padding-top: 40px;
-    padding-bottom: 90px;
 }
 .about_image {
     width: 100%;
@@ -1751,7 +1767,7 @@ footer {
   }
   @media (max-width: 750px) {
     .banner_section{
-    background-image: url("../images/index/mobile_view.jpg");
+    /* background-image: url("../images/index/mobile_view.jpg"); */
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
