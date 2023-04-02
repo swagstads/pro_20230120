@@ -53,7 +53,11 @@ if (isset($_POST['btnSubmit'])) {
 
         <!-- Breadcrumbs-->
         <ol class="breadcrumb">
-              <li class="breadcrumb-item" style="color: #007bff;"><?php echo $lang['change_password']; ?></a>
+            <li class="breadcrumb-item" style="color: #007bff;">
+            <button class="btn btn-link btn-sm text-orange order-1 order-sm-0" id="sidebarToggle" href="#" style="color: #007bff;">
+                <i class="fas fa-bars"></i>
+            </button>
+            Change Password
             </li>
         </ol>
 
@@ -72,7 +76,7 @@ if (isset($_POST['btnSubmit'])) {
             echo '</div><br/>';
         }
         ?>
-        <div class="col-md-6">
+        <div class="col-md-6" style="margin-left: -1rem;">
             <div class="card-body">
                 <form role="form" method="post" enctype="multipart/form-data">
 

@@ -184,7 +184,10 @@ if(isset($_GET['eid'])){
 
         <!-- Breadcrumbs-->
         <ol class="breadcrumb">
-             <li class="breadcrumb-item" style="color: #007bff;">
+            <li class="breadcrumb-item" style="color: #007bff;">
+                <button class="btn btn-link btn-sm text-orange order-1 order-sm-0" id="sidebarToggle" href="#" style="color: #007bff;">
+                    <i class="fas fa-bars"></i>
+                </button>
                     <?php
                     if(isset($_GET['eid'])) {
                         echo 'Edit Coupon';
@@ -218,12 +221,12 @@ if(isset($_GET['eid'])){
                     <form role="form" method="post" enctype="multipart/form-data" onSubmit="return checkform()">
                         <div class="form-group">
                             <label class="control-label"><b>Name :</b></label>
-                            <input type="text" name="name" id="name" required="required" class="form-control" placeholder="Coupon Name" value="<?php if(isset($coupon)){echo $coupon['name'];}?>" maxlength="100">
+                            <input type="text" name="name" maxlength="20" id="name" required="required" class="form-control" placeholder="Coupon Name" value="<?php if(isset($coupon)){echo $coupon['name'];}?>" maxlength="100">
                         </div>
 
                         <div class="form-group">
                             <label class="control-label"><b>Code :</b></label>
-                            <input type="text" name="code" id="code" required="required" class="form-control" placeholder="Coupon Code" value="<?php if(isset($coupon)){echo $coupon['code'];}?>" maxlength="100" oninput="this.value = this.value.toUpperCase()">
+                            <input type="text" name="code" maxlength="20" id="code" required="required" class="form-control" placeholder="Coupon Code" value="<?php if(isset($coupon)){echo $coupon['code'];}?>" maxlength="100" oninput="this.value = this.value.toUpperCase()">
                         </div>
                         
                         <div class="form-group">

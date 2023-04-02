@@ -489,8 +489,8 @@ mark,
 .img-thumbnail {
   padding: 0.25rem;
   background-color: #fff;
-  border: 1px solid #dee2e6;
-  border-radius: 0.25rem;
+  /* border: 1px solid #dee2e6;
+  border-radius: 0.25rem; */
   max-width: 100%;
   height: auto;
 }
@@ -2294,7 +2294,6 @@ textarea.form-control {
   font-weight: 400;
   text-align: center;
   white-space: nowrap;
-  vertical-align: middle;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -4381,8 +4380,6 @@ input[type="button"].btn-block {
   word-wrap: break-word;
   background-color: #fff;
   background-clip: border-box;
-  border: 1px solid rgba(0, 0, 0, 0.125);
-  border-radius: 0.25rem;
 }
 
 .card > hr {
@@ -4403,7 +4400,13 @@ input[type="button"].btn-block {
 .card-body {
   -ms-flex: 1 1 auto;
   flex: 1 1 auto;
-  padding: 1.25rem;
+  padding: 1.25rem 0.5rem;
+}
+
+.card-body-no-padding {
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+  padding: 0rem 0rem;
 }
 
 .card-title {
@@ -4430,10 +4433,9 @@ input[type="button"].btn-block {
 .card-header {
   display: flex;
   justify-content: space-between;
-  padding: 0.75rem 1.25rem;
-  margin-bottom: 0;
+  padding: 0.75rem 0.75rem;
+  margin-bottom: -6px;
   background-color: rgba(0, 0, 0, 0.03);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.125);
 }
 
 .card-header:first-child {
@@ -4639,13 +4641,12 @@ input[type="button"].btn-block {
 
 .breadcrumb {
   display: -ms-flexbox;
-  display: flex;
+  display: inline-flex;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
-  padding: 0.75rem 1rem;
-  margin-bottom: 1rem;
+  padding: 0.75rem 0rem;
+  margin-bottom: 0rem;
   list-style: none;
-  background-color: #e9ecef;
   border-radius: 0.25rem;
 }
 
@@ -7567,6 +7568,7 @@ button.bg-dark:focus {
 
 .mr-5,
 .mx-5 {
+  padding: 0rem 1.25rem;
   margin-right: 3rem !important;
 }
 

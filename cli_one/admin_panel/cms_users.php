@@ -155,6 +155,9 @@ if($_SESSION['role']=='Admin'){
         <!-- Breadcrumbs-->
         <ol class="breadcrumb">
               <li class="breadcrumb-item" style="color: #007bff;">
+                <button class="btn btn-link btn-sm text-orange order-1 order-sm-0" id="sidebarToggle" href="#" style="color: #007bff;">
+                    <i class="fas fa-bars"></i>
+                </button>
                     <?php
                     if(isset($_GET['eid'])) {
                         echo $lang['edit_user'];
@@ -162,7 +165,6 @@ if($_SESSION['role']=='Admin'){
                         echo $lang['add_user'];
                     }
                     ?>
-                </a>
             </li>
         </ol>
 
@@ -179,7 +181,7 @@ if($_SESSION['role']=='Admin'){
             echo '</div><br/>';
         }
         ?>
-        <div class="col-md-6">
+        <div class="col-md-6" style="margin-left: -1rem;">
             <div class="card-body">
                 <form role="form" method="post" enctype="multipart/form-data">
 
@@ -234,12 +236,6 @@ if($_SESSION['role']=='Admin'){
         </div>
 
         <div class="card mb-3">
-            <div class="card-header">
-                <div>
-                <i class="fas fa-table"></i>
-                <?php echo $lang['user_list']; ?>
-                </div>
-            </div>
             <div class="card-body">
                 <div class="table-responsive">
                     <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0" style="font-size: 13px;">

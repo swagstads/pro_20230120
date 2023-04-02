@@ -1,13 +1,22 @@
+table {
+  border: none;
+}
+table th {
+  background-color: rgba(0, 0, 0, 0.03);
+}
 table.dataTable {
   clear: both;
+  border: none;
   margin-top: 6px !important;
   margin-bottom: 6px !important;
   max-width: none !important;
   border-collapse: separate !important;
   border-spacing: 0;
 }
+
 table.dataTable td,
 table.dataTable th {
+  border: none;
   -webkit-box-sizing: content-box;
   box-sizing: content-box;
 }
@@ -129,7 +138,7 @@ div.dataTables_scrollHead table.dataTable {
 }
 
 div.dataTables_scrollBody table {
-  border-top: none;
+  border: none;
   margin-top: 0 !important;
   margin-bottom: 0 !important;
 }
@@ -143,7 +152,7 @@ div.dataTables_scrollBody table thead .sorting_desc:after {
 }
 div.dataTables_scrollBody table tbody tr:first-child th,
 div.dataTables_scrollBody table tbody tr:first-child td {
-  border-top: none;
+  border: none;
 }
 
 div.dataTables_scrollFoot > .dataTables_scrollFootInner {
@@ -151,7 +160,7 @@ div.dataTables_scrollFoot > .dataTables_scrollFootInner {
 }
 div.dataTables_scrollFoot > .dataTables_scrollFootInner > table {
   margin-top: 0 !important;
-  border-top: none;
+  border: none;
 }
 
 @media screen and (max-width: 767px) {
@@ -196,6 +205,7 @@ div.dataTables_scrollHead table.table-bordered {
 }
 
 div.table-responsive > div.dataTables_wrapper > div.row {
+  border: none;
   margin: 0;
 }
 div.table-responsive > div.dataTables_wrapper > div.row > div[class^="col-"]:first-child {

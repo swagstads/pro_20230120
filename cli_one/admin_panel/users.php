@@ -26,6 +26,9 @@ $no = 1;
         <!-- Breadcrumbs-->
         <ol class="breadcrumb">
               <li class="breadcrumb-item" style="color: #007bff;">
+                    <button class="btn btn-link btn-sm text-orange order-1 order-sm-0" id="sidebarToggle" href="#" style="color: #007bff;">
+                        <i class="fas fa-bars"></i>
+                    </button>
                     <?php
                         echo $lang['app_users'];
                     ?>
@@ -34,15 +37,9 @@ $no = 1;
         </ol>
 
         <div class="card mb-3">
-            <div class="card-header">
-                <div>
-                <i class="fas fa-table"></i>
-                <?php echo $lang['app_users']; ?>
-                </div>
-            </div>
             <div class="card-body">
                 <div class="table-responsive">
-                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0" style="font-size: 13px;">
+                    <table class="table table-bordered stripe hover" id="dataTable" width="100%" cellspacing="0" style="font-size: 13px;">
                         <thead>
                         <tr>
                             <th>Sr. No.</th>

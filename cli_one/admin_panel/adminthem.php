@@ -73,13 +73,11 @@ include 'language_setting.php';
 
 <div id="snackbar"><span id="msg_text"></span></div>
 
-<nav class="navbar navbar-expand static-top" style="background-color: #1f1f1f;">
+<nav class="navbar navbar-expand static-top" style="background-color: #1f1f1f; display: none;">
 
-    <a class="navbar-brand mr-1" href="dashboard.php" style="color: #0087c7;"><?php echo $lang['app_name']; ?></a>
+    <a class="navbar-brand mr-1" href="dashboard.php" style="color: #007bff;"><?php echo $lang['app_name']; ?></a>
 
-    <button class="btn btn-link btn-sm text-orange order-1 order-sm-0" id="sidebarToggle" href="#" style="color: #0087c7;">
-        <i class="fas fa-bars"></i>
-    </button>
+    
 
     <!-- Navbar Search -->
     <form class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0" style="display: none;">
@@ -94,8 +92,9 @@ include 'language_setting.php';
     </form>
 
     <!-- Navbar -->
-    <ul class="navbar-nav ml-auto ml-md-0">
-        <li class="nav-item dropdown no-arrow mx-1" style="display: none;">
+    <ul class="navbar-nav ml-auto ml-md-0" style="display: none;">
+    
+        <li class="nav-item dropdown no-arrow mx-1" >
             <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <i class="fas fa-bell fa-fw"></i>
                 <span class="badge badge-danger">9+</span>
@@ -121,7 +120,7 @@ include 'language_setting.php';
         </li>
         <li class="nav-item dropdown no-arrow">
             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <i class="fas fa-user-circle fa-fw" style="color: #0087c7;"></i>
+                <i class="fas fa-user-circle fa-fw" style="color: #007bff;"></i>
             </a>
             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
                 <a class="dropdown-item" href="#" style="display: none;">Settings</a>
@@ -138,7 +137,7 @@ include 'language_setting.php';
 <div id="wrapper">
 
     <!-- Sidebar -->
-    <ul class="sidebar navbar-nav" style="color: #0087c7;">
+    <ul class="sidebar navbar-nav" style="color: #007bff;">
         <li class="nav-item" id="dashboard">
             <a class="nav-link" href="dashboard.php">
                 <i class="fas fa-fw fa-gauge"></i>
@@ -267,4 +266,16 @@ include 'language_setting.php';
         <?php
         }
         ?>
+        <li class="nav-item" id="change_password">
+            <a class="nav-link" href="change_password.php">
+                <i class="fas fa-fw fa-key"></i>
+                <span>Change Password</span>
+            </a>
+        </li>
+        <li class="nav-item" id="products">
+            <a class="nav-link" href="#" data-toggle="modal" data-target="#logoutModal" >
+                <i class="fas fa-fw fa-door-open"></i>
+                <span>Log Out</span>
+            </a>
+        </li>
     </ul>

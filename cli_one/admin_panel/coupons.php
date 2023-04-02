@@ -56,10 +56,15 @@ $no = 1;
 
         <!-- Breadcrumbs-->
         <ol class="breadcrumb">
-            <li class="breadcrumb-item" style="color: #007bff;">Coupons</li>
+            <li class="breadcrumb-item" style="color: #007bff;">
+            <button class="btn btn-link btn-sm text-orange order-1 order-sm-0" id="sidebarToggle" href="#" style="color: #007bff;">
+                <i class="fas fa-bars"></i>
+            </button>
+            Coupons
+            </li>
         </ol>
 
-        <a href="add_coupon.php" class="btn btn-primary btn-block col-sm-2" style="float:right;"><i class="fas fa-fw fa-plus"></i> Add Coupon</a><br/><br/>
+        <a href="add_coupon.php" class="btn btn-primary btn-block col-sm-2" style="float:right; margin: 0.5rem;"><i class="fas fa-fw fa-plus"></i> Add Coupon</a>
 
         <?php
         if ($tmsg != '') {
@@ -75,12 +80,6 @@ $no = 1;
         }
         ?>
         <div class="card mb-3">
-            <div class="card-header">
-                <div>
-                <i class="fas fa-table"></i>
-                Coupon List
-                </div>
-            </div>
             <div class="card-body">
                 <div class="table-responsive" id="news_div">
 

@@ -288,7 +288,10 @@ if(isset($_GET['did'])){
 
         <!-- Breadcrumbs-->
         <ol class="breadcrumb">
-             <li class="breadcrumb-item" style="color: #007bff;">
+            <li class="breadcrumb-item" style="color: #007bff;">
+                <button class="btn btn-link btn-sm text-orange order-1 order-sm-0" id="sidebarToggle" href="#" style="color: #007bff;">
+                    <i class="fas fa-bars"></i>
+                </button>
                     <?php
                     if(isset($_GET['eid'])) {
                         echo 'Edit Product';
@@ -324,7 +327,7 @@ if(isset($_GET['did'])){
                         <?php
                         if(isset($product)){
                             $cat_id=$product['id'];
-                            echo '<input type="hidden" name="product_id" id="product_id" value="'.$cat_id.'">';
+                            echo '<input type="hidden" name="product_id" id="prod_id" value="'.$cat_id.'">';
                         }
                         ?>
                         

@@ -88,7 +88,7 @@ function googleTranslateElementInit() {
     :root {
         /* --vela-color-primary: #bd8448; */
         /* --vela-color-secondary: #bd8448; */
-        --vela-color-primary: #0087c7;
+        --vela-color-primary: #007bff;
         --vela-color-secondary: #e30d7c;
         --vela-border-color: #e1e1e1;
         --vela-body-bg: #ffffff;
@@ -133,7 +133,7 @@ function googleTranslateElementInit() {
         /* --button_one_bordercolor_hover: #bd8448; */
         --button_one_txtcolor_hover: #ffffff;
 
-        --button_one_bgcolor_hover: #0087c7;
+        --button_one_bgcolor_hover: #007bff;
 
         --btnpro_txtcolor: #969696;
         --btnpro_bgcolor: #ffffff;

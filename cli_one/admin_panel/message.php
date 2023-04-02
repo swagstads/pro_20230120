@@ -47,10 +47,11 @@ if (isset($_POST['btnedit'])) {
 <div id="content-wrapper">
     <div class="container-fluid">
         <ol class="breadcrumb">
-            <li class="breadcrumb-item">
-                <a href="#">
-                    Read Message
-                </a>
+            <li class="breadcrumb-item" style="color: #007bff;">
+            <button class="btn btn-link btn-sm text-orange order-1 order-sm-0" id="sidebarToggle" href="#" style="color: #007bff;">
+                <i class="fas fa-bars"></i>
+            </button>
+                Read Message
             </li>
         </ol>
         <?php

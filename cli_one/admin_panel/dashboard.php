@@ -18,17 +18,17 @@ if (isset($_SESSION['them'])) {
 include 'db.php';
 
 $user_count = mysqli_num_rows(mysqli_query($conn,"select * from users Where status <> 'deleted'"));
-$order_count = mysqli_num_rows(mysqli_query($conn,"select * from orders where status <> 'Delivered'"));
+// $order_count = mysqli_num_rows(mysqli_query($conn,"select * from orders where status <> 'Delivered'"));
 /*$sales = mysqli_query($conn,"select SUM(amount) from payment");
 while ($row = $sales->fetch_assoc()) {
     $order_count = $row['SUM(amount)'];
 }*/
-$sales_count = mysqli_num_rows(mysqli_query($conn,"select * from orders where status = 'Delivered'"));
+$category_count = mysqli_num_rows(mysqli_query($conn,"select * from category where status = 'active'"));
 $product_count = mysqli_num_rows(mysqli_query($conn,"select * from product Where status = 'active'"));
 
-$order_result = mysqli_query($conn, "select * from orders join users on users.id = orders.user_id join product on product.id = orders.product_id ORDER BY delivery_date DESC;");
-$order_no = 1;
-
+$coupon_result = mysqli_query($conn, "select coupon.id, coupon.name, coupon.added_on, coupon.discount_type, coupon.amount, coupon.code FROM coupon WHERE `status` = 'active' ORDER by coupon.added_on DESC;");
+$coupon_no = 1;
+$coupon_count = mysqli_num_rows($coupon_result);
 $message_result = mysqli_query($conn, "select * from contact_us ORDER BY added_on DESC LIMIT 10;");
 $message_no = 1;
 
@@ -42,10 +42,13 @@ $message_no = 1;
             <!-- Breadcrumbs-->
             <ol class="breadcrumb">
                 <li class="breadcrumb-item" style="color: #007bff;">
+                    <button class="btn btn-link btn-sm text-orange order-1 order-sm-0" id="sidebarToggle" href="#" style="color: #007bff;">
+                        <i class="fas fa-bars"></i>
+                    </button>
                     <?php echo $lang['dashboard']; ?>
                 </li>
             </ol>
-
+    
             <!-- Icon Cards-->
             <div class="row">
 
@@ -70,9 +73,9 @@ $message_no = 1;
                     <div class="card text-white bg-warning o-hidden h-100">
                         <div class="card-body">
                             <div class="card-body-icon">
-                                <i class="fas fa-fw fa-cart-shopping"></i>
+                                <i class="fas fa-fw fa-ticket"></i>
                             </div>
-                            <div class="mr-5"><?php echo $order_count.' Pending Orders'; ?></div>
+                            <div class="mr-5"><?php echo $coupon_count.' Active Coupons'; ?></div>
                         </div>
                         <a class="card-footer text-white clearfix small z-1" href="orders.php?type=pending">
                             <span class="float-left"><?php echo $lang['view_details']; ?></span>
@@ -87,9 +90,9 @@ $message_no = 1;
                     <div class="card text-white bg-success o-hidden h-100">
                         <div class="card-body">
                             <div class="card-body-icon">
-                                <i class="fas fa-fw fa-cart-shopping"></i>
+                                <i class="fas fa-fw fa-chair"></i>
                             </div>
-                            <div class="mr-5"><?php echo $sales_count.' Delivered Orders';?></div>
+                            <div class="mr-5"><?php echo $category_count.' Active Catgeories';?></div>
                         </div>
                         <a class="card-footer text-white clearfix small z-1" href="orders.php?type=delivered">
                             <span class="float-left"><?php echo $lang['view_details']; ?></span>
@@ -124,39 +127,42 @@ $message_no = 1;
                     <div class="card mb-3">
                         <div class="card-header">
                             <div>    
-                                <i class="fas fa-table"></i>
-                                Orders
+                                <i class="fas fa-ticket"></i>
+                                Coupons
                             </div>
-                            <a href="orders.php" style="color: #1f1f1f">
+                            <a href="coupons.php" style="color: #1f1f1f">
                             View All</a>
                         </div>                        
-                        <div class="card-body">
+                        <div class="card-body-no-padding">
                             <div class="table-responsive">
 
-                                <table class="table table-bordered" id="news_dataTable" width="100%" cellspacing="0" style="font-size: 13px;">
+                                <table class="table dataTable" width="100%" cellspacing="0" style="font-size: 13px;">
                             <thead>
                             <tr>
                                 <th>Sr. No.</th>
-                                <th>Product</th>
-                                <th>Customer</th>
+                                <th>Code</th>
+                                <th>Name</th>
+                                <th>Amount</th>
                             </tr>
                             </thead>
                             <?php
-                            while ($row = $order_result->fetch_assoc()) {
+                            while ($row = $coupon_result->fetch_assoc()) {
                                 $id = $row['id'];
-                                $product = $row['title'];
+                                $code = $row['code'];
                                 $user = $row['name'];
-                                $pid = $row['product_id'];
+                                $dtype = $row['discount_type'];
+                                $amt = ($dtype=='percentage'?$row['amount'].'%':'Rs. '.$row['amount']);
                                 $uid = $row['user_id'];
                                 ?>
                                 <tr>
-                                    <td><?php echo $order_no; ?></td>
-                                    <td><?php echo strlen($product) > 70 ? substr($product,0,70).'..' : $product; ?></td>
+                                    <td><?php echo $coupon_no; ?></td>
+                                    <td><?php echo strlen($code) > 70 ? substr($code,0,70).'..' : $code; ?></td>
                                     <td><?php echo $user; ?></td>
+                                    <td><?php echo $amt; ?></td>
                                 </tr>
 
                                 <?php
-                                $order_no++;
+                                $coupon_no++;
                             }
                             ?>
                         </table>
@@ -169,16 +175,16 @@ $message_no = 1;
                     <div class="card mb-3">
                     <div class="card-header">
                             <div>    
-                                <i class="fas fa-table"></i>
+                                <i class="fas fa-envelope"></i>
                                 Messages
                             </div>
                             <a href="messages.php" style="color: #1f1f1f">
                             View All</a>
                         </div>
-                        <div class="card-body">
+                        <div class="card-body-no-padding">
                              <div class="table-responsive">
 
-                        <table class="table table-bordered" width="100%" cellspacing="0" style="font-size: 13px;">
+                        <table class="table dataTable" width="100%" cellspacing="0" style="font-size: 13px;">
                             <thead>
                             <tr>
                                 <th>Sr. No.</th>

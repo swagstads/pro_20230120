@@ -56,11 +56,15 @@ $no = 1;
 
         <!-- Breadcrumbs-->
         <ol class="breadcrumb">
-              <li class="breadcrumb-item" style="color: #007bff;">Product</a>
+            <li class="breadcrumb-item" style="color: #007bff;">
+            <button class="btn btn-link btn-sm text-orange order-1 order-sm-0" id="sidebarToggle" href="#" style="color: #007bff;">
+                <i class="fas fa-bars"></i>
+            </button>
+            Product List
             </li>
         </ol>
 
-        <a href="product.php" class="btn btn-primary btn-block col-sm-2" style="float:right;"><i class="fas fa-fw fa-plus"></i> Add Product</a><br/><br/>
+        <a href="product.php" class="btn btn-primary btn-block col-sm-2" style="float:right; margin: 0.5rem;"><i class="fas fa-fw fa-plus"></i> Add Product</a>
 
         <?php
         if ($tmsg != '') {
@@ -76,12 +80,6 @@ $no = 1;
         }
         ?>
         <div class="card mb-3">
-            <div class="card-header">
-                <div>
-                <i class="fas fa-table"></i>
-                Product List
-                </div>
-            </div>
             <div class="card-body">
                 <div class="table-responsive" id="news_div">
 
@@ -119,7 +117,7 @@ $no = 1;
                             <tr>
                                 <td><?php echo $no; ?></td>
                                 <td><a href="product.php?eid=<?php echo $id; ?>"><?php echo strlen($title) > 70 ? substr($title,0,70).'..' : $title; ?></a></td>
-                                <td>
+                                <td style="width: 336px;">
                                 <?php
                                     if(!empty($id)) {
                                         $get_images = mysqli_query($conn, "SELECT * FROM product_media WHERE product_id = $id;");

@@ -25,19 +25,15 @@ $no = 1;
 
         <!-- Breadcrumbs-->
         <ol class="breadcrumb">
-              <li class="breadcrumb-item" style="color: #007bff;">
-                    Payments
-                </a>
+            <li class="breadcrumb-item" style="color: #007bff;">
+                <button class="btn btn-link btn-sm text-orange order-1 order-sm-0" id="sidebarToggle" href="#" style="color: #0087c7;">
+                    <i class="fas fa-bars"></i>
+                </button>
+                Payments
             </li>
         </ol>
 
         <div class="card mb-3">
-            <div class="card-header">
-                <div>
-                <i class="fas fa-table"></i>
-                Payments
-                </div>
-            </div>
             <div class="card-body">
                 <p>Payment platform Integration required</p>
                 <!--

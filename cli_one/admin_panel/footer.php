@@ -108,6 +108,7 @@
 
         //datetimepicker
         $('#valid').datetimepicker({
+            minDate: Date(),
             format: 'DD-MM-YYYY HH:mm',
         });
 
@@ -218,7 +219,10 @@
             x.className = x.className.replace("show", "");
         }, 3000);
     }
-
+    $(function () {
+        var today = new Date();
+        $('#valid').datetimepicker("option", "minDate", today);
+   });
 </script>
 </body>
 
