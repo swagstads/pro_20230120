@@ -152,13 +152,13 @@
                 <div class="velaThreeBanner velaBannerFix mbBlockGutter">
                     <div class="container">
                         <div class="velaBannerInner">
-                            <div class="row gap-1">
+                            <div class="row flex-gap-1">
                                 <div class="col-sp-12 col-xs-4 col-sm-4">
                                     <div class="mbItemGutter effectOne">
                                         <a href="./products.php?products=rugs" title="AtoZ">
                                             <div class="p-relative">
                                                 <div class="product-card__image" style="padding-top: 61.43617021276596%">
-                                                    <img class="product-card__img lazyload imgFlyCart" data-src="./assets/images/index/small.jpg" data-widths="[360,540,720,900,1080,1296,1728,1944,2808,4320]" data-aspectratio="1.6277056277056277" data-ratio="1.6277056277056277" data-sizes="auto" alt="" />
+                                                    <img class="product-card__img index-banner-images lazyload imgFlyCart" data-src="./assets/images/index/small.jpg" data-widths="[360,540,720,900,1080,1296,1728,1944,2808,4320]" data-aspectratio="1.6277056277056277" data-ratio="1.6277056277056277" data-sizes="auto" alt="" />
                                                 </div>
                                                 <div class="placeholder-background placeholder-background--animation" data-image-placeholder></div>
                                             </div>
@@ -170,7 +170,7 @@
                                         <a href="./products.php?products=rugs" title="AtoZ">
                                             <div class="p-relative">
                                                 <div class="product-card__image" style="padding-top: 61.43617021276596%">
-                                                    <img class="product-card__img lazyload imgFlyCart" data-src="./assets/images/index/small2.jpg" data-widths="[360,540,720,900,1080,1296,1728,1944,2808,4320]" data-aspectratio="1.6277056277056277" data-ratio="1.6277056277056277" data-sizes="auto" alt="" />
+                                                    <img class="product-card__img index-banner-images lazyload imgFlyCart" data-src="./assets/images/index/small2.jpg" data-widths="[360,540,720,900,1080,1296,1728,1944,2808,4320]" data-aspectratio="1.6277056277056277" data-ratio="1.6277056277056277" data-sizes="auto" alt="" />
                                                 </div>
                                                 <div class="placeholder-background placeholder-background--animation" data-image-placeholder></div>
                                             </div>
@@ -182,7 +182,7 @@
                                         <a href="./products.php?products=rugs" title="AtoZ">
                                             <div class="p-relative">
                                                 <div class="product-card__image" style="padding-top: 61.43617021276596%">
-                                                    <img class="product-card__img lazyload imgFlyCart" data-src="./assets/images/index/small3.jpg" data-widths="[360,540,720,900,1080,1296,1728,1944,2808,4320]" data-aspectratio="1.6277056277056277" data-ratio="1.6277056277056277" data-sizes="auto" alt="" />
+                                                    <img class="product-card__img index-banner-images lazyload imgFlyCart" data-src="./assets/images/index/small3.jpg" data-widths="[360,540,720,900,1080,1296,1728,1944,2808,4320]" data-aspectratio="1.6277056277056277" data-ratio="1.6277056277056277" data-sizes="auto" alt="" />
                                                 </div>
                                                 <div class="placeholder-background placeholder-background--animation" data-image-placeholder></div>
                                             </div>

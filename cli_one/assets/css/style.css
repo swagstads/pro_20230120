@@ -36,6 +36,15 @@
   background: #555;
 }
 /* ======== index ======== */
+@media (max-width: 480px) {
+  #pageContainer{
+    margin: 35px auto !important;
+  }
+  .index-banner-images{
+    height: 50vh;
+    object-fit: cover;
+  }
+}
 #hero {
   display: flex;
   justify-content: center;

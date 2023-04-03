@@ -6436,7 +6436,7 @@ ul.lower-alpha {
   justify-content: space-between;
 }
 @media (max-width: 480px) {
-  .gap-1{
+  .flex-gap-1{
     gap: 10px !important;
   }
 }
@@ -6535,6 +6535,7 @@ ul.lower-alpha {
 }
 .p-relative {
   position: relative;
+  height: 100%;
 }
 .slideShowBanner .hasbg {
   padding-top: 50px;
@@ -6678,6 +6679,7 @@ ul.lower-alpha {
 .velassImage {
   transition: opacity 0.8s cubic-bezier(0.44, 0.13, 0.48, 0.87);
   z-index: 1;
+  height: 40vh;
 }
 .slick-initialized .velassImage,
 .no-js .velassImage {
@@ -6974,7 +6976,7 @@ ul.lower-alpha {
   padding: 0;
   margin-top: 20px;
   display: inline-block;
-  max-width: 515px;
+  max-width: 45vw;
   white-space: pre-line
 }
 @media (max-width: 768px) {
@@ -7899,6 +7901,7 @@ ul.lower-alpha {
 .product-card__image {
   position: relative;
   overflow: hidden;
+  height: 100%;
 }
 .product-card__img-icon{
   height: 50px !important;
