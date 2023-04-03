@@ -2796,3 +2796,37 @@ Quantity Button
   }
   }
 
+
+/* ========================== Footer ========================== */
+.newsletter-subscription-form-wrapper h4{
+  color: white !important;
+}
+.newsletter-subscription-form-container{
+  /* border: 1px solid; */
+  display: flex;
+}
+.newsletter-subscription-form-container > *{
+  /* border: 1px solid red; */
+}
+.newsletter-subscription-form-container .form-input {
+  width: calc(100% - 40px);
+}
+.newsletter-subscription-form-container .form-input input{
+  width: calc(100%);
+  height: 40px;
+  border: none;
+  padding: 5px;
+  color: black;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+.newsletter-subscription-form-container .form-button button{
+  border: transparent;
+  background-color: var(--col2);
+  height: 40px;
+  padding: 0 10px;
+  color: white;
+  
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
