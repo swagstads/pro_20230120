@@ -36,18 +36,18 @@
                                                 <div class="container captionWrap">
                                                     <div class="velassCaptionContent text-left align-middle">
                                                         <div class="velassCaptionInner text-left">
-                                                            <h2 class="velassHeading leftright-2" style="color: #323232">
+                                                            <h2 class="velassHeading " style="color: #323232">
                                                                 Luxury
                                                             </h2>
-                                                            <h3 class="velassHeadingSmall leftright-3" style="color: #323232">
+                                                            <h3 class="velassHeadingSmall " style="color: #323232">
                                                                 at your home
                                                             </h3>
-                                                            <div class="velassDesc leftright-4" style="color: #323232">
+                                                            <div class="velassDesc " style="color: #323232">
                                                                 A new range of esthetic rugs with checks and
                                                                 textures and variety of floral prints.
                                                             </div>
                                                             <div>
-                                                                <a class="btn btnVelaSlider leftright-5" href="products.php?product=cushion covers" style="
+                                                                <a class="btn btnVelaSlider " href="products.php?product=cushion covers" style="
                                                                         border-color: #201f1f;
                                                                         background-color: rgba(0, 0, 0, 0);
                                                                         color: #201f1f;
@@ -76,19 +76,19 @@
                                                 <div class="container captionWrap">
                                                     <div class="velassCaptionContent text-left align-middle">
                                                         <div class="velassCaptionInner text-left">
-                                                            <h2 class="velassHeading leftright-2" style="color: #323232">
+                                                            <h2 class="velassHeading " style="color: #323232">
                                                                 Think different &
                                                             </h2>
-                                                            <h3 class="velassHeadingSmall leftright-3" style="color: #323232">
+                                                            <h3 class="velassHeadingSmall " style="color: #323232">
                                                                 Do otherwise
                                                             </h3>
-                                                            <div class="velassDesc leftright-4" style="color: #323232;max-width:400px;">
+                                                            <div class="velassDesc " style="color: #323232;max-width:400px;">
                                                                 An extensive range of stylish bedsheets, bed
                                                                 covers, embroidered with elegance to highlight
                                                                 Indian homes.
                                                             </div>
                                                             <div>
-                                                                <a class="btn btnVelaSlider leftright-5" href="./products.php?product=cushion%20covers" style="
+                                                                <a class="btn btnVelaSlider " href="./products.php?product=cushion%20covers" style="
                                             border-color: #201f1f;
                                             background-color: rgba(0, 0, 0, 0);
                                             color: #201f1f;
@@ -116,18 +116,18 @@
                                                 <div class="container captionWrap">
                                                     <div class="velassCaptionContent text-left align-middle">
                                                         <div class="velassCaptionInner text-left">
-                                                            <h2 class="velassHeading leftright-2" style="color: #323232">
+                                                            <h2 class="velassHeading " style="color: #323232">
                                                                 High Beam
                                                             </h2>
-                                                            <h3 class="velassHeadingSmall leftright-3" style="color: #323232">
+                                                            <h3 class="velassHeadingSmall " style="color: #323232">
                                                                 Stylish Curtains
                                                             </h3>
-                                                            <div class="velassDesc leftright-4" style="color: #323232;">
+                                                            <div class="velassDesc " style="color: #323232;">
                                                                 Add a layer of eye catching long tail curtains
                                                                 at your windows to express your persona
                                                             </div>
                                                             <div>
-                                                                <a class="btn btnVelaSlider leftright-5" href="./products.php?product=cushion%20covers" style="
+                                                                <a class="btn btnVelaSlider " href="./products.php?product=cushion%20covers" style="
                                             border-color: #201f1f;
                                             background-color: rgba(0, 0, 0, 0);
                                             color: #201f1f;

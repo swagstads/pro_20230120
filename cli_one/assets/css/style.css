@@ -1547,10 +1547,14 @@ svg{
   /* border-top-left-radius: 10% 10%; */
   /* border-bottom-right-radius: 10% 10%; */
 }
-.product-slider .product-image .Image-button{
+
+.product-slider-container .product-slider:hover .product-image img{
+  filter: brightness(50%);
+}
+.product-slider .product-image .image-button{
   position: absolute;
   z-index: 50;
-  bottom: 10px;
+  bottom: 20px;
   opacity: 0;
   transition: 0.3s;
   width: 100%;
@@ -1558,18 +1562,19 @@ svg{
   justify-content: center;
 }
 @media (max-width: 981px) {
-  .product-slider .product-image .Image-button{
+  .product-slider .product-image .image-button{
     opacity: 1;
   }
 }
-.product-slider .product-image .Image-button button{
-  width: 90%;
+.product-slider .product-image .image-button button{
+  width: 80%;
+  padding: 6px;
   background: var(--col1);
   border: none;
   color: white;
 }
 
-.product-slider-container .scrolling-products .product-slider:hover .Image-button{
+.product-slider-container .scrolling-products .product-slider:hover .image-button{
     opacity: 1;
 }
 .product-slider-container .product-slider .add-to-cart-slide-button{
@@ -1580,14 +1585,17 @@ svg{
 .product-slider .add-bttns{
   display: flex;
   gap: 15px;
+  margin-top: 10px;
 }
 
 .product-slider-container .product-slider .add-to-cart-slide-button button{
   width: 100%;
-  font-weight: 500;
-  background: none;
-  border: none;
-  border-bottom: 1px solid black;
+  font-weight: 400;
+  font-size: 13px;
+  padding: 3.5px 10px 3.5px 10px;
+  background: var(--col2);
+  color: white;
+  border: 1px solid var(--col2);
 }
 .product-slider-container .product-slider .product-price .product-mrp{
   text-decoration: line-through;
@@ -1607,13 +1615,13 @@ svg{
 
 
 @media (min-width: 991px) {
-  /* .product-slider-container .product-slider:hover .price-container{
+  .product-slider-container .product-slider:hover .price-container{
     display: none;
   }
   .product-slider-container .product-slider:hover .add-to-cart-slide-button{
     visibility: visible;
     animation:  0.3s slide-in-right ease-out forwards;
-  } */
+  }
 }
 
 @media (max-width: 991px) {
@@ -2497,6 +2505,7 @@ Quantity Button
 .trending-products-container .trending-product img:hover{
   height: 120%;
   width: 120%;
+  filter: brightness(50%);
 }
 
 .social-media-share-links .fb-btn{

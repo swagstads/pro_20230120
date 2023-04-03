@@ -70,7 +70,7 @@
                                     '<a onclick="increase_click_count('+return_data[i].prod_id+')"  href="./productpage.php?productid='+return_data[i].prod_id+'" >'+
                                         '<div class="product-image">'+
                                             '<img class="image1 active lazyload" data-src="./admin_panel/uploads/products/'+return_data[i].image_name+'" alt="">'+
-                                            '<div class="Image-button">'+
+                                            '<div class="image-button">'+
                                                 '<button>Buy Now</button>'+ 
                                             '</div>'+
                                         '</div>'+

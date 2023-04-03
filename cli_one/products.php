@@ -359,10 +359,10 @@
                             '</div>' +
                             '</div>' +
                             '<button onclick="addToCart(' + return_data[i].id + ',' + return_data[i].quantity + ')" class="btn btnAddToCart">' +
-                            '<span>&plus; Add to Cart</span>' +
+                            '<span>Add to Cart</span>' +
                             '</button>' +
                             '<button style="margin-left:5px;" onclick="addToWishlist(' + return_data[i].id + ',' + return_data[i].quantity + ')" class="btn btnAddToCart">' +
-                            '<span>&plus; Add to Wishlist</span>' +
+                            '<span> Add to Wishlist</span>' +
                             '</button>' +
                             '</div>' +
                             '</div>' +

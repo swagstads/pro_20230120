@@ -50,8 +50,8 @@
                             if(return_data[i].product_quantity == 0){
                                 outOfStockMessage = "Out of Stock";
                             }
-                            // else if(return_data[i].product_quantity <= 5){
-                            //     inStockMessage = "only " + return_data[i].product_quantity + " left" 
+                            // else if(return_data[i].product_quantity <= 15){
+                            //     inStockMessage = "Only " + return_data[i].product_quantity + " left" 
                             // }
                             else{
                                 inStockMessage = "In Stock"
@@ -61,7 +61,7 @@
                                     '<a onclick="increase_click_count('+return_data[i].prod_id+')"  href="./productpage.php?productid='+return_data[i].prod_id+'" >'+
                                         '<div class="product-image">'+
                                             '<img class="image1 active lazyload" data-src="./admin_panel/uploads/products/'+return_data[i].image_name+'" alt="">'+
-                                            '<div class="Image-button">'+
+                                            '<div class="image-button">'+
                                                 '<button>Buy Now</button>'+ 
                                             '</div>'+
                                         '</div>'+
@@ -91,10 +91,10 @@
                                            '</div>'+
                                            '<div class="add-bttns">'+
                                             ' <div class="add-to-cart-slide-button">'+
-                                                    '<button onclick="addToCart('+return_data[i].prod_id+')">&plus; Add to cart</button>'+
+                                                    '<button onclick="addToCart('+return_data[i].prod_id+')"> Add to Cart </button>'+
                                                 '</div>'+
                                                 ' <div class="add-to-cart-slide-button">'+
-                                                    '<button onclick="addToWishlist('+return_data[i].prod_id+')">&plus; Add to Wishlist</button>'+
+                                                    '<button onclick="addToWishlist('+return_data[i].prod_id+')"> Add to Wishlist </button>'+
                                                 '</div>'+
                                             '</div>'+
                                         '</div>'+

@@ -7926,8 +7926,8 @@ ul.lower-alpha {
 }
 .velaProBlock .proFeaturedImage img {
   width: 100%;
-  border-top-left-radius: 10% 10%;
-  border-bottom-right-radius: 10% 10%;
+  /* border-top-left-radius: 10% 10%; */
+  /* border-bottom-right-radius: 10% 10%; */
 }
 .velaProBlock .proFeaturedImage .proImageSecond {
   position: absolute;
