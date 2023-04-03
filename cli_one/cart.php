@@ -509,7 +509,7 @@
                                                         discount_amount = localStorage.getItem("coupon_amount"); 
                                                         console.log(discount_amount);
 
-                                                        $(".discount-amount").text(" ".discount_amount)
+                                                        $(".discount-amount").text(" "+discount_amount)
                                                         var subtotal = $("#total_amount_inp").val()
                                                         var total_amount = subtotal - discount_amount;
                                                         $("#grand_total_amount").text(total_amount)
@@ -526,7 +526,14 @@
                                                         changeText('Add Coupon Code');
                                                         if(localStorage.getItem('coupon')){
                                                             localStorage.removeItem('coupon')
+                                                            localStorage.removeItem('coupon_amount')
                                                             show_msg("Coupon removed")
+                                                            
+                                                            $(".discount-amount").text("0")
+                                                            var subtotal = $("#total_amount_inp").val()
+                                                            var total_amount = subtotal;
+                                                            $("#grand_total_amount").text(total_amount)
+
                                                         }
                                                         else{
                                                             show_msg("No coupon applied to remove")
@@ -562,8 +569,8 @@
                                                                 var return_data = jsonData.response[0];
                                                                 // console.log(return_data);
                                                                 if (return_data.status === "active") {
-                                                                    localStorage.setItem("coupon",return_data.coupon_name)
                                                                     localStorage.setItem("coupon_amount",return_data.amount)
+                                                                    localStorage.setItem("coupon",return_data.coupon_name)
                                                                     removeCoupon();
                                                                     changeText("Coupon Applied")
                                                                     $(".discount-amount").text(return_data.amount)
