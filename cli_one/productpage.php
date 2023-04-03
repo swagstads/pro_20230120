@@ -18,7 +18,7 @@
                     </span>
                     /
                     <span>
-                        <a  id="breadcrum_category" href="./" >Category</a>
+                        <a id="breadcrum_category" href="./">Category</a>
                     </span>
                     /
                     <span>
@@ -29,7 +29,7 @@
                     <span>
                         <!-- Use code <span class="copon-code" title="Click to cpoy" data-clipboard-text="AToZ"> AToZ </span> to get 10% discount. -->
                         <script>
-                            $(document).ready(()=>{
+                            $(document).ready(() => {
                                 $(".copon-code").click(function() {
                                     // Get the text to copy from the data attribute
                                     var text = $(this).attr("data-clipboard-text");
@@ -71,7 +71,6 @@
                         </div>
                     </div>
                 </div>
-
                 <!-- Right Column -->
                 <div class="right-column">
                     <!-- Product Description -->
@@ -87,42 +86,6 @@
                         </p>
                     </div>
                     <!-- Product Pricing -->
-                    <div class="product-price">
-                        <span id="product_our_price">MRP:
-                            &nbsp;
-                            <span>
-                                <span class="price-entity">&#8377;</span>
-                                <span id="product_price" class="price-toggle">
-
-                                </span>
-                                &nbsp;
-                                <span>
-
-                                    <small  id="product_mrp" class="product-mrp">
-                                        <span class="price-entity">&#8377;</span>
-                                        <span id="product_mrp_val"  class="price-toggle" ></span>
-                                    </small>
-
-                                </span>
-
-                                &nbsp;
-
-                                <span class="incl-of-tax">(incl. of all taxes)</span></span>
-                        </span>
-                    </div>
-                    <br>
-                    <div class="manipulate-quantity-container">
-                        <span class="input-number-decrement" onclick="product_quantity().decrease()">-</span>
-
-                        <span id="prod_qnty_show">1</span>
-                        <input type="hidden" id="prod_qnty_inp" min="1" max="" value="1">
-
-                        <span class="input-number-increment" onclick="product_quantity().increase()">+</span>
-                    </div>
-                    <div class="out-of-stock-mssge">
-                        <span>Out of stock</span>
-                    </div>
-
                     <span class="product_overview"> Overview</span>
                     <p id="product_description" class="truncate-line-3"></p>
                     <div class="read-more-bttn-container">
@@ -142,97 +105,6 @@
                         </script>
                     </div>
                     <br>
-                    <div class="add-to-bttns">
-                        <button onclick="addToCart( <?php echo $_GET['productid'] ?> )" class="add-to-bttns cart-btn">Add to Cart</button>
-                        <button onclick="instant_checkout(<?php echo $_GET['productid'] ?> )" class="add-to-bttns wish-btn" id="checkout_bttn">Buy Now</button>
-                        <button onclick="addToWishlist( <?php echo $_GET['productid'] ?> )" class="add-to-bttns wish-btn">Add to Wishlist</button>
-                        <script>
-                            function instant_checkout(prod_id){
-                                event.preventDefault()
-                                let api_url = "./api/fetch_address.php";
-
-                                // form data values
-                                $.ajax({
-                                url: api_url,
-                                type: 'POST',
-                                // type: 'GET',
-                                success: function (returned_data) {
-                                    var jsonData = JSON.parse(returned_data);
-                                    var return_data = jsonData.response[0];
-                                    console.log(return_data);
-                                    if(return_data.status === "ok"){
-                                        localStorage.setItem("instant_checkout_product_id",prod_id)
-                                        localStorage.setItem("instant_checkout_quantity",$("#prod_qnty_inp").val())
-                                        window.location.href = "./instant_checkout.php"
-                                    }
-                                    else{
-                                        show_msg(return_data.message)
-                                    }
-                                    }
-                                })
-                            }
-                        </script>
-                    </div>
-                    <div class="social-media-share-links">
-                        <div>
-                            <h3>Share on:</h3>
-                        </div>
-                        <div class="share-buttons">
-                            <a href="#" title="Whatsapp" class="share-btn whatsapp-btn"><i class="fa fa-whatsapp"></i></a>
-                            <!-- <a href="#" title="Instagram" class="share-btn insta-btn"><i class="fa fa-instagram"></i></a> -->
-                            <!-- <a href="#" title="Facebook" class="share-btn fb-btn"><i class="fa fa-facebook"></i></a> -->
-                            <a href="#" title="Copy to clipboard" class="share-btn copy-btn"><i class="fa fa-copy"></i></a>
-                            <!-- Add more social media buttons here -->
-                        </div>
-                        <script>
-                            // Get the current URL
-                            var currentUrl = window.location.href;
-
-                            // Get all share buttons
-                            var shareButtons = document.querySelectorAll('.share-btn');
-
-                            // Loop through each button and add a click event listener
-                            shareButtons.forEach(function(button) {
-                                button.addEventListener('click', function(e) {
-                                    e.preventDefault();
-                                    var app = this.classList[1];
-                                    // Create a share URL for the selected app
-                                    var shareUrl;
-                                    switch (app) {
-                                        case 'whatsapp-btn':
-                                            general_product_description = "Hey! I just came across this amazing product and I had to share it with you. Check it out here: "
-                                            shareUrl = 'https://api.whatsapp.com/send?text=' + general_product_description + encodeURIComponent(currentUrl);
-                                            window.open(shareUrl);
-                                            break;
-                                        case 'insta-btn':
-                                            general_product_description = "Hey! I just came across this amazing product and I had to share it with you. Check it out here: "
-                                            shareUrl = 'https://api.instagram.com/send?text=' + general_product_description + encodeURIComponent(currentUrl);
-                                            window.open(shareUrl);
-                                            break;
-                                        case 'fb-btn':
-                                            general_product_description = "Hey! I just came across this amazing product and I had to share it with you. Check it out here: "
-                                            shareUrl = 'https://api.facebook.com/send?text=' + general_product_description + encodeURIComponent(currentUrl);
-                                            window.open(shareUrl);
-                                            break;
-                                        case 'copy-btn':
-                                            if (navigator.clipboard) {
-                                                navigator.clipboard.writeText(currentUrl)
-                                                    .then(() => {
-                                                        show_msg(`Copied to clipboard`);
-                                                    })
-                                                    .catch((err) => {
-                                                        show_msg('Failed to copy: ', err);
-                                                    });
-                                            } else {
-                                                show_msg('Clipboard API not available');
-                                            }
-                                            break;
-                                    }
-                                });
-                            });
-                        </script>
-
-                    </div>
                     <br>
                     <div class="shipping-policy">
                         <details>
@@ -280,11 +152,140 @@
 
                 </div>
 
+                <!-- Extreme-Column  -->
+                <div class="extreme-column">
+                    <div class="product-price">
+                        <span id="product_our_price">MRP:
+                            &nbsp;
+                            <span>
+                                <span class="price-entity">&#8377;</span>
+                                <span id="product_price" class="price-toggle">
+
+                                </span>
+                                &nbsp;
+                                <span>
+
+                                    <small id="product_mrp" class="product-mrp">
+                                        <span class="price-entity">&#8377;</span>
+                                        <span id="product_mrp_val" class="price-toggle"></span>
+                                    </small>
+
+                                </span>
+
+                                &nbsp;
+
+                                <span class="incl-of-tax">(incl. of all taxes)</span></span>
+                        </span>
+                    </div>
+                    <br>
+                    <div class="manipulate-quantity-container">
+                        <span class="input-number-decrement" onclick="product_quantity().decrease()">-</span>
+
+                        <span id="prod_qnty_show">1</span>
+                        <input type="hidden" id="prod_qnty_inp" min="1" max="" value="1">
+
+                        <span class="input-number-increment" onclick="product_quantity().increase()">+</span>
+                    </div>
+                    <div class="out-of-stock-mssge">
+                        <span>Out of stock</span>
+                    </div>
+                    <div class="add-to-bttns">
+                    <button onclick="addToCart( <?php echo $_GET['productid'] ?> )" class="add-to-bttns cart-btn">Add to Cart</button>
+                    <button onclick="instant_checkout(<?php echo $_GET['productid'] ?> )" class="add-to-bttns wish-btn" id="checkout_bttn">Buy Now</button>
+                    <button onclick="addToWishlist( <?php echo $_GET['productid'] ?> )" class="add-to-bttns wish-btn">Add to Wishlist</button>
+                    <script>
+                        function instant_checkout(prod_id) {
+                            event.preventDefault()
+                            let api_url = "./api/fetch_address.php";
+
+                            // form data values
+                            $.ajax({
+                                url: api_url,
+                                type: 'POST',
+                                // type: 'GET',
+                                success: function(returned_data) {
+                                    var jsonData = JSON.parse(returned_data);
+                                    var return_data = jsonData.response[0];
+                                    console.log(return_data);
+                                    if (return_data.status === "ok") {
+                                        localStorage.setItem("instant_checkout_product_id", prod_id)
+                                        localStorage.setItem("instant_checkout_quantity", $("#prod_qnty_inp").val())
+                                        window.location.href = "./instant_checkout.php"
+                                    } else {
+                                        show_msg(return_data.message)
+                                    }
+                                }
+                            })
+                        }
+                    </script>
+                </div>
+                <div class="social-media-share-links">
+                    <div>
+                        <h3>Share on:</h3>
+                    </div>
+                    <div class="share-buttons">
+                        <a href="#" title="Whatsapp" class="share-btn whatsapp-btn"><i class="fa fa-whatsapp"></i></a>
+                        <!-- <a href="#" title="Instagram" class="share-btn insta-btn"><i class="fa fa-instagram"></i></a> -->
+                        <!-- <a href="#" title="Facebook" class="share-btn fb-btn"><i class="fa fa-facebook"></i></a> -->
+                        <a href="#" title="Copy to clipboard" class="share-btn copy-btn"><i class="fa fa-copy"></i></a>
+                        <!-- Add more social media buttons here -->
+                    </div>
+                    <script>
+                        // Get the current URL
+                        var currentUrl = window.location.href;
+
+                        // Get all share buttons
+                        var shareButtons = document.querySelectorAll('.share-btn');
+
+                        // Loop through each button and add a click event listener
+                        shareButtons.forEach(function(button) {
+                            button.addEventListener('click', function(e) {
+                                e.preventDefault();
+                                var app = this.classList[1];
+                                // Create a share URL for the selected app
+                                var shareUrl;
+                                switch (app) {
+                                    case 'whatsapp-btn':
+                                        general_product_description = "Hey! I just came across this amazing product and I had to share it with you. Check it out here: "
+                                        shareUrl = 'https://api.whatsapp.com/send?text=' + general_product_description + encodeURIComponent(currentUrl);
+                                        window.open(shareUrl);
+                                        break;
+                                    case 'insta-btn':
+                                        general_product_description = "Hey! I just came across this amazing product and I had to share it with you. Check it out here: "
+                                        shareUrl = 'https://api.instagram.com/send?text=' + general_product_description + encodeURIComponent(currentUrl);
+                                        window.open(shareUrl);
+                                        break;
+                                    case 'fb-btn':
+                                        general_product_description = "Hey! I just came across this amazing product and I had to share it with you. Check it out here: "
+                                        shareUrl = 'https://api.facebook.com/send?text=' + general_product_description + encodeURIComponent(currentUrl);
+                                        window.open(shareUrl);
+                                        break;
+                                    case 'copy-btn':
+                                        if (navigator.clipboard) {
+                                            navigator.clipboard.writeText(currentUrl)
+                                                .then(() => {
+                                                    show_msg(`Copied to clipboard`);
+                                                })
+                                                .catch((err) => {
+                                                    show_msg('Failed to copy: ', err);
+                                                });
+                                        } else {
+                                            show_msg('Clipboard API not available');
+                                        }
+                                        break;
+                                }
+                            });
+                        });
+                    </script>
+
+                </div>
+                </div>
+                
 
             </div>
 
 
-<!-- review tab -->
+            <!-- review tab -->
 
             <div class="description-reviews">
                 <div class="container">
@@ -306,71 +307,72 @@
 
 
                                 <script>
-                                    function getFeedbacks(){
-                                    let api_url = "./api/fetch_feedbacks.php";
+                                    function getFeedbacks() {
+                                        let api_url = "./api/fetch_feedbacks.php";
 
-                                    product_id = <?php echo $_GET['productid'] ?>;
+                                        product_id = <?php echo $_GET['productid'] ?>;
 
-                                    // form data values
-                                    var form_data = {product_id: product_id};
-                                    $.ajax({
-                                    url: api_url,
-                                    type: 'POST',
-                                    data: form_data,
-                                    success: function (returned_data) {
-                                        var jsonData = JSON.parse(returned_data);
-                                        var return_data = jsonData.response;
-                                        console.log(return_data);
+                                        // form data values
+                                        var form_data = {
+                                            product_id: product_id
+                                        };
+                                        $.ajax({
+                                            url: api_url,
+                                            type: 'POST',
+                                            data: form_data,
+                                            success: function(returned_data) {
+                                                var jsonData = JSON.parse(returned_data);
+                                                var return_data = jsonData.response;
+                                                console.log(return_data);
 
-                                        if(return_data.length > 0){
-                                            let rated_star = '<span class="rate-star rate-star-1">'+
-                                                        '<svg id="Layer_1" data-name="Layer 1" height="50px" width="40px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 595.28 841.89">'+
-                                                        '<polygon class="star-elem rated-fill" points="297.64 258.25 350.5 365.36 468.7 382.54 383.17 465.91 403.36 583.64 297.64 528.05 191.91 583.64 212.1 465.91 126.57 382.54 244.78 365.36 297.64 258.25"/>'+
-                                                        '</svg>'+
-                                                    '</span>'
-                                            let unrated_start = '<span class="rate-star rate-star-1">'+
-                                                        '<svg id="Layer_1" data-name="Layer 1" height="50px" width="40px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 595.28 841.89">'+
-                                                        '<polygon class="star-elem" points="297.64 258.25 350.5 365.36 468.7 382.54 383.17 465.91 403.36 583.64 297.64 528.05 191.91 583.64 212.1 465.91 126.57 382.54 244.78 365.36 297.64 258.25"/>'+
-                                                        '</svg>'+
-                                                    '</span>'
-                                                
-                                            for (let i = 0; i < return_data.length; i++) {
-                                                let star = "";
-                                                for (let j = 0; j < return_data[i].stars; j++) {
-                                                star += rated_star;
+                                                if (return_data.length > 0) {
+                                                    let rated_star = '<span class="rate-star rate-star-1">' +
+                                                        '<svg id="Layer_1" data-name="Layer 1" height="50px" width="40px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 595.28 841.89">' +
+                                                        '<polygon class="star-elem rated-fill" points="297.64 258.25 350.5 365.36 468.7 382.54 383.17 465.91 403.36 583.64 297.64 528.05 191.91 583.64 212.1 465.91 126.57 382.54 244.78 365.36 297.64 258.25"/>' +
+                                                        '</svg>' +
+                                                        '</span>'
+                                                    let unrated_start = '<span class="rate-star rate-star-1">' +
+                                                        '<svg id="Layer_1" data-name="Layer 1" height="50px" width="40px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 595.28 841.89">' +
+                                                        '<polygon class="star-elem" points="297.64 258.25 350.5 365.36 468.7 382.54 383.17 465.91 403.36 583.64 297.64 528.05 191.91 583.64 212.1 465.91 126.57 382.54 244.78 365.36 297.64 258.25"/>' +
+                                                        '</svg>' +
+                                                        '</span>'
+
+                                                    for (let i = 0; i < return_data.length; i++) {
+                                                        let star = "";
+                                                        for (let j = 0; j < return_data[i].stars; j++) {
+                                                            star += rated_star;
+                                                        }
+                                                        for (let j = return_data[i].stars; j < 5; j++) {
+                                                            star += unrated_start;
+                                                        }
+
+                                                        let review_container =
+                                                            '<div class="review">' +
+                                                            '<div class="user-info">' +
+                                                            '<div class="profile-img-container">' +
+                                                            '<img src="' + return_data[i].profile_img + '"  class="profile-mg"  alt="">' +
+                                                            '</div>' +
+                                                            '<div class="user-name">' +
+                                                            return_data[i].name +
+                                                            '</div>' +
+                                                            '</div>' +
+                                                            '<div class="user-ratings">' +
+                                                            star +
+                                                            '</div>' +
+                                                            '<div class="user-feeedback">' +
+                                                            return_data[i].feedback +
+                                                            '</div>' +
+                                                            '</div>'
+
+                                                        $(".reviews").append(review_container);
+                                                    }
+                                                } else {
+                                                    $(".show-reviews-container").html("<h4 style='text-align:center'>No reviews yet..</h4>");
                                                 }
-                                                for (let j = return_data[i].stars; j < 5; j++) {
-                                                star += unrated_start;
-                                                }
-    
-                                                let review_container = 
-                                                '<div class="review">'+
-                                                    '<div class="user-info">'+
-                                                        '<div class="profile-img-container">'+
-                                                        '<img src="'+return_data[i].profile_img+'"  class="profile-mg"  alt="">'+
-                                                        '</div>'+
-                                                        '<div class="user-name">'+
-                                                        return_data[i].name+
-                                                        '</div>'+
-                                                    '</div>'+
-                                                    '<div class="user-ratings">'+
-                                                        star+
-                                                    '</div>'+
-                                                    '<div class="user-feeedback">'+
-                                                        return_data[i].feedback+
-                                                    '</div>'+
-                                                '</div>'
-    
-                                                $(".reviews").append(review_container);
+
+
                                             }
-                                        }
-                                        else{
-                                            $(".show-reviews-container").html("<h4 style='text-align:center'>No reviews yet..</h4>");
-                                        }
-                                        
-
-                                        }
-                                    })
+                                        })
                                     }
                                     getFeedbacks()
                                 </script>
@@ -381,87 +383,87 @@
                     </div>
                     <div id="container2" class="tabcontent">
                         <h3>Write your Feedback</h3>
-                         <!-- Rate and feedback -->
-                         <div class="ratings-container-wrapper">
+                        <!-- Rate and feedback -->
+                        <div class="ratings-container-wrapper">
                             <div class="ratings-container">
                                 <form method="post" onsubmit="sendFeedback()">
                                     <div class="upper-box">
 
                                         <div class="user-info">
 
-                                        <div class="profile-img-container">
-                                            <img src="<?php echo $_SESSION['profile_img'] ?>"  class="profile"  alt="">
-                                        </div>
+                                            <div class="profile-img-container">
+                                                <img src="<?php echo $_SESSION['profile_img'] ?>" class="profile" alt="">
+                                            </div>
 
-                                        <div class="user-details">
-                                            <?php echo $_SESSION['name'] ?>
-                                        </div>
+                                            <div class="user-details">
+                                                <?php echo $_SESSION['name'] ?>
+                                            </div>
 
                                         </div>
 
                                         <div class="rating-star-input">
-                                        <input type="hidden" name="" id="rating_val" required>
-                                        <span class="rate-star rate-star-1" onclick="rateStarVal(1)" onmouseenter="rateStar(1)" onmouseleave="unrateStar(1)">
-                                            <svg id="Layer_1" data-name="Layer 1" height="50px" width="40px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 595.28 841.89">
-                                            <polygon class="star-elem" points="297.64 258.25 350.5 365.36 468.7 382.54 383.17 465.91 403.36 583.64 297.64 528.05 191.91 583.64 212.1 465.91 126.57 382.54 244.78 365.36 297.64 258.25"/>
-                                            </svg>
-                                        </span>
-                                        <span class="rate-star rate-star-2" onclick="rateStarVal(2)" onmouseenter="rateStar(2)" onmouseleave="unrateStar(2)">
-                                            <svg id="Layer_1" data-name="Layer 1" height="50px" width="40px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 595.28 841.89">
-                                            <polygon class="star-elem" points="297.64 258.25 350.5 365.36 468.7 382.54 383.17 465.91 403.36 583.64 297.64 528.05 191.91 583.64 212.1 465.91 126.57 382.54 244.78 365.36 297.64 258.25"/>
-                                            </svg>
-                                        </span>
-                                        <span class="rate-star rate-star-3" onclick="rateStarVal(3)" onmouseenter="rateStar(3)" onmouseleave="unrateStar(3)">
-                                            <svg id="Layer_1" data-name="Layer 1" height="50px" width="40px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 595.28 841.89">
-                                            <polygon class="star-elem" points="297.64 258.25 350.5 365.36 468.7 382.54 383.17 465.91 403.36 583.64 297.64 528.05 191.91 583.64 212.1 465.91 126.57 382.54 244.78 365.36 297.64 258.25"/>
-                                            </svg>
-                                        </span>
-                                        <span class="rate-star rate-star-4" onclick="rateStarVal(4)" onmouseenter="rateStar(4)" onmouseleave="unrateStar(4)">
-                                            <svg id="Layer_1" data-name="Layer 1" height="50px" width="40px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 595.28 841.89">
-                                            <polygon class="star-elem" points="297.64 258.25 350.5 365.36 468.7 382.54 383.17 465.91 403.36 583.64 297.64 528.05 191.91 583.64 212.1 465.91 126.57 382.54 244.78 365.36 297.64 258.25"/>
-                                            </svg>
-                                        </span>
-                                        <span class="rate-star rate-star-5" onclick="rateStarVal(5)" onmouseenter="rateStar(5)" onmouseleave="unrateStar(5)">
-                                            <svg id="Layer_1" data-name="Layer 1" height="50px" width="40px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 595.28 841.89">
-                                            <polygon class="star-elem" points="297.64 258.25 350.5 365.36 468.7 382.54 383.17 465.91 403.36 583.64 297.64 528.05 191.91 583.64 212.1 465.91 126.57 382.54 244.78 365.36 297.64 258.25"/>
-                                            </svg>
-                                        </span>
+                                            <input type="hidden" name="" id="rating_val" required>
+                                            <span class="rate-star rate-star-1" onclick="rateStarVal(1)" onmouseenter="rateStar(1)" onmouseleave="unrateStar(1)">
+                                                <svg id="Layer_1" data-name="Layer 1" height="50px" width="40px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 595.28 841.89">
+                                                    <polygon class="star-elem" points="297.64 258.25 350.5 365.36 468.7 382.54 383.17 465.91 403.36 583.64 297.64 528.05 191.91 583.64 212.1 465.91 126.57 382.54 244.78 365.36 297.64 258.25" />
+                                                </svg>
+                                            </span>
+                                            <span class="rate-star rate-star-2" onclick="rateStarVal(2)" onmouseenter="rateStar(2)" onmouseleave="unrateStar(2)">
+                                                <svg id="Layer_1" data-name="Layer 1" height="50px" width="40px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 595.28 841.89">
+                                                    <polygon class="star-elem" points="297.64 258.25 350.5 365.36 468.7 382.54 383.17 465.91 403.36 583.64 297.64 528.05 191.91 583.64 212.1 465.91 126.57 382.54 244.78 365.36 297.64 258.25" />
+                                                </svg>
+                                            </span>
+                                            <span class="rate-star rate-star-3" onclick="rateStarVal(3)" onmouseenter="rateStar(3)" onmouseleave="unrateStar(3)">
+                                                <svg id="Layer_1" data-name="Layer 1" height="50px" width="40px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 595.28 841.89">
+                                                    <polygon class="star-elem" points="297.64 258.25 350.5 365.36 468.7 382.54 383.17 465.91 403.36 583.64 297.64 528.05 191.91 583.64 212.1 465.91 126.57 382.54 244.78 365.36 297.64 258.25" />
+                                                </svg>
+                                            </span>
+                                            <span class="rate-star rate-star-4" onclick="rateStarVal(4)" onmouseenter="rateStar(4)" onmouseleave="unrateStar(4)">
+                                                <svg id="Layer_1" data-name="Layer 1" height="50px" width="40px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 595.28 841.89">
+                                                    <polygon class="star-elem" points="297.64 258.25 350.5 365.36 468.7 382.54 383.17 465.91 403.36 583.64 297.64 528.05 191.91 583.64 212.1 465.91 126.57 382.54 244.78 365.36 297.64 258.25" />
+                                                </svg>
+                                            </span>
+                                            <span class="rate-star rate-star-5" onclick="rateStarVal(5)" onmouseenter="rateStar(5)" onmouseleave="unrateStar(5)">
+                                                <svg id="Layer_1" data-name="Layer 1" height="50px" width="40px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 595.28 841.89">
+                                                    <polygon class="star-elem" points="297.64 258.25 350.5 365.36 468.7 382.54 383.17 465.91 403.36 583.64 297.64 528.05 191.91 583.64 212.1 465.91 126.57 382.54 244.78 365.36 297.64 258.25" />
+                                                </svg>
+                                            </span>
 
 
                                         </div>
 
                                         <script>
+                                            function rateStar(n) {
+                                                let star = document.querySelectorAll(`.star-elem`);
+                                                for (let i = 0; i < n; i++) {
+                                                    star[i].classList.add("hover-fill")
+                                                }
+                                            }
 
-                                        function rateStar(n){
-                                            let star = document.querySelectorAll(`.star-elem`);
-                                            for (let i = 0; i < n; i++) {
-                                            star[i].classList.add("hover-fill")
+                                            function unrateStar(n) {
+                                                let star = document.querySelectorAll(`.star-elem`);
+                                                for (let i = n - 1; i < 5; i++) {
+                                                    star[i].classList.remove("hover-fill")
+                                                }
                                             }
-                                        }
 
-                                        function unrateStar(n){
-                                            let star = document.querySelectorAll(`.star-elem`);
-                                            for (let i = n-1; i < 5; i++) {
-                                            star[i].classList.remove("hover-fill")
+                                            function rateStarVal(n) {
+                                                let star = document.querySelectorAll(`.star-elem`);
+                                                for (let i = 0; i < n; i++) {
+                                                    star[i].classList.add("rated-fill")
+                                                }
+                                                for (let i = n; i < 5; i++) {
+                                                    star[i].classList.remove("rated-fill")
+                                                }
+                                                $("#rating_val").val(n)
                                             }
-                                        }
-                                        function rateStarVal(n){
-                                            let star = document.querySelectorAll(`.star-elem`);
-                                            for (let i = 0; i < n; i++) {
-                                            star[i].classList.add("rated-fill")
-                                            }
-                                            for (let i = n; i < 5; i++) {
-                                            star[i].classList.remove("rated-fill")
-                                            }
-                                            $("#rating_val").val(n)
-                                        }
                                         </script>
 
                                     </div>
 
                                     <div class="bottom-box">
                                         <div class="feedback-section">
-                                        <textarea name="Feedback" class="feedback-input" placeholder="Give me feedback" id=""  rows="5" required></textarea>
+                                            <textarea name="Feedback" class="feedback-input" placeholder="Give me feedback" id="" rows="5" required></textarea>
                                         </div>
                                     </div>
 
@@ -469,18 +471,18 @@
                                         <button class="submit-ratings-bttn">Submit</button>
                                     </div>
                                 </form>
-                                </div>
+                            </div>
 
                             <script>
-                                function sendFeedback(){
+                                function sendFeedback() {
                                     event.preventDefault()
 
                                     rateVal = parseInt($("#rating_val").val());
                                     feedback = $(".feedback-input").val();
-                                    if(feedback.length < 500){
-                                        if(rateVal){
+                                    if (feedback.length < 500) {
+                                        if (rateVal) {
                                             let inert_feedback_api_url = "./api/insert_feedback.php";
-            
+
                                             // form data values
                                             var form_data = {
                                                 stars: rateVal,
@@ -488,26 +490,24 @@
                                                 product_id: <?php echo $_GET['productid'] ?>
                                             };
                                             $.ajax({
-                                            url: inert_feedback_api_url,
-                                            type: 'POST',
-                                            // type: 'GET',
-                                            data: form_data,
-                                            success: function (returned_data) {
-                                                console.log(returned_data);
-                                                var jsonData = JSON.parse(returned_data);
-                                                var return_data = jsonData.response[0];
-                                                show_msg(return_data.message)
+                                                url: inert_feedback_api_url,
+                                                type: 'POST',
+                                                // type: 'GET',
+                                                data: form_data,
+                                                success: function(returned_data) {
+                                                    console.log(returned_data);
+                                                    var jsonData = JSON.parse(returned_data);
+                                                    var return_data = jsonData.response[0];
+                                                    show_msg(return_data.message)
                                                 }
                                             })
-                                        }
-                                        else{
+                                        } else {
                                             show_msg("Please provide rating to submit feedback...")
                                         }
-                                    }
-                                    else{
+                                    } else {
                                         show_msg("Please provide short feedback of less than 500 letters...")
                                     }
-                            }
+                                }
                             </script>
                         </div>
                     </div>
@@ -562,7 +562,6 @@
 
 
         <script>
-
             var product_id = <?php echo $_GET['productid'] ?>;
             var api_url = './api/fetch_single_product.php?product_id';
             var form_data = {
@@ -581,10 +580,10 @@
                     let inStockMessage = "";
                     if (jsonData.response[0].product_quantity == 0) {
                         outOfStockMessage = "Out of Stock";
-                        $("#instock").append('<sup class="blinking-box-out"><span>'+outOfStockMessage+'</span></sup>');
+                        $("#instock").append('<sup class="blinking-box-out"><span>' + outOfStockMessage + '</span></sup>');
                     } else if (jsonData.response[0].product_quantity <= 60) {
                         inStockMessage = "Only " + jsonData.response[0].product_quantity + " left";
-                        $("#instock").append('<sup class="blinking-box"><span>'+inStockMessage+'</span></sup>');
+                        $("#instock").append('<sup class="blinking-box"><span>' + inStockMessage + '</span></sup>');
                     } else {
                         inStockMessage = "In Stock"
                         $("#instock").html();
@@ -610,8 +609,8 @@
                     $("#product_title").text(jsonData.response[0].title)
                     $("#product_description").text(jsonData.response[0].description)
                     $("#product_price").text(jsonData.response[0].price)
-                    $("#product_price").attr("data-inr",jsonData.response[0].price)
-                    $("#product_mrp_val").text( jsonData.response[0].mrp)
+                    $("#product_price").attr("data-inr", jsonData.response[0].price)
+                    $("#product_mrp_val").text(jsonData.response[0].mrp)
 
                     if (jsonData.response[0].image === "no") {
                         // show_msg("")
@@ -642,8 +641,8 @@
                         }
                         var magnifyingGlass = $('.magnifying-glass');
                         var image = $('.product-img-active');
-                        image.ready(()=>{
-                            console.log("Image",image[0]);
+                        image.ready(() => {
+                            console.log("Image", image[0]);
                         })
                         image.mousemove(function(event) {
                             console.log("Mouse Moved on image");
@@ -677,10 +676,10 @@
 
                             // Move the magnifying glass to the current mouse position
                             magnifyingGlass.css({
-                            // 'left': event.pageX - 200 + 'px',
-                            // 'top': event.pageY - 150 + 'px',
-                            'visibility': 'visible',
-                            'background-position': '-' + (posX * 2) + 'px -' + (posY * 2) + 'px'
+                                // 'left': event.pageX - 200 + 'px',
+                                // 'top': event.pageY - 150 + 'px',
+                                'visibility': 'visible',
+                                'background-position': '-' + (posX * 2) + 'px -' + (posY * 2) + 'px'
                             });
                         });
 
@@ -696,19 +695,21 @@
             save_recent_views(product_id)
 
 
-            function save_recent_views(product_id){
+            function save_recent_views(product_id) {
                 let api_url = "./api/insert_recent_views.php";
-                var form_data = {"product_id":product_id};
+                var form_data = {
+                    "product_id": product_id
+                };
                 $.ajax({
-                url: api_url,
-                type: 'POST',
-                // type: 'GET',
-                data: form_data,
-                success: function (returned_data) {
-                    console.log(returned_data);
-                    var jsonData = JSON.parse(returned_data);
-                    var return_data = jsonData.response[0];
-                    console.log(return_data);
+                    url: api_url,
+                    type: 'POST',
+                    // type: 'GET',
+                    data: form_data,
+                    success: function(returned_data) {
+                        console.log(returned_data);
+                        var jsonData = JSON.parse(returned_data);
+                        var return_data = jsonData.response[0];
+                        console.log(return_data);
                     }
                 })
             }
@@ -717,8 +718,7 @@
                 var activeImg = document.getElementById("activeImage")
                 activeImg.src = sourceImg
             }
-
-    </script>
+        </script>
 
 
     </div>

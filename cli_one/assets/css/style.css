@@ -678,7 +678,7 @@
   max-width: 1200px;
   min-height: 100%;
   margin:130px auto auto auto;
-  padding: 0 25px 100px 25px;
+  padding: 0px 0px 100px 0px;
   gap: 20px;
   display: flex !important;
   /* border: 2px solid; */
@@ -718,8 +718,18 @@
   border-top-left-radius: 50px;
   border-bottom-right-radius: 50px;
 }
+
+.extreme-column {
+  position: relative;
+  width: 30%;
+  min-height: 450px;
+  display: flex;
+  gap: 5px;
+  flex-direction: column;
+}
+
 .right-column {
-  width: 60%;
+  width: 30%;
   position: relative;
   left: 0;
   right: 0;

@@ -361,7 +361,7 @@
                     </div>
                 </div>
             </div>
-            <div id="shopify-section-template--14420377993281__vela-about-text" class="shopify-section velaFramework">
+            <!-- <div id="shopify-section-template--14420377993281__vela-about-text" class="shopify-section velaFramework">
                 <div class="velaAboutText mbGutter" style="
             background-image: url(cdn.shopify.com/s/files/1/1573/5553/files/about-bgfb93.jpg?v=1614321993);
         
@@ -387,7 +387,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> -->
             <div id="shopify-section-template--14420377993281__vela-about-team" class="shopify-section">
                 <div class="velaAboutUs velaAboutUsTeams mbBlockGutter" style="background-color: rgba(0,0,0,0);
                 ">
