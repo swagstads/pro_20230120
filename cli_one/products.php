@@ -309,7 +309,6 @@
             function createPaginationButtons(pages){
                 console.log("creating page buttons",pages);
                 for (let i = 1; i <= pages; i++) {
-                    console.log(i);
                     var pageButton = `<button onclick="showPage(${i})">${i}</button>`
                     $(".pages-tab-button").append(pageButton);                    
                 }

@@ -152,7 +152,7 @@
                 <div class="velaThreeBanner velaBannerFix mbBlockGutter">
                     <div class="container">
                         <div class="velaBannerInner">
-                            <div class="row">
+                            <div class="row gap-1">
                                 <div class="col-sp-12 col-xs-4 col-sm-4">
                                     <div class="mbItemGutter effectOne">
                                         <a href="./products.php?products=rugs" title="AtoZ">
