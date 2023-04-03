@@ -174,22 +174,24 @@
                         </div>
                         <div class="newsletter-subscription-form-wrapper">
                             <h4>Subscribe</h4>
-                            <div class="newsletter-subscription-form-container">
-                                <span class="form-input">
-                                    <input type="text">
-                                </span>
-                                <span class="form-button"> 
-                                    
-                                    <button class="cssbuttons-io-button">
-                                    <div class="icon">
-                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"></path><path fill="currentColor" d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z"></path></svg>
-                                    </div>
-                                    </button>
-
-                                </span>
-
-
-                            </div>
+                            <form onsubmit="insert_newsletter_email()">
+                                <div class="newsletter-subscription-form-container">
+                                    <span class="form-input">
+                                        <input type="email" id="newsletter_email" type="text">
+                                    </span>
+                                    <span class="form-button"> 
+                                        
+                                        <button type="submit" class="cssbuttons-io-button">
+                                        <div class="icon">
+                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"></path><path fill="currentColor" d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z"></path></svg>
+                                        </div>
+                                        </button>
+    
+                                    </span>
+    
+    
+                                </div>
+                            </form>
                         </div>
 
 
@@ -221,3 +223,26 @@
         </div>
     </div>
 </div>
+
+
+<script>
+    function insert_newsletter_email(){
+
+        event.preventDefault()
+        let api_url = "./api/newsletter.php";
+    
+        // form data values
+        var form_data = {"email":$("#newsletter_email").val()};
+        $.ajax({
+        url: api_url,
+        type: 'POST',
+        data: form_data,
+        success: function (returned_data) {
+            console.log(returned_data);
+            var jsonData = JSON.parse(returned_data);
+            var return_data = jsonData.response[0];
+            show_msg(return_data.message)
+            }
+        })
+    }
+</script>

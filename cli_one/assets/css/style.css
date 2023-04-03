@@ -2798,7 +2798,10 @@ Quantity Button
 
 
 /* ========================== Footer ========================== */
-.newsletter-subscription-form-wrapper h4{
+.newsletter-subscription-form-wrapper {
+  padding: 10px 0 0 0 ;
+}
+  .newsletter-subscription-form-wrapper h4{
   color: white !important;
 }
 .newsletter-subscription-form-container{
