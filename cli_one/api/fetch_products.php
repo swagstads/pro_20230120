@@ -2,41 +2,94 @@
 
 require('./config.php'); 
 date_default_timezone_set('Asia/Kolkata');
-
-// ini_set('display_errors', 1);
-// ini_set('display_startup_errors', 1);
-// error_reporting(E_ALL);
-
-//    print_r($_POST);  
+ 
 $response["response"] = array();
+$response["pageinfo"] = array();
+
 $data = array();
 $prod_images = array();
 
-if (isset($_POST['show_products'])) {
+if (isset($_POST['category_name'])) {
+    // set number of items per page
+    $items_per_page = 8;
+
+    // get current page number from query string
+    $page = isset($_POST['page']) ? $_POST['page'] : 1;
+    // calculate offset based on current page number
+    $offset = ($page - 1) * $items_per_page;
+
+    // Get Category name
     $category_name = "%".strtolower($_POST['category_name'])."%";
 
+
+
     if( strlen($_POST['product_name']) >= 1 ){
-            $search_product = "%".strtolower($_POST['product_name'])."%";
-        
-            $stmt = $dbh->prepare(" SELECT *,p.id AS prod_id FROM product p JOIN category c ON FIND_IN_SET(c.id, p.category_id)  
-                                    WHERE  
-                                    LOWER(category_name) LIKE :category_name 
-                                    AND
-                                    ( LOWER(title) LIKE :search_product
-                                    OR LOWER(description) LIKE :search_product )");
-            $stmt->bindParam(':category_name', $category_name, PDO::PARAM_STR);
-            $stmt->bindParam(':search_product', $search_product, PDO::PARAM_STR);
-    }
-    else{    
-        $stmt = $dbh->prepare(' SELECT *,p.id AS prod_id FROM product p JOIN category c ON FIND_IN_SET(c.id, p.category_id)
+        $search_product = "%".strtolower($_POST['product_name'])."%";
+    
+        $stmt = $dbh->prepare(" SELECT *,p.id AS prod_id FROM product p JOIN category c ON FIND_IN_SET(c.id, p.category_id)  
                                 WHERE  
                                 LOWER(category_name) LIKE :category_name 
-                                OR LOWER(title) LIKE :search_product 
-                                OR LOWER(description) LIKE :search_product ');
+                                AND
+                                ( LOWER(title) LIKE :search_product
+                                OR LOWER(description) LIKE :search_product )
+                                LIMIT :offset, :items_per_page ");
+
+    $stmt->bindParam(':search_product', $search_product, PDO::PARAM_STR);
+    $stmt->bindParam(':category_name', $category_name, PDO::PARAM_STR);
+    $stmt->bindParam(':offset', $offset, PDO::PARAM_INT);
+    $stmt->bindParam(':items_per_page', $items_per_page, PDO::PARAM_INT);
+
+    $stmt2 = $dbh->prepare(" SELECT *,p.id AS prod_id FROM product p JOIN category c ON FIND_IN_SET(c.id, p.category_id)  
+    WHERE  
+    LOWER(category_name) LIKE :category_name 
+    AND
+    ( LOWER(title) LIKE :search_product
+    OR LOWER(description) LIKE :search_product )");
+
+    $stmt2->bindParam(':search_product', $search_product, PDO::PARAM_STR);
+    $stmt2->bindParam(':category_name', $category_name, PDO::PARAM_STR);
     
-        $stmt->bindParam(':search_product', $search_product, PDO::PARAM_STR);
-        $stmt->bindParam(':category_name', $category_name, PDO::PARAM_STR);
-    }
+    $stmt2->execute();
+    $count_rows = $stmt2->rowCount();
+    $data['count_rows'] = $count_rows;
+    $data['items_per_page'] = $items_per_page;
+    $data['total_pages'] = ceil($count_rows / $items_per_page);
+    
+    array_push($response["pageinfo"], $data);
+
+}
+else{    
+    $stmt = $dbh->prepare(' SELECT *,p.id AS prod_id FROM product p JOIN category c ON FIND_IN_SET(c.id, p.category_id)
+                            WHERE LOWER(category_name) LIKE :category_name 
+                            OR LOWER(title) LIKE :category_name 
+                            OR LOWER(description) LIKE :category_name
+                            LIMIT :offset, :items_per_page  ');
+
+    $stmt->bindParam(':category_name', $category_name, PDO::PARAM_STR);
+    $stmt->bindParam(':offset', $offset, PDO::PARAM_INT);
+    $stmt->bindParam(':items_per_page', $items_per_page, PDO::PARAM_INT);
+
+
+    
+    $stmt2 = $dbh->prepare(' SELECT *,p.id AS prod_id FROM product p JOIN category c ON FIND_IN_SET(c.id, p.category_id)
+    WHERE LOWER(category_name) LIKE :category_name 
+    OR LOWER(title) LIKE :category_name 
+    OR LOWER(description) LIKE :category_name');
+    // LIMIT :offset, :items_per_page 
+
+    $stmt2->bindParam(':category_name', $category_name, PDO::PARAM_STR);
+    
+    $stmt2->execute();
+
+    $res = $stmt2->fetchALL(PDO::FETCH_ASSOC);
+    $count_rows = $stmt2 -> rowCount();
+    $data['count_rows'] = $count_rows;
+    $data['items_per_page'] = $items_per_page;
+    $data['total_pages'] = ceil($count_rows / $items_per_page);
+    
+    array_push($response["pageinfo"], $data);
+    unset( $data );
+}
     $stmt->execute();
     $count = $stmt->rowCount();
 

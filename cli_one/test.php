@@ -1,130 +1,143 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <?php require("./header_links.php") ?>
-  <style>
-    .show-reviews-container-wrapper{
-      min-height: 200px;
-      padding: 20px;
-    }
-    .show-reviews-container-wrapper .show-reviews-container{
+<?php
 
-    }
-    .show-reviews-container-wrapper .show-reviews-container .reviews{
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-    }
-    .show-reviews-container-wrapper .show-reviews-container .reviews .review{
-      display: flex;
-      flex-direction: column;
-      background-color: aliceblue;
-      padding: 20px;
-    }
-    .show-reviews-container-wrapper .show-reviews-container .reviews .review .user-info{
-      display: flex;
-      align-items: center;
-      gap: 20px;
-    }
-    .show-reviews-container-wrapper .show-reviews-container .reviews .review .user-info .profile-img-container{
-      width: 60px;
-    }
-    .show-reviews-container-wrapper .show-reviews-container .reviews .review .user-info .profile-img-container .profile-img{
-      width: 60px;
-    }
-    .show-reviews-container .user-ratings{
-      margin-left: 50px;
-    }
-    .show-reviews-container .user-feeedback{
-      margin-left: 60px;
-    }
-  </style>
-</head>
-<body>
+require('./api/config.php'); 
+date_default_timezone_set('Asia/Kolkata');
 
-  <div class="show-reviews-container-wrapper">
-      <div class="show-reviews-container">
+// ini_set('display_errors', 1);
+// ini_set('display_startup_errors', 1);
+// error_reporting(E_ALL);
 
-          <div class="reviews">
+//    print_r($_GET);  
+$response["response"] = array();
+$data = array();
+$prod_images = array();
+
+// set number of items per page
+$items_per_page = 5;
+
+// get current page number from query string
+$page = isset($_GET['page']) ? $_GET['page'] : 1;
+// calculate offset based on current page number
+$offset = ($page - 1) * $items_per_page;
+
+// Get Category name
+$category_name = "%".strtolower($_GET['category_name'])."%";
 
 
 
+if( strlen($_GET['product_name']) >= 1 ){
+        $search_product = "%".strtolower($_GET['product_name'])."%";
+    
+        $stmt = $dbh->prepare(" SELECT *,p.id AS prod_id FROM product p JOIN category c ON FIND_IN_SET(c.id, p.category_id)  
+                                WHERE  
+                                LOWER(category_name) LIKE :category_name 
+                                AND
+                                ( LOWER(title) LIKE :search_product
+                                OR LOWER(description) LIKE :search_product )
+                                LIMIT :offset, :items_per_page ");
 
-          </div>
+    $stmt->bindParam(':search_product', $search_product, PDO::PARAM_STR);
+    $stmt->bindParam(':category_name', $category_name, PDO::PARAM_STR);
+    $stmt->bindParam(':offset', $offset, PDO::PARAM_INT);
+    $stmt->bindParam(':items_per_page', $items_per_page, PDO::PARAM_INT);
+
+    $stmt2 = $dbh->prepare(" SELECT *,p.id AS prod_id FROM product p JOIN category c ON FIND_IN_SET(c.id, p.category_id)  
+    WHERE  
+    LOWER(category_name) LIKE :category_name 
+    AND
+    ( LOWER(title) LIKE :search_product
+    OR LOWER(description) LIKE :search_product )");
+
+    $stmt2->bindParam(':search_product', $search_product, PDO::PARAM_STR);
+    $stmt2->bindParam(':category_name', $category_name, PDO::PARAM_STR);
+    
+    $stmt2->execute();
+    $count_rows = $stmt2->rowCount();
+    $data['count_rows'] = $count_rows;
+    $data['items_per_page'] = $items_per_page;
+    $data['total_pages'] = ceil($count_rows / $items_per_page);
+    
+    array_push($response["response"], $data);
+
+}
+else{    
+    $stmt = $dbh->prepare(' SELECT *,p.id AS prod_id FROM product p JOIN category c ON FIND_IN_SET(c.id, p.category_id)
+                            WHERE LOWER(category_name) LIKE :category_name 
+                            OR LOWER(title) LIKE :category_name 
+                            OR LOWER(description) LIKE :category_name
+                            LIMIT :offset, :items_per_page  ');
+
+    $stmt->bindParam(':category_name', $category_name, PDO::PARAM_STR);
+    $stmt->bindParam(':offset', $offset, PDO::PARAM_INT);
+    $stmt->bindParam(':items_per_page', $items_per_page, PDO::PARAM_INT);
 
 
-          <script>
-            function getFeedbacks(){
-              let api_url = "./api/fetch_feedbacks.php";
+    
+    $stmt2 = $dbh->prepare(' SELECT *,p.id AS prod_id FROM product p JOIN category c ON FIND_IN_SET(c.id, p.category_id)
+    WHERE LOWER(category_name) LIKE :category_name 
+    OR LOWER(title) LIKE :category_name 
+    OR LOWER(description) LIKE :category_name');
+    // LIMIT :offset, :items_per_page 
 
-              product_id = "1";
+    $stmt2->bindParam(':category_name', $category_name, PDO::PARAM_STR);
+    
+    $stmt2->execute();
 
-              // form data values
-              var form_data = {product_id: product_id};
-              $.ajax({
-              url: api_url,
-              type: 'POST',
-              data: form_data,
-              success: function (returned_data) {
-                  var jsonData = JSON.parse(returned_data);
-                  var return_data = jsonData.response;
-                  console.log(return_data);
+    $res = $stmt2->fetchALL(PDO::FETCH_ASSOC);
+    $count_rows = $stmt2 -> rowCount();
+    $data['count_rows'] = $count_rows;
+    $data['items_per_page'] = $items_per_page;
+    $data['total_pages'] = ceil($count_rows / $items_per_page);
+    
+    array_push($response["response"], $data);
+    unset( $data );
+}
+$stmt->execute();
+$count = $stmt->rowCount();
 
-                  let rated_star = '<span class="rate-star rate-star-1">'+
-                              '<svg id="Layer_1" data-name="Layer 1" height="50px" width="40px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 595.28 841.89">'+
-                              '<polygon class="star-elem rated-fill" points="297.64 258.25 350.5 365.36 468.7 382.54 383.17 465.91 403.36 583.64 297.64 528.05 191.91 583.64 212.1 465.91 126.57 382.54 244.78 365.36 297.64 258.25"/>'+
-                              '</svg>'+
-                          '</span>'
-                  let unrated_start = '<span class="rate-star rate-star-1">'+
-                              '<svg id="Layer_1" data-name="Layer 1" height="50px" width="40px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 595.28 841.89">'+
-                              '<polygon class="star-elem" points="297.64 258.25 350.5 365.36 468.7 382.54 383.17 465.91 403.36 583.64 297.64 528.05 191.91 583.64 212.1 465.91 126.57 382.54 244.78 365.36 297.64 258.25"/>'+
-                              '</svg>'+
-                          '</span>'
-                    
-                  for (let i = 0; i < return_data.length; i++) {
-                    let star = "";
-                    for (let j = 0; j < return_data[i].stars; j++) {
-                      star += rated_star;
-                    }
-                    for (let j = return_data[i].stars; j < 5; j++) {
-                      star += unrated_start;
-                    }
 
-                    let review_container = 
-                      '<div class="review">'+
-                        '<div class="user-info">'+
-                            '<div class="profile-img-container">'+
-                              '<img src="'+return_data[i].profile_img+'"  class="profile-mg"  alt="">'+
-                            '</div>'+
-                            '<div class="user-name">'+
-                              return_data[i].name+
-                            '</div>'+
-                        '</div>'+
-                        '<div class="user-ratings">'+
-                            star+
-                        '</div>'+
-                        '<div class="user-feeedback">'+
-                              return_data[i].feedback+
-                        '</div>'+
-                      '</div>'
 
-                    $(".reviews").append(review_container);
-                  }
-                  
+if ($count > 0) {
+    $fetch_data = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    for ($i = 0; $i < $count; $i++) {
+        $pid = $fetch_data[$i]['prod_id'];
+        $data["id"] = $pid;
+        $data["quantity"] = $fetch_data[$i]['quantity'];
+        $data["title"] = $fetch_data[$i]['title'];
+        $data["category"] = $fetch_data[$i]['category_name'];
+        $data["description"] = $fetch_data[$i]['description'];
+        $data["mrp"] = $fetch_data[$i]['mrp'];
+        $data["price"] = $fetch_data[$i]['price'];
+        $data["click_counts"] = $fetch_data[$i]['click_count'];
+        $data["status"] = "success";
+        $data["reason"] = "orders_fetched";
+        $data["added_on"]=strtotime($fetch_data[$i]['added_on']);
+        
+        try {
+            $stmt2 = $dbh->prepare('SELECT image_name FROM product_media WHERE product_id=:product_id');
+            $stmt2->bindParam(':product_id',  $pid , PDO::PARAM_INT);
+            $stmt2->execute();
 
-                  }
-              })
+            $im_count = $stmt2->rowCount();
+            $data["image_name"] = array();
+
+            $fetch_image = $stmt2->fetchAll(PDO::FETCH_ASSOC);
+
+            for ($j = 0; $j < $im_count; $j++){
+                array_push( $data["image_name"] , $fetch_image[$j]['image_name'] );
             }
-            getFeedbacks()
-          </script>
+        } catch (\Throwable $th) {
+            $data["image_error"] = "Error: ".$th;
+        }
+        array_push($response["response"], $data);
+    }
+} 
+else {
+    $data["status"] = "failed";
+    $data["reason"] = "No results";
+    array_push($response["response"], $data);
 
-      </div>
-  </div>
+}
+echo json_encode($response);
 
-
-</body>
-</html>
+?>

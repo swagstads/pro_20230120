@@ -2796,7 +2796,26 @@ Quantity Button
   }
   }
 
-
+/* ========================== Products ========================== */
+.pagination-button-container{
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.pagination-button-container button{
+  border: 2px solid rgba(0, 0, 0, 0.431);
+  padding: 10px 20px ;
+  background-color: transparent;
+  transition: .3s;
+}
+.pagination-button-container button:hover{
+  background-color: black;
+  color: white;
+}
+.pagination-button-container .pages-tab-button{
+  display: flex;
+  gap: 5px;
+}
 /* ========================== Footer ========================== */
 .newsletter-subscription-form-wrapper {
   padding: 10px 0 0 0 ;
@@ -2833,3 +2852,4 @@ Quantity Button
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
 }
+
