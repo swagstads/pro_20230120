@@ -386,7 +386,7 @@
                         <!-- <div style="padding: 0 10px" class="hide-on-mobile" id="google_translate_element"></div> -->
                         <div id="lang_and_currency" class="hide-on-mobile">
 
-                        <div class="currency-options select-box">
+                        <!-- <div class="currency-options select-box">
 
                             <select name="" id="currency_opt" > 
                                 <option value="INR">
@@ -396,7 +396,7 @@
                                     &#36;
                                 </option>
                             </select>
-                        </div>
+                        </div> -->
 
                         <div class="lang-option-container">
                             <div id="google_translate_element" style="display: none;" class="select-box" ></div>

@@ -21,7 +21,7 @@
 function googleTranslateElementInit() {
   new google.translate.TranslateElement({
     pageLanguage: 'en',
-    includedLanguages: 'es,hi,en,mr',
+    includedLanguages: 'es,hi,en,mr,de,fr,gu,zh-CN,te,ar,ja',
 }, 'google_translate_element');
 }
 
