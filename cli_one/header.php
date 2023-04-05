@@ -291,7 +291,7 @@
 
                                                     function headerShopTextHover(image_id) {
                                                         document.getElementById(prev_img_id).style.display = "none";
-                                                        document.getElementById(image_id).style.display = "inline";
+                                                        document.getElementById(image_id).style.display = "block";
                                                         prev_img_id = image_id
                                                     }
                                                 </script>

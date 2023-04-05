@@ -3399,6 +3399,7 @@ tbody.collapse.in {
 }
 @media (max-width: 992px) {
   .velaBreadcrumbs.hasBackgroundImage .velaBreadcrumbWrap {
+    margin-top:40px;
     position: static;
     -webkit-justify-content: flex-start;
     -ms-justify-content: flex-start;
@@ -7980,7 +7981,7 @@ ul.lower-alpha {
 .velaProBlock .proDescription {
   margin-bottom: 10px;
   display: -webkit-box;
-  -webkit-line-clamp: 1;
+  -webkit-line-clamp: 5;
   -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis;

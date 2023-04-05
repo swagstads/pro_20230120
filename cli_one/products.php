@@ -259,7 +259,7 @@
                             '</div>' +
                             '</div>' +
                             '</a>' +
-                            ' <div class="productLable"><span class="labelSale">Sale</span></div>' +
+                            // ' <div class="productLable"><span class="labelSale">Sale</span></div>' +
                             '</div>' +
                             '</div>' +
                             '<div class="col-xs-12 col-sm-9 col-md-9 col-lg-7 mbItemGutter">' +
@@ -269,7 +269,7 @@
                             ' <span class="shopify-product-reviews-badge" data-id="23393796112"></span>' +
                             '</div>' +
                             '<div class="proDescription">' +
-                            '<p>' + return_data[i].description + '</p>' +
+                            '<p class="truncate-line-5">' + return_data[i].description + '</p>' +
                             '</div>' +
                             '<div>' +
                             '<p class="out-of-stock-message">' + outOfStockMessage + '</p>' +

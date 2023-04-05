@@ -76,8 +76,8 @@
                     <!-- Product Description -->
                     <div class="product-description">
                         <span id="product_category"></span>
-                        <h3 id="product_title">
-                        </h3>
+                        <h4 id="product_title">
+                        </h4>
                         <!-- <sup id="instock"></sup> -->
                         <p style="font-size:12px;">
                             <svg width="11px" height="11px" fill="green" xmlns="http://www.w3.org/2000/svg" shape-rendering="geometricPrecision" text-rendering="geometricPrecision" image-rendering="optimizeQuality" fill-rule="evenodd" clip-rule="evenodd" viewBox="0 0 512 512">
@@ -87,7 +87,7 @@
                     </div>
                     <!-- Product Pricing -->
                     <span class="product_overview"> Overview</span>
-                    <p id="product_description" class="truncate-line-3"></p>
+                    <p id="product_description" class="truncate-line-5"></p>
                     <div class="read-more-bttn-container">
                         <button id="read_more_bttn" onclick="show_description(this)" class="read-more">Read more</button>
                         <script>
@@ -173,11 +173,10 @@
                                 </span>
 
                                 &nbsp;
-
+                                <br>
                                 <span class="incl-of-tax">(incl. of all taxes)</span></span>
                         </span>
                     </div>
-                    <br>
                     <div class="manipulate-quantity-container">
                         <span class="input-number-decrement" onclick="product_quantity().decrease()">-</span>
 
@@ -221,7 +220,7 @@
                 </div>
                 <div class="social-media-share-links">
                     <div>
-                        <h3>Share on:</h3>
+                        <h4>Share on:</h4>
                     </div>
                     <div class="share-buttons">
                         <a href="#" title="Whatsapp" class="share-btn whatsapp-btn"><i class="fa fa-whatsapp"></i></a>
@@ -599,7 +598,7 @@
                         $(".add-to-bttns").hide()
                     }
 
-                    if (jsonData.response[0].description.length <= 280) {
+                    if (jsonData.response[0].description.length <= 580) {
                         $("#read_more_bttn").hide()
                     }
                     // Chaange breadcrum text and href link to products category

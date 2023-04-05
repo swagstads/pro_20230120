@@ -173,7 +173,7 @@
                             </div>
                         </div>
                         <div class="newsletter-subscription-form-wrapper">
-                            <h4>Subscribe</h4>
+                            <h4 class="velaFooterTitle" style="margin:30px 0px 8px 0px">Subscribe to our newsletter</h4>
                             <form onsubmit="insert_newsletter_email()">
                                 <div class="newsletter-subscription-form-container">
                                     <span class="form-input">
@@ -196,7 +196,7 @@
 
 
                         <div class="velaFooterMenu">
-                        <h4 class="velaFooterTitle" style="margin-top:30px">Payment Information</h4>
+                        <h4 class="velaFooterTitle" style="margin:30px 0px 8px 0px">Payment Information</h4>
                             <div class="velaContent">
                                 <div class="payment-icons">
                                     <img src="./assets/images/footer/payment.jpg" height="40px" alt="">

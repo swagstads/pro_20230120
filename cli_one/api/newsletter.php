@@ -18,7 +18,7 @@ if(isset($_POST['email'])){
         
         if($query->execute()){
             $data["status"] = "ok";
-            $data["message"] = "Subscribed for newsletter";
+            $data["message"] = "Thank you for subscribing";
         }
         else{
             $data["status"] = "fail";
