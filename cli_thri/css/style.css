@@ -481,6 +481,10 @@ button {
   .company-link-title h3{
     font-size: 2.5rem;
   }
+  .navbar-collapse{
+    margin-top: 5%;
+    background-color: #f7f7f7 !important;
+  }
 }
 .company-link-container{
   display: flex;
@@ -1519,11 +1523,11 @@ footer {
     width: 50%;
     margin-right: 50px;
     margin-left: 6px;
-    text-align: justify;
+    text-align: left;
   }
   .about-service .service{
     width: 50%;
-    text-align: justify;
+    text-align: left;
   }
   .about-service h3 {
     margin-top: 0;
