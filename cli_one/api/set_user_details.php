@@ -14,7 +14,7 @@ if(isset($_POST['edit_user'])){
     $name = $_POST['name'];
     $contact = $_POST['contact'];
 
-    $uploadDir = '../profiles/'.$user_id.'/';
+    $uploadDir = './profiles/'.$user_id.'/';
     $filePath = "";
 
     if (!file_exists($uploadDir)) {
