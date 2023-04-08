@@ -133,6 +133,7 @@ if (isset($_POST['btnEditDraft'])) {
 */
 if (isset($_POST['btnedit'])) {
     //echo '<pre>';print_r($_POST);die;
+    $id = $_GET['id'];
     $user = $_SESSION['usr'];
     $name = $_POST['name'];
     $code = $_POST['code'];
@@ -143,7 +144,7 @@ if (isset($_POST['btnedit'])) {
     $status = $_POST['status'];
     $valid = date('Y-m-d H:i',strtotime($_POST['valid']));
     $now = date('Y-m-d H:i',time());
-    $query = "UPDATE `coupon` set `name`='$name', `product_id`='$product_id',discount_type='$discount_type', code='$code',amount='$amount', `status`='$status',`valid_till`='$valid' WHERE id='$id';";
+    $query = "UPDATE `coupon` set `name`='$name', `product_id`='$product_id',`discount_type`='$discount_type', `code`='$code',`amount`='$amount', `status`='$status',`valid_till`='$valid' WHERE id='$id';";
     //echo $query;die;
     $result =  mysqli_query($conn,$query);
     if(isset($coupon)&&$coupon['media_type']=='image'){

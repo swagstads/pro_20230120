@@ -77,7 +77,7 @@ $message_no = 1;
                             </div>
                             <div class="mr-5"><?php echo $coupon_count.' Active Coupons'; ?></div>
                         </div>
-                        <a class="card-footer text-white clearfix small z-1" href="orders.php?type=pending">
+                        <a class="card-footer text-white clearfix small z-1" href="coupons.php">
                             <span class="float-left"><?php echo $lang['view_details']; ?></span>
                             <span class="float-right">
                                 <i class="fas fa-angle-right"></i>
@@ -94,7 +94,7 @@ $message_no = 1;
                             </div>
                             <div class="mr-5"><?php echo $category_count.' Active Catgeories';?></div>
                         </div>
-                        <a class="card-footer text-white clearfix small z-1" href="orders.php?type=delivered">
+                        <a class="card-footer text-white clearfix small z-1" href="categories.php">
                             <span class="float-left"><?php echo $lang['view_details']; ?></span>
                             <span class="float-right">
                                 <i class="fas fa-angle-right"></i>
