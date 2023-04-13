@@ -77,15 +77,18 @@ h6 {
 }
 
 h1 {
-     font-size: 24px
+  font-family: 'Poppins', sans-serif;
+  font-size: 24px
 }
 
 h2 {
-     font-size: 22px
+  font-size: 22px;
+  font-family: 'Poppins', sans-serif;
 }
 
 h3 {
-     font-size: 18px
+  font-family: 'Poppins', sans-serif;
+  font-size: 18px
 }
 
 h4 {
@@ -132,9 +135,10 @@ ol {
 }
 
 p {
-     font-weight: 300;
-     font-size: 15px;
-     line-height: 24px;
+  font-family: 'Playfair Display';
+  font-weight: 300;
+  font-size: 15px;
+  line-height: 24px;
 }
 
 a {
@@ -217,7 +221,7 @@ button {
 }
 
 .layout_padding {
-     padding-top: 90px;
+     /* padding-top: 90px; */
      padding-bottom: 0px;
 }
 /* Snackbar */
@@ -471,10 +475,11 @@ button {
 
 /* Group of companies */
 .company-link-title h3{
-  font-size: 2.5rem;
+  font-size: 3rem;
   font-weight: 600;
-  font-family: var(    --font-family-sans-serif);
-  margin: 20px 0 ;
+  font-family: 'Poppins', sans-serif;
+  /* font-family: var(    --font-family-sans-serif); */
+  margin: 50px 0px 0px 0px ;
   position: relative;
 }
 @media (max-width: 768px) {
@@ -687,20 +692,25 @@ button {
   }
 
   #text-box-1{
+    font-family: 'Playfair Display';
     display: none;
   }
 
   #text-box-2{
+    font-family: 'Playfair Display';
     display: none;
   }
   #text-box-3{
     display: none;
+    font-family: 'Playfair Display';
   }
   #text-box-4{
     display: none;
+    font-family: 'Playfair Display';
   }
   #text-box-5{
     display: none;
+    font-family: 'Playfair Display';
   }
   .company-banner-container .text-box{
     position: absolute;
@@ -933,7 +943,7 @@ background: #555;
 .about_section {
     width: 100%;
     float: left;
-    padding-bottom: 40px;
+    padding-bottom: 20px;
 }
 .about_section_2 {
     width: 100%;
@@ -950,7 +960,7 @@ background: #555;
     content: '';
     position: absolute;
     width: 100px;
-    height: 390px;
+    height: 340px;
     background-color: var(--primary-color);
     left: 0px;
     right: initial;
@@ -959,12 +969,14 @@ background: #555;
 }
 
 .about_taital {
-    width: 35%;
+    font-size: 3rem;
+    width: 59%;
+    padding-left: 24%;
     float: left;
     font-size: 40px;
     color: #0f0f0f;
     font-weight: bold;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Poppins', sans-serif;
 }
 .about_taital::after {
     content: '';
@@ -978,6 +990,7 @@ background: #555;
     z-index: -1;
 }
 .about_text {
+    padding-left: 24%;
     width: 100%;
     float: left;
     font-size: 16px;
@@ -1041,7 +1054,8 @@ background: #555;
     font-size: 40px;
     color: #0f0f0f;
     font-weight: bold;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Poppins', sans-serif;
+
 }
 .services_taital::after {
     content: '';
@@ -1103,7 +1117,8 @@ background: #555;
     color: #141414;
     font-weight: bold;
     padding-top: 20px;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Poppins', sans-serif;
+
 }
 .blog_text {
     width: 100%;
@@ -1131,7 +1146,8 @@ background: #555;
     color: #141414;
     text-align: center;
     font-weight: bold;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Poppins', sans-serif;
+
 }
 .events_section_2 {
     width: 100%;
@@ -1221,7 +1237,7 @@ background: #555;
     float: left;
     font-size: 40px;
     font-weight: bold;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Poppins', sans-serif;
     color: white;
 }
 .contact_taital::after {
@@ -1272,6 +1288,8 @@ background: #555;
 }
 textarea#comment::placeholder {
     color: #727272;
+    font-family: 'Playfair Display';
+
 }
 .map_main{
     width: 100%;
@@ -1306,16 +1324,17 @@ textarea#comment::placeholder {
 .testimonial_section{
     width: 100%;
     float: left;
-    padding-bottom: 180px;
+    padding-bottom: 130px;
 }
 .testimonial_taital{
+  margin-top:55px ;
     width: 100%;
     float: left;
     font-size: 40px;
     color: #2c2420;
     text-align: center;
     font-weight: bold;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Poppins', sans-serif;
 }
 .testimonial_text{
     width: 100%;
@@ -1324,7 +1343,8 @@ textarea#comment::placeholder {
     color: #2c2420;
     text-align: center;
     margin: 0px;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Playfair Display';
+    
 }
 .testimonial_section_2 {
     width: 100%;
@@ -1428,7 +1448,7 @@ footer {
     max-width: 1200px;
     margin: 0 auto;
     display: flex;
-    gap: 20px;
+    gap: 10px;
     flex-wrap: wrap;
     justify-content: space-between;
   }
@@ -1943,11 +1963,12 @@ footer {
 }
 
 .apply-form {
+  padding: 0% 10% 0% 10%;
   display: flex;
   gap: 30px;
   flex-direction: row;
   justify-content: space-between;
-  margin-top: 20px;
+  /* margin-top: 20px; */
 }
 .apply-form>*{
   width: 50%;
@@ -1970,6 +1991,8 @@ footer {
   width: 100%;
 }
 .form-group label {
+  font-family: 'Playfair Display';
+
   font-size: 16px;
   margin-bottom: 5px;
 }
@@ -1978,7 +2001,8 @@ footer {
 .form-group input[type="email"],
 .form-group input[type="tel"],
 .form-group textarea
- {
+ {    
+  font-family: 'Playfair Display';
   width: 100%;
   padding: 10px;
   border: 1px solid #ccc;
@@ -2032,6 +2056,7 @@ footer {
   }
 }
 .career-subhead{
+  font-family: 'Playfair Display';
   text-align: center;
 }
 .career-form-bttn {
@@ -2055,6 +2080,8 @@ footer {
 
  }
  .career-form-bttn span {
+  font-family: 'Playfair Display';
+
   padding: 5px;
   cursor: pointer;
   display: inline-block;
@@ -2192,7 +2219,7 @@ footer {
   } */
 
    /* Our Mission Vision  */
-   .card {
+   .card-mission {
     margin: 6% 0% 5% 23%;
     width: 59%;
     border: none;
@@ -2200,18 +2227,18 @@ footer {
     /* background-color: #eee; */
     padding: 10px;
     position: relative;
-    display: flex;
+    /* display: flex; */
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
   }
   
-  .card-content {
+  .card-mission-content {
     flex-basis: 100%;
     text-align: center;
   }
   
-  .card-image {
+  .card-mission-image {
     margin-top: -5%;
     position: absolute;
     top: 0;
@@ -2222,14 +2249,29 @@ footer {
   }
   
   @media screen and (min-width: 768px) {
-    .card-image {
+    .card-mission-image {
       display: block;
     }
     
-    .card-content {
+    .card-mission-content {
       flex-basis: 70%;
       padding: 3% 4% 5% 45%;
     }
   }
-  
+
+.card img{
+  height: 41vh;
+}
+.row .col-lg-2{
+  padding: 0%;
+  margin: 3% 3% 3% 0%;
+}
+
+.card-body{
+  padding: 0%;
+}
+.card-body p{
+  width: 100%;
+  height: 100%;
+}
   
