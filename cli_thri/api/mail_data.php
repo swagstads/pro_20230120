@@ -18,7 +18,7 @@ if(isset($_FILES['resume'])){
     $mail->Port = 587;
 
     // Set the email details
-    $mail->setFrom("rishabhpnahar@gmail.com", "Your Name");
+    $mail->setFrom("rishabhpnahar@gmail.com", "UserName");
     $mail->addAddress("malavshah166@gmail.com", "Recipient Name");
     $mail->Subject = "Resume from ".$_POST["name"];
     $mail->isHTML(true);
@@ -72,7 +72,7 @@ if(isset($_POST['message'])){
     
         // Set the email details
         $mail->setFrom("rishabhpnahar@gmail.com", "Your Name");
-        $mail->addAddress("shahmalav1999@gmail.com", "Recipient Name");
+        $mail->addAddress("shahmalav1999@gmail.com", "Recipient Name"); //Here the mail of atoz will come on which mail they want the mails
         $mail->Subject = "Resume from ".$_POST["name"];
         $mail->isHTML(true);
 

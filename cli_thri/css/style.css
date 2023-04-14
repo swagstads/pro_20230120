@@ -291,6 +291,7 @@ button {
     width: 100%;
     display: flex !important;
     justify-content: right;
+    gap: 10px;
 }
 .bg-light {
     padding: 20px 60px 17px 70px;
@@ -1201,6 +1202,9 @@ background: #555;
     }
 }
 
+.navbar{
+  padding: 0.5rem 8rem;
+}
 .seemore_bt {
     width: 170px;
     margin: 0 auto;
@@ -2003,8 +2007,8 @@ footer {
 .form-group textarea
  {    
   font-family: 'Playfair Display';
-  width: 100%;
-  padding: 10px;
+  width: 80%;
+  padding: 6px;
   border: 1px solid #ccc;
   border-radius: 5px;
   font-size: 16px;
@@ -2090,16 +2094,16 @@ footer {
  }
  
  .career-form-bttn span:after {
-  content: 'Now';
+  content: '';
   position: absolute;
   opacity: 0;
   top: 0;
-  right: -5px;
+  /* right: -5px; */
   transition: 0.7s;
  }
  
  .career-form-bttn:hover span {
-  padding-right: 2.55em;
+  /* padding-right: 2.55em; */
  }
  
  .career-form-bttn:hover span:after {
@@ -2275,3 +2279,45 @@ footer {
   height: 100%;
 }
   
+
+/* OUR VISION */
+
+.card-vision {
+  margin: 6% 0% 5% 23%;
+  width: 59%;
+  border: none;
+  box-shadow: 0px 0px 42px 2px #eee;
+  /* background-color: #eee; */
+  padding: 10px;
+  position: relative;
+  /* display: flex; */
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.card-vision-content {
+  flex-basis: 100%;
+  text-align: center;
+}
+
+.card-vision-image {
+  margin-top: -5%;
+  position: absolute;
+  top: 0;
+  left: 60%;
+  width: 40%;
+  height: 130%;
+  display: none;
+}
+
+@media screen and (min-width: 768px) {
+  .card-vision-image {
+    display: block;
+  }
+  
+  .card-vision-content {
+    flex-basis: 70%;
+    padding: 3% 45% 5% 4%;
+  }
+}
