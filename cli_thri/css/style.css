@@ -508,7 +508,7 @@ button {
 }
 .company-link-container .left-arrow, .company-link-container .right-arrow{
   position: absolute;
-  z-index: 5;
+  z-index: 15;
   height: 40px;
   width: 40px;  
   top: 0;
@@ -1202,9 +1202,6 @@ background: #555;
     }
 }
 
-.navbar{
-  padding: 0.5rem 8rem;
-}
 .seemore_bt {
     width: 170px;
     margin: 0 auto;
@@ -1612,6 +1609,12 @@ footer {
         width: 100%;
     }
   }
+
+  @media (min-width:830px) {
+    .navbar{
+      padding: 0.5rem 10rem;
+    }
+  }
 /* footer section end */
 
 /* Login section */
@@ -1941,7 +1944,7 @@ footer {
 }
 .career-content{
   width: auto;
-  padding: 30px;
+  padding: 10px;
 }
 .careers-section {
   padding: 50px;
@@ -2068,7 +2071,7 @@ footer {
   font-size: 1rem;
   background: var(--secondary-color);
   color: white;
-  padding: 0.5em 1em;
+  padding: 0.5px 1em;
   display: flex;
   align-items: center;
   border: none;
@@ -2319,5 +2322,33 @@ footer {
   .card-vision-content {
     flex-basis: 70%;
     padding: 3% 45% 5% 4%;
+  }
+}
+
+@media (max-width: 391px){
+  
+  .card-mission{
+    width: auto;
+    margin: 5% 10% 7% 10%;
+  }
+  .card-vision{
+    width: auto;
+    margin: 5% 10% 7% 10%;
+  } 
+  .about_taital{
+    padding-left: 8%;
+  }
+  .about_text{
+    padding-left: 8%;
+  }
+  .testimonial_text{
+    padding-left: 6%;
+    padding-right: 6%;
+  }
+}
+
+@media (min-width: 750px){
+  .testimonial_box{
+    height: 30vh;
   }
 }
