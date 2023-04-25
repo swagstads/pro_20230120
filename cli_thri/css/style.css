@@ -972,8 +972,8 @@ background: #555;
 
 .about_taital {
     font-size: 3rem;
-    width: 59%;
-    padding-left: 24%;
+    width: 45%;
+    padding-left: 10%;
     float: left;
     font-size: 40px;
     color: #0f0f0f;
@@ -992,7 +992,7 @@ background: #555;
     z-index: -1;
 }
 .about_text {
-    padding-left: 24%;
+    padding-left: 10%;
     width: 100%;
     float: left;
     font-size: 16px;
@@ -1003,7 +1003,7 @@ background: #555;
     
 }
 .lorem_text {
-    width: 100%;
+    width: 150%;
     float: left;
     font-size: 16px;
     color: #0f0f0f;
@@ -1531,18 +1531,20 @@ footer {
   }
   
   
-  
+  .btn-primary{
+    background-color: #148ec8;
+  }
   footer .right-section {
-    width: 45%;
+    width: 100%;
   }
   footer .right-section .about-service{
     color: #d6d2d2;
-    padding: 20px 0;
+    padding: 60px 0;
     display: flex;
     gap: 10px;
   }
   .about-service .about{
-    width: 50%;
+    width: 20%;
     margin-right: 50px;
     margin-left: 6px;
     text-align: left;
@@ -2228,9 +2230,10 @@ footer {
 
    /* Our Mission Vision  */
    .card-mission {
-    margin: 6% 0% 5% 13%;
-    width: 80%;
+    margin: 10% 0% 5% 14%;
+    width: 70%;
     border: none;
+    border-radius: 2%;
     box-shadow: 0px 0px 42px 2px #a9a9a9;
     background-color: #fff;
     padding: 10px;
@@ -2247,12 +2250,13 @@ footer {
   }
   
   .card-mission-image {
-    margin-top: -5%;
+    margin-top: -8%;
     position: absolute;
     top: 0;
+    border-radius: 2%;
     left: 0;
-    width: 40%;
-    height: 130%;
+    width: 35%;
+    height: 180%;
     display: none;
   }
   
@@ -2287,9 +2291,10 @@ footer {
 /* OUR VISION */
 
 .card-vision {
-  margin: 12% 0% 5% 13%;
-  width: 80%;
+  margin: 15% 0% 10% 14%;
+  width: 70%;
   border: none;
+  border-radius: 2%;
   box-shadow: 0px 0px 42px 2px #a9a9a9;
     background-color: #fff;
   /* background-color: #eee; */
@@ -2307,12 +2312,13 @@ footer {
 }
 
 .card-vision-image {
-  margin-top: -5%;
+  margin-top: -8%;
   position: absolute;
   top: 0;
-  left: 60%;
-  width: 40%;
-  height: 130%;
+  left: 70%;
+  width: 30%;
+  border-radius: 2%;
+  height: 180%;
   display: none;
 }
 
@@ -2351,6 +2357,55 @@ footer {
 
 @media (min-width: 750px){
   .testimonial_box{
-    height: 30vh;
+    height: 35vh;
   }
+}
+
+.list-unstyled li a{
+  color: white;
+  list-style-type: none;
+}
+
+.clearfix{
+  position: absolute;
+    right: 0;
+    display: block;
+}
+
+svg{
+  width: 18px;
+  height: 20px;
+  color: #eee;
+  fill: white;
+  margin-right: 5px;
+}
+
+.logoo{
+  width: 20%;
+}
+
+.textlogo{
+  display: flex;
+  gap: 20px;
+  width: 60%;
+}
+
+.textt{
+  padding-top: 11px;
+}
+
+.contactinfo-add{
+  padding-left: 25px;
+  margin-bottom: 15px;
+  position: relative;
+}
+.contactinfo-phone{
+  padding-left: 25px;
+  margin-bottom: 15px;
+  position: relative;
+}
+.contactinfo-mail{
+  padding-left: 25px;
+  margin-bottom: 15px;
+  position: relative;
 }
