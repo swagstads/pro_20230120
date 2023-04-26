@@ -1974,15 +1974,15 @@ footer {
 }
 
 .apply-form {
-  padding: 0% 10% 0% 10%;
+  padding: 0% 6% 0% 6%;
   display: flex;
-  gap: 30px;
+  gap: 100px;
   flex-direction: row;
   justify-content: space-between;
   /* margin-top: 20px; */
 }
 .apply-form>*{
-  width: 50%;
+  width: 70%;
 }
 .apply-form .left{
   display: flex;
@@ -2292,7 +2292,7 @@ footer {
 /* OUR VISION */
 
 .card-vision {
-  margin: 15% 0% 10% 14%;
+  margin: 15% 0% 14% 14%;
   width: 70%;
   border: none;
   border-radius: 2%;
