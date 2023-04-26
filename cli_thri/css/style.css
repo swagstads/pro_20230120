@@ -45,7 +45,7 @@ body {
      color: #666666;
      font-size: 14px;
      font-family: 'Poppins', sans-serif;
-     line-height: 1.80857;
+     line-height: 1.2;
      font-weight: normal;
      overflow-x: hidden !important;
 }
@@ -222,7 +222,7 @@ button {
 }
 
 .layout_padding {
-     /* padding-top: 90px; */
+     /* padding-top: 40px; */
      padding-bottom: 0px;
 }
 /* Snackbar */
@@ -539,9 +539,9 @@ button {
   width: 100%;
   overflow-x: auto;
   display: flex;
-  justify-content:stretch;
+  justify-content:center;
   touch-action: pan-x;
-  gap: 20px;
+  gap: 10px;
   position: relative;
   scroll-behavior: smooth;
 }
@@ -1794,6 +1794,7 @@ footer {
     display: flex;
     padding: .4em;
     margin-bottom: 50px;
+    margin-top: 70px;
   }
   @media (max-width: 750px) {
     .card-1{
@@ -2230,7 +2231,7 @@ footer {
 
    /* Our Mission Vision  */
    .card-mission {
-    margin: 10% 0% 5% 14%;
+    margin: 11% 0% 5% 14%;
     width: 70%;
     border: none;
     border-radius: 2%;
@@ -2250,13 +2251,13 @@ footer {
   }
   
   .card-mission-image {
-    margin-top: -8%;
+    margin-top: -12%;
     position: absolute;
     top: 0;
     border-radius: 2%;
     left: 0;
-    width: 35%;
-    height: 180%;
+    width: 38%;
+    height: 160%;
     display: none;
   }
   
@@ -2312,11 +2313,11 @@ footer {
 }
 
 .card-vision-image {
-  margin-top: -8%;
+  margin-top: -10%;
   position: absolute;
   top: 0;
-  left: 70%;
-  width: 30%;
+  left: 67%;
+  width: 33%;
   border-radius: 2%;
   height: 180%;
   display: none;
