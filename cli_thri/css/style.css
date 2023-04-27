@@ -551,12 +551,12 @@ button {
 
 /* Track */
 .company-link-cards::-webkit-scrollbar-track {
-  background: white;
+  background: #eeeeee;
 }
 
 /* Handle */
 .company-link-cards::-webkit-scrollbar-thumb {
-  background: rgb(255, 255, 255);
+  background: rgb(238, 238, 238);
   border-radius: 20px;
 }
 
@@ -1974,9 +1974,9 @@ footer {
 }
 
 .apply-form {
-  padding: 0% 6% 0% 6%;
+  padding: 0% 0% 0% 10%;
   display: flex;
-  gap: 100px;
+  gap: 60px;
   flex-direction: row;
   justify-content: space-between;
   /* margin-top: 20px; */
@@ -2021,6 +2021,16 @@ footer {
   font-size: 16px;
 }
 
+.nice-select{
+  background-color: #fff;
+  font-family: 'Playfair Display' !important;
+  width: 80% !important;
+  padding: 6px !important;
+  border: 1px solid #ccc !important;
+  border-radius: 5px !important;
+  font-size: 16px !important;
+  line-height: 25px !important;
+}
 .form-group input[type="file"] {
   display: none;
 }
@@ -2277,7 +2287,7 @@ footer {
 }
 .row .col-lg-2{
   padding: 0%;
-  margin: 3% 3% 3% 0%;
+  margin: 3% 2% 3% 2%;
 }
 
 .card-body{
