@@ -422,6 +422,8 @@
 }
 .right{
   text-align: left;
+  margin-left: 31px;
+  margin-top: 10px;
 }
 .footer_section_2{
   padding-top: 20px;

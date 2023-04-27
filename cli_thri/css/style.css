@@ -1003,7 +1003,7 @@ background: #555;
     
 }
 .lorem_text {
-    width: 150%;
+    width: 100%;
     float: left;
     font-size: 16px;
     color: #0f0f0f;
@@ -2419,4 +2419,24 @@ svg{
   padding-left: 25px;
   margin-bottom: 15px;
   position: relative;
+}
+
+@media (max-width:390px){
+  footer .right-section .about-service{
+    display: grid;
+  }
+  .about-service .service,.textlogo, .about-service .about{
+    width: 100%;
+  }
+  .socials,.textlogo, .about-service .about{
+    padding-left: 25px;
+    margin-bottom: 15px;
+    position: relative;
+  }
+  .copyright_text{
+    display: block;
+  }
+  .apply-form {
+    padding: 0% 0% 0% 0%;
+  }
 }
