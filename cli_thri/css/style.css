@@ -1003,7 +1003,7 @@ background: #555;
     
 }
 .lorem_text {
-    width: 100%;
+    width: 150%;
     float: left;
     font-size: 16px;
     color: #0f0f0f;
@@ -2439,4 +2439,68 @@ svg{
   .apply-form {
     padding: 0% 0% 0% 0%;
   }
+}
+
+.card-team {
+  margin: 5% 0% 2% 15%;
+  width: 70%;
+  border: none;
+  border-radius: 2%;
+  display: none;
+  padding: 10px;
+  position: relative;
+  /* display: flex; */
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.card-team-image {
+  position: absolute;
+  top: 0;
+  border-radius: 2%;
+  left: 0;
+  width: 33%;
+  height: 100%;
+  display: none;
+}
+
+ 
+.card-team-content {
+  flex-basis: 100%;
+  display: none;
+}
+
+@media screen and (min-width: 768px) {
+  .card-team-image {
+    display: block;
+  }
+
+  .card-team-content p {
+    font-size: 12px;
+  }
+  .card-team-content {
+    flex-basis: 70%;
+    padding: 3% 4% 5% 45%;
+    display: block;
+  }
+  .card-team{
+    box-shadow: 0px 0px 42px 2px #a9a9a9;
+    display: block;
+    background-color: #fff;
+  }
+  
+.card{
+  display: none;
+}
+}
+
+@media (max-width: 391px){
+  .lorem_text{
+    width: 100%;
+  }
+}
+
+.carousel-control-next, .carousel-control-prev{
+  top: 130px;
 }
