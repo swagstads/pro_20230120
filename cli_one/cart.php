@@ -85,8 +85,10 @@
                                             success: function(returned_data) {
                                                 var jsonData = JSON.parse(returned_data);
                                                 var return_data = jsonData.response;
+                                                let mrp_arr =[];
                                                 let amount_arr = [],
                                                     total_amount = "";
+                                                    // console.log(return_data);
                                                 $(".cart-product-container").empty();
 
                                                 if (jsonData.response.length >= 1) {
@@ -94,18 +96,21 @@
                                                     for (var i = 0; i < jsonData.response.length; i++) {
                                                         let input_id = "product_" + return_data[i].prod_id_;
                                                         let exact_amount = return_data[i].product_price * return_data[i].required_quantity;
-
+                                                        let exact_mrp = return_data[i].product_mrp * return_data[i].required_quantity;
                                                         let amount = Math.round(exact_amount * 100) / 100;
-
+                                                        let mrp = Math.round(exact_mrp * 100) / 100;
+                                                        // console.log("ee",mrp);
                                                         let price_entity = "&#8377;"
 
                                                         currency = localStorage.getItem("currency");
                                                         if(currency === "USD"){
                                                             amount = parseFloat(amount / localStorage.getItem("inrRate")).toFixed(2)
+                                                            mrp = parseFloat(mrp / localStorage.getItem("inrRate")).toFixed(2)
                                                             price_entity = "&#36;"
                                                         }
                                                         amount_arr.push(amount)
-
+                                                        mrp_arr.push(mrp)
+                                                        // console.log("ee",mrp_arr);
                                                         $(".cart-product-container").append(
                                                             '<div class="cart-product-container-row">' +
                                                             '<div class="left">' +
@@ -148,9 +153,12 @@
                                                             '</div>'
                                                             )
                                                         // console.log(amount_arr);
+                                                        // console.log(mrp_arr);
+                                                        mrp_total_amount = (mrp_arr.reduce((total, current_val) => parseFloat(total) + parseFloat(current_val)) ) 
                                                         total_amount = (amount_arr.reduce((total, current_val) => parseFloat(total) + parseFloat(current_val)) )
                                                         // console.log(...amount_arr, "=>", total_amount);
                                                         $("#total_amount").text(total_amount)
+                                                        $("#mrp_total").text(mrp_total_amount)
                                                         $("#total_amount_inp").val(total_amount)
                                                         $("#grand_total_amount").text(total_amount)
                                                     }
@@ -311,10 +319,21 @@
                                     }
                                 </script>
                                 <div class="Total-amount-container">
-
+                                    
+                                <h5>
+                                        <div class="left">
+                                            <span>MRP Total:</span> 
+                                        </div>
+                                        <div class="right">
+                                            <span>
+                                                <span class="price-entity">&#8377;</span>
+                                            </span>
+                                            <span class="total-amount " id="mrp_total"></span>
+                                        </div>
+                                    </h5>
                                     <h5>
                                         <div class="left">
-                                            <span>Subtotal:</span> 
+                                            <span>Our total:</span> 
                                         </div>
                                         <div class="right">
                                             <span>
@@ -507,7 +526,7 @@
                                                         $("#coupon_code").val(localStorage.getItem("coupon"))
 
                                                         discount_amount = localStorage.getItem("coupon_amount"); 
-                                                        console.log(discount_amount);
+                                                        // console.log(discount_amount);
 
                                                         $(".discount-amount").text(" "+discount_amount)
                                                         var subtotal = $("#total_amount_inp").val()
@@ -564,7 +583,7 @@
                                                             type: 'POST',
                                                             data: form_data,
                                                             success: function(returned_data) {
-                                                                console.log(returned_data);
+                                                                // console.log(returned_data);
                                                                 var jsonData = JSON.parse(returned_data);
                                                                 var return_data = jsonData.response[0];
                                                                 // console.log(return_data);

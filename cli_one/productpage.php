@@ -86,6 +86,13 @@
                         </p>
                     </div>
                     <!-- Product Pricing -->
+                    <h4>Color Options</h4>
+                    <div class="btn-group" role="group" aria-label="Color Options">
+                        <li class="btn btn-primary">Blue</li>   
+                        <li class="btn btn-secondary">Gray</li>
+                        <li class="btn btn-success">Green</li>
+                        <li class="btn btn-danger">Red</li>
+                    </div><br>
                     <span class="product_overview"> Overview</span>
                     <p id="product_description" class="truncate-line-5"></p>
                     <div class="read-more-bttn-container">
@@ -189,100 +196,98 @@
                         <span>Out of stock</span>
                     </div>
                     <div class="add-to-bttns">
-                    <button onclick="addToCart( <?php echo $_GET['productid'] ?> )" class="add-to-bttns cart-btn">Add to Cart</button>
-                    <button onclick="instant_checkout(<?php echo $_GET['productid'] ?> )" class="add-to-bttns wish-btn" id="checkout_bttn">Buy Now</button>
-                    <button onclick="addToWishlist( <?php echo $_GET['productid'] ?> )" class="add-to-bttns wish-btn">Add to Wishlist</button>
-                    <script>
-                        function instant_checkout(prod_id) {
-                            event.preventDefault()
-                            let api_url = "./api/fetch_address.php";
+                        <button onclick="addToCart( <?php echo $_GET['productid'] ?> )" class="add-to-bttns cart-btn">Add to Cart</button>
+                        <button onclick="instant_checkout(<?php echo $_GET['productid'] ?> )" class="add-to-bttns wish-btn" id="checkout_bttn">Buy Now</button>
+                        <button onclick="addToWishlist( <?php echo $_GET['productid'] ?> )" class="add-to-bttns wish-btn">Add to Wishlist</button>
+                        <script>
+                            function instant_checkout(prod_id) {
+                                event.preventDefault()
+                                let api_url = "./api/fetch_address.php";
 
-                            // form data values
-                            $.ajax({
-                                url: api_url,
-                                type: 'POST',
-                                // type: 'GET',
-                                success: function(returned_data) {
-                                    var jsonData = JSON.parse(returned_data);
-                                    var return_data = jsonData.response[0];
-                                    console.log(return_data);
-                                    if (return_data.status === "ok") {
-                                        localStorage.setItem("instant_checkout_product_id", prod_id)
-                                        localStorage.setItem("instant_checkout_quantity", $("#prod_qnty_inp").val())
-                                        window.location.href = "./instant_checkout.php"
-                                    } else {
-                                        show_msg(return_data.message)
-                                    }
-                                }
-                            })
-                        }
-                    </script>
-                </div>
-                <div class="social-media-share-links">
-                    <div>
-                        <h4>Share on:</h4>
-                    </div>
-                    <div class="share-buttons">
-                        <a href="#" title="Whatsapp" class="share-btn whatsapp-btn"><i class="fa fa-whatsapp"></i></a>
-                        <!-- <a href="#" title="Instagram" class="share-btn insta-btn"><i class="fa fa-instagram"></i></a> -->
-                        <!-- <a href="#" title="Facebook" class="share-btn fb-btn"><i class="fa fa-facebook"></i></a> -->
-                        <a href="#" title="Copy to clipboard" class="share-btn copy-btn"><i class="fa fa-copy"></i></a>
-                        <!-- Add more social media buttons here -->
-                    </div>
-                    <script>
-                        // Get the current URL
-                        var currentUrl = window.location.href;
-
-                        // Get all share buttons
-                        var shareButtons = document.querySelectorAll('.share-btn');
-
-                        // Loop through each button and add a click event listener
-                        shareButtons.forEach(function(button) {
-                            button.addEventListener('click', function(e) {
-                                e.preventDefault();
-                                var app = this.classList[1];
-                                // Create a share URL for the selected app
-                                var shareUrl;
-                                switch (app) {
-                                    case 'whatsapp-btn':
-                                        general_product_description = "Hey! I just came across this amazing product and I had to share it with you. Check it out here: "
-                                        shareUrl = 'https://api.whatsapp.com/send?text=' + general_product_description + encodeURIComponent(currentUrl);
-                                        window.open(shareUrl);
-                                        break;
-                                    case 'insta-btn':
-                                        general_product_description = "Hey! I just came across this amazing product and I had to share it with you. Check it out here: "
-                                        shareUrl = 'https://api.instagram.com/send?text=' + general_product_description + encodeURIComponent(currentUrl);
-                                        window.open(shareUrl);
-                                        break;
-                                    case 'fb-btn':
-                                        general_product_description = "Hey! I just came across this amazing product and I had to share it with you. Check it out here: "
-                                        shareUrl = 'https://api.facebook.com/send?text=' + general_product_description + encodeURIComponent(currentUrl);
-                                        window.open(shareUrl);
-                                        break;
-                                    case 'copy-btn':
-                                        if (navigator.clipboard) {
-                                            navigator.clipboard.writeText(currentUrl)
-                                                .then(() => {
-                                                    show_msg(`Copied to clipboard`);
-                                                })
-                                                .catch((err) => {
-                                                    show_msg('Failed to copy: ', err);
-                                                });
+                                // form data values
+                                $.ajax({
+                                    url: api_url,
+                                    type: 'POST',
+                                    // type: 'GET',
+                                    success: function(returned_data) {
+                                        var jsonData = JSON.parse(returned_data);
+                                        var return_data = jsonData.response[0];
+                                        console.log(return_data);
+                                        if (return_data.status === "ok") {
+                                            localStorage.setItem("instant_checkout_product_id", prod_id)
+                                            localStorage.setItem("instant_checkout_quantity", $("#prod_qnty_inp").val())
+                                            window.location.href = "./instant_checkout.php"
                                         } else {
-                                            show_msg('Clipboard API not available');
+                                            show_msg(return_data.message)
                                         }
-                                        break;
-                                }
-                            });
-                        });
-                    </script>
+                                    }
+                                })
+                            }
+                        </script>
+                    </div>
+                    <div class="social-media-share-links">
+                        <div>
+                            <h4>Share on:</h4>
+                        </div>
+                        <div class="share-buttons">
+                            <a href="#" title="Whatsapp" class="share-btn whatsapp-btn"><i class="fa fa-whatsapp"></i></a>
+                            <!-- <a href="#" title="Instagram" class="share-btn insta-btn"><i class="fa fa-instagram"></i></a> -->
+                            <!-- <a href="#" title="Facebook" class="share-btn fb-btn"><i class="fa fa-facebook"></i></a> -->
+                            <a href="#" title="Copy to clipboard" class="share-btn copy-btn"><i class="fa fa-copy"></i></a>
+                            <!-- Add more social media buttons here -->
+                        </div>
+                        <script>
+                            // Get the current URL
+                            var currentUrl = window.location.href;
 
+                            // Get all share buttons
+                            var shareButtons = document.querySelectorAll('.share-btn');
+
+                            // Loop through each button and add a click event listener
+                            shareButtons.forEach(function(button) {
+                                button.addEventListener('click', function(e) {
+                                    e.preventDefault();
+                                    var app = this.classList[1];
+                                    // Create a share URL for the selected app
+                                    var shareUrl;
+                                    switch (app) {
+                                        case 'whatsapp-btn':
+                                            general_product_description = "Hey! I just came across this amazing product and I had to share it with you. Check it out here: "
+                                            shareUrl = 'https://api.whatsapp.com/send?text=' + general_product_description + encodeURIComponent(currentUrl);
+                                            window.open(shareUrl);
+                                            break;
+                                        case 'insta-btn':
+                                            general_product_description = "Hey! I just came across this amazing product and I had to share it with you. Check it out here: "
+                                            shareUrl = 'https://api.instagram.com/send?text=' + general_product_description + encodeURIComponent(currentUrl);
+                                            window.open(shareUrl);
+                                            break;
+                                        case 'fb-btn':
+                                            general_product_description = "Hey! I just came across this amazing product and I had to share it with you. Check it out here: "
+                                            shareUrl = 'https://api.facebook.com/send?text=' + general_product_description + encodeURIComponent(currentUrl);
+                                            window.open(shareUrl);
+                                            break;
+                                        case 'copy-btn':
+                                            if (navigator.clipboard) {
+                                                navigator.clipboard.writeText(currentUrl)
+                                                    .then(() => {
+                                                        show_msg(`Copied to clipboard`);
+                                                    })
+                                                    .catch((err) => {
+                                                        show_msg('Failed to copy: ', err);
+                                                    });
+                                            } else {
+                                                show_msg('Clipboard API not available');
+                                            }
+                                            break;
+                                    }
+                                });
+                            });
+                        </script>
+
+                    </div>
                 </div>
-                </div>
-                
 
             </div>
-
 
             <!-- review tab -->
 
@@ -374,6 +379,34 @@
                                         })
                                     }
                                     getFeedbacks()
+
+                                    function getColors(){
+                                        let api_url = "./api/fetch_color.php";
+
+                                        product_id = <?php echo $_GET['productid'] ?>;
+                                        // form data values
+                                        var form_data = {
+                                            product_id: product_id
+                                        };
+                                        $.ajax({
+                                            url: api_url,
+                                            type: 'POST',
+                                            data: form_data,
+                                            success: function(returned_data) {
+                                                var jsonData = JSON.parse(returned_data);
+                                                var return_data = jsonData.response;
+                                                console.log(return_data);
+                                                if (return_data.length > 0) {
+                                                    console.log("Length is here");
+                                                }
+                                                else{
+                                                    console.log("Length is oolalala");
+                                                }
+                                            }
+                                        })
+                                    }
+
+                                    getColors()
                                 </script>
 
                             </div>
