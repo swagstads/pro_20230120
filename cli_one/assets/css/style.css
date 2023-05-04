@@ -2886,3 +2886,7 @@ Quantity Button
   border-bottom-right-radius: 5px;
 }
 
+.goog-te-gadget .goog-te-combo{
+  background-color: transparent;
+  border: none;
+}

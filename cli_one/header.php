@@ -357,7 +357,7 @@
                                             .cls-1 {
                                                 fill: none;
                                                 stroke: currentcolor;
-                                                stroke-width: 20px;
+                                                stroke-width: 40px;
                                             }
                                         </style>
                                     </defs>
